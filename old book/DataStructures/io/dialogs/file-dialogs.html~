@@ -1,0 +1,216 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>File Dialogs</title>
+<link rel=STYLESHEET href="/~rhowell/style.css">
+
+</head>
+
+<body>
+<div class="NAVBAR">
+<a href="/~rhowell/DataStructures/redirect/custom-dialogs">Next:
+      Custom Dialogs
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/message-boxes">Previous:
+      <b>MessageBox</b>es 
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/dialogs">Up: Dialogs
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<h1>File Dialogs</h1>
+
+The <a
+      href="http://msdn.microsoft.com/en-us/library/system.windows.forms.aspx"><b>System.Windows.Forms</b></a>
+      namespace contains two other classes that implement modal
+      dialogs for obtaining file names from the user.  These classes
+      are <a
+      href="http://msdn.microsoft.com/en-us/library/system.windows.forms.openfiledialog(v=vs.110).aspx"><b>OpenFileDialog</b></a>,
+      which is designed to obtain the name of a file to read, and <a
+      href="http://msdn.microsoft.com/en-us/library/system.windows.forms.savefiledialog(v=vs.110).aspx"><b>SaveFileDialog</b></a>,
+      which is designed to obtain the name of a file to write.
+      Because we often need to obtain the name of a file prior to
+      doing file I/O, it is appropriate to consider these classes now.
+<p>
+Although these dialogs are visually separate from the window from
+      which they are opened, it is possible (and usually desirable) to
+      add instances of these classes to a form from <a
+      href="/~rhowell/DataStructures/redirect/design-window">the
+      Design window</a>.  Both can be found in the "Dialogs" section
+      of the Toolbox.  They can be added to the form simply by
+      double-clicking on their names.  They will not appear on the
+      form itself, but in a separate area of the Design window.  Their
+      properties can then be modified in the same way as any other
+      control.  We will discuss some of these properties a bit later
+      in what follows.
+</p>
+Each of these classes has a method called <b>ShowDialog</b> that takes
+    no parameters.  For example, if we call the <a
+    href="http://msdn.microsoft.com/en-us/library/e61ft40c(v=vs.110).aspx"><b>ShowDialog</b></a>
+    method of an <b>OpenFileDialog</b>, a dialog resembling the
+    following will be opened:
+<p>
+<img src="open-file-dialog.jpg" 
+    alt="A picture of a file dialog should appear here.">
+</p>
+Similarly, calling the <b>ShowDialog</b>
+    method of a <b>SaveFileDialog</b> opens a dialog resembling the
+    following:
+<p>
+<img src="save-file-dialog.jpg"
+    alt="A picture of a file dialog should appear here.">
+</p>
+Because these dialogs are modal, the method call will not return until the
+    user closes the dialog.  It will then return a <a
+    href="http://msdn.microsoft.com/en-us/library/system.windows.forms.dialogresult.aspx"><b>DialogResult</b></a>
+    indicating how the user closed the form - either
+    <b>DialogResult.OK</b> or <b>DialogResult.Cancel</b> (see <a
+    href="/~rhowell/DataStructures/redirect/message-boxes">the
+    previous section</a> for more
+    information on the <b>DialogResult</b> type).  Therefore, if
+    <tt>uxFileDialog</tt> is a variable referring to a file dialog, we
+    typically use the following code template to display it:
+<pre>
+if (uxFileDialog.ShowDialog() == DialogResult.OK)
+{
+                
+    // Process the file
+
+}
+</pre>
+Thus, if the user selects a file, we process it; otherwise, we do
+    nothing.  In some cases, we might include an <b>else</b>
+    containing code that needs to be executed if the user closes the
+    dialog without selecting a file.
+<p>
+Processing a file will be discussed in the three sections that
+      follow.  However, one thing we will certainly want to do prior
+      to processing the file is to obtain the file name that the user
+      selected (after all, this is the reason we display a file
+      dialog).  We can obtain this file name via the dialog's <a
+      href="http://msdn.microsoft.com/en-us/library/system.windows.forms.filedialog.filename(v=vs.110).aspx"><b>FileName</b></a>
+      <a href="/~rhowell/DataStructures/redirect/properties">property</a>;
+      for example,
+</p>
+<pre>
+string fileName = uxFileDialog.FileName;
+</pre>
+Note that this and other properties are accessible for initialization
+    purposes through a file dialog's Properties window in the
+    Designer.  This is useful for an <b>OpenFileDialog</b>'s
+    <b>FileName</b> property, as the default supplied by Visual
+    Studio® is rather odd.  Other properties that we might want to
+    initialize here (in addition to <b>(Name)</b>, the name of the
+    variable referring to the dialog) include:
+<ul>
+<li> <a
+	  href="http://msdn.microsoft.com/en-us/library/system.windows.forms.filedialog.title(v=vs.110).aspx"><b>Title</b></a>,
+	  the title of the dialog (by default, "Open" for an
+	  <b>OpenFileDialog</b> or "Save As" for a
+	  <b>SaveFileDialog</b>). </li>
+<li> <a
+	  href="http://msdn.microsoft.com/en-us/library/system.windows.forms.filedialog.filter(v=vs.110).aspx"><b>Filter</b></a>,
+	  a <i>filter string</i>, which controls what file types will
+	  be displayed.  An example of a filter string is:
+<pre>
+C# files|*.cs|All files|*.*
+</pre>
+A filter string consists of an even number of components separated by
+	vertical bars ("|").  Thus, the above filter string consists
+	of four components.  These components are grouped into pairs.
+	The first component of each pair gives the string that will be
+	displayed in the dialog to describe what files are displayed.
+	The second component of each pair describes a pattern of file
+	names to be displayed when the first component of that pair is
+	shown.  Use an asterisk ("*") in a pattern to denote any
+	sequence of characters.  The "." in a pattern ending in ".*"
+	does not need to be matched - a file without an extension will
+	be listed if it matches the pattern to the left of the ".".
+	Multiple patterns, separated by semicolons (";"), may be
+	listed in one component.  Thus, the above filter string
+	describes two filters that the user may choose from.  The
+	first filter is labeled, "C# files", and lists all files
+	ending in ".cs".  The second filter is labeled "All files",
+	and lists all files. </li>
+<li> <a
+	href="http://msdn.microsoft.com/en-us/library/system.windows.forms.filedialog.filterindex(v=vs.110).aspx"><b>FilterIndex</b></a>
+	indicates which pair in the filter string is currently being
+	used.  Note that the first pair has an index of 1, not
+	0. </li>
+<li> <a
+	href="http://msdn.microsoft.com/en-us/library/system.windows.forms.filedialog.addextension(v=vs.110).aspx"><b>AddExtension</b></a>
+	and <a
+	  href="http://msdn.microsoft.com/en-us/library/system.windows.forms.filedialog.defaultext(v=vs.110).aspx"><b>DefaultExt</b></a>
+	control the dialog's behavior when the user types in a file
+	name without an extension.  When this happens, if a filter
+	with a unique extension is chosen, that extension will be
+	appended, regardless of the values of these two properties.
+	Otherwise, if <b>AddExtension</b> is <b>True</b>, the value of
+	<b>DefaultExt</b> will be appended, following a ".".</li>
+</ul>
+Other properties allow further customization of file dialogs.  For
+    more details, the <a
+    href="http://msdn.microsoft.com/en-us/library/system.windows.forms.openfiledialog(v=vs.110).aspx"><b>OpenFileDialog</b></a>
+    and <a
+    href="http://msdn.microsoft.com/en-us/library/system.windows.forms.savefiledialog(v=vs.110).aspx"><b>SaveFileDialog</b></a>
+    documentation.
+
+<p></p>
+<div class="NAVBAR">
+<a href="/~rhowell/DataStructures/redirect/custom-dialogs">Next:
+      Custom Dialogs
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/message-boxes">Previous:
+      <b>MessageBox</b>es 
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/dialogs">Up: Dialogs
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<p>
+<small>
+Visual Studio is either a registered trademark or a trademark of
+	Microsoft Corporation in the United States and/or other
+	countries.
+</small>
+</p>
+<p>
+<small>
+<!-- hhmts start -->
+Last modified: Thu Jan 16 14:26:48 CST 2014
+<!-- hhmts end -->
+</small>
+</p>
+<small>
+    <i> &copy; Copyright 2014, <a
+    href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i> 
+</small>
+
+<p></p>
+
+<table border=0 cellpadding=2 summary="This table is used for layout
+purposes only.">
+<tr>
+<td align=center>
+    <a href="http://validator.w3.org/check/referer"><img border="0"
+        src="/~rhowell/valid-html401.gif"
+        alt="Valid HTML 4.01!" height="31" width="88"></a>
+</td>
+<tr>
+<td>
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+             <img border="0"
+                  src="/~howell/vcss.gif" 
+                  alt="Valid CSS!" height="31" width="88">
+            </a>
+</td>
+</table>
+
+</body>
+
+</html>

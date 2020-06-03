@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>strings</title>
+<link rel=STYLESHEET href="/~rhowell/style.css">
+
+</head>
+
+<body>
+<div class="NAVBAR">
+<a href="/~rhowell/DataStructures/redirect/stringbuilders">Next:
+      <b>StringBuilder</b>s 
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/strings">Up:
+      <b>string</b>s and <b>StringBuilder</b>s
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<h1>strings</h1>
+
+Instances of the <a
+    href="http://msdn.microsoft.com/en-us/library/system.string(v=vs.110).aspx"><b>string</b></a>
+    class are <i>immutable</i> sequences of characters.  Because
+    <b>string</b> is a class, it is a <a
+    href="/~rhowell/DataStructures/redirect/reference-value">reference
+    type</a>.  Because instances are immutable, once they are
+    constructed, their contents cannot change.  Note that this does
+    <i>not</i> mean that <b>string</b> variables cannot change - we
+    can assign a <b>string</b> variable <tt>s</tt> the value "abc" and
+    later assign it the value "xyz".  These assignments simply assign
+    to <tt>s</tt> references to different instances of the
+    <b>string</b> class.  What immutability does mean is that there is
+    no way to change any of the characters in either of these
+    instances (i.e., in either "abc" or "xyz").  As a result, it is
+    safe to copy a <b>string</b> by simply assigning the value of one
+    <b>string</b> variable to another; for example, if <tt>s</tt> is a
+    <b>string</b> variable, we can write:
+<pre>
+string t = s;
+</pre>
+Note that this is <i>not</i> safe when dealing with mutable reference
+    types, such as arrays.  For example, let <tt>a</tt> be an
+    <b>int[&nbsp;]</b> with at least one element, and consider the
+    following code sequence: 
+<pre>
+int[ ] b = a;
+b[0]++;
+</pre>
+Because <tt>a</tt> and <tt>b</tt> refer to the same array,
+    <tt>a[0]</tt> is incremented as well.  This danger is absent for
+    <b>string</b>s because they are immutable.
+<p>
+We access individual characters in a <b>string</b> by indexing; i.e.,
+      if <tt>s</tt> is a <b>string</b> variable, then <tt>s[0]</tt>
+      retrieves its first character, <tt>s[1]</tt> retrieves its
+      second character, etc.  For example, if <tt>s</tt> refers to the
+      string, "abc", then after executing
+</p>
+<pre>
+char c = s[1];
+</pre>
+<tt>c</tt> will contain 'b'.  Note that a statement like
+<pre>
+s[0] = 'x';
+</pre>
+is prohibited in order to enforce immutability.
+<p>
+We obtain the number of characters in a <b>string</b> using its <a
+	href="http://msdn.microsoft.com/en-us/library/system.string.length(v=vs.110).aspx"><b>Length</b></a>
+	property; for example:
+</p>
+<pre>
+int len = s.Length;
+</pre>
+A <b>string</b> may have a length of 0.  This means that it is the
+    <i>empty string</i>, denoted by "".  Note that "" is different
+    from a <b>null</b> reference - for example, if <tt>s</tt> refers
+    to "", then
+<pre>
+s.Length
+</pre>
+has a value of 0, but if <tt>s</tt> is <b>null</b>, then the above
+    expression will throw a <b>NullReferenceException</b>.
+<p></p>
+We can concatenate two <b>string</b>s using the + operator.  For
+example, if <tt>s</tt> refers to the <b>string</b> "abc"
+and <tt>t</tt> refers to the <b>string</b> "xyz", then
+<pre>
+string u = s + t;
+</pre>
+will assign the <b>string</b> "abcxyz" to <tt>u</tt>.  
+<p>
+Because <b>string</b>s are immutable, building long <b>string</b>s
+      directly from many small pieces is very inefficient.  Suppose,
+      for example, that we want to convert all the lower-case
+      characters in the <b>string</b> <tt>text</tt> to upper-case, and
+      to convert all upper-case letters in <tt>text</tt> to
+      lower-case.  All other characters we will leave unchanged.  We
+      can do this with the following code:
+<pre>
+string result = "";
+for (int i = 0; i &lt; text.Length; i++)
+{
+    char c = text[i];
+    if (Char.IsLower(c))
+    {
+        result += Char.ToUpper(c);
+    }
+    else if (Char.IsUpper(c))
+    {
+        result += Char.ToLower(c);
+    }
+    else
+    {
+        result += c;
+    }
+}
+</pre>
+Now suppose that <tt>text</tt> contains 100,000 characters.  Each
+    iteration of the loop executes one of the three branches of the
+    <b>if</b>-statement, each of which concatenates one character to
+    the <b>string</b> accumulated so far.  Because <b>string</b>s are
+    immutable, this concatenation must be done by copying all the
+    characters in <tt>result</tt>, along with the concatenated
+    character, to a new <b>string</b>.  As a result, if we were to add
+    up the total number of characters copied over the course
+    of the entire loop, we would come up with 5,000,050,000 character
+    copies done.  This may take a while.  In general, we say that this
+    code runs in 
+    <i>O</i>(<i>n</i><sup>2</sup>) time, where <i>n</i> is the length
+    of <tt>text</tt>.  This means that as <i>n</i> increases, the
+    running time of the code is at worst proportional to
+    <i>n</i><sup>2</sup>.  In <a
+    href="/~rhowell/DataStructures/redirect/stringbuilders">the next
+    section</a>, we will see how we can do this much more efficiently
+    using another data structure.
+<p>
+<b>string</b>s have many other methods to allow various kinds of
+      manipulation - see <a
+      href="http://msdn.microsoft.com/en-us/library/system.string(v=vs.110).aspx">the
+      documentation for the <b>string</b> class</a> for details.  
+</p>
+
+<p></p>
+<div class="NAVBAR">
+<a href="/~rhowell/DataStructures/redirect/stringbuilders">Next:
+      <b>StringBuilder</b>s 
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/strings">Up:
+      <b>string</b>s and <b>StringBuilder</b>s
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<p>
+<small>
+<!-- hhmts start -->
+Last modified: Fri Jan 30 09:51:18 CST 2015
+<!-- hhmts end -->
+</small>
+</p>
+<small>
+    <i> &copy; Copyright 2014, 2015, <a
+    href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i> 
+</small>
+
+<p></p>
+
+<table border=0 cellpadding=2 summary="This table is used for layout
+purposes only.">
+<tr>
+<td align=center>
+    <a href="http://validator.w3.org/check/referer"><img border="0"
+        src="/~rhowell/valid-html401.gif"
+        alt="Valid HTML 4.01!" height="31" width="88"></a>
+</td>
+<tr>
+<td>
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+             <img border="0"
+                  src="/~howell/vcss.gif" 
+                  alt="Valid CSS!" height="31" width="88">
+            </a>
+</td>
+</table>
+
+</body>
+
+</html>

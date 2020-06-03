@@ -1,0 +1,296 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Enumerators</title>
+<link rel=STYLESHEET href="/~rhowell/style.css">
+
+</head>
+
+<body>
+<div class="NAVBAR">
+<a href="/~rhowell/DataStructures/redirect/switch">Next: The
+      <b>switch</b> Statement
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/foreach">Previous:
+      The <b>foreach</b> Statement
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/syntax">Up: C# Syntax
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+    <h1>Enumerators</h1>
+
+    As we saw in <a
+    href="/~rhowell/DataStructures/redirect/foreach">the previous
+    section</a>, in order for a data structure to support a
+    <b>foreach</b> loop, it must be a subtype of either <a
+    href="http://msdn.microsoft.com/en-us/library/system.collections.ienumerable.aspx"><b>IEnumerable</b></a>
+    or <a
+    href="http://msdn.microsoft.com/en-us/library/9eekhta0(v=vs.110).aspx"><b>IEnumerable&lt;T&gt;</b></a>,
+    where <b>T</b> is the type of the elements in the data structure.
+    Thus, because <a
+    href="https://msdn.microsoft.com/en-us/library/xfhwa508.aspx"><b>Dictionary&lt;TKey,
+    TValue&gt;</b></a>
+    is a subtype of <b>IEnumerable&lt;KeyValuePair&lt;TKey,
+    TValue&gt;&gt;</b>, we can use a <b>foreach</b> loop to iterate
+    through the key-value pairs that it stores.  Likewise, its <a
+    href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.keys?view=netframework-4.7.2#System_Collections_Generic_Dictionary_2_Keys"><b>Keys</b></a>
+    and <a
+    href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.values?view=netframework-4.7.2"><b>Values</b></a>
+    properties get objects that are subtypes of
+    <b>IEnumerable&lt;TKey&gt;</b> and
+    <b>IEnumerable&lt;TValue&gt;</b>, respectively, <b>foreach</b>
+    loops may be 
+    used to iterate these objects as well, in order to process all the
+    keys or all the values stored in the dictionary.
+    <b>IEnumerable</b> and <b>IEnumerable&lt;T&gt;</b> are <a
+    href="http://people.cs.ksu.edu/~rhowell/DataStructures/redirect/interfaces">interfaces</a>; hence,
+    we must define any subtypes so that they implement these
+    interfaces.  In this section, we will show how to implement the
+    <b>IEnumerable&lt;T&gt;</b> interface to support a <b>foreach</b>
+    loop.
+    <p>
+      The <b>IEnumerable&lt;T&gt;</b> interface requires two methods:
+    </p>
+    
+    <ul>
+      <li>
+	<b>public IEnumerator&lt;T&gt; GetEnumerator()</b>
+      </li>
+      <li>
+	<b>IEnumerator IEnumerable.GetEnumerator()</b>
+      </li>
+    </ul>
+    The latter method is required only because
+    <b>IEnumerable&lt;T&gt;</b> is a subtype of <b>IEnumerable</b>,
+    and that interface requires a <b>GetEnumerator</b> method that
+    returns a non-generic <b>IEnumerator</b>.  Both of these methods
+    should return the same object; hence, because
+    <b>IEnumerator&lt;T&gt;</b> is also a subtype of
+    <b>IEnumerator</b>, this
+    method can simply call the first method: 
+<pre>
+IEnumerator IEnumerable.GetEnumerator()
+{
+    return GetEnumerator();
+}
+</pre>      
+The <b>public GetEnumerator</b> method returns an
+    <b>IEnumerator&lt;T&gt;</b>.  In order to get instances of this
+    interface, we could define a class that implements it; however, C#
+    provides a simpler way to define a subtype of this interface, or,
+    when needed, the <b>IEnumerable&lt;T&gt;</b> interface.
+    <p>
+      Defining such an enumerator is as simple as writing code to
+      iterate through the elements of the data structure.  As each
+      element is reached, it is enumerated via a <b>yield return</b>
+      statement.  For example, suppose a dictionary implementation
+      uses a <b>List&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;</b>
+      called <tt>_elements</tt> to
+      store its key-value pairs.  We can then define its
+      <b>GetEnumerator</b> method as follows:
+    </p>
+    
+<pre>
+public IEnumerator&lt;KeyValuePair&lt;TKey, TValue&gt;&gt; GetEnumerator()
+{
+    foreach (KeyValuePair&lt;TKey, TValue&gt; p in _elements)
+    {
+        yield return p;
+    }
+}
+</pre>      
+Suppose user code contains a <b>Dictionary&lt;string, int&gt;</b>
+    called <tt>d</tt> and a <b>foreach</b> loop structured as follows:
+<pre>
+foreach (KeyValuePair&lt;string, int&gt; x in d)
+{
+    . . .
+}
+</pre>
+Then the <b>GetEnumerator</b> method is executed until the <b>yield
+      return</b> is reached.  The state of this method is then saved,
+      and the value <tt>p</tt> is used as the
+      value for <tt>x</tt> in the first iteration of the
+      <b>foreach</b> in the user code.  When this loop reaches its
+      second iteration, the <b>GetEnumerator</b> method resumes its
+      execution until it reaches the <b>yield return</b> a second
+      time, and again, the current value of <tt>p</tt> is used as the
+      value of <tt>x</tt> in the second iteration of the loop in user
+      code.  This continues until the <b>GetEnumerator</b> method
+    finishes; at this point, the loop in user code terminates.
+    <p>
+      Before continuing, we should mention that there is a simpler way
+      of implementing the <b>public GetEnumerator</b> method in the
+      above example.  Because <b>List&lt;T&gt;</b> implements
+      <b>IEnumerable&lt;T&gt;</b>, we can simply use its enumerator:
+    </p>
+<pre>
+public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator()
+{
+    return _elements.GetEnumerator();
+}
+</pre>      
+    <p>
+      However, the above example illustrates a more general technique
+      that can be used when we don't have the desired enumerator
+      already available.  For instance, continuing the above example,
+      suppose we wish to define a <b>Keys</b> property to get an
+      <b>IEnumerable&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;</b> that
+      iterates through the keys in the dictionary.  Because
+      the dictionary now supports a <b>foreach</b> loop, we can define
+      this code to iterate through the key-value pairs in the
+      dictionary, rather than the key-value pairs stored in the
+      <b>List&lt;KeyVauePair&lt;TKey, TValue&gt;&gt;</b>:
+    </p>
+    <pre>
+public IEnumerable&lt;TKey&gt; Keys
+{
+    get
+    {
+        foreach (KeyValuePair&lt;TKey, TValue&gt; p in this)
+        {
+            yield return p.Key;
+        }
+    }
+}
+</pre>
+The above code is more maintainable than iterating through the
+    <b>List&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;</b> as it doesn't
+    depend on the specific implementation of the dictionary.
+    <p>
+      While this technique usually works best with iterative code, it
+      can also be used with recursion, although the
+      translation usually ends up being less direct and less
+      efficient.  Suppose, for example, our dictionary were
+      implemented as in "<a
+      href="http://people.cs.ksu.edu/~rhowell/DataStructures/redirect/binary-search-trees">Binary
+      Search Trees</a>", where a binary search tree is used.  The idea
+      is to
+      adapt the <a
+      href="http://people.cs.ksu.edu/~rhowell/DataStructures/redirect/inorder-traversal">inorder
+      traversal</a> algorithm.  However, we can't use this directly to
+      implement a recursive version of the <b>GetEnumerator</b>
+      method because this method does not take any parameters; hence,
+      we can't apply it to arbitrary subtrees.  Instead, we need a
+      separate recursive 
+      method that takes a <b>BinaryTreeNode&lt;KeyValuePair&lt;TKey,
+      TValue&gt;&gt;</b> as its parameter and returns the enumerator we
+      need.  Another problem, though, is that the recursive calls will
+      no longer do the processing that needs to be done on the
+      children - they will simply return enumerators.  We therefore
+      need to iterate through each of these enumerators to include
+      their elements in the enumerator we are returning:
+    </p>
+    <pre>
+private static IEnumerable&lt;KeyValuePair&lt;TKey, TValue&gt;&gt; GetEnumerable(BinaryTreeNode&lt;KeyValuePair&lt;TKey, TValue&gt;&gt; t)
+{
+    if (t != null)
+    {
+        foreach (KeyValuePair&lt;TKey, TValue&gt; p in GetEnumerable(t.LeftChild))
+        {
+            yield return p;
+        }
+        yield return t.Data;
+        foreach (KeyValuePair&lt;TKey, TValue&gt; p in GetEnumerable(t.RightChild))
+        {
+            yield return p;
+        }
+    }
+}
+</pre>      
+
+    Note that we've made the return type of this method
+    <b>IEnumerable&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;</b> because
+    we need to use a <b>foreach</b> loop on the result of the
+    recursive calls.  Then because any instance of this type must have
+    a <b>GetEnumerator</b> method, we can implement
+    the <b>GetEnumerator</b> method for the dictionary as follows:
+<pre>
+public IEnumerator&lt;KeyValuePair&lt;TKey, TValue&gt;&gt; GetEnumerator()
+{
+    return GetEnumerable(_elements).GetEnumerator();
+}
+</pre>      
+In transforming the inorder traversal into the above code, we have
+    introduced some extra loops.  These loops lead to less efficient
+    code.  Specifically, if the binary search tree is
+    an AVL tree or other balanced binary tree, the time to iterate
+    through this enumerator is
+    in <i>O</i>(<i>n</i> lg <i>n</i>), where <i>n</i> is the number of
+    nodes in the 
+    tree.  The inorder traversal, by contrast, runs in
+    <i>O</i>(<i>n</i>) time.  In order to achieve this running time
+    with an enumerator, we need to translate the inorder traversal
+      to iterative code using a stack.  However, this code isn't easy
+      to understand:
+<pre>
+public IEnumerator&lt;KeyValuePair&lt;TKey, TValue&gt;&gt; GetEnumerator()
+{
+    Stack&lt;BinaryTreeNode&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;&gt; s = new Stack&lt;BinaryTreeNode&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;&gt;();
+    BinaryTreeNode&lt;KeyValuePair&lt;TKey, TValue&gt;&gt; t = _elements;
+    while (t != null || s.Count &gt; 0)
+    {
+        while (t != null)
+        {
+            s.Push(t);
+            t = t.LeftChild;
+        }
+        t = s.Pop();
+        yield return t.Data;
+        t = t.RightChild;
+    }
+}
+</pre>      
+<p></p>
+<div class="NAVBAR">
+<a href="/~rhowell/DataStructures/redirect/switch">Next: The
+      <b>switch</b> Statement
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/foreach">Previous:
+      The <b>foreach</b> Statement
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/syntax">Up: C# Syntax
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<p>
+<small>
+<!-- hhmts start -->
+Last modified: Wed Mar  6 12:11:11 CST 2019
+<!-- hhmts end -->
+</small>
+</p>
+<small>
+    <i> &copy; Copyright 2019, <a
+    href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i> 
+</small>
+
+<p></p>
+
+<table border=0 cellpadding=2 summary="This table is used for layout
+purposes only.">
+<tr>
+<td align=center>
+    <a href="http://validator.w3.org/check/referer"><img border="0"
+        src="/~rhowell/valid-html401.gif"
+        alt="Valid HTML 4.01!" height="31" width="88"></a>
+</td>
+<tr>
+<td>
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+             <img border="0"
+                  src="/~howell/vcss.gif" 
+                  alt="Valid CSS!" height="31" width="88">
+            </a>
+</td>
+</table>
+
+</body>
+
+</html>

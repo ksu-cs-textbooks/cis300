@@ -1,0 +1,512 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Implementing Undo and Redo for a TextBox</title>
+<link rel=STYLESHEET href="/~rhowell/style.css">
+
+</head>
+
+<body>
+<div class="NAVBAR">
+<a href="/~rhowell/DataStructures/redirect/paren-matching">Next:
+      Parenthesis Matching
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/stacks">Previous:
+      Introduction to Stacks
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/stacks-queues">Up:
+      Stacks and Queues
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<h1>Implementing Undo and Redo for a TextBox</h1>
+
+A <b>TextBox</b> has a rather crude Undo/Redo feature.  By
+    right-clicking on a <b>TextBox</b>, a popup menu containing an
+    Undo entry is presented.  This Undo will undo only one action,
+    which may include several edits.  An immediate subsequent Undo
+    will undo the Undo - in essence, a Redo.  The same behavior can be
+    achieved using Ctrl+Z.  A more powerful Undo/Redo feature would
+    allow an arbitrary sequence of edits to be undone, with the option
+    of redoing any of these Undo operations.  This section outlines
+    various ways of implementing such a feature.
+<p>
+We first observe that when we perform an Undo, we want to undo the
+      most recent edit that has not been undone; i.e., we need LIFO
+      access to the edits.  Likewise, when we perform a Redo, we want
+      to redo the most recent Undo that has not been redone.  Again,
+      we need LIFO access to the Undo operations.  We will therefore
+      use two stacks, one to keep the edit history, and one to keep
+      the Undo history (i.e., the history of Undo operations that can
+      be redone).
+</p>
+Before we can define these stacks, we need to determine what we will
+    be storing in them; i.e., we need to determine how we will
+    represent an edit.  We will consider several ways of doing this,
+    but the simplest way is to store the entire contents of the
+    <b>TextBox</b> after each edit.  Proceeding in this way, we really
+    aren't representing edits at all, but we certainly would have the
+    information we need to undo the edits.  Likewise, the Undo history
+    would store the entire contents of the <b>TextBox</b> prior to
+    each Undo.  Because the contents of the <b>TextBox</b> form a
+    <b>string</b>, we need two <b>private</b> fields, each referring
+    to a stack of <b>string</b>s:
+<pre>
+/// &lt;summary&gt;
+/// The history of the contents of the TextBox.
+/// &lt;/summary&gt;
+private Stack&lt;string&gt; _editingHistory = new Stack&lt;string&gt;();
+
+/// &lt;summary&gt;
+/// The history of TextBox contents that have been undone and can be redone.
+/// &lt;/summary&gt;
+private Stack&lt;string&gt; _undoHistory = new Stack&lt;string&gt;();
+</pre>
+Before we can proceed to implementing the Undo and Redo operations, we
+    need to do a bit more initialization.  Note that by the way we
+    have defined <tt>_editingHistory</tt>, this stack needs to contain
+    the initial contents of the <b>TextBox</b>.  Therefore, assuming
+    the <b>TextBox</b> field is named <tt>uxDisplay</tt>, we need to
+    add the following line to the end of the constructor of our user
+    interface:
+<pre>
+_editingHistory.Push(uxDisplay.Text);
+</pre>
+In order to support Undo and Redo, we need to be able to record the
+    content of <tt>uxDisplay</tt> each time it is modified.  We can do
+    this via an event handler for the <b>TextChanged</b> event on the
+    <b>TextBox</b>.  Because this event is the default event for a
+    <b>TextBox</b>, we can add such an event handler by
+    double-clicking on the <b>TextBox</b> within the Visual Studio®
+    Design window.  This event handler will then be called every time the
+    contents of the <b>TextBox</b> are changed.
+<p>
+We need to deal with one important issue before we can write the code
+      for this event handler.  Whenever we perform an Undo or Redo
+      operation, we will change the contents of the <b>TextBox</b>.
+      This will cause the <b>TextChanged</b> event handler to be
+      called.  However, we don't want to treat an Undo or a Redo in
+      the same way as an edit by the user.  For example, if the user
+      does an Undo, we don't want that Undo to be considered an edit,
+      or a subsequent Undo would just undo the Undo; i.e., it would
+      perform a Redo rather than an Undo.
+</p>
+Fortunately, there is an easy way to distinguish between an edit made
+    by the user and a change made by the program code.  A
+    <b>TextBox</b> has a <a
+    href="http://msdn.microsoft.com/en-us/library/system.windows.forms.textboxbase.modified.aspx"><b>Modified</b></a>
+    property, which is set to <b>true</b> when the user modifies the
+    <b>TextBox</b> contents, and is set to <b>false</b> when the
+    program modifies the contents.  Thus, we only want to record the
+    <b>TextBox</b> contents when this property is <b>true</b>.
+    Assuming the <b>TextBox</b> is named <tt>uxDisplay</tt>, we can
+    then set up the event handler as follows:
+<pre>
+/// &lt;summary&gt;
+/// Handles a TextChanged event on the TextBox.
+/// &lt;/summary&gt;
+/// &lt;param name="sender"&gt;&lt;/param&gt;
+/// &lt;param name="e"&gt;&lt;/param&gt;
+private void uxDisplay_TextChanged(object sender, EventArgs e)
+{
+    if (uxDisplay.Modified)
+    {
+        RecordEdit();
+    }
+}
+</pre>
+<p>
+Now let's consider how to write the <tt>RecordEdit</tt> method.
+      Suppose there are two GUI controls (e.g., menu items or buttons)
+      called <tt>uxUndo</tt> and <tt>uxRedo</tt>, which invoke the
+      Undo and Redo operations, respectively.  These controls should
+      be enabled only when there are operations to undo or redo.
+      Thus, initially these controls will be disabled.  Whenever the
+      user modifies the contents of the <b>TextBox</b>, we need to do
+      the following:
+</p>
+<ul>
+<li> Push the resulting text onto <tt>_editingHistory</tt>. </li>
+<li> Enable <tt>uxUndo</tt>, as there is now an edit that can be
+	undone. </li>
+<li> Clear the contents of <tt>_undoHistory</tt>, as the last change
+	to the <b>TextBox</b> contents was not an Undo.  (A
+	<b>Stack&lt;T&gt;</b> has a <a
+	  href="http://msdn.microsoft.com/en-us/library/3278tedw(v=vs.110).aspx"><b>Clear</b></a>
+	method for this purpose.) </li>
+<li> Disable <tt>uxRedo</tt>.
+</ul>
+We therefore have the following method:
+<pre>
+/// &lt;summary&gt;
+/// Records an edit made by the user.
+/// &lt;/summary&gt;
+private void RecordEdit()
+{
+    _editingHistory.Push(uxDisplay.Text);
+    uxUndo.Enabled = true;
+    _undoHistory.Clear();
+    uxRedo.Enabled = false;
+}
+</pre>
+Now that we have a mechanism for recording the user's edits, we can
+    implement the Undo operation.  The contents of the <b>TextBox</b>
+    following the last edit (i.e, the current contents of the
+    <b>TextBox</b>) should always be at the top of
+    <tt>_editingHistory</tt>.  An Undo should change the current
+    contents to the previous contents - i.e., to the <i>next</i>
+    <b>string</b> on <tt>_editingHistory</tt>.  However, we don't want
+    to lose the top <b>string</b>, as this is the <b>string</b> that
+    would need to be restored by a subsequent Redo.  Instead, we need
+    to push this <b>string</b> onto <tt>_undoHistory</tt>.
+    We then need to enable <tt>uxRedo</tt>.  In order to determine
+    whether <tt>uxUndo</tt> should be enabled, we need to know how
+    many elements remain in <tt>_editingHistory</tt>.  We know there
+    is at least one <b>string</b> on this stack - 
+    the <b>string</b> that we placed in the <b>TextBox</b>.  There is
+    an edit to undo if there is at 
+    least one more element on this stack - i.e., if its <b>Count</b>
+    is greater than 1.  We therefore have the following event handler
+    for a Click event on <tt>uxUndo</tt>:
+<pre>
+/// &lt;summary&gt;
+/// Handles a Click event on Undo.
+/// &lt;/summary&gt;
+/// &lt;param name="sender"&gt;&lt;/param&gt;
+/// &lt;param name="e"&gt;&lt;/param&gt;
+private void uxUndo_Click(object sender, EventArgs e)
+{
+    _undoHistory.Push(_editingHistory.Pop());
+    uxRedo.Enabled = true;
+    uxDisplay.Text = _editingHistory.Peek();
+    uxUndo.Enabled = _editingHistory.Count &gt; 1;
+}
+</pre>
+The implementation of Redo is similar, but now we need to transfer a
+    <b>string</b> between the stacks in the opposite direction - we
+    move the top <b>string</b> from <tt>_undoHistory</tt> to
+    <tt>_editingHistory</tt>.  Then <tt>uxRedo</tt> should be enabled
+    if any more <b>string</b>s remain in <tt>_undoHistory</tt>.  The
+    <b>string</b> we removed from <tt>_undoHistory</tt> should be
+    placed in the <b>TextBox</b>.  Finally, <tt>uxUndo</tt> should be
+    enabled.  We therefore have the following event handler for a
+    Click event on <tt>uxRedo</tt>:
+<pre>
+/// &lt;summary&gt;
+/// Handles a Click event on Redo.
+/// &lt;/summary&gt;
+/// &lt;param name="sender"&gt;&lt;/param&gt;
+/// &lt;param name="e"&gt;&lt;/param&gt;
+private void uxRedo_Click(object sender, EventArgs e)
+{
+    _editingHistory.Push(_undoHistory.Pop());
+    uxRedo.Enabled = _undoHistory.Count &gt; 0;
+    uxDisplay.Text = _editingHistory.Peek();
+    uxUndo.Enabled = true;
+}
+</pre>
+This solution will work, except that an Undo or Redo always brings the
+    text caret to the beginning of the <b>TextBox</b> contents.
+    Furthermore, if the <b>TextBox</b> contains
+    a long <b>string</b>, each edit causes a long
+    <b>string</b> to be placed onto <tt>_editingHistory</tt>.  This
+    can quickly eat up a lot of memory, and may eventually fill up all
+    available storage.  In what follows, we will outline two better
+    approaches.
+<p>
+The idea for both of these approaches is that instead of recording the
+      entire contents of the <b>TextBox</b> for each edit, we 
+      only record a description of each edit.  A single edit will
+      either be an insertion or a deletion of some text.  The number
+      of characters inserted/deleted may vary, as the edit may be a
+      cut or a paste (if we select a block of text and do a paste, the
+      <b>TextChanged</b> event handler is actually called twice - once
+      for the deletion of the selected text, and once for the
+      insertion of the pasted text).  We can therefore describe the
+      edit with the following three values:
+<ul>
+<li> A <b>bool</b> indicating whether the edit was an insertion or a
+	deletion. </li>
+<li> An <b>int</b> giving the index of the beginning of the
+	edit. </li>
+<li> The <b>string</b> inserted or deleted.
+</ul>
+We can maintain this information in stacks in one of two ways.  One
+    way is to use non-generic stacks and to push three items onto a
+    stack for each edit.  If we do this, we need to realize that when
+    we pop elements from the stack, they will come out in reverse
+    order from the way they were pushed onto it.  Alternatively, we
+    can define a class or a <a
+    href="/~rhowell/DataStructures/redirect/structs">structure</a> to
+    represent an edit using the three values above as <b>private</b>
+    fields.  We can then use generic stacks storing instances of this
+    type.  
+<p>
+Whichever way we choose to represent the edits, we need to be able to
+      compute each of the three pieces of information describing the
+      edit.  In order to compute this information, we need to compare
+      the current contents of the <b>TextBox</b> with its prior
+      contents in order to see how it changed.  This means that, in
+      addition to the two <b>private</b> fields we defined for the
+      stacks, we will also need a <b>private</b> field to store the
+      last <b>string</b> we saw in the <b>TextBox</b>.  Rather than
+      initializing <tt>_editingHistory</tt> within the constructor, we
+      should now initialize this <b>string</b> in its place (because
+      there will have been no edits initially, both stacks should
+      initially be empty).  If we keep this <b>string</b> field up to
+      date, we will always have a "before" picture (the contents of
+      this field) and an "after" picture (the current contents of the
+      <b>TextBox</b>) for the edit we need to record.
+</p>
+To determine whether
+    the edit was an insertion or a deletion, we can compare the lengths
+    of the current <b>TextBox</b> contents and its previous contents.
+    If the current content is longer, then the edit was an insertion;
+    otherwise, the edit was a deletion.  We therefore have the
+    following method for this purpose:
+<pre>
+/// &lt;summary&gt;
+/// Returns whether text was deleted from the given string in order to obtain the contents
+/// of the given TextBox.
+/// &lt;/summary&gt;
+/// &lt;param name="editor"&gt;The TextBox containing the result of the edit.&lt;/param&gt;
+/// &lt;param name="lastContent"&gt;The string representing the text prior to the edit.&lt;/param&gt;
+/// &lt;returns&gt;Whether the edit was a deletion.&lt;/returns&gt;
+private bool IsDeletion(TextBox editor, string lastContent)
+{
+    return editor.TextLength &lt; lastContent.Length;
+}
+</pre>
+<p>
+Note that the above code uses
+the <b>TextBox</b>'s <a href="http://msdn.microsoft.com/en-us/library/system.windows.forms.textboxbase.textlength(v=vs.110).aspx"><b>TextLength</b></a>
+property.  This is more efficient than finding the length of
+its <b>Text</b> property because evaluating the <b>Text</b> property
+requires all the characters to be copied to a new <b>string</b>.
+</p>
+Before getting either the location of the edit or the edit string
+itself, it is useful to compute the length of the edit string.  This
+length is simply the absolute value of the difference in the lengths
+of the <b>string</b> currently in the <b>TextBox</b> and the
+last <b>string</b> we saw there.
+The <a href="http://msdn.microsoft.com/en-us/library/system.math(v=vs.110).aspx"><b>Math</b></a>
+class (in
+the <a href="http://msdn.microsoft.com/en-us/library/System(v=vs.110).aspx"><b>System</b></a>
+namespace) contains
+a <a href="/~rhowell/DataStructures/redirect/static-this"><b>static</b></a>
+method <a href="http://msdn.microsoft.com/en-us/library/dk4666yx(v=vs.110).aspx"><b>Abs</b></a>,
+which computes the absolute value of an <b>int</b>.  We therefore have
+the following method:
+<pre>
+/// &lt;summary&gt;
+/// Gets the length of the text inserted or deleted.
+/// &lt;/summary&gt;
+/// &lt;param name="editor"&gt;The TextBox containing the result of the edit.&lt;/param&gt;
+/// &lt;param name="lastContent"&gt;The string representing the text prior to the edit.&lt;/param&gt;
+/// &lt;returns&gt;The length of the edit.&lt;/returns&gt;
+private int GetEditLength(TextBox editor, string lastContent)
+{
+    return Math.Abs(editor.TextLength - lastContent.Length);
+}
+</pre>
+<p>
+Now that we can determine whether an edit is a deletion or an
+    insertion, and we can find the length of the edit string, it isn't
+    hard to find the beginning of the edit.  First, suppose the edit
+    is a deletion.  The point
+    at which the deletion occurred is the point at which
+    the text caret now resides.  We can find this point using the 
+      <b>TextBox</b>'s <a
+      href="http://msdn.microsoft.com/en-us/library/system.windows.forms.textboxbase.selectionstart(v=vs.110).aspx"><b>SelectionStart</b></a>
+      property.  When there is no current selection - and there never
+      will be immediately following an edit - this property gives the
+      location of the text caret in the <b>TextBox</b>.  
+Now consider the case in which the edit was an insertion.  When text
+      is inserted into a <b>TextBox</b>, the text caret ends up at the
+      <i>end</i> of the inserted text.  We need to find its beginning.
+      We can do this by subtracting the length of the edit string from
+      the text caret position.  We therefore have the following
+      method:
+</p>
+<pre>
+/// &lt;summary&gt;
+/// Gets the location of the beginning of the edit.
+/// &lt;/summary&gt;
+/// &lt;param name="editor"&gt;The TextBox containing the result of the edit.&lt;/param&gt;
+/// &lt;param name="isDeletion"&gt;Indicates whether the edit was a deletion.&lt;/param&gt;
+/// &lt;param name="len"&gt;The length of the edit string.&lt;/param&gt;
+/// &lt;returns&gt;The location of the beginning of the edit.&lt;/returns&gt;
+private int GetEditLocation(TextBox editor, bool isDeletion, int len)
+{
+    if (isDeletion)
+    {
+        return editor.SelectionStart;
+    }
+    else
+    {
+        return editor.SelectionStart - len;
+    }
+}
+</pre>
+The last piece of information we need is the <b>string</b> that was
+    deleted or inserted.  If the edit was a deletion,
+    this <b>string</b> can be found in the previous <b>TextBox</b>
+    contents.  Its beginning is the point at which the edit occurred.
+    We can therefore extract the deleted <b>string</b> from the previous
+    contents using its <a
+    href="http://msdn.microsoft.com/en-us/library/aka44szs(v=vs.110).aspx"><b>Substring</b></a>
+    method.  We pass this method the beginning index of the substring
+    and its length, and it returns the substring, which is the deleted
+    <b>string</b>.  On the other hand, if the edit was an insertion,
+      we can find the inserted <b>string</b> in 
+      the current <b>TextBox</b> contents by using its
+      <b>Substring</b> in a similar way.  We therefore have the
+      following method:
+<pre>
+/// &lt;summary&gt;
+/// Gets the edit string.
+/// &lt;/summary&gt;
+/// &lt;param name="content"&gt;The current content of the TextBox.&lt;/param&gt;
+/// &lt;param name="lastContent"&gt;The string representing the text prior to the edit.&lt;/param&gt;
+/// &lt;param name="isDeletion"&gt;Indicates whether the edit was a deletion.&lt;/param&gt;
+/// &lt;param name="editLocation"&gt;The location of the beginning of the edit.&lt;/param&gt;
+/// &lt;param name="len"&gt;The length of the edit.&lt;/param&gt;
+/// &lt;returns&gt;The edit string.&lt;/returns&gt;
+private string GetEditString(string content, string lastContent, bool isDeletion, int editLocation, int len)
+{
+    if (isDeletion)
+    {
+        return lastContent.Substring(editLocation, len);
+    }
+    else
+    {
+        return content.Substring(editLocation, len);
+    }
+}
+</pre>
+Using the methods above, we can modify the <b>RecordEdit</b> method to
+obtain the three values listed above
+to describe an edit.  Once we have placed these three
+    values onto the stack of editing history, we also need to update
+    the <b>string</b> giving the previous <b>TextBox</b> contents.
+    This should now be the current <b>TextBox</b> contents.  We can
+    then finish the method as shown above.
+<p>
+In order to implement Undo and Redo, we need to be able to insert and
+      delete text in the <b>TextBox</b>.  A <b>string</b> has two
+      methods we can use to accomplish this:
+</p>
+<ul>
+<li> The <a
+	  href="http://msdn.microsoft.com/en-us/library/d8d7z2kk.aspx"><b>Remove</b></a>
+	  method takes as its parameters the beginning index and
+	  length of the portion to remove, and returns the
+	  result. </li>
+<li> The <a
+	  href="http://msdn.microsoft.com/en-us/library/system.string.insert.aspx"><b>Insert</b></a>
+	  method takes as its parameters the index at which the
+	  <b>string</b> should be inserted, and the <b>string</b> to
+	  insert.  It returns the result. </li>
+</ul>
+Given the location of the edit along with the edit string itself, we
+can easily provide the parameters to the appropriate method above.
+Furthermore, it is not hard to set the location of the text caret
+using the <b>TextBox</b>'s <b>SelectionStart</b> property - we just
+need to be sure to add the length of the edit string if we are
+inserting text.  The following method therefore performs a given edit,
+updating the <b>string</b> containing the last contents of
+the <b>TextBox</b> as well (we assume this <b>string</b> is
+called <tt>_lastText</tt>):
+<pre>
+/// &lt;summary&gt;
+/// Performs the given edit on the contents of the given TextBox.
+/// &lt;/summary&gt;
+/// &lt;param name="editor"&gt;The TextBox to edit.&lt;/param&gt;
+/// &lt;param name="isDeletion"&gt;Indicates whether the edit is a deletion.&lt;/param&gt;
+/// &lt;param name="loc"&gt;The location of the beginning of the edit.&lt;/param&gt;
+/// &lt;param name="text"&gt;The text to insert or delete.&lt;/param&gt;
+private void DoEdit(TextBox editor, bool isDeletion, int loc, string text)
+{
+    if (isDeletion)
+    {
+        _lastText = editor.Text.Remove(loc, text.Length);
+        editor.Text = _lastText;
+        editor.SelectionStart = loc;
+    }
+    else
+    {
+        _lastText = editor.Text.Insert(loc, text);
+        editor.Text = _lastText;
+        editor.SelectionStart = loc + text.Length;
+    }
+}
+</pre>
+
+We can now implement event handlers for Undo and Redo.  We can obtain
+    the description of the edit from the stack of editing 
+    history for an Undo, or from the stack of undo history for a Redo.
+    This description gives us the type of edit (i.e., either insertion 
+    or deletion), the beginning position of the edit, and the inserted
+    or deleted <b>string</b>.  To implement a Redo, we simply do this
+    edit, but to implement an Undo, we must do the opposite.
+
+<p></p>
+<div class="NAVBAR">
+<a href="/~rhowell/DataStructures/redirect/paren-matching">Next:
+      Parenthesis Matching
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/stacks">Previous:
+      Introduction to Stacks
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/stacks-queues">Up:
+      Stacks and Queues
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<p>
+<small>
+Visual Studio is either a registered trademark or a trademark of
+	Microsoft Corporation in the United States and/or other
+	countries.
+</small>
+</p>
+<p>
+<small>
+<!-- hhmts start -->
+Last modified: Wed Jan 24 09:37:51 CST 2018
+<!-- hhmts end -->
+</small>
+</p>
+<small>
+    <i> &copy; Copyright 2014, 2018, <a
+    href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i> 
+</small>
+
+<p></p>
+
+<table border=0 cellpadding=2 summary="This table is used for layout
+purposes only.">
+<tr>
+<td align=center>
+    <a href="http://validator.w3.org/check/referer"><img border="0"
+        src="/~rhowell/valid-html401.gif"
+        alt="Valid HTML 4.01!" height="31" width="88"></a>
+</td>
+<tr>
+<td>
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+             <img border="0"
+                  src="/~howell/vcss.gif" 
+                  alt="Valid CSS!" height="31" width="88">
+            </a>
+</td>
+</table>
+
+</body>
+
+</html>

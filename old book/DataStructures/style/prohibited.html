@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Prohibited Features</title>
+<link rel=STYLESHEET href="/~rhowell/style.css">
+
+</head>
+
+<body>
+<div class="NAVBAR">
+
+      <a href="/~rhowell/DataStructures/redirect/comments">Previous:
+      Comments</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a 
+      href="/~rhowell/DataStructures/redirect/style">Up: Programming
+      Style Requirements</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a 
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<h1>Prohibited Features</h1>
+
+The following features of C# should not be used on assignments or exams:
+
+<ul>
+<li> <b>The goto statement:</b> It has been 50 years since
+	Dijkstra published <a
+	  href="http://www.cs.utexas.edu/users/EWD/ewd02xx/EWD215.PDF">"Go To Statement Considered Harmful"</a> (<i>Communications of the ACM</i>, vol. 11 (1968), pp. 147-148).  
+I am amazed that languages continue to include this statement. </li>
+
+<li> <b>The unsafe keyword:</b> The name pretty much says it
+	all. </li>
+
+<li> <b>The var keyword:</b> There are very few contexts in which this
+	is needed, and these contexts won't occur in this class.  For
+	all other contexts, it makes the code less readable. 
+
+<li> <b>Virtual methods:</b>  These are useful in large-scale software
+	development; however, they are overused. They will not be
+	needed in the programming we will be doing.  (However, virtual
+	methods in the .NET class library may be <a
+	href="/~rhowell/DataStructures/redirect/method-overriding">overridden</a>.)
+	</li>
+<li> <b>Extension methods:</b>  These methods are not defined within
+	the class on which they operate, but elsewhere.  Consequently,
+	they tend to be much less efficient than the methods defined
+	within the class.  If the Visual Studio® auto-complete gives
+	you a method that looks like it 
+	gives you what you want, first click on it and take a look at
+	its popup documentation.  If it is an extension method,
+	this documentation will begin with "(extension)". </li>
+</ul>
+
+<p></p>
+<div class="NAVBAR">
+      <a href="/~rhowell/DataStructures/redirect/comments">Previous:
+      Comments</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a 
+      href="/~rhowell/DataStructures/redirect/style">Up: Programming
+      Style Requirements</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a 
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+<p>
+<small>
+Visual Studio is either a registered trademark or a trademark of
+	Microsoft Corporation in the United States and/or other
+	countries.
+</small>
+</p>
+
+<p>
+<small>
+<!-- hhmts start -->
+Last modified: Fri Jan  5 10:56:12 CST 2018
+<!-- hhmts end -->
+</small>
+</p>
+<small>
+    <i> &copy; Copyright 2013, 2017, <a
+    href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i> 
+</small>
+
+<p></p>
+
+<table border=0 cellpadding=2 summary="This table is used for layout
+purposes only.">
+<tr>
+<td align=center>
+    <a href="http://validator.w3.org/check/referer"><img border="0"
+        src="/~rhowell/valid-html401.gif"
+        alt="Valid HTML 4.01!" height="31" width="88"></a>
+</td>
+<tr>
+<td>
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+             <img border="0"
+                  src="/~howell/vcss.gif" 
+                  alt="Valid CSS!" height="31" width="88">
+            </a>
+</td>
+</table>
+
+</body>
+
+</html>

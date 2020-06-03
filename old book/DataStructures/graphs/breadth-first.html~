@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Unweighted Shortest Paths</title>
+<link rel=STYLESHEET href="/~rhowell/style.css">
+
+</head>
+
+<body>
+<div class="NAVBAR">
+<a href="/~rhowell/DataStructures/redirect/graph-impl">Next:
+      Implementing a Graph
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/shortest-paths">Previous:
+      Shortest Paths
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/graphs">Up: Graphs
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<h1>Unweighted Shortest Paths</h1>
+
+In some shortest path problems, all edges have the same length.  For
+    example, we may be trying to find the shortest path out of a maze.
+    Each cell in the maze is a node, and an edge connects two nodes if
+    we can move between them in a single step.  In this problem, we
+    simply want to minimize the number of edges in a path to an exit.
+    We therefore say that the edges are <i>unweighted</i> - they
+    contain no explicit length information, and the length of each
+    edge is considered to be 1.
+<p>
+We could of course apply <a
+	href="/~rhowell/DataStructures/redirect/shortest-paths">Dijkstra's
+	algorithm</a> to this problem, using 1 as the length of each
+	edge.  However, if analyze what this algorithm does in this
+	case, we find that we can optimize it to achieve significantly
+	better performance.
+</p>
+The optimization revolves around the use of the min-priority queue.
+    Note that Dijkstra's algorithm first adds all outgoing edges from
+    the start node <i>u</i> to the min-priority queue, using their
+    lengths as their priorities.  For unweighted edges, each of these
+    priorities will be 1.  As the algorithm progresses it retrieves
+    the minimum priority and removes an edge having this priority.  If
+    it adds any new edges before removing the next edge, they will all
+    have a priority 1 greater than the priority of the edge just
+    removed.
+<p>
+We claim that this behavior causes the priorities in the min-priority
+      queue to differ by no more than 1.  To see this, we will show
+      that we can never reach a point where we change the maximum
+      difference in priorities from no more than 1 to more than 1.
+      First observe that
+      when the outgoing edges from <i>u</i> are added, the priorities
+      all differ by 0&nbsp;&le;&nbsp;1.  Removing an edge can't
+      increase the difference in the priorities stored.  Suppose the
+      edge we remove has priority <i>p</i>.  Assuming we have not yet
+      achieved a priority difference greater than 1, any priorities
+      remaining in the min-priority queue must be either <i>p</i> or
+      <i>p</i>&nbsp;+&nbsp;1.  Any edges we add before removing the
+      next edge have priority <i>p</i>&nbsp;+&nbsp;1.  Hence, the
+      priority difference remains no more than 1.  Because we have
+      covered all changes to the priority queue, we can never cause
+      the priority difference to exceed 1.
+</p>
+Based on the above claim, we can now claim that whenever an edge is
+    added, its priority is the largest of any in the min-priority
+    queue.  This is certainly true when we add the outgoing edges from
+    <i>u</i>, as all these edges have the same priority.  Furthermore,
+    whenever we remove an edge with priority <i>p</i>, any edges we
+    subsequently add have priority <i>p</i>&nbsp;+&nbsp;1, which must
+    be the maximum priority in the min-priority queue.
+<p>
+As a result of this behavior, we can replace the min-priority queue
+      with an ordinary <a
+      href="/~rhowell/DataStructures/redirect/queues">FIFO queue</a>,
+      and for unweighted edges, the behavior of the algorithm will be
+      the same.  Because accessing a FIFO queue is more efficient than
+      accessing a min-priority queue, the resulting algorithm, known
+      as <i>breadth-first search</i>, is also more efficient.
+</p>
+<p></p>
+<div class="NAVBAR">
+<a href="/~rhowell/DataStructures/redirect/graph-impl">Next:
+      Implementing a Graph
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/shortest-paths">Previous:
+      Shortest Paths
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/graphs">Up: Graphs
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<p>
+<small>
+<!-- hhmts start -->
+Last modified: Thu Nov 20 14:25:54 CST 2014
+<!-- hhmts end -->
+</small>
+</p>
+<small>
+    <i> &copy; Copyright 2014, <a
+    href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i> 
+</small>
+
+<p></p>
+
+<table border=0 cellpadding=2 summary="This table is used for layout
+purposes only.">
+<tr>
+<td align=center>
+    <a href="http://validator.w3.org/check/referer"><img border="0"
+        src="/~rhowell/valid-html401.gif"
+        alt="Valid HTML 4.01!" height="31" width="88"></a>
+</td>
+<tr>
+<td>
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+             <img border="0"
+                  src="/~howell/vcss.gif" 
+                  alt="Valid CSS!" height="31" width="88">
+            </a>
+</td>
+</table>
+
+</body>
+
+</html>

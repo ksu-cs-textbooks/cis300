@@ -1,0 +1,252 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Implementing a Queue</title>
+<link rel=STYLESHEET href="/~rhowell/style.css">
+
+</head>
+
+<body>
+<div class="NAVBAR">
+<a
+      href="/~rhowell/DataStructures/redirect/queues">Previous:
+      Introduction to Queues
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/stacks-queues">Up:
+      Stacks and Queues
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<h1>Implementing a Queue</h1>
+
+We will approach the implementation of a queue much like we did the <a
+    href="/~rhowell/DataStructures/redirect/stack-impl">implementation
+    of a stack</a> - we will use part of an array to store the
+    elements, and create a larger array as needed.  However,
+    efficiently implementing a stack is easier because we only need to
+    access one end of a stack, but we need to access both ends of a
+    queue.  Suppose, for example, that we were to use the initial part
+    of the array, as we did for a stack; i.e.:
+<p>
+<img src="bad-queue-impl.jpg" 
+    alt="A queue implementation using the initial part of an array">
+</p>
+This implementation works well as long as we are only enqueuing
+    elements - each element is placed at the back, much like pushing
+    an element onto a stack.  However, consider what happens when we
+    dequeue an element.  The element is easy to locate, as it must be
+    at index 0, but in order to maintain the above picture, we would
+    need to move all of the remaining elements one location to the
+    left.  This becomes less efficient as the number of elements in
+    the queue increases.
+<p>
+One alternative is to modify the picture somewhat:
+</p>
+<img src="nowrap-queue.jpg" alt="A more general queue implementation">
+<p>
+We can maintain this picture more efficiently, as there is now no need
+      to move the elements when we dequeue an element - we can just
+      adjust the front of the queue to be the next element.  It does mean
+      that we need to keep track of a bit more information, namely,
+      the location of either the front or the back, in addition to the
+      <b>Count</b> (note that we can compute the other end from
+      these two values).  But a more serious problem remains.  Notice
+      that as we enqueue and dequeue elements, both the front and the
+      back work their way to the right.  Eventually,
+      the back element will be the last element in the array.
+      However, this doesn't mean that we are using the entire array,
+      as the front can be anywhere in the array.
+</p>
+To solve this problem, when we need to enqueue an element but the back
+    element is in the last array location, we place the next element
+    at index 0.  It is as if we are imagining the array as being
+    circular, as the next location after the last is back at the
+    beginning.  The following picture gives two views of such a
+    "circular array" implementation:
+<p>
+<img src="wrapped-queue.jpg" alt="A circular array implementation of a queue">
+</p>
+With this implementation, we only need to construct a larger array if
+    we completely fill the current array, and unless we need to do
+    this, we don't need to move elements around.  We need the
+    following class members in order to keep track of
+    everything:
+<ul>
+<li> a <b>private T[&nbsp;]</b> field in which to store the elements; </li>
+<li> a <b>public int Count</b> property; and </li>
+<li> a <b>private int</b> field giving the index of the element at the
+	front of the 
+	queue (if the queue is empty, this can be any valid index).
+</ul>
+<p>
+Let us now consider how we would implement <b>Enqueue</b>.  We first
+      need to determine whether the array is full by comparing the
+      <b>Count</b> with the size of the array.  If it is full,
+      we need to construct a new array of twice the size, as we did
+      for both the <a
+      href="/~rhowell/DataStructures/redirect/stringbuilder-impl"><b>StringBuilder</b>
+      implementation</a> and the <a
+      href="/~rhowell/DataStructures/redirect/stack-impl">stack
+      implementation</a>.  However, we can't simply copy the entire
+      array to the beginning of the new array, as we did for these
+      other two implementations.  To do so would leave a gap in the
+      middle of the queue, as shown in the following illustration:
+</p>
+<img src="bad-circular-array-copy.jpg"
+    alt="Why a simple copy will not work for a circular array">
+<p>
+While there are several ways of copying the elements correctly, it may
+      be helpful to copy in such a way that the index of the front of
+      the queue remains unchanged; i.e., we copy as follows:
+</p>
+<img src="circular-array-copy.jpg"
+    alt="A correct copy for a circular array">
+<p>
+In order to copy the elements like this, we can use the <b>static</b>
+      method, <a
+      href="http://msdn.microsoft.com/en-us/library/z50k9bft.aspx"><b>Array.Copy</b></a>.
+      This method takes the following parameters:
+</p>
+<ul>
+<li> The array to copy from. </li>
+<li> An <b>int</b> giving the index of the first element to
+	copy. </li>
+<li> The array to copy to. </li>
+<li> An <b>int</b> giving the index in which to place the first
+	element. </li>
+<li> An <b>int</b> giving the number of elements to copy. </li>
+</ul>
+Just figuring out how to fill in these parameters takes some work.
+    Let's first consider the part that begins with the front of the
+    queue.  The index of the first element to copy is the index of the
+    front of the queue, which we have in a <b>private</b> field.  We
+    want to place this element at the same index in the new array.  In
+    order to compute the number of elements to copy, first observe
+    that we know the
+    number of elements in the original array (we can use either the <b>Count</b>
+    property or the length of this array, as these values are equal
+    whenever we need a larger array).  To get the
+    number of elements we want to copy, we can subtract from this
+    value the
+    number of elements we are <i>not</i> copying - i.e., the number of
+    elements preceding the index of the front of the queue.  Because
+    C# uses 0 as the first array index, the
+    number of locations preceding any index <i>i</i> is always
+    <i>i</i>, as illustrated in the following example for <i>i</i> =
+    3:
+    <p>
+      <img src="count-location-example.jpg"
+	alt="An example showing the relationship between an array
+	index and the number of locations preceding it.">
+    </p>
+    Hence, by subtracting the index of the front of the
+    queue from the <b>Count</b>, we get the number of elements we are
+    copying by this call.
+<p>
+Now let's see if we can figure out the parameters for the other call.
+      The first element we want to copy is at index 0.  We want to
+      place it immediately following the elements we have already
+      copied.  Because the last of these elements occupies the last
+      index of the original array, whose size is currently the same as
+      the <b>Count</b>, the next index is just the
+      <b>Count</b>.  The number of elements we want
+      to copy, as we have already argued, is the index of the front of
+      the queue.
+</p>
+Once we have the elements copied to the new array, the hardest part is
+    done.  After we do this, we just need to copy the reference to the
+    new array into the array field.
+<p>
+Once we have ensured that there is room in the array to add a new
+      element, we can complete the <b>Enqueue</b> method.  We need to
+      place the element at the back of the queue.  We can obtain the
+      proper location by adding the <b>Count</b> to
+      the index of the front of the queue, provided this value is not
+      beyond the end of the array.  If it is beyond the end, then we
+      have the following scenario:
+</p>
+    <p>
+      <img src="finding-back-of-queue.jpg"
+	alt="Finding the back of a wrapped queue.">
+    </p>
+    We therefore need to wrap it by subtracting the appropriate amount.
+      Notice that because the <b>Count</b> gives the number of
+      elements in the shaded portions of the above figure, then the
+      amount that our computed location exceeds the length of the
+      array (i.e., the size of the box shown by dashed lines above) is
+      exactly the number of elements that have been wrapped to the
+      beginning of the array (i.e., the size of the first shaded box
+      above).  Thus, the difference between our computed location and
+      the correct location is exactly the length of the array.  To get
+      the correct location for the new element, we therefore must
+    subtract the array's length from the value we computed above.
+    <p>
+      Once we have placed the new element at its proper location, we
+      can then 
+      increment the number of elements, and we are (finally) done.
+    </p>
+    
+The <b>Peek</b> method is straightforward - after verifying that the
+    queue is nonempty, we simply return the element at the front.  The
+    <b>Dequeue</b> method isn't much more difficult.  We can obtain
+    the element we want to return using the <b>Peek</b> method.  We
+    then need to place the default element of type <b>T</b> at the
+    front, and update both the index of the front of the queue and the
+    <b>Count</b> before returning the element we obtained earlier from
+    <b>Peek</b>. 
+    The only slightly tricky part is making sure that when we update
+    the index of the front of the queue, we don't go outside of the
+    array.  If we do, we need to wrap it back around to 0.
+
+<p></p>
+<div class="NAVBAR">
+<a
+      href="/~rhowell/DataStructures/redirect/queues">Previous:
+      Introduction to Queues
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/stacks-queues">Up:
+      Stacks and Queues
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+
+<p>
+<small>
+<!-- hhmts start -->
+Last modified: Tue Jun 19 03:35:42 CDT 2018
+<!-- hhmts end -->
+</small>
+</p>
+<small>
+    <i> &copy; Copyright 2014, 2016, 2018, <a
+    href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i> 
+</small>
+
+<p></p>
+
+<table border=0 cellpadding=2 summary="This table is used for layout
+purposes only.">
+<tr>
+<td align=center>
+    <a href="http://validator.w3.org/check/referer"><img border="0"
+        src="/~rhowell/valid-html401.gif"
+        alt="Valid HTML 4.01!" height="31" width="88"></a>
+</td>
+<tr>
+<td>
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+             <img border="0"
+                  src="/~howell/vcss.gif" 
+                  alt="Valid CSS!" height="31" width="88">
+            </a>
+</td>
+</table>
+
+</body>
+
+</html>

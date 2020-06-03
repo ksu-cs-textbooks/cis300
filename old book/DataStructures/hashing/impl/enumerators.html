@@ -1,0 +1,338 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Enumerating a Hash Table</title>
+<link rel=STYLESHEET href="/~rhowell/style.css">
+
+</head>
+
+<body>
+<div class="NAVBAR">
+<a href="/~rhowell/DataStructures/redirect/memoization">Next:
+      Memoization</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a 
+      href="/~rhowell/DataStructures/redirect/rehashing">Previous:
+      Rehashing
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+      href="/~rhowell/DataStructures/redirect/dictionaries">Up:
+      Hash Tables
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<h1>Enumerating a Hash Table</h1>
+
+The .NET implementation of a dictionary includes two <b>public</b>
+    properties, <a
+    href="http://msdn.microsoft.com/en-us/library/yt2fy5zk.aspx"><b>Keys</b></a>
+    and <a
+    href="http://msdn.microsoft.com/en-us/library/ekcfxy3x.aspx"><b>Values</b></a>,
+    that can be used to obtain all the keys and values, respectively,
+    in the hash table.  The data structures returned by these
+    properties are sub-types of <a
+    href="http://msdn.microsoft.com/en-us/library/9eekhta0(v=vs.110).aspx"><b>IEnumerable&lt;TKey&gt;</b></a>
+    and <a
+    href="http://msdn.microsoft.com/en-us/library/9eekhta0(v=vs.110).aspx"><b>IEnumerable&lt;TValue&gt;</b></a>,
+    respectively, where <b>TKey</b> is the type of the keys and
+    <b>TValue</b> is the type of the values.  Furthermore, the
+    <b>Dictionary&lt;TKey,&nbsp;TValue&gt;</b> class itself implements
+    <b>IEnumerable&lt;KeyValuePair&lt;TKey,&nbsp;TValue&gt;&gt;</b>.  The
+    <b>IEnumerable&lt;T&gt;</b> interface allows the <a
+    href="/~rhowell/DataStructures/redirect/foreach"><b>foreach</b></a>
+    statement to iterate through the data structure - in the case of a
+    dictionary, either through the keys or the values or through the
+    key-value pairs.  For example, if <tt>d</tt> is a
+    <b>System.Collections.Generic.Dictionary&lt;string, int[&nbsp;]&gt;</b>,
+    then the following loop will iterate through all the key-value
+    pairs in <tt>d</tt> in some order:
+<pre>
+foreach (KeyValuePair&lt;string, int[]&gt; p in d)
+{
+    . . .
+}
+</pre>
+    In this section,
+    we will consider how to add this functionality to a dictionary
+    implemented using a hash table.  The
+    implementation we describe will be somewhat different from the
+    .NET implementation, which takes advantage of certain
+    optimizations in the implementation of the linked lists.
+<p>
+We will begin by discussing how to make the dictionary class itself
+      implement
+      <b>IEnumerable&lt;KeyValuePair&lt;TKey,&nbsp;TValue&gt;&gt;</b>.
+      We will examine the details of the <b>IEnumerable&lt;T&gt;</b>
+      interface shortly, but for now, we will simply observe that it
+      contains two methods, each of which is responsible for returning
+      an <i>enumerator</i>, which is an object that can be used to
+      step through a sequence of data elements.  We make this
+      enumerator available by causing the dictionary to implement
+      <b>IEnumerable&lt;KeyValuePair&lt;TKey,&nbsp;TValue&gt;&gt;</b>.
+      A <b>foreach</b> loop can then iterate through the pairs that
+      the supplied enumerator steps through.  
+</p>
+<p>
+An enumerator is an object that is a subtype of the interface <a
+	href="http://msdn.microsoft.com/en-us/library/78dfe2yb.aspx"><b>IEnumerator&lt;T&gt;</b></a>,
+	where <b>T</b> is the type of the objects in the sequence that
+	the enumerator is iterating through.  Again, we'll examine the
+	details of this interface shortly, but first we will outline
+	the general principles of an enumerator.  Within an
+	enumerator, there is always a <i>current position</i>.  This
+	current position is either one of the objects in the sequence,
+	or one of two special positions - the <i>start</i> position,
+	which occurs before any of the objects in the sequence, and
+	the <i>end</i> position, which occurs after all of the objects
+	in the sequence.  Initially, an enumerator is in the start
+	position.  It is possible to retrieve from the enumerator the
+	object at the current position (provided this is neither the
+	start position nor the end position), or to advance its
+	current position to the next position in the sequence.
+</p>
+We need to define an enumerator that iterates through objects of type
+    <b>KeyValuePair&lt;TKey&nbsp;TValue&gt;</b>; i.e., we need to
+    define a class that implements
+    <b>IEnumerator&lt;KeyValuePair&lt;TKey,&nbsp;TValue&gt;&gt;</b>.
+    In order to do this, we must place this definition where the
+    compiler can understand that <b>TKey</b> and <b>TValue</b> are
+    type parameters to the <b>Dictionary&lt;TKey,&nbsp;TValue&gt;</b>
+    class.  In order to accomplish this, we need to define it as a
+    <i>nested class</i> - a class whose definition occurs within the
+    definition of the <b>Dictionary&lt;TKey,&nbsp;TValue&gt;</b>
+    class.  This nesting allows the nested class to access the 
+    private fields of any instance of the containing class, as well as
+    the type parameters to the containing class.  However, nesting
+    classes does <i>not</i> nest instances of the classes, or in any
+    way automatically associate an instance of the nested class with
+    an instance of the containing class.
+<p>
+Let's now look at the details of an enumerator.  The <a
+	href="http://msdn.microsoft.com/en-us/library/78dfe2yb.aspx"><b>IEnumerator&lt;T&gt;</b></a>
+	<a
+	href="/~rhowell/DataStructures/redirect/interfaces">interface</a>
+	requires the following members: 
+</p>
+<ul>
+<li> <b>public T Current</b>:  This property gets the object at the current
+	position.  If the current position is either the start or the
+	end, it throws an <b>InvalidOperationException</b>.</li>
+<li> <b>public bool MoveNext()</b>:  This method advances to the next
+	position (unless it is already at the end) and returns whether
+	the resulting position is a position prior to the end.</li>
+<li> <b>object System.Collections.IEnumerator.Current</b>:  This
+	property is inherited from the non-generic <a
+	href="http://msdn.microsoft.com/en-us/library/system.collections.ienumerator(v=vs.110).aspx"><b>IEnumerator</b></a>
+	interface.  Because it has
+	the same name as the first property above, but has a different
+	return type, an implementation of <b>IEnumerator&lt;T&gt;</b>
+	must <a
+	href="/~rhowell/DataStructures/redirect/explicit-impl">explicitly
+	implement</a> this property by omitting the <b>public</b>
+	modifier and including the name of the <b>IEnumerator</b>
+	interface in its name.  Because it should behave in the same
+	way as the <b>Current</b> property above, we can always write
+	this method to simply return <b>Current</b>; i.e.,
+<pre>
+object System.Collections.IEnumerator.Current
+{
+    get 
+    {
+        return Current;
+    }
+}
+</pre>
+</li>
+<li> <b>public void Dispose()</b>: This method should dispose of any
+	<a
+	href="/~rhowell/DataStructures/redirect/unmanaged-resources">unmanaged
+	resources</a>.  Often there are no unmanaged resources - in
+	such cases, its body should be empty; i.e.:
+<pre>
+public void Dispose()
+{
+
+}
+</pre>
+</li>
+<li> <b> public void Reset()</b>:  This method was originally intended
+	to reset the enumerator to the start position; however, it is
+	no longer in use.  Consequently, it can simply throw a
+	<b>NotImplementedException</b>:
+<pre>
+public void Reset()
+{
+    throw new NotImplementedException();
+}
+</pre>
+</li>
+</ul>
+<p>
+In order to be able to implement the above members, the nested class
+      will need the following <b>private</b> fields:
+</p>
+<ul>
+<li> The hash table to iterate through.  This can either be a
+	<b>Dictionary&lt;TKey,&nbsp;TValue&gt;</b> or an array of the
+	type that implements the hash table.  We will assume that it
+	is an array, as this is the simplest approach.</li>
+<li> The current index into the hash table.  This is part of the
+	information we need to keep track of the current position.  We
+	will use -1 to denote the start position and the length of the
+	hash table to denote the end position; hence, this field
+	should initially be set to -1.</li>
+<li> The current linked list cell.  This is the rest of the
+	information we need to keep track of the current position.  In
+	order to simplify the code, we will assume this is initially a
+	new linked list cell (i.e., one that is not in the hash
+	table).  If we initialize this field in this way, it can
+	always refer to a cell (i.e., it will not
+	be <b>null</b>) until we reach the end position.</li>
+</ul>
+It will also need a constructor to initialize the first
+    <b>private</b> field above.  This constructor will need a
+    single parameter giving the array that implements the hash table.
+    Otherwise, because we will have no unmanaged resources, we only
+    need to focus on the <b>Current</b> property and the
+    <b>MoveNext</b> method.
+<p>
+Given the way we have defined the <b>private</b> fields, the
+      implementation of the <b>Current</b> property is fairly
+      straightforward.  We first need to check to see if the current
+      index is -1 or the length of the hash table - if so, we need to
+      throw an <b>InvalidOperationException</b>.  Otherwise, we can
+      simply return the key-value pair in the current linked list cell.
+</p>
+The <b>MoveNext</b> method is a bit more involved.  There is one
+    simple case - we are already at the end position (i.e., the
+    current index is the length of the hash table).  In this case, we
+    should just return <b>false</b>.  Otherwise, we need to advance
+    the current cell to the next cell in its list.  This may, of
+    course, cause the current cell to be <b>null</b>.  Because we want
+    the current cell to remain non-<b>null</b> until we reach the end
+    position, we need to look for the next cell in the table.  We
+    therefore need a loop that iterates as long as the current cell is
+    <b>null</b> (note that if it's already non-<b>null</b>, this loop
+    won't iterate at all).  Each iteration of this loop needs to do
+    the following:
+<ul>
+<li> Increment the current index so that we are at the next linked
+	list in the table.</li>
+<li> If this takes us to the end position, return <b>false</b>.</li>
+<li> Set the current cell to the beginning of the linked list at the
+	current index.</li>
+</ul>
+Once the above loop terminates we can return <b>true</b>, as we have
+    reached the next cell in the hash table.
+<p>
+Once we have completed this nested class, we need to make the
+      dictionary class implement
+      <b>IEnumerable&lt;KeyValuePair&lt;TKey,&nbsp;TValue&gt;&gt;</b>.
+      The <b>IEnumerable&lt;T&gt;</b> interface requires the following
+      members:
+</p>
+<ul>
+<li> <b>public IEnumerator&lt;T&gt; GetEnumerator()</b>:  This method
+	is used to get an enumerator.</li>
+<li> <b>System.Collections.IEnumerator
+	System.Collections.IEnumerable.GetEnumerator()</b>:  This 
+	method is inherited from the non-generic <a
+	href="http://msdn.microsoft.com/en-us/library/system.collections.ienumerable(v=vs.110).aspx"><b>IEnumerable</b></a>
+	interface.  Like the
+	<b>System.Collections.IEnumerator.Current</b> property above,
+	sub-types of <b>IEnumerable&lt;T&gt;</b> must explicitly
+	implement this method because it returns a different type than
+	the above <b>GetEnumerator</b> method.  However, because
+	<b>IEnumerator&lt;T&gt;</b> is a subtype of
+	<b>IEnumerator</b>, this method can return the same enumerator
+	as the above method; i.e., we can define it as:
+<pre>
+System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+{
+    return GetEnumerator();
+}
+</pre>
+</li>
+</ul>
+The <b>GetEnumerator</b> method simply has to construct an instance of
+    the enumerator described above and return it.
+<p>
+We will now consider how to implement the <b>Keys</b> and
+      <b>Values</b> properties.  We first need two additional classes
+      to implement two more enumerators.  One must implement
+      <b>IEnumerator&lt;TKey&gt;</b>, and the other must implement
+      <b>IEnumerator&lt;TValue&gt;</b>.  Both of these classes must be
+      nested within the dictionary class.  These classes are similar
+      to the nested class described above, but the <b>Current</b>
+      property must now return either the key or the value of the
+      key-value pair.
+</p>
+Once we have these two enumerators defined, we need a way to access
+    them.  This requires implementations of
+    <b>IEnumerable&lt;TKey&gt;</b> and
+    <b>IEnumerable&lt;TValue&gt;</b>.  The <b>Keys</b> and
+    <b>Values</b> properties will return instances of these classes,
+    respectively.  We therefore need to define two more classes nested
+    within the dictionary class.  These classes each need to be able
+    to obtain an appropriate enumerator.  In order to be able to call
+    the enumerator's constructor, each of these classes must have
+    access to an array implementing a hash table.  Thus, each of these
+    classes needs such a <b>private</b> field and a constructor to
+    initialize it.  Each <b>GetEnumerator</b> method will then
+    construct an instance of the appropriate enumerator and return it.
+<p>
+At this point, we can implement the <b>Keys</b> and <b>Values</b>
+      properties of the dictionary.  Each of these properties simply
+      needs to construct an instance of the
+      implementation of <b>IEnumerable&lt;TKey&gt;</b> or
+      <b>IEnumerable&lt;TValue&gt;</b>, respectively, and return it.
+</p>
+<p></p>
+<div class="NAVBAR">
+<a href="/~rhowell/DataStructures/redirect/memoization">Next:
+      Memoization</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a 
+      href="/~rhowell/DataStructures/redirect/rehashing">Previous:
+      Rehashing
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+      href="/~rhowell/DataStructures/redirect/dictionaries">Up:
+      Hash Tables
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<p>
+<small>
+<!-- hhmts start -->
+Last modified: Fri Mar 30 11:20:14 CDT 2018
+<!-- hhmts end -->
+</small>
+</p>
+<small>
+    <i> &copy; Copyright 2014, 2015, 2017, 2018, <a
+    href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i> 
+</small>
+
+<p></p>
+
+<table border=0 cellpadding=2 summary="This table is used for layout
+purposes only.">
+<tr>
+<td align=center>
+    <a href="http://validator.w3.org/check/referer"><img border="0"
+        src="/~rhowell/valid-html401.gif"
+        alt="Valid HTML 4.01!" height="31" width="88"></a>
+</td>
+<tr>
+<td>
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+             <img border="0"
+                  src="/~howell/vcss.gif" 
+                  alt="Valid CSS!" height="31" width="88">
+            </a>
+</td>
+</table>
+
+</body>
+
+</html>

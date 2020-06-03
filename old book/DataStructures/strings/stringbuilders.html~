@@ -1,0 +1,225 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>StringBuilders</title>
+<link rel=STYLESHEET href="/~rhowell/style.css">
+
+</head>
+
+<body>
+<div class="NAVBAR">
+<a href="/~rhowell/DataStructures/redirect/stringbuilder-impl">Next:
+      Implementation of <b>StringBuilder</b>s
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/string-desc">Previous: <b>string</b>s
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/strings">Up:
+      <b>string</b>s and <b>StringBuilder</b>s
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<h1>StringBuilders</h1>
+
+In <a href="/~rhowell/DataStructures/redirect/string-desc">the
+      previous section</a>, we saw that building large
+      <b>string</b>s from small pieces by concatenating them together
+      is very inefficient.  This inefficiency is due to the
+      fact that <b>string</b>s are immutable.  In order to overcome
+      the inefficiency of concatenation, we need an alternative data
+      structure that we can modify.  The <a
+      href="http://msdn.microsoft.com/en-us/library/system.text.stringbuilder(v=vs.110).aspx"><b>StringBuilder</b></a>
+      class fills this need.
+<p>
+Like <b>string</b>s, <b>StringBuilder</b>s implement sequences of
+      characters, but the contents of <b>StringBuilder</b>s can be
+      changed.  The <b>StringBuilder</b> class has six constructors.
+      The <a
+      href="http://msdn.microsoft.com/en-us/library/dsd3ey60(v=vs.110).aspx">simplest
+      <b>StringBuilder</b> constructor</a> takes no parameters and
+      constructs an empty <b>StringBuilder</b> - i.e., a
+      <b>StringBuilder</b> containing no characters:
+<pre>
+StringBuilder sb = new StringBuilder();
+</pre>
+We can then modify a <b>StringBuilder</b> in various ways.  First, we
+    may append a <b>char</b> to the end using its <a
+    href="http://msdn.microsoft.com/en-us/library/yet24s7b(v=vs.110).aspx"><b>Append</b></a>
+    method.  This method not only changes the contents of the
+    <b>StringBuilder</b>, but it also returns a reference to it.  Thus
+    if we have <b>char</b> variables, <tt>a</tt>, <tt>b</tt>, and
+    <tt>c</tt>, and a <b>StringBuilder</b> variable <tt>sb</tt>, we can
+    write code such as:
+<pre>
+sb.Append(a).Append(b).Append(c);
+</pre>
+The first call to <b>Append</b> appends the contents of <tt>a</tt> to
+    <tt>sb</tt>, and returns <tt>sb</tt>.  Thus, the second call to
+    <b>Append</b> also applies to <tt>sb</tt> - it appends the
+    contents of <tt>b</tt>.  Likewise, the third call appends the
+    contents of <tt>c</tt>.
+<p>
+Because this method changes a <b>StringBuilder</b>, rather than
+      constructing a new one, its implementation is very efficient -
+      in most cases, only the appended character needs to be copied
+      (see "<a
+      href="/~rhowell/DataStructures/redirect/stringbuilder-impl">Implementation
+      of <b>StringBuilder</b>s</a>" for details).  This class has
+      other <b>Append</b> methods as well, including one that <a
+      href="http://msdn.microsoft.com/en-us/library/b4sc8ca8(v=vs.110).aspx">appends
+      the contents of a given <b>string</b></a>.  This method likewise
+      only needs to copy the appended characters.
+</p>
+Let us now return to the problem of converting all lower-case letters
+    in a <b>string</b> to upper-case, converting all upper-case
+    letters to lower-case, and leaving all other characters
+    unchanged.  We can use a <b>StringBuilder</b> as an intermediate
+    data structure to do this much more efficiently than the code
+    presented in <a
+    href="/~rhowell/DataStructures/redirect/string-desc">the previous
+    section</a>:
+<pre>
+StringBuilder sb = new StringBuilder();
+for (int i = 0; i &lt; text.Length; i++)
+{
+    char c = text[i];
+    if (Char.IsLower(c))
+    {
+        sb.Append(Char.ToUpper(c));
+    }
+    else if (Char.IsUpper(c))
+    {
+        sb.Append(Char.ToLower(c));
+    }
+    else
+    {
+        sb.Append(c);
+    }
+}
+string result = sb.ToString();
+</pre>
+On most iterations, the above loop only copies one character.  In
+    addition, the call to the <b>StringBuilder</b>'s <b>ToString</b>
+    method copies each character in the result.  If <tt>text</tt> is
+    100,000 characters long, this is a total of 200,000 character
+    copies.  Using the <b>StringBuilder</b> implementation described
+    in <a
+    href="/~rhowell/DataStructures/redirect/stringbuilder-impl">the
+    next section</a>, there are some iterations that copy more than
+    one character, but even if we account for this, it turns out that
+    fewer than 400,000 characters are copied, as opposed to over five
+    billion character copies when <b>string</b>s are used directly
+    (see <a href="/~rhowell/DataStructures/redirect/string-desc">the
+    previous section</a>).  The <b>StringBuilder</b> implementation in
+    the .NET Framework performs even better.  In either case, the
+    above code runs in <i>O</i>(<i>n</i>) time, where <i>n</i> is the
+    length of <tt>text</tt>; i.e., as <i>n</i> gets large, the running
+    time is at worst proportional to <i>n</i>.  Thus, its performance
+    degrades much less rapidly than the <i>O</i>(<i>n</i><sup>2</sup>)
+    code that uses <b>string</b>s directly.
+<p>
+A program that runs the above code and the code given in <a
+	href="/~rhowell/DataStructures/redirect/string-desc">the
+	previous section</a> on user-provided text files can be
+	obtained by creating a Git repository (see "<a
+	href="/~rhowell/DataStructures/redirect/version-control">Git
+	Repositories</a>") using <a
+	href="https://classroom.github.com/a/lQSbxCEo">this
+	URL</a>.  A noticeable performance difference can be seen on 
+	text files larger than 100K - for example, the full text of
+	<a
+	href="http://www.gutenberg.org/cache/epub/12/pg12.txt">Lewis
+	Carroll's <i>Through the Looking Glass</i></a>.
+</p>
+<p>
+<b>StringBuilder</b>s have some features in common with
+      <b>string</b>s.  For example, we access individual characters in
+      a <b>StringBuilder</b> by indexing; i.e., if <tt>sb</tt> is a
+      <b>StringBuilder</b> variable, then <tt>sb[0]</tt> accesses its
+      first character, <tt>sb[1]</tt> accesses its second character,
+      etc.  The main difference here is that with a
+      <b>StringBuilder</b>, we may use indexing to change characters;
+      e.g., we may do the following, provided <tt>sb</tt> contains at
+      least 3 characters:
+<pre>
+sb[2] = 'x';
+</pre>
+A <b>StringBuilder</b> also has a <a
+      href="http://msdn.microsoft.com/en-us/library/system.text.stringbuilder.length(v=vs.110).aspx"><b>Length</b></a>
+      property, which gets the number of characters contained.
+      However, we may also set this property to any nonnegative value,
+      provided there is enough memory available to provide this
+      length.  For example, we may write:
+<pre>
+sb.Length = 10;
+</pre>
+If the new length is shorter than the old, characters are removed from
+    the end of the <b>StringBuilder</b>.  If the new length is longer
+    that the old, <b>char</b>s containing the Unicode NULL value (0 in
+    decimal) are appended.  (<b>Note:</b> the Unicode NULL value is
+    different from a <b>null</b> reference.  Because <b>char</b> is a
+    <a href="/~rhowell/DataStructures/redirect/reference-value">value
+    type</a>, a <b>char</b> cannot store a <b>null</b> reference.)
+<p>
+<b>StringBuilder</b>s have many other methods to allow various kinds
+      of manipulation - see <a
+      href="http://msdn.microsoft.com/en-us/library/system.text.stringbuilder(v=vs.110).aspx">the
+      documentation for the <b>StringBuilder</b> class</a> for
+      details.  There is also a <a
+      href="http://msdn.microsoft.com/en-us/library/5fxz4s6t(v=vs.110).aspx"><b>StringBuilder</b>
+      constructor</a> that takes a <b>string</b> as its only parameter
+      and constructs a <b>StringBuilder</b> containing the contents of
+      that <b>string</b>. 
+</p>
+
+<p></p>
+<div class="NAVBAR">
+<a href="/~rhowell/DataStructures/redirect/stringbuilder-impl">Next:
+      Implementation of <b>StringBuilder</b>s
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/string-desc">Previous: <b>string</b>s
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/strings">Up:
+      <b>string</b>s and <b>StringBuilder</b>s
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<p>
+<small>
+<!-- hhmts start -->
+Last modified: Mon Aug  7 03:43:56 CDT 2017
+<!-- hhmts end -->
+</small>
+</p>
+<small>
+    <i> &copy; Copyright 2014, 2015, 2017, <a
+    href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i> 
+</small>
+
+<p></p>
+
+<table border=0 cellpadding=2 summary="This table is used for layout
+purposes only.">
+<tr>
+<td align=center>
+    <a href="http://validator.w3.org/check/referer"><img border="0"
+        src="/~rhowell/valid-html401.gif"
+        alt="Valid HTML 4.01!" height="31" width="88"></a>
+</td>
+<tr>
+<td>
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+             <img border="0"
+                  src="/~howell/vcss.gif" 
+                  alt="Valid CSS!" height="31" width="88">
+            </a>
+</td>
+</table>
+
+</body>
+
+</html>

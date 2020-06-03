@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Select Sorts</title>
+<link rel=STYLESHEET href="/~rhowell/style.css">
+
+</head>
+
+<body>
+<div class="NAVBAR">
+<a href="/~rhowell/DataStructures/redirect/insert-sorts">Next: Insert Sorts
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/sorting">Up: Sorting
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<h1>Select Sorts</h1>
+
+A select sort operates by repeatedly selecting the smallest data
+    element of an unsorted portion of the array and moving it to the
+    end of a sorted portion.  Thus, at each step, the data items will
+    be arranged into two parts:
+<ol>
+<li> A sorted part; and</li>
+<li> An unsorted part in which each element is at least as large as
+	all elements in the sorted part.</li>
+</ol>
+The following figure illustrates this arrangement.
+<p>
+<img src="select-sorts.jpg" 
+    alt="The arrangement at each step of a select sort.">
+</p>
+Initially, the sorted part will be empty.  At each step, the unsorted
+    part is rearranged so that its smallest element comes first.  As a
+    result, the sorted part can now contain one more element, and the
+    unsorted part one fewer element.  After <i>n</i>&nbsp;-&nbsp;1
+    steps, where <i>n</i> is the number of elements in the array, the
+    sorted part will have all but one of the elements.  Because the
+    one element in the unsorted part must be at least as large as all
+    elements in the sorted part, the entire array will be sorted at
+    this point.
+<p>
+The approach outlined above can be implemented in various ways.  The
+      main difference in these implementations is in how we rearrange
+      the unsorted part to bring its smallest element to the beginning
+      of that part.  The most straightforward way to do this is to
+      find the smallest element in this part, then swap it with the
+      first element in this part.  The resulting algorithm is called
+      <i>selection sort</i>.  It requires nested loops.  The outer
+      loop index keeps track of how many elements are in the sorted
+      part.  The unsorted part then begins at this index.  The inner
+      loop is responsible for finding the smallest element in the
+      unsorted part.  Once the inner loop has finished, the smallest
+      element is swapped with the first element in the unsorted part.
+</p>
+Note that the inner loop in selection sort iterates once for every
+    element in the unsorted part. On the first iteration of the outer
+    loop, the unsorted part contains all <i>n</i> elements.  On each
+    successive iteration, the unsorted part is one element smaller,
+    until on the last iteration, it has only 2 elements.  If we add up
+    all these values, we find that the inner loop iterates a total of
+    exactly (<i>n</i>&nbsp;-&nbsp;1)(<i>n</i>&nbsp;+&nbsp;2)/2 times.
+    This value is proportional to <i>n</i><sup>2</sup> as <i>n</i>
+    increases; hence, the running time of the algorithm is in
+    <i>O</i>(<i>n</i><sup>2</sup>).  Furthermore, this performance
+    occurs no matter how the data items are initially arranged.
+<p>
+As we will see in what follows, <i>O</i>(<i>n</i><sup>2</sup>)
+      performance is not very good if we want to sort a moderately
+      large data set.  For example, sorting 10,000 elements will
+      require about 5 billion iterations of the inner loop.  On the
+      positive side, the only time data items are moved is when a swap
+      is made at the end of the out loop; hence, this number is
+      proportional to <i>n</i>.  This could be advantageous if we are
+      sorting large value types, as we would not need to write these
+      large data elements very many times.  However, for general
+      performance reasons, large data types shouldn't be value types -
+      they should be reference types to avoid unnecessary copying of the
+      values.  For this reason, selection sort isn't a particularly
+      good sorting algorithm.
+</p>
+<p></p>
+<a name="stable"></a>
+Performance issues aside, however, there is one positive aspect to
+    selection sort.  This aspect has to do with sorting by keys.
+    Consider, for example, the rows of a spreadsheet.  We often want
+    to sort these rows by the values in a specific column.  These
+    values are the sort keys of the elements.  In such a scenario, it
+    is possible that two data elements are different, but their sort
+    keys are the same.  A sorting algorithm might reverse the order of
+    these elements, or it might leave their order the unchanged.  In
+    some cases, it is advantageous for a sorting algorithm to leave
+    the order of these elements unchanged.  For example, if we
+    sort first by a secondary key, then by a primary key, we would
+    like for elements whose primary keys are equal to remain sorted by
+    their secondary key.  Therefore, a sorting algorithm that always
+    maintains the original order of equal keys is said to be
+    <i>stable</i>.  If we are careful how we implement the inner loop
+    of selection sort so that we always select the first instance of
+    the smallest key, then this algorithm is stable.
+<p></p>
+<a name="bubble-sort"></a>
+Another implementation of a select sort is <i>bubble sort</i>.  It
+    rearranges the unsorted part by swapping adjacent elements that
+    are out of order.  It starts with the last two elements (i.e., the
+    elements at locations <i>n</i>&nbsp;-&nbsp;1 and
+    <i>n</i>&nbsp;-&nbsp;2), then the elements at locations
+    <i>n</i>&nbsp;-&nbsp;2 and <i>n</i>&nbsp;-&nbsp;3, etc.
+    Proceeding in this way, the smallest element in the unsorted part
+    will end up at the beginning of the unsorted part.  While the
+    inner loop is doing this, it keeps track of whether it has made
+    any swaps.  If the loop completes without having made any swaps,
+    then the array is sorted, and the algorithm therefore stops.
+<p>
+Like selection sort, bubble sort is stable.  In the worst case,
+however, the performance of bubble sort is even worse than that of
+selection sort.  It is still in <i>O</i>(<i>n</i><sup>2</sup>), but in
+the worst case, its inner loop performs the same number of iterations,
+but does a lot more swaps.  Bubble sort does outperform selection sort
+on some inputs, but describing when this will occur isn't easy.  For
+example, in an array in which the largest element occurs in the first
+location, and the remaining locations are sorted, the performance ends
+up being about the same as selection sort - even though this array is
+nearly sorted.  Like selection sort, it is best to avoid bubble sort.
+</p>
+<a name="heap-sort"></a>
+A select sort that significantly outperforms selection sort is known
+    as <i>heap sort</i>.  This algorithm is based on the idea that a
+    priority queue can be used to sort data - we first place all items
+    in a priority queue, using the values themselves as priorities (if
+    we are sorting by keys, then we use the keys as priorities).  We
+    then repeatedly remove the element with largest priority, filling
+    the array from back to front with these elements.
+<p>
+We can optimize the above algorithm by using a priority queue
+      implementation called a <i>binary heap</i>, whose implementation
+      details we will only sketch.  The basic idea is that we can form
+      a binary tree from the elements of an array by using their
+      locations in the array.  The first element is the root, its
+      children are the next two elements, their children are the next
+      four elements, etc.  Given an array location, we can then
+      compute the locations of its parent and both of its children.
+      The priorities are arranged so that the root of each subtree
+      contains the maximum priority in that subtree.  It is possible
+      to arrange the elements of an array into a binary heap in
+      <i>O</i>(<i>n</i>) time, and to remove
+      an element with maximum priority in <i>O</i>(lg <i>n</i>) time.
+</p>
+Heap sort then works by pre-processing the array to arrange it into a
+    binary heap.  The binary heap then forms the unsorted part, and it
+    is followed by the sorted part, whose elements are all no smaller
+    than any element in the unsorted part.  While this arrangement is
+    slightly different from the arrangement for the first two select
+    sorts, the idea is the same.  To rearrange the unsorted part, it:
+<ol>
+<li> Copies the first (i.e., highest-priority) element to a temporary
+	variable.</li> 
+<li> Removes the element with maximum priority (i.e., the first
+	element).</li>
+<li> Places the copy of the first element into the space vacated by its
+	removal at the beginning of the sorted part.</li>
+</ol>
+Heap sort runs in <i>O</i>(<i>n</i>&nbsp;lg&nbsp;<i>n</i>) time in the
+    worst case.  Information theory can be used to prove that any
+    sorting algorithm that sorts by comparing elements must make at
+    least lg(<i>n</i>!) comparisons on some arrays of size <i>n</i>.
+    Because lg(<i>n</i>!) is proportional to
+    <i>n</i>&nbsp;lg&nbsp;<i>n</i>, we cannot hope to do any better
+    than <i>O</i>(<i>n</i>&nbsp;lg&nbsp;<i>n</i>) in the worst case.
+    While this performance is a significant improvement over selection
+    sort and bubble sort, we will see
+    in <a href="/~rhowell/DataStructures/redirect/split-sorts">a later
+    section</a> that there is an algorithm (quick sort) that does even
+    better in practice.  Furthermore, heap sort is not stable.
+<p>
+  On the other hand, we will also see that in spite of the fact that
+  quick sort usually outperforms heap sort, there are rare cases that
+  cause it to perform badly.  In order to avoid this bad behavior, a
+  hybrid algorithm using both quick sort and heap sort has been
+  developed.  We will examine this approach in
+  "<a href="/~rhowell/DataStructures/redirect/hybrid-sorts">Hybrid
+    Sorts</a>".
+</p>
+
+<p></p>
+<div class="NAVBAR">
+<a href="/~rhowell/DataStructures/redirect/insert-sorts">Next: Insert Sorts
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/sorting">Up: Sorting
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<p>
+<small>
+<!-- hhmts start -->
+Last modified: Wed Nov 26 10:27:17 CST 2014
+<!-- hhmts end -->
+</small>
+</p>
+<small>
+    <i> &copy; Copyright 2014, 2015, <a
+    href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i> 
+</small>
+
+<p></p>
+
+<table border=0 cellpadding=2 summary="This table is used for layout
+purposes only.">
+<tr>
+<td align=center>
+    <a href="http://validator.w3.org/check/referer"><img border="0"
+        src="/~rhowell/valid-html401.gif"
+        alt="Valid HTML 4.01!" height="31" width="88"></a>
+</td>
+<tr>
+<td>
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+             <img border="0"
+                  src="/~howell/vcss.gif" 
+                  alt="Valid CSS!" height="31" width="88">
+            </a>
+</td>
+</table>
+
+</body>
+
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>The Dictionary&lt;TKey, TValue&gt; Class</title>
+<link rel=STYLESHEET href="/~rhowell/style.css">
+
+</head>
+
+<body>
+<div class="NAVBAR">
+<a href="/~rhowell/DataStructures/redirect/memoization">Next: Memoization
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/dictionaries">Up:
+      Dictionaries and Hash Tables
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<h1>The Dictionary&lt;TKey,&nbsp;TValue&gt; Class</h1>
+
+The generic term for a data structure providing storage and retrieval
+    via keys, but not necessarily the ability to process the data in
+    any particular order, is <i>dictionary</i>.  Thus, AVL trees can
+    be used to implement dictionaries that can add new elements,
+    remove elements, and find keys in <i>O</i>(log <i>n</i>) time in
+    the worst case, (not counting the cost of comparing keys) where
+    <i>n</i> is the number of elements in the structure.  In this
+    section, we will give an overview of a data structure called a
+    <i>hash table</i>, which provides even better performance without
+    keeping the keys in any particular order.  We then present the
+    <b>Dictionary&lt;TKey,&nbsp;TValue&gt;</b> class, which is
+    provided by the .NET Framework 
+    for keyed storage and retrieval and is implemented using a hash
+    table.
+<p>
+A hash table is typically organized as an array of linked lists.  The
+      individual cells in the linked lists each store a key and a
+      value.  Associated with this structure is a <i>hash
+      function</i>, which takes a key as its parameter and computes an
+      array location.  This array location contains the linked list
+      that will contain the given key if it is in the hash table.
+      Thus, in order to find a key in a hash table, we first apply the
+      hash function to the key, then search the linked list at the
+      location computed by the hash function.  The following picture
+      illustrates the layout of a hash table in which the keys are
+      <b>strings</b>s and the values are <b>int</b>s, and the hash
+      function is denoted by <i>h</i>:
+</p>
+<img src="hash-table.jpg" alt="A hash table.">
+<p>
+For simplicity, the <b>string</b>s in the above figure are shown
+      inside the linked list cells, even though <b>string</b> is a
+      reference type.
+</p>
+<p>
+In order to achieve good
+      performance, we want all of the linked lists to be short.  This
+      requires, among other things, that we make the array
+      sufficiently large.  We therefore increase the size of the array
+      as the number of elements increases.
+</p>
+We will look at the implementation details more carefully in later
+    sections.  For now, we will focus on the <a
+    href="http://msdn.microsoft.com/en-us/library/xfhwa508.aspx"><b>Dictionary&lt;TKey,&nbsp;TValue&gt;</b></a>
+    class, an implementation of a hash table found in the
+    <b>System.Collections.Generic</b> namespace.  In order to be able
+    to utilize a <b>Dictionary&lt;TKey,&nbsp;TValue&gt;</b> fully,
+    though, it's important to have some understanding of its
+    implementation.  Specifically, in order for a
+    <b>Dictionary&lt;TKey,&nbsp;TValue&gt;</b> to work on a user-defined
+    key type, it must have a hash function that maps instances of this
+    key type to array locations.  A part of this hash function must be
+    provided by the implementer of the key type.  For now, however, we
+    will focus on predefined key types such as <b>string</b> and
+    <b>int</b> which already have hash functions defined.
+<p>
+Within a <b>Dictionary&lt;TKey,&nbsp;TValue&gt;</b>, the keys are of
+      type <b>TKey</b> and the values are of type <b>TValue</b>.  Keys
+      must always be non-<b>null</b> - any attempt to use a
+      <b>null</b> key will result in an <b>ArgumentNullException</b>.
+      Its most basic <b>public</b> methods are:
+<ul>
+<li> <a
+	  href="http://msdn.microsoft.com/en-us/library/k7z0zy8k.aspx"><b>void
+	  Add(TKey key, TValue value)</b></a>:  Associates the given
+	  value with the given key.  If there is already a value
+	  associated with the given key, it throws an
+	  <b>ArgumentException</b>. </li>
+<li> <a
+	  href="http://msdn.microsoft.com/en-us/library/kabs04ac.aspx"><b>bool
+	  Remove(TKey key)</b></a>: Removes the given key and its
+	  associated value from the dictionary, and returns whether
+	  the key was found. </li>
+<li> <a
+	  href="http://msdn.microsoft.com/en-us/library/bb347013.aspx"><b>bool
+	  TryGetValue(TKey key, out TValue value)</b></a>:  Returns
+	  whether the given key is in the dictionary.  If so,
+	  <tt>value</tt> is assigned the value associated with
+	  <tt>key</tt>; otherwise, <tt>value</tt> is assigned the
+	  default value for its type.
+</ul>
+The above methods can be used for building and updating a dictionary,
+    as well as for looking up values by their keys.  It is also
+    possible to do updates and lookups using indexing.  Specifically,
+    a key may be used as an index in a dictionary, as if the
+    dictionary were an array.  For example, suppose that
+    <tt>dictionary</tt> is a
+    <b>Dictionary&lt;TKey,&nbsp;TValue&gt;</b>, <tt>k</tt> is a
+    <b>TKey</b>, and <tt>v</tt> is a <b>TValue</b>.  We can then do
+    the following:
+<pre>
+dictionary[k] = v;
+</pre>
+This will associate the value <tt>v</tt> with the key <tt>k</tt>, as
+    the <b>Add</b> method does; however, its behavior is slightly
+    different if <tt>k</tt> already has a value associated with it.
+    Whereas the <b>Add</b> method would throw an exception in this
+    case, using the indexer will simply replace the value previously
+    associated with <tt>k</tt> by the new value <tt>v</tt>.  Thus, we
+    use the <b>Add</b> method when we expect the key to be a new key
+    for the dictionary, but we use the indexer when we want to
+    associate the value with the key, regardless of whether the key is
+    already in the dictionary.
+<p>
+Likewise, we can use the indexer to look up a key:
+</p>
+<pre>
+v = dictionary[k];
+</pre>
+Again, the behavior is similar to the <b>TryGetValue</b> method, but
+    slightly different, as there is no <b>bool</b> in the above
+    statement.  When using the indexer, if the key is not in the
+    dictionary, it will throw a <b>KeyNotFoundException</b>.  Thus, we
+    use the indexer when we expect the key to be in the dictionary,
+    but we use the <b>TryGetValue</b> method when we don't know if the
+    key is in the dictionary.
+<p>
+This class also has two <b>public</b> properties that can be used to
+      iterate through the keys or the values in some unspecified
+      order:
+</p>
+<ul>
+<li> <a
+	href="http://msdn.microsoft.com/en-us/library/yt2fy5zk.aspx"><b>Keys</b></a>:
+	gets an <b>IEnumerable&lt;TKey&gt;</b> containing all of the
+	keys. </li> 
+<li> <a
+	href="http://msdn.microsoft.com/en-us/library/ekcfxy3x.aspx"><b>Values</b></a>:
+	gets an <b>IEnumerable&lt;TValue&gt;</b> containing all of the
+	values. </li>
+</ul>
+Because the values returned by these properties are sub-types of
+    <b>IEnumerable&lt;T&gt;</b> for some type <b>T</b>, we can use a
+    <a
+    href="/~rhowell/DataStructures/redirect/foreach"><b>foreach</b></a>
+    loop to iterate through them.  Thus, for example, within the
+    following loop, <tt>k</tt> takes on the value of each key in turn:
+<pre>
+foreach (TKey k in dictionary.Keys)
+{
+    . . .
+}
+</pre>
+<p>
+Thus, using a <b>Dictionary&lt;TKey,&nbsp;TValue&gt;</b> with key
+      types such as <b>string</b> or <b>int</b> is fairly
+      straightforward.  In the sections that follow, we'll consider
+      how user-defined types may be built to be used as keys.
+</p>
+
+<p></p>
+<div class="NAVBAR">
+<a href="/~rhowell/DataStructures/redirect/memoization">Next: Memoization
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/dictionaries">Up:
+      Dictionaries and Hash Tables
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<p>
+<small>
+<!-- hhmts start -->
+Last modified: Wed Apr  2 14:14:43 CDT 2014
+<!-- hhmts end -->
+</small>
+</p>
+<small>
+    <i> &copy; Copyright 2014, <a
+    href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i> 
+</small>
+
+<p></p>
+
+<table border=0 cellpadding=2 summary="This table is used for layout
+purposes only.">
+<tr>
+<td align=center>
+    <a href="http://validator.w3.org/check/referer"><img border="0"
+        src="/~rhowell/valid-html401.gif"
+        alt="Valid HTML 4.01!" height="31" width="88"></a>
+</td>
+<tr>
+<td>
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+             <img border="0"
+                  src="/~howell/vcss.gif" 
+                  alt="Valid CSS!" height="31" width="88">
+            </a>
+</td>
+</table>
+
+</body>
+
+</html>

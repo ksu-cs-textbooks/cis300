@@ -1,0 +1,209 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Leftist Heaps</title>
+<link rel=STYLESHEET href="/~rhowell/style.css">
+
+</head>
+
+<body>
+<div class="NAVBAR">
+<a href="/~rhowell/DataStructures/redirect/huffman-trees">Next:
+      Huffman Trees
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/heaps">Previous: Heaps
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/priority-queues">Up:
+      Priority Queues
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<h1>Leftist Heaps</h1>
+
+One efficient way to complete the merge algorithm outlined in <a
+      href="/~rhowell/DataStructures/redirect/heaps">the previous
+      section</a> revolves around the concept of the <i>null path
+      length</i> of a tree, which is defined to be 0 for empty trees,
+      or one more than the minimum of the null path lengths of the
+      children for nonempty trees.  Another way to understand this
+      concept is that it gives the minimum number of steps needed to
+      get from the root to an empty subtree.  For an empty tree, there
+      is no root, so we somewhat arbitrarily define the null path
+      length to be 0.  For single-node trees or binary trees with at
+      least one empty child, the null path length is 1 because only
+      one step is needed to reach an empty subtree.
+<p>
+One reason that the null path length is important is that it can be
+      shown that any binary tree with <i>n</i> nodes has a null path
+      length that is no more than lg(<i>n</i> + 1).  Furthermore,
+      recall that in the merging strategy outlined in <a
+      href="/~rhowell/DataStructures/redirect/heaps">the previous
+      section</a>, there is some flexibility in choosing which child
+      of a node will be used in the recursive call.  Because the
+      strategy reaches a base case when one of the min-heaps is empty,
+      the algorithm will terminate the most quickly if we do the
+      recursive call on the child leading us more quickly to an empty
+      subtree - i.e., if we use the child with smaller null path
+      length.  Because this length is logarithmic in the number of
+      nodes in the min-heap, this choice will quickly lead us to the
+      base case and termination.
+</p>
+A common way of implementing this idea is to use what is known as a
+    <i>leftist heap</i>.  A leftist heap is a binary tree that forms a
+    heap such that for every node, the null path length of the right
+    child is no more than the null path length of the left child.  For
+    such a structure, completing the merge algorithm is simple:
+<ul>
+<li> For the recursive call, we merge the right child of <i>s</i> with
+	<i>b</i>, where <i>s</i> and <i>b</i> are as defined in <a
+      href="/~rhowell/DataStructures/redirect/heaps">the previous
+      section</a>. </li>
+<li> When combining the root and left child of <i>s</i> with the
+	result of the recursive call, we arrange the children so that
+	the result is a leftist heap. </li>
+</ul>
+We can implement this idea by defining two classes,
+    <b>LeftistTree&lt;T&gt;</b> and <b>MinPriorityQueue&lt;TPriority,
+    TValue&gt;</b>.  For the <b>LeftistTree&lt;T&gt;</b> class, we
+    will only be concerned with the shape of the tree - namely, that
+    the null path length of the right child is never more than the
+    null path length of the left child.  We will adopt a strategy
+    similar to what we did with <a
+    href="/~rhowell/DataStructures/redirect/avl-trees">AVL trees</a>.
+    Specifically a <b>LeftistTree&lt;T&gt;</b> will be immutable so
+    that we can always be sure that it is shaped
+    properly.  It will then be a straightforward matter to implement a
+    <b>MinPriorityQueue&lt;TPriority, TValue&gt;</b>, where
+    <b>TPriority</b> is the type of the priorities, and <b>TValue</b>
+    is the type of the values.
+<p>
+The implementation of <b>LeftistTree&lt;T&gt;</b> ends up being very
+      similar to the implementation we described for <a
+      href="/~rhowell/DataStructures/redirect/avl-trees">AVL tree
+      nodes</a>, but without the rotations.  We need three
+      <b>public</b> properties using the default implementation with
+      <b>get</b> accessors: the data (of 
+      type <b>T</b>) and the two
+      children (of type <b>LeftistTree&lt;T&gt;</b>).  We also need a
+      <b>private</b> field to store the null
+      path length (of type <b>int</b>).  We can define a <b>static</b>
+      method to obtain the null path length of a given
+      <b>LeftistTree&lt;T&gt;</b>.  This method is essentially the
+      same as the <b>Height</b> method for an AVL tree, except that if
+      the given tree is <b>null</b>, we return 0.  A constructor takes
+      as its parameters a data element of type <b>T</b> and two
+      children of type <b>LeftistTree&lt;T&gt;</b>.  It can initialize
+      its data with the first parameter.  To initialize its children,
+      it first needs to determine their null path lengths using the
+      <b>static</b> method above.  It then assigns the two
+      <b>LeftistTree&lt;T&gt;</b> parameters to its child fields so
+      that the right child's null path length is no more than the left
+      child's.  Finally, it can initialize its own null path length by
+      adding 1 to its right child's null path length.
+</p>
+<a name="where"></a>
+Let's now consider how we can implement
+    <b>MinPriorityQueue&lt;TPriority, TValue&gt;</b>.  The first thing
+    we need to consider is the type, <b>TPriority</b>.  This needs to
+    be a type that can be ordered (usually it will be a numeric type
+    like <b>int</b>).  We can restrict <b>TPriority</b> to be a
+    subtype of <b>IComparable&lt;TPriority&gt;</b> by
+    using a <b>where</b> clause, as we did for dictionaries (see "<a
+      href="http://people.cs.ksu.edu/~rhowell/DataStructures/redirect/dictionary-linked-lists">Implementing
+      a Dictionary with a Linked List</a>").
+    <p></p>
+We then need a <b>private</b> field in which to store a leftist tree.
+    We can store both the priority and the data element in a node if
+    we use a <b>LeftistTree&lt;KeyValuePair&lt;TPriority,
+      TValue&gt;&gt;</b>; thus, the keys are the priorities and the values
+    are the data elements.
+    We also need a <b>public int</b> property to get the number of
+    elements in the min-priority queue.  This property can use the
+    default implementation with <b>get</b> and <b>private set</b> accessors.
+<p>
+In order to implement
+    <b>public</b> methods
+    to add an element with a priority and to remove an element with
+    minimum priority, we need the following method:
+<pre>
+private static LeftistTree&lt;KeyValuePair&lt;TPriority, TValue&gt;&gt; Merge(LeftistTree&lt;KeyValuePair&lt;TPriority, TValue&gt;&gt; h1, 
+    LeftistTree&lt;KeyValuePair&lt;TPriority, TValue&gt;&gt; h2)
+{
+    . . .
+}
+</pre>
+This method consist of three cases.  The first two cases occur when
+    either of the parameters is <b>null</b>.  In each such case, we
+    return the other parameter.  In the third case, when neither
+    parameter is <b>null</b>, we first need to compare the priorities
+    in the data stored in the root nodes of the parameters.  A
+    priority is stored in the <a
+    href="http://msdn.microsoft.com/en-us/library/ms224760.aspx"><b>Key</b></a>
+    property of the <b>KeyValuePair</b>, and we have constrained this
+    type so that it has a <b>CompareTo</b> method that will compare
+    one instance with another.  Once we have determined
+    which root has a smaller priority, we can construct and return a
+    new
+    <b>LeftistTree&lt;KeyValuePair&lt;TPriority,&nbsp;TValue&gt;&gt;</b>
+    whose data is the data element with smaller priority, and whose
+    children are the left child of this data element and the result of
+    recursively merging the right child of this element with the
+    parameter whose root has larger priority.
+<p>
+The remaining methods and properties of
+      <b>MinPriorityQueue&lt;TPriority,&nbsp;TValue&gt;</b> are now
+      fairly straightforward.
+</p>
+
+<p></p>
+<div class="NAVBAR">
+<a href="/~rhowell/DataStructures/redirect/huffman-trees">Next:
+      Huffman Trees
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/heaps">Previous: Heaps
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/priority-queues">Up:
+      Priority Queues
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<p>
+<small>
+<!-- hhmts start -->
+Last modified: Mon Jul 30 04:00:39 CDT 2018
+<!-- hhmts end -->
+</small>
+</p>
+<small>
+    <i> &copy; Copyright 2014, 2018, <a
+    href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i> 
+</small>
+
+<p></p>
+
+<table border=0 cellpadding=2 summary="This table is used for layout
+purposes only.">
+<tr>
+<td align=center>
+    <a href="http://validator.w3.org/check/referer"><img border="0"
+        src="/~rhowell/valid-html401.gif"
+        alt="Valid HTML 4.01!" height="31" width="88"></a>
+</td>
+<tr>
+<td>
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+             <img border="0"
+                  src="/~howell/vcss.gif" 
+                  alt="Valid CSS!" height="31" width="88">
+            </a>
+</td>
+</table>
+
+</body>
+
+</html>

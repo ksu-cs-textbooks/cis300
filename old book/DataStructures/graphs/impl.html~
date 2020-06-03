@@ -1,0 +1,287 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Implementing a Graph</title>
+<link rel=STYLESHEET href="/~rhowell/style.css">
+
+</head>
+
+<body>
+<div class="NAVBAR">
+<a
+      href="/~rhowell/DataStructures/redirect/unweighted-shortest-paths">Previous:
+      Unweighted Shortest Paths
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/graphs">Up: Graphs
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<h1>Implementing a Graph</h1>
+
+Traditionally, there are two main techniques for implementing a
+    graph.  Each of these techniques has advantages and disadvantages,
+    depending on the characteristics of the graph.  In this section,
+    we describe the implementation of the
+    <b>DirectedGraph&lt;TNode,&nbsp;TEdgeData&gt;</b> class from <a
+    href="Ksu.Cis300.Graphs.dll"><b>Ksu.Cis300.Graphs.dll</b></a>.
+    This implementation borrows from both traditional techniques to
+    obtain an implementation that provides good performance for any
+    graph.  In what follows, we will first describe the two
+    traditional techniques and discuss the strengths and weaknesses of
+    each.  We will then outline the implementation of
+    <b>DirectedGraph&lt;TNode,&nbsp;TEdgeData&gt;</b>.
+<p>
+The first traditional technique is to use what we call an <i>adjacency
+	matrix</i>.  This matrix is a <b>bool[n,&nbsp;n]</b>, where
+	<i>n</i> is the number of nodes in the graph.  In this
+	implementation, each node is represented by an <b>int</b>
+	value <i>i</i>, where
+	0&nbsp;&le;&nbsp;<i>i</i>&nbsp;&lt;&nbsp;<i>n</i>.  The value
+	at row <i>i</i> and column <i>j</i> will be <b>true</b> if
+	there is an edge from node <i>i</i> to node <i>j</i>.
+</p>
+The main advantage to this technique is that we can very quickly
+    determine whether an edge exists - we only need to look up one
+    element in an array.  There are several disadvantages, however.
+    First, we are forced to use a specific range of <b>int</b> values
+    as the nodes.  If we wish to have a generic node type, we need an
+    additional data structure (such as a
+    <b>Dictionary&lt;TNode,&nbsp;int&gt;</b>) to map each node to its
+    <b>int</b> representation.  It also fails to provide a way to
+    associate a value with an edge; hence, we would need an additional
+    data structure (such as a <b>TEdgeData[int,&nbsp;int]</b>) to store
+    this information.  
+<p>
+Perhaps the most serious shortcoming for the adjacency matrix,
+    however, is that if the graph contains a large number of nodes,
+    but relatively few edges, it wastes a huge amount of space.
+    Suppose, for example, that we have a graph representing street
+    information, and suppose there are about one million nodes in this
+    graph.  We might expect the graph to contain around three million
+    edges.  However, an adjacency matrix would require one trillion
+    entries, almost all of which will be <b>false</b>.  Similarly,
+    finding the edges from a given node would require examining an
+    entire row of a million elements to find the three or four
+    outgoing edges from that node.
+</p>
+The other traditional technique involves using what we call
+    <i>adjacency lists</i>.  An adjacency list is simply a linked list
+    containing descriptions of the outgoing edges from a single node.
+    These lists are traditionally grouped together in an array of size
+    <i>n</i>, where <i>n</i> is again the number of nodes in the
+    graph.  As with the adjacency matrix technique, the nodes must
+    be nonnegative <b>int</b>s less than <i>n</i>.  The linked list at
+    location <i>i</i> of the array then contains the descriptions of
+    the outgoing edges from node <i>i</i>.
+<p>
+One advantage to this technique is that the amount of space it uses is
+      proportional to the size of the graph (i.e., the number of nodes
+      plus the number of edges).  Furthermore, obtaining the outgoing
+      edges from a given node simply requires traversing the linked
+      list containing the descriptions of these edges.  Note also that
+      we can store the data associated with an edge within the linked
+      list cell describing that edge.  However, this technique still
+      requires some modification if we wish to use a generic node
+      type.  A more serious weakness, though, is that in order to
+      determine if a given edge exists, we must search through
+      potentially all of the outgoing edges from a given node.  If the
+      number of edges is large in comparison to the number of nodes,
+      this search can be expensive.
+</p>
+As we mentioned above, our implementation of
+    <b>DirectedGraph&lt;TNode,&nbsp;TEdgeData&gt;</b> borrows from both of
+    these traditional techniques.  We start by modifying the adjacency
+    lists technique to use a
+    <b>Dictionary&lt;TNode,&nbsp;LinkedListCell&lt;TNode&gt;&gt;</b>
+    instead of an array of linked lists.  Thus, we can accommodate a
+    generic node type while maintaining efficient access to the
+    adjacency lists.  While a dictionary lookup is not quite as
+    efficient as an array lookup, a dictionary would provide the most
+    efficient way of mapping nodes of a generic type to <b>int</b>
+    array indices.  Using a dictionary instead of an array eliminates
+    the need to do a subsequent array lookup.  The linked list
+    associated with a given node in this dictionary will then contain
+    the destination node of each outgoing edge from the given node.
+<p>
+In addition to this dictionary, we use a
+      <b>Dictionary&lt;(TNode,&nbsp;TNode),&nbsp;TEdgeData&gt;</b>
+      to facilitate efficient edge lookups.  The notation
+      <b>(T1,&nbsp;T2)</b> defines a <i>value tuple</i>, which
+      is an ordered pair of elements, the first of type
+      <b>T1</b>, and the second of type <b>T2</b>.  Elements of this
+      type are described with similar notation, <tt>(x, y)</tt>, where
+      <tt>x</tt> is of type <b>T1</b> and <tt>y</tt> is of type
+      <b>T2</b>.  These elements can
+      be accessed using the <b>public</b> properties <b>Item1</b>
+      and <b>Item2</b>.  In general, longer tuples can be defined similarly.  
+</p>
+<p>
+This second dictionary
+      essentially fills the role of an adjacency matrix, while
+      accommodating a generic node type and using space more
+      efficiently.  Specifically, a tuple whose <b>Item1</b> is
+      <tt>u</tt> and whose <b>Item2</b> is <tt>v</tt> will be a key in
+      this dictionary if there is an edge from node <tt>u</tt> to node
+      <tt>v</tt>.  The value associated with this key will be the data
+      associated with this edge.  Thus, looking up an edge consists of
+      a single dictionary lookup.
+</p>
+The two dictionaries described above are the only <b>private</b>
+    fields our implementation needs.  We will refer to them as
+    <tt>_adjacencyLists</tt> and <tt>_edges</tt>, respectively.
+    Because we can initialize both fields to new dictionaries, there
+    is no need to define a constructor.  Furthermore, given these two
+    dictionaries, most of the <b>public</b> methods and properties
+    (see "<a
+    href="/~rhowell/DataStructures/redirect/graph-intro">Introduction
+    to Graphs</a>")
+    can be implemented using a single call to one of the members of
+    one of these dictionaries:
+<ul>
+<li> <b>void AddNode(TNode node)</b>: We can implement this method
+	using the <a
+	href="http://msdn.microsoft.com/en-us/library/k7z0zy8k.aspx"><b>Add</b></a>
+	method of <tt>_adjacencyLists</tt>.  We associate an empty
+	linked list with this node.</li>
+
+<li> <b>void AddEdge(TNode source, TNode dest, TEdgeData value)</b>: See
+below.</li>
+
+<li> <b>bool TryGetEdge(TNode source, TNode dest, out TEdgeData
+	  value)</b>:  We can implement this method using the <a
+	  href="http://msdn.microsoft.com/en-us/library/bb347013.aspx"><b>TryGetValue</b></a>
+	  method of <tt>_edges</tt>.</li>
+
+<li> <b>int NodeCount</b>:  Because <tt>_adjacencyLists</tt> contains
+	  all of the nodes as keys, we can implement this property
+	  using this dictionary's <a
+	  href="http://msdn.microsoft.com/en-us/library/zhcy256f.aspx"><b>Count</b></a>
+	  property.</li>
+
+<li> <b>int EdgeCount</b>: We can implement this property using the
+	<b>Count</b> property of <tt>_edges</tt>.</li>
+
+<li> <b>bool ContainsNode(TNode node)</b>: We can implement this
+	method using the <a
+	href="http://msdn.microsoft.com/en-us/library/kw5aaea4.aspx"><b>ContainsKey</b></a>
+	method of <tt>_adjacencyLists</tt>.</li>
+
+<li> <b>bool ContainsEdge(TNode source, TNode dest)</b>:  We can
+	implement this method using the <b>ContainsKey</b> method of
+	<tt>_edges</tt>.</li> 
+
+<li> <b>IEnumerable&lt;TNode&gt; Nodes</b>:  We can implement this
+	property using the <a
+	href="http://msdn.microsoft.com/en-us/library/yt2fy5zk.aspx"><b>Keys</b></a>
+	property of <tt>_adjacencyLists</tt>.</li>
+
+<li> <b>IEnumerable&lt;Edge&lt;TNode,&nbsp;TEdgeData&gt;&gt;
+	  OutgoingEdges(TNode source)</b>:  See below.</li>
+</ul>
+
+<p>
+Let's now consider the implementation of the <b>AddEdge</b> method.
+    Recall from "<a
+    href="/~rhowell/DataStructures/redirect/graph-intro">Introduction
+    to Graphs</a>" that this method adds an edge from <tt>source</tt>
+    to <tt>dest</tt> with data item <tt>value</tt>.  If either
+    <tt>source</tt> or <tt>dest</tt> is not already in the graph, it
+    will be added.  If either <tt>source</tt> or <tt>dest</tt> is
+    <b>null</b>, it will throw an <b>ArgumentNullException</b>.  If
+    <tt>source</tt> and <tt>dest</tt> are the same, or if the edge
+    already exists in the graph, it will throw an
+    <b>ArgumentException</b>.
+</p>
+In order to avoid changing the graph if the parameters are bad, we
+    should do the error checking first.  However, there is no need to
+    check whether the edge already exists, provided we update
+    <tt>_edges</tt> using its <a
+    href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.add?view=netframework-4.7.2#System_Collections_Generic_Dictionary_2_Add__0__1_"><b>Add</b></a>
+    method,
+    and that we do this before making any other changes to the graph.
+    Because a dictionary's <b>Add</b> method will throw an
+    <b>ArgumentException</b> if the given key is already in the
+    dictionary, it takes care of this error checking for us.  The key
+    that we need to add will be a <b>(TNode,&nbsp;TNode)</b>
+    containing the two nodes, and the value will be the <tt>value</tt>.  
+    <p></p>
+    
+    After we have updated <tt>_edges</tt>, we need to update
+    <tt>_adjacencyLists</tt>.  To do this, we first need to obtain
+    the linked list associated with the key <tt>source</tt> in
+    <tt>_adjacencyLists</tt>; however, because <tt>source</tt> may not
+    exist as a key in this dictionary, we should use the <a
+    href="http://msdn.microsoft.com/en-us/library/bb347013.aspx"><b>TryGetValue</b></a>
+    method to do this lookup (note that if <tt>source</tt> is not a
+    key in this dictionary, the <b>out</b> parameter will be set to
+    <b>null</b>, which we can interpret as an empty list).  We then
+    construct a new linked list cell, in which we place <tt>dest</tt>.
+    We then insert this cell at the beginning of the linked list we
+    retrieved, and set this linked list as the new value associated
+    with <tt>source</tt> in <tt>_adjacencyLists</tt>.  Finally, if
+    <tt>_adjacencyLists</tt> doesn't already contain <tt>dest</tt> as
+    a key, we need to add it with <b>null</b> as its associated value.
+<p>
+Finally, we need to implement the <b>OutgoingEdges</b> method.
+    Because this method returns an 
+    <b>IEnumerable&lt;Edge&lt;TNode,&nbsp;TEdgeData&gt;&gt;</b>, it
+    needs to iterate through the cells of the linked list associated
+    with the given node in <tt>_adjacencyLists</tt>.  For each of
+    these cells, it will need to <b>yield return</b> (see "<a
+    href="http://people.cs.ksu.edu/~rhowell/DataStructures/redirect/enumerators">Enumerators</a>")
+    an
+    <b>Edge&lt;TNode,&nbsp;TEdgeData&gt;</b> describing the edge
+    represented by that cell.  The source node for this edge will be
+    the node given to this method.  The destination node will be the
+    node stored in the cell.  The edge data can be obtained from the
+    dictionary <tt>_edges</tt>.
+<p></p>
+<div class="NAVBAR">
+<a
+      href="/~rhowell/DataStructures/redirect/unweighted-shortest-paths">Previous:
+      Unweighted Shortest Paths
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/graphs">Up: Graphs
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<p>
+<small>
+<!-- hhmts start -->
+Last modified: Mon Apr 15 13:07:13 CDT 2019
+<!-- hhmts end -->
+</small>
+</p>
+<small>
+    <i> &copy; Copyright 2014, 2016, 2018, 2019, <a
+    href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i> 
+</small>
+
+<p></p>
+
+<table border=0 cellpadding=2 summary="This table is used for layout
+purposes only.">
+<tr>
+<td align=center>
+    <a href="http://validator.w3.org/check/referer"><img border="0"
+        src="/~rhowell/valid-html401.gif"
+        alt="Valid HTML 4.01!" height="31" width="88"></a>
+</td>
+<tr>
+<td>
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+             <img border="0"
+                  src="/~howell/vcss.gif" 
+                  alt="Valid CSS!" height="31" width="88">
+            </a>
+</td>
+</table>
+
+</body>
+
+</html>

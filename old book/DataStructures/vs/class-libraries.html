@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Class Libraries</title>
+<link rel=STYLESHEET href="/~rhowell/style.css">
+
+</head>
+
+<body>
+<div class="NAVBAR">
+<a
+      href="/~rhowell/DataStructures/redirect/checkpointing">Previous:
+      Checkpointing
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/visual-studio">Up:
+      Visual Studio®
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<h1>Class Libraries</h1>
+
+Besides Windows Forms Applications, the other type of Visual Studio
+    project that we will be building in CIS 300 is a Class Library.
+    A Class Library is not a stand-alone application, but rather a
+    collection of code that can be used by various applications.  The
+    .NET Framework is a collection of class libraries.  When we
+    implement a data structure, we often want to place it in a class
+    library so that it is available to a variety of applications.
+    <p>
+      While it is possible to create a solution containing a single
+      project that is a class library, in CIS 300, we will instead
+      work with solutions containing both a Class Library project and
+      a Windows Forms Application project that will use the class
+      library.  We therefore need to know how to create a new class
+      library project within an existing solution.
+    </p>
+    
+    Suppose, for example, that we have a solution containing the
+    program from the section, "<a
+    href="/~rhowell/DataStructures/redirect/stringbuilders"><b>StringBuilder</b>s</a>"
+    (this solution may be obtained by creating Git repository using <a
+    href="https://classroom.github.com/a/lQSbxCEo">this URL</a>).  We
+    wish to replace the implementation of <b>StringBuilder</b> from the
+    .NET Framework with the class defined in "<a
+    href="/~rhowell/DataStructures/redirect/stringbuilder-impl">Implementation
+    of <b>StringBuilder</b>s</a>".  Furthermore, we wish to place this
+    class in a new class library.  To create a new Class Library
+    project within this solution, right-click on the solution name in
+    the Solution Explorer (i.e., on the top line), and select "Add
+    -&gt; New Project...".  From the resulting dialog, select "Class
+    Library" (<i>not</i> one of the portable versions), and name it
+    <tt>Ksu.Cis300.StringBuilderLibrary</tt>.  For the location, use
+    the folder containing the Git repository that includes the Visual
+    Studio solution, so that this project will be included in the same
+    Git repository.  When the project is created, a code window
+    containing a template for a <b>public class</b> definition will
+    appear.  There will be no Design window, as you are not building a
+    graphical application (although graphical controls can be built
+    within a class library).  The names of the source file and the
+    class should now be changed to <b>StringBuilder</b> using the
+    Solution Explorer in the same way as for a Windows Forms
+    Application.  Code for the <b>StringBuilder</b> class can now be
+    copied either from the section, "<a
+    href="/~rhowell/DataStructures/redirect/stringbuilder-impl">Implementation
+    of <b>StringBuilder</b>s</a>" or the Git repository created using
+    <a href="https://classroom.github.com/a/C2R3XPjX">this URL</a>.
+    Although we don't need them for this example, additional class
+    files can be added to the project by going to the Solution
+    Explorer, right-clicking on the project name (not the solution
+    name), and selecting "Add&#8209;&gt;Class...".
+    
+<p></p>
+Just having this project in the same solution isn't enough to allow it
+    to access the class library.  In order to enable this access, we
+    need to go back to the Solution Explorer, right-click on the
+    project we just added, and select,
+    "Add&nbsp;&#8209;&gt;&nbsp;Reference...".  In the resulting
+    dialog, we open the "Project" group on the left and select
+    "Solution" from that group, then click the
+    box next to "Ksu.Cis300.StringBuilderLibrary" in the main panel,
+    and click the "OK" button at the lower right.  Once this is done,
+    we can edit "UserInterface.cs" in the
+    <b>Ksu.Cis300.StringsAndStringBuilders</b> project we just added, and
+    change
+<pre>
+using System.Text;
+</pre>
+to
+<pre>
+using Ksu.Cis300.StringBuilderLibrary;
+</pre>
+Then wherever the class <b>StringBuilder</b> occurs in this file, the
+    implementation in our class library will be used.  
+<p></p>
+<div class="NAVBAR">
+<a
+      href="/~rhowell/DataStructures/redirect/checkpointing">Previous:
+      Checkpointing
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/visual-studio">Up:
+      Visual Studio®
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<p>
+<small>
+<!-- hhmts start -->
+Last modified: Fri Jan 26 12:15:25 CST 2018
+<!-- hhmts end -->
+</small>
+</p>
+<small>
+    <i> &copy; Copyright 2014, 2015, 2017, 2018, <a
+    href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i> 
+</small>
+
+<p></p>
+
+<table border=0 cellpadding=2 summary="This table is used for layout
+purposes only.">
+<tr>
+<td align=center>
+    <a href="http://validator.w3.org/check/referer"><img border="0"
+        src="/~rhowell/valid-html401.gif"
+        alt="Valid HTML 4.01!" height="31" width="88"></a>
+</td>
+<tr>
+<td>
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+             <img border="0"
+                  src="/~howell/vcss.gif" 
+                  alt="Valid CSS!" height="31" width="88">
+            </a>
+</td>
+</table>
+
+</body>
+
+</html>

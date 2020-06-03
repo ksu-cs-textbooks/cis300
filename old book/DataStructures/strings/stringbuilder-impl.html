@@ -1,0 +1,308 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Implementation of StringBuilders</title>
+<link rel=STYLESHEET href="/~rhowell/style.css">
+
+</head>
+
+<body>
+<div class="NAVBAR">
+<a
+      href="/~rhowell/DataStructures/redirect/stringbuilders">Previous:
+      <b>StringBuilder</b>s 
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/strings">Up:
+      <b>string</b>s and <b>StringBuilder</b>s
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<h1>Implementation of StringBuilders</h1>
+
+In this section, we will examine some of the implementation details of
+    the <b>StringBuilder</b> class.  There are several reasons for
+    doing this.  First, by examining these details, we can begin to
+    understand why a <b>StringBuilder</b> is so much more efficient
+    than a <b>string</b> when it comes to building long <b>string</b>s
+    a character at a time.  Second, by studying implementations of
+    data structures, we can learn techniques that might be useful to
+    us if we need to build our own data structures.  Finally, a
+    computing professional who better understands the underlying
+    software will be better equipped to use that software
+    effectively.
+<p>
+In what follows, we will develop an implementation of a simplified
+      <b>StringBuilder</b> class.  Specifically, we will only
+      implement enough to support the program that flips the case of
+      all characters in a <b>string</b> (see <a
+      href="/~rhowell/DataStructures/redirect/stringbuilders">the
+      previous section</a>).  Most other features of a
+      <b>StringBuilder</b> have a rather straightforward
+      implementation once the basics are done (we will show how to
+      implement an indexer in <a
+      href="/~rhowell/DataStructures/redirect/indexers">a later
+      section</a>).  The actual implementation in the .NET Framework
+      is somewhat more complicated in order to achieve even better
+      performance.
+</p>
+We start by determining how we can represent a <b>StringBuilder</b>
+    using more primitive data structures.  One of the more useful
+    primitive data structures that C# provides for building more
+    advanced data structures is the array.  We can represent the
+    characters in a <b>StringBuilder</b> using a <b>char[&nbsp;]</b>.
+    One difficulty in using an array, however, is that we don't know
+    how many characters our <b>StringBuilder</b> might need.  We will
+    return to this issue shortly, but for now, let's just arbitrarily
+    pick a size for our array, and define:
+<pre>
+/// &lt;summary&gt;
+/// The characters in this StringBuilder.
+/// &lt;/summary&gt;
+private char[] _characters = new char[100];
+</pre>
+An array with 100 elements will give us room enough to store up to 100
+    characters.  In fact, initializing the array in this way actually
+    gives us 100 characters, as each array element is initialized to a
+    Unicode NULL character (a <b>char</b> with a decimal value of 0).
+    Because <b>char</b> is a <a
+    href="/~rhowell/DataStructures/redirect/reference-value">value
+    type</a>, each array element is going to store a <b>char</b> -
+    it's just a question of which <b>char</b> it is going to store.
+    Therefore, if we want to be able to represent a sequence of
+    <i>fewer</i> than 100 characters, we need an additional field to
+    keep track of how many characters of the array actually represent
+    characters in the <b>StringBuilder</b>.  We therefore define:
+<pre>
+/// &lt;summary&gt;
+/// The number of characters in this StringBuilder.
+/// &lt;/summary&gt;
+private int _length = 0;
+</pre>
+Thus, for example, if <tt>_length</tt> is 25, the first 25 characters
+    in <tt>_characters</tt> will be the characters in the
+    <b>StringBuilder</b>.
+<p>
+Because both fields have initializers, the default constructor will
+      initialize them both; hence, we don't need to write a
+      constructor.  Let's focus instead on the <b>Append</b> method.
+      This method needs to take a <b>char</b> as its only parameter
+      and return a <b>StringBuilder</b> (itself).  Its effect needs to
+      be to add the given <b>char</b> to the end of the sequence of
+      characters in the <b>StringBuilder</b>.
+</p>
+In order to see how this can be done, consider how our fields together
+    represent the sequence of characters:
+<p>
+<img src="stringbuilder-impl.jpg" alt="The implementation of a StringBuilder">
+</p>
+Within the array referred to by <tt>_characters</tt>, the first
+    <tt>_length</tt> locations (i.e., locations 0 through
+    <tt>_length</tt>&nbsp;-&nbsp;1) store the characters in the
+    <b>StringBuilder</b>.  This means that
+    <tt>_characters[_length]</tt> is the next available location,
+    provided this is a valid array location.  In this case, we can
+    simply place the <b>char</b> to be appended in
+    <tt>_characters[_length]</tt>, increment <tt>_length</tt> (because
+    the number of characters in the <b>StringBuilder</b> has increased
+    by 1), and return the <b>StringBuilder</b>.
+<p>
+However, what if we are already using all of the array locations for
+      characters in the <b>StringBuilder</b>?  In this case,
+      <tt>_length</tt> is the length of the array, and therefore is not
+      a valid array location.  In order to handle this case, we need
+      to make more room.  The only way to do this to construct a new,
+      larger array, and copy all of the characters into it.  We will
+      then make <tt>_characters</tt> refer to the new array.  (The
+      .NET Framework actually provides a method to do all this, but in
+      order to show the details of what is happening, we will not use
+      it.)  Now that
+      there is enough room, we can append the new character as above.
+      The code is as follows:
+<pre>
+/// &lt;summary&gt;
+/// Appends the given character to the end of this StringBuilder.
+/// &lt;/summary&gt;
+/// &lt;param name="c"&gt;The character to append.&lt;/param&gt;
+/// &lt;returns&gt;This StringBuilder.&lt;/returns&gt;
+public StringBuilder Append(char c)
+{
+    if (_length == _characters.Length)
+    {
+        char[] chars = new char[2 * _length];
+        _characters.CopyTo(chars, 0);
+        _characters = chars;
+    }
+    _characters[_length] = c;
+    _length++;
+    return this;
+}
+</pre>
+A few comments on the above code are in order.  First, when we need a
+    new array, we allocate one of twice the size as the original
+    array.  We do this for a couple of reasons.  First, notice that
+    copying every character from one array to another is expensive if
+    there are a lot of characters.  For this reason, we don't want to
+    do it very often.  By doubling the size of the array every time we
+    run out of room, we increase the size by enough that it will be a
+    while before we need to do it again.  On the other hand, doubling
+    the array doesn't waste too much space if we
+    don't need to fill it entirely.
+<p>
+The <a
+	href="http://msdn.microsoft.com/en-us/library/06x742cw(v=vs.110).aspx"><b>CopyTo</b></a>
+	method used above copies all of the elements in the array to
+	which this method belongs (in this case, <tt>_characters</tt>)
+	to the array given by the first parameter (<tt>chars</tt> in
+	this case), placing them beginning at the location given by
+	the second parameter (0 in this case).  Thus, we are
+	copying all the elements of <tt>_characters</tt> to
+	<tt>chars</tt>, placing them beginning at location 0.
+</p>
+The last statement within the <b>if</b> block assigns the reference
+    stored in <tt>chars</tt> to <tt>_characters</tt>; i.e., it makes
+    <tt>_characters</tt> refer to the same array as does
+    <tt>chars</tt>.  The last statement in the method returns the
+    <b>StringBuilder</b> whose <b>Append</b> method was called.
+<p>
+<a name="overriding"></a>
+To complete this simple implementation, we need to provide a
+      <b>ToString</b> method.  This method is already defined for
+      every <b>object</b>; hence, <b>StringBuilder</b> <i>inherits</i>
+      this definition by default.  However, the <b>ToString</b> method
+      defined for <b>object</b>s doesn't give us the <b>string</b> we
+      want.  Fortunately, though, this method is a <b>virtual</b>
+      method, meaning that we can re-define by <i>overriding</i> it.
+      We do this by using the keyword, <b>override</b>, in its
+      definition.  Visual Studio®'s auto-complete feature is helpful
+      here, as when we 
+    type the word <b>override</b>, it presents us with a list of the
+    methods that can be overridden.  Selecting <b>ToString</b> from this
+    list will fill in a template for the method with a correct
+    parameter list and return type.  
+<p>
+We want this method to return the <b>string</b> formed from the first
+      <tt>_length</tt> characters in <tt>_characters</tt>.  We can
+      form such a string using one of the <a
+      href="http://msdn.microsoft.com/en-us/library/ms131424(v=vs.110).aspx"><b>string</b>
+      constructor</a>s.  This constructor takes three parameters:
+<ul>
+<li> a <b>char[&nbsp;]</b> containing the characters to form the
+	<b>string</b>; </li>
+<li> an <b>int</b> giving the index in this array of the first
+	character to use; and </li>
+<li> an <b>int</b> giving the number of characters to use.
+</ul>
+We can therefore define the <b>ToString</b> method as follows:
+<pre>
+/// &lt;summary&gt;
+/// Converts this StringBuilder to a string.
+/// &lt;/summary&gt;
+/// &lt;returns&gt;The string equivalent of this StringBuilder.&lt;/returns&gt;
+public override string ToString()
+{
+    return new string(_characters, 0, _length);
+}
+</pre>
+You can obtain
+      a program containing the complete <b>class</b> definition by
+      creating a Git repository (see "<a
+      href="/~rhowell/DataStructures/redirect/version-control">Git
+      Repositories</a>") using <a
+      href="https://classroom.github.com/a/lQSbxCEo">this URL</a>.
+      This program is a modification of the program used in <a
+      href="/~rhowell/DataStructures/redirect/stringbuilders">the
+      previous section</a> to compare <b>string</b>s with
+      <b>StringBuilder</b>s when building <b>string</b>s a character
+      at  a time.  Its only modification is to use this
+      <b>StringBuilder</b> class, defined within a <a
+      href="/~rhowell/DataStructures/redirect/class-libraries">class
+      library</a>,  instead of the class defined in the .NET
+      Framework.  By running the program on long <b>string</b>s, you
+      can verify that the performance of this <b>StringBuilder</b>
+      class is comparable to that of the <b>StringBuilder</b> in the
+      .NET Framework.
+<p>
+Now that we have the details of a <b>StringBuilder</b> implementation,
+      we can begin to see why it is so much more efficient to build a
+      <b>string</b> a character at a time using a
+      <b>StringBuilder</b>, as opposed to using a <b>string</b>.  As
+      we have noted, allocating a new array and copying all characters
+      to it is expensive; however, we have tried to reduce the number
+      of times this is done.  To see how this is accomplished, suppose
+      we are building a <b>string</b> of 100,000 characters.  The
+      first time we need a larger array, we will copy 100 characters
+      to a 200-element array.  The next time, we will copy 200
+      characters to a 400-element array.  The number of characters
+      copied and the size of the array will continue doubling until we
+      copy 51,200 characters to a 102,400-element array, which is
+      large enough to hold all of the characters.  If we add up all of
+      the character copies we have done when allocating new arrays, we
+      will find that there are a total of 102,300 copies.  In addition,
+      each time we call <b>Append</b>, we copy the <b>char</b>
+      parameter to the array.  This is another 100,000 copies.
+      Finally, the <b>ToString</b> method must copy all of the
+      characters to the <b>string</b> it is constructing.  This is
+      another 100,000 character copies, for a total of 302,300
+      copies.  In general, the number of character copies will always
+      be less than 4<i>n</i>, where <i>n</i> is the length of the
+      <b>string</b> being built.
+</p>
+
+<p></p>
+<div class="NAVBAR">
+<a
+      href="/~rhowell/DataStructures/redirect/stringbuilders">Previous:
+      <b>StringBuilder</b>s 
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/strings">Up:
+      <b>string</b>s and <b>StringBuilder</b>s
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<p>
+<small>
+Visual Studio is either a registered trademarks or a
+	trademarks of Microsoft Corporation in the United States
+	and/or other countries.
+</small>
+</p>
+<p>
+<small>
+<!-- hhmts start -->
+Last modified: Fri Jun 15 02:37:57 CDT 2018
+<!-- hhmts end -->
+</small>
+</p>
+<small>
+    <i> &copy; Copyright 2014, 2015, 2017, 2018, <a
+    href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i> 
+</small>
+
+<p></p>
+
+<table border=0 cellpadding=2 summary="This table is used for layout
+purposes only.">
+<tr>
+<td align=center>
+    <a href="http://validator.w3.org/check/referer"><img border="0"
+        src="/~rhowell/valid-html401.gif"
+        alt="Valid HTML 4.01!" height="31" width="88"></a>
+</td>
+<tr>
+<td>
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+             <img border="0"
+                  src="/~howell/vcss.gif" 
+                  alt="Valid CSS!" height="31" width="88">
+            </a>
+</td>
+</table>
+
+</body>
+
+</html>

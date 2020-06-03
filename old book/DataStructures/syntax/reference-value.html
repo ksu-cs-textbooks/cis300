@@ -1,0 +1,287 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Reference Types and Value Types</title>
+<link rel=STYLESHEET href="/~rhowell/style.css">
+
+</head>
+
+<body>
+<div class="NAVBAR">
+<a href="/~rhowell/DataStructures/redirect/enumerations">Next:
+      Enumerations</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/syntax">Up: C#
+      Syntax</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a 
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<h1>Reference Types and Value Types</h1>
+
+Data types in C# come in two distinct flavors: <i>value types</i> and
+    <i>reference types</i>.  In order to understand the distinction,
+    it helps to consider how space is allocated in C#.  Whenever a
+    method is called, the space needed to execute that method is
+    allocated from a data structure known as the <i>call stack</i>.
+    The space for a method includes its local variables, including its
+    parameters (except for <a
+    href="/~rhowell/DataStructures/redirect/out-ref"><b>out</b> or
+    <b>ref</b> parameters</a>).  The organization of the call stack is
+    shown in the following figure:
+    <p><img src="call-stack.jpg"
+	alt="A picture of the call stack should appear here"></p>
+    When the currently-running method makes a method call, space for
+    that method is taken from the beginning of the unused stack
+    space.  When the currently-running method returns, its space is
+    returned to the unused space.  Thus, the call stack works like <a
+    href="/~rhowell/DataStructures/redirect/stack-impl">the
+      array-based implementation of a stack</a>, and this storage
+    allocation is quite efficient.
+    <p>
+      What is stored in the space allocated for a variable depends on
+      whether the variable is for a value type or a reference type.
+      For a value type, the value of the variable is stored directly
+      in the space allocated for it.  There are two kinds of value types: <a
+      href="/~rhowell/DataStructures/redirect/structs">structures</a> and <a
+      href="/~rhowell/DataStructures/redirect/enumerations">enumerations</a>.
+      Examples of 
+      structures include numeric types such as <b>int</b>,
+      <b>double</b>, and <b>char</b>.  An example of an enumeration is
+      <a
+      href="http://msdn.microsoft.com/en-us/library/system.windows.forms.dialogresult(v=vs.110).aspx"><b>DialogResult</b></a>
+      (see <a
+      href="/~rhowell/DataStructures/redirect/message-boxes">"<b>MessageBox</b>es"</a>
+      and <a href="/~rhowell/DataStructures/redirect/file-dialogs">"File
+	Dialogs"</a>).
+    </p>
+    
+<p>
+Because value types are stored directly in variables, whenever a value
+      is assigned to a variable of a value type, the entire value must
+      be written to the variable.  For performance reasons, value
+      types therefore should be fairly small.
+    </p>
+    For reference types, the values are not stored directly into the
+    space allocated for the variable.  Instead, the variable stores a
+    <i>reference</i>, which is like an address where the value of the
+    variable can actually be found.  When a reference type is
+    constructed with a <b>new</b> expression, space for that instance
+    is allocated from a large data structure called the <i>heap</i>
+    (which is unrelated to a <a
+    href="/~rhowell/DataStructures/redirect/heaps">heap used to
+    implement a priority queue</a>).  Essentially, the heap is a large
+    pool of available memory from which space of different sizes may
+    be allocated at any time.  We will not go into detail about how
+    the heap is implemented, but suffice it to say that it is more
+    complicated and less efficient than the stack.  When space for a
+    reference type is allocated from the heap, a reference to that
+    space is stored in the variable.  Larger data types are more
+    efficiently implemented as reference types because an assignment
+    to a variable of a reference type only needs to write a reference,
+    not the entire data value.
+    <p></p>
+There are three kinds of reference types: classes, <a
+    href="/~rhowell/DataStructures/redirect/interfaces">interfaces</a>,
+    and <a 
+    href="http://msdn.microsoft.com/en-us/library/900fyy8e.aspx">delegates</a>.
+    Delegates are used to represent individual methods, and
+    are beyond the scope of this course.
+<p>
+Variables of a reference type do not need to refer to any data value.
+      In this case, they store a value of <b>null</b> (variables of a
+      value type cannot store <b>null</b>).  Any attempt to access a
+      method, property, or other
+      member of a <b>null</b> or to apply an index to it will result
+      in a <b>NullReferenceException</b>.
+    </p>
+    <p>
+      The fields of classes or structures are stored in a similar way,
+      depending on whether the field is a value type or a reference
+      type.  If it is a value type, the value is stored directly in
+      the field, regardless of whether that field belongs to an object
+      allocated from the stack or the heap.  If it is a reference
+      type, it stores either <b>null</b> or a reference to an object
+      allocated from the heap.
+    </p>
+    
+The difference between value types and reference types can be
+    illustrated with the following code example:
+    <pre>
+private int[] DoSomething(int i, int j)
+{
+    Point a = new Point(i, j);
+    Point b = a;
+    a.X = i + j;
+    int[] c = new int[10];
+    int[] d = c;
+    c[0] = b.X;
+    return d;
+}
+</pre>
+    Suppose this method is called as follows:
+<pre>
+int[] values = DoSomething(1, 2);
+</pre>
+    The method contains six local variables:
+    <tt>i</tt>, <tt>j</tt>, <tt>a</tt>, <tt>b</tt>, <tt>c</tt>, and
+    <tt>d</tt>.  <b>int</b> is a structure, and hence a value type.
+    <a
+      href="http://msdn.microsoft.com/en-us/library/system.drawing.point(v=vs.110).aspx"><b>Point</b></a>
+      is a structure (and hence a value type) containing <b>public
+      int</b> properties <b>X</b> and <b>Y</b>, each of which can be
+      read or modified.  <b>int[ ]</b>, however, is a reference type.
+    Space for all six of 
+    these variables is allocated from the stack, and the space for the
+    two <b>Point</b>s includes space to store the two <b>int</b>
+    fields for each.  The values 1 and 2 passed
+    for <tt>i</tt> and <tt>j</tt>, respectively,  are stored directly
+    in these variables, as shown in the following figure:
+    <p><img src="value-reference1.jpg"
+	alt="A picture of storage layout should appear here."></p>
+Note that technically, each of the storage locations shown above
+    contains a value; however, because the compiler disallows access
+    to uninitialized local variables, we have shown the uninitialized
+    variables as empty boxes.
+The constructor in the first line of the method above sets
+      the <b>X</b> property of <tt>a</tt> to 1 and the <b>Y</b>
+      property of <tt>a</tt> to 2.  The next statement simply copies
+      the value of <tt>a</tt> - i.e., the point (1,&nbsp;2) - to
+      <tt>b</tt>.  Thus, when the <b>X</b> property of <tt>a</tt> is
+      then changed to 3, <tt>b</tt> is unchanged - it still contains
+    the point (1,&nbsp;2), as shown in the following figure:
+    <p><img src="value-reference2.jpg"
+	alt="A picture of storage layout should appear here."></p>
+<p>
+On the other hand, consider what happens when something similar is
+      done with array variables.  When <tt>c</tt> is constructed, it
+      is assigned a new array allocated from the heap and containing
+      10 locations.  These 10 
+      locations are automatically initialized to 0.  However, because
+      an array is a reference type, the variable <tt>c</tt> contains a
+      reference to the actual array object, not the array itself.
+      Thus, when <tt>c</tt> is copied to <tt>d</tt>, the array itself
+      is not copied - the reference to the array is copied.
+      Consequently, <tt>d</tt> and <tt>c</tt> now refer to the same
+      array object, not two different arrays that look the same.
+      Hence, after we assign <tt>c[0]</tt> a value of 1, <tt>d[0]</tt>
+      will also contain a value of 1 because <tt>c</tt> and <tt>d</tt>
+      refer to the same array object.  (If we want <tt>c</tt> and
+      <tt>d</tt> to refer to different array objects, we need to
+      construct a new array for each variable and make sure each
+      location of each array contains the value we want.)  The
+      following figure illustrates the storage layout just prior to
+      the <b>return</b>:
+    </p>
+    
+    <p><img src="value-reference3.jpg"
+	alt="A picture of storage layout should appear here.">
+    </p>
+    
+The array
+      returned therefore resides on the heap, and contains 1 at index
+      0, and 0 at each of its other nine locations.  The six local
+      variables are returned to unused stack space; however, because
+      the array was allocated from the heap, the calling code may
+    continue to use it:
+    <p><img src="value-reference4.jpg"
+	alt="A picture of storage layout should appear here."></p>
+Because classes are reference types, it is possible for the definition
+    of a class <b>C</b> to contain one or more fields of type
+    <b>C</b>; for example:
+<pre>
+public class C
+{
+    private C _nextC;
+    . . .
+}
+</pre>
+Such circularity would be impossible for a value type because there
+    would not be room for anything else if we tried to include a value
+    of type <b>C</b> within a value of type <b>C</b>.  However,
+    because <b>C</b> is a class, and hence a reference type,
+    <tt>_nextC</tt> simply contains a reference to some object of type
+    <b>C</b>.  When the runtime system constructs an instance of type
+    <b>C</b>, it just needs to make it large enough to hold a
+    reference, along with any other fields defined within <b>C</b>.
+    Such recursive definitions are a powerful way to
+    link together many instances of a type.  See "<a
+    href="/~rhowell/DataStructures/redirect/linked-lists">Linked
+    Lists</a>" and "<a
+    href="/~rhowell/DataStructures/redirect/trees">Trees</a>" for more
+    information. 
+<p>
+Because all types in C# are sub-types of <b>object</b>, which is a
+      reference type, every value type is a subtype of at least one
+      reference type (however, value types cannot themselves have
+      sub-types).  It is therefore possible to assign an instance of a
+      value type to a variable of a reference type; for example:
+<pre>
+object x = 3;
+</pre>
+When this is done, a <i>boxed</i> version of the value type is
+    constructed on the heap, and the value copied to it.  The boxed
+    version of the 
+    value type is just like the original value type, except that it is
+    accessed by reference, not by value.   A reference to this boxed
+    version is then assigned to the variable of the reference type.
+    Note that multiple variables of the reference type may refer to
+    the same boxed instance of the value type.
+<p>
+Note that boxing may also occur when passing parameters.  For example,
+      suppose we have a method:
+</p>
+<pre>
+private object F(object x)
+{
+    .&nbsp;.&nbsp;.
+}
+</pre>
+If we call <b>F</b> with a parameter of 3, then 3 will need to be
+    copied to a boxed <b>int</b>, and a reference to this boxed
+    <b>int</b> will be assigned to <tt>x</tt> on the call stack.
+<p></p>
+<div class="NAVBAR">
+<a href="/~rhowell/DataStructures/redirect/enumerations">Next:
+      Enumerations</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/syntax">Up: C#
+      Syntax</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a 
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<p>
+<small>
+<!-- hhmts start -->
+Last modified: Thu Dec 21 13:53:16 CST 2017
+<!-- hhmts end -->
+</small>
+</p>
+<small>
+    <i> &copy; Copyright 2013, 2014, 2017, <a
+    href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i> 
+</small>
+
+<p></p>
+
+<table border=0 cellpadding=2 summary="This table is used for layout
+purposes only.">
+<tr>
+<td align=center>
+    <a href="http://validator.w3.org/check/referer"><img border="0"
+        src="/~rhowell/valid-html401.gif"
+        alt="Valid HTML 4.01!" height="31" width="88"></a>
+</td>
+<tr>
+<td>
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+             <img border="0"
+                  src="/~howell/vcss.gif" 
+                  alt="Valid CSS!" height="31" width="88">
+            </a>
+</td>
+</table>
+
+</body>
+
+</html>

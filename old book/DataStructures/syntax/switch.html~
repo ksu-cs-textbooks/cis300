@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>The switch Statement</title>
+<link rel=STYLESHEET href="/~rhowell/style.css">
+
+</head>
+
+<body>
+<div class="NAVBAR">
+<a href="/~rhowell/DataStructures/redirect/remainder">Next: The
+      Remainder Operator
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/foreach">Previous: The
+      foreach Statement
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/syntax">Up: C# Syntax
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<h1>The switch Statement</h1>
+
+The <b>switch</b> statement provides an alternative to the <b>if</b>
+    statement for certain contexts.  It is used when different cases
+    must be handled based on the value of an expression that can have
+    only a few possible results.
+<p>
+For example, suppose we want to display a <a
+	href="/~rhowell/DataStructures/redirect/message-boxes"><b>MessageBox</b></a>
+	containing "Abort", "Retry", and "Ignore" buttons.  The user
+	can respond in only three ways, and we need different code in
+	each case.  Assuming <tt>message</tt> and <tt>caption</tt> are
+	<b>string</b>s, we can use the following code:
+<pre>
+switch (MessageBox.Show(message, caption, MessageBoxButtons.AbortRetryIgnore))
+{
+    case DialogResult.Abort:
+
+        // Code for the "Abort" button
+
+        break;
+    case DialogResult.Retry:
+
+        // Code for the "Retry" button
+
+        break;
+    case DialogResult.Ignore:
+
+        // Code for the "Ignore" button
+
+        break;
+}
+</pre>
+The expression to determine the case (in this example, the call to
+    <b>MessageBox.Show</b>) is placed within the parentheses following
+    the keyword <b>switch</b>.  Because the value returned by this
+    method is of the <a
+    href="/~rhowell/DataStructures/redirect/enumerations">enumeration</a>
+    type <a
+    href="http://msdn.microsoft.com/en-us/library/system.windows.forms.dialogresult.aspx"><b>DialogResult</b></a>,
+    it will be one of a small set of values; in fact, given the buttons
+    placed on the <b>MessageBox</b>, this value must be one of three
+    possibilities.  These three possible results are listed in three
+    <i>case labels</i>.  Each of these case labels must begin with the
+    keyword <b>case</b>, followed by a constant expression (i.e., one
+    that can be fully evaluated by the compiler, as explained in the
+    section, "<a
+    href="/~rhowell/DataStructures/redirect/const">Constant Fields</a>"),
+    followed by a colon (':').  When the expression in the
+    <b>switch</b> statement is evaluated, control jumps to the code
+    following the case label containing the resulting value.  For
+    example, if the result of the call to <b>MessageBox.Show</b> is
+    <b>DialogResult.Retry</b>, control jumps to the code following the
+    second case label.  If there is no case label containing the value
+    of the expression, control jumps to the code following the
+    <b>switch</b> statement.  The code following each case label must be
+    terminated by a statement like <b>break</b> or <b>return</b>,
+    which causes control to jump elsewhere.  (This arcane syntax is a
+    holdover from C, except that C allows control to continue into the next
+    case.)  A <b>break</b> statement within a <b>switch</b> statement
+    causes control to jump to the code following the <b>switch</b>
+    statement.  
+<p>
+The last case in a <b>switch</b> statement may optionally have the
+      case label:
+<pre>
+default:
+</pre>
+This case label is analogous to an <b>else</b> on an <b>if</b>
+    statement in that if the value of the <b>switch</b> expression is
+    not found, control will jump to the code following the
+    <b>default</b> case label.  While this case is not required in a
+    <b>switch</b> statement, there are many instances when it is
+    useful to include one, even if you can explicitly enumerate all of
+    the cases you expect.  For example, if each case ends by returning
+    a value, but no <b>default</b> case is included, the compiler will
+    detect that not all paths return a value, as any case that is not
+    enumerated will cause control to jump past the entire
+    <b>switch</b> statement.  There are various ways of avoid this
+    problem:
+<ul>
+<li> Make the last case you are handling the <b>default</b>
+	case. </li>
+<li> Add a <b>default</b> case that explicitly throws an exception to
+	handle any cases that you don't expect. </li>
+<li> Add either a <b>return</b> or a <b>throw</b> following the
+	<b>switch</b> statement (the first two options are preferable
+	to this one). </li>
+</ul>
+<p>
+It is legal to have more than one case label on the same code block.
+      For example, if <tt>i</tt> is an <b>int</b> variable, we can use
+      the following code:
+<pre>
+switch (i)
+{
+    case 1:
+
+        // Code for i = 1
+
+        break;
+    case 2:
+    case 3:
+    case 5:
+    case 7:
+
+        // Code for i = 2, 3, 5, or 7
+
+        break;
+    case 4:
+    case 6:
+    case 8:
+
+        // Code for i = 4, 6, or 8
+
+        break;
+    default:
+
+        // Code for all other values of i
+
+        break;
+}
+</pre>
+If the value of the <b>switch</b> expression matches any one of the
+    case labels on a block, control jumps to that block.  The same
+    case label may not appear more than once. 
+<p></p>
+<div class="NAVBAR">
+<a href="/~rhowell/DataStructures/redirect/remainder">Next: The
+      Remainder Operator
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/foreach">Previous: The
+      foreach Statement
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/syntax">Up: C# Syntax
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<p>
+<small>
+<!-- hhmts start -->
+Last modified: Tue Feb  4 10:15:44 CST 2014
+<!-- hhmts end -->
+</small>
+</p>
+<small>
+    <i> &copy; Copyright 2014, <a
+    href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i> 
+</small>
+
+<p></p>
+
+<table border=0 cellpadding=2 summary="This table is used for layout
+purposes only.">
+<tr>
+<td align=center>
+    <a href="http://validator.w3.org/check/referer"><img border="0"
+        src="/~rhowell/valid-html401.gif"
+        alt="Valid HTML 4.01!" height="31" width="88"></a>
+</td>
+<tr>
+<td>
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+             <img border="0"
+                  src="/~howell/vcss.gif" 
+                  alt="Valid CSS!" height="31" width="88">
+            </a>
+</td>
+</table>
+
+</body>
+
+</html>

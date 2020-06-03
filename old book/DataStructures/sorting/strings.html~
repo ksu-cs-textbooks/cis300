@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Sorting Strings</title>
+<link rel=STYLESHEET href="/~rhowell/style.css">
+
+</head>
+
+<body>
+<div class="NAVBAR">
+<a
+      href="/~rhowell/DataStructures/redirect/hybrid-sorts">Previous:
+      Hybrid Sorting Algorithms
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/sorting">Up: Sorting
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<h1>Sorting Strings</h1>
+
+We conclude our discussion of sorting with a look at a sorting
+    algorithm designed specifically for sorting multi-keyed data.  In
+    such data there is a primary key, a secondary key, and so on.  We
+    want to sort the data so that element <i>a</i> precedes element
+    <i>b</i> if:
+<ul>
+<li> the primary key of <i>a</i> is less than the primary key of
+	<i>b</i>; </li>
+<li> or their primary keys are equal, but the secondary key of
+	<i>a</i> is less than the secondary key of <i>b</i>;</li>
+<li> etc.</li>
+</ul>
+An example of multi-keyed data is strings.  The first character of a
+    string is its primary key, its second character is its secondary
+    key, and so on.  The only caveat is that the strings may not all
+    have the same length; hence, they may not all have the same number
+    of keys.  We therefore stipulate that a string that does not have
+    a particular key must precede all strings that have that key.
+<p>
+One algorithm to sort multi-keyed data is known as <i>multi-key quick
+	sort</i>.  In this section, we will describe multi-key quick
+	sort as it applies specifically to sorting strings; however,
+	it can be applied to other multi-keyed data as well.
+</p>
+One problem with sorting strings using a version of quick sort
+    described in "<a
+    href="/~rhowell/DataStructures/redirect/split-sorts">Split
+    Sorts</a>" is that string comparisons can be expensive.
+    Specifically, they must compare the strings a character at a time
+    until they reach either a mismatch or the end of a string.  Thus,
+    comparing strings that have a long prefix in common is expensive.
+    Now observe that quick sort operates by splitting the array into
+    smaller and smaller pieces whose elements belong near each other
+    in the sorted result.  It is therefore common to have some pieces
+    whose elements all begin with the same long prefix.
+<p>
+Multi-key quick sort improves the performance by trying to avoid
+      comparing prefixes after they have already been found to be the
+      same (though the suffixes may differ).  In order to accomplish
+      this, it uses an extra <b>int</b> parameter
+      <tt>k</tt> such that all the strings being sorted match in their
+      first <tt>k</tt> positions (and by implication, all strings have
+      length at least <tt>k</tt>).  We can safely use a value of 0 in
+      the initial call, but this value can increase as recursive calls
+      are made.
+</p>
+Because all strings begin with the same prefix of length <tt>k</tt>,
+    we can focus on the character at location <tt>k</tt> (i.e.,
+    following the first <tt>k</tt> characters) of each string.  We
+    need to be careful, however, because some of the strings may not
+    have a character at location <tt>k</tt>.  We will therefore use an
+    <b>int</b> to store the value of the character at location
+    <tt>k</tt> of a string, letting -1 denote the absence of a
+    character at that location.
+<p>
+The algorithm then proceeds a lot like those described in "<a
+	href="/~rhowell/DataStructures/redirect/split-sorts">Split
+	Sorts</a>".  If the number of elements being sorted is greater
+	than 1, a pivot element <tt>p</tt> is found.  Note that
+	<tt>p</tt> is not a <b>string</b>, but an <b>int</b>
+	representing a character at location <tt>k</tt>, as described
+	above.  The elements are then partitioned into groups of
+	strings whose character at location <tt>k</tt> is less than
+	<tt>p</tt>, equal to <tt>p</tt>, or greater than <tt>p</tt>,
+	respectively.
+</p>
+After these three groups are formed, the first and third group are
+    sorted recursively using the same value for <tt>k</tt>.
+    Furthermore, the second group may not be completely sorted yet -
+    all we know is that all strings in this group agree on the first
+    <tt>k</tt>&nbsp;+&nbsp;1 characters.  Thus, unless <tt>p</tt> is
+    -1 (indicating that that these strings all have length <tt>k</tt>,
+    and are therefore all equal), we need to recursively sort this
+    group as well.  However, because we know that the strings in this
+    group all agree on the first <tt>k</tt>&nbsp;+&nbsp;1 characters,
+    we pass <tt>k</tt>&nbsp;+&nbsp;1 as the last parameter.
+<p>
+One aspect of this algorithm that we need to address is whether the
+      recursion is valid.  Recall that <a
+      href="/~rhowell/DataStructures/redirect/recursion">when we
+      introduced recursion</a>, we stated that in order to guarantee
+      termination, all recursive calls must be on smaller problem
+      instances, where the size of a problem instance is given by a
+      nonnegative integer.  In the algorithm described above, we might
+      reach a point at which all of the strings being sorted match in
+      location <tt>k</tt>.  In such a case, the second recursive call
+      will contain all of the strings.
+</p>
+By being careful how we define the size of the problem instance,
+    however, we can show that this recursion is, in fact, valid.
+    Specifically, we define the size of the problem instance to be the
+    number of strings being sorted, plus the
+    total number of characters beginning at location <tt>k</tt> in
+    all strings being sorted.  Because there is at least one string
+    containing <tt>p</tt> at location <tt>k</tt>, the number of
+    strings in both the first and the third recursive call must be
+    smaller, while the total number of characters beginning at
+    location <tt>k</tt> can be no larger.  Because <tt>k</tt>
+    increases by 1 in the second recursive call, the total number of
+    characters past this location must be smaller, while the number of
+    strings can be no larger.  Hence, the size decreases in all
+    recursive calls.
+<p>
+The fact that we are doing recursion on the length of strings,
+      however, can potentially cause the runtime stack to overflow
+      when we are sorting very long strings.  For this reason, it is
+      best to convert the recursive call on the second group to a
+      loop.  We can do this by changing the <b>if</b>-statement that
+      controls whether the splitting will be done into a
+      <b>while</b>-loop that iterates as long as the portion being
+      sorted is large enough to split.  Then at the bottom of the
+      loop, after doing recursive calls on the first and third parts,
+      we check to see if <tt>p</tt> is -1 - if so, we terminate the
+      loop.  Otherwise,
+      we do the following:
+</p>
+<ul>
+<li>increment <tt>k</tt>; </li>
+<li>change the index giving the start of the portion we are sorting to the
+	beginning of the second part; and </li>
+<li>change the length of the portion we are sorting to the length of
+	the second part.
+</ul>
+The next iteration will then sort the second part.
+<p>
+This algorithm can be combined with <a
+	href="/~rhowell/DataStructures/redirect/insert-sorts">insertion
+	sort</a> and <a
+	href="/~rhowell/DataStructures/redirect/heap-sort">heap
+	sort</a>, as was done for introsort in <a
+	href="/~rhowell/DataStructures/redirect/hybrid-sorts">the
+	previous section</a>.  However, we should also modify
+	insertion sort and heap sort to use the information we already
+	have about equal prefixes when we are comparing elements.
+	Specifically, rather than comparing entire strings, we should
+	begin comparing after the equal prefix.  Because of the way
+	multi-key quick sort does comparisons, the result tends to
+	perform better than the single-key versions, assuming similar
+	optimizations are made; however, cutoffs for running insertion
+	sort and/or heap sort may need to be adjusted.
+</p>
+<p></p>
+<div class="NAVBAR">
+<a
+      href="/~rhowell/DataStructures/redirect/hybrid-sorts">Previous:
+      Hybrid Sorting Algorithms
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/sorting">Up: Sorting
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<p>
+<small>
+<!-- hhmts start -->
+Last modified: Thu Dec  3 15:05:53 CST 2015
+<!-- hhmts end -->
+</small>
+</p>
+<small>
+    <i> &copy; Copyright 2014, 2015, <a
+    href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i> 
+</small>
+
+<p></p>
+
+<table border=0 cellpadding=2 summary="This table is used for layout
+purposes only.">
+<tr>
+<td align=center>
+    <a href="http://validator.w3.org/check/referer"><img border="0"
+        src="/~rhowell/valid-html401.gif"
+        alt="Valid HTML 4.01!" height="31" width="88"></a>
+</td>
+<tr>
+<td>
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+             <img border="0"
+                  src="/~howell/vcss.gif" 
+                  alt="Valid CSS!" height="31" width="88">
+            </a>
+</td>
+</table>
+
+</body>
+
+</html>

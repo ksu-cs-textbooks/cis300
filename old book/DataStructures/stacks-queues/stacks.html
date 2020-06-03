@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Introduction to Stacks</title>
+<link rel=STYLESHEET href="/~rhowell/style.css">
+
+</head>
+
+<body>
+<div class="NAVBAR">
+<a href="/~rhowell/DataStructures/redirect/undo-redo">Next:
+      Implementing Undo and Redo for a <b>TextBox</b>
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/stacks-queues">Up:
+      Stacks and Queues </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<h1>Introduction to Stacks</h1>
+
+A <i>stack</i> provides last-in-first-out (LIFO) access to data
+    items.  We usually think of a stack as arranging data items
+    vertically, like a stack of trays in a cafeteria.  Access is
+    normally provided only at the top of the stack; hence, if we want
+    to add an item, we <i>push</i> it onto the top, and if we want to
+    remove an item, we <i>pop</i> it from the top.  Because we only
+    access the top of the stack, the item that we pop is always the
+    remaining item that we had pushed the most recently.
+<p>
+The .NET Framework provides two kinds of stacks.  One is the <a
+	href="http://msdn.microsoft.com/en-us/library/system.collections.stack.aspx"><b>Stack</b></a>
+	class found in the <a
+	href="http://msdn.microsoft.com/en-us/library/System.Collections(v=vs.110).aspx"><b>System.Collections</b></a>
+	namespace.  This class provides a stack of <b>object</b>s.
+	Because every type in C# is a subtype of <b>object</b>, we can
+	push any data items we want onto a <b>Stack</b>.  The most
+	commonly-used <b>public</b> members of this class are:
+<ul>
+<li> A <a
+	  href="http://msdn.microsoft.com/en-us/library/703ca3kb.aspx">constructor</a>
+	  that takes no parameters and constructs an empty
+	  stack. </li> <li> A <a
+	  href="http://msdn.microsoft.com/en-us/library/system.collections.stack.count.aspx"><b>Count</b></a>
+	  property, which gets the number of elements on the
+	  <b>Stack</b> as an <b>int</b>. </li> <li> A <a
+	  href="http://msdn.microsoft.com/en-us/library/system.collections.stack.push.aspx"><b>Push</b></a>
+	  method, which takes a single parameter of type
+	  <b>object</b>, and pushes it onto the top of the
+	  <b>Stack</b>. </li> <li> A <a
+	  href="http://msdn.microsoft.com/en-us/library/system.collections.stack.peek.aspx"><b>Peek</b></a>
+	  method, which takes no parameters and returns the element at
+	  the top of the <b>Stack</b> (as an <b>object</b>) without
+	  changing the <b>Stack</b>'s contents.  If the <b>Stack</b>
+	  is empty, this method throws an
+	  <b>InvalidOperationException</b>. </li> <li> A <a
+	  href="http://msdn.microsoft.com/en-us/library/system.collections.stack.pop.aspx"><b>Pop</b></a>
+	  method, which takes no parameters, and removes and returns
+	  the element at the top of the <b>Stack</b> (as an
+	  <b>object</b>).  If the <b>Stack</b> is empty, this method
+	  throws an <b>InvalidOperationException</b>. </li>
+</ul>
+
+As we mentioned above, because the <b>Push</b> method takes an
+    <b>object</b> as its parameter, we can push any data elements we
+    want onto a <b>Stack</b>.  What this means, however, is that the
+    compiler can't determine the type of these elements when we
+    retrieve them; i.e., both the <b>Peek</b> and <b>Pop</b> methods
+    return <b>object</b>s.  Thus, for example, the following code will
+    throw an exception:
+<pre>
+Stack s = new Stack();
+s.Push(7);
+int n = s.Pop() + 1;
+</pre>
+The problem is that the <b>Pop</b> method returns an <b>object</b>,
+    and we can't add an <b>int</b> to an <b>object</b>.  Although it's
+    pretty easy to see from this code that <b>Pop</b> will return 7,
+    in many cases it's impossible to know at compile time the exact
+    type of the element returned (for example, the <b>Stack</b> may
+    be a parameter to a method, and that method may be called by code
+    that has not yet been written).  Consequently, the compiler
+    simply uses the return type of <b>Pop</b> - it doesn't even try to
+    figure out the type any more precisely. 
+<p></p>
+<a name="cast"></a>
+If you want to use the value returned by <b>Pop</b> or <b>Peek</b>
+    as something other than an <b>object</b>, you need to tell the
+    compiler what its type actually is.  You do this with a
+    <i>cast</i>:
+<pre>
+int n = (int)s.Pop() + 1;
+</pre>
+This tells the compiler to assume that the value returned by
+    <b>Pop</b> is an <b>int</b>.  The type is still checked, but now
+    it is checked at run time, rather than at compile time.  If the
+    runtime environment detects that the value is not, in fact, an
+    <b>int</b> it 
+    will throw an <b>InvalidCastException</b>.
+<p>
+<a name="generic"></a>
+Often when we need a stack, the data items that we wish to store are
+      all of the same type.  In such a case, it is rather awkward to
+      include a cast whenever we retrieve an item from the stack.  In
+      order to avoid this casting, the .NET Framework provides a
+      <i>generic</i> stack, <a
+	href="http://msdn.microsoft.com/en-us/library/3278tedw(v=vs.110).aspx"><b>Stack&lt;T&gt;</b></a>,
+      found in the <a
+	href="http://msdn.microsoft.com/en-us/library/System.Collections.Generic(v=vs.110).aspx"><b>System.Collections.Generic</b></a>
+      namespace.  The <b>T</b> within angle brackets is a <i>type
+	parameter</i> - we may replace it with any type we want.  This
+      type tells what type of elements may be placed in this stack.
+      For example, if we want a stack that will only contain
+      <b>int</b>s, we can write:
+</p>
+<pre>
+Stack&lt;int&gt; s = new Stack&lt;int&gt;();
+</pre>
+This class has members similar to those listed above for the
+    non-generic <b>Stack</b> class, except that the <b>Push</b> method
+    takes a parameter of type <b>T</b> (i.e., whatever type we placed
+    within the angle brackets in the type declaration and constructor
+    call), and the <b>Peek</b> and <b>Pop</b> methods each return a
+    value of type <b>T</b>.  As a result, the following is now legal
+    code:
+<pre>
+Stack&lt;int&gt; s = new Stack&lt;int&gt;();
+s.Push(7);
+int n = s.Pop() + 1;
+</pre>
+We will show how you can define your own generic types in "<a
+      href="/~rhowell/DataStructures/redirect/stack-impl">Implementing
+      a Stack</a>".  First, however, we want to work through a couple
+      of example applications of stacks.  We will do that in the next
+      two sections. 
+
+<p></p>
+<div class="NAVBAR">
+<a href="/~rhowell/DataStructures/redirect/undo-redo">Next:
+      Implementing Undo and Redo for a <b>TextBox</b>
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/stacks-queues">Up:
+      Stacks and Queues </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<p>
+<small>
+<!-- hhmts start -->
+Last modified: Thu Aug 28 13:59:18 CDT 2014
+<!-- hhmts end -->
+</small>
+</p>
+<small>
+    <i> &copy; Copyright 2014, <a
+    href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i> 
+</small>
+
+<p></p>
+
+<table border=0 cellpadding=2 summary="This table is used for layout
+purposes only.">
+<tr>
+<td align=center>
+    <a href="http://validator.w3.org/check/referer"><img border="0"
+        src="/~rhowell/valid-html401.gif"
+        alt="Valid HTML 4.01!" height="31" width="88"></a>
+</td>
+<tr>
+<td>
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+             <img border="0"
+                  src="/~howell/vcss.gif" 
+                  alt="Valid CSS!" height="31" width="88">
+            </a>
+</td>
+</table>
+
+</body>
+
+</html>

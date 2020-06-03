@@ -1,0 +1,210 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Hash Codes</title>
+<link rel=STYLESHEET href="/~rhowell/style.css">
+
+</head>
+
+<body>
+<div class="NAVBAR">
+<a
+      href="/~rhowell/DataStructures/redirect/equality">Previous:
+      Equality in C#
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/dictionaries">Up:
+      Hash Tables
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<h1>Hash Codes</h1>
+
+Whenever equality is redefined for a type, the hash code computation
+    for that type needs to be redefined in a consistent way.  This is
+    done by  <a
+	href="/~rhowell/DataStructures/redirect/method-overriding">overriding</a>
+	that type's <a
+    href="https://msdn.microsoft.com/en-us/library/system.object.gethashcode.aspx"><b>GetHashCode</b></a>
+    method.  In order for hashing to be implemented correctly and 
+    efficiently, this method should satisfy the following goals:
+<ul>
+<li> Equal keys must have the same hash code.  This is necessary in
+	order for the <b>Dictionary&lt;TKey,&nbsp;TValue&gt;</b> class
+	to be able to find a given key that it has stored.  On the
+	other hand, because the number of possible keys is usually
+	larger than the number of possible hash codes, unequal keys
+	are also allowed to have the same hash code. </li> <li> The
+	computation should be done quickly. </li> <li> Hash codes
+	should be uniformly distributed even if the keys are
+	not. </li>
+</ul>
+The last goal above may seem rather daunting, particularly in light of
+    our desire for a quick computation.  In fact, it is impossible to
+    guarantee in general - provided there are more than
+    2<sup>32</sup>(<i>k</i>&nbsp;-&nbsp;1) possible keys from which to
+    choose, no matter how the hash code computation is implemented, we
+    can always find at least <i>k</i> keys with the same hash code.
+    However, this is a problem that has been studied a great deal, and
+    several techniques have been developed that are effective in
+    practice.  We will caution, however, that not every technique that
+    looks like it should be effective actually is in practice.  It is
+    best to use techniques that have been demonstrated to be effective
+    in a wide variety of applications.  We will examine one of these
+    techniques in what follows.
+<p>
+A guiding principle in developing hashing techniques is to use all
+      information available in the key.  By using all the information,
+      we will be sure to use the information that distinguishes this
+      key from other keys.  This information includes not just the
+      values of the individual parts of the the key, but also the
+      order in which they occur, provided this order is significant in
+      distinguishing unequal keys.  For example, the strings, "being"
+      and "begin" contain the same letters, but are different because
+      the letters occur in a different order.
+</p>
+One specific technique initializes the hash code to 0, then processes
+    the key one component at a time.  These components may be bytes,
+    characters, or other parts no larger than 32 bits each.  For
+    example, for the Nim board positions discussed in "<a
+    href="/~rhowell/DataStructures/redirect/memoization">Memoization</a>",
+    the components would be the number of stones on each pile, the
+    limit for each pile, and the total number of piles (to distinguish
+    between a board ending with empty piles and a board with fewer
+    piles).  For each
+    component, it does the following:
+<ul>
+<li> Multiply the hash code by some fixed odd integer. </li>
+<li> Add the current component to the hash code. </li>
+</ul>
+<a name="checked-unchecked"></a>
+Due to the repeated multiplications, the above computation will often
+    overflow an <b>int</b>.  This is not a problem - as we explain
+    below, enough
+    information is retained in the low-order bits that remain.
+<p></p>
+In order to understand this computation a little better, let's first
+    ignore the effect of this overflow.  We'll denote the fixed odd
+    integer by <i>x</i>, and the components of the key as
+    <i>k</i><sub>1</sub>,&nbsp;.&nbsp;.&nbsp;.,&nbsp;<i>k<sub>n</sub></i>.
+    Then this is the result of the computation:
+<p>
+(&nbsp;.&nbsp;.&nbsp;.&nbsp;((0x&nbsp;+&nbsp;<i>k</i><sub>1</sub>)<i>x</i>&nbsp;+&nbsp;<i>k</i><sub>2</sub>)&nbsp;.&nbsp;.&nbsp;.&nbsp;)<i>x</i>&nbsp;+&nbsp;<i>k<sub>n</sub></i>&nbsp;=&nbsp;<i>k</i><sub>1</sub><i>x</i><sup><i>n</i>-1</sup>&nbsp;+&nbsp;<i>k</i><sub>2</sub><i>x</i><sup><i>n</i>-2</sup>&nbsp;+&nbsp;.&nbsp;.&nbsp;.&nbsp;+&nbsp;<i>k<sub>n</sub></i>.
+</p>
+Because the above is a polynomial, this hashing scheme is called
+    <i>polynomial hashing</i>.  While the computation itself is
+    efficient, performing just a couple of arithmetic operations on
+    each component, the result is to multiply each component by a
+    unique value (<i>x<sup>i</sup></i> for some <i>i</i>) depending on
+    its position within the key.
+<p>
+Now let's consider the effect of overflow on the above polynomial.
+      What this does is to keep only the low-order 32 bits of the
+      value of the polynomial.  Looking at it another way, we end up
+      multiplying <i>k<sub>i</sub></i> by only the low-order 32 bits
+      of <i>x</i><sup><i>n</i>-<i>i</i></sup>.  This helps to explain
+      why <i>x</i> is an odd number - raising an even number to the
+      <i>i</i>th power forms a number ending in <i>i</i> 0s in binary.
+      Thus, if there are more than 32 components in the key, all but
+      the last 32 will be multiplied by 0, and hence, ignored.
+</p>
+There are other potential problems with using certain odd numbers for
+    <i>x</i>.  For example, we wouldn't want to use 1, because that
+    would result in simply adding all the components together, and we
+    would lose any information regarding their positions within the
+    key.  Using -1 would be almost as bad, as we would multiply all
+    components in odd positions by -1 and all components in even
+    positions by 1.  The effect of overflow can cause similar
+    behavior; for example, if we place 2<sup>31</sup>&nbsp;-&nbsp;1 in
+    an <b>int</b> variable and square it, the overflow causes the
+    result to be 1.  Successive powers will then alternate between
+    2<sup>31</sup>&nbsp;-&nbsp;1 and 1.
+<p>
+It turns out that this cyclic behavior occurs no matter what odd
+      number we use for <i>x</i>.  However, in most cases the cycle is
+      long enough that keys of a reasonable size will have each
+      component multiplied by a unique value.  The only odd numbers
+      that result in short cycles are those that are adjacent to a
+      multiple of a large power of 2 (note that 0 is a multiple of any
+      integer).
+</p>
+The other potential problem occurs when we are hashing fairly short
+    keys.  In such cases, if <i>x</i> is also small enough, the values
+    computed will all be much smaller than the maximum possible
+    integer value (2<sup>31</sup>&nbsp;-&nbsp;1).  As a result, we
+    will not have a uniform distribution of values.  We therefore want
+    to avoid making <i>x</i> too small.
+<p>
+Putting all this together, choosing <i>x</i> to be an odd number
+      between 30 and 40 works pretty well.  These values are large
+      enough so that 7 key components will usually overflow an
+      <b>int</b>.  Furthermore, they all have a cycle length greater
+      than 100 million.
+</p>
+We should always save the hash code in a <b>private</b> field after we
+    compute it so that subsequent requests for the same hash code
+    don't result in repeating the computation.  This can be done in
+    either of two ways.  One way is to compute it in
+    an <i>eager</i> fashion by doing it in the constructor.  When
+    doing it this way, the <b>GetHashCode</b> method simply needs to
+    return the value of the <b>private</b> field.  While this is often
+    the easiest way, it sometimes results in computing a hash code
+    that we end up not using.  The alternative is to compute it in a
+    <i>lazy</i> fashion.  This requires an extra <b>private</b> field
+    of type <b>bool</b>.  This field is used to indicate whether the
+    hash code has been computed yet or not.  With this approach, the
+    <b>GetHashCode</b> method first checks this field to see if the
+    hash code has been computed.  If not, it computes the hash code
+    and saves it in its field.  In either case, it then returns the
+    value of the hash code field.
+
+<p></p>
+<div class="NAVBAR">
+<a
+      href="/~rhowell/DataStructures/redirect/equality">Previous:
+      Equality in C#
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/dictionaries">Up:
+      Hash Tables
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<p>
+<small>
+<!-- hhmts start -->
+Last modified: Mon Oct 29 14:44:11 CDT 2018
+<!-- hhmts end -->
+</small>
+</p>
+<small>
+    <i> &copy; Copyright 2014, 2018, <a
+    href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i> 
+</small>
+
+<p></p>
+
+<table border=0 cellpadding=2 summary="This table is used for layout
+purposes only.">
+<tr>
+<td align=center>
+    <a href="http://validator.w3.org/check/referer"><img border="0"
+        src="/~rhowell/valid-html401.gif"
+        alt="Valid HTML 4.01!" height="31" width="88"></a>
+</td>
+<tr>
+<td>
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+             <img border="0"
+                  src="/~howell/vcss.gif" 
+                  alt="Valid CSS!" height="31" width="88">
+            </a>
+</td>
+</table>
+
+</body>
+
+</html>

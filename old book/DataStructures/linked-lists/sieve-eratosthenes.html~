@@ -1,0 +1,249 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Finding Prime Numbers</title>
+<link rel=STYLESHEET href="/~rhowell/style.css">
+
+</head>
+
+<body>
+<div class="NAVBAR">
+<a
+      href="/~rhowell/DataStructures/redirect/dictionary-class">Next:
+      The <b>Dictionary&lt;TKey,&nbsp;TValue&gt;</b> Class</a>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+      href="/~rhowell/DataStructures/redirect/linked-list-stacks-queues">Previous:
+      Implementing Stacks and Queues with Linked Lists</a>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+	href="/~rhowell/DataStructures/redirect/linked-lists">Up:
+      Linked Lists
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<h1>Finding Prime Numbers</h1>
+
+An integer greater than 1 is said to be <i>prime</i> if it is not
+    divisible by any positive integers other than itself and 1.  Thus,
+    2, 3, and 5 are prime, but not 1 (it is not greater than 1) or 4
+    (it is divisible by 2).  Because every integer is divisible by
+    itself and 1, we will call any other positive factors
+    <i>nontrivial factors</i>; thus, a prime number is an integer
+    greater than 1 that has no nontrivial factors.  The study of prime
+    numbers dates back to at least the third century BC.  One of the
+    earliest known algorithms finds all prime numbers less than a
+    given integer <i>n</i>.  This algorithm is known as the <i>Sieve
+    of Eratosthenes</i>, and is attributed to the Greek mathematician
+    Eratosthenes of Cyrene (c. 276 BC - c. 194 BC).
+<p>
+The most basic version of this algorithm operates as follows:
+<ol>
+<li> Place all integers greater than 1 and less than <i>n</i> in order
+	in a list. </li>
+<li> For each element <i>k</i> in the list, remove all subsequent
+	elements that are divisible by <i>k</i>. </li>
+<li> The remaining values are the prime numbers less than <i>n</i>.
+</ol>
+For example, suppose <i>n</i>&nbsp;=&nbsp;20.  We then place the
+    integers from 2 to 19 in a list:
+<pre>
+2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19
+</pre>
+We then remove all numbers following 2 that are divisible by 2:
+<pre>
+2 3 <strike>4</strike> 5 <strike>6</strike> 7 <strike>8</strike> 9 <strike>10</strike> 11 <strike>12</strike> 13 <strike>14</strike> 15 <strike>16</strike> 17 <strike>18</strike> 19
+</pre>
+We then remove all numbers following 3 that are divisible by 3:
+<pre>
+2 3 <strike>4</strike> 5 <strike>6</strike> 7 <strike>8</strike> <strike>9</strike> <strike>10</strike> 11 <strike>12</strike> 13 <strike>14</strike> <strike>15</strike> <strike>16</strike> 17 <strike>18</strike> 19
+</pre>
+The algorithm continues, but none of the succeeding iterations finds
+    any values to remove.  Therefore, 2, 3, 5, 7, 11, 13, 17, and 19
+    are the prime numbers less than 20.
+<p>
+To see why this algorithm gives us exactly the prime numbers less than
+      <i>n</i>, first note that because we only remove a number when
+      we find a nontrivial factor, we only remove non-primes from the
+      list.  What may be a little less obvious is that we remove
+      <i>all</i> non-primes from the list.  To see this, suppose
+      <i>m</i> is a non-prime less than <i>n</i>, and let <i>a</i> be
+      its smallest nontrivial factor.  Then <i>a</i> must be prime
+      because any nontrivial factor of <i>a</i> would be less than
+      <i>a</i> and would also divide
+      <i>m</i>.  <i>a</i> therefore will not be removed from the
+      list.  When <i>k</i>&nbsp;=&nbsp;<i>a</i> in Step 2, <i>m</i>
+      will be removed.
+</p>
+<p>
+There is actually a good reason why the first two iterations in the
+      above example removed all of the non-primes - once the algorithm
+      reaches a divisor <i>k</i> such that
+      <i>k</i><sup>2</sup>&nbsp;&ge;&nbsp;<i>n</i> (in this example,
+      5<sup>2</sup>&nbsp;=&nbsp;25&nbsp;&ge;&nbsp;20), all of the
+      non-primes will have been removed.  To see why
+      this is true, let <i>m</i> and <i>a</i> be as above.  We can
+      then write 
+</p>
+<pre>
+m = ab
+</pre>
+where <i>a</i>&nbsp;&le;&nbsp;<i>b</i> and <i>m</i> is removed
+      from the list when <i>k</i>&nbsp;=&nbsp;<i>a</i>.  We can then
+      multiply both sides of the above equation by 
+      <i>a</i>/<i>b</i>, yielding:
+<p>
+<tt>
+am/b = a<sup>2</sup>.
+</tt>
+</p>
+Finally, because <i>a</i>&nbsp;&le;&nbsp;<i>b</i>,
+    <i>a</i>/<i>b</i>&nbsp;&le;&nbsp;1.  Therefore,
+<p>
+<tt>
+m &ge; a<sup>2</sup>.
+</tt>
+</p>
+We conclude that if <i>m</i> is a non-prime greater than 1, it is
+    removed when the algorithm reaches some value <i>k</i> with
+    <i>k</i><sup>2</sup>&nbsp;&lt;&nbsp;<i>n</i>.  We can therefore
+    optimize the algorithm by stopping when
+    <i>k</i><sup>2</sup>&nbsp;&ge;&nbsp<i>n</i>. 
+<p>
+We can implement this algorithm using a linked list.  A linked list is
+      an appropriate data structure for this algorithm because once
+      the list is built, all of the processing involves iterating
+      through it from beginning to end - the same direction the links
+      go.
+</p>
+To implement Step 1, it is easier to build the list from back to
+      front, as we don't need to maintain a separate reference to the
+      end of the list.  This step then consists of a loop that
+      iterates from <i>n</i>&nbsp;&#8209;&nbsp;1 down to 2, with each
+      iteration adding to the front of the list a cell containing the
+      loop index.
+<p>
+In order to be able to implement Step 2, we will need to know how to
+    remove a cell from a linked list.  Suppose, for example, that we
+    want to remove the cell referring to "the" from the following
+    linked list:
+</p>
+<img src="linked-list-remove1.jpg"
+    alt="A linked list from which we want to remove x">
+<p>
+To remove it, we need the cell that precedes it to be followed by the
+      cell that follows it:
+</p>
+<img src="linked-list-remove2.jpg"
+    alt="What we need to change in order to remove the cell">
+<p>
+In order to change that reference, we need a reference to the cell
+      that precedes the cell we want to remove:
+</p>
+<img src="linked-list-remove3.jpg"
+    alt="The additional reference we need">
+<p>
+We can then remove the cell following the cell referenced by
+      <tt>q</tt> as follows:
+</p>
+<pre>
+q.Next = q.Next.Next;
+</pre>
+
+Now that we know how to remove a cell from a linked list, let's
+    consider Step 2 of the algorithm.  For one value of <i>k</i>, we
+    need to remove all subsequent values that are divisible by
+    <i>k</i>.  In terms of the linked list, we need to start this
+    process with the cell containing <i>k</i>.  For example, consider
+    the second iteration from the example above - i.e., when
+    <i>k</i>&nbsp;=&nbsp;3:
+<p>
+<img src="sieve-example1.jpg"
+    alt="The beginning of an iteration with k = 3">
+</p>
+We need to iterate <tt>p</tt> through the linked list, checking the
+    <i>next</i> cell on each iteration to see whether its contents are
+    divisible by <i>k</i>.  We can check for divisibility by <i>k</i>
+    using the <a
+    href="/~rhowell/DataStructures/syntax/remainder">remainder
+    operator</a> - i.e., <i>k</i> divides <i>m</i> if
+    <i>m</i>&nbsp;%&nbsp;<i>k</i> is 0.  Thus, the first iteration
+    would see if 3 divides 5.  It doesn't, so we advance <tt>p</tt> to
+    the next cell (containing 5). We then see if 3 divides 7.  Again
+    it doesn't, so 
+    we advance <tt>p</tt> to the next cell (containing 7).  At this
+    point, 3 divides 9, so we remove the cell containing 9 as shown
+    above.  This gives us the following linked list:
+<p>
+<img src="sieve-example2.jpg"
+    alt="After 9 has been removed">
+</p>
+Note that we have not yet advanced <tt>p</tt>, and indeed we don't
+    want to, as 11 is the next value we want to check.  Thus, on each
+    iteration, if <i>k</i> divides the value in the cell following
+    <tt>p</tt>, we remove that cell; otherwise, we advance <tt>p</tt>
+    to that cell.  We iterate this loop as long as there is a cell
+    following <tt>p</tt>.
+<p>
+The loop described above represents a single iteration of the loop
+      described for Step 2.  Thus, for Step 2, we need to iterate a
+      variable through the list, performing the above on each
+      iteration.  We stop when we either have run off the end of the
+      list or have reached a value of <i>k</i> such that
+      <i>k</i><sup>2</sup>&nbsp;&ge;&nbsp;<i>n</i>.  Note that at the
+      end of
+      each iteration, we want to advance to the next cell.  
+</p>
+
+<p></p>
+<div class="NAVBAR">
+<a
+      href="/~rhowell/DataStructures/redirect/dictionary-class">Next:
+      The <b>Dictionary&lt;TKey,&nbsp;TValue&gt;</b> Class</a>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+      href="/~rhowell/DataStructures/redirect/linked-list-stacks-queues">Previous:
+      Implementing Stacks and Queues with Linked Lists</a>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+	href="/~rhowell/DataStructures/redirect/linked-lists">Up:
+      Linked Lists
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<p>
+<small>
+<!-- hhmts start -->
+Last modified: Fri Feb  9 18:49:58 CST 2018
+<!-- hhmts end -->
+</small>
+</p>
+<small>
+    <i> &copy; Copyright 2014, 2018, <a
+    href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i> 
+</small>
+
+<p></p>
+
+<table border=0 cellpadding=2 summary="This table is used for layout
+purposes only.">
+<tr>
+<td align=center>
+    <a href="http://validator.w3.org/check/referer"><img border="0"
+        src="/~rhowell/valid-html401.gif"
+        alt="Valid HTML 4.01!" height="31" width="88"></a>
+</td>
+<tr>
+<td>
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+             <img border="0"
+                  src="/~howell/vcss.gif" 
+                  alt="Valid CSS!" height="31" width="88">
+            </a>
+</td>
+</table>
+
+</body>
+
+</html>

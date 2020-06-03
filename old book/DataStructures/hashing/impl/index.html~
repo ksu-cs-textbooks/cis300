@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Implementing a Hash Table</title>
+<link rel=STYLESHEET href="/~rhowell/style.css">
+
+</head>
+
+<body>
+<div class="NAVBAR">
+<a
+      href="/~rhowell/DataStructures/redirect/simple-hash-table-impl">Next:
+      A Simple Hash Table Implementation
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/hash-functions">Previous:
+      Hash Functions
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/dictionaries">Up:
+      Dictionaries and Hash Tables
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<h1>Implementing a Hash Table</h1>
+
+<div class="TOC">
+<h2>Contents</h2>
+<ol>
+<li> <a
+      href="/~rhowell/DataStructures/redirect/simple-hash-table-impl">A
+      Simple Hash Table Implementation
+      </a></li>
+<li> <a
+      href="/~rhowell/DataStructures/redirect/rehashing">Rehashing</a></li>
+<li> <a
+      href="/~rhowell/DataStructures/redirect/hash-table-enumerator">Enumerating
+      a Hash Table</a></li>
+<li> <a
+      href="/~rhowell/DataStructures/redirect/indexers">Indexers</a></li>
+</ol>
+</div>
+<p></p> 
+
+Because a hash table has a more complex structure than the data
+structures we've examined up to this point, we will look at the
+implementation details in stages.  First, we will describe a simple
+implementation using a fixed table size.  This implementation will
+provide only the most basic methods for adding, removing, and finding
+keys and values.  We will then consider <i>rehashing</i>, or
+increasing the size of the table as necessary to improve performance.
+We will then show how to implement enumerators for iterating through
+the keys and values.  Finally, we will show how to implement indexers.
+<p>
+The implementation we describe here is similar to the implementation
+      of <a
+      href="https://msdn.microsoft.com/en-us/library/xfhwa508.aspx"><b>Dictionary&lt;TKey,&nbsp;TValue&gt;</b></a>
+      in the .NET Framework.  However, we will not discuss all of the
+      optimizations found in that implementation.
+</p>
+
+<p></p>
+<div class="NAVBAR">
+<a
+      href="/~rhowell/DataStructures/redirect/simple-hash-table-impl">Next:
+      A Simple Hash Table Implementation
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/hash-functions">Previous:
+      Hash Functions
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/dictionaries">Up:
+      Dictionaries and Hash Tables
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<p>
+<small>
+<!-- hhmts start -->
+Last modified: Thu Apr  9 15:13:34 CDT 2015
+<!-- hhmts end -->
+</small>
+</p>
+<small>
+    <i> &copy; Copyright 2014, 2015,<a
+    href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i> 
+</small>
+
+<p></p>
+
+<table border=0 cellpadding=2 summary="This table is used for layout
+purposes only.">
+<tr>
+<td align=center>
+    <a href="http://validator.w3.org/check/referer"><img border="0"
+        src="/~rhowell/valid-html401.gif"
+        alt="Valid HTML 4.01!" height="31" width="88"></a>
+</td>
+<tr>
+<td>
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+             <img border="0"
+                  src="/~howell/vcss.gif" 
+                  alt="Valid CSS!" height="31" width="88">
+            </a>
+</td>
+</table>
+
+</body>
+
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Enumerations</title>
+<link rel=STYLESHEET href="/~rhowell/style.css">
+
+</head>
+
+<body>
+<div class="NAVBAR">
+<a href="/~rhowell/DataStructures/redirect/structs">Next:
+      Structures</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a 
+      href="/~rhowell/DataStructures/redirect/reference-value">Previous:
+      Reference Types and Value 
+      Types</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a 
+      href="/~rhowell/DataStructures/redirect/syntax">Up: C#
+      Syntax</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a 
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<h1>Enumerations</h1>
+
+An <i>enumeration</i> is a <a
+    href="/~rhowell/DataStructures/redirect/reference-value">value
+    type</a> containing a set of named 
+    constants.  An example of an enumeration is <a
+    href="http://msdn.microsoft.com/en-us/library/system.windows.forms.dialogresult(v=vs.110).aspx"><b>DialogResult</b></a>
+    (see <a
+    href="/~rhowell/DataStructures/redirect/message-boxes">"<b>MessageBox</b>es"</a>
+    and <a href="/~rhowell/DataStructures/redirect/file-dialogs">"File
+    Dialogs"</a>).  The <b>DialogResult</b> type contains the
+    following members:
+<ul>
+<li> <b>DialogResult.Abort</b></li>
+<li> <b>DialogResult.Cancel</b></li>
+<li> <b>DialogResult.Ignore</b></li>
+<li> <b>DialogResult.No</b></li>
+<li> <b>DialogResult.None</b></li>
+<li> <b>DialogResult.OK</b></li>
+<li> <b>DialogResult.Retry</b></li>
+<li> <b>DialogResult.Yes</b></li>
+</ul>
+Each of the above members has a different constant value.  In many
+    cases, we are not interested in the specific value of a given
+    member.  Instead, we are often only interested in whether two
+    expressions of this type have the same value.  For example, the
+    following code fragment is given in the <a
+    href="/~rhowell/DataStructures/redirect/message-boxes">"<b>MessageBox</b>es"</a>
+    section: 
+<pre>
+DialogResult result = MessageBox.Show("The file is not saved. Really quit?", 
+    "Confirm Quit", MessageBoxButtons.YesNo);
+if (result == DialogResult.Yes)
+{
+    Application.Exit();
+}
+</pre>
+In the <b>if</b>-statement above, we are only interested in whether
+    the user closed the <b>MessageBox</b> with the "Yes" button; i.e.,
+    we want to know whether the <b>Show</b> method returned the same
+    value as <b>DialogResult.Yes</b>.  For this purpose, we don't need
+    to know anything about the value of <b>DialogResult.Yes</b> or any
+    of the other <b>DialogResult</b> members.
+<p>
+However, there are times when it is useful to know that the values in
+      an enumeration are always integers.  Using a <a
+      href="/~rhowell/DataStructures/redirect/casts">cast</a>,
+      we can assign a member of an enumeration to an <b>int</b>
+      variable or otherwise use it as we would an <b>int</b>; for
+      example, after the code fragment above, we can write:
+<pre>
+int i = (int)result;
+</pre>
+As a more involved example, we can loop through the values of an
+    enumeration:
+<pre>
+for (DialogResult r = 0; (int)r < 8; r++)
+{
+    MessageBox.Show(r.ToString());
+}
+</pre>
+The above loop will display 8 <b>MessageBox</b>es in sequence, each
+    displaying the name of a member of the enumeration (i.e., "None",
+    "OK", etc.). 
+<p>
+Variables of an enumeration type may be assigned any value of the
+    enumeration's underlying type (usually <b>int</b>, as we will
+    discuss below).  For example, if we had used the condition
+    <tt>(int)r&nbsp;&lt;&nbsp;10</tt> in the above <b>for</b>
+    statement, the loop would continue two more iterations, showing 8
+    and 9 in the last two <b>MessageBox</b>es.
+</p>
+<a name="enum-defn"></a>
+An enumeration is defined using an <a
+      href="http://msdn.microsoft.com/en-us/library/sbbt4032.aspx"><b>enum</b></a>
+      statement, which is similar to a <b>class</b> statement except
+      that in the simplest case, the body of an <b>enum</b> is simply
+      a listing of the members of the enumeration.  For example, the
+      <b>DialogResult</b> enumeration is defined as follows:
+<pre>
+public enum DialogResult
+{
+    None, OK, Cancel, Abort, Retry, Ignore, Yes, No
+}
+</pre>
+This definition defines <b>DialogResult.None</b> as having the value
+    0, <b>DialogResult.OK</b> as having the value 1, etc.
+<p>
+As mentioned above, each enumeration has an underlying type.  By default,
+      this type is <b>int</b>, but an <b>enum</b> statement may
+      specify another underlying type, as follows:
+<pre>
+public enum Beatles : byte
+{
+    John, Paul, George, Ringo
+}
+</pre>
+The above construct defines the underlying type for the enumeration
+    <b>Beatles</b> to be <b>byte</b>; thus, a variable of type
+    <b>Beatles</b> may be assigned any <b>byte</b> value.  The
+    following integer types may be used as underlying types for
+    enumerations: 
+<ul>
+<li> <b>byte</b> (0 through 255) </li>
+<li> <b>sbyte</b> (-128 through 127) </li>
+<li> <b>short</b> (-32,768 through 32,767) </li>
+<li> <b>ushort</b> (0 through 65,535) </li>
+<li> <b>int</b> (-2,147,483,648 through 2,147,483,647) </li>
+<li> <b>uint</b> (0 through 4,294,967,295) </li>
+<li> <b>long</b> (-9,223,372,036,854,775,808 through
+	9,223,372,036,854,775,807) </li>
+<li> <b>ulong</b> (0 through 18,446,744,073,709,551,615) </li>
+</ul>
+It is also possible to define members of an enumeration so that they
+    are not simply the values 0, 1, etc.  For example, we might alter
+    the <b>Beatles</b> enumeration as follows:
+<pre>
+public enum Beatles : byte
+{
+    John = 1, Paul, George = 5, Ringo
+}
+</pre>
+This defines the following values for the members:
+<ul>
+<li> <b>Beatles.John</b>: 1 </li>
+<li> <b>Beatles.Paul</b>: 2 </li>
+<li> <b>Beatles.George</b>: 5 </li>
+<li> <b>Beatles.Ringo</b>: 6 </li>
+</ul>
+Thus, if a value is explicitly assigned to a member, that member takes
+    on that 
+    value; otherwise, that member takes on the next value greater than
+    the previous member listed, or 0 if that member is the first
+    listed.  Note that using this technique, it is possible to define
+    two members with the same value, although this is usually
+    undesirable.  If assigning values in this way would lead to a
+    value outside the range of the underlying type, a syntax error
+    results (for example, if <b>George</b> were assigned 255 in the
+    above definition).
+<p>
+One reason we might want to define explicit values for members of an
+      enumeration is if we want to use the members as flags.  For
+      example, one of the <a
+      href="http://msdn.microsoft.com/en-us/library/ba3x8zfh(v=vs.110).aspx"><b>MessageBox.Show</b></a>
+      methods takes as one of its parameters a <a
+      href="http://msdn.microsoft.com/en-us/library/system.windows.forms.messageboxoptions(v=vs.110).aspx"><b>MessageBoxOptions</b></a>,
+      which is an enumeration containing the following members:
+<ul>
+<li> <b>MessageBoxOptions.DefaultDesktopOnly</b> </li>
+<li> <b>MessageBoxOptions.RightAlign</b> </li>
+<li> <b>MessageBoxOptions.RtlReading</b> </li>
+<li> <b>MessageBoxOptions.ServiceNotification</b> </li>
+</ul>
+The meaning of each of these members is unimportant for the purposes
+    of this discussion.  The point is that the values of these members
+    are chosen in such a way that more than one of them can be
+    combined into a single value.  The way this is done is to define
+    each member as a different power of 2.  The binary representation
+    of a power of 2 contains exactly one bit with a value of 1.  Thus,
+    these values can be combined using a <i>logical OR</i> operator,
+    and the original values can be retrieved using a <i>logical
+    AND</i> operator.
+<p>
+For example, suppose the <b>MessageBoxOptions</b> enumeration is
+      defined as follows:
+</p>
+<pre>
+public enum MessageBoxOptions
+{
+    DefaultDesktopOnly = 1,
+    RightAlign = 2,
+    RtlReading = 4,
+    ServiceNotification = 8
+}
+</pre>
+(The definition in the .NET Framework uses different powers of 2, but
+    the principle is the same.)  Now suppose we want to create a
+    <b>MessageBox</b> that will be displayed on the default desktop
+    with right-aligned text.  We can combine these options using the
+    expression
+<pre>
+MessageBoxOptions.DefaultDesktopOnly | MessageBoxOptions.RightAlign
+</pre>
+This expression combines corresponding bits of the two operands using
+    a logical OR.  Recall that the logical OR of two bits is 1 if at
+    least one of the two bits is 1.  If both operands are 0, the
+    result is 0.  In this example, the operands have a 1 in different
+    bit locations.  When we combine them using logical OR, both of
+    these bit positions will contain a 1:
+<pre>
+0000 0000 0000 0000 0000 0000 0000 0001
+0000 0000 0000 0000 0000 0000 0000 0010
+---------------------------------------
+0000 0000 0000 0000 0000 0000 0000 0011
+</pre>
+We can therefore specify both of these options to the <b>Show</b>
+    method as follows:
+<pre>
+MessageBox.Show("Hello\nworld!", "Hello", MessageBoxButtons.OK,
+    MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, 
+    MessageBoxOptions.DefaultDesktopOnly |
+    MessageBoxOptions.RightAlign);
+</pre>
+The <tt>\n</tt> in the above example specifies the end of a line; hence,
+      "Hello" and "world!" will be displayed on separate lines,
+      aligned on the right:
+<p>
+<img src="message-box-options.jpg" alt="A picture of a dialog should appear here.">
+</p>
+The <b>Show</b> method determines which bits are 1 in the
+    <b>MessageBoxOptions</b> parameter using a logical AND.  Recall
+    that a logical AND of two bits is 1 only if both bits are 1.  In
+    all other cases, the result is 0.  Suppose, then, that
+    <tt>options</tt> is a <b>MessageBoxOptions</b> variable with an
+    unknown value.  Because each named member of the
+    <b>MessageBoxOptions</b> enumeration (e.g.,
+    <b>MessageBoxOptions.RightAlign</b>) has exactly one bit with a
+    value of 1, an expression like
+<pre>
+options & MessageBoxOptions.RightAlign
+</pre>
+can have only two possible values:
+<ul>
+<li> If the bit position containing the 1 in
+	<b>MessageBoxOptions.RightAlign</b> also contains a 1 in
+	<tt>options</tt>, then the expression's value is
+	<b>MessageBoxOptions.RightAlign</b>. </li>
+<li> Otherwise, the expression's value is 0. </li>
+</ul>
+Thus, the <b>Show</b> method can use code like:
+<pre>
+if ((options & MessageBoxOptions.RightAlign) == MessageBoxOptions.RightAlign)
+{
+    // Code to right-align the text
+}
+else
+{
+    // Code to left-align the text
+}
+</pre>
+Defining enumerations to be used as flags in this way can be made
+    easier by writing the powers of 2 in hexadecimal, or base 16.
+    Each hex digit contains one of 16 possible values: the ten
+    digits 0-9 or the six letters a-f (in either lower or
+    upper case).  A hex digit is exactly four bits; hence, the hex values
+    containing one occurrence of either 1, 2, 4, or 8, with all other
+    digits 0, are exactly the powers of 2.  To write a number in hex
+    in a C# program, start with <tt>0x</tt>, then give the hex
+    digits.  For example, we can define the following enumeration
+    to represent the positions a baseball player is capable of playing:
+<pre>
+public enum Positions
+{
+    Pitcher = 0x1,
+    Catcher = 0x2,
+    FirstBase = 0x4,
+    SecondBase = 0x8,
+    ThirdBase = 0x10,
+    Shortstop = 0x20,
+    LeftField = 0x40,
+    CenterField = 0x80,
+    RightField = 0x100
+}
+</pre>
+We can then encode that a player is capable of playing 1st base,
+    left field, center field, or right field with the expression:
+<pre>
+Positions.FirstBase | Positions.LeftField | Positions.CenterField | Positions.RightField
+</pre>
+This expression would give a value having four bit positions
+    containing 1:
+<pre>
+0000 0000 0000 0000 0000 0001 1100 0100
+</pre>
+For more information on enumerations, see the section, <a
+      href="http://msdn.microsoft.com/en-us/library/sbbt4032.aspx">enum</a>
+      in the <i>C# Reference</i> and the section <a
+      href="http://msdn.microsoft.com/en-us/library/cc138362.aspx">Enumeration
+      Types</a> in the <i>C# Programming Guide</i>.
+<p></p>
+<div class="NAVBAR">
+<a href="/~rhowell/DataStructures/redirect/structs">Next:
+      Structures</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a 
+      href="/~rhowell/DataStructures/redirect/reference-value">Previous:
+      Reference Types and Value 
+      Types</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a 
+      href="/~rhowell/DataStructures/redirect/syntax">Up: C#
+      Syntax</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a 
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<p>
+<small>
+<!-- hhmts start -->
+Last modified: Tue Apr 17 13:54:44 CDT 2018
+<!-- hhmts end -->
+</small>
+</p>
+<small>
+    <i> &copy; Copyright 2013, 2018, <a
+    href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i> 
+</small>
+
+<p></p>
+
+<table border=0 cellpadding=2 summary="This table is used for layout
+purposes only.">
+<tr>
+<td align=center>
+    <a href="http://validator.w3.org/check/referer"><img border="0"
+        src="/~rhowell/valid-html401.gif"
+        alt="Valid HTML 4.01!" height="31" width="88"></a>
+</td>
+<tr>
+<td>
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+             <img border="0"
+                  src="/~howell/vcss.gif" 
+                  alt="Valid CSS!" height="31" width="88">
+            </a>
+</td>
+</table>
+
+</body>
+
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Indexers</title>
+<link rel=STYLESHEET href="/~rhowell/style.css">
+
+</head>
+
+<body>
+    <div class="NAVBAR">
+      <a href="/~rhowell/DataStructures/redirect/static-this">Next:
+	The Keywords <b>static</b> and
+	<b>this</b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<a
+      href="/~rhowell/DataStructures/redirect/properties">Previous:
+      Properties
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/syntax">Up:
+      C# Syntax
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<h1>Indexers</h1>
+C# contains a mechanism for defining new data structures that can be
+    indexed like an array. This mechanism is general enough that
+    arbitrary types can be used as indices.  For example, it is
+    possible to to define a dictionary that can be indexed using a key
+    - see "<a
+    href="/~rhowell/DataStructures/redirect/dictionary-class">The
+    <b>Dictionary&lt;TKey,&nbsp;TValue&gt;</b> Class</a>" for more
+    details.  In this section, we 
+    will discuss how to implement an indexer.
+<p>
+An indexer definition in C# is similar to a <a
+      href="/~rhowell/DataStructures/redirect/properties">property
+      definition</a>, with 
+      the following exceptions:
+    <ul>
+      <li>
+	The name is always <b>this</b>.  (Note that the code using an
+	indexer never refers to a name.)
+      </li>
+      <li>
+	Immediately following the name <b>this</b> is a nonempty
+	parameter list 
+	as in a method definition, except that it is enclosed in
+	square brackets instead of parentheses.
+      </li>
+      <li>
+	There is no default implementation; hence, any accessors must
+	be fully implemented.
+      </li>
+    </ul>
+    As an example, let's revisit a scenario we considered in <a
+    href="/~rhowell/DataStructures/redirect/properties">the previous
+    section</a>.  Suppose we are defining a data structure storing an
+    <b>int[&nbsp;]</b> called <tt>_elements</tt>, and we wish to
+    provide read-only access to its contents.  We can accomplish this
+    by defining an indexer as follows:
+<pre>
+public int this[int i]
+{
+    get =&gt; _elements[i];
+}
+</pre>
+    Or we can abbreviate this definition as:
+<pre>
+public int this[int i] =&gt; _elements[i];
+</pre>
+    To provide full read-write access to the array contents, we can
+    define:
+<pre>
+public int this[int i]
+{
+    get =&gt; _elements[i];
+    set =&gt; _elements[i] = value;
+}
+</pre>
+    We can also use the more general version in which arbitrary code
+    can be included in the accessors.  For example, suppose the data
+    structure also includes a <b>public int Count</b> property that
+    indicates how many of the array elements are being used.  We might
+    wish to include an error check to ensure that user code does not
+    try to access locations greater than or equal to <b>Count</b>.  We
+    can therefore implement the following:
+<pre>
+public int this[int i]
+{
+    get
+    {
+        if (i &gt;= Count)
+        {
+            throw new IndexOutOfRangeException();
+        }
+        return _elements[i];
+    }
+    set
+    {
+        if (i &gt;= Count)
+        {
+            throw new IndexOutOfRangeException();
+        }
+        _elements[i] = value;
+    }
+}
+</pre>
+We should emphasize that the type of the parameter(s) for an indexer
+    is not restricted to being an <b>int</b>.  We can use any type we
+    need, and use any appropriate computation on these parameters in
+    the accessors.  Thus, for example, if we are implementing a
+    dictionary using a hash table, we can use the key type as the
+    parameter type and the value type as the indexer's type.  The
+    <b>get</b> accessor would look up the given 
+    key in the hash table and return its associated value, or throw a
+    <b>KeyNotFoundException</b> if the key is not found.  The
+    <b>set</b> accessor would look up the given key in the hash table,
+    and replace its associated value with <b>value</b>, or add a new
+    <b>KeyValuePair</b> containing the given key and <b>value</b> if
+    the key is not found.    
+<p></p>
+    <div class="NAVBAR">
+      <a href="/~rhowell/DataStructures/redirect/static-this">Next:
+	The Keywords <b>static</b> and
+	<b>this</b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<a
+      href="/~rhowell/DataStructures/redirect/properties">Previous:
+      Properties
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/redirect/syntax">Up:
+      C# Syntax
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+      href="/~rhowell/DataStructures/">Top</a>
+</div>
+
+<p>
+<small>
+<!-- hhmts start -->
+Last modified: Sat Dec 30 10:38:13 CST 2017
+<!-- hhmts end -->
+</small>
+</p>
+<small>
+    <i> &copy; Copyright 2014, 2017, <a
+    href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i> 
+</small>
+
+<p></p>
+
+<table border=0 cellpadding=2 summary="This table is used for layout
+purposes only.">
+<tr>
+<td align=center>
+    <a href="http://validator.w3.org/check/referer"><img border="0"
+        src="/~rhowell/valid-html401.gif"
+        alt="Valid HTML 4.01!" height="31" width="88"></a>
+</td>
+<tr>
+<td>
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+             <img border="0"
+                  src="/~howell/vcss.gif" 
+                  alt="Valid CSS!" height="31" width="88">
+            </a>
+</td>
+</table>
+
+</body>
+
+</html>
