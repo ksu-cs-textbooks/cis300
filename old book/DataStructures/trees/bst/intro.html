@@ -1,45 +1,26 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Introduction to Binary Search Trees</title>
-<link rel=STYLESHEET href="/~rhowell/style.css">
-
+<link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
-
 <body>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/bst-remove">Next: Removing
-      from a Binary Search Tree
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/binary-trees">Previous:
-      Binary Trees
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/binary-search-trees">Up:
-      Binary Search Trees
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <h1>Introduction to Binary Search Trees</h1>
-
 <p>
-In this section and <a
-    href="http://people.cs.ksu.edu/~rhowell/DataStructures/redirect/bst-remove">the
+In this section and <a href="http://people.cs.ksu.edu/~rhowell/DataStructures/redirect/bst-remove">the
     next</a>, we will present a binary search tree as a data
-    structure that can be used to implement a <a
-    href="http://people.cs.ksu.edu/~rhowell/DataStructures/redirect/dictionary-class">dictionary</a>
+    structure that can be used to implement a <a href="http://people.cs.ksu.edu/~rhowell/DataStructures/redirect/dictionary-class">dictionary</a>
     whose key
     type can be ordered.  This implementation will provide efficient
     lookups, insertions, and deletions in most cases; however, there
-    will be cases in which the performance is bad.  In <a
-    href="http://people.cs.ksu.edu/~rhowell/DataStructures/redirect/avl-trees">a
+    will be cases in which the performance is bad.  In <a href="http://people.cs.ksu.edu/~rhowell/DataStructures/redirect/avl-trees">a
     later section</a>, we will show how to extend this good
     performance to all cases.
 </p>
-A <i>binary search tree</i> is a <a
-      href="/~rhowell/DataStructures/redirect/binary-trees">binary
+A <i>binary search tree</i> is a <a href="/~rhowell/DataStructures/redirect/binary-trees">binary
       tree</a> containing key-value pairs whose keys can be ordered.
       Furthermore, the data items are arranged such that the key in
       each node is:
@@ -51,24 +32,22 @@ Note that this implies that all keys must be unique.
 For example, the following is a binary search tree storing integer
     keys (only the keys are shown):
 <p>
-<img src="binary-search-tree-ex.jpg" alt="A binary search tree">
+<img alt="A binary search tree" src="binary-search-tree-ex.jpg"/>
 </p>
 The hierarchical nature of this structure allows us to do something
     like a binary search to find a key.  Suppose, for example, that we
     are looking for 41 in the above tree.  We first compare 41 with
-    the key in the root.  Because 41&nbsp;&lt;&nbsp;54, we can safely
+    the key in the root.  Because 41 &lt; 54, we can safely
     ignore the right child, as all keys there must be greater than 54.
     We therefore compare 41 to the key in the root of the left child.
-    Because 41&nbsp;&gt;&nbsp;23, we look in the right child, and
-    compare 41 to 35.  Because 41&nbsp;&gt;&nbsp;35, we look in the
+    Because 41 &gt; 23, we look in the right child, and
+    compare 41 to 35.  Because 41 &gt; 35, we look in the
     right child, where we find the key we are looking for.
 <p>
 Note the similarity of the search described above to a binary search.
 It isn't exactly the same, because there is no guarantee that the root
-is the middle element in the tree - in fact, if one of its children is
-      empty, it will be either the first
-or the last element.  In many applications,
-      however, when we build a 
+is the middle element in the tree - in fact, it could be the first
+or the last.  In many applications, however, when we build a
 binary search tree as we will describe below, the root of the tree
 tends to be roughly the middle element.  When this is the case,
 looking up a key is very
@@ -98,19 +77,18 @@ It is important to handle the case of an empty tree first, as the
     is fairly common), we will get a <b>NullReferenceException</b> if
     we try to compare a given key with the key at the root.
     Furthermore, if we
-    need to compare elements using a <a
-    href="http://msdn.microsoft.com/en-us/library/43hc6wht.aspx"><b>CompareTo</b></a>
+    need to compare elements using a <a href="http://msdn.microsoft.com/en-us/library/43hc6wht.aspx"><b>CompareTo</b></a>
     method, it would be more efficient to structure the code so that
     this method is only called once; e.g.,
 <ul>
-<li> If the tree is empty&nbsp;.&nbsp;.&nbsp;.&nbsp;.</li>
+<li> If the tree is empty . . . .</li>
 <li> Otherwise:
 <ul>
 <li> Get the result of the comparison. </li>
-<li> If the result is 0&nbsp;.&nbsp;.&nbsp;.&nbsp;. </li>
+<li> If the result is 0 . . . . </li>
 <li> Otherwise, if the result is
-  negative&nbsp;.&nbsp;.&nbsp;.&nbsp;. </li>
-<li> Otherwise&nbsp;.&nbsp;.&nbsp;.&nbsp;. </li>
+  negative . . . . </li>
+<li> Otherwise . . . . </li>
 </ul>
 </li>
 </ul>
@@ -144,9 +122,9 @@ therefore want to design a <b>private</b> method that will take three
     parameters: 
 <ul>
 <li> a binary search tree (i.e., reference to a node);  </li>
-      <li> the key we want to add; and
+<li> the key we want to add; and
       </li>
-    <li> the value we want to add.</li>
+<li> the value we want to add.</li>
 </ul>
 It will return the binary search tree that results from adding the
     given key and value to the given
@@ -179,13 +157,12 @@ This method again has four cases:
 Note that the above algorithm only adds the given data item when it
     reaches an empty tree.  Not only is this the most straightforward
     way to add items, but it also tends to keep paths in the tree
-    short, as each insertion is only lengthening one path.  <a
-    href="/~rhowell/viewer/index.html">This page</a> contains an
+    short, as each insertion is only lengthening one path.  <a href="/~rhowell/viewer/index.html">This page</a> contains an
     application that will show the result of adding a key at a time to
     a binary search tree.  The keys in this application are treated as
     strings; hence, you can use numbers if you want, but they will be
-    compared as strings (e.g., "10"&nbsp;&lt;&nbsp;"5" because
-    '1'&nbsp;&lt;&nbsp;'5').  For this reason, it is usually better to
+    compared as strings (e.g., "10" &lt; "5" because
+    '1' &lt; '5').  For this reason, it is usually better to
     use either letters, words, or integers that all have the same
     number of digits.
 <p>
@@ -201,54 +178,28 @@ The above algorithm can be implemented in the same way if mutable
       tree, and we need to make sure that the
       <b>Add</b> method always uses the returned tree.
 </p>
-
 <p></p>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/bst-remove">Next: Removing
-      from a Binary Search Tree
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/binary-trees">Previous:
-      Binary Trees
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/binary-search-trees">Up:
-      Binary Search Trees
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <p>
-<small>
-<!-- hhmts start -->
-Last modified: Tue Jul 17 03:22:43 CDT 2018
-<!-- hhmts end -->
-</small>
+
 </p>
 <small>
-    <i> &copy; Copyright 2014, 2018, <a
-    href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i> 
+<i> © Copyright 2014, 2018, <a href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i>
 </small>
-
 <p></p>
-
-<table border=0 cellpadding=2 summary="This table is used for layout
+<table border="0" cellpadding="2" summary="This table is used for layout
 purposes only.">
 <tr>
-<td align=center>
-    <a href="http://validator.w3.org/check/referer"><img border="0"
-        src="/~rhowell/valid-html401.gif"
-        alt="Valid HTML 4.01!" height="31" width="88"></a>
+<td align="center">
+<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
 </td>
 <tr>
 <td>
 <a href="http://jigsaw.w3.org/css-validator/check/referer">
-             <img border="0"
-                  src="/~howell/vcss.gif" 
-                  alt="Valid CSS!" height="31" width="88">
-            </a>
+<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
+</a>
 </td>
-</table>
-
-</body>
-
+</tr></tr></table>
+</p></body>
 </html>

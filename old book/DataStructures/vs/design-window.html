@@ -1,26 +1,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>The Design Window</title>
-<link rel=STYLESHEET href="/~rhowell/style.css">
-
+<link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
-
 <body>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/code-window">Next: The Code
-      Window 
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/new-project">Previous:
-      Visual Studio Solutions
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/visual-studio">Up:
-      Visual Studio®
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <h1>The Design Window</h1>
 
@@ -31,8 +17,7 @@
     previous two sections, double-click "UserInterface.cs" to open its
     Design Window.  It will initially contain a blank form:
 <p>
-<img src="blank-form.jpg" 
-      alt="A picture of a portion of the design window should appear here.">
+<img alt="A picture of a portion of the design window should appear here." src="blank-form.jpg"/>
 </p>
 If you click on this blank form, handles will appear on its right and
     bottom edges and its lower-right corner.  You can resize the form
@@ -48,9 +33,8 @@ If you click on this blank form, handles will appear on its right and
       the properties window, and make sure the second and third button
       are highlighted:
 <p>
-<img src="properties.jpg"
-      alt="A picture of a portion of a Properties window should appear
-      here.">
+<img alt="A picture of a portion of a Properties window should appear
+      here." src="properties.jpg"/>
 </p>
 If either of these buttons isn't highlighted, click it to highlight
       it.  The first two buttons on this row toggle whether the
@@ -66,8 +50,7 @@ If either of these buttons isn't highlighted, click it to highlight
 For example, after resizing and changing the title, we might have a
     form that looks like this:
 <p>
-<img src="hello-start.jpg"
-      alt="A picture of a portion of the design window should appear here.">
+<img alt="A picture of a portion of the design window should appear here." src="hello-start.jpg"/>
 </p>
 To add various graphical controls to the form, we use the Toolbox,
     which is normally available via a tab on the left edge (if not,
@@ -91,8 +74,7 @@ After adding a control, we usually need to customize it to some
       change is the name of the variable that the program will use to
       refer to this control.  This property is called "(Name)", and
       will be near the top.  You will need to change this name so that
-      it follows the <a
-      href="/~rhowell/DataStructures/redirect/naming">naming
+      it follows the <a href="/~rhowell/DataStructures/redirect/naming">naming
       convention</a> for controls on forms.   
 </p>
 <p>
@@ -106,8 +88,7 @@ There are various properties that can be changed to customize the
       property to <b>True</b>.  This in turn will add handles to the
       top and bottom edges so that we can adjust its height.  All of
       the properties of a GUI control are documented in that control's
-      API documentation within the <a
-      href="http://msdn.microsoft.com/en-us/library/ms229335.aspx">.NET
+      API documentation within the <a href="http://msdn.microsoft.com/en-us/library/ms229335.aspx">.NET
       Framework Class Library documentation</a>.
 </p>
 Thus, continuing the above example, if we modify the <b>TextBox</b>'s
@@ -116,18 +97,16 @@ Thus, continuing the above example, if we modify the <b>TextBox</b>'s
     <b>ReadOnly</b> property to <b>True</b>, we would have the
     following form:
 <p>
-<img src="hello-textbox.jpg"
-      alt="A picture of a portion of the design window should appear
-      here.">
+<img alt="A picture of a portion of the design window should appear
+      here." src="hello-textbox.jpg"/>
 </p>
 Using a similar process, we can now add a <b>Button</b> to the form
     and name it <tt>uxGo</tt>.
     To change the text in the <b>Button</b>, we will need to change
     its <b>Text</b> property.  This might give us the following:
 <p>
-<img src="hello-button.jpg"
-      alt="A picture of a portion of the design window should appear
-      here.">
+<img alt="A picture of a portion of the design window should appear
+      here." src="hello-button.jpg"/>
 </p>
 Now that we have a <b>Button</b> on our form, it would be appropriate
     to provide some functionality for that <b>Button</b>.  Clicking on
@@ -166,9 +145,8 @@ Before we leave the design window entirely, however, we need to talk
       described above, then the list of events for the
       <b>Button</b> looks like this:
 </p>
-<img src="event-list.jpg"
-      alt="A picture of a portion of a Properties window should appear
-      here.">
+<img alt="A picture of a portion of a Properties window should appear
+      here." src="event-list.jpg"/>
 <p>
 This list is useful for two reasons.  The more obvious reason is that
       we sometimes might want to handle an event that is not the
@@ -193,58 +171,30 @@ The less obvious use for this list is to remove an event handler.
     it.  (Sometimes it doesn't delete the code, but if not, it is now
     safe to delete it.)
 <p></p>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/code-window">Next: The Code
-      Window 
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/new-project">Previous:
-      Visual Studio Solutions
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/visual-studio">Up:
-      Visual Studio®
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
-<p>
-<small>
-Visual Studio is either a registered trademark or a trademark of
-	Microsoft Corporation in the United States and/or other
-	countries.
-</small>
-</p>
-<p>
-<small>
-<!-- hhmts start -->
-Last modified: Wed Jan 24 13:19:26 CST 2018
-<!-- hhmts end -->
-</small>
-</p>
-<small>
-    <i> &copy; Copyright 2014, 2015, 2017, 2018, <a
-    href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i> 
-</small>
 
+<p>
+
+</p>
+<p>
+
+</p>
+<small>
+<i> Â© Copyright 2014, 2015, 2017, 2018, <a href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i>
+</small>
 <p></p>
-
-<table border=0 cellpadding=2 summary="This table is used for layout
+<table border="0" cellpadding="2" summary="This table is used for layout
 purposes only.">
 <tr>
-<td align=center>
-    <a href="http://validator.w3.org/check/referer"><img border="0"
-        src="/~rhowell/valid-html401.gif"
-        alt="Valid HTML 4.01!" height="31" width="88"></a>
+<td align="center">
+<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
 </td>
 <tr>
 <td>
 <a href="http://jigsaw.w3.org/css-validator/check/referer">
-             <img border="0"
-                  src="/~howell/vcss.gif" 
-                  alt="Valid CSS!" height="31" width="88">
-            </a>
+<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
+</a>
 </td>
-</table>
-
+</tr></tr></table>
 </body>
-
 </html>

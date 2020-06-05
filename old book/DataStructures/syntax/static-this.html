@@ -1,23 +1,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>The Keywords static and this</title>
-<link rel=STYLESHEET href="/~rhowell/style.css">
-
+<link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
-
 <body>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/out-ref">Next: <b>out</b>
-      and <b>ref</b> Parameters</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/indexers">Previous:
-      Indexers</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a 
-      href="/~rhowell/DataStructures/redirect/syntax">Up: C#
-      Syntax</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a 
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <h1>The Keywords static and this</h1>
 
@@ -87,8 +76,7 @@ is done, the value in the single <tt>_nextId</tt> field is copied to
     each instance receives a different value for <tt>_id</tt>.
 <p>
 We can also define <b>static</b> methods or properties.  For example,
-      the <a
-      href="http://msdn.microsoft.com/en-us/library/519bytz3(v=vs.110).aspx"><b>MessageBox.Show(string
+      the <a href="http://msdn.microsoft.com/en-us/library/519bytz3(v=vs.110).aspx"><b>MessageBox.Show(string
       text)</b></a> method is <b>static</b>.  Because it is
       <b>static</b>, we don't need a <b>MessageBox</b> object in order
       to call this method - we simply call something like:
@@ -99,8 +87,7 @@ MessageBox.Show("Hello world!");
     <b>NullReferenceException</b>s.  For example, there are times when
     we want to determine whether a variable <tt>x</tt> contains
     <b>null</b>, but <tt>x</tt> is of an unknown type (perhaps its
-    type is defined by some <a
-    href="/~rhowell/DataStructures/redirect/generic">type
+    type is defined by some <a href="/~rhowell/DataStructures/redirect/generic">type
     parameter</a> <b>T</b>).  In such a case, we cannot use == to make
     the comparison because == is not defined for all types.
     Furthermore, the following will never work:
@@ -114,8 +101,7 @@ Such code will compile, but if <tt>x</tt> is <b>null</b>, then calling
     its <b>Equals</b> method will throw a
     <b>NullReferenceException</b>.  In all other cases, the
     <b>if</b>-condition will evaluate to <b>false</b>.  Fortunately, a
-    <a
-    href="http://msdn.microsoft.com/en-us/library/w4hkze5k(v=vs.110).aspx"><b>static
+    <a href="http://msdn.microsoft.com/en-us/library/w4hkze5k(v=vs.110).aspx"><b>static
     Equals</b></a> method is available to handle this situation:
 <pre>
 if (Equals(x, null))
@@ -170,49 +156,27 @@ In fact, the way we originally wrote the code is simply an
     that this code cannot use <b>this</b>, either explicitly or
     implicitly.
 <p></p>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/out-ref">Next: <b>out</b>
-      and <b>ref</b> Parameters</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/indexers">Previous:
-      Indexers</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a 
-      href="/~rhowell/DataStructures/redirect/syntax">Up: C#
-      Syntax</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a 
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <p>
-<small>
-<!-- hhmts start -->
-Last modified: Sat Dec 30 09:46:20 CST 2017
-<!-- hhmts end -->
-</small>
+
 </p>
 <small>
-    <i> &copy; Copyright 2014, 2017, <a
-    href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i> 
+<i> © Copyright 2014, <a href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i>
 </small>
-
 <p></p>
-
-<table border=0 cellpadding=2 summary="This table is used for layout
+<table border="0" cellpadding="2" summary="This table is used for layout
 purposes only.">
 <tr>
-<td align=center>
-    <a href="http://validator.w3.org/check/referer"><img border="0"
-        src="/~rhowell/valid-html401.gif"
-        alt="Valid HTML 4.01!" height="31" width="88"></a>
+<td align="center">
+<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
 </td>
 <tr>
 <td>
 <a href="http://jigsaw.w3.org/css-validator/check/referer">
-             <img border="0"
-                  src="/~howell/vcss.gif" 
-                  alt="Valid CSS!" height="31" width="88">
-            </a>
+<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
+</a>
 </td>
-</table>
-
-</body>
-
+</tr></tr></table>
+</p></p></body>
 </html>

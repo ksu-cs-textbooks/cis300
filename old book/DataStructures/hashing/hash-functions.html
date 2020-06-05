@@ -1,38 +1,24 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Hash Codes</title>
-<link rel=STYLESHEET href="/~rhowell/style.css">
-
+<link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
-
 <body>
-<div class="NAVBAR">
-<a
-      href="/~rhowell/DataStructures/redirect/equality">Previous:
-      Equality in C#
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/dictionaries">Up:
-      Hash Tables
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <h1>Hash Codes</h1>
 
 Whenever equality is redefined for a type, the hash code computation
     for that type needs to be redefined in a consistent way.  This is
-    done by  <a
-	href="/~rhowell/DataStructures/redirect/method-overriding">overriding</a>
-	that type's <a
-    href="https://msdn.microsoft.com/en-us/library/system.object.gethashcode.aspx"><b>GetHashCode</b></a>
+    done by  <a href="/~rhowell/DataStructures/redirect/method-overriding">overriding</a>
+	that type's <a href="https://msdn.microsoft.com/en-us/library/system.object.gethashcode.aspx"><b>GetHashCode</b></a>
     method.  In order for hashing to be implemented correctly and 
     efficiently, this method should satisfy the following goals:
 <ul>
 <li> Equal keys must have the same hash code.  This is necessary in
-	order for the <b>Dictionary&lt;TKey,&nbsp;TValue&gt;</b> class
+	order for the <b>Dictionary&lt;TKey, TValue&gt;</b> class
 	to be able to find a given key that it has stored.  On the
 	other hand, because the number of possible keys is usually
 	larger than the number of possible hash codes, unequal keys
@@ -44,7 +30,7 @@ Whenever equality is redefined for a type, the hash code computation
 The last goal above may seem rather daunting, particularly in light of
     our desire for a quick computation.  In fact, it is impossible to
     guarantee in general - provided there are more than
-    2<sup>32</sup>(<i>k</i>&nbsp;-&nbsp;1) possible keys from which to
+    2<sup>32</sup>(<i>k</i> - 1) possible keys from which to
     choose, no matter how the hash code computation is implemented, we
     can always find at least <i>k</i> keys with the same hash code.
     However, this is a problem that has been studied a great deal, and
@@ -68,8 +54,7 @@ A guiding principle in developing hashing techniques is to use all
 One specific technique initializes the hash code to 0, then processes
     the key one component at a time.  These components may be bytes,
     characters, or other parts no larger than 32 bits each.  For
-    example, for the Nim board positions discussed in "<a
-    href="/~rhowell/DataStructures/redirect/memoization">Memoization</a>",
+    example, for the Nim board positions discussed in "<a href="/~rhowell/DataStructures/redirect/memoization">Memoization</a>",
     the components would be the number of stones on each pile, the
     limit for each pile, and the total number of piles (to distinguish
     between a board ending with empty piles and a board with fewer
@@ -81,17 +66,29 @@ One specific technique initializes the hash code to 0, then processes
 </ul>
 <a name="checked-unchecked"></a>
 Due to the repeated multiplications, the above computation will often
-    overflow an <b>int</b>.  This is not a problem - as we explain
-    below, enough
-    information is retained in the low-order bits that remain.
+    overflow an <b>int</b>.  This is not a problem - in fact, we want
+    to be sure that this overflow is allowed to happen without
+    throwing an exception.  By default, whether an exception is thrown
+    in this situation depends upon certain settings in the execution
+    environment.  However, we can override these settings to avoid
+    throwing an exception by enclosing the code within an
+    <b>unchecked</b> construct:
+<pre>
+unchecked
+{
+    // Code in which we want to allow integer overflow to occur.
+}
+</pre>
+Likewise, if we want to ensure that an exception is thrown if overflow
+    occurs, we can enclose code within a <b>checked</b> construct.
 <p></p>
 In order to understand this computation a little better, let's first
     ignore the effect of this overflow.  We'll denote the fixed odd
     integer by <i>x</i>, and the components of the key as
-    <i>k</i><sub>1</sub>,&nbsp;.&nbsp;.&nbsp;.,&nbsp;<i>k<sub>n</sub></i>.
+    <i>k</i><sub>1</sub>, . . ., <i>k<sub>n</sub></i>.
     Then this is the result of the computation:
 <p>
-(&nbsp;.&nbsp;.&nbsp;.&nbsp;((0x&nbsp;+&nbsp;<i>k</i><sub>1</sub>)<i>x</i>&nbsp;+&nbsp;<i>k</i><sub>2</sub>)&nbsp;.&nbsp;.&nbsp;.&nbsp;)<i>x</i>&nbsp;+&nbsp;<i>k<sub>n</sub></i>&nbsp;=&nbsp;<i>k</i><sub>1</sub><i>x</i><sup><i>n</i>-1</sup>&nbsp;+&nbsp;<i>k</i><sub>2</sub><i>x</i><sup><i>n</i>-2</sup>&nbsp;+&nbsp;.&nbsp;.&nbsp;.&nbsp;+&nbsp;<i>k<sub>n</sub></i>.
+( . . . ((0x + <i>k</i><sub>1</sub>)<i>x</i> + <i>k</i><sub>2</sub>) . . . )<i>x</i> + <i>k<sub>n</sub></i> = <i>k</i><sub>1</sub><i>x</i><sup><i>n</i>-1</sup> + <i>k</i><sub>2</sub><i>x</i><sup><i>n</i>-2</sup> + . . . + <i>k<sub>n</sub></i>.
 </p>
 Because the above is a polynomial, this hashing scheme is called
     <i>polynomial hashing</i>.  While the computation itself is
@@ -117,10 +114,10 @@ There are other potential problems with using certain odd numbers for
     key.  Using -1 would be almost as bad, as we would multiply all
     components in odd positions by -1 and all components in even
     positions by 1.  The effect of overflow can cause similar
-    behavior; for example, if we place 2<sup>31</sup>&nbsp;-&nbsp;1 in
+    behavior; for example, if we place 2<sup>31</sup> - 1 in
     an <b>int</b> variable and square it, the overflow causes the
     result to be 1.  Successive powers will then alternate between
-    2<sup>31</sup>&nbsp;-&nbsp;1 and 1.
+    2<sup>31</sup> - 1 and 1.
 <p>
 It turns out that this cyclic behavior occurs no matter what odd
       number we use for <i>x</i>.  However, in most cases the cycle is
@@ -133,7 +130,7 @@ It turns out that this cyclic behavior occurs no matter what odd
 The other potential problem occurs when we are hashing fairly short
     keys.  In such cases, if <i>x</i> is also small enough, the values
     computed will all be much smaller than the maximum possible
-    integer value (2<sup>31</sup>&nbsp;-&nbsp;1).  As a result, we
+    integer value (2<sup>31</sup> - 1).  As a result, we
     will not have a uniform distribution of values.  We therefore want
     to avoid making <i>x</i> too small.
 <p>
@@ -161,50 +158,27 @@ We should always save the hash code in a <b>private</b> field after we
     value of the hash code field.
 
 <p></p>
-<div class="NAVBAR">
-<a
-      href="/~rhowell/DataStructures/redirect/equality">Previous:
-      Equality in C#
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/dictionaries">Up:
-      Hash Tables
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <p>
-<small>
-<!-- hhmts start -->
-Last modified: Mon Oct 29 14:44:11 CDT 2018
-<!-- hhmts end -->
-</small>
+
 </p>
 <small>
-    <i> &copy; Copyright 2014, 2018, <a
-    href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i> 
+<i> © Copyright 2014, 2018, <a href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i>
 </small>
-
 <p></p>
-
-<table border=0 cellpadding=2 summary="This table is used for layout
+<table border="0" cellpadding="2" summary="This table is used for layout
 purposes only.">
 <tr>
-<td align=center>
-    <a href="http://validator.w3.org/check/referer"><img border="0"
-        src="/~rhowell/valid-html401.gif"
-        alt="Valid HTML 4.01!" height="31" width="88"></a>
+<td align="center">
+<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
 </td>
 <tr>
 <td>
 <a href="http://jigsaw.w3.org/css-validator/check/referer">
-             <img border="0"
-                  src="/~howell/vcss.gif" 
-                  alt="Valid CSS!" height="31" width="88">
-            </a>
+<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
+</a>
 </td>
-</table>
-
+</tr></tr></table>
 </body>
-
 </html>

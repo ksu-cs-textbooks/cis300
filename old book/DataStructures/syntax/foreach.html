@@ -1,24 +1,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>The foreach Statement</title>
-<link rel=STYLESHEET href="/~rhowell/style.css">
-
+<link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
-
 <body>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/enumerators">Next: Enumerators
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/out-ref">Previous:
-      <b>out</b> and <b>ref</b> Parameters
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/syntax">Up: C# Syntax
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <h1>The foreach Statement</h1>
 
@@ -27,10 +15,8 @@ C# provides a <b>foreach</b> statement that is often useful for
     <b>foreach</b> can be used when all of the following conditions
     hold:
 <ol>
-<li> The data structure is a subtype of either <a
-	  href="http://msdn.microsoft.com/en-us/library/system.collections.ienumerable.aspx"><b>IEnumerable</b></a>
-	  or <a
-	  href="http://msdn.microsoft.com/en-us/library/9eekhta0(v=vs.110).aspx"><b>IEnumerable&lt;T&gt;</b></a>
+<li> The data structure is a subtype of either <a href="http://msdn.microsoft.com/en-us/library/system.collections.ienumerable.aspx"><b>IEnumerable</b></a>
+	  or <a href="http://msdn.microsoft.com/en-us/library/9eekhta0(v=vs.110).aspx"><b>IEnumerable&lt;T&gt;</b></a>
 	  for some type <b>T</b>. </li>
 <li> You do not need to know the locations in the data structure of
 	  the individual elements. </li>
@@ -48,8 +34,7 @@ Note that many of the data structures provided to you in CIS 300, as
 <p>
 For example, the <b>string</b> class is a subtype of both
       <b>IEnumerable</b> and <b>IEnumerable&lt;char&gt;</b>.  To see
-      that this is the case, look in <a
-      href="http://msdn.microsoft.com/en-us/library/system.string(v=vs.110).aspx">the
+      that this is the case, look in <a href="http://msdn.microsoft.com/en-us/library/system.string(v=vs.110).aspx">the
       documentation for the <b>string</b> class</a>.  In the "Syntax"
       section, we see all of the supertypes of <b>string</b> (except
       <b>object</b>, which is a supertype of every type) listed after
@@ -107,14 +92,11 @@ Occasionally, it may not be obvious what type to use for the
       not a subtype of <b>IEnumerable&lt;T&gt;</b>, but you know that
       the elements are some specific subtype of <b>object</b>, you can
       use that type for the loop variable - the type will not be
-      checked until the code is executed.  For example, <a
-      href="http://msdn.microsoft.com/en-us/library/system.windows.forms.listbox(v=vs.110).aspx"><b>ListBox</b></a>
+      checked until the code is executed.  For example, <a href="http://msdn.microsoft.com/en-us/library/system.windows.forms.listbox(v=vs.110).aspx"><b>ListBox</b></a>
       is a class that implements a GUI control displaying a list of
       elements.  The 
-      elements in the <b>ListBox</b> are accessed via its <a
-      href="http://msdn.microsoft.com/en-us/library/system.windows.forms.listbox.items(v=vs.110).aspx"><b>Items</b></a>
-      property, which gets a data structure of type <a
-      href="http://msdn.microsoft.com/en-us/library/system.windows.forms.listbox.objectcollection(v=vs.110).aspx"><b>ListBox.ObjectCollection</b></a>.
+      elements in the <b>ListBox</b> are accessed via its <a href="http://msdn.microsoft.com/en-us/library/system.windows.forms.listbox.items(v=vs.110).aspx"><b>Items</b></a>
+      property, which gets a data structure of type <a href="http://msdn.microsoft.com/en-us/library/system.windows.forms.listbox.objectcollection(v=vs.110).aspx"><b>ListBox.ObjectCollection</b></a>.
       Any
       <b>object</b> can be added to this data structure, but typically
       we just add <b>string</b>s.  <b>ListBox.ObjectCollection</b> is
@@ -156,50 +138,27 @@ Even when a <b>foreach</b> would work, it is not always
     element.  These methods are often far more efficient than using a
     <b>foreach</b> loop.
 <p></p>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/enumerators">Next: Enumerators
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/out-ref">Previous:
-      <b>out</b> and <b>ref</b> Parameters
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/syntax">Up: C# Syntax
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <p>
-<small>
-<!-- hhmts start -->
-Last modified: Wed Mar  6 12:13:50 CST 2019
-<!-- hhmts end -->
-</small>
+
 </p>
 <small>
-    <i> &copy; Copyright 2014, 2019, <a
-    href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i> 
+<i> © Copyright 2014, <a href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i>
 </small>
-
 <p></p>
-
-<table border=0 cellpadding=2 summary="This table is used for layout
+<table border="0" cellpadding="2" summary="This table is used for layout
 purposes only.">
 <tr>
-<td align=center>
-    <a href="http://validator.w3.org/check/referer"><img border="0"
-        src="/~rhowell/valid-html401.gif"
-        alt="Valid HTML 4.01!" height="31" width="88"></a>
+<td align="center">
+<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
 </td>
 <tr>
 <td>
 <a href="http://jigsaw.w3.org/css-validator/check/referer">
-             <img border="0"
-                  src="/~howell/vcss.gif" 
-                  alt="Valid CSS!" height="31" width="88">
-            </a>
+<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
+</a>
 </td>
-</table>
-
+</tr></tr></table>
 </body>
-
 </html>

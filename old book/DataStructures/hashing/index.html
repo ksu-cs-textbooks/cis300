@@ -1,37 +1,25 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Hash Tables</title>
-<link rel=STYLESHEET href="/~rhowell/style.css">
-
+<link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
-
 <body>
-<div class="NAVBAR">
-<a
-      href="/~rhowell/DataStructures/redirect/simple-hash-table-impl">Next:
-      A Simple Hash Table Implementation
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <h1>Hash Tables</h1>
-
 <div class="TOC">
 <h2>Contents</h2>
-
 <ol>
-<li> <a
-      href="/~rhowell/DataStructures/redirect/simple-hash-table-impl">A
+<li> <a href="/~rhowell/DataStructures/redirect/simple-hash-table-impl">A
       Simple Hash Table Implementation
       </a></li>
-<li> <a
-      href="/~rhowell/DataStructures/redirect/rehashing">Rehashing</a></li>
-<li> <a
-	    href="/~rhowell/DataStructures/redirect/memoization">Memoization</a>
-	    </li>
+<li> <a href="/~rhowell/DataStructures/redirect/rehashing">Rehashing</a></li>
+<li> <a href="/~rhowell/DataStructures/redirect/hash-table-enumerator">Enumerating
+      a Hash Table</a></li>
+<li> <a href="/~rhowell/DataStructures/redirect/memoization">Memoization</a>
+</li>
 <li> <a href="/~rhowell/DataStructures/redirect/equality">Equality in
 	    C#</a> </li>
 <li> <a href="/~rhowell/DataStructures/redirect/hash-functions">Hash
@@ -47,7 +35,7 @@ Throughout our discussion of dictionaries over the last three
       any particular order (i.e., so that we can process them in that
       order).  The technique uses a data structure known as a <i>hash
       table</i>, which is the underlying data structure in the .NET
-      Framework's <b>Dictionary&lt;TKey,&nbsp;TValue&gt;</b> class.
+      Framework's <b>Dictionary&lt;TKey, TValue&gt;</b> class.
 </p>
 <p>
 A hash table is typically organized as an array of linked lists.  The
@@ -64,7 +52,7 @@ A hash table is typically organized as an array of linked lists.  The
       <b>string</b>s and the values are <b>int</b>s, and the hash
       function is denoted by <i>h</i>:
 </p>
-<img src="hash-table.jpg" alt="A hash table.">
+<img alt="A hash table." src="hash-table.jpg"/>
 <p>
 In order to avoid cluttering the above picture, the <b>string</b>s are
       shown inside the linked list cells, even though <b>string</b> is
@@ -85,8 +73,7 @@ The above overview of hash tables reveals one of the challenges in
     question is that the hash function is divided into two parts.  The
     first part of the hash function is implemented within the key type
     itself, where code can access the implementation details of the
-    key.  Specifically, every type in C# has a <b>public</b> <a
-    href="https://msdn.microsoft.com/en-us/library/system.object.gethashcode.aspx"><b>GetHashCode</b></a>
+    key.  Specifically, every type in C# has a <b>public</b> <a href="https://msdn.microsoft.com/en-us/library/system.object.gethashcode.aspx"><b>GetHashCode</b></a>
     method,
     which takes no parameters and returns an <b>int</b>.  Any new type
     that redefines how its elements are compared for equality should
@@ -109,50 +96,28 @@ The above overview of hash tables reveals one of the challenges in
     by illustrating how the <b>GetHashCode</b> method can be
     implemented.
     </p>
-    
-
 <p></p>
-<div class="NAVBAR">
-<a
-      href="/~rhowell/DataStructures/redirect/simple-hash-table-impl">Next:
-      A Simple Hash Table Implementation
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <p>
-<small>
-<!-- hhmts start -->
-Last modified: Wed Mar  6 12:17:24 CST 2019
-<!-- hhmts end -->
-</small>
+
 </p>
 <small>
-    <i> &copy; Copyright 2014, 2018, <a
-    href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i> 
+<i> © Copyright 2014, 2018, <a href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i>
 </small>
-
 <p></p>
-
-<table border=0 cellpadding=2 summary="This table is used for layout
+<table border="0" cellpadding="2" summary="This table is used for layout
 purposes only.">
 <tr>
-<td align=center>
-    <a href="http://validator.w3.org/check/referer"><img border="0"
-        src="/~rhowell/valid-html401.gif"
-        alt="Valid HTML 4.01!" height="31" width="88"></a>
+<td align="center">
+<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
 </td>
 <tr>
 <td>
 <a href="http://jigsaw.w3.org/css-validator/check/referer">
-             <img border="0"
-                  src="/~howell/vcss.gif" 
-                  alt="Valid CSS!" height="31" width="88">
-            </a>
+<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
+</a>
 </td>
-</table>
-
+</tr></tr></table>
 </body>
-
 </html>

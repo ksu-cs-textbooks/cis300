@@ -1,80 +1,50 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Enumerating a Hash Table</title>
-<link rel=STYLESHEET href="/~rhowell/style.css">
-
+<link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
-
 <body>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/memoization">Next:
-      Memoization</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a 
-      href="/~rhowell/DataStructures/redirect/rehashing">Previous:
-      Rehashing
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
-      href="/~rhowell/DataStructures/redirect/dictionaries">Up:
-      Hash Tables
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <h1>Enumerating a Hash Table</h1>
 
 The .NET implementation of a dictionary includes two <b>public</b>
-    properties, <a
-    href="http://msdn.microsoft.com/en-us/library/yt2fy5zk.aspx"><b>Keys</b></a>
-    and <a
-    href="http://msdn.microsoft.com/en-us/library/ekcfxy3x.aspx"><b>Values</b></a>,
+    properties, <a href="http://msdn.microsoft.com/en-us/library/yt2fy5zk.aspx"><b>Keys</b></a>
+    and <a href="http://msdn.microsoft.com/en-us/library/ekcfxy3x.aspx"><b>Values</b></a>,
     that can be used to obtain all the keys and values, respectively,
     in the hash table.  The data structures returned by these
-    properties are sub-types of <a
-    href="http://msdn.microsoft.com/en-us/library/9eekhta0(v=vs.110).aspx"><b>IEnumerable&lt;TKey&gt;</b></a>
-    and <a
-    href="http://msdn.microsoft.com/en-us/library/9eekhta0(v=vs.110).aspx"><b>IEnumerable&lt;TValue&gt;</b></a>,
+    properties are sub-types of <a href="http://msdn.microsoft.com/en-us/library/9eekhta0(v=vs.110).aspx"><b>IEnumerable&lt;TKey&gt;</b></a>
+    and <a href="http://msdn.microsoft.com/en-us/library/9eekhta0(v=vs.110).aspx"><b>IEnumerable&lt;TValue&gt;</b></a>,
     respectively, where <b>TKey</b> is the type of the keys and
     <b>TValue</b> is the type of the values.  Furthermore, the
-    <b>Dictionary&lt;TKey,&nbsp;TValue&gt;</b> class itself implements
-    <b>IEnumerable&lt;KeyValuePair&lt;TKey,&nbsp;TValue&gt;&gt;</b>.  The
-    <b>IEnumerable&lt;T&gt;</b> interface allows the <a
-    href="/~rhowell/DataStructures/redirect/foreach"><b>foreach</b></a>
+    <b>Dictionary&lt;TKey, TValue&gt;</b> class itself implements
+    <b>IEnumerable&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;</b>.  The
+    <b>IEnumerable&lt;T&gt;</b> interface allows the <a href="/~rhowell/DataStructures/redirect/foreach"><b>foreach</b></a>
     statement to iterate through the data structure - in the case of a
     dictionary, either through the keys or the values or through the
-    key-value pairs.  For example, if <tt>d</tt> is a
-    <b>System.Collections.Generic.Dictionary&lt;string, int[&nbsp;]&gt;</b>,
-    then the following loop will iterate through all the key-value
-    pairs in <tt>d</tt> in some order:
-<pre>
-foreach (KeyValuePair&lt;string, int[]&gt; p in d)
-{
-    . . .
-}
-</pre>
-    In this section,
-    we will consider how to add this functionality to a dictionary
-    implemented using a hash table.  The
+    key-value pairs.  In this section,
+    we will consider how to add this functionality.  The
     implementation we describe will be somewhat different from the
     .NET implementation, which takes advantage of certain
     optimizations in the implementation of the linked lists.
 <p>
 We will begin by discussing how to make the dictionary class itself
       implement
-      <b>IEnumerable&lt;KeyValuePair&lt;TKey,&nbsp;TValue&gt;&gt;</b>.
+      <b>IEnumerable&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;</b>.
       We will examine the details of the <b>IEnumerable&lt;T&gt;</b>
       interface shortly, but for now, we will simply observe that it
       contains two methods, each of which is responsible for returning
       an <i>enumerator</i>, which is an object that can be used to
       step through a sequence of data elements.  We make this
       enumerator available by causing the dictionary to implement
-      <b>IEnumerable&lt;KeyValuePair&lt;TKey,&nbsp;TValue&gt;&gt;</b>.
+      <b>IEnumerable&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;</b>.
       A <b>foreach</b> loop can then iterate through the pairs that
       the supplied enumerator steps through.  
 </p>
 <p>
-An enumerator is an object that is a subtype of the interface <a
-	href="http://msdn.microsoft.com/en-us/library/78dfe2yb.aspx"><b>IEnumerator&lt;T&gt;</b></a>,
+An enumerator is an object that is a subtype of the interface <a href="http://msdn.microsoft.com/en-us/library/78dfe2yb.aspx"><b>IEnumerator&lt;T&gt;</b></a>,
 	where <b>T</b> is the type of the objects in the sequence that
 	the enumerator is iterating through.  Again, we'll examine the
 	details of this interface shortly, but first we will outline
@@ -91,15 +61,15 @@ An enumerator is an object that is a subtype of the interface <a
 	current position to the next position in the sequence.
 </p>
 We need to define an enumerator that iterates through objects of type
-    <b>KeyValuePair&lt;TKey&nbsp;TValue&gt;</b>; i.e., we need to
+    <b>KeyValuePair&lt;TKey TValue&gt;</b>; i.e., we need to
     define a class that implements
-    <b>IEnumerator&lt;KeyValuePair&lt;TKey,&nbsp;TValue&gt;&gt;</b>.
+    <b>IEnumerator&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;</b>.
     In order to do this, we must place this definition where the
     compiler can understand that <b>TKey</b> and <b>TValue</b> are
-    type parameters to the <b>Dictionary&lt;TKey,&nbsp;TValue&gt;</b>
+    type parameters to the <b>Dictionary&lt;TKey, TValue&gt;</b>
     class.  In order to accomplish this, we need to define it as a
     <i>nested class</i> - a class whose definition occurs within the
-    definition of the <b>Dictionary&lt;TKey,&nbsp;TValue&gt;</b>
+    definition of the <b>Dictionary&lt;TKey, TValue&gt;</b>
     class.  This nesting allows the nested class to access the 
     private fields of any instance of the containing class, as well as
     the type parameters to the containing class.  However, nesting
@@ -107,10 +77,8 @@ We need to define an enumerator that iterates through objects of type
     way automatically associate an instance of the nested class with
     an instance of the containing class.
 <p>
-Let's now look at the details of an enumerator.  The <a
-	href="http://msdn.microsoft.com/en-us/library/78dfe2yb.aspx"><b>IEnumerator&lt;T&gt;</b></a>
-	<a
-	href="/~rhowell/DataStructures/redirect/interfaces">interface</a>
+Let's now look at the details of an enumerator.  The <a href="http://msdn.microsoft.com/en-us/library/78dfe2yb.aspx"><b>IEnumerator&lt;T&gt;</b></a>
+<a href="/~rhowell/DataStructures/redirect/interfaces">interface</a>
 	requires the following members: 
 </p>
 <ul>
@@ -121,13 +89,11 @@ Let's now look at the details of an enumerator.  The <a
 	position (unless it is already at the end) and returns whether
 	the resulting position is a position prior to the end.</li>
 <li> <b>object System.Collections.IEnumerator.Current</b>:  This
-	property is inherited from the non-generic <a
-	href="http://msdn.microsoft.com/en-us/library/system.collections.ienumerator(v=vs.110).aspx"><b>IEnumerator</b></a>
+	property is inherited from the non-generic <a href="http://msdn.microsoft.com/en-us/library/system.collections.ienumerator(v=vs.110).aspx"><b>IEnumerator</b></a>
 	interface.  Because it has
 	the same name as the first property above, but has a different
 	return type, an implementation of <b>IEnumerator&lt;T&gt;</b>
-	must <a
-	href="/~rhowell/DataStructures/redirect/explicit-impl">explicitly
+	must <a href="/~rhowell/DataStructures/redirect/explicit-impl">explicitly
 	implement</a> this property by omitting the <b>public</b>
 	modifier and including the name of the <b>IEnumerator</b>
 	interface in its name.  Because it should behave in the same
@@ -144,8 +110,7 @@ object System.Collections.IEnumerator.Current
 </pre>
 </li>
 <li> <b>public void Dispose()</b>: This method should dispose of any
-	<a
-	href="/~rhowell/DataStructures/redirect/unmanaged-resources">unmanaged
+	<a href="/~rhowell/DataStructures/redirect/unmanaged-resources">unmanaged
 	resources</a>.  Often there are no unmanaged resources - in
 	such cases, its body should be empty; i.e.:
 <pre>
@@ -173,7 +138,7 @@ In order to be able to implement the above members, the nested class
 </p>
 <ul>
 <li> The hash table to iterate through.  This can either be a
-	<b>Dictionary&lt;TKey,&nbsp;TValue&gt;</b> or an array of the
+	<b>Dictionary&lt;TKey, TValue&gt;</b> or an array of the
 	type that implements the hash table.  We will assume that it
 	is an array, as this is the simplest approach.</li>
 <li> The current index into the hash table.  This is part of the
@@ -227,7 +192,7 @@ Once the above loop terminates we can return <b>true</b>, as we have
 <p>
 Once we have completed this nested class, we need to make the
       dictionary class implement
-      <b>IEnumerable&lt;KeyValuePair&lt;TKey,&nbsp;TValue&gt;&gt;</b>.
+      <b>IEnumerable&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;</b>.
       The <b>IEnumerable&lt;T&gt;</b> interface requires the following
       members:
 </p>
@@ -236,8 +201,7 @@ Once we have completed this nested class, we need to make the
 	is used to get an enumerator.</li>
 <li> <b>System.Collections.IEnumerator
 	System.Collections.IEnumerable.GetEnumerator()</b>:  This 
-	method is inherited from the non-generic <a
-	href="http://msdn.microsoft.com/en-us/library/system.collections.ienumerable(v=vs.110).aspx"><b>IEnumerable</b></a>
+	method is inherited from the non-generic <a href="http://msdn.microsoft.com/en-us/library/system.collections.ienumerable(v=vs.110).aspx"><b>IEnumerable</b></a>
 	interface.  Like the
 	<b>System.Collections.IEnumerator.Current</b> property above,
 	sub-types of <b>IEnumerable&lt;T&gt;</b> must explicitly
@@ -288,51 +252,27 @@ At this point, we can implement the <b>Keys</b> and <b>Values</b>
       <b>IEnumerable&lt;TValue&gt;</b>, respectively, and return it.
 </p>
 <p></p>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/memoization">Next:
-      Memoization</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a 
-      href="/~rhowell/DataStructures/redirect/rehashing">Previous:
-      Rehashing
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
-      href="/~rhowell/DataStructures/redirect/dictionaries">Up:
-      Hash Tables
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <p>
-<small>
-<!-- hhmts start -->
-Last modified: Fri Mar 30 11:20:14 CDT 2018
-<!-- hhmts end -->
-</small>
+
 </p>
 <small>
-    <i> &copy; Copyright 2014, 2015, 2017, 2018, <a
-    href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i> 
+<i> © Copyright 2014, 2015, 2017, <a href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i>
 </small>
-
 <p></p>
-
-<table border=0 cellpadding=2 summary="This table is used for layout
+<table border="0" cellpadding="2" summary="This table is used for layout
 purposes only.">
 <tr>
-<td align=center>
-    <a href="http://validator.w3.org/check/referer"><img border="0"
-        src="/~rhowell/valid-html401.gif"
-        alt="Valid HTML 4.01!" height="31" width="88"></a>
+<td align="center">
+<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
 </td>
 <tr>
 <td>
 <a href="http://jigsaw.w3.org/css-validator/check/referer">
-             <img border="0"
-                  src="/~howell/vcss.gif" 
-                  alt="Valid CSS!" height="31" width="88">
-            </a>
+<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
+</a>
 </td>
-</table>
-
+</tr></tr></table>
 </body>
-
 </html>

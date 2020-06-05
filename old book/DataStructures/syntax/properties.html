@@ -1,31 +1,19 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Properties</title>
-<link rel=STYLESHEET href="/~rhowell/style.css">
-
+<link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
-
 <body>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/indexers">Next:
-      Indexers</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a  
-      href="/~rhowell/DataStructures/redirect/const">Previous:
-      Constant Fields</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/syntax">Up: C#
-      Syntax</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a 
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <h1>Properties</h1>
 
 A property is used syntactically like a field of a class or structure,
     but provides greater flexibility in implementation.  For example,
     the <b>string</b> 
-    class contains a <b>public</b> property called <a
-    href="http://msdn.microsoft.com/en-us/library/system.string.length.aspx"><b>Length</b></a>.
+    class contains a <b>public</b> property called <a href="http://msdn.microsoft.com/en-us/library/system.string.length.aspx"><b>Length</b></a>.
     This property is accessed in code much as if it were a
     <b>public int</b> field;
     i.e., if <tt>s</tt> is a <b>string</b> variable, we can access its
@@ -117,7 +105,6 @@ public int WordLength =&gt; _word.Length;
       it stores the value that user code assigns to the property.
       Hence, we can define the property as follows: 
     </p>
-    
 <pre>
 public int WordLength
  {
@@ -146,20 +133,18 @@ public int WordLength
       <b>set</b> accessors.  As long as we don't remove either
       accessor (or make it <b>private</b>), such a change is invisible
       to user code.  Due to this maintainability, good programmers
-      will never use <b>public</b> fields (unless they are <a
-      href="/~rhowell/DataStructures/redirect/const">constants</a>);
+      will never use <b>public</b> fields (unless they are <a href="/~rhowell/DataStructures/redirect/const">constants</a>);
       instead, they will use <b>public</b> properties.
     </p>
     In some cases, we need more than a single to expression to define
     a <b>get</b> or <b>set</b> accessor.  For example, suppose a data
-    structure stores an <b>int[&nbsp;]</b> <tt>_elements</tt>, and we
+    structure stores an <b>int[ ]</b> <tt>_elements</tt>, and we
     wish to provide read-only access to this array.  In order to
     ensure read-only access, we don't want to give user code a
     reference to the array, as the code would then be able to modify
     its contents.  We therefore wish to make a copy of the array, and
     return that array to the user code (though a better solution might be to
-    define an <a
-    href="/~rhowell/DataStructures/redirect/indexers">indexer</a>).
+    define an <a href="/~rhowell/DataStructures/redirect/indexers">indexer</a>).
     We can accomplish this as follows:
 <pre>
 public int[ ] Elements
@@ -192,49 +177,27 @@ Given how similar accessors are to methods, we might also wonder why
     <tt>_x</tt>; however, it is stylistically cleaner to define a
     property called <b>X</b>.
 <p></p>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/indexers">Next:
-      Indexers</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/const">Previous:
-      Constant Fields</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/syntax">Up: C#
-      Syntax</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a 
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <p>
-<small>
-<!-- hhmts start -->
-Last modified: Sat Dec 30 09:44:57 CST 2017
-<!-- hhmts end -->
-</small>
+
 </p>
 <small>
-    <i> &copy; Copyright 2014, 2016, 2017, <a
-    href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i> 
+<i> © Copyright 2014, 2016, 2017, <a href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i>
 </small>
-
 <p></p>
-
-<table border=0 cellpadding=2 summary="This table is used for layout
+<table border="0" cellpadding="2" summary="This table is used for layout
 purposes only.">
 <tr>
-<td align=center>
-    <a href="http://validator.w3.org/check/referer"><img border="0"
-        src="/~rhowell/valid-html401.gif"
-        alt="Valid HTML 4.01!" height="31" width="88"></a>
+<td align="center">
+<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
 </td>
 <tr>
 <td>
 <a href="http://jigsaw.w3.org/css-validator/check/referer">
-             <img border="0"
-                  src="/~howell/vcss.gif" 
-                  alt="Valid CSS!" height="31" width="88">
-            </a>
+<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
+</a>
 </td>
-</table>
-
-</body>
-
+</tr></tr></table>
+</p></p></p></body>
 </html>

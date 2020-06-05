@@ -1,26 +1,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Visual Studio Solutions</title>
-<link rel=STYLESHEET href="/~rhowell/style.css">
-
+<link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
-
 <body>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/design-window">Next: The
-      Design Window
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-	href="/~rhowell/DataStructures/redirect/version-control">Previous:
-      Git Repositories
-	</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/visual-studio">Up:
-      Visual Studio®
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <h1>Visual Studio Solutions</h1>
 
@@ -34,8 +20,7 @@ All code developed within Visual Studio 2017 must belong to one or more
     illustrates some of the possible relationships between solutions,
     projects, and files.
 <p>
-<img src="solutions.jpg" 
-    alt="Relationships between solutions, projects, and files">
+<img alt="Relationships between solutions, projects, and files" src="solutions.jpg"/>
 </p>
 Note that in the above figure, Project4 is contained in both Solution2
     and Solution3.
@@ -44,15 +29,14 @@ In this section, we will
     belongs to no other solutions (e.g., Solution1 in the above figure).
     
 <p>
-When you clone a Git repository using Visual Studio 2017 (see <a
-	href="/~rhowell/DataStructures/redirect/version-control">the
+When you clone a Git repository using Visual Studio 2017 (see <a href="/~rhowell/DataStructures/redirect/version-control">the
 	previous section</a>), the Visual Studio Solution Explorer
 	may display the contents of the repository.  In CIS 300, each
 	repository will contain exactly one solution, whose name will
 	have the suffix, ".sln".  To open this solution, double-click
       on it.
     </p>
-    <p>
+<p>
       If Visual Studio doesn't show the contents of the repository in
 	the Solution Explorer, you can open the solution as follows.
 	First, double-click the repository name (i.e., the name of the
@@ -61,7 +45,7 @@ When you clone a Git repository using Visual Studio 2017 (see <a
 	again, in CIS 300, there will only be one.  Double-click that
       solution to open it.  
     </p>
-    <p>
+<p>
 	The Solution Explorer will now give you a view of the
 	structure of your solution (you can always open the Solution
 	Explorer from the View menu if you don't see it).  For
@@ -69,8 +53,7 @@ When you clone a Git repository using Visual Studio 2017 (see <a
 	previous section will result in the following being shown in
 	the Solution Explorer:
 </p>
-<img src="solution-explorer.jpg" 
-   alt="A picture of a Solution Explorer should appear here">
+<img alt="A picture of a Solution Explorer should appear here" src="solution-explorer.jpg"/>
 <p>
 Near the top, just under the search box, is the name of the solution
       with an indication of how many projects it contains.  Listed
@@ -79,8 +62,7 @@ Near the top, just under the search box, is the name of the solution
       always shown in bold face.  The bold face indicates that this
       project is the startup project; i.e., it is the project that the
       debugger will attempt to execute whenever it is invoked (for
-      more details, see the section, "<a
-      href="/~rhowell/DataStructures/redirect/debugger">The
+      more details, see the section, "<a href="/~rhowell/DataStructures/redirect/debugger">The
       Debugger</a>").  
 </p>
 The solution in the above example is the initial solution created when
@@ -91,8 +73,7 @@ The solution in the above example is the initial solution created when
 <ul>
 <li> <b>Form1.cs:</b> This file contains code that you will write in
 	order to implement the main GUI for the application.  It will
-	be discussed in more detail in "<a
-	href="/~rhowell/DataStructures/redirect/code-window">The Code
+	be discussed in more detail in "<a href="/~rhowell/DataStructures/redirect/code-window">The Code
 	Window</a>". </li>
 <li> <b>Form1.Designer.cs:</b> You will need to click the triangle to
 	the left of "Form1.cs" in the Solution Explorer in order to
@@ -100,8 +81,7 @@ The solution in the above example is the initial solution created when
 	contains automatically-generated code that completes the
 	definition of the main GUI.  You will build this code
 	indirectly by laying out the graphical components of the GUI in
-	the design window (see the section, "<a
-	href="/~rhowell/DataStructures/redirect/design-window">The
+	the design window (see the section, "<a href="/~rhowell/DataStructures/redirect/design-window">The
 	Design Window</a>" for more details).  Ordinarily, you will
 	not need to look at the contents of this file. </li>
 <li> <b>Program.cs:</b>  This file will contain something like the
@@ -132,8 +112,7 @@ namespace Ksu.Cis300.HelloWorld
 </pre>
 The <b>Main</b> method is where the application code begins.  The last
 	line of this method constructs a new instance of the class
-	that implements the GUI.  The call to <a
-	href="http://msdn.microsoft.com/en-us/library/ms157902(v=vs.110).aspx"><b>Application.Run</b></a>
+	that implements the GUI.  The call to <a href="http://msdn.microsoft.com/en-us/library/ms157902(v=vs.110).aspx"><b>Application.Run</b></a>
 	displays the GUI and starts a loop that processes events such
 	as mouse clicks and keystrokes.  Ordinarily, there is no need
 	to look at this code. </li>
@@ -142,8 +121,7 @@ One of the first things you will need to do when starting a new
     Windows Forms Application is to change the name of Form1.cs, as
     this name (without the ".cs" suffix) is also the name of the class
     implementing the GUI.  Therefore, it will need to be changed in
-    order to conform to the <a
-    href="/~rhowell/DataStructures/redirect/naming">naming
+    order to conform to the <a href="/~rhowell/DataStructures/redirect/naming">naming
     convention</a> for classes.  To do this, right-click on its name
     in the Solution Explorer, and select "Rename" from the resulting
     popup menu.  You will then be able to edit the name in the
@@ -152,64 +130,35 @@ One of the first things you will need to do when starting a new
     When you have entered the new name, the following window will be
     displayed:
 <p>
-<img src="rename-prompt.jpg" alt="A picture of a window should appear here.">
+<img alt="A picture of a window should appear here." src="rename-prompt.jpg"/>
 </p>
 You should click the "Yes" button in order to make the renaming
     consistent - particularly to rename the class as well.
 <p></p>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/design-window">Next: The
-      Design Window
-     </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-	href="/~rhowell/DataStructures/redirect/version-control">Previous:
-      Git Repositories
-	</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/visual-studio">Up:
-      Visual Studio®
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <p>
-<small>
-Visual Studio is either a registered trademark or a trademark of
-	Microsoft Corporation in the United States and/or other
-	countries.
-</small>
+
 </p>
 <p>
-<small>
-<!-- hhmts start -->
-Last modified: Fri Jul 28 06:45:14 CDT 2017
-<!-- hhmts end -->
-</small>
+
 </p>
 <small>
-    <i> &copy; Copyright 2014, 2015, 2017, <a
-    href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i> 
+<i> Â© Copyright 2014, 2015, 2017, <a href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i>
 </small>
-
 <p></p>
-
-<table border=0 cellpadding=2 summary="This table is used for layout
+<table border="0" cellpadding="2" summary="This table is used for layout
 purposes only.">
 <tr>
-<td align=center>
-    <a href="http://validator.w3.org/check/referer"><img border="0"
-        src="/~rhowell/valid-html401.gif"
-        alt="Valid HTML 4.01!" height="31" width="88"></a>
+<td align="center">
+<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
 </td>
 <tr>
 <td>
 <a href="http://jigsaw.w3.org/css-validator/check/referer">
-             <img border="0"
-                  src="/~howell/vcss.gif" 
-                  alt="Valid CSS!" height="31" width="88">
-            </a>
+<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
+</a>
 </td>
-</table>
-
+</tr></tr></table>
 </body>
-
 </html>

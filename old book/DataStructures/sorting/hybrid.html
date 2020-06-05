@@ -1,42 +1,26 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Hybrid Sorting Algorithms</title>
-<link rel=STYLESHEET href="/~rhowell/style.css">
-
+<link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
-
 <body>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/sorting-strings">Next:
-      Sorting Strings
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/split-sorts">Previous:
-      Split Sorts
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/sorting">Up: Sorting
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <h1>Hybrid Sorting Algorithms</h1>
 
-The best versions of <a
-      href="/~rhowell/DataStructures/redirect/split-sorts">quick
-      sort</a> are competitive with both <a
-      href="/~rhowell/DataStructures/redirect/heap-sort">heap sort</a>
+The best versions of <a href="/~rhowell/DataStructures/redirect/split-sorts">quick
+      sort</a> are competitive with both <a href="/~rhowell/DataStructures/redirect/heap-sort">heap sort</a>
       and <a href="/~rhowell/DataStructures/redirect/merge-sorts">merge
       sort</a> on the vast majority of inputs.  However, quick sort
       has a very bad worst case - <i>O</i>(<i>n</i><sup>2</sup>)
       running time and <i>O</i>(<i>n</i>) stack usage.  By
       comparison, both heap sort and merge sort have
-      <i>O</i>(<i>n</i>&nbsp;lg&nbsp;<i>n</i>) worst-case running
+      <i>O</i>(<i>n</i> lg <i>n</i>) worst-case running
       time, together with a stack usage of <i>O</i>(1) for heap sort
-      or <i>O</i>(lg&nbsp;<i>n</i>) for merge sort.  Furthermore,
-      <a
-      href="/~rhowell/DataStructures/redirect/insert-sorts">insertion
+      or <i>O</i>(lg <i>n</i>) for merge sort.  Furthermore,
+      <a href="/~rhowell/DataStructures/redirect/insert-sorts">insertion
       sort</a> performs better than any of these algorithms on small
       data sets.  In this section, we look at ways to combine some of
       these algorithms to obtain a sorting algorithm that has the
@@ -44,8 +28,7 @@ The best versions of <a
 <p>
 We will start with quick sort, which gives the best performance for
       most inputs.  One way of improving its performance is to make
-      use of the fact that <a
-      href="/~rhowell/DataStructures/redirect/insert-sorts">insertion
+      use of the fact that <a href="/~rhowell/DataStructures/redirect/insert-sorts">insertion
       sort</a> is more efficient for small data sets.  Improving the
       performance on small
       portions can lead to significant performance improvements for
@@ -85,34 +68,33 @@ Both of the above techniques yield performance improvements over quick
       optimized version of quick
       sort with insertion sort were so efficient for most inputs that
       they were the most commonly-used algorithms for
-      general-purpose sorting. On modern hardware architectures, the
+      gerneral-purpose sorting. On modern hardware architectures, the
       first approach above tends to give the better 
       performance.
 </p>
 Nevertheless, neither of the above approaches can guarantee
-    <i>O</i>(<i>n</i>&nbsp;lg&nbsp;<i>n</i>) performance - in the
+    <i>O</i>(<i>n</i> lg <i>n</i>) performance - in the
     worst case, they are all still in <i>O</i>(<i>n</i><sup>2</sup>).
     Furthermore, the bad cases still use linear stack space.  To
     overcome these shortfalls, we can put a limit on the depth of
     recursion.  Once this limit is reached, we can finish sorting this
-    portion with an <i>O</i>(<i>n</i>&nbsp;lg&nbsp;<i>n</i>) algorithm
+    portion with an <i>O</i>(<i>n</i> lg <i>n</i>) algorithm
     such as <a href="/~rhowell/DataStructures/redirect/heap-sort">heap
     sort</a>.  The idea is to pick a limit that is large enough that
     it is rarely reached, but still small enough that bad cases will
     cause the alternative sort to be invoked before too much time is
-    spent.  A limit of about 2&nbsp;lg&nbsp;<i>n</i>, where <i>n</i>
+    spent.  A limit of about 2 lg <i>n</i>, where <i>n</i>
     is the size of the entire array, has been suggested.  Because
     arrays in C# must have fewer than 2<sup>31</sup> elements, this
     value is always less than 62; hence, it is also safe to use a
     constant for the limit.  The resulting algorithm has a worst-case
     running time in
-    <i>O</i>(<i>n</i>&nbsp;lg&nbsp;<i>n</i>) and a worst-case stack
-    usage of <i>O</i>(lg&nbsp;<i>n</i>).  This logarithmic bound on
+    <i>O</i>(<i>n</i> lg <i>n</i>) and a worst-case stack
+    usage of <i>O</i>(lg <i>n</i>).  This logarithmic bound on
     the stack usage is sufficient to avoid a
     <b>StackOverflowException</b>.
 <p>
-The combination of <a
-      href="/~rhowell/DataStructures/redirect/median-of-3">quick sort
+The combination of <a href="/~rhowell/DataStructures/redirect/median-of-3">quick sort
       using median-of-three partitioning</a> with
       insertion sort for small portions and heap sort when the
       recursion depth limit is reached is known as <i>introsort</i>
@@ -121,62 +103,35 @@ The combination of <a
       introsort are among the best sorting algorithms available,
       unless the array is nearly sorted.  Of course, if the
       data won't fit in an array, we can't use introsort - we should
-      use <a
-      href="/~rhowell/DataStructures/redirect/external-merge-sort">external
+      use <a href="/~rhowell/DataStructures/redirect/external-merge-sort">external
       merge sort</a> instead.  Furthermore, like quick sort and heap
       sort, introsort is not stable.
       When a stable sort is not needed, however, and when none of the
       above special cases applies, introsort is one of the best
       choices available.
 </p>
-
-
 <p></p>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/sorting-strings">Next:
-      Sorting Strings
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/split-sorts">Previous:
-      Split Sorts
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/sorting">Up: Sorting
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <p>
-<small>
-<!-- hhmts start -->
-Last modified: Thu May  3 14:04:22 CDT 2018
-<!-- hhmts end -->
-</small>
+
 </p>
 <small>
-    <i> &copy; Copyright 2014, 2015, 2017, 2018, <a
-    href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i> 
+<i> © Copyright 2014, 2015, 2017, <a href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i>
 </small>
-
 <p></p>
-
-<table border=0 cellpadding=2 summary="This table is used for layout
+<table border="0" cellpadding="2" summary="This table is used for layout
 purposes only.">
 <tr>
-<td align=center>
-    <a href="http://validator.w3.org/check/referer"><img border="0"
-        src="/~rhowell/valid-html401.gif"
-        alt="Valid HTML 4.01!" height="31" width="88"></a>
+<td align="center">
+<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
 </td>
 <tr>
 <td>
 <a href="http://jigsaw.w3.org/css-validator/check/referer">
-             <img border="0"
-                  src="/~howell/vcss.gif" 
-                  alt="Valid CSS!" height="31" width="88">
-            </a>
+<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
+</a>
 </td>
-</table>
-
+</tr></tr></table>
 </body>
-
 </html>

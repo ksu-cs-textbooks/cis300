@@ -1,24 +1,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>AVL Trees</title>
-<link rel=STYLESHEET href="/~rhowell/style.css">
-
+<link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
-
 <body>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/tries">Next: Tries
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/binary-search-trees">Previous:
-      Binary Search Trees
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/trees">Up: Trees
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <h1>AVL Trees</h1>
 
@@ -48,7 +36,7 @@ Depending on the shape of the tree, <i>O</i>(<i>h</i>) running time
     might be very good.  For example, it is possible to show that if
     keys are randomly taken from a uniform distribution and
     successively added to an initially empty binary search tree, the
-    expected height is in <i>O</i>(log&nbsp;<i>n</i>), where <i>n</i>
+    expected height is in <i>O</i>(log <i>n</i>), where <i>n</i>
     is the number of nodes.  In this case, we would expect logarithmic
     performance for lookups, insertions, and deletions.  In fact,
     there are many applications in which the height of a binary search
@@ -64,12 +52,12 @@ On the other hand, such a shape is by no means guaranteed.  For
       last node on the path going to the right.  As a result, the tree
       would have the following shape:
 </p>
-<img src="bst-chain.jpg" alt="A badly-shaped binary search tree">
+<img alt="A badly-shaped binary search tree" src="bst-chain.jpg"/>
 <p>
-The height of this tree is <i>n</i>&nbsp;-&nbsp;1; consequently,
+The height of this tree is <i>n</i> - 1; consequently,
       lookups will take time linear in <i>n</i>, the number of
       elements, in the worst case.  This performance is comparable with
-      that of a linked list.  In order to guarantee good performance,
+      that of a linked list.  In order to guaranteed good performance,
       we need a way to ensure that the height of a binary search tree
       does not grow too quickly.
 </p>
@@ -88,13 +76,12 @@ One way to accomplish this is to require that each node always has
 	For example, the following screen capture shows an AVL tree of
 	height 8 having a minimum number of nodes:
 </p>
-<img src="min-avl.jpg" 
-    alt="An AVL tree with height 8 and minimum number of nodes">
+<img alt="An AVL tree with height 8 and minimum number of nodes" src="min-avl.jpg"/>
 <p>
 As the above picture illustrates, a minimum of 88 nodes are required
       for an AVL tree to reach a height of 8.  In general, it can be
       shown that the height of an AVL tree is at worst proportional to
-      log&nbsp;<i>n</i>, where <i>n</i> is the number of nodes in the
+      log <i>n</i>, where <i>n</i> is the number of nodes in the
       tree.  Thus, if we can maintain the shape of an AVL tree
       efficiently, we should have efficient lookups and updates.
 </p>
@@ -155,26 +142,20 @@ Now that we have a way to find the height of a tree efficiently, we
       child).  We can then rotate the tree using a <i>single rotate
       right</i>:
 </p>
-<img src="single-rotate.jpg" alt="A single rotate right">
+<img alt="A single rotate right" src="single-rotate.jpg"/>
 <p>
-In the tree on the left, the root and the lines to its
+The tree on the left above represents the tree whose left child has a
+height 2 greater than its right child.  The root and the lines to its
 children are drawn using dashes to indicate that the root node has not
 yet been constructed - we have at this point simply built a new left
-child, and this picture shows the tree that would be formed if
+child, and the tree on the left shows the tree that would be formed if
 we were building an ordinary binary search tree.  The circles in the
 picture indicate individual nodes, and the triangles indicate
-arbitrary trees (which may be empty or of different heights).  Suppose
-      that in the tree on the left, the left child has a
-height 2 greater than its right child.   For example, <i>a</i> might have a 
-      height of 7, and <i>c</i> and <i>e</i> might both have heights
-      of 6, or alternatively, <i>a</i> and <i>c</i> might have heights
-      of 0, and <i>e</i> might have a height of -1.  In any case, if
-      the three rooted at <i>b</i> on the left has a height 2 greater
-      than <i>e</i>, we
-      then know that it
-cannot be empty; hence, it makes sense to draw it as a node
-with two children.  The labels are chosen to indicate the order of the 
-elements - e.g., as "a"&nbsp;&lt;&nbsp;"b", every key in tree <i>a</i>
+arbitrary trees (which may be empty).  Note that the because the left
+child has a height 2 greater than the right child, we know that the
+left child cannot be empty; hence, we can safely depict it as a node
+with two children.  The labels are chosen to indicate the order of the
+elements - e.g., as "a" &lt; "b", every key in tree <i>a</i>
 is less than the key in node <i>b</i>.  The tree on the right shows
 that tree that would be built by performing this rotation.  Note that
 the rotation preserves the order of the keys.
@@ -220,26 +201,26 @@ Now that we have seen what a single rotate right does and how to code
       greater than the given right child (i.e., the tree <i>e</i> in
       the tree on the left above).  Let's suppose the tree <i>e</i>
       has height <i>h</i>.  Then the tree rooted at <i>b</i> has
-      height <i>h</i>&nbsp;+&nbsp;2.  By the definition of the height
+      height <i>h</i> + 2.  By the definition of the height
       of a tree, either <i>a</i> or <i>c</i> (or both) must have height
-      <i>h</i>&nbsp;+&nbsp;1.  Assuming that every tree we've built so
+      <i>h</i> + 1.  Assuming that every tree we've built so
       far is an AVL tree, the children of <i>b</i> must differ in
       height by at most 2; hence, <i>a</i> and <i>c</i> must both have
       a height of at least <i>h</i> and at most
-      <i>h</i>&nbsp;+&nbsp;1.
+      <i>h</i> + 1.
 </p>
 Given these heights, let's examine the tree on the right.  We have
     assumed that every tree we've built up to this point is an AVL
     tree, so we don't need to worry about any balances within
     <i>a</i>, <i>c</i>, or <i>e</i>.  Because <i>c</i> has either
-    height <i>h</i> or height <i>h</i>&nbsp;+&nbsp;1 and <i>e</i> has
+    height <i>h</i> or height <i>h</i> + 1 and <i>e</i> has
     height <i>h</i>, the tree rooted at <i>d</i> satisfies the balance
-    criterion.  However, if <i>c</i> has height <i>h</i>&nbsp;+&nbsp;1
+    criterion.  However, if <i>c</i> has height <i>h</i> + 1
     and <i>a</i> has height <i>h</i>, then the tree rooted at <i>d</i>
-    has height <i>h</i>&nbsp;+&nbsp;2, and the balance criterion is
+    has height <i>h</i> + 2, and the balance criterion is
     <i>not</i> satisfied.  On the other hand, if <i>a</i> has height
-    <i>h</i>&nbsp;+1&nbsp;, the tree rooted at <i>d</i> will have a
-    height of either <i>h</i>&nbsp;+&nbsp;1 or <i>h</i>&nbsp;+&nbsp;2,
+    <i>h</i> +1 , the tree rooted at <i>d</i> will have a
+    height of either <i>h</i> + 1 or <i>h</i> + 2,
     depending on the height of <i>c</i>.  In these cases, the balance
     criterion is satisfied.
 <p>
@@ -253,7 +234,7 @@ We therefore conclude that a single rotate right will restore the
 <li> The height of the left child of the original left child (tree
 	<i>a</i> in the above figure) is
 	greater than the height of the original right child (tree
-	<i>e</i>). </li> 
+	<i>e</i>). </li>
 </ul>
 For the case in which the height of the left child of the original
     left child (tree <i>a</i>) is <i>not</i> greater than the height of
@@ -268,26 +249,26 @@ Before we consider the other kind of rotation, we can observe that if
       image of a single rotate right will restore the balance.  This
       rotation is called a <i>single rotate left</i>:
 </p>
-<img src="single-rotate-left.jpg" alt="A single rotate left">
+<img alt="A single rotate left" src="single-rotate-left.jpg"/>
 <p>
 Returning to the case in which the left child has a height 2 greater
       than the right child, but the left child of the left child has a
       height no greater than the right child, we can in this case do a
       <i>double rotate right</i>:
 </p>
-<img src="double-rotate.jpg" alt="A double rotate right">
+<img alt="A double rotate right" src="double-rotate.jpg"/>
 <p>
 Note that we have drawn the trees a bit differently by showing more
       detail.  Let's now show that this rotation restores the balance
       in this case.  Suppose that in the tree on the left, <i>g</i>
       has height <i>h</i>.  Then the tree rooted at <i>b</i> has
-      height <i>h</i>&nbsp;+&nbsp;2.  Because the height of <i>a</i>
+      height <i>h</i> + 2.  Because the height of <i>a</i>
       is no greater than the height of <i>g</i>, assuming all trees we
       have built so far are AVL trees, <i>a</i> must have height
       <i>h</i> and the tree rooted at <i>d</i> must have height
-      <i>h</i>&nbsp;+&nbsp;1 (thus, it makes sense to draw it as
+      <i>h</i> + 1 (thus, it makes sense to draw it as
       having a root node).  This means that <i>c</i> and <i>e</i> both
-      must have heights of either <i>h</i> or <i>h</i>&nbsp;-&nbsp;1.
+      must have heights of either <i>h</i> or <i>h</i> - 1.
       It is now not hard to verify that the balance criterion is
       satisfied at <i>b</i>, <i>f</i>, and <i>d</i> in the tree on the
       right.
@@ -298,7 +279,7 @@ The only remaining case is the mirror image of the above - i.e., that
       than the height of the left child.  In this case, a <i>double
       rotate left</i> can be applied:
 </p>
-<img src="double-rotate-left.jpg" alt="A double rotate left">
+<img alt="A double rotate left" src="double-rotate-left.jpg"/>
 <p>
 We have shown how to restore the balance whenever the balance
       criterion is violated.  Now we just need to put it all together
@@ -410,54 +391,31 @@ In order to build and maintain an AVL tree, user code simply needs to
     rotation is needed, construct one or two extra nodes.  As a
     result, because the height of an AVL tree is guaranteed to be
     logarithmic in the number of nodes, the worst-case running times
-    of both lookups and updates are in <i>O</i>(log&nbsp;<i>n</i>),
+    of both lookups and updates are in <i>O</i>(log <i>n</i>),
     where <i>n</i> is the number of nodes in the tree.
 
 <p></p>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/tries">Next: Tries
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/binary-search-trees">Previous:
-      Binary Search Trees
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/trees">Up: Trees
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <p>
-<small>
-<!-- hhmts start -->
-Last modified: Tue Jul 17 03:52:59 CDT 2018
-<!-- hhmts end -->
-</small>
+
 </p>
 <small>
-    <i> &copy; Copyright 2014, 2018, <a
-    href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i> 
+<i> © Copyright 2014, 2018, <a href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i>
 </small>
-
 <p></p>
-
-<table border=0 cellpadding=2 summary="This table is used for layout
+<table border="0" cellpadding="2" summary="This table is used for layout
 purposes only.">
 <tr>
-<td align=center>
-    <a href="http://validator.w3.org/check/referer"><img border="0"
-        src="/~rhowell/valid-html401.gif"
-        alt="Valid HTML 4.01!" height="31" width="88"></a>
+<td align="center">
+<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
 </td>
 <tr>
 <td>
 <a href="http://jigsaw.w3.org/css-validator/check/referer">
-             <img border="0"
-                  src="/~howell/vcss.gif" 
-                  alt="Valid CSS!" height="31" width="88">
-            </a>
+<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
+</a>
 </td>
-</table>
-
-</body>
-
+</tr></tr></table>
+</p></p></body>
 </html>

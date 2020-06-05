@@ -1,23 +1,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Sorting Strings</title>
-<link rel=STYLESHEET href="/~rhowell/style.css">
-
+<link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
-
 <body>
-<div class="NAVBAR">
-<a
-      href="/~rhowell/DataStructures/redirect/hybrid-sorts">Previous:
-      Hybrid Sorting Algorithms
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/sorting">Up: Sorting
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <h1>Sorting Strings</h1>
 
@@ -46,8 +35,7 @@ One algorithm to sort multi-keyed data is known as <i>multi-key quick
 	it can be applied to other multi-keyed data as well.
 </p>
 One problem with sorting strings using a version of quick sort
-    described in "<a
-    href="/~rhowell/DataStructures/redirect/split-sorts">Split
+    described in "<a href="/~rhowell/DataStructures/redirect/split-sorts">Split
     Sorts</a>" is that string comparisons can be expensive.
     Specifically, they must compare the strings a character at a time
     until they reach either a mismatch or the end of a string.  Thus,
@@ -76,8 +64,7 @@ Because all strings begin with the same prefix of length <tt>k</tt>,
     <tt>k</tt> of a string, letting -1 denote the absence of a
     character at that location.
 <p>
-The algorithm then proceeds a lot like those described in "<a
-	href="/~rhowell/DataStructures/redirect/split-sorts">Split
+The algorithm then proceeds a lot like those described in "<a href="/~rhowell/DataStructures/redirect/split-sorts">Split
 	Sorts</a>".  If the number of elements being sorted is greater
 	than 1, a pivot element <tt>p</tt> is found.  Note that
 	<tt>p</tt> is not a <b>string</b>, but an <b>int</b>
@@ -91,16 +78,15 @@ After these three groups are formed, the first and third group are
     sorted recursively using the same value for <tt>k</tt>.
     Furthermore, the second group may not be completely sorted yet -
     all we know is that all strings in this group agree on the first
-    <tt>k</tt>&nbsp;+&nbsp;1 characters.  Thus, unless <tt>p</tt> is
+    <tt>k</tt> + 1 characters.  Thus, unless <tt>p</tt> is
     -1 (indicating that that these strings all have length <tt>k</tt>,
     and are therefore all equal), we need to recursively sort this
     group as well.  However, because we know that the strings in this
-    group all agree on the first <tt>k</tt>&nbsp;+&nbsp;1 characters,
-    we pass <tt>k</tt>&nbsp;+&nbsp;1 as the last parameter.
+    group all agree on the first <tt>k</tt> + 1 characters,
+    we pass <tt>k</tt> + 1 as the last parameter.
 <p>
 One aspect of this algorithm that we need to address is whether the
-      recursion is valid.  Recall that <a
-      href="/~rhowell/DataStructures/redirect/recursion">when we
+      recursion is valid.  Recall that <a href="/~rhowell/DataStructures/redirect/recursion">when we
       introduced recursion</a>, we stated that in order to guarantee
       termination, all recursive calls must be on smaller problem
       instances, where the size of a problem instance is given by a
@@ -124,64 +110,63 @@ By being careful how we define the size of the problem instance,
     strings can be no larger.  Hence, the size decreases in all
     recursive calls.
 <p>
-This algorithm can be combined with <a
-	href="/~rhowell/DataStructures/redirect/insert-sorts">insertion
-	sort</a>, as was done for introsort in <a
-	href="/~rhowell/DataStructures/redirect/hybrid-sorts">the
+The fact that we are doing recursion on the length of strings,
+      however, can potentially cause the runtime stack to overflow
+      when we are sorting very long strings.  For this reason, it is
+      best to convert the recursive call on the second group to a
+      loop.  We can do this by changing the <b>if</b>-statement that
+      controls whether the splitting will be done into a
+      <b>while</b>-loop that iterates as long as the portion being
+      sorted is large enough to split.  Then at the bottom of the
+      loop, after doing recursive calls on the first and third parts,
+      we check to see if <tt>p</tt> is -1 - if so, we terminate the
+      loop.  Otherwise,
+      we do the following:
+</p>
+<ul>
+<li>increment <tt>k</tt>; </li>
+<li>change the index giving the start of the portion we are sorting to the
+	beginning of the second part; and </li>
+<li>change the length of the portion we are sorting to the length of
+	the second part.
+</li></ul>
+The next iteration will then sort the second part.
+<p>
+This algorithm can be combined with <a href="/~rhowell/DataStructures/redirect/insert-sorts">insertion
+	sort</a> and <a href="/~rhowell/DataStructures/redirect/heap-sort">heap
+	sort</a>, as was done for introsort in <a href="/~rhowell/DataStructures/redirect/hybrid-sorts">the
 	previous section</a>.  However, we should also modify
-	insertion sort to use the information we already
+	insertion sort and heap sort to use the information we already
 	have about equal prefixes when we are comparing elements.
 	Specifically, rather than comparing entire strings, we should
 	begin comparing after the equal prefix.  Because of the way
 	multi-key quick sort does comparisons, the result tends to
 	perform better than the single-key versions, assuming similar
 	optimizations are made; however, cutoffs for running insertion
-	sort may need to be adjusted.
+	sort and/or heap sort may need to be adjusted.
 </p>
 <p></p>
-<div class="NAVBAR">
-<a
-      href="/~rhowell/DataStructures/redirect/hybrid-sorts">Previous:
-      Hybrid Sorting Algorithms
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/sorting">Up: Sorting
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <p>
-<small>
-<!-- hhmts start -->
-Last modified: Thu May  2 15:34:28 CDT 2019
-<!-- hhmts end -->
-</small>
+
 </p>
 <small>
-    <i> &copy; Copyright 2014, 2015, 2019, <a
-    href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i> 
+<i> © Copyright 2014, 2015, <a href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i>
 </small>
-
 <p></p>
-
-<table border=0 cellpadding=2 summary="This table is used for layout
+<table border="0" cellpadding="2" summary="This table is used for layout
 purposes only.">
 <tr>
-<td align=center>
-    <a href="http://validator.w3.org/check/referer"><img border="0"
-        src="/~rhowell/valid-html401.gif"
-        alt="Valid HTML 4.01!" height="31" width="88"></a>
+<td align="center">
+<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
 </td>
 <tr>
 <td>
 <a href="http://jigsaw.w3.org/css-validator/check/referer">
-             <img border="0"
-                  src="/~howell/vcss.gif" 
-                  alt="Valid CSS!" height="31" width="88">
-            </a>
+<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
+</a>
 </td>
-</table>
-
+</tr></tr></table>
 </body>
-
 </html>

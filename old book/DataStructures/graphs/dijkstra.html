@@ -1,26 +1,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Shortest Paths</title>
-<link rel=STYLESHEET href="/~rhowell/style.css">
-
+<link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
-
 <body>
-<div class="NAVBAR">
-<a
-      href="/~rhowell/DataStructures/redirect/unweighted-shortest-paths">Next:
-      Unweighted Shortest Paths
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/graph-intro">Previous:
-      Introduction to Graphs
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/graphs">Up: Graphs
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <h1>Shortest Paths</h1>
 
@@ -36,9 +22,9 @@ In this section, we will consider a common graph problem - that of
     for example, the shortest path from <i>a</i> to <i>h</i> in the
     graph below is <i>a</i>-<i>c</i>-<i>g</i>-<i>f</i>-<i>h</i>, and
     its length is 
-    4.8&nbsp;+&nbsp;6.4&nbsp;+&nbsp;4.9&nbsp;+&nbsp;3.2&nbsp;=&nbsp;19.3. 
+    4.8 + 6.4 + 4.9 + 3.2 = 19.3. 
 <p>
-<img src="directed-graph.jpg" alt="A directed graph">
+<img alt="A directed graph" src="directed-graph.jpg"/>
 </p>
 The biggest challenge in finding an algorithm for this problem is that
     the number of paths in a graph can be huge, even for relatively
@@ -91,10 +77,8 @@ Dijkstra's algorithm progresses by finding a shortest path to one node
     to such edges as <i>eligible</i>.  We are therefore looking for a
     shortest path whose last edge is eligible.
     </p>
-    Suppose (<i>w</i>, <i>x</i>) is an eligible edge; i.e., its source
-    node <i>w</i>
-    is in <i>S</i>, but its destination node <i>x</i> is not.  Because
-    <i>w</i> is in 
+    Suppose (<i>w</i>, <i>x</i>) is an eligible edge; i.e., <i>w</i>
+    is in <i>S</i>, but <i>x</i> is not.  Because <i>w</i> is in
     <i>S</i>, we know the length of the shortest path to <i>w</i>.
     The length of a shortest path ending in (<i>w</i>, <i>x</i>) is
     simply the length of the shortest path to <i>w</i>, plus the
@@ -102,20 +86,19 @@ Dijkstra's algorithm progresses by finding a shortest path to one node
     <p>
       Let us therefore assign to each eligible edge (<i>w</i>,
       <i>x</i>) a priority equal to the length of the shortest path to
-      its source node
-      <i>w</i>, plus the length of edge (<i>w</i>, <i>x</i>).  A shortest
+      <i>w</i>, plus the length of (<i>w</i>, <i>x</i>).  A shortest
       path ending in an eligible edge therefore has a length equal to
       the minimum priority of any eligible edge.  Furthermore, if the
       eligible edge with minimum priority is (<i>w</i>, <i>x</i>),
-      then the shortest path to node <i>x</i> is the shortest path to
-	node <i>w</i>, followed by edge (<i>w</i>, <i>x</i>).
+      then the shortest path to <i>x</i> is the shortest path to
+	<i>w</i>, followed by (<i>w</i>, <i>x</i>).
     </p>
 
     We can efficiently find an eligible edge with minimum priority if
       we store all eligible edges in a
       <b>MinPriorityQueue&lt;TEdgeData, Edge&lt;TNode,
       TEdgeData&gt;&gt;</b>.  Note however, that when we include
-      node <i>x</i> in <i>S</i> as a result of removing edge (<i>w, x</i>)
+      <i>x</i> in <i>S</i> as a result of removing (<i>w, x</i>)
       from the queue, it will cause any other eligible edges leading
       to <i>x</i> to become ineligible, as <i>x</i> will no longer be
       outside of <i>S</i>.  Because removing these edges from the
@@ -132,7 +115,7 @@ Dijkstra's algorithm progresses by finding a shortest path to one node
       path.  This will allow us to retrieve a shortest path to a node
       <i>v</i> by starting at <i>v</i> and tracing the path backwards
       using the predecessor of each node until we reach <i>u</i>.
-      A <b>Dictionary&lt;TNode,&nbsp;TNode&gt;</b> is an
+      A <b>Dictionary&lt;TNode, TNode&gt;</b> is an
       ideal choice for this data structure.  The keys in the
       dictionary will be the nodes in <i>S</i>, and the value
       associated with a key will be that key's 
@@ -153,12 +136,10 @@ Once the above initialization is done, the algorithm enters a loop
     that iterates as long as the min-priority queue is nonempty.  An
     iteration begins by obtaining the minimum priority <i>p</i> from
     the min-priority queue, then removing an edge
-    (<i>w</i>,&nbsp;<i>x</i>) with minimum priority.  If this edge's
-    destination node <i>x</i> is a
+    (<i>w</i>, <i>x</i>) with minimum priority.  If <i>x</i> is a
     key in the dictionary, we can ignore this edge and go on to the
     next iteration.  Otherwise, we add to the dictionary the key
-    <i>x</i> with a value of <i>w</i>, the source node of the edge.
-    Because we now have a shortest 
+    <i>x</i> with a value of <i>w</i>.  Because we now have a shortest
     path to <i>x</i>, there may be more eligible edges that we need to
     add to the min-priority queue.  These edges will be edges from
     <i>x</i> that lead to nodes that are not keys in the dictionary;
@@ -192,10 +173,10 @@ We can now modify the above algorithm so that it finds a shortest path
 <ul>
 <li> Construct a new dictionary and a new min-priority queue.</li>
 <li> Add to the dictionary the key <i>u</i> with value <i>u</i>.</li>
-<li> If <i>u</i>&nbsp;=&nbsp;<i>v</i>, return 0.</li>
-<li> For each outgoing edge (<i>u</i>,&nbsp;<i>w</i>) from <i>u</i>:
+<li> If <i>u</i> = <i>v</i>, return 0.</li>
+<li> For each outgoing edge (<i>u</i>, <i>w</i>) from <i>u</i>:
 <ul>
-<li> Add (<i>u</i>,&nbsp;<i>w</i>) to the min-priority queue with a
+<li> Add (<i>u</i>, <i>w</i>) to the min-priority queue with a
 	    priority of the length of this edge.</li>
 </ul>
 </li>
@@ -203,19 +184,18 @@ We can now modify the above algorithm so that it finds a shortest path
 <ul>
 <li> Get the minimum priority <i>p</i> from the min-priority
 	    queue.</li>
-<li> Remove an edge (<i>w</i>,&nbsp;<i>x</i>) with minimum priority
+<li> Remove an edge (<i>w</i>, <i>x</i>) with minimum priority
 	    from the min-priority queue.</li>
-<li> If <i>x</i> (i.e, the destination node of the edge removed) is
-	    not a key in the dictionary: 
+<li> If <i>x</i> is not a key in the dictionary:
 <ul>
 <li> Add to the dictionary the key <i>x</i> with a value of
-		<i>w</i> (i.e., the source node of the edge removed).</li>
-<li> If <i>x</i>&nbsp;=&nbsp;<i>v</i>, return <i>p</i>.</li>
-<li> For each outgoing edge (<i>x</i>,&nbsp;<i>y</i>) from <i>x</i>:
+		<i>w</i>.</li>
+<li> If <i>x</i> = <i>v</i>, return <i>p</i>.</li>
+<li> For each outgoing edge (<i>x</i>, <i>y</i>) from <i>x</i>:
 <ul>
-<li> Add (<i>x</i>,&nbsp;<i>y</i>) to the min-priority queue with
+<li> Add (<i>x</i>, <i>y</i>) to the min-priority queue with
 		    priority <i>p</i> plus the length of
-		    (<i>x</i>,&nbsp;<i>y</i>).</li>
+		    (<i>x</i>, <i>y</i>).</li>
 </ul>
 </li>
 </ul>
@@ -223,7 +203,7 @@ We can now modify the above algorithm so that it finds a shortest path
 </ul>
 </li>
 <li> Return a negative value.
-</ul>
+</li></ul>
 The above algorithm computes all of the path information we need, but
     we still need to extract from the dictionary the shortest path
     from <i>u</i> to <i>v</i>.  Because the value for each key is that
@@ -241,62 +221,35 @@ The above algorithm computes all of the path information we need, but
 	    dictionary.</li>
 </ul>
 </li>
-<li> Process <i>u</i> (e.g., add it to a list or output it - whatever
-	we want to do with each node in the shortest path).</li>
+<li> Process <i>u</i>.</li>
 <li> While the stack is not empty:
 <ul>
 <li> Pop the top node from the stack and process it.</li>
 </ul>
 </li>
-</ul>
-
+</li></ul>
 <p></p>
-<div class="NAVBAR">
-<a
-      href="/~rhowell/DataStructures/redirect/unweighted-shortest-paths">Next:
-      Unweighted Shortest Paths
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/graph-intro">Previous:
-      Introduction to Graphs
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/graphs">Up: Graphs
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <p>
-<small>
-<!-- hhmts start -->
-Last modified: Wed Aug 14 10:37:31 CDT 2019
-<!-- hhmts end -->
-</small>
+
 </p>
 <small>
-    <i> &copy; Copyright 2014, 2016, 2018, 2019, <a
-    href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i> 
+<i> © Copyright 2014, 2016, 2018, <a href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i>
 </small>
-
 <p></p>
-
-<table border=0 cellpadding=2 summary="This table is used for layout
+<table border="0" cellpadding="2" summary="This table is used for layout
 purposes only.">
 <tr>
-<td align=center>
-    <a href="http://validator.w3.org/check/referer"><img border="0"
-        src="/~rhowell/valid-html401.gif"
-        alt="Valid HTML 4.01!" height="31" width="88"></a>
+<td align="center">
+<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
 </td>
 <tr>
 <td>
 <a href="http://jigsaw.w3.org/css-validator/check/referer">
-             <img border="0"
-                  src="/~howell/vcss.gif" 
-                  alt="Valid CSS!" height="31" width="88">
-            </a>
+<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
+</a>
 </td>
-</table>
-
+</tr></tr></table>
 </body>
-
 </html>

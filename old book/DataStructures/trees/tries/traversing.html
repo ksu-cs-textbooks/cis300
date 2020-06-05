@@ -1,25 +1,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Traversing a Trie</title>
-<link rel=STYLESHEET href="/~rhowell/style.css">
-
+<link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
-
 <body>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/word-games">Next: Tries in
-      Word Games
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/tries-multiple-impl">Previous:
-      Multiple Implementations of Children
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/tries">Up: Tries
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <h1>Traversing a Trie</h1>
 
@@ -34,8 +21,7 @@ As with other kinds of trees, there are occasions where we need to
     any string associated with any node in any of this node's
     children; hence, it is alphabetically less than any string found
     in any of the children.  Thus, in order to process each of the
-    strings in alphabetic order, we need to do a <a
-    href="/~rhowell/DataStructures/redirect/trees-intro">preorder
+    strings in alphabetic order, we need to do a <a href="/~rhowell/DataStructures/redirect/trees-intro">preorder
     traversal</a>, which processes the root before recursively
     processing the children.
 <p>
@@ -47,8 +33,7 @@ In order to process the string associated with a node, we need
       preorder traversal of the trie rooted at this node.  Because we
       will be building this string a character at a time, to do this
       efficiently we
-      should use a <a
-      href="/~rhowell/DataStructures/redirect/stringbuilders"><b>StringBuilder</b></a>
+      should use a <a href="/~rhowell/DataStructures/redirect/stringbuilders"><b>StringBuilder</b></a>
       instead of a <b>string</b>.  Thus, the preorder traversal method
       for a trie
       will take a <b>StringBuilder</b> parameter describing the path
@@ -78,8 +63,7 @@ Before we present the algorithm itself, we need to address one more
 Once we have processed the root, we need to recursively process each of the
       children in alphabetic order of their labels.  How we accomplish
       this depends on how we are implementing the trie - we will
-      assume the implementation of <a
-      href="/~rhowell/DataStructures/redirect/tries-multiple-impl">the
+      assume the implementation of <a href="/~rhowell/DataStructures/redirect/tries-multiple-impl">the
       previous section</a>.  Because this implementation uses three
       different classes depending on how many children a node has, we
       will need to write three different versions of the preorder
@@ -95,67 +79,40 @@ Once we have processed the root, we need to recursively process each of the
       Before we make this call, we will need to append the child's
       label to the <b>StringBuilder</b>.  Following the recursive
       call, we will need to remove the character that we added by
-      decreasing its <a
-      href="http://msdn.microsoft.com/en-us/library/system.text.stringbuilder.length.aspx"><b>Length</b></a>
+      reducing its <a href="http://msdn.microsoft.com/en-us/library/system.text.stringbuilder.aspx"><b>Length</b></a>
       property by 1.  </li> <li> We handle a
       <b>TrieWithManyChildren</b> in a similar way as a
-      <b>TrieWithOneChild</b>, only we will need to iterate through
+      <b>TrieWithOneChild</b> , only we will need to iterate through
       the array of children and process each non-<b>null</b> child
       with a recursive call.  Note that for each of these children,
       its label will need to be appended to the <b>StringBuilder</b>
       prior to the recursive call and removed immediately after.  We
       can obtain the label of a child by adding 'a' to its array index
-      and <a
-      href="/~rhowell/DataStructures/redirect/casts">casting</a> the
+      and <a href="/~rhowell/DataStructures/redirect/casts">casting</a> the
       result to a <b>char</b>. </li>
 </ul>
-
 <p></p>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/word-games">Next: Tries in
-      Word Games
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/tries-multiple-impl">Previous:
-      Multiple Implementations of Children
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/tries">Up: Tries
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <p>
-<small>
-<!-- hhmts start -->
-Last modified: Thu Oct  9 16:52:53 CDT 2014
-<!-- hhmts end -->
-</small>
+
 </p>
 <small>
-    <i> &copy; Copyright 2014, <a
-    href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i> 
+<i> © Copyright 2014, <a href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i>
 </small>
-
 <p></p>
-
-<table border=0 cellpadding=2 summary="This table is used for layout
+<table border="0" cellpadding="2" summary="This table is used for layout
 purposes only.">
 <tr>
-<td align=center>
-    <a href="http://validator.w3.org/check/referer"><img border="0"
-        src="/~rhowell/valid-html401.gif"
-        alt="Valid HTML 4.01!" height="31" width="88"></a>
+<td align="center">
+<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
 </td>
 <tr>
 <td>
 <a href="http://jigsaw.w3.org/css-validator/check/referer">
-             <img border="0"
-                  src="/~howell/vcss.gif" 
-                  alt="Valid CSS!" height="31" width="88">
-            </a>
+<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
+</a>
 </td>
-</table>
-
+</tr></tr></table>
 </body>
-
 </html>

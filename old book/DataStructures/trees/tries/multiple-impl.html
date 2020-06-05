@@ -1,30 +1,16 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Multiple Implementations of Children</title>
-<link rel=STYLESHEET href="/~rhowell/style.css">
-
+<link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
-
 <body>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/traversing-tries">Next:
-      Traversing a Trie
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/tries-intro">Previous:
-      Introduction to Tries
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/tries">Up: Tries
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <h1>Multiple Implementations of Children</h1>
 
-The trie implementation given in <a
-      href="/~rhowell/DataStructures/redirect/tries-intro">the
+The trie implementation given in <a href="/~rhowell/DataStructures/redirect/tries-intro">the
       previous section</a> offers very efficient lookups - a word of
       length <i>m</i> can be looked up in <i>O</i>(<i>m</i>) time, no
       matter how many words are in the trie.  However, it wastes a
@@ -50,11 +36,10 @@ We can implement a trie more efficiently if we can customize the
 	hence, we also need to have a <b>char</b> giving the child's
 	label.  We also need the <b>bool</b> indicating whether the
 	trie rooted at this node contains the empty
-	<b>string</b>. </li> 
+	<b>string</b>. </li>
 </ul>
 For all other nodes, we can use an implementation similar to the one
-      outlined in <a
-      href="/~rhowell/DataStructures/redirect/tries-intro">the
+      outlined in <a href="/~rhowell/DataStructures/redirect/tries-intro">the
       previous section</a>.  We will still waste some space with the
       nodes having more than one child but fewer than 26; however, the
       amount of space wasted will now be much less.  Furthermore, in
@@ -75,32 +60,26 @@ The answer is to use a C# construct called an <i>interface</i>.  An
     details in order to focus on higher-level details.  At a high
     level (i.e., ignoring the specific implementations), these three
     different classes appear to be the same: they are all used to
-    implement nodes in a trie of words made up of lower-case English
-    letters. 
+    implement tries of words made up of lower-case English letters.
     More specifically, we want to be able to add a <b>string</b> to
-    instances of
     any of these classes, as well as to determine whether they contain
     a given <b>string</b>.  An interface allows us to define a type
     that has this functionality, and to define various sub-types that
     have different implementations, but still have this functionality.
 <p>
-A simple example of an interface is <a
-	href="https://msdn.microsoft.com/en-us/library/4d7sx9hd.aspx"><b>IComparable&lt;T&gt;</b></a>.
-	Recall from the section, "<a
-	href="http://people.cs.ksu.edu/~rhowell/DataStructures/redirect/dictionary-linked-lists">Implementing
-	a Dictionary with a Linked List</a>", that we can use a
-	<b>where</b> clause to constrain
+A simple example of an interface is <a href="https://msdn.microsoft.com/en-us/library/4d7sx9hd.aspx"><b>IComparable&lt;T&gt;</b></a>.
+	Recall from the section, "<a href="http://people.cs.ksu.edu/~rhowell/DataStructures/redirect/dictionary-linked-lists">Implementing
+	a Dictionary with a Linked List</a>", that we can constrain
 	the keys in a dictionary implementation to be of a type that
-	can be ordered:
+	can be ordered by using a <b>where</b> clause on the
+      <b>class</b> statement, as follows:
     <pre>
       public class Dictionary&lt;TKey, TValue&gt; where TKey : IComparable&lt;TKey&gt;
     </pre>
-    The <b>where</b> clause above states that <b>TKey</b> must be a
-	subtype of the interface <b>IComparable&lt;TKey&gt;</b>. 
-	The <a
-	href="https://referencesource.microsoft.com/#mscorlib/system/icomparable.cs,3911354c40e0c30e">source
-	code for <b>IComparable&lt;T&gt;</b></a> has been posted
-	by Microsoft�.  The essential part of this definition is:
+    
+	The <a href="https://referencesource.microsoft.com/#mscorlib/system/icomparable.cs,3911354c40e0c30e">source
+	code for the <b>IComparable&lt;T&gt;</b> interface</a> has been posted
+	by MicrosoftÂ®.  The essential part of this definition is:
 <pre>
       public interface IComparable&lt;in T&gt;
       {
@@ -109,7 +88,7 @@ A simple example of an interface is <a
     </pre>
     (Don't worry about the <b>in</b> keyword with the type parameter
     in the first line.)
-This code defines the type <b>IComparable&lt;T&gt;</b> as having a
+This definition defines the type <b>IComparable&lt;T&gt;</b> as having a
     method <b>CompareTo</b> that takes a parameter of the generic type
     <b>T</b> and returns an <b>int</b>.
     Note that there is no <b>public</b> or <b>private</b>
@@ -124,18 +103,17 @@ This code defines the type <b>IComparable&lt;T&gt;</b> as having a
     is impossible to construct an instance of an interface
     directly.  Instead, one or more sub-types of the interface
     must be defined, and these sub-types must provide definitions for
-    the behavior of the <b>CompareTo</b> method.  As a result, because the
+    the behavior of <b>CompareTo</b>.  As a result, because the
     <b>Dictionary&lt;TKey, TValue&gt;</b> class restricts type
     <b>TKey</b> to be a sub-type of <b>IComparable&lt;T&gt;</b>, its
-    can call the 
-    <b>CompareTo</b> method of any instance of type <b>TKey</b> in
-    order to compare it to another instance. 
+    can use the 
+    <b>CompareTo</b> method of any instance of type <b>TKey</b>. 
 <p>
 Now suppose that we want to define a class <b>Fraction</b> and use it
       as a key in our dictionary implementation.  We would begin
-      the class definition within Visual Studio� as follows:
+      the class definition within Visual StudioÂ® as follows:
 </p>
-<img src="interface-example1.jpg" alt="Beginning an interface">
+<img alt="Beginning an interface" src="interface-example1.jpg"/>
 <p>
 At the end of the first line of the <b>class</b> definition, "<tt>:
     IComparable&lt;Fraction&gt;</tt>" indicates that the class being
@@ -144,16 +122,14 @@ At the end of the first line of the <b>class</b> definition, "<tt>:
     list one or 
     more interface names after the colon, separating these names with
     commas.  Each name that we list requires that all of the methods,
-    properties, and <a
-    href="/~rhowell/DataStructures/redirect/indexers">indexers</a>
+    properties, and <a href="/~rhowell/DataStructures/redirect/indexers">indexers</a>
     from that interface must be fully defined within this class.  If
     we hover the mouse over the word, "IComparable&lt;Fraction&gt;", a
     drop-down menu appears.  By selecting "Implement interface" from
     this menu, all of the required members of the interface are
     provided for us:
 </p>
-<img src="interface-example2.jpg" 
-    alt="Interface members are auto-filled">
+<img alt="Interface members are auto-filled" src="interface-example2.jpg"/>
 <p>
 Note that in order to implement a method specified in an interface, we
     must define it as <b>public</b>.  We now just need to replace the
@@ -191,7 +167,7 @@ namespace Ksu.Cis300.Fractions
         /// &lt;param name="denominator"&gt;The denominator.&lt;/param&gt;
         public Fraction(int numerator, int denominator)
         {
-            if (denominator <= 0)
+            if (denominator &lt;= 0)
             {
                 throw new ArgumentException();
             }
@@ -221,96 +197,91 @@ namespace Ksu.Cis300.Fractions
     recursive. The <b>CompareTo</b> method that it calls is a member
     of the <b>long</b> structure, not the <b>Fraction</b> class.
     <p></p>
-<!-- As we suggested above, interfaces can also include properties.  For -->
-<!--       example, <a -->
-<!--       href="http://msdn.microsoft.com/en-us/library/92t2ye13(v=vs.110).aspx"><b>ICollection&lt;T&gt;</b></a> -->
-<!--       is a generic interface implemented by both arrays and the class -->
-<!--       <a -->
-<!--       href="http://msdn.microsoft.com/en-us/library/6sh2ey19(v=vs.110).aspx"><b>List&lt;T&gt;</b></a>. -->
-<!--       This interface contains the following member (among others): -->
-<!-- <pre> -->
-<!-- int Count { get; } -->
-<!-- </pre> -->
-<!-- This member specifies that every subclass must contain a property -->
-<!--     called <b>Count</b> with a get accessor.  At first, it would appear that -->
-<!--     an array does not have such a property, as we cannot write -->
-<!--     something like: -->
-<!-- <pre> -->
-<!-- int[] a = new int[10]; -->
-<!-- int k = a.Count;  // This gives a syntax error. -->
-<!-- </pre> -->
-<!-- <a name="explicit-impl"></a> -->
-<!-- In fact, an array does contain a <b>Count</b> property, but this -->
-<!--     property is available only when the array is treated as an -->
-<!--     <b>ICollection&lt;T&gt;</b> (or an <a -->
-<!--     href="http://msdn.microsoft.com/en-us/library/5y536ey6.aspx"><b>IList&lt;T&gt;</b></a>, -->
-<!--     which is an interface that is a subtype of -->
-<!--     <b>ICollection&lt;T&gt;</b>, and is also implemented by arrays). -->
-<!--     For example, we can write: -->
-<!-- <pre> -->
-<!-- int[] a = new int[10]; -->
-<!-- ICollection&lt;int&gt; col = a; -->
-<!-- int k = col.Count; -->
-<!-- </pre> -->
-<!-- or -->
-<!-- <pre> -->
-<!-- int[] a = new int[10]; -->
-<!-- int k = ((ICollection&lt;int&gt;)a).Count; -->
-<!-- </pre> -->
-<!-- This behavior occurs because an array <i>explicitly implements</i> the -->
-<!--     <b>Count</b> property.  We can do this as follows: -->
-<!-- <pre> -->
-<!-- public class ExplicitImplementationExample&lt;T&gt; : ICollection&lt;T&gt; -->
-<!-- { -->
-<!--     int ICollection&lt;T&gt;.Count -->
-<!--     { -->
-<!--         get -->
-<!--         { -->
-<!--             // Code to return the proper value -->
-<!--         } -->
-<!--     } -->
+As we suggested above, interfaces can also include properties.  For
+      example, <a href="http://msdn.microsoft.com/en-us/library/92t2ye13(v=vs.110).aspx"><b>ICollection&lt;T&gt;</b></a>
+      is a generic interface implemented by both arrays and the class
+      <a href="http://msdn.microsoft.com/en-us/library/6sh2ey19(v=vs.110).aspx"><b>List&lt;T&gt;</b></a>.
+      This interface contains the following member (among others):
+<pre>
+int Count { get; }
+</pre>
+This member specifies that every subclass must contain a property
+    called <b>Count</b> with a getter.  At first, it would appear that
+    an array does not have such a property, as we cannot write
+    something like:
+<pre>
+int[] a = new int[10];
+int k = a.Count;  // This gives a syntax error.
+</pre>
+<a name="explicit-impl"></a>
+In fact, an array does contain a <b>Count</b> property, but this
+    property is available only when the array is treated as an
+    <b>ICollection&lt;T&gt;</b> (or an <a href="http://msdn.microsoft.com/en-us/library/5y536ey6.aspx"><b>IList&lt;T&gt;</b></a>,
+    which is an interface that is a subtype of
+    <b>ICollection&lt;T&gt;</b>, and is also implemented by arrays).
+    For example, we can write:
+<pre>
+int[] a = new int[10];
+ICollection&lt;int&gt; col = a;
+int k = col.Count;
+</pre>
+or
+<pre>
+int[] a = new int[10];
+int k = ((ICollection&lt;int&gt;)a).Count;
+</pre>
+This behavior occurs because an array <i>explicitly implements</i> the
+    <b>Count</b> property.  We can do this as follows:
+<pre>
+public class ExplicitImplementationExample&lt;T&gt; : ICollection&lt;T&gt;
+{
+    int ICollection&lt;T&gt;.Count
+    {
+        get
+        {
+            // Code to return the proper value
+        }
+    }
 
-<!--     // Other class members -->
-<!-- } -->
-<!-- </pre> -->
-<!-- Thus, if we create an instance of -->
-<!--     <b>ExplicitImplementationExample&lt;T&gt;</b>, we cannot access -->
-<!--     its <b>Count</b> property unless we either store it in a variable -->
-<!--     of type <b>ICollection&lt;T&gt;</b> or cast it to this type.  Note -->
-<!--     that whereas the <b>public</b> access modifier is required when -->
-<!--     implementing an interface member, neither the <b>public</b> nor -->
-<!--     the <b>private</b> access modifier is allowed when -->
-<!--     <i>explicitly</i> implementing an interface member. -->
-<!-- <p> -->
-<!-- We can also include <a -->
-<!--     href="/~rhowell/DataStructures/redirect/indexers">indexers</a> -->
-<!--     within interfaces.  For example, the <b>IList&lt;T&gt;</b> -->
-<!--     interface is defined as follows: -->
-<!-- <pre> -->
-<!-- public interface IList&lt;T&gt; : ICollection&lt;T&gt; -->
-<!-- { -->
-<!--     T this[int index] { get; set; } -->
+    // Other class members
+}
+</pre>
+Thus, if we create an instance of
+    <b>ExplicitImplementationExample&lt;T&gt;</b>, we cannot access
+    its <b>Count</b> property unless we either store it in a variable
+    of type <b>ICollection&lt;T&gt;</b> or cast it to this type.  Note
+    that whereas the <b>public</b> access modifier is required when
+    implementing an interface member, neither the <b>public</b> nor
+    the <b>private</b> access modifier is allowed when
+    <i>explicitly</i> implementing an interface member.
+<p>
+We can also include <a href="/~rhowell/DataStructures/redirect/indexers">indexers</a>
+    within interfaces.  For example, the <b>IList&lt;T&gt;</b>
+    interface is defined as follows:
+<pre>
+public interface IList&lt;T&gt; : ICollection&lt;T&gt;
+{
+    T this[int index] { get; set; }
 
-<!--     int IndexOf(T item); -->
+    int IndexOf(T item);
 
-<!--     void Insert(int index, T item); -->
+    void Insert(int index, T item);
 
-<!--     void RemoveAt(int index); -->
-<!-- } -->
-<!-- </pre> -->
-<!-- The "<tt>: ICollection&lt;T&gt;</tt>" at the end of the first line -->
-<!--     specifies that <b>IList&lt;T&gt;</b> is a subtype of -->
-<!--     <b>ICollection&lt;T&gt;</b>; thus, the interface includes all -->
-<!--     members of <b>ICollection&lt;T&gt;</b>, plus the ones listed. -->
-<!--     The first member listed above specifies an indexer with  -->
-<!--     get and a set accessors. -->
+    void RemoveAt(int index);
+}
+</pre>
+The "<tt>: ICollection&lt;T&gt;</tt>" at the end of the first line
+    specifies that <b>IList&lt;T&gt;</b> is a subtype of
+    <b>ICollection&lt;T&gt;</b>; thus, the interface includes all
+    members of <b>ICollection&lt;T&gt;</b>, plus the ones listed.
+    The first member listed above specifies an indexer with a
+    getter and a setter.
 <p>
 Now that we have seen a little of what interfaces are all about, let's
       see how we can use them to provide three different
       implementations of trie nodes.  We first need to define an
       interface, which we will call <b>ITrie</b>, specifying the two
-      <b>public</b> members of <a
-      href="/~rhowell/DataStructures/redirect/tries-intro">our
+      <b>public</b> members of <a href="/~rhowell/DataStructures/redirect/tries-intro">our
       previous implementation of a trie node</a>.  We do, however,
       need to make one change to the way the <b>Add</b> method is
       called.  This change is needed because when we add a
@@ -338,9 +309,7 @@ public interface ITrie
     bool Contains(string s);
 
     /// &lt;summary&gt;
-    /// Adds the given string to this trie. This trie may or may not
-    /// be changed by this method, but the resulting trie is always
-    /// returned.
+    /// Adds the given string to this trie.
     /// &lt;/summary&gt;
     /// &lt;param name="s"&gt;The string to add.&lt;/param&gt;
     /// &lt;returns&gt;The resulting trie.&lt;/returns&gt;
@@ -357,8 +326,7 @@ We will then need to define three classes, each of which implements
 <li> <b>TrieWithOneChild</b> will be used for nodes with exactly
     one child. </li>
 <li> <b>TrieWithManyChildren</b> will be used for all other nodes; this
-    will be the class described in <a
-    href="/~rhowell/DataStructures/redirect/tries-intro">the previous
+    will be the class described in <a href="/~rhowell/DataStructures/redirect/tries-intro">the previous
     section</a> with a few modifications. </li>
 </ul>
 These three classes will be similar because they each will implement
@@ -370,8 +338,7 @@ These three classes will be similar because they each will implement
     <b>TrieWithOneChild</b> classes need <b>private</b> fields as
     described at the beginning of this section, whereas the
     <b>TrieWithManyChildren</b> classes needs the same <b>private</b>
-    fields as outlined in <a
-    href="/~rhowell/DataStructures/redirect/tries-intro">the previous
+    fields as outlined in <a href="/~rhowell/DataStructures/redirect/tries-intro">the previous
     section</a>.  In each case, whenever we need to refer to a trie,
     we will use the type <b>ITrie</b>.
 <p>
@@ -395,7 +362,7 @@ The <b>Add</b> methods for both <b>TrieWithNoChildren</b> and
 Thus, the parameters for the <b>TrieWithOneChild</b> constructor will be a
     <b>string</b> to be stored (i.e., the one being added) and a
     <b>bool</b> indicating whether the 
-    empty <b>string</b> is also to be stored (i.e., whether it was
+    empty <b>string</b> is also to be stored (i.e., because it was
     stored in the original <b>TrieWithNoChildren</b>).
     Furthermore, because the empty <b>string</b> can always be added
     to a <b>TrieWithNoChildren</b> without constructing a new node, this
@@ -422,8 +389,7 @@ The parameters for the <b>TrieWithManyChildren</b> constructor will need
     (these last three parameters will come from the original
     <b>TrieWithOneChild</b>). 
     It can use the last three parameters to initialize its <b>bool</b>
-    field and one of its children (computing the child's index as in <a
-    href="/~rhowell/DataStructures/redirect/tries-intro">the previous
+    field and one of its children (computing the child's index as in <a href="/~rhowell/DataStructures/redirect/tries-intro">the previous
     section</a>).  It can then use its own <b>Add</b> method to add
     the given <b>string</b>, as there will always be room to add a
     <b>string</b> to this implementation; hence, it can ignore the
@@ -433,8 +399,7 @@ The parameters for the <b>TrieWithManyChildren</b> constructor will need
     given <b>char</b>, to verify that it is a lower-case English letter.
 <p>
 The <b>Contains</b> method for <b>TrieWithManyChildren</b> can be exactly
-      the same as for the implementation in <a
-      href="/~rhowell/DataStructures/redirect/tries-intro">the
+      the same as for the implementation in <a href="/~rhowell/DataStructures/redirect/tries-intro">the
       previous section</a>.  For the other two classes, the structure
       of the method is similar.  Specifically, the empty <b>string</b>
       needs to be handled first and in exactly the same way, as the
@@ -452,8 +417,7 @@ The <b>Contains</b> method for <b>TrieWithManyChildren</b> can be exactly
       in this trie.
 </p>
 The <b>Add</b> method for <b>TrieWithManyChildren</b> needs some
-    modification from the description given in <a
-    href="/~rhowell/DataStructures/redirect/tries-intro">the previous
+    modification from the description given in <a href="/~rhowell/DataStructures/redirect/tries-intro">the previous
     section</a>.  First, the method must return the resulting trie,
     which will always be <b>this</b>, as this implementation never
     needs to be replaced by another to accommodate a new
@@ -489,73 +453,38 @@ Code that uses such a trie will need to refer to it as an <b>ITrie</b>
     are constructing a new trie, as we cannot construct an instance of
     an interface.  Here, we want to construct the simplest
     implementation - a <b>TrieWithNoChildren</b>.  Otherwise, the only
-    difference in usage as compared to the implementation of <a
-    href="/~rhowell/DataStructures/redirect/tries-intro">the previous
+    difference in usage as compared to the implementation of <a href="/~rhowell/DataStructures/redirect/tries-intro">the previous
     section</a> is that the <b>Add</b> method now returns the
     resulting trie, whose root may be a different object; hence, we
     will need to be sure to replace the current trie with whatever the
     <b>Add</b> method returns.
 
-    <p>
-      For more information on interfaces, see "<a
-	href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/interfaces/index">Interfaces</a>"
-	in the <a
-	href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/"><i>C#
-	  Programming Guide</i></a>.
-    </p>
-    
-<p></p>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/traversing-tries">Next:
-      Traversing a Trie
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/tries-intro">Previous:
-      Introduction to Tries
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/tries">Up: Tries
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
-<p>
-<small>
-Microsoft and Visual Studio are either registered trademarks or a
-	trademarks of Microsoft Corporation in the United States
-	and/or other countries.
-</small>
-</p>
-<p>
-<small>
-<!-- hhmts start -->
-Last modified: Wed Aug 14 10:16:27 CDT 2019
-<!-- hhmts end -->
-</small>
-</p>
-<small>
-    <i> &copy; Copyright 2014, 2015, 2018, 2019, <a
-    href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i> 
-</small>
 
 <p></p>
 
-<table border=0 cellpadding=2 summary="This table is used for layout
+<p>
+
+</p>
+<p>
+
+</p>
+<small>
+<i> © Copyright 2014, 2015, 2018, <a href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i>
+</small>
+<p></p>
+<table border="0" cellpadding="2" summary="This table is used for layout
 purposes only.">
 <tr>
-<td align=center>
-    <a href="http://validator.w3.org/check/referer"><img border="0"
-        src="/~rhowell/valid-html401.gif"
-        alt="Valid HTML 4.01!" height="31" width="88"></a>
+<td align="center">
+<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
 </td>
 <tr>
 <td>
 <a href="http://jigsaw.w3.org/css-validator/check/referer">
-             <img border="0"
-                  src="/~howell/vcss.gif" 
-                  alt="Valid CSS!" height="31" width="88">
-            </a>
+<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
+</a>
 </td>
-</table>
-
-</body>
-
+</tr></tr></table>
+</p></p></p></body>
 </html>

@@ -1,27 +1,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Rehashing</title>
-<link rel=STYLESHEET href="/~rhowell/style.css">
-
+<link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
-
 <body>
-<div class="NAVBAR">
-<a
-      href="/~rhowell/DataStructures/redirect/memoization">Next:
-      Memoization
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/simple-hash-table-impl">Previous:
-      A Simple Hash Table Implementation
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/dictionaries">Up:
-      Hash Tables
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <h1>Rehashing</h1>
 
@@ -52,39 +37,37 @@ We'll first consider the case in which <i>k</i> is not in the hash
     Because each 
     of the <i>n</i> keys is equally likely to map to each of the
     <i>m</i> array locations, we would expect, on average,
-    <i>n</i>&nbsp;/&nbsp;<i>m</i> keys to be mapped to the location
+    <i>n</i> / <i>m</i> keys to be mapped to the location
     where <i>k</i> belongs.  Hence, in this case, we would expect to
-    examine <i>n</i>&nbsp;/&nbsp;<i>m</i> keys, on average.
+    examine <i>n</i> / <i>m</i> keys, on average.
 <p>
 Now let's consider the case in which <i>k</i> is in the hash table.
       In this case, we will examine the key <i>k</i>, plus all the
       keys that precede <i>k</i> in its linked list.  The number of
       keys preceding <i>k</i> cannot be more than the total number of
       keys other than <i>k</i> in that linked list.  Again, because
-      each of the <i>n</i>&nbsp;-&nbsp;1 keys other than <i>k</i> is
+      each of the <i>n</i> - 1 keys other than <i>k</i> is
       equally likely to map to each of the <i>m</i> array locations,
       we would expect, on average,
-      (<i>n</i>&nbsp;-&nbsp;1)&nbsp;/&nbsp;<i>m</i> keys other than
+      (<i>n</i> - 1) / <i>m</i> keys other than
       <i>k</i> to be in the same linked list as <i>k</i>.  Thus, we
-      can expect, on average, to examine no more than 1&nbsp;+&nbsp;
-      (<i>n</i>&nbsp;-&nbsp;1)&nbsp;/&nbsp;<i>m</i> keys when looking
+      can expect, on average, to examine no more than 1 + 
+      (<i>n</i> - 1) / <i>m</i> keys when looking
       for a key that is present.
 </p>
 Notice that both of the values derived above decrease as <i>m</i>
-    increases.  Specifically, if <i>m</i>&nbsp;&ge;&nbsp;<i>n</i>, the
+    increases.  Specifically, if <i>m</i> ≥ <i>n</i>, the
     expected number of examined keys on a failed lookup is no more
     than 1, and the expected number of examined keys on a successful
     lookup is less than 2.  We can therefore expect to achieve very
     good performance if we keep the number of array locations at least
     as large as the number of keys.
 <p>
-We have already seen (e.g., in "<a
-	href="/~rhowell/DataStructures/redirect/stringbuilder-impl">Implementation
+We have already seen (e.g., in "<a href="/~rhowell/DataStructures/redirect/stringbuilder-impl">Implementation
 	of <b>StringBuilder</b>s</a>") how we can keep an array large
 	enough by doubling its size whenever we need to.  However, a
 	hash table presents two unique challenges for this technique.
-	First, as we observed in <a
-	href="/~rhowell/DataStructures/redirect/simple-hash-table-impl">the
+	First, as we observed in <a href="/~rhowell/DataStructures/redirect/simple-hash-table-impl">the
 	previous section</a>, we are most likely to get good
 	performance from a hash table if the number of array locations
 	is a prime number.  However, doubling a prime number will
@@ -96,15 +79,14 @@ We have already seen (e.g., in "<a
 </p>
 In order to tackle the first challenge, recall that we presented an
     algorithm for finding all prime numbers less than a given <i>n</i>
-    in "<a
-    href="/~rhowell/DataStructures/redirect/sieve-eratosthenes">Finding
+    in "<a href="/~rhowell/DataStructures/redirect/sieve-eratosthenes">Finding
     Prime Numbers</a>"; however, this is a rather expensive way to
     find a prime number of an appropriate size.  While there are more
     efficient algorithms, we really don't need one.  Suppose we start
     with an array size of 5 (there may be applications using many
     small hash tables - the .NET implementation starts with an array
     size of 3).  5 is larger than
-    2<sup>2</sup>&nbsp;=&nbsp;4.  If we double this value 28 times,
+    2<sup>2</sup> = 4.  If we double this value 28 times,
     we reach a value larger than 2<sup>30</sup>, which is larger than
     1 billion.  More importantly, this value is large enough that we
     can't double it again, as an array in C# must contain fewer than
@@ -131,12 +113,9 @@ Each of the values in the above array is a prime number, and each one
     <b>get</b> accessor and a <b>private set</b> accessor.
 <p>
 One important difference between the reason for rehashing and the
-      reason for creating a larger array for an implementation of a <a
-      href="/~rhowell/DataStructures/redirect/stringbuilder-impl"><b>StringBuilder</b></a>,
-      <a
-      href="/~rhowell/DataStructures/redirect/stack-impl">stack</a>,
-      or <a
-      href="/~rhowell/DataStructures/redirect/queue-impl">queue</a> is
+      reason for creating a larger array for an implementation of a <a href="/~rhowell/DataStructures/redirect/stringbuilder-impl"><b>StringBuilder</b></a>,
+      <a href="/~rhowell/DataStructures/redirect/stack-impl">stack</a>,
+      or <a href="/~rhowell/DataStructures/redirect/queue-impl">queue</a> is
       that rehashing is done simply for performance reasons - there is
       always room to put a new key and value into a hash table unless
       we have run out of memory.  For this reason, it makes sense to
@@ -180,55 +159,28 @@ We then need to move all keys and values from the old table to the new
 <li> Insert this cell into the beginning of the linked list at the new
 	array location in the new table.</li>
 </ul>
-
 <p></p>
-<div class="NAVBAR">
-<a
-      href="/~rhowell/DataStructures/redirect/memoization">Next:
-      Memoization
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/simple-hash-table-impl">Previous:
-      A Simple Hash Table Implementation
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/dictionaries">Up:
-      Hash Tables
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <p>
-<small>
-<!-- hhmts start -->
-Last modified: Wed Mar  6 12:19:23 CST 2019
-<!-- hhmts end -->
-</small>
+
 </p>
 <small>
-    <i> &copy; Copyright 2014, 2015, 2018, 2019, <a
-    href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i> 
+<i> © Copyright 2014, 2015, 2018, <a href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i>
 </small>
-
 <p></p>
-
-<table border=0 cellpadding=2 summary="This table is used for layout
+<table border="0" cellpadding="2" summary="This table is used for layout
 purposes only.">
 <tr>
-<td align=center>
-    <a href="http://validator.w3.org/check/referer"><img border="0"
-        src="/~rhowell/valid-html401.gif"
-        alt="Valid HTML 4.01!" height="31" width="88"></a>
+<td align="center">
+<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
 </td>
 <tr>
 <td>
 <a href="http://jigsaw.w3.org/css-validator/check/referer">
-             <img border="0"
-                  src="/~howell/vcss.gif" 
-                  alt="Valid CSS!" height="31" width="88">
-            </a>
+<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
+</a>
 </td>
-</table>
-
+</tr></tr></table>
 </body>
-
 </html>

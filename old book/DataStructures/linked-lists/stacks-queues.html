@@ -1,26 +1,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Implementing Stacks and Queues with Linked Lists</title>
-<link rel=STYLESHEET href="/~rhowell/style.css">
-
+<link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
-
 <body>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/sieve-eratosthenes">Next:
-      Finding Prime Numbers
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/linked-list-intro">Previous:
-      Introduction to Linked Lists
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/linked-lists">Up: Linked
-      Lists 
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <h1>Implementing Stacks and Queues with Linked Lists</h1>
 
@@ -48,8 +34,7 @@ We therefore need a <b>private LinkedListCell&lt;T&gt;</b> field to implement a
 The <b>public</b> methods <b>Push</b>, <b>Peek</b>, and <b>Pop</b> are
     then fairly straightforward to implement.  For <b>Push</b> we need
     to add the given element to a new cell at the beginning of the
-    linked list, as shown in <a
-    href="/~rhowell/DataStructures/redirect/linked-list-intro">the
+    linked list, as shown in <a href="/~rhowell/DataStructures/redirect/linked-list-intro">the
     previous section</a>, and update the <b>Count</b>.  To
     implement <b>Peek</b>, if the stack is nonempty, we simply return
     the <b>Data</b> property of the cell at the beginning of the
@@ -57,8 +42,7 @@ The <b>public</b> methods <b>Push</b>, <b>Peek</b>, and <b>Pop</b> are
     <b>InvalidOperationException</b>.  To implement <b>Pop</b>:
 <ol>
 <li> Using <b>Peek</b>, obtain the element to be returned; </li>
-<li> Remove the first element from the linked list as shown in <a
-    href="/~rhowell/DataStructures/redirect/linked-list-intro">the
+<li> Remove the first element from the linked list as shown in <a href="/~rhowell/DataStructures/redirect/linked-list-intro">the
     previous section</a>; </li>
 <li> Update the <b>Count</b>; and </li>
 <li> Return the retrieved value. </li>
@@ -70,12 +54,10 @@ Implementing a queue is a little more involved because we need to
       this will allow us to access both ends of the linked list
       directly.  We will therefore have the following:
 </p>
-<img src="linked-list-queue.jpg" 
-    alt="Implementing a queue with a linked list">
+<img alt="Implementing a queue with a linked list" src="linked-list-queue.jpg"/>
 <p>
 We now need to decide which end to make the front of the queue.  As we
-      saw in <a
-      href="/~rhowell/DataStructures/redirect/linked-list-intro">the
+      saw in <a href="/~rhowell/DataStructures/redirect/linked-list-intro">the
       previous section</a>, both inserting and removing can be done
       efficiently at the beginning of a linked list.  Likewise, it is
       easy to insert an element at the end if we have a reference to
@@ -86,8 +68,7 @@ We now need to decide which end to make the front of the queue.  As we
       (that will be a special case that we'll need to handle).  Thus,
       we have the following:
 </p>
-<img src="linked-list-insert-end-1.jpg"
-    alt="A cell to insert at the end of a linked list">
+<img alt="A cell to insert at the end of a linked list" src="linked-list-insert-end-1.jpg"/>
 <p>
 To insert this cell at the end of the linked list, we just need to
       copy the reference in <tt>cell</tt> to the <b>Next</b> property
@@ -129,8 +110,7 @@ Let us now consider the implementation of the <b>Enqueue</b> method.
       which the queue is empty.  In this case, we need to build the
       following linked list:
 </p>
-<img src="one-cell-queue.jpg" 
-    alt="A queue containing a single linked list cell">
+<img alt="A queue containing a single linked list cell" src="one-cell-queue.jpg"/>
 <p>
 We therefore need to:
 </p>
@@ -140,13 +120,7 @@ We therefore need to:
 <li> Assign it to the field denoting the back of the queue; </li>
 <li> Store the given element in its <b>Data</b> property; and </li>
 <li> Update the <b>Count</b>. </li>
-    </ol>
-    <p>
-      Note that there is no need to initialize the new cell's
-      <b>Next</b> property, as it will automatically be initialized to
-      <b>null</b>.
-    </p>
-    
+</ol>
 If the queue is nonempty, the only step that changes is Step 2.
     Because the queue is nonempty, we don't want to make the new cell
     the front 
@@ -173,52 +147,27 @@ The implementations described in this section are simpler than the
     the overhead involved in using arrays usually ends up being less.
 
 <p></p>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/sieve-eratosthenes">Next:
-      Finding Prime Numbers
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/linked-list-intro">Previous:
-      Introduction to Linked Lists
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/linked-lists">Up: Linked
-      Lists 
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <p>
-<small>
-<!-- hhmts start -->
-Last modified: Mon Jul 16 03:29:59 CDT 2018
-<!-- hhmts end -->
-</small>
+
 </p>
 <small>
-    <i> &copy; Copyright 2014, 2015, 2018, <a
-    href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i> 
+<i> © Copyright 2014, 2015, 2018, <a href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i>
 </small>
-
 <p></p>
-
-<table border=0 cellpadding=2 summary="This table is used for layout
+<table border="0" cellpadding="2" summary="This table is used for layout
 purposes only.">
 <tr>
-<td align=center>
-    <a href="http://validator.w3.org/check/referer"><img border="0"
-        src="/~rhowell/valid-html401.gif"
-        alt="Valid HTML 4.01!" height="31" width="88"></a>
+<td align="center">
+<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
 </td>
 <tr>
 <td>
 <a href="http://jigsaw.w3.org/css-validator/check/referer">
-             <img border="0"
-                  src="/~howell/vcss.gif" 
-                  alt="Valid CSS!" height="31" width="88">
-            </a>
+<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
+</a>
 </td>
-</table>
-
+</tr></tr></table>
 </body>
-
 </html>

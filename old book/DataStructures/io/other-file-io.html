@@ -1,29 +1,17 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Other File I/O</title>
-<link rel=STYLESHEET href="/~rhowell/style.css">
-
+<link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
-
 <body>
-<div class="NAVBAR">
-<a
-      href="/~rhowell/DataStructures/redirect/advanced-text-file-io">Previous:
-      Advanced Text File I/O
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/io">Up: Input/Output
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <h1>Other File I/O</h1>
 
 Not all files are plain text files - often we need to read and/or write
-    binary data.  The .NET Framework provides the <a
-    href="http://msdn.microsoft.com/en-us/library/system.io.filestream.aspx"><b>FileStream</b></a>
+    binary data.  The .NET Framework provides the <a href="http://msdn.microsoft.com/en-us/library/system.io.filestream.aspx"><b>FileStream</b></a>
     class for this purpose.
 <p>
 The <b>FileStream</b> class provides constructors for creating
@@ -34,43 +22,25 @@ The <b>FileStream</b> class provides constructors for creating
       cases, however, a simpler way to construct an appropriate
       <b>FileStream</b> is to use one of the following <b>static</b>
       methods provided by the 
-      the <a
-      href="https://msdn.microsoft.com/en-us/library/system.io.file.aspx"><b>File</b></a>
+      the <a href="https://msdn.microsoft.com/en-us/library/system.io.file.aspx"><b>File</b></a>
       class:
 </p>
 <ul>
-<li> <a
-	  href="https://msdn.microsoft.com/en-us/library/system.io.file.openread.aspx"><b>File.OpenRead(string
+<li> <a href="https://msdn.microsoft.com/en-us/library/system.io.file.openread.aspx"><b>File.OpenRead(string
 	  fn)</b></a>: returns a <b>FileStream</b> for reading the
 	  file with the given path name.  A
 	  <b>FileNotFoundException</b> is thrown if the 
 	file does not exist.
       </li>
-      
-<li> <a
-	  href="https://msdn.microsoft.com/en-us/library/system.io.file.openwrite.aspx"><b>File.OpenWrite(string
+<li> <a href="https://msdn.microsoft.com/en-us/library/system.io.file.openwrite.aspx"><b>File.OpenWrite(string
 	  fn)</b></a>: returns a <b>FileStream</b> for writing to the
 	  file with the given path name.  If the file exists, it will
-	  be overwritten; otherwise, it will be created.
+	  be replaced; otherwise, it will be created.
 </li>
-    </ul>
-    One aspect of the <b>FileStream</b> returned by the
-    <b>OpenWrite</b> method needs to be 
-    clarified. When an existing file is opened using this method, the
-    original bytes of the file will be overwritten by newly-written
-    bytes.  What this means is that if fewer bytes are written than
-    were initially in the file, some of the original bytes will not
-    be overwritten.  For this reason, it is a good idea to call the
-    <b>FileStream</b>'s <a
-    href="https://msdn.microsoft.com/en-us/library/system.io.filestream.setlength.aspx"><b>SetLength</b></a>
-    method, passing it a value of 0, in order to set the file's
-    initial length to 0.  This will remove any pre-existing bytes from
-    the file.
+</ul>
 <p>
-Two of the most commonly-used methods of a <b>FileStream</b> are <a
-	href="http://msdn.microsoft.com/en-us/library/system.io.filestream.readbyte.aspx"><b>ReadByte</b></a>
-	and <a
-	href="http://msdn.microsoft.com/en-us/library/system.io.filestream.writebyte.aspx"><b>WriteByte</b></a>.
+Two of the most commonly-used methods of a <b>FileStream</b> are <a href="http://msdn.microsoft.com/en-us/library/system.io.filestream.readbyte.aspx"><b>ReadByte</b></a>
+	and <a href="http://msdn.microsoft.com/en-us/library/system.io.filestream.writebyte.aspx"><b>WriteByte</b></a>.
 	The <b>ReadByte</b> method takes no parameters and returns an
 	<b>int</b>.  If there is at least one byte available to read, the
 	next one is read and its value (a nonnegative integer less
@@ -109,49 +79,27 @@ In the above code, the <b>ReadByte</b> method reads a byte from the
     then use the <b>byte</b> read, which is in <tt>b</tt>.
 
 <p></p>
-<div class="NAVBAR">
-<a
-      href="/~rhowell/DataStructures/redirect/advanced-text-file-io">Previous:
-      Advanced Text File I/O
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/io">Up: Input/Output
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <p>
-<small>
-<!-- hhmts start -->
-Last modified: Wed Oct 18 13:43:37 CDT 2017
-<!-- hhmts end -->
-</small>
+
 </p>
 <small>
-    <i> &copy; Copyright 2014, 2017, <a
-    href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i> 
+<i> © Copyright 2014, 2017, <a href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i>
 </small>
-
 <p></p>
-
-<table border=0 cellpadding=2 summary="This table is used for layout
+<table border="0" cellpadding="2" summary="This table is used for layout
 purposes only.">
 <tr>
-<td align=center>
-    <a href="http://validator.w3.org/check/referer"><img border="0"
-        src="/~rhowell/valid-html401.gif"
-        alt="Valid HTML 4.01!" height="31" width="88"></a>
+<td align="center">
+<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
 </td>
 <tr>
 <td>
 <a href="http://jigsaw.w3.org/css-validator/check/referer">
-             <img border="0"
-                  src="/~howell/vcss.gif" 
-                  alt="Valid CSS!" height="31" width="88">
-            </a>
+<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
+</a>
 </td>
-</table>
-
+</tr></tr></table>
 </body>
-
 </html>

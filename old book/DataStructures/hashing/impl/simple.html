@@ -1,22 +1,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>A Simple Hash Table Implementation</title>
-<link rel=STYLESHEET href="/~rhowell/style.css">
-
+<link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
-
 <body>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/rehashing">Next: Rehashing
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/dictionaries">Up: 
-      Hash Tables
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <h1>A Simple Hash Table Implementation</h1>
 
@@ -32,16 +22,14 @@ At the core of our implementation is the computation of the hash
     computation is divided into two parts.  The first part of the
     computation is implemented within the definition of the key type
     via its <b>GetHashCode</b> method.  We will discuss this part of
-    the computation in the section, "<a
-    href="/~rhowell/DataStructures/redirect/hash-functions">Hash
+    the computation in the section, "<a href="/~rhowell/DataStructures/redirect/hash-functions">Hash
     Codes</a>".  Here, we will focus on the second step, converting
     the <b>int</b> hash code 
     returned by the key's <b>GetHashCode</b> method to a table
     location.
 <p>
 One common technique, which is used in the .NET implementation of the
-      <a
-      href="http://msdn.microsoft.com/en-us/library/xfhwa508.aspx"><b>Dictionary&lt;TKey,&nbsp;TValue&gt;</b></a>
+      <a href="http://msdn.microsoft.com/en-us/library/xfhwa508.aspx"><b>Dictionary&lt;TKey, TValue&gt;</b></a>
       class, is called the <i>division method</i>.  This technique
       consists of the following:
 </p>
@@ -51,9 +39,9 @@ One common technique, which is used in the .NET implementation of the
 	table.</li>
 </ol>
 If <tt>p</tt> is a nonnegative <b>int</b> and <tt>q</tt> is a positive
-    <b>int</b>, then <tt>p&nbsp;%&nbsp;q</tt> gives a nonnegative
+    <b>int</b>, then <tt>p % q</tt> gives a nonnegative
     value less than <tt>q</tt>; hence, if <tt>q</tt> is the table
-    length, <tt>p&nbsp;%&nbsp;q</tt> is a location within the table.
+    length, <tt>p % q</tt> is a location within the table.
     Furthermore, this calculation often does a good job of distributing hash
     code values among the different table locations, but this depends
     on how the hash codes were computed and what the length of the
@@ -63,7 +51,7 @@ If <tt>p</tt> is a nonnegative <b>int</b> and <tt>q</tt> is a positive
 For example, suppose we use a size 2<sup><i>k</i></sup> for some
       positive integer <i>k</i>.  In this case, the above computation
       can be simplified, as the values formed by <i>k</i> bits are 0
-      through 2<sup><i>k</i></sup>&nbsp;-&nbsp;1, or all of the
+      through 2<sup><i>k</i></sup> - 1, or all of the
       locations in the table.  We can therefore simply use the
       low-order <i>k</i> bits of the hash code as the table location.
       However, it turns out that using the division method when the
@@ -95,8 +83,7 @@ We can do this using a bitwise AND operator, denoted
     hexadecimal notation, as each hex digit corresponds to exactly
     four bits.  We begin writing a hexadecimal value with "0x".  The
     first four bits need to be a 0, followed by three 1s.  These three
-    1s are in the positions representing the values 4, 2, and 1;
-    hence, the value of this 
+    1s are in the 1, 2, and 4 bit positions; hence, the value of this
     hex digit should be 7.  We then want seven more hex digits, each
     containing four 1s.  An additional 1 in the 8 position gives us a
     sum of 15, which is denoted as either 'f' or 'F' in hex.  We can
@@ -122,52 +109,30 @@ Adding a key and a value is done similarly.  We first look for the key
 Note that looking up a key or adding a key and a value as described
     above can be
     implemented using either methods or indexers (the .NET Framework
-    uses both).  See the section, "<a
-    href="/~rhowell/DataStructures/redirect/indexers">Indexers</a>"
+    uses both).  See the section, "<a href="/~rhowell/DataStructures/redirect/indexers">Indexers</a>"
     for details on how to implement an indexer.
 <p></p>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/rehashing">Next: Rehashing
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/dictionaries">Up: 
-      Hash Tables
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <p>
-<small>
-<!-- hhmts start -->
-Last modified: Mon Jul 30 04:07:08 CDT 2018
-<!-- hhmts end -->
-</small>
+
 </p>
 <small>
-    <i> &copy; Copyright 2014, 2015, 2017, 2018, <a
-    href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i> 
+<i> © Copyright 2014, 2015, 2017, 2018, <a href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i>
 </small>
-
 <p></p>
-
-<table border=0 cellpadding=2 summary="This table is used for layout
+<table border="0" cellpadding="2" summary="This table is used for layout
 purposes only.">
 <tr>
-<td align=center>
-    <a href="http://validator.w3.org/check/referer"><img border="0"
-        src="/~rhowell/valid-html401.gif"
-        alt="Valid HTML 4.01!" height="31" width="88"></a>
+<td align="center">
+<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
 </td>
 <tr>
 <td>
 <a href="http://jigsaw.w3.org/css-validator/check/referer">
-             <img border="0"
-                  src="/~howell/vcss.gif" 
-                  alt="Valid CSS!" height="31" width="88">
-            </a>
+<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
+</a>
 </td>
-</table>
-
+</tr></tr></table>
 </body>
-
 </html>

@@ -1,23 +1,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Custom Dialogs</title>
-<link rel=STYLESHEET href="/~rhowell/style.css">
-
+<link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
-
 <body>
-<div class="NAVBAR">
-<a
-      href="/~rhowell/DataStructures/redirect/file-dialogs">Previous:
-      File Dialogs
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/dialogs">Up: Dialogs
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <h1>Custom Dialogs</h1>
 
@@ -25,7 +14,7 @@ While the dialogs provided by the .NET Framework are useful in a
     variety of applications, there are times when we need to be able
     to design our own special-purpose dialog to obtain specific
     information from the user.  This section outlines how Visual
-    Studio� can be used to build such a dialog.
+    StudioÂ® can be used to build such a dialog.
 <p>
 Let's begin by considering a simple example.  Suppose we are building
       an application that needs a dialog to obtain from the user the
@@ -40,13 +29,12 @@ In order to keep the example simple, the program will simply display
     this information in its main window.  Thus, the main window looks
     like this:
 <p>
-<img src="custom-dialog-main.jpg"
-   alt="A window that uses a custom dialog">
+<img alt="A window that uses a custom dialog" src="custom-dialog-main.jpg"/>
 </p>
 Clicking the "Get New Information" button will open our custom dialog,
     which will look like this:
 <p>
-<img src="custom-dialog.jpg" alt="A custom dialog">
+<img alt="A custom dialog" src="custom-dialog.jpg"/>
 </p>
 After the user enters the information, clicking "OK" will cause the
     information entered to be displayed in the main window.  If the
@@ -55,7 +43,7 @@ After the user enters the information, clicking "OK" will cause the
 After building the main form in Visual Studio's Design Window, we can
       build the dialog by creating another form.  To do this, in the
       Solution Explorer, right-click on the project name and select
-      "Add&#8209;&gt;Windows&nbsp;Form...".  This will open a dialog
+      "Add‑&gt;Windows Form...".  This will open a dialog
       for adding a new item, where the type of item is pre-selected to
       be a Windows Form.  You will need to supply a name for the
       form.  This name will serve as both a file name for a source
@@ -66,16 +54,13 @@ After building the main form in Visual Studio's Design Window, we can
       form.
 </p>
 We can then use the Design Window to build this form as we would build
-    any other form.  In addition, the <b>Button</b> class has a <a
-    href="http://msdn.microsoft.com/en-us/library/system.windows.forms.button.dialogresult(v=vs.110).aspx"><b>DialogResult</b></a>
+    any other form.  In addition, the <b>Button</b> class has a <a href="http://msdn.microsoft.com/en-us/library/system.windows.forms.button.dialogresult(v=vs.110).aspx"><b>DialogResult</b></a>
     property
     that governs certain behavior when buttons are used within a
-    dialog.  This property is of type <a
-    href="http://msdn.microsoft.com/en-us/library/system.windows.forms.dialogresult(v=vs.110).aspx"><b>DialogResult</b></a>.
+    dialog.  This property is of type <a href="http://msdn.microsoft.com/en-us/library/system.windows.forms.dialogresult(v=vs.110).aspx"><b>DialogResult</b></a>.
     Setting it to a value other than
     <b>None</b> will cause the button to do the following
-    when clicked, provided the form is displayed as a <a
-    href="/~rhowell/DataStructures/redirect/dialogs">modal dialog</a>:
+    when clicked, provided the form is displayed as a <a href="/~rhowell/DataStructures/redirect/dialogs">modal dialog</a>:
 <ul>
 <li> Close the form. </li>
 <li> Return the value of the <b>DialogResult</b> property. </li>
@@ -85,17 +70,14 @@ Thus, we should set the "OK" button's <b>DialogResult</b> property to
     to <b>Cancel</b>.  Once we have done this, there is no need
     to define any event handlers for these buttons.
 <p>
-Furthermore, the <a
-	href="http://msdn.microsoft.com/en-us/library/system.windows.forms.form(v=vs.110).aspx"><b>Form</b></a>
+Furthermore, the <a href="http://msdn.microsoft.com/en-us/library/system.windows.forms.form(v=vs.110).aspx"><b>Form</b></a>
       itself has two properties that can be set to provide shortcuts
-	for these buttons.  The <a
-	href="http://msdn.microsoft.com/en-us/library/system.windows.forms.form.acceptbutton(v=vs.110).aspx"><b>AcceptButton</b></a>
+	for these buttons.  The <a href="http://msdn.microsoft.com/en-us/library/system.windows.forms.form.acceptbutton(v=vs.110).aspx"><b>AcceptButton</b></a>
 	property, of type <b>IButtonControl</b> (a super-type of
 	<b>Button</b>), can be used to cause the "Enter" key to
 	activate a button on the form, as if that button had been
 	clicked.  Thus, we could set this property to the "OK"
-	button.  Similarly, the <a
-	href="http://msdn.microsoft.com/en-us/library/system.windows.forms.form.cancelbutton(v=vs.110).aspx"><b>CancelButton</b></a>
+	button.  Similarly, the <a href="http://msdn.microsoft.com/en-us/library/system.windows.forms.form.cancelbutton(v=vs.110).aspx"><b>CancelButton</b></a>
 	property (also of type <b>IButtonControl</b>) can be used to
 	cause the "Esc" key to activate a button on the form.  We
 	could therefore set this property to the "Cancel" button.
@@ -103,8 +85,7 @@ Furthermore, the <a
 While we don't need any event handlers for this dialog, we still need
     to provide code to allow the class for the main window to access
     the values provided by the user.   This can be accomplished with
-    three <b>public</b> <a
-    href="/~rhowell/DataStructures/redirect/properties">properties</a>,
+    three <b>public</b> <a href="/~rhowell/DataStructures/redirect/properties">properties</a>,
     one for each of the three pieces of information the user can
     provide:
 <pre>
@@ -158,23 +139,18 @@ Finally, we need an event handler for the "Get New Information"
     user to the main window.  A <b>Form</b> provides two methods for
     displaying it as a dialog:
 <ul>
-<li> <a
-	  href="http://msdn.microsoft.com/en-us/library/system.windows.forms.control.show(v=vs.110).aspx"><b>Show</b></a>
-	  displays the <b>Form</b> as a <a
-	  href="/~rhowell/DataStructures/redirect/dialogs">non-modal
+<li> <a href="http://msdn.microsoft.com/en-us/library/system.windows.forms.control.show(v=vs.110).aspx"><b>Show</b></a>
+	  displays the <b>Form</b> as a <a href="/~rhowell/DataStructures/redirect/dialogs">non-modal
 	  dialog</a>.  It takes no 
 	  parameters and returns nothing.</li>
-<li> <a
-	  href="http://msdn.microsoft.com/en-us/library/c7ykbedk(v=vs.110).aspx"><b>ShowDialog</b></a>
-	  displays the <b>Form</b> as a <a
-	  href="/~rhowell/DataStructures/redirect/dialogs">modal
+<li> <a href="http://msdn.microsoft.com/en-us/library/c7ykbedk(v=vs.110).aspx"><b>ShowDialog</b></a>
+	  displays the <b>Form</b> as a <a href="/~rhowell/DataStructures/redirect/dialogs">modal
 	  dialog</a>.  It takes no parameters and returns a
 	  <b>DialogResult</b> indicating how the user closed the
 	  dialog. </li>
 </ul>
 Thus, the event handler can display the dialog and retrieve its
-    information much like it would do with a <a
-    href="/~rhowell/DataStructures/redirect/file-dialogs">file
+    information much like it would do with a <a href="/~rhowell/DataStructures/redirect/file-dialogs">file
     dialog</a>:
 <pre>
 /// &lt;summary&gt;
@@ -192,63 +168,34 @@ private void uxNew_Click(object sender, EventArgs e)
     }
 }
 </pre>
-The Git repository (see "<a
-    href="/~rhowell/DataStructures/redirect/version-control">Git
-    Repositories</a>") created using <a
-    href="https://classroom.github.com/a/jU3bnjrC">this URL</a>
+<a href="Ksu.Cis300.CustomDialogExample.zip">This zip archive</a>
     contains the complete program described above.
 
 <p></p>
-<div class="NAVBAR">
-<a
-      href="/~rhowell/DataStructures/redirect/file-dialogs">Previous:
-      File Dialogs
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/dialogs">Up: Dialogs
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <p>
-<small>
-Visual Studio is either a registered trademark or a trademark of
-	Microsoft Corporation in the United States and/or other
-	countries.
-</small>
+
 </p>
 <p>
-<small>
-<!-- hhmts start -->
-Last modified: Mon Aug  7 02:40:42 CDT 2017
-<!-- hhmts end -->
-</small>
+
 </p>
 <small>
-    <i> &copy; Copyright 2014, 2017, <a
-    href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i> 
+<i> © Copyright 2014, <a href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i>
 </small>
-
 <p></p>
-
-<table border=0 cellpadding=2 summary="This table is used for layout
+<table border="0" cellpadding="2" summary="This table is used for layout
 purposes only.">
 <tr>
-<td align=center>
-    <a href="http://validator.w3.org/check/referer"><img border="0"
-        src="/~rhowell/valid-html401.gif"
-        alt="Valid HTML 4.01!" height="31" width="88"></a>
+<td align="center">
+<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
 </td>
 <tr>
 <td>
 <a href="http://jigsaw.w3.org/css-validator/check/referer">
-             <img border="0"
-                  src="/~howell/vcss.gif" 
-                  alt="Valid CSS!" height="31" width="88">
-            </a>
+<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
+</a>
 </td>
-</table>
-
+</tr></tr></table>
 </body>
-
 </html>

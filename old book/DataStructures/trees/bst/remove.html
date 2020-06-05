@@ -1,62 +1,46 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Removing from a Binary Search Tree</title>
-<link rel=STYLESHEET href="/~rhowell/style.css">
-
+<link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
-
 <body>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/inorder-traversal">Next:
-      Inorder Traversal
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/bst-intro">Previous:
-      Introduction to Binary Search Trees
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/binary-search-trees">Up:
-      Binary Search Trees
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <h1>Removing from a Binary Search Tree</h1>
 
-Before we can discuss how to remove a key and its associated value
-    from a binary search 
+Before we can discuss how to remove an element from a binary search
     tree, we must first define exactly how we want the method to
     behave.  Consider first the case in which the tree is built from
     immutable nodes.  We are given a key and a binary search tree, and
-    we want to return the result of removing the node containing the
+    we want to return the result of removing the element having the
     given key.  However, we need to decide what we will do if there is
-    no node containing the given key.  This does not seem to be
+    no element having the given key.  This does not seem to be
     exceptional behavior, as we may have no way of knowing in advance
     whether the key is in the tree (unless we waste time looking for
     it).  Still, we might want to know whether the key was found.  We
     therefore need two pieces of information from this method - the
     resulting tree and a <b>bool</b> indicating whether the key was
     found.  In order to accommodate this second piece of information,
-    we make the <b>bool</b> an <a
-    href="/~rhowell/DataStructures/redirect/out-ref"><b>out</b>
+    we make the <b>bool</b> an <a href="/~rhowell/DataStructures/redirect/out-ref"><b>out</b>
     parameter</a>.
 <p>
 We can again break the problem into cases and use recursion, as we did
       for <a href="/~rhowell/DataStructures/redirect/bst-intro">adding
-      an element</a>.  However, removing a node is complicated by
-      the fact that it might have two nonempty children.  For
-      example, suppose we want to remove the key 54
+      an element</a>.  However, removing an element is complicated by
+      the fact that its node might have two nonempty children.  For
+      example, suppose we want to remove the element whose key is 54
       in the following binary search tree:
 </p>
-<img src="binary-search-tree-ex.jpg" alt="A binary search tree">
+<img alt="A binary search tree" src="binary-search-tree-ex.jpg"/>
 <p>
 In order to preserve the correct ordering of the keys, we should
       replace 54 with either the next-smaller key (i.e., 41) or the
       next-larger key (i.e., 64).  By convention, we will replace it
       with the next-larger key, which is the smallest key in its right
       child.  We therefore have a sub-problem to solve - removing the
-      node with the smallest key from a nonempty binary search
+      element with the smallest key from a nonempty binary search
       tree.  We will tackle this problem first.
 </p>
 Because we will not need to remove the smallest key from an empty
@@ -65,13 +49,12 @@ Because we will not need to remove the smallest key from an empty
     key.  However, we still need two pieces of information from this
     method:
 <ul>
-<li> the key-value pair removed (so that we can use it to replace the
-	key and value
+<li> the element removed (so that we can use it to replace the element
 	to be removed in the original problem); and </li>
 <li> the resulting tree (so that we can use it as the new right child
 	in solving the original problem). </li>
 </ul>
-We will therefore use an <b>out</b> parameter for the pair removed,
+We will therefore use an <b>out</b> parameter for the element removed,
     and return the resulting tree.
 <p>
 Because we don't need to worry about empty trees, and because the
@@ -88,10 +71,10 @@ Because we don't need to worry about empty trees, and because the
 	than the key at the root; furthermore, it must be in the left
 	child.  We therefore use a recursive call on the left child to
 	obtain the result of
-	removing node with the smallest key from that child.
+	removing element with the smallest key from that child.
 	We can pass as the <b>out</b> parameter to this recursive call
 	the <b>out</b> parameter that we were given - the recursive
-	call will assign to it the pair removed.  We then need to
+	call will assign to it the element removed.  We then need to
 	construct a new node whose data and right child are the same
 	as in the given tree, but whose left child is the tree
 	returned by the recursive call.  We return this node. </li>
@@ -104,18 +87,16 @@ Having this sub-problem solved, we can now return to the original
 	not present, so we set the <b>out</b> parameter to
 	<b>false</b> and return an empty tree. </li>
 <li> The key we are looking for is at the root.  In this case, we can
-	set the <b>out</b> parameter to <b>true</b>, but in order to
+	set the <b>out</b> parameter to <b>true</b> but in order to
 	remove the element, we have
 	three sub-cases:
 <ul>
 <li> The left child is empty.  We can then return the right child (the
-	    result of removing the root). </li>
-	  <li> The right child
-	    is empty.  We can then return the left child. </li>
-	  <li>
+	    result of removing the root). </li> <li> The right child
+	    is empty.  We can then return the left child. </li> <li>
 	    Both children are nonempty.  We must then obtain the
 	    result of removing the smallest key from the right child.
-	    We then construct a new node whose data is the pair
+	    We then construct a new node whose data is the element
 	    removed from the right child, the left child is the left
 	    child of the given tree, and the right child is the result
 	    of removing the smallest key from that child.  We return
@@ -133,57 +114,32 @@ Having this sub-problem solved, we can now return to the original
 <li> The key we are looking for is greater than the key at the root.
 	This case is symmetric to the above case. </li>
 </ul>
-As we did with adding keys and values, we can optimize the methods described
+As we did with adding elements, we can optimize the methods described
     above for mutable nodes by modifying the contents of a node rather
     than constructing new nodes.
 
 <p></p>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/inorder-traversal">Next:
-      Inorder Traversal
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/bst-intro">Previous:
-      Introduction to Binary Search Trees
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/binary-search-trees">Up:
-      Binary Search Trees
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <p>
-<small>
-<!-- hhmts start -->
-Last modified: Mon Feb 26 20:49:38 CST 2018
-<!-- hhmts end -->
-</small>
+
 </p>
 <small>
-    <i> &copy; Copyright 2014, 2018, <a
-    href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i> 
+<i> © Copyright 2014, <a href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i>
 </small>
-
 <p></p>
-
-<table border=0 cellpadding=2 summary="This table is used for layout
+<table border="0" cellpadding="2" summary="This table is used for layout
 purposes only.">
 <tr>
-<td align=center>
-    <a href="http://validator.w3.org/check/referer"><img border="0"
-        src="/~rhowell/valid-html401.gif"
-        alt="Valid HTML 4.01!" height="31" width="88"></a>
+<td align="center">
+<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
 </td>
 <tr>
 <td>
 <a href="http://jigsaw.w3.org/css-validator/check/referer">
-             <img border="0"
-                  src="/~howell/vcss.gif" 
-                  alt="Valid CSS!" height="31" width="88">
-            </a>
+<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
+</a>
 </td>
-</table>
-
+</tr></tr></table>
 </body>
-
 </html>

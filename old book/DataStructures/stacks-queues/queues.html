@@ -1,26 +1,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Introduction to Queues</title>
-<link rel=STYLESHEET href="/~rhowell/style.css">
-
+<link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
-
 <body>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/queue-impl">Next:
-      Implementing a Queue
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/stack-impl">Previous:
-      Implementing a Stack
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/stacks-queues">Up:
-      Stacks and Queues
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <h1>Introduction to Queues</h1>
 
@@ -30,7 +16,8 @@ Stacks provide LIFO access to data, but sometimes we need FIFO
     stock commodity at various times and for different prices.  When
     shares are sold, the amount of money received doesn't depend on
     <i>which</i> shares of a given commodity are sold, as each share
-    is worth the same amount at that time.  However, for
+    is worth the same amount at that time.  Likewise, the unsold
+    shares of that commodity each have the same value.  However, for
     accounting purposes, it does matter.  Specifically, the <i>capital
     gain</i> for that sale is defined to be the amount received from
     the sale minus the amount originally paid for those shares,
@@ -57,37 +44,31 @@ A <i>queue</i> provides FIFO access to data items.  Like a stack, a
     the front.
 <p>
 The .NET Framework provides both a non-generic queue of <b>object</b>s
-      (<a
-      href="http://msdn.microsoft.com/en-us/library/system.collections.queue.aspx"><b>System.Collections.Queue</b></a>)
-      and a generic queue (<a
-      href="http://msdn.microsoft.com/en-us/library/7977ey2c(v=vs.110).aspx"><b>System.Collections.Generic.Queue&lt;T&gt;</b></a>).
+      (<a href="http://msdn.microsoft.com/en-us/library/system.collections.queue.aspx"><b>System.Collections.Queue</b></a>)
+      and a generic queue (<a href="http://msdn.microsoft.com/en-us/library/7977ey2c(v=vs.110).aspx"><b>System.Collections.Generic.Queue&lt;T&gt;</b></a>).
       For simplicity, we will focus on the generic version.  The
       non-generic version is the same, except that wherever the type
       parameter <b>T</b> is used in the generic version, <b>object</b>
       is used in the non-generic version.
 </p>
 Like <b>Stack&lt;T&gt;</b>, <b>Queue&lt;T&gt;</b> has a <b>public</b>
-    <a
-    href="http://msdn.microsoft.com/en-us/library/e99tfk1a(v=vs.110).aspx">constructor</a>
+<a href="http://msdn.microsoft.com/en-us/library/e99tfk1a(v=vs.110).aspx">constructor</a>
     that takes no parameters and constructs an empty queue, along with
     a <b>public</b>
-    <a href="http://msdn.microsoft.com/en-us/library/fy0wwyz4(v=vs.110).aspx"><b>Count</b></a>
+<a href="http://msdn.microsoft.com/en-us/library/fy0wwyz4(v=vs.110).aspx"><b>Count</b></a>
     property that gets the number of elements in the queue (as an
     <b>int</b>).  It also has the following <b>public</b> methods:
 <ul>
-<li> An <a
-	    href="http://msdn.microsoft.com/en-us/library/t249c2y7(v=vs.110).aspx"><b>Enqueue</b></a>
+<li> An <a href="http://msdn.microsoft.com/en-us/library/t249c2y7(v=vs.110).aspx"><b>Enqueue</b></a>
 	    method that takes a single parameter of type <b>T</b> and
 	    places it at the back of the queue. </li>
-<li> A <a
-	    href="http://msdn.microsoft.com/en-us/library/1cz28y5c(v=vs.110).aspx"><b>Peek</b></a>
+<li> A <a href="http://msdn.microsoft.com/en-us/library/1cz28y5c(v=vs.110).aspx"><b>Peek</b></a>
 	    method that takes no parameters and returns the element
 	    (of type <b>T</b>) at the front of the queue without
 	    changing the queue's contents.  If the queue is empty,
 	    this method throws an
 	    <b>InvalidOperationException</b>. </li>
-<li> A <a
-	    href="http://msdn.microsoft.com/en-us/library/1c8bzx97(v=vs.110).aspx"><b>Dequeue</b></a>
+<li> A <a href="http://msdn.microsoft.com/en-us/library/1c8bzx97(v=vs.110).aspx"><b>Dequeue</b></a>
 	    method, which takes no parameters and removes and returns
 	    the element at the front of the queue.  If the queue is
 	    empty, this method throws an
@@ -96,8 +77,7 @@ Like <b>Stack&lt;T&gt;</b>, <b>Queue&lt;T&gt;</b> has a <b>public</b>
 To implement a capital gain calculator using a <b>Queue&lt;T&gt;</b>,
     we first need to determine what type to make the elements.  We
     will need to store the purchase price of each share we buy in the
-    queue.  An appropriate type for storing monetary amounts is the <a
-    href="/~rhowell/DataStructures/redirect/decimals"><b>decimal</b></a>
+    queue.  An appropriate type for storing monetary amounts is the <a href="/~rhowell/DataStructures/redirect/decimals"><b>decimal</b></a>
     type.  Therefore, we will use an initially empty
     <b>Queue&lt;decimal&gt;</b>.  Each time we buy shares, we enqueue
     the purchase price of each share onto the queue.  When we sell
@@ -109,52 +89,27 @@ To implement a capital gain calculator using a <b>Queue&lt;T&gt;</b>,
 
 
 <p></p>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/queue-impl">Next:
-      Implementing a Queue
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/stack-impl">Previous:
-      Implementing a Stack
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/stacks-queues">Up:
-      Stacks and Queues
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <p>
-<small>
-<!-- hhmts start -->
-Last modified: Wed Sep  3 15:02:57 CDT 2014
-<!-- hhmts end -->
-</small>
+
 </p>
 <small>
-    <i> &copy; Copyright 2014, <a
-    href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i> 
+<i> © Copyright 2014, <a href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i>
 </small>
-
 <p></p>
-
-<table border=0 cellpadding=2 summary="This table is used for layout
+<table border="0" cellpadding="2" summary="This table is used for layout
 purposes only.">
 <tr>
-<td align=center>
-    <a href="http://validator.w3.org/check/referer"><img border="0"
-        src="/~rhowell/valid-html401.gif"
-        alt="Valid HTML 4.01!" height="31" width="88"></a>
+<td align="center">
+<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
 </td>
 <tr>
 <td>
 <a href="http://jigsaw.w3.org/css-validator/check/referer">
-             <img border="0"
-                  src="/~howell/vcss.gif" 
-                  alt="Valid CSS!" height="31" width="88">
-            </a>
+<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
+</a>
 </td>
-</table>
-
+</tr></tr></table>
 </body>
-
 </html>

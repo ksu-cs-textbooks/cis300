@@ -1,53 +1,33 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Enumerators</title>
-<link rel=STYLESHEET href="/~rhowell/style.css">
-
+<link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
-
 <body>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/switch">Next: The
-      <b>switch</b> Statement
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/foreach">Previous:
-      The <b>foreach</b> Statement
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/syntax">Up: C# Syntax
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
-    <h1>Enumerators</h1>
+<h1>Enumerators</h1>
 
-    As we saw in <a
-    href="/~rhowell/DataStructures/redirect/foreach">the previous
+    As we saw in <a href="/~rhowell/DataStructures/redirect/foreach">the previous
     section</a>, in order for a data structure to support a
-    <b>foreach</b> loop, it must be a subtype of either <a
-    href="http://msdn.microsoft.com/en-us/library/system.collections.ienumerable.aspx"><b>IEnumerable</b></a>
-    or <a
-    href="http://msdn.microsoft.com/en-us/library/9eekhta0(v=vs.110).aspx"><b>IEnumerable&lt;T&gt;</b></a>,
+    <b>foreach</b> loop, it must be a subtype of either <a href="http://msdn.microsoft.com/en-us/library/system.collections.ienumerable.aspx"><b>IEnumerable</b></a>
+    or <a href="http://msdn.microsoft.com/en-us/library/9eekhta0(v=vs.110).aspx"><b>IEnumerable&lt;T&gt;</b></a>,
     where <b>T</b> is the type of the elements in the data structure.
-    Thus, because <a
-    href="https://msdn.microsoft.com/en-us/library/xfhwa508.aspx"><b>Dictionary&lt;TKey,
+    Thus, because <a href="https://msdn.microsoft.com/en-us/library/xfhwa508.aspx"><b>Dictionary&lt;TKey,
     TValue&gt;</b></a>
     is a subtype of <b>IEnumerable&lt;KeyValuePair&lt;TKey,
     TValue&gt;&gt;</b>, we can use a <b>foreach</b> loop to iterate
-    through the key-value pairs that it stores.  Likewise, its <a
-    href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.keys?view=netframework-4.7.2#System_Collections_Generic_Dictionary_2_Keys"><b>Keys</b></a>
-    and <a
-    href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.values?view=netframework-4.7.2"><b>Values</b></a>
+    through the key-value pairs that it stores.  Likewise, its <a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.keys?view=netframework-4.7.2#System_Collections_Generic_Dictionary_2_Keys"><b>Keys</b></a>
+    and <a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.values?view=netframework-4.7.2"><b>Values</b></a>
     properties get objects that are subtypes of
     <b>IEnumerable&lt;TKey&gt;</b> and
     <b>IEnumerable&lt;TValue&gt;</b>, respectively, <b>foreach</b>
     loops may be 
     used to iterate these objects as well, in order to process all the
     keys or all the values stored in the dictionary.
-    <b>IEnumerable</b> and <b>IEnumerable&lt;T&gt;</b> are <a
-    href="http://people.cs.ksu.edu/~rhowell/DataStructures/redirect/interfaces">interfaces</a>; hence,
+    <b>IEnumerable</b> and <b>IEnumerable&lt;T&gt;</b> are <a href="http://people.cs.ksu.edu/~rhowell/DataStructures/redirect/interfaces">interfaces</a>; hence,
     we must define any subtypes so that they implement these
     interfaces.  In this section, we will show how to implement the
     <b>IEnumerable&lt;T&gt;</b> interface to support a <b>foreach</b>
@@ -55,15 +35,14 @@
     <p>
       The <b>IEnumerable&lt;T&gt;</b> interface requires two methods:
     </p>
-    
-    <ul>
-      <li>
-	<b>public IEnumerator&lt;T&gt; GetEnumerator()</b>
-      </li>
-      <li>
-	<b>IEnumerator IEnumerable.GetEnumerator()</b>
-      </li>
-    </ul>
+<ul>
+<li>
+<b>public IEnumerator&lt;T&gt; GetEnumerator()</b>
+</li>
+<li>
+<b>IEnumerator IEnumerable.GetEnumerator()</b>
+</li>
+</ul>
     The latter method is required only because
     <b>IEnumerable&lt;T&gt;</b> is a subtype of <b>IEnumerable</b>,
     and that interface requires a <b>GetEnumerator</b> method that
@@ -93,7 +72,6 @@ The <b>public GetEnumerator</b> method returns an
       store its key-value pairs.  We can then define its
       <b>GetEnumerator</b> method as follows:
     </p>
-    
 <pre>
 public IEnumerator&lt;KeyValuePair&lt;TKey, TValue&gt;&gt; GetEnumerator()
 {
@@ -129,12 +107,12 @@ Then the <b>GetEnumerator</b> method is executed until the <b>yield
       <b>IEnumerable&lt;T&gt;</b>, we can simply use its enumerator:
     </p>
 <pre>
-public IEnumerator&lt;KeyValuePair&lt;TKey, TValue&gt;&gt; GetEnumerator()
+public IEnumerator<keyvaluepair<tkey, tvalue="">&gt; GetEnumerator()
 {
     return _elements.GetEnumerator();
 }
-</pre>      
-    <p>
+</keyvaluepair<tkey,></pre>
+<p>
       However, the above example illustrates a more general technique
       that can be used when we don't have the desired enumerator
       already available.  For instance, continuing the above example,
@@ -146,7 +124,7 @@ public IEnumerator&lt;KeyValuePair&lt;TKey, TValue&gt;&gt; GetEnumerator()
       dictionary, rather than the key-value pairs stored in the
       <b>List&lt;KeyVauePair&lt;TKey, TValue&gt;&gt;</b>:
     </p>
-    <pre>
+<pre>
 public IEnumerable&lt;TKey&gt; Keys
 {
     get
@@ -166,12 +144,10 @@ The above code is more maintainable than iterating through the
       can also be used with recursion, although the
       translation usually ends up being less direct and less
       efficient.  Suppose, for example, our dictionary were
-      implemented as in "<a
-      href="http://people.cs.ksu.edu/~rhowell/DataStructures/redirect/binary-search-trees">Binary
+      implemented as in "<a href="http://people.cs.ksu.edu/~rhowell/DataStructures/redirect/binary-search-trees">Binary
       Search Trees</a>", where a binary search tree is used.  The idea
       is to
-      adapt the <a
-      href="http://people.cs.ksu.edu/~rhowell/DataStructures/redirect/inorder-traversal">inorder
+      adapt the <a href="http://people.cs.ksu.edu/~rhowell/DataStructures/redirect/inorder-traversal">inorder
       traversal</a> algorithm.  However, we can't use this directly to
       implement a recursive version of the <b>GetEnumerator</b>
       method because this method does not take any parameters; hence,
@@ -185,7 +161,7 @@ The above code is more maintainable than iterating through the
       need to iterate through each of these enumerators to include
       their elements in the enumerator we are returning:
     </p>
-    <pre>
+<pre>
 private static IEnumerable&lt;KeyValuePair&lt;TKey, TValue&gt;&gt; GetEnumerable(BinaryTreeNode&lt;KeyValuePair&lt;TKey, TValue&gt;&gt; t)
 {
     if (t != null)
@@ -244,53 +220,29 @@ public IEnumerator&lt;KeyValuePair&lt;TKey, TValue&gt;&gt; GetEnumerator()
         t = t.RightChild;
     }
 }
-</pre>      
+</pre>
 <p></p>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/switch">Next: The
-      <b>switch</b> Statement
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/foreach">Previous:
-      The <b>foreach</b> Statement
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/syntax">Up: C# Syntax
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <p>
-<small>
-<!-- hhmts start -->
-Last modified: Fri Apr 12 10:19:07 CDT 2019
-<!-- hhmts end -->
-</small>
+
 </p>
 <small>
-    <i> &copy; Copyright 2019, <a
-    href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i> 
+<i> © Copyright 2019, <a href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i>
 </small>
-
 <p></p>
-
-<table border=0 cellpadding=2 summary="This table is used for layout
+<table border="0" cellpadding="2" summary="This table is used for layout
 purposes only.">
 <tr>
-<td align=center>
-    <a href="http://validator.w3.org/check/referer"><img border="0"
-        src="/~rhowell/valid-html401.gif"
-        alt="Valid HTML 4.01!" height="31" width="88"></a>
+<td align="center">
+<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
 </td>
 <tr>
 <td>
 <a href="http://jigsaw.w3.org/css-validator/check/referer">
-             <img border="0"
-                  src="/~howell/vcss.gif" 
-                  alt="Valid CSS!" height="31" width="88">
-            </a>
+<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
+</a>
 </td>
-</table>
-
+</tr></tr></table>
 </body>
-
 </html>

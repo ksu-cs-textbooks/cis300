@@ -1,25 +1,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>out and ref Parameters</title>
-<link rel=STYLESHEET href="/~rhowell/style.css">
-
+<link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
-
 <body>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/foreach">Next: The
-      <b>foreach</b> Statement
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/static-this">Previous:
-      The Keywords static and this
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/syntax">Up: C# Syntax
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <h1>out and ref Parameters</h1>
 
@@ -47,8 +34,7 @@ provided <tt>n</tt> is an initialized variable consistent with the
     method.  Finally, if we call <b>DoSomething</b> with an expression
     like 42 or 9 + n, the mechanism is the same.
 <p>
-If a parameter is of a <a
-      href="/~rhowell/DataStructures/redirect/reference-value">reference
+If a parameter is of a <a href="/~rhowell/DataStructures/redirect/reference-value">reference
       type</a>, the same mechanism is used, but it is worth
       considering that case separately to see exactly what
       happens.  Suppose, for example, that we have the following
@@ -101,7 +87,7 @@ While the call-by-value mechanism is used by default, another
 One case in which this mechanism is useful is when we would like to
     have a method return more than one value.  Suppose, for example,
     that we would like to find both the maximum and minimum values in
-    a given <b>int[&nbsp;]</b>.  A <b>return</b> statement can return
+    a given <b>int[ ]</b>.  A <b>return</b> statement can return
     only one value.  Although there are ways of packaging more than one
     value together in one object, a cleaner way is to use two
     parameters that use the call-by-reference mechanism.  The method
@@ -131,7 +117,7 @@ private void MinimumAndMaximum(int[] array, out int min, out int max)
 The <b>out</b> keyword in the first line above specifies the
     call-by-reference mechanism for <tt>min</tt> and <tt>max</tt>.  We
     could then call this code as follows, assuming <tt>a</tt> is an
-    <b>int[&nbsp;]</b> containing at least one element:
+    <b>int[ ]</b> containing at least one element:
 <pre>
 int minimum;
 int maximum;
@@ -155,8 +141,7 @@ Note that <b>out</b> parameters do not need to be initialized prior to
     initialized.  This other way is to use <b>ref</b> parameters.  The
     only difference between <b>ref</b> parameters and <b>out</b>
     parameters is that <b>ref</b> parameters must be initialized prior
-    to being passed to the method, rather than within the method
-    itself.  Thus, we would typically use 
+    to being passed to the method.  Thus, we would typically use
     an <b>out</b> parameter when we expect the method to assign it its
     first value, but we would use a <b>ref</b> parameter when we
     expect the method to change a value that the variable already
@@ -183,51 +168,27 @@ Swap(ref m, ref n);
 After this code is executed, <tt>m</tt> will contain 12 and <tt>n</tt>
     will contain 10.
 <p></p>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/foreach">Next: The
-      <b>foreach</b> Statement
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/static-this">Previous:
-      The Keywords static and this
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/syntax">Up: C# Syntax
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <p>
-<small>
-<!-- hhmts start -->
-Last modified: Mon Feb 12 14:02:27 CST 2018
-<!-- hhmts end -->
-</small>
+
 </p>
 <small>
-    <i> &copy; Copyright 2014, 2018, <a
-    href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i> 
+<i> © Copyright 2014, <a href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i>
 </small>
-
 <p></p>
-
-<table border=0 cellpadding=2 summary="This table is used for layout
+<table border="0" cellpadding="2" summary="This table is used for layout
 purposes only.">
 <tr>
-<td align=center>
-    <a href="http://validator.w3.org/check/referer"><img border="0"
-        src="/~rhowell/valid-html401.gif"
-        alt="Valid HTML 4.01!" height="31" width="88"></a>
+<td align="center">
+<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
 </td>
 <tr>
 <td>
 <a href="http://jigsaw.w3.org/css-validator/check/referer">
-             <img border="0"
-                  src="/~howell/vcss.gif" 
-                  alt="Valid CSS!" height="31" width="88">
-            </a>
+<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
+</a>
 </td>
-</table>
-
-</body>
-
+</tr></tr></table>
+</p></p></p></body>
 </html>

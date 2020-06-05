@@ -1,21 +1,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Select Sorts</title>
-<link rel=STYLESHEET href="/~rhowell/style.css">
-
+<link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
-
 <body>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/insert-sorts">Next: Insert Sorts
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/sorting">Up: Sorting
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <h1>Select Sorts</h1>
 
@@ -30,13 +21,12 @@ A select sort operates by repeatedly selecting the smallest data
 </ol>
 The following figure illustrates this arrangement.
 <p>
-<img src="select-sorts.jpg" 
-    alt="The arrangement at each step of a select sort.">
+<img alt="The arrangement at each step of a select sort." src="select-sorts.jpg"/>
 </p>
 Initially, the sorted part will be empty.  At each step, the unsorted
     part is rearranged so that its smallest element comes first.  As a
     result, the sorted part can now contain one more element, and the
-    unsorted part one fewer element.  After <i>n</i>&nbsp;-&nbsp;1
+    unsorted part one fewer element.  After <i>n</i> - 1
     steps, where <i>n</i> is the number of elements in the array, the
     sorted part will have all but one of the elements.  Because the
     one element in the unsorted part must be at least as large as all
@@ -62,7 +52,7 @@ Note that the inner loop in selection sort iterates once for every
     successive iteration, the unsorted part is one element smaller,
     until on the last iteration, it has only 2 elements.  If we add up
     all these values, we find that the inner loop iterates a total of
-    exactly (<i>n</i>&nbsp;-&nbsp;1)(<i>n</i>&nbsp;+&nbsp;2)/2 times.
+    exactly (<i>n</i> - 1)(<i>n</i> + 2)/2 times.
     This value is proportional to <i>n</i><sup>2</sup> as <i>n</i>
     increases; hence, the running time of the algorithm is in
     <i>O</i>(<i>n</i><sup>2</sup>).  Furthermore, this performance
@@ -73,7 +63,7 @@ As we will see in what follows, <i>O</i>(<i>n</i><sup>2</sup>)
       large data set.  For example, sorting 10,000 elements will
       require about 5 billion iterations of the inner loop.  On the
       positive side, the only time data items are moved is when a swap
-      is made at the end of the outer loop; hence, this number is
+      is made at the end of the out loop; hence, this number is
       proportional to <i>n</i>.  This could be advantageous if we are
       sorting large value types, as we would not need to write these
       large data elements very many times.  However, for general
@@ -91,7 +81,7 @@ Performance issues aside, however, there is one positive aspect to
     values are the sort keys of the elements.  In such a scenario, it
     is possible that two data elements are different, but their sort
     keys are the same.  A sorting algorithm might reverse the order of
-    these elements, or it might leave their order unchanged.  In
+    these elements, or it might leave their order the unchanged.  In
     some cases, it is advantageous for a sorting algorithm to leave
     the order of these elements unchanged.  For example, if we
     sort first by a secondary key, then by a primary key, we would
@@ -106,9 +96,9 @@ Performance issues aside, however, there is one positive aspect to
 Another implementation of a select sort is <i>bubble sort</i>.  It
     rearranges the unsorted part by swapping adjacent elements that
     are out of order.  It starts with the last two elements (i.e., the
-    elements at locations <i>n</i>&nbsp;-&nbsp;1 and
-    <i>n</i>&nbsp;-&nbsp;2), then the elements at locations
-    <i>n</i>&nbsp;-&nbsp;2 and <i>n</i>&nbsp;-&nbsp;3, etc.
+    elements at locations <i>n</i> - 1 and
+    <i>n</i> - 2), then the elements at locations
+    <i>n</i> - 2 and <i>n</i> - 3, etc.
     Proceeding in this way, the smallest element in the unsorted part
     will end up at the beginning of the unsorted part.  While the
     inner loop is doing this, it keeps track of whether it has made
@@ -157,19 +147,19 @@ Heap sort then works by pre-processing the array to arrange it into a
     sorts, the idea is the same.  To rearrange the unsorted part, it:
 <ol>
 <li> Copies the first (i.e., highest-priority) element to a temporary
-	variable.</li> 
+	variable.</li>
 <li> Removes the element with maximum priority (i.e., the first
 	element).</li>
 <li> Places the copy of the first element into the space vacated by its
 	removal at the beginning of the sorted part.</li>
 </ol>
-Heap sort runs in <i>O</i>(<i>n</i>&nbsp;lg&nbsp;<i>n</i>) time in the
+Heap sort runs in <i>O</i>(<i>n</i> lg <i>n</i>) time in the
     worst case.  Information theory can be used to prove that any
     sorting algorithm that sorts by comparing elements must make at
     least lg(<i>n</i>!) comparisons on some arrays of size <i>n</i>.
     Because lg(<i>n</i>!) is proportional to
-    <i>n</i>&nbsp;lg&nbsp;<i>n</i>, we cannot hope to do any better
-    than <i>O</i>(<i>n</i>&nbsp;lg&nbsp;<i>n</i>) in the worst case.
+    <i>n</i> lg <i>n</i>, we cannot hope to do any better
+    than <i>O</i>(<i>n</i> lg <i>n</i>) in the worst case.
     While this performance is a significant improvement over selection
     sort and bubble sort, we will see
     in <a href="/~rhowell/DataStructures/redirect/split-sorts">a later
@@ -184,49 +174,28 @@ Heap sort runs in <i>O</i>(<i>n</i>&nbsp;lg&nbsp;<i>n</i>) time in the
   "<a href="/~rhowell/DataStructures/redirect/hybrid-sorts">Hybrid
     Sorts</a>".
 </p>
-
 <p></p>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/insert-sorts">Next: Insert Sorts
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/sorting">Up: Sorting
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <p>
-<small>
-<!-- hhmts start -->
-Last modified: Tue Apr 24 07:25:25 CDT 2018
-<!-- hhmts end -->
-</small>
+
 </p>
 <small>
-    <i> &copy; Copyright 2014, 2015, 2018, <a
-    href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i> 
+<i> © Copyright 2014, 2015, <a href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i>
 </small>
-
 <p></p>
-
-<table border=0 cellpadding=2 summary="This table is used for layout
+<table border="0" cellpadding="2" summary="This table is used for layout
 purposes only.">
 <tr>
-<td align=center>
-    <a href="http://validator.w3.org/check/referer"><img border="0"
-        src="/~rhowell/valid-html401.gif"
-        alt="Valid HTML 4.01!" height="31" width="88"></a>
+<td align="center">
+<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
 </td>
 <tr>
 <td>
 <a href="http://jigsaw.w3.org/css-validator/check/referer">
-             <img border="0"
-                  src="/~howell/vcss.gif" 
-                  alt="Valid CSS!" height="31" width="88">
-            </a>
+<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
+</a>
 </td>
-</table>
-
+</tr></tr></table>
 </body>
-
 </html>

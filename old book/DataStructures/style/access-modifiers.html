@@ -1,23 +1,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Access Modifiers</title>
-<link rel=STYLESHEET href="/~rhowell/style.css">
-
+<link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
-
 <body>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/naming">Next: Naming
-      Conventions</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a 
-      href="/~rhowell/DataStructures/redirect/formatting">Previous:
-      General Formatting</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a 
-      href="/~rhowell/DataStructures/redirect/style">Up: Programming
-      Style Requirements</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <h1>Access Modifiers</h1>
 <p>
@@ -38,73 +27,89 @@ When classes, fields, etc., are declared, C# does not require that an
       used on all declarations except where C# does not allow them (C#
       does not allow access modifiers for namespaces, members of 
       interfaces or enumerations, or local variables within methods).
-      In particular, note that when Visual Studio�
+      In particular, note that when Visual StudioÂ®
       automatically generates a <b>class</b> statement, it does not
       always supply an access modifier.  We require that <b>public</b> be
       explicitly inserted (C# does not allow <b>private</b> here).
 </p>
 In addition, fields within classes and structures should be
-    declared <b>private</b>, unless they are also declared <a
-      href="/~rhowell/DataStructures/redirect/const"><b>const</b></a>.  
-If you want to make a variable accessible to outside code, you should
-    instead use a <a href="/~rhowell/DataStructures/redirect/properties">property</a>.
+    declared <b>private</b>, unless they are also declared <a href="/~rhowell/DataStructures/redirect/const"><b>const</b></a>.  
+If you want to make a variable accessible to outside code, you can
+    instead do something like the following:  
+<p></p>
+<pre>
+private double _force;
+
+public double Force
+{
+    get
+    {
+        return _force;
+    }
+    set
+    {
+        _force = value;
+    }
+}
+</pre>
+<p>
+In this example, <tt>Force</tt> is not a field, but a <a href="/~rhowell/DataStructures/redirect/properties">property</a>. 
+It can be used just like a field, but when values are read from it,
+    its <b>get</b> code is executed, and when values are written to
+    it, its <b>set</b> code is executed, using the C# keyword
+    <b>value</b> as the value to be written to it.  (Note that
+    either the <b>get</b> or <b>set</b> accessor may be omitted, in
+    which case the property is write-only or read-only, respectively.)
+    Though more wordy, this construct is more maintainable, as it
+    allows the implementation to change without changing how it is
+    used.  For example, if we wanted to change the implementation so
+    that the value represented is no longer stored, but instead is
+    computed as the product of two other variables, <tt>Mass</tt> and
+    <tt>_acceleration</tt>, we could change the definition of
+    <tt>Force</tt> to 
+</p>
+<pre>
+public double Force
+{
+    get
+    {
+        return Mass * _acceleration;
+    }
+    set
+    {
+        _acceleration = value / Mass;
+    }
+}
+</pre>
 <p>
 For more information on access modifiers and accessibility levels, see
-    the section on <a
-      href="http://msdn.microsoft.com/en-us/library/ba0a1yw2.aspx">Accessibility Levels</a> in the <a href="http://msdn.microsoft.com/en-us/library/618ayhy6.aspx"><i>C# Reference</i></a>.
+    the section on <a href="http://msdn.microsoft.com/en-us/library/ba0a1yw2.aspx">Accessibility Levels</a> in the <a href="http://msdn.microsoft.com/en-us/library/618ayhy6.aspx"><i>C# Reference</i></a>.
 </p>
-
-<p></p>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/naming">Next: Naming
-      Conventions</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a 
-      href="/~rhowell/DataStructures/redirect/formatting">Previous:
-      General Formatting</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a 
-      href="/~rhowell/DataStructures/redirect/style">Up: Programming
-      Style Requirements</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
-<p>
-<small>
-Visual Studio is either a registered trademark or a trademark of
-	Microsoft Corporation in the United States and/or other
-	countries.
-</small>
-</p>
-
-<p>
-<small>
-<!-- hhmts start -->
-Last modified: Fri Jan  5 11:00:47 CST 2018
-<!-- hhmts end -->
-</small>
-</p>
-<small>
-    <i> &copy; Copyright 2013, 2017, <a
-    href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i> 
-</small>
-
 <p></p>
 
-<table border=0 cellpadding=2 summary="This table is used for layout
+<p>
+
+</p>
+<p>
+
+</p>
+<small>
+<i> © Copyright 2013, <a href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i>
+</small>
+<p></p>
+<table border="0" cellpadding="2" summary="This table is used for layout
 purposes only.">
 <tr>
-<td align=center>
-    <a href="http://validator.w3.org/check/referer"><img border="0"
-        src="/~rhowell/valid-html401.gif"
-        alt="Valid HTML 4.01!" height="31" width="88"></a>
+<td align="center">
+<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
 </td>
 <tr>
 <td>
 <a href="http://jigsaw.w3.org/css-validator/check/referer">
-             <img border="0"
-                  src="/~howell/vcss.gif" 
-                  alt="Valid CSS!" height="31" width="88">
-            </a>
+<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
+</a>
 </td>
-</table>
-
+</tr></tr></table>
 </body>
-
 </html>

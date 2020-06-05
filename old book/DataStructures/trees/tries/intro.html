@@ -1,22 +1,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Introduction to Tries</title>
-<link rel=STYLESHEET href="/~rhowell/style.css">
-
+<link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
-
 <body>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/tries-multiple-impl">Next:
-      Multiple Implementations of Children
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/tries">Up: Tries
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <h1>Introduction to Tries</h1>
 
@@ -47,7 +37,7 @@ Suppose, for example, that we want to store the following words:
 A trie storing these words (where we denote a value of <b>true</b> for
     the boolean with a '*') is as follows:
 <p>
-<img src="trie-example.jpg" alt="A trie">
+<img alt="A trie" src="trie-example.jpg"/>
 </p>
 Thus, for example, if we follow the path from the root through the
     labels 'c', 'a', and 'r', we reach a node with a <b>true</b>
@@ -86,8 +76,7 @@ In particular, the empty string is a word in this trie.  This
     instead focuses entirely on the trie rooted at that particular
     node.
 <p>
-One of the main advantages of a trie over an <a
-	href="/~rhowell/DataStructures/redirect/avl-trees">AVL
+One of the main advantages of a trie over an <a href="/~rhowell/DataStructures/redirect/avl-trees">AVL
 	tree</a> is the speed with which we can look up words.
 	Assuming we can quickly find the child with a given label, the
 	time we need to look up a word is proportional to the length
@@ -105,8 +94,7 @@ One of the main advantages of a trie over an <a
 Let's now consider how we can implement a trie.  There are various
     ways that this can be done, but we'll consider a fairly
     straightforward approach in this section (we'll improve the
-    implementation in <a
-    href="/~rhowell/DataStructures/redirect/tries-multiple-impl">the
+    implementation in <a href="/~rhowell/DataStructures/redirect/tries-multiple-impl">the
     next section</a>).  We will assume that the words we are storing
     are comprised of only the 26 lower-case English letters.  In this
     implementation, a single node will contain the following
@@ -130,9 +118,9 @@ Note that in this implementation, no <b>char</b>s or <b>string</b>s
     technically a numeric type, we can perform arithmetic with
     <b>char</b>s; thus, we can obtain the child labeled by
     <tt>label</tt> by retrieving
-    <tt>_children[label&nbsp;-&nbsp;'a']</tt>.  More specifically, if
+    <tt>_children[label - 'a']</tt>.  More specifically, if
     <tt>label</tt> contains 'd', then the difference,
-    <tt>label&nbsp;-&nbsp;'a'</tt> will be 3; hence, the child with
+    <tt>label - 'a'</tt> will be 3; hence, the child with
     label 'd' will be stored at index 3.  We have therefore achieved
     our goal of providing quick access to a child with a given label.
 <p>
@@ -151,12 +139,11 @@ public bool Contains(string s)
 Note that this method
       does not need a trie node as a parameter because the method will
       belong to a trie node.  Thus, the method will be able to access
-      the node as <a
-      href="/~rhowell/DataStructures/redirect/static-this"><b>this</b></a>,
+      the node as <a href="/~rhowell/DataStructures/redirect/static-this"><b>this</b></a>,
       and may access its <b>private</b> fields directly by their
       names.  The method consists of four cases:
 <ul>
-<li> <tt>s</tt> is the empty <b>string</b>.  In this case, the
+<li> <tt>s</tt> is the empty <b>string</b>.  In this case the
 	<b>bool</b> stored in 
 	this node indicates whether it is a word in this trie; hence,
 	we can simply return this <b>bool</b>. </li>
@@ -214,51 +201,28 @@ This time there are three cases:
 </ul>
 </li>
 </ul>
-
-
 <p></p>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/tries-multiple-impl">Next:
-      Multiple Implementations of Children
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/tries">Up: Tries
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <p>
-<small>
-<!-- hhmts start -->
-Last modified: Tue Mar  6 16:17:50 CST 2018
-<!-- hhmts end -->
-</small>
+
 </p>
 <small>
-    <i> &copy; Copyright 2014, 2018, <a
-    href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i> 
+<i> © Copyright 2014, <a href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i>
 </small>
-
 <p></p>
-
-<table border=0 cellpadding=2 summary="This table is used for layout
+<table border="0" cellpadding="2" summary="This table is used for layout
 purposes only.">
 <tr>
-<td align=center>
-    <a href="http://validator.w3.org/check/referer"><img border="0"
-        src="/~rhowell/valid-html401.gif"
-        alt="Valid HTML 4.01!" height="31" width="88"></a>
+<td align="center">
+<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
 </td>
 <tr>
 <td>
 <a href="http://jigsaw.w3.org/css-validator/check/referer">
-             <img border="0"
-                  src="/~howell/vcss.gif" 
-                  alt="Valid CSS!" height="31" width="88">
-            </a>
+<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
+</a>
 </td>
-</table>
-
+</tr></tr></table>
 </body>
-
 </html>

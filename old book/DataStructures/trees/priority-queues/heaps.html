@@ -1,23 +1,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Heaps</title>
-<link rel=STYLESHEET href="/~rhowell/style.css">
-
+<link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
-
 <body>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/leftist-heaps">Next:
-      Leftist Heaps
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/priority-queues">Up:
-      Priority Queues
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <h1>Heaps</h1>
 
@@ -31,7 +20,7 @@ a <i>min-heap</i> similarly, except that the minimum priority is at
 the root.  Below is an example of a min-heap with integer priorities
 (the data elements are not shown - only their priorities):
 <p>
-<img src="heap.jpg" alt="A min-heap.">
+<img alt="A min-heap." src="heap.jpg"/>
 </p>
 Note that this structure is different from a binary search tree, as
 there are elements in the left child that have larger priorities than
@@ -52,7 +41,7 @@ One advantage to using a min-heap to implement a min-priority queue is
 fairly obvious - an element with minimum priority is always at the
 root if the min-heap is nonempty.  This makes it easy to find the
 minimum priority and an element with this priority.
-Let's consider how we might remove an element with minimum priority.
+Let's consider how we might remove a element with minimum priority.
 Assuming the min-heap is nonempty, we need to remove the element at
 the root.  Doing so leaves us with two min-heaps (either of which
 might be empty).  To complete the removal, we need a way to merge two
@@ -78,7 +67,7 @@ children of <i>s</i>.  To reduce the number of min-heaps to two, we
 can merge two of them into one.  This is simply a recursive call.
 </p>
 We have therefore outlined a general strategy for merging two
-min-heaps.  There are two important details that we have omitted, though:
+min-heaps.  There two important details that we have omitted, though:
 <ul>
 <li> Which two min-heaps do we merge in the recursive call? </li>
 <li> Which of the two resulting min-heaps do we make the new left
@@ -98,49 +87,27 @@ in a worst-case running time proportional to the logarithm of the
 total number of nodes.
 
 <p></p>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/leftist-heaps">Next:
-      Leftist Heaps
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/priority-queues">Up:
-      Priority Queues
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <p>
-<small>
-<!-- hhmts start -->
-Last modified: Mon Mar 26 10:13:06 CDT 2018
-<!-- hhmts end -->
-</small>
+
 </p>
 <small>
-    <i> &copy; Copyright 2014, 2018, <a
-    href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i> 
+<i> © Copyright 2014, <a href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i>
 </small>
-
 <p></p>
-
-<table border=0 cellpadding=2 summary="This table is used for layout
+<table border="0" cellpadding="2" summary="This table is used for layout
 purposes only.">
 <tr>
-<td align=center>
-    <a href="http://validator.w3.org/check/referer"><img border="0"
-        src="/~rhowell/valid-html401.gif"
-        alt="Valid HTML 4.01!" height="31" width="88"></a>
+<td align="center">
+<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
 </td>
 <tr>
 <td>
 <a href="http://jigsaw.w3.org/css-validator/check/referer">
-             <img border="0"
-                  src="/~howell/vcss.gif" 
-                  alt="Valid CSS!" height="31" width="88">
-            </a>
+<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
+</a>
 </td>
-</table>
-
+</tr></tr></table>
 </body>
-
 </html>

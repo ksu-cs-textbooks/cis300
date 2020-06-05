@@ -1,26 +1,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Implementing Undo and Redo for a TextBox</title>
-<link rel=STYLESHEET href="/~rhowell/style.css">
-
+<link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
-
 <body>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/paren-matching">Next:
-      Parenthesis Matching
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/stacks">Previous:
-      Introduction to Stacks
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/stacks-queues">Up:
-      Stacks and Queues
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <h1>Implementing Undo and Redo for a TextBox</h1>
 
@@ -80,7 +66,7 @@ In order to support Undo and Redo, we need to be able to record the
     this via an event handler for the <b>TextChanged</b> event on the
     <b>TextBox</b>.  Because this event is the default event for a
     <b>TextBox</b>, we can add such an event handler by
-    double-clicking on the <b>TextBox</b> within the Visual Studio�
+    double-clicking on the <b>TextBox</b> within the Visual StudioÂ®
     Design window.  This event handler will then be called every time the
     contents of the <b>TextBox</b> are changed.
 <p>
@@ -96,11 +82,9 @@ We need to deal with one important issue before we can write the code
 </p>
 Fortunately, there is an easy way to distinguish between an edit made
     by the user and a change made by the program code.  A
-    <b>TextBox</b> has a <a
-    href="http://msdn.microsoft.com/en-us/library/system.windows.forms.textboxbase.modified.aspx"><b>Modified</b></a>
+    <b>TextBox</b> has a <a href="http://msdn.microsoft.com/en-us/library/system.windows.forms.textboxbase.modified.aspx"><b>Modified</b></a>
     property, which is set to <b>true</b> when the user modifies the
-    <b>TextBox</b> contents (including cutting or pasting), and is set
-    to <b>false</b> when the 
+    <b>TextBox</b> contents, and is set to <b>false</b> when the
     program modifies the contents.  Thus, we only want to record the
     <b>TextBox</b> contents when this property is <b>true</b>.
     Assuming the <b>TextBox</b> is named <tt>uxDisplay</tt>, we can
@@ -135,11 +119,10 @@ Now let's consider how to write the <tt>RecordEdit</tt> method.
 	undone. </li>
 <li> Clear the contents of <tt>_undoHistory</tt>, as the last change
 	to the <b>TextBox</b> contents was not an Undo.  (A
-	<b>Stack&lt;T&gt;</b> has a <a
-	  href="http://msdn.microsoft.com/en-us/library/3278tedw(v=vs.110).aspx"><b>Clear</b></a>
+	<b>Stack&lt;T&gt;</b> has a <a href="http://msdn.microsoft.com/en-us/library/3278tedw(v=vs.110).aspx"><b>Clear</b></a>
 	method for this purpose.) </li>
 <li> Disable <tt>uxRedo</tt>.
-</ul>
+</li></ul>
 We therefore have the following method:
 <pre>
 /// &lt;summary&gt;
@@ -159,7 +142,7 @@ Now that we have a mechanism for recording the user's edits, we can
     <b>TextBox</b>) should always be at the top of
     <tt>_editingHistory</tt>.  An Undo should change the current
     contents to the previous contents - i.e., to the <i>next</i>
-    <b>string</b> on <tt>_editingHistory</tt>.  However, we don't want
+<b>string</b> on <tt>_editingHistory</tt>.  However, we don't want
     to lose the top <b>string</b>, as this is the <b>string</b> that
     would need to be restored by a subsequent Redo.  Instead, we need
     to push this <b>string</b> onto <tt>_undoHistory</tt>.
@@ -234,14 +217,13 @@ The idea for both of these approaches is that instead of recording the
 <li> An <b>int</b> giving the index of the beginning of the
 	edit. </li>
 <li> The <b>string</b> inserted or deleted.
-</ul>
+</li></ul>
 We can maintain this information in stacks in one of two ways.  One
     way is to use non-generic stacks and to push three items onto a
     stack for each edit.  If we do this, we need to realize that when
     we pop elements from the stack, they will come out in reverse
     order from the way they were pushed onto it.  Alternatively, we
-    can define a class or a <a
-    href="/~rhowell/DataStructures/redirect/structs">structure</a> to
+    can define a class or a <a href="/~rhowell/DataStructures/redirect/structs">structure</a> to
     represent an edit using the three values above as <b>private</b>
     fields.  We can then use generic stacks storing instances of this
     type.  
@@ -320,8 +302,7 @@ Now that we can determine whether an edit is a deletion or an
     is a deletion.  The point
     at which the deletion occurred is the point at which
     the text caret now resides.  We can find this point using the 
-      <b>TextBox</b>'s <a
-      href="http://msdn.microsoft.com/en-us/library/system.windows.forms.textboxbase.selectionstart(v=vs.110).aspx"><b>SelectionStart</b></a>
+      <b>TextBox</b>'s <a href="http://msdn.microsoft.com/en-us/library/system.windows.forms.textboxbase.selectionstart(v=vs.110).aspx"><b>SelectionStart</b></a>
       property.  When there is no current selection - and there never
       will be immediately following an edit - this property gives the
       location of the text caret in the <b>TextBox</b>.  
@@ -357,8 +338,7 @@ The last piece of information we need is the <b>string</b> that was
     this <b>string</b> can be found in the previous <b>TextBox</b>
     contents.  Its beginning is the point at which the edit occurred.
     We can therefore extract the deleted <b>string</b> from the previous
-    contents using its <a
-    href="http://msdn.microsoft.com/en-us/library/aka44szs(v=vs.110).aspx"><b>Substring</b></a>
+    contents using its <a href="http://msdn.microsoft.com/en-us/library/aka44szs(v=vs.110).aspx"><b>Substring</b></a>
     method.  We pass this method the beginning index of the substring
     and its length, and it returns the substring, which is the deleted
     <b>string</b>.  On the other hand, if the edit was an insertion,
@@ -401,13 +381,11 @@ In order to implement Undo and Redo, we need to be able to insert and
       methods we can use to accomplish this:
 </p>
 <ul>
-<li> The <a
-	  href="http://msdn.microsoft.com/en-us/library/d8d7z2kk.aspx"><b>Remove</b></a>
+<li> The <a href="http://msdn.microsoft.com/en-us/library/d8d7z2kk.aspx"><b>Remove</b></a>
 	  method takes as its parameters the beginning index and
 	  length of the portion to remove, and returns the
 	  result. </li>
-<li> The <a
-	  href="http://msdn.microsoft.com/en-us/library/system.string.insert.aspx"><b>Insert</b></a>
+<li> The <a href="http://msdn.microsoft.com/en-us/library/system.string.insert.aspx"><b>Insert</b></a>
 	  method takes as its parameters the index at which the
 	  <b>string</b> should be inserted, and the <b>string</b> to
 	  insert.  It returns the result. </li>
@@ -455,59 +433,30 @@ We can now implement event handlers for Undo and Redo.  We can obtain
     edit, but to implement an Undo, we must do the opposite.
 
 <p></p>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/paren-matching">Next:
-      Parenthesis Matching
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/stacks">Previous:
-      Introduction to Stacks
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/stacks-queues">Up:
-      Stacks and Queues
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <p>
-<small>
-Visual Studio is either a registered trademark or a trademark of
-	Microsoft Corporation in the United States and/or other
-	countries.
-</small>
+
 </p>
 <p>
-<small>
-<!-- hhmts start -->
-Last modified: Mon Jun 18 03:53:37 CDT 2018
-<!-- hhmts end -->
-</small>
+
 </p>
 <small>
-    <i> &copy; Copyright 2014, 2018, <a
-    href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i> 
+<i> © Copyright 2014, 2018, <a href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i>
 </small>
-
 <p></p>
-
-<table border=0 cellpadding=2 summary="This table is used for layout
+<table border="0" cellpadding="2" summary="This table is used for layout
 purposes only.">
 <tr>
-<td align=center>
-    <a href="http://validator.w3.org/check/referer"><img border="0"
-        src="/~rhowell/valid-html401.gif"
-        alt="Valid HTML 4.01!" height="31" width="88"></a>
+<td align="center">
+<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
 </td>
 <tr>
 <td>
 <a href="http://jigsaw.w3.org/css-validator/check/referer">
-             <img border="0"
-                  src="/~howell/vcss.gif" 
-                  alt="Valid CSS!" height="31" width="88">
-            </a>
+<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
+</a>
 </td>
-</table>
-
-</body>
-
+</tr></tr></table>
+</p></body>
 </html>

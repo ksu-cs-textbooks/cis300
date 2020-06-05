@@ -1,26 +1,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>The Debugger</title>
-<link rel=STYLESHEET href="/~rhowell/style.css">
-
+<link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
-
 <body>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/using-source-control">Next:
-      Submitting Assignments
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/code-window">Previous:
-      The Code Window
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/visual-studio">Up:
-      Visual Studio� 
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <h1>The Debugger</h1>
 
@@ -31,8 +17,7 @@ In previous sections, we discussed how a Windows Forms Application can
     Studio, we can invoke the debugger by clicking the "Start" button
     near the top:
 <p>
-<img src="start-button.jpg" 
-    alt="A picture of part of a Visual Studio Window should appear here.">
+<img alt="A picture of part of a Visual Studio Window should appear here." src="start-button.jpg"/>
 </p>
 When the debugger starts, it attempts to do the following things:
 <ul>
@@ -49,8 +34,7 @@ One of the problems that can occur is that the compiler can fail to
       produce executable code because the source code contains syntax
       errors.  When this happens, the following dialog is displayed:
 </p>
-<img src="syntax-error-dialog.jpg" 
-    alt="A picture of a dialog should appear here.">
+<img alt="A picture of a dialog should appear here." src="syntax-error-dialog.jpg"/>
 <p>
 Usually the best thing to do at this point is to click the "No"
       button.  This will stop the debugger and open an Error List
@@ -65,17 +49,15 @@ Usually the best thing to do at this point is to click the "No"
 Once the syntax errors are removed, the debugger will be able to
     generate executable code and run it.  However, more problems can
     occur at this point.  One common problem is that an exception is
-    thrown.  For example, the GitHub repository created by <a
-    href="https://classroom.github.com/a/-AEkkQFD">this 
-    invitation link</a> (see "<a
-    href="/~rhowell/DataStructures/redirect/version-control">Git
+    thrown.  For example, the GitHub repository created by <a href="https://classroom.github.com/a/-AEkkQFD">this 
+    invitation link</a> (see "<a href="/~rhowell/DataStructures/redirect/version-control">Git
     Repositories</a>") contains a Visual Studio solution for a program to
     convert decimal numbers to base-16.  Don't worry about
     understanding the code, although the numerous comments may help
     you to do that.  Instead, note that an exception is thrown when we
     try to convert 256:
 <p>
-<img src="exception.jpg" alt="A picture of a window should appear here.">
+<img alt="A picture of a window should appear here." src="exception.jpg"/>
 </p>
 This message gives us quite a bit of information already.  First, it
     tells us which line threw the exception - the line highlighted in
@@ -100,7 +82,7 @@ Having this information, we can now use the debugger to investigate
       Hovering over <tt>power</tt> shows that it has a value of 2.
       Thus, we can see that the exception was thrown because we gave
       the <b>Substring</b> method a length of
-      1&nbsp;-&nbsp;2&nbsp;=&nbsp;-1.  This can be confirmed
+      1 - 2 = -1.  This can be confirmed
       by hovering the mouse over the "-" in the expression - the popup
       indicates that the value of the expression is, in fact, -1.
 </p>
@@ -120,8 +102,7 @@ Actually fixing the error requires a little more understanding of the
 To stop the debugger, notice the buttons that are available at the top
       of the Visual Studio window while the debugger is running:
 </p>
-<img src="debugger-buttons.jpg"
-    alt="A picture of a portion of a window should appear here.">
+<img alt="A picture of a portion of a window should appear here." src="debugger-buttons.jpg"/>
 <p>
 As you might guess, the "Stop" button stops the debugger.  In what
       follows, we will discuss each of the other buttons indicated in
@@ -136,8 +117,7 @@ When debugging code, it is often useful to be able to pause execution
     pause.  This places a large red dot in the margin where we clicked
     and colors the line red:
 <p>
-<img src="breakpoint.jpg" 
-    alt="A picture of part of a code window should appear here.">
+<img alt="A picture of part of a code window should appear here." src="breakpoint.jpg"/>
 </p>
 Whenever execution reaches a breakpoint, execution stops prior to
     executing that line.  At this point, we can examine the values of
@@ -158,8 +138,7 @@ Sometimes we only want the execution to pause at a breakpoint when a
       popup menu.  This causes a large pink box to be inserted into to
       the code below this line:
 </p>
-<img src="breakpoint-condition.jpg"
-alt="A picture of a Visual Studio window should appear here.">
+<img alt="A picture of a Visual Studio window should appear here." src="breakpoint-condition.jpg"/>
 <p>
 In this box, after we click the "Conditions" check-box, we can type an
       expression using variables visible at that program location.  We
@@ -182,7 +161,7 @@ While hovering the mouse over variable names is a useful way to
       discover their current values, there are other mechanisms for
       doing this as well.  For example, while the debugger is paused,
       you can go to the "Debug" menu and select
-      "Windows&nbsp;&#8209;&gt;&nbsp;Locals".  This will open a window
+      "Windows ‑&gt; Locals".  This will open a window
       displaying all of the local variables for the current method,
       property, or constructor, together with their current values.
       If the debugger is paused within a constructor or a
@@ -199,7 +178,7 @@ Another mechanism for examining values of variables is through the
     expression.  This can be particularly useful when you have a large
     data structure, and you need to know a particular element in that
     structure.  For example, suppose <tt>array</tt> is a large
-    <b>int[&nbsp;]</b>, and suppose <tt>i</tt> is an <b>int</b>.
+    <b>int[ ]</b>, and suppose <tt>i</tt> is an <b>int</b>.
     Using the "Locals" window, it might be rather tedious to find the
     value of <tt>array[i]</tt>.  Using the Immediate window, however,
     you can just type in
@@ -245,7 +224,7 @@ After one iteration, the loop will terminate, and execution will reach
 When stepping through code, a "Watch" window is often a convenient way
       to keep track of the value of one or more specific variables
       and/or expressions.  You can open a Watch window from the
-      "Debug" menu under "Windows&nbsp;&#8209;&gt;&nbsp;Watch" - the four
+      "Debug" menu under "Windows ‑&gt; Watch" - the four
       choices here are four different Watch windows that you may use
       (perhaps for debugging different parts of your program).  A
       Watch window combines some of the advantages of the Locals
@@ -258,54 +237,28 @@ When stepping through code, a "Watch" window is often a convenient way
       be tracked.  To delete an entry from a Watch window, right-click
       on it and select "Delete Watch".
 </p>
-
 <p></p>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/using-source-control">Next:
-      Submitting Assignments
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/code-window">Previous:
-      The Code Window
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/visual-studio">Up:
-      Visual Studio� 
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <p>
-<small>
-<!-- hhmts start -->
-Last modified: Mon Jul 31 10:41:48 CDT 2017
-<!-- hhmts end -->
-</small>
+
 </p>
 <small>
-    <i> &copy; Copyright 2014, 2015, 2017 <a
-    href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i> 
+<i> © Copyright 2014, 2015, 2017 <a href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i>
 </small>
-
 <p></p>
-
-<table border=0 cellpadding=2 summary="This table is used for layout
+<table border="0" cellpadding="2" summary="This table is used for layout
 purposes only.">
 <tr>
-<td align=center>
-    <a href="http://validator.w3.org/check/referer"><img border="0"
-        src="/~rhowell/valid-html401.gif"
-        alt="Valid HTML 4.01!" height="31" width="88"></a>
+<td align="center">
+<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
 </td>
 <tr>
 <td>
 <a href="http://jigsaw.w3.org/css-validator/check/referer">
-             <img border="0"
-                  src="/~howell/vcss.gif" 
-                  alt="Valid CSS!" height="31" width="88">
-            </a>
+<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
+</a>
 </td>
-</table>
-
+</tr></tr></table>
 </body>
-
 </html>

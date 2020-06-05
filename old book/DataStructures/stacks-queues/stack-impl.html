@@ -1,26 +1,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Implementing a Stack</title>
-<link rel=STYLESHEET href="/~rhowell/style.css">
-
+<link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
-
 <body>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/queues">Next: Introduction
-      to Queues
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/paren-matching">Previous:
-      Parenthesis Matching
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/stacks-queues">Up:
-      Stacks and Queues
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <h1>Implementing a Stack</h1>
 
@@ -29,8 +15,7 @@ This section gives an overview of perhaps the most common way to
     <b>System.Collections.Stack</b> and
     <b>System.Collections.Generic.Stack&lt;T&gt;</b> use this
     technique.  This implementation uses an array to store the 
-    elements of the stack, and is quite similar to the <a
-    href="/~rhowell/DataStructures/redirect/stringbuilder-impl"><b>StringBuilder</b>
+    elements of the stack, and is quite similar to the <a href="/~rhowell/DataStructures/redirect/stringbuilder-impl"><b>StringBuilder</b>
     implementation</a> we described in the last chapter.  We have
     discussed two kinds of stacks in this chapter - stacks of
     <b>object</b>s and generic stacks.  We will focus on implementing
@@ -63,16 +48,14 @@ Within this <b>class</b> definition, <b>T</b> is treated like
     <b>class</b> definition.  Each of the type parameters is then
     treated as a type 
     within the <b>class</b> definition.  We will show how the types
-    passed as type parameters can be restricted in <a
-    href="/~rhowell/DataStructures/redirect/where">a later
+    passed as type parameters can be restricted in <a href="/~rhowell/DataStructures/redirect/where">a later
     section</a>.
 <p>
 For the class <b>Stack&lt;T&gt;</b>, only one type parameter is
       needed.  The type parameter <b>T</b>
       denotes the type of the values that are stored in the stack.
       Therefore, the array in which we will store the elements will be
-      of type <b>T[&nbsp;]</b>.  As in the <a
-      href="/~rhowell/DataStructures/redirect/stringbuilder-impl"><b>StringBuilder</b>
+      of type <b>T[ ]</b>.  As in the <a href="/~rhowell/DataStructures/redirect/stringbuilder-impl"><b>StringBuilder</b>
       implementation</a>, we will need a <b>private</b> field for this
       array.  This field can be initialized in a
       manner similar to the <b>StringBuilder</b> implementation;
@@ -81,8 +64,7 @@ For the class <b>Stack&lt;T&gt;</b>, only one type parameter is
 A stack has a <b>public</b> read-only property, <b>Count</b>, which
     gets the number of elements in the stack (as an <b>int</b>).  We
     can define this property to use the default implementation with a
-    <b>private</b> set accessor, as outlined in the section, "<a
-    href="/~rhowell/DataStructures/redirect/properties">Properties</a>".
+    <b>private</b> set accessor, as outlined in the section, "<a href="/~rhowell/DataStructures/redirect/properties">Properties</a>".
 <p>
 Before we can delve any further into the implementation, we need to
       decide how we are going to arrange the elements in the array.
@@ -91,15 +73,14 @@ Before we can delve any further into the implementation, we need to
       at location 0, and as we go up the stack, keep each successive
       element in the next location:  
 </p>
-<img src="stack-impl.jpg" alt="The arrangement of stack elements in the array.">
+<img alt="The arrangement of stack elements in the array." src="stack-impl.jpg"/>
 <p>
 This arrangement makes sense because unless all of the array locations
       are being used, there is room to push a
       new element on top of the stack without having to move any
       pre-existing elements out of its way.  
 </p>
-Note the similarity of this arrangement to the <a
-      href="/~rhowell/DataStructures/redirect/stringbuilder-impl">implementation
+Note the similarity of this arrangement to the <a href="/~rhowell/DataStructures/redirect/stringbuilder-impl">implementation
       of a <b>StringBuilder</b></a>.  Given this similarity, we can
       implement the <b>Push</b> method in a similar way to how we
       implemented the <b>Append</b> method for a
@@ -148,14 +129,12 @@ While what we have described in the preceding paragraph is sufficient
     not impact correctness, however, because after we update the
     number of elements, we are no longer considering that location to
     be storing a stack element - its contents are irrelevant.
-    However, there is a performance issue here.  If <b>T</b> is a <a
-    href="/~rhowell/DataStructures/redirect/reference-value">reference
+    However, there is a performance issue here.  If <b>T</b> is a <a href="/~rhowell/DataStructures/redirect/reference-value">reference
     type</a>, then the reference stored in this location may refer to
     a large data structure that is no longer needed by the program.
     However, because this array still stores a reference to it, the
     garbage collector cannot tell that it is no longer in use, and
     consequently, it cannot reclaim the storage.
-    <a name="default-value"></a>
 <p>
 It therefore makes sense to remove what is stored in this array
       location.  However, we run into a difficulty when we try to do
@@ -186,62 +165,35 @@ Finally, we can implement a <b>public Clear</b> method.  This method
     collector can reclaim it, along with any otherwise unused data it
     might refer to.
 <p>
-Due to the similarities between this implementation and the <a
-	href="/~rhowell/DataStructures/redirect/stringbuilder-impl"><b>StringBuilder</b>
+Due to the similarities between this implementation and the <a href="/~rhowell/DataStructures/redirect/stringbuilder-impl"><b>StringBuilder</b>
 	implementation</a>, the two data structures have similar
 	performance characteristics.  In fact, it is possible to show
 	that any sequence of <i>n</i> operations on an initially empty
 	<b>Stack&lt;T&gt;</b> is done in <i>O</i>(<i>n</i>) time -
 	i.e., in time proportional to <i>n</i>.
 </p>
-
 <p></p>
-<div class="NAVBAR">
-<a href="/~rhowell/DataStructures/redirect/queues">Next: Introduction
-      to Queues
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/paren-matching">Previous:
-      Parenthesis Matching
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/stacks-queues">Up:
-      Stacks and Queues
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <p>
-<small>
-<!-- hhmts start -->
-Last modified: Mon Jul 16 03:47:10 CDT 2018
-<!-- hhmts end -->
-</small>
+
 </p>
 <small>
-    <i> &copy; Copyright 2014, 2015, 2018, <a
-    href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i> 
+<i> © Copyright 2014, 2015, 2018, <a href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i>
 </small>
-
 <p></p>
-
-<table border=0 cellpadding=2 summary="This table is used for layout
+<table border="0" cellpadding="2" summary="This table is used for layout
 purposes only.">
 <tr>
-<td align=center>
-    <a href="http://validator.w3.org/check/referer"><img border="0"
-        src="/~rhowell/valid-html401.gif"
-        alt="Valid HTML 4.01!" height="31" width="88"></a>
+<td align="center">
+<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
 </td>
 <tr>
 <td>
 <a href="http://jigsaw.w3.org/css-validator/check/referer">
-             <img border="0"
-                  src="/~howell/vcss.gif" 
-                  alt="Valid CSS!" height="31" width="88">
-            </a>
+<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
+</a>
 </td>
-</table>
-
-</body>
-
+</tr></tr></table>
+</p></body>
 </html>

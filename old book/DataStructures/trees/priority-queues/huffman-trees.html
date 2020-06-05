@@ -1,24 +1,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Huffman Trees</title>
-<link rel=STYLESHEET href="/~rhowell/style.css">
-
+<link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
-
 <body>
-<div class="NAVBAR">
-<a
-      href="/~rhowell/DataStructures/redirect/leftist-heaps">Previous:
-      Leftist Heaps
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/priority-queues">Up:
-      Priority Queues
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <h1>Huffman Trees</h1>
 
@@ -88,7 +76,7 @@ The first encoding above, however, has only one decoding,
       "Mississippi".  The reason for this is that this encoding is
       based on the following binary tree:
 </p>
-<img src="huffman.jpg" alt="A Huffman tree">
+<img alt="A Huffman tree" src="huffman.jpg"/>
 <p>
 To get the encoding for a character, we trace the path to that
       character from the root, and record a 0 each time we go left
@@ -108,12 +96,11 @@ Before we can find a Huffman tree for a file, we need to determine how
     many times each byte value occurs.  There are 256 different byte
     values possible; hence we will need an array of 256 elements to
     keep track of the number of occurrences of each.  Because files
-    can be large, this array should be a <b>long[&nbsp;]</b>.  We can
+    can be large, this array should be a <b>long[ ]</b>.  We can
     then use element <i>i</i> of this array to keep track of the
     number of occurrences of byte value <i>i</i>.  Thus, after
     constructing this array, we can read the file one byte at a time
-    as described in "<a
-    href="/~rhowell/DataStructures/redirect/other-file-io">Other File
+    as described in "<a href="/~rhowell/DataStructures/redirect/other-file-io">Other File
     I/O</a>", and for each <b>byte</b> <tt>b</tt> that we read, we
     increment the value at location <tt>b</tt> of the array.
 <p>
@@ -129,7 +116,7 @@ Having built this frequency table, we can now use it to build a
       the node is the number of occurrences of <i>i</i>, which is
       simply the value at location <i>i</i> of the frequency table.
 </p>
-Once the min-priority queue has been loaded with the leaves, we can begin
+Once the min-priority queue has been loaded with the leaves, can begin
     combining subtrees into larger trees.  We will need to handle as a
     special case an empty min-priority queue, which can result only
     from an empty input file.  In this case, there is no Huffman tree,
@@ -160,52 +147,28 @@ Most file compression schemes involve more than just converting to a
       Due to this additional output, compressing a short file will
       likely result in a longer file than the original.
 </p>
-
 <p></p>
-<div class="NAVBAR">
-<a
-      href="/~rhowell/DataStructures/redirect/leftist-heaps">Previous:
-      Leftist Heaps
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/redirect/priority-queues">Up:
-      Priority Queues
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-      href="/~rhowell/DataStructures/">Top</a>
-</div>
 
 <p>
-<small>
-<!-- hhmts start -->
-Last modified: Wed Mar 28 09:27:01 CDT 2018
-<!-- hhmts end -->
-</small>
+
 </p>
 <small>
-    <i> &copy; Copyright 2014, 2018, <a
-    href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i> 
+<i> © Copyright 2014, <a href="/~rhowell/">Rod Howell</a>. All
+    rights reserved.</i>
 </small>
-
 <p></p>
-
-<table border=0 cellpadding=2 summary="This table is used for layout
+<table border="0" cellpadding="2" summary="This table is used for layout
 purposes only.">
 <tr>
-<td align=center>
-    <a href="http://validator.w3.org/check/referer"><img border="0"
-        src="/~rhowell/valid-html401.gif"
-        alt="Valid HTML 4.01!" height="31" width="88"></a>
+<td align="center">
+<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
 </td>
 <tr>
 <td>
 <a href="http://jigsaw.w3.org/css-validator/check/referer">
-             <img border="0"
-                  src="/~howell/vcss.gif" 
-                  alt="Valid CSS!" height="31" width="88">
-            </a>
+<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
+</a>
 </td>
-</table>
-
+</tr></tr></table>
 </body>
-
 </html>
