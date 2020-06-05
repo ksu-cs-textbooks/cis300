@@ -1,4 +1,4 @@
-baseURL = "https://ksucs-hugo.russfeld.me"
+baseURL = "https://people.cs.ksu.edu/~weeser/"
 languageCode = "en-us"
 title = "K-State CS Hugo Framework"
 publishDir = "../cis300-book-html/"
