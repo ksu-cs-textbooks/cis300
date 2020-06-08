@@ -7,7 +7,6 @@
 <link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
 <body>
-
 <h1>Implementation of StringBuilders</h1>
 
 In this section, we will examine some of the implementation details of
@@ -38,7 +37,7 @@ We start by determining how we can represent a <b>StringBuilder</b>
     using more primitive data structures.  One of the more useful
     primitive data structures that C# provides for building more
     advanced data structures is the array.  We can represent the
-    characters in a <b>StringBuilder</b> using a <b>char[ ]</b>.
+    characters in a <b>StringBuilder</b> using a <b>char[Ã‚Â ]</b>.
     One difficulty in using an array, however, is that we don't know
     how many characters our <b>StringBuilder</b> might need.  We will
     return to this issue shortly, but for now, let's just arbitrarily
@@ -85,7 +84,7 @@ In order to see how this can be done, consider how our fields together
 </p>
 Within the array referred to by <tt>_characters</tt>, the first
     <tt>_length</tt> locations (i.e., locations 0 through
-    <tt>_length</tt> - 1) store the characters in the
+    <tt>_length</tt>Ã‚Â -Ã‚Â 1) store the characters in the
     <b>StringBuilder</b>.  This means that
     <tt>_characters[_length]</tt> is the next available location,
     provided this is a valid array location.  In this case, we can
@@ -160,7 +159,7 @@ To complete this simple implementation, we need to provide a
       want.  Fortunately, though, this method is a <b>virtual</b>
       method, meaning that we can re-define by <i>overriding</i> it.
       We do this by using the keyword, <b>override</b>, in its
-      definition.  Visual StudioÂ®'s auto-complete feature is helpful
+      definition.  Visual StudioÃ‚Â®'s auto-complete feature is helpful
       here, as when we 
     type the word <b>override</b>, it presents us with a list of the
     methods that can be overridden.  Selecting <b>ToString</b> from this
@@ -172,7 +171,7 @@ We want this method to return the <b>string</b> formed from the first
       form such a string using one of the <a href="http://msdn.microsoft.com/en-us/library/ms131424(v=vs.110).aspx"><b>string</b>
       constructor</a>s.  This constructor takes three parameters:
 <ul>
-<li> a <b>char[ ]</b> containing the characters to form the
+<li> a <b>char[Ã‚Â ]</b> containing the characters to form the
 	<b>string</b>; </li>
 <li> an <b>int</b> giving the index in this array of the first
 	character to use; and </li>
@@ -229,30 +228,10 @@ Now that we have the details of a <b>StringBuilder</b> implementation,
       <b>string</b> being built.
 </p>
 <p></p>
-
 <p>
-
 </p>
 <p>
-
 </p>
-<small>
-<i> © Copyright 2014, 2015, 2017, 2018, <a href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i>
-</small>
 <p></p>
-<table border="0" cellpadding="2" summary="This table is used for layout
-purposes only.">
-<tr>
-<td align="center">
-<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
-</td>
-<tr>
-<td>
-<a href="http://jigsaw.w3.org/css-validator/check/referer">
-<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
-</a>
-</td>
-</tr></tr></table>
 </p></p></p></body>
 </html>

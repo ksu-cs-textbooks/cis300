@@ -7,7 +7,6 @@
 <link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
 <body>
-
 <h1>Troubleshooting Source Control</h1>
 
     One of the advantages of source control is that it provides a
@@ -48,87 +47,9 @@
       Changes" list, right-click on its entry in the "Excluded Changes"
       list, and select "Include" from the resulting popup menu.
     </p>
-<p>
-      Sometimes you may find that Visual Studio is trying to use Git,
-      rather than TFS.  As a result, you may be unable to check in
-      your code.  When this happens, the Team Explorer Home window
-      looks like this:
-    </p>
-<p>
-<img alt="A picture of the Team Explorer should appear here" src="team-explorer-git.jpg"/>
-</p>
-    If you have not yet added your solution to source control, you may
-    be able to fix this by doing the following:
-    <ol>
-<li> In the Team Explorer, click on the "Manage Connections"icon
-	shown below:
-	<p>
-<img alt="A picture of the Team Explorer should appear here" src="manage-connections.jpg"/>
-</p>
-</li>
-<li>
-	Find your TFS project and double-click it.
-      </li>
-</ol>
-    If you have already added it to source control, the process is a
-    bit more involved:
-    <ol>
-<li>
-	In your Windows File Explorer, navigate to your workspace and
-	make a copy of the folder containing the solution you are
-	trying to check in. Paste the copy in your workspace.
-      </li>
-<li>
-	Navigate to the folder (within the copy you just made) that
-	contains the solution file.
-      </li>
-<li>
-        Set your File Explorer to reveal hidden files. To do this in
-        Windows 10, click on the View tab and make sure the box next to
-	"Hidden items" is checked.
-      </li>
-<li>
-        Delete the folders ".git" and ".vs".
-      </li>
-<li>
-	Open the solution file in this folder with Visual Studio.
-      </li>
-<li>
-	In the Team Explorer, click on "Manage Connections" icon (see
-	above).
-      </li>
-<li>
-	Find your TFS project and double-click it.  Sign in if you are
-	so prompted.
-      </li>
-</ol>
-      
-    You should now be able to add your solution to source control and
-    check it in.
-    
-
 <p></p>
-
 <p>
-
 </p>
-<small>
-<i> © Copyright 2016, <a href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i>
-</small>
 <p></p>
-<table border="0" cellpadding="2" summary="This table is used for layout
-purposes only.">
-<tr>
-<td align="center">
-<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
-</td>
-<tr>
-<td>
-<a href="http://jigsaw.w3.org/css-validator/check/referer">
-<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
-</a>
-</td>
-</tr></tr></table>
 </body>
 </html>

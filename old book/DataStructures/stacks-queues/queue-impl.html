@@ -7,7 +7,6 @@
 <link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
 <body>
-
 <h1>Implementing a Queue</h1>
 
 We will approach the implementation of a queue much like we did the <a href="/~rhowell/DataStructures/redirect/stack-impl">implementation
@@ -60,7 +59,7 @@ With this implementation, we only need to construct a larger array if
     following class members in order to keep track of
     everything:
 <ul>
-<li> a <b>private T[ ]</b> field in which to store the elements; </li>
+<li> a <b>private T[Ã‚Â ]</b> field in which to store the elements; </li>
 <li> a <b>public int Count</b> property; and </li>
 <li> a <b>private int</b> field giving the index of the element at the
 	front of the 
@@ -154,27 +153,8 @@ The <b>Peek</b> method is straightforward - after verifying that the
     array.  If we do, we need to wrap it back around to 0.
 
 <p></p>
-
 <p>
-
 </p>
-<small>
-<i> © Copyright 2014, 2016, 2018, <a href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i>
-</small>
 <p></p>
-<table border="0" cellpadding="2" summary="This table is used for layout
-purposes only.">
-<tr>
-<td align="center">
-<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
-</td>
-<tr>
-<td>
-<a href="http://jigsaw.w3.org/css-validator/check/referer">
-<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
-</a>
-</td>
-</tr></tr></table>
 </body>
 </html>

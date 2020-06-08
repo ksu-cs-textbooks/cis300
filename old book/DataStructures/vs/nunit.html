@@ -7,7 +7,6 @@
 <link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
 <body>
-
 <h1>Unit Testing</h1>
 
     Some of the lab assignments in CIS 300 use a technique called
@@ -15,28 +14,25 @@
     Unit testing is an automated technique for testing individual
     <b>public</b> methods and properties using a pre-defined set of
     test cases.  We will be using an open-source unit-testing
-    framework called <a href="http://nunit.org/">NUnit</a>.
-    <!-- Two -->
-<!-- Visual StudioÂ® extensions provide access to NUnit.  Both of these -->
-<!-- extensions have been installed on the lab machines, but if you -->
-<!-- want to use NUnit on your own machine, you will need to install -->
-<!-- the following: -->
-<!-- <ul> -->
-<!--   <li> -->
-<!-- 	<a -->
-<!-- 	href="https://marketplace.visualstudio.com/items?itemName=NUnitDevelopers.NUnit3TestAdapter"><b>NUnit -->
-<!-- 	3 Test Adapter</b></a> -->
-<!--   </li> -->
-<!--   <li> -->
-<!-- 	<a -->
-<!-- 	href="https://marketplace.visualstudio.com/items?itemName=NUnitDevelopers.NUnitTemplatesforVisualStudio"><b>NUnit -->
-<!-- 	VS Templates</b></a> -->
-<!--   </li> -->
-<!-- </ul> -->
-<!-- To install these extensions, follow links above and -->
-<!-- click the "Download" button.  Then make sure you are not currently -->
-<!-- running Visual Studio, and run the downloaded file. -->
-<p>
+    framework called <a href="http://nunit.org/">NUnit</a>.  Two
+    Visual StudioÃ‚Â® extensions provide access to NUnit.  Both of these
+    extensions have been installed on the lab machines, but if you
+    want to use NUnit on your own machine, you will need to install
+    the following:
+    <ul>
+<li>
+<a href="https://marketplace.visualstudio.com/items?itemName=NUnitDevelopers.NUnit3TestAdapter"><b>NUnit
+	3 Test Adapter</b></a>
+</li>
+<li>
+<a href="https://marketplace.visualstudio.com/items?itemName=NUnitDevelopers.NUnitTemplatesforVisualStudio"><b>NUnit
+	VS Templates</b></a>
+</li>
+</ul>
+    To install these extensions, follow links above and
+    click the "Download" button.  Then make sure you are not currently
+    running Visual Studio, and run the downloaded file.
+    <p>
       An NUnit test suite is a separate project contained within the
       same solution as the project it is to test.  The GitHub
       repositories for lab assignments that utilize unit testing will
@@ -148,16 +144,9 @@
     - for more information, refer to the <a href="https://github.com/nunit/docs/wiki">NUnit Documentation
       Wiki</a>.
     <p>
-      If you are using your own machine, you will first need to
-	install the Visual Studio extension 
-    	<a href="https://marketplace.visualstudio.com/items?itemName=NUnitDevelopers.NUnitTemplatesforVisualStudio"><b>NUnit
-	  VS Templates</b></a>.
-    To install this extension, follow the link above and
-    click the "Download" button.  Then make sure you are not currently
-      running Visual Studio, and run the downloaded file.
-    </p>
-<p>
-      To create a test
+      If you are using your own machine, you will first need to make
+	sure you have installed the two Visual Studio extensions
+	listed at the top of this page.  To create a test
 	project within a solution, go to the Solution Explorer,
 	right-click on the solution (i.e., the top line), and select
 	"Add-&gt;New Project...".  In the panel on the left, under
@@ -169,16 +158,6 @@
 	class is initialized with a trivial test method, which you may
       either remove or edit.
     </p>
-<p>
-      In order to be able to use the NUnit 3 assertions, you will need
-      to add a NuGet package to this test project.  In the Solution
-      Explorer, right-click on the test project name, and select
-      "Manage NuGet Packages...".  Then click the "Browse" tab at the
-      top, and in the Search box, enter "NUnit3".  "NUnit3TestAdapter"
-      should appear in the resulting list.  Click this item, and click
-      the "Install" button to the right.
-    </p>
-    
 In order to allow your test project to access the project it is to
     test, you will need to add to your test project a reference to the
     project it will test.  First, however, you need to correct a
@@ -222,7 +201,7 @@ Assert.That(n, Is.EqualTo(10));
 </pre>
     Each constraint contains the properties <b>And</b> and <b>Or</b>,
     which can be used to combine constraints logically.  For example,
-    we can assert that 0 ≤ n ≤ 10 as follows:
+    we can assert that 0 Ã¢â€°Â¤ n Ã¢â€°Â¤ 10 as follows:
 <pre>
 Assert.That(n, Is.GreaterThanOrEqualTo(0).And.LessThanOrEqualTo(10));
 </pre>
@@ -248,30 +227,10 @@ Assert.That(n, Is.Not.InRange(0, 10).And.Not.InRange(100, 200));
       method.
     </p>
 <p></p>
-
 <p>
-
 </p>
 <p>
-
 </p>
-<small>
-<i> © Copyright 2017, 2018, 2019, <a href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i>
-</small>
 <p></p>
-<table border="0" cellpadding="2" summary="This table is used for layout
-purposes only.">
-<tr>
-<td align="center">
-<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
-</td>
-<tr>
-<td>
-<a href="http://jigsaw.w3.org/css-validator/check/referer">
-<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
-</a>
-</td>
-</tr></tr></table>
 </body>
 </html>

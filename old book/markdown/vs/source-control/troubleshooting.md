@@ -1,0 +1,36 @@
+# Troubleshooting Source Control
+
+One of the advantages of source control is that it provides a reliable
+repository of all the work you have checked in. Once you have
+successfully checked in a version of a solution, it will remain
+available on the Team Foundation Server. However, for a variety of
+reasons, it occasionally becomes difficult to check in what you need to.
+This section gives some tips on troubleshooting check-in difficulties.
+
+Often the easiest way to troubleshoot a check-in problem is to copy the
+folder containing your solution (e.g., the folder named "Homework 2") to
+a new folder (e.g., "Homework 2 Redo") within your workspace. Then open
+the new copy of the solution, add it to source control, and try checking
+it in. If this check-in is successful, the checked in code will appear
+in the new folder (e.g., "Homework 2 Redo") on the server, and any
+previously checked-in code will appear in the old folder (e.g.,
+"Homework 2"). Don't worry about trying either to delete the old folder
+or to give the new folder the proper name.
+
+Sometimes Visual Studio will fail to check in a solution because it is
+trying to check in one or more files that it can't find. Usually, these
+are files that you don't even want to check in, often because you have
+deleted them. To tell Visual Studio to ignore these files, look in the
+Pending Changes window of the Team Explorer (i.e., the window that
+appears when you try to check in a solution), and find the section,
+"Included Changes". For any file(s) that should not be checked in,
+right-click on the file, and select "Exclude" from the resulting popup
+menu. This will remove that file from the "Included Changes" list, and
+place it in the "Excluded Changes" list below, so that Visual Studio
+will not try to check it in.
+
+Similarly, if a file you want to check in does not get checked in with
+the rest of the solution, it might be because it is in the "Excluded
+Changes" list. To move it back to the "Included Changes" list,
+right-click on its entry in the "Excluded Changes" list, and select
+"Include" from the resulting popup menu.

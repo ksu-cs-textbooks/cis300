@@ -7,7 +7,6 @@
 <link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
 <body>
-
 <h1>Leftist Heaps</h1>
 
 One efficient way to complete the merge algorithm outlined in <a href="/~rhowell/DataStructures/redirect/heaps">the previous
@@ -127,38 +126,19 @@ This method consist of three cases.  The first two cases occur when
     one instance with another.  Once we have determined
     which root has a smaller priority, we can construct and return a
     new
-    <b>LeftistTree&lt;KeyValuePair&lt;TPriority, TValue&gt;&gt;</b>
+    <b>LeftistTree&lt;KeyValuePair&lt;TPriority,Ã‚Â TValue&gt;&gt;</b>
     whose data is the data element with smaller priority, and whose
     children are the left child of this data element and the result of
     recursively merging the right child of this element with the
     parameter whose root has larger priority.
 <p>
 The remaining methods and properties of
-      <b>MinPriorityQueue&lt;TPriority, TValue&gt;</b> are now
+      <b>MinPriorityQueue&lt;TPriority,Ã‚Â TValue&gt;</b> are now
       fairly straightforward.
 </p>
 <p></p>
-
 <p>
-
 </p>
-<small>
-<i> © Copyright 2014, 2018, <a href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i>
-</small>
 <p></p>
-<table border="0" cellpadding="2" summary="This table is used for layout
-purposes only.">
-<tr>
-<td align="center">
-<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
-</td>
-<tr>
-<td>
-<a href="http://jigsaw.w3.org/css-validator/check/referer">
-<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
-</a>
-</td>
-</tr></tr></table>
 </p></body>
 </html>

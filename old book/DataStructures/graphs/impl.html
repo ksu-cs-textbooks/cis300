@@ -7,27 +7,26 @@
 <link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
 <body>
-
 <h1>Implementing a Graph</h1>
 
 Traditionally, there are two main techniques for implementing a
     graph.  Each of these techniques has advantages and disadvantages,
     depending on the characteristics of the graph.  In this section,
     we describe the implementation of the
-    <b>DirectedGraph&lt;TNode, TEdgeData&gt;</b> class from <a href="Ksu.Cis300.Graphs.dll"><b>Ksu.Cis300.Graphs.dll</b></a>.
+    <b>DirectedGraph&lt;TNode,Ã‚Â TEdgeData&gt;</b> class from <a href="Ksu.Cis300.Graphs.dll"><b>Ksu.Cis300.Graphs.dll</b></a>.
     This implementation borrows from both traditional techniques to
     obtain an implementation that provides good performance for any
     graph.  In what follows, we will first describe the two
     traditional techniques and discuss the strengths and weaknesses of
     each.  We will then outline the implementation of
-    <b>DirectedGraph&lt;TNode, TEdgeData&gt;</b>.
+    <b>DirectedGraph&lt;TNode,Ã‚Â TEdgeData&gt;</b>.
 <p>
 The first traditional technique is to use what we call an <i>adjacency
-	matrix</i>.  This matrix is a <b>bool[n, n]</b>, where
+	matrix</i>.  This matrix is a <b>bool[n,Ã‚Â n]</b>, where
 	<i>n</i> is the number of nodes in the graph.  In this
 	implementation, each node is represented by an <b>int</b>
 	value <i>i</i>, where
-	0 ≤ <i>i</i> &lt; <i>n</i>.  The value
+	0Ã‚Â Ã¢â€°Â¤Ã‚Â <i>i</i>Ã‚Â &lt;Ã‚Â <i>n</i>.  The value
 	at row <i>i</i> and column <i>j</i> will be <b>true</b> if
 	there is an edge from node <i>i</i> to node <i>j</i>.
 </p>
@@ -37,10 +36,10 @@ The main advantage to this technique is that we can very quickly
     First, we are forced to use a specific range of <b>int</b> values
     as the nodes.  If we wish to have a generic node type, we need an
     additional data structure (such as a
-    <b>Dictionary&lt;TNode, int&gt;</b>) to map each node to its
+    <b>Dictionary&lt;TNode,Ã‚Â int&gt;</b>) to map each node to its
     <b>int</b> representation.  It also fails to provide a way to
     associate a value with an edge; hence, we would need an additional
-    data structure (such as a <b>TEdgeData[int, int]</b>) to store
+    data structure (such as a <b>TEdgeData[int,Ã‚Â int]</b>) to store
     this information.  
 <p>
 Perhaps the most serious shortcoming for the adjacency matrix,
@@ -80,10 +79,10 @@ One advantage to this technique is that the amount of space it uses is
       this search can be expensive.
 </p>
 As we mentioned above, our implementation of
-    <b>DirectedGraph&lt;TNode, TEdgeData&gt;</b> borrows from both of
+    <b>DirectedGraph&lt;TNode,Ã‚Â TEdgeData&gt;</b> borrows from both of
     these traditional techniques.  We start by modifying the adjacency
     lists technique to use a
-    <b>Dictionary&lt;TNode, LinkedListCell&lt;TNode&gt;&gt;</b>
+    <b>Dictionary&lt;TNode,Ã‚Â LinkedListCell&lt;TNode&gt;&gt;</b>
     instead of an array of linked lists.  Thus, we can accommodate a
     generic node type while maintaining efficient access to the
     adjacency lists.  While a dictionary lookup is not quite as
@@ -95,9 +94,9 @@ As we mentioned above, our implementation of
     the destination node of each outgoing edge from the given node.
 <p>
 In addition to this dictionary, we use a
-      <b>Dictionary&lt;(TNode, TNode), TEdgeData&gt;</b>
+      <b>Dictionary&lt;(TNode,Ã‚Â TNode),Ã‚Â TEdgeData&gt;</b>
       to facilitate efficient edge lookups.  The notation
-      <b>(T1, T2)</b> defines a <i>value tuple</i>, which
+      <b>(T1,Ã‚Â T2)</b> defines a <i>value tuple</i>, which
       is an ordered pair of elements, the first of type
       <b>T1</b>, and the second of type <b>T2</b>.  Elements of this
       type are described with similar notation, <tt>(x, y)</tt>, where
@@ -152,7 +151,7 @@ below.</li>
 <li> <b>IEnumerable&lt;TNode&gt; Nodes</b>:  We can implement this
 	property using the <a href="http://msdn.microsoft.com/en-us/library/yt2fy5zk.aspx"><b>Keys</b></a>
 	property of <tt>_adjacencyLists</tt>.</li>
-<li> <b>IEnumerable&lt;Edge&lt;TNode, TEdgeData&gt;&gt;
+<li> <b>IEnumerable&lt;Edge&lt;TNode,Ã‚Â TEdgeData&gt;&gt;
 	  OutgoingEdges(TNode source)</b>:  See below.</li>
 </ul>
 <p>
@@ -176,7 +175,7 @@ In order to avoid changing the graph if the parameters are bad, we
     Because a dictionary's <b>Add</b> method will throw an
     <b>ArgumentException</b> if the given key is already in the
     dictionary, it takes care of this error checking for us.  The key
-    that we need to add will be a <b>(TNode, TNode)</b>
+    that we need to add will be a <b>(TNode,Ã‚Â TNode)</b>
     containing the two nodes, and the value will be the <tt>value</tt>.  
     <p></p>
     
@@ -197,38 +196,19 @@ In order to avoid changing the graph if the parameters are bad, we
 <p>
 Finally, we need to implement the <b>OutgoingEdges</b> method.
     Because this method returns an 
-    <b>IEnumerable&lt;Edge&lt;TNode, TEdgeData&gt;&gt;</b>, it
+    <b>IEnumerable&lt;Edge&lt;TNode,Ã‚Â TEdgeData&gt;&gt;</b>, it
     needs to iterate through the cells of the linked list associated
     with the given node in <tt>_adjacencyLists</tt>.  For each of
     these cells, it will need to <b>yield return</b> (see "<a href="http://people.cs.ksu.edu/~rhowell/DataStructures/redirect/enumerators">Enumerators</a>")
     an
-    <b>Edge&lt;TNode, TEdgeData&gt;</b> describing the edge
+    <b>Edge&lt;TNode,Ã‚Â TEdgeData&gt;</b> describing the edge
     represented by that cell.  The source node for this edge will be
     the node given to this method.  The destination node will be the
     node stored in the cell.  The edge data can be obtained from the
     dictionary <tt>_edges</tt>.
 <p></p>
-
 <p>
-
 </p>
-<small>
-<i> © Copyright 2014, 2016, 2018, 2019, <a href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i>
-</small>
 <p></p>
-<table border="0" cellpadding="2" summary="This table is used for layout
-purposes only.">
-<tr>
-<td align="center">
-<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
-</td>
-<tr>
-<td>
-<a href="http://jigsaw.w3.org/css-validator/check/referer">
-<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
-</a>
-</td>
-</tr></tr></table>
 </p></body>
 </html>

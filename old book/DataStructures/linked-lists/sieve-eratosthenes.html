@@ -7,7 +7,6 @@
 <link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
 <body>
-
 <h1>Finding Prime Numbers</h1>
 
 An integer greater than 1 is said to be <i>prime</i> if it is not
@@ -31,7 +30,7 @@ The most basic version of this algorithm operates as follows:
 	elements that are divisible by <i>k</i>. </li>
 <li> The remaining values are the prime numbers less than <i>n</i>.
 </li></ol>
-For example, suppose <i>n</i> = 20.  We then place the
+For example, suppose <i>n</i>Ã‚Â =Ã‚Â 20.  We then place the
     integers from 2 to 19 in a list:
 <pre>
 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19
@@ -58,15 +57,15 @@ To see why this algorithm gives us exactly the prime numbers less than
       because any nontrivial factor of <i>a</i> would be less than
       <i>a</i> and would also divide
       <i>m</i>.  <i>a</i> therefore will not be removed from the
-      list.  When <i>k</i> = <i>a</i> in Step 2, <i>m</i>
+      list.  When <i>k</i>Ã‚Â =Ã‚Â <i>a</i> in Step 2, <i>m</i>
       will be removed.
 </p>
 <p>
 There is actually a good reason why the first two iterations in the
       above example removed all of the non-primes - once the algorithm
       reaches a divisor <i>k</i> such that
-      <i>k</i><sup>2</sup> ≥ <i>n</i> (in this example,
-      5<sup>2</sup> = 25 ≥ 20), all of the
+      <i>k</i><sup>2</sup>Ã‚Â Ã¢â€°Â¥Ã‚Â <i>n</i> (in this example,
+      5<sup>2</sup>Ã‚Â =Ã‚Â 25Ã‚Â Ã¢â€°Â¥Ã‚Â 20), all of the
       non-primes will have been removed.  To see why
       this is true, let <i>m</i> and <i>a</i> be as above.  We can
       then write 
@@ -74,8 +73,8 @@ There is actually a good reason why the first two iterations in the
 <pre>
 m = ab
 </pre>
-where <i>a</i> ≤ <i>b</i> and <i>m</i> is removed
-      from the list when <i>k</i> = <i>a</i>.  We can then
+where <i>a</i>Ã‚Â Ã¢â€°Â¤Ã‚Â <i>b</i> and <i>m</i> is removed
+      from the list when <i>k</i>Ã‚Â =Ã‚Â <i>a</i>.  We can then
       multiply both sides of the above equation by 
       <i>a</i>/<i>b</i>, yielding:
 <p>
@@ -83,18 +82,18 @@ where <i>a</i> ≤ <i>b</i> and <i>m</i> is removed
 am/b = a<sup>2</sup>.
 </tt>
 </p>
-Finally, because <i>a</i> ≤ <i>b</i>,
-    <i>a</i>/<i>b</i> ≤ 1.  Therefore,
+Finally, because <i>a</i>Ã‚Â Ã¢â€°Â¤Ã‚Â <i>b</i>,
+    <i>a</i>/<i>b</i>Ã‚Â Ã¢â€°Â¤Ã‚Â 1.  Therefore,
 <p>
 <tt>
-m ≥ a<sup>2</sup>.
+m Ã¢â€°Â¥ a<sup>2</sup>.
 </tt>
 </p>
 We conclude that if <i>m</i> is a non-prime greater than 1, it is
     removed when the algorithm reaches some value <i>k</i> with
-    <i>k</i><sup>2</sup> &lt; <i>n</i>.  We can therefore
+    <i>k</i><sup>2</sup>Ã‚Â &lt;Ã‚Â <i>n</i>.  We can therefore
     optimize the algorithm by stopping when
-    <i>k</i><sup>2</sup> ≥ <i>n</i>. 
+    <i>k</i><sup>2</sup>Ã‚Â Ã¢â€°Â¥Ã‚Â <i>n</i>. 
 <p>
 We can implement this algorithm using a linked list.  A linked list is
       an appropriate data structure for this algorithm because once
@@ -105,7 +104,7 @@ We can implement this algorithm using a linked list.  A linked list is
 To implement Step 1, it is easier to build the list from back to
       front, as we don't need to maintain a separate reference to the
       end of the list.  This step then consists of a loop that
-      iterates from <i>n</i> ‑ 1 down to 2, with each
+      iterates from <i>n</i>Ã‚Â Ã¢â‚¬â€˜Ã‚Â 1 down to 2, with each
       iteration adding to the front of the list a cell containing the
       loop index.
 <p>
@@ -139,7 +138,7 @@ Now that we know how to remove a cell from a linked list, let's
     <i>k</i>.  In terms of the linked list, we need to start this
     process with the cell containing <i>k</i>.  For example, consider
     the second iteration from the example above - i.e., when
-    <i>k</i> = 3:
+    <i>k</i>Ã‚Â =Ã‚Â 3:
 <p>
 <img alt="The beginning of an iteration with k = 3" src="sieve-example1.jpg"/>
 </p>
@@ -148,7 +147,7 @@ We need to iterate <tt>p</tt> through the linked list, checking the
     divisible by <i>k</i>.  We can check for divisibility by <i>k</i>
     using the <a href="/~rhowell/DataStructures/syntax/remainder">remainder
     operator</a> - i.e., <i>k</i> divides <i>m</i> if
-    <i>m</i> % <i>k</i> is 0.  Thus, the first iteration
+    <i>m</i>Ã‚Â %Ã‚Â <i>k</i> is 0.  Thus, the first iteration
     would see if 3 divides 5.  It doesn't, so we advance <tt>p</tt> to
     the next cell (containing 5). We then see if 3 divides 7.  Again
     it doesn't, so 
@@ -170,32 +169,13 @@ The loop described above represents a single iteration of the loop
       variable through the list, performing the above on each
       iteration.  We stop when we either have run off the end of the
       list or have reached a value of <i>k</i> such that
-      <i>k</i><sup>2</sup> ≥ <i>n</i>.  Note that at the
+      <i>k</i><sup>2</sup>Ã‚Â Ã¢â€°Â¥Ã‚Â <i>n</i>.  Note that at the
       end of
       each iteration, we want to advance to the next cell.  
 </p>
 <p></p>
-
 <p>
-
 </p>
-<small>
-<i> © Copyright 2014, 2018, <a href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i>
-</small>
 <p></p>
-<table border="0" cellpadding="2" summary="This table is used for layout
-purposes only.">
-<tr>
-<td align="center">
-<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
-</td>
-<tr>
-<td>
-<a href="http://jigsaw.w3.org/css-validator/check/referer">
-<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
-</a>
-</td>
-</tr></tr></table>
 </p></body>
 </html>

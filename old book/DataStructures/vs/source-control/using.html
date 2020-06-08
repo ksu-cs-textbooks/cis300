@@ -7,15 +7,13 @@
 <link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
 <body>
-
 <h1>Using Source Control</h1>
 
 To create a new solution under source control, proceed as you normally
       would, but in the "New Project" dialog, select as the location a
       new folder (named something like "Lab 2" or "Homework 3", as
       appropriate) within the folder you selected when you configured
-      your workspace (see "<a href="/~rhowell/DataStructures/redirect/source-control-setup">Setting
-      up Source Control</a>"), and check the "Add to source control" box.
+      your workspace above, and check the "Add to source control" box.
       
 <p></p> 
 
@@ -39,8 +37,7 @@ When you have code that you want to upload, either to submit it for
       can provide a comment.  This comment should be descriptive of
       this version of the program so that you can find it later if you
       are looking for it.  Then click the "Check In" button, and click
-      "Yes" on the resulting Check-in Confirmation dialog.  If all
-    goes well, this will
+      "Yes" on the resulting Check-in Confirmation dialog.  This will
       upload this version of your solution to your Visual Studio
       account.  As you are editing your code, you can periodically
       check in versions in this way so that you can access them later
@@ -51,18 +48,7 @@ When you have code that you want to upload, either to submit it for
       "Checked-out" icon will appear next to each part that has been
       changed since its last check-in.  Thus, you can readily tell if
       your entire solution has been uploaded - there will be a blue
-    "Checked-in" icon next to each source code file (as well as
-    various other components), as shown in the
-    following figure.
-    <p>
-<img alt="A picture of the SolutionExplorer window should appear here." src="checked-in.jpg"/>
-</p>
-Each time you submit an assignment for grading, it is important
-    to verify that the "Checked-in" icon appears next to each source
-    code file, as
-    sometimes a check-in doesn't check in the entire solution, even if
-    you've done it correctly - see <a href="/~rhowell/DataStructures/redirect/troubleshooting-source-control">the
-      next section</a> for details.
+    "Checked-in" icon next to each source code file.
 <p></p>
 If you want to access your checked-in code from a different machine,
       first open Visual Studio, then open the Team Explorer window
@@ -73,7 +59,7 @@ If you want to access your checked-in code from a different machine,
 <img alt="A picture of the Team Explorer window should appear here." src="manage-connections.jpg"/>
 </p>
 Then click on the "Manage Connections" link, and select "Connect to
-    Team Project" from the resulting popup menu.  In the resulting
+    Team Project" from the resultion popup menu.  In the resulting
     dialog, click the "Servers..." 
       button in the upper right-hand corner.  In the subsequent
       dialog, click the "Add..." button in the upper right-hand
@@ -87,8 +73,7 @@ Then click on the "Manage Connections" link, and select "Connect to
       dialog will list your source control projects - check the box
       next to the one you want (there will probably only be one), and
       click the "Connect" button.  You will then need to configure
-      your workspace as outlined in step 8 in "<a href="/~rhowell/DataStructures/redirect/source-control-setup">Setting
-    up Source Control</a>".  This will download
+      your workspace as outlined in step 7 above.  This will download
       the contents of the project to your workspace.  Furthermore,
       if you subsequently check in a solution on one machine, you can
       propagate the changes to the other as follows:
@@ -109,7 +94,7 @@ Now suppose that at some point in writing a program, you decide you
       are several ways to do this.  First, you can
       right-click on the 
       file you want in the Solution Explorer and select
-      "Source Control‑&gt;View History".  This will open a
+      "SourceÃ‚Â ControlÃ¢â‚¬â€˜&gt;ViewÃ‚Â History".  This will open a
       window listing the different versions of this file, together
       with the date and time each was checked in and the comment that
       was supplied for the check-in.  One way of viewing a specific
@@ -134,7 +119,7 @@ Sometimes you may want to revert back to an earlier version of a
 Alternatively, you may want to revert an entire solution to an earlier
     version.  To do this, right-click on the solution in the Solution
     Explorer, and select
-    "Source Control‑&gt;Get Specific Version...".    If
+    "SourceÃ‚Â ControlÃ¢â‚¬â€˜&gt;GetÃ‚Â SpecificÃ‚Â Version...".    If
     you want to revert back to the latest version that was checked in
     by a specific date and time, in the resulting dialog, set the type
     to "Date", fill in the date and time you want, and click the "Get"
@@ -146,7 +131,7 @@ Alternatively, you may want to revert an entire solution to an earlier
     to revert to by double-clicking, then clicking the "Get" button.
 <p>
 If you check in a solution after you have reverted to an earlier
-      version, conflicts may be detected.  To resolve these conflicts,
+      version, conflicts may be detected.  To resove these conflicts,
       you will usually want to click the "Keep Local Version" button.
       This will cause the current version you are working on to be
       checked in as the current version on the server.  (Nothing on
@@ -165,27 +150,8 @@ There are a lot of other things you can do with source control, but
       in CIS 300.
 </p>
 <p></p>
-
 <p>
-
 </p>
-<small>
-<i> © Copyright 2014, 2015, 2016, <a href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i>
-</small>
 <p></p>
-<table border="0" cellpadding="2" summary="This table is used for layout
-purposes only.">
-<tr>
-<td align="center">
-<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
-</td>
-<tr>
-<td>
-<a href="http://jigsaw.w3.org/css-validator/check/referer">
-<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
-</a>
-</td>
-</tr></tr></table>
 </body>
 </html>

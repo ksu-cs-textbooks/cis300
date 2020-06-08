@@ -7,13 +7,12 @@
 <link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
 <body>
-
 <h1>Indexers</h1>
 
 Recall that the
-    <b>System.Collections.Generic.Dictionary&lt;TKey, TValue&gt;</b>
+    <b>System.Collections.Generic.Dictionary&lt;TKey,Ã‚Â TValue&gt;</b>
     class (see "<a href="/~rhowell/DataStructures/redirect/dictionary-class">The
-    <b>Dictionary&lt;TKey, TValue&gt;</b> Class</a>") allows keys
+    <b>Dictionary&lt;TKey,Ã‚Â TValue&gt;</b> Class</a>") allows keys
     to be used as indices for the purpose of adding new keys and
     values, replacing the value associated with a key with a different
     value, and retrieving the value associated with a key in the
@@ -45,7 +44,7 @@ Note the resemblance of the above code to the definition of a
 </ul>
 Thus, an indexer is like a property with parameters.  The parameters
     are the indices themselves; i.e., if <tt>d</tt> is a
-    <b>Dictionary&lt;TKey, TValue&gt;</b> and <tt>key</tt> is a
+    <b>Dictionary&lt;TKey,Ã‚Â TValue&gt;</b> and <tt>key</tt> is a
     <b>TKey</b>, <tt>d[key]</tt> invokes the indexer with parameter
     <tt>key</tt>.  In general, either the getter or the setter may be
     omitted, but at least one of them must be included.  As in a
@@ -57,7 +56,7 @@ Thus, an indexer is like a property with parameters.  The parameters
 <p>
 We want to implement the indexer to behave in the same way as the
       indexer for
-      <b>System.Collections.Generic.Dictionary&lt;TKey, TValue&gt;</b>.
+      <b>System.Collections.Generic.Dictionary&lt;TKey,Ã‚Â TValue&gt;</b>.
       Thus, the getter is similar to the <b>TryGetValue</b> method, as
       outlined in "<a href="/~rhowell/DataStructures/redirect/simple-hash-table-impl">A
       Simple Hash Table Implementation</a>",
@@ -80,27 +79,8 @@ Likewise, the setter is similar to the <b>Add</b> method, as outlined
     key with the new value.
 
 <p></p>
-
 <p>
-
 </p>
-<small>
-<i> © Copyright 2014, <a href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i>
-</small>
 <p></p>
-<table border="0" cellpadding="2" summary="This table is used for layout
-purposes only.">
-<tr>
-<td align="center">
-<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
-</td>
-<tr>
-<td>
-<a href="http://jigsaw.w3.org/css-validator/check/referer">
-<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
-</a>
-</td>
-</tr></tr></table>
 </body>
 </html>

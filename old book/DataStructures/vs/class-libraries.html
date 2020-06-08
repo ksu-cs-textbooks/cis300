@@ -7,7 +7,6 @@
 <link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
 <body>
-
 <h1>Class Libraries</h1>
 
 Besides Windows Forms Applications, the other type of Visual Studio
@@ -29,7 +28,7 @@ Besides Windows Forms Applications, the other type of Visual Studio
     Suppose, for example, that we have a solution containing the
     program from the section, "<a href="/~rhowell/DataStructures/redirect/stringbuilders"><b>StringBuilder</b>s</a>"
     (this solution may be obtained by creating Git repository using <a href="https://classroom.github.com/a/lQSbxCEo">this URL</a>).  We
-    wish to replace the implementation of <b>StringBuilder</b> from the
+    wish to replace the implmentation of <b>StringBuilder</b> from the
     .NET Framework with the class defined in "<a href="/~rhowell/DataStructures/redirect/stringbuilder-impl">Implementation
     of <b>StringBuilder</b>s</a>".  Furthermore, we wish to place this
     class in a new class library.  To create a new Class Library
@@ -54,14 +53,14 @@ Besides Windows Forms Applications, the other type of Visual Studio
     Although we don't need them for this example, additional class
     files can be added to the project by going to the Solution
     Explorer, right-clicking on the project name (not the solution
-    name), and selecting "Add‑&gt;Class...".
+    name), and selecting "AddÃ¢â‚¬â€˜&gt;Class...".
     
 <p></p>
 Just having this project in the same solution isn't enough to allow it
     to access the class library.  In order to enable this access, we
     need to go back to the Solution Explorer, right-click on the
     project we just added, and select,
-    "Add ‑&gt; Reference...".  In the resulting
+    "AddÃ‚Â Ã¢â‚¬â€˜&gt;Ã‚Â Reference...".  In the resulting
     dialog, we open the "Project" group on the left and select
     "Solution" from that group, then click the
     box next to "Ksu.Cis300.StringBuilderLibrary" in the main panel,
@@ -79,27 +78,8 @@ using Ksu.Cis300.StringBuilderLibrary;
 Then wherever the class <b>StringBuilder</b> occurs in this file, the
     implementation in our class library will be used.  
 <p></p>
-
 <p>
-
 </p>
-<small>
-<i> © Copyright 2014, 2015, 2017, 2018, <a href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i>
-</small>
 <p></p>
-<table border="0" cellpadding="2" summary="This table is used for layout
-purposes only.">
-<tr>
-<td align="center">
-<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
-</td>
-<tr>
-<td>
-<a href="http://jigsaw.w3.org/css-validator/check/referer">
-<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
-</a>
-</td>
-</tr></tr></table>
 </body>
 </html>

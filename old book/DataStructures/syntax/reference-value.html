@@ -7,7 +7,6 @@
 <link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
 <body>
-
 <h1>Reference Types and Value Types</h1>
 
 Data types in C# come in two distinct flavors: <i>value types</i> and
@@ -120,10 +119,10 @@ int[] values = DoSomething(1, 2);
 The constructor in the first line of the method above sets
       the <b>X</b> property of <tt>a</tt> to 1 and the <b>Y</b>
       property of <tt>a</tt> to 2.  The next statement simply copies
-      the value of <tt>a</tt> - i.e., the point (1, 2) - to
+      the value of <tt>a</tt> - i.e., the point (1,Ã‚Â 2) - to
       <tt>b</tt>.  Thus, when the <b>X</b> property of <tt>a</tt> is
       then changed to 3, <tt>b</tt> is unchanged - it still contains
-      the point (1, 2).
+      the point (1,Ã‚Â 2).
 <p>
 On the other hand, consider what happens when something similar is
       done with array variables.  When <tt>c</tt> is constructed, it
@@ -193,34 +192,15 @@ Note that boxing may also occur when passing parameters.  For example,
 <pre>
 private object F(object x)
 {
-    . . .
+    .Ã‚Â .Ã‚Â .
 }
 </pre>
 If we call <b>F</b> with a parameter of 3, then 3 will need to be
     copied to a boxed <b>int</b>, and a reference to this boxed
     <b>int</b> will be assigned to <tt>x</tt> within <b>F</b>.
 <p></p>
-
 <p>
-
 </p>
-<small>
-<i> © Copyright 2013, 2014, <a href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i>
-</small>
 <p></p>
-<table border="0" cellpadding="2" summary="This table is used for layout
-purposes only.">
-<tr>
-<td align="center">
-<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
-</td>
-<tr>
-<td>
-<a href="http://jigsaw.w3.org/css-validator/check/referer">
-<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
-</a>
-</td>
-</tr></tr></table>
 </p></body>
 </html>

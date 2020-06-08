@@ -7,7 +7,6 @@
 <link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
 <body>
-
 <h1>Rehashing</h1>
 
 In this section, we will show how to improve the performance of a hash
@@ -37,26 +36,26 @@ We'll first consider the case in which <i>k</i> is not in the hash
     Because each 
     of the <i>n</i> keys is equally likely to map to each of the
     <i>m</i> array locations, we would expect, on average,
-    <i>n</i> / <i>m</i> keys to be mapped to the location
+    <i>n</i>Ã‚Â /Ã‚Â <i>m</i> keys to be mapped to the location
     where <i>k</i> belongs.  Hence, in this case, we would expect to
-    examine <i>n</i> / <i>m</i> keys, on average.
+    examine <i>n</i>Ã‚Â /Ã‚Â <i>m</i> keys, on average.
 <p>
 Now let's consider the case in which <i>k</i> is in the hash table.
       In this case, we will examine the key <i>k</i>, plus all the
       keys that precede <i>k</i> in its linked list.  The number of
       keys preceding <i>k</i> cannot be more than the total number of
       keys other than <i>k</i> in that linked list.  Again, because
-      each of the <i>n</i> - 1 keys other than <i>k</i> is
+      each of the <i>n</i>Ã‚Â -Ã‚Â 1 keys other than <i>k</i> is
       equally likely to map to each of the <i>m</i> array locations,
       we would expect, on average,
-      (<i>n</i> - 1) / <i>m</i> keys other than
+      (<i>n</i>Ã‚Â -Ã‚Â 1)Ã‚Â /Ã‚Â <i>m</i> keys other than
       <i>k</i> to be in the same linked list as <i>k</i>.  Thus, we
-      can expect, on average, to examine no more than 1 + 
-      (<i>n</i> - 1) / <i>m</i> keys when looking
+      can expect, on average, to examine no more than 1Ã‚Â +Ã‚Â 
+      (<i>n</i>Ã‚Â -Ã‚Â 1)Ã‚Â /Ã‚Â <i>m</i> keys when looking
       for a key that is present.
 </p>
 Notice that both of the values derived above decrease as <i>m</i>
-    increases.  Specifically, if <i>m</i> ≥ <i>n</i>, the
+    increases.  Specifically, if <i>m</i>Ã‚Â Ã¢â€°Â¥Ã‚Â <i>n</i>, the
     expected number of examined keys on a failed lookup is no more
     than 1, and the expected number of examined keys on a successful
     lookup is less than 2.  We can therefore expect to achieve very
@@ -86,7 +85,7 @@ In order to tackle the first challenge, recall that we presented an
     with an array size of 5 (there may be applications using many
     small hash tables - the .NET implementation starts with an array
     size of 3).  5 is larger than
-    2<sup>2</sup> = 4.  If we double this value 28 times,
+    2<sup>2</sup>Ã‚Â =Ã‚Â 4.  If we double this value 28 times,
     we reach a value larger than 2<sup>30</sup>, which is larger than
     1 billion.  More importantly, this value is large enough that we
     can't double it again, as an array in C# must contain fewer than
@@ -160,27 +159,8 @@ We then need to move all keys and values from the old table to the new
 	array location in the new table.</li>
 </ul>
 <p></p>
-
 <p>
-
 </p>
-<small>
-<i> © Copyright 2014, 2015, 2018, <a href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i>
-</small>
 <p></p>
-<table border="0" cellpadding="2" summary="This table is used for layout
-purposes only.">
-<tr>
-<td align="center">
-<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
-</td>
-<tr>
-<td>
-<a href="http://jigsaw.w3.org/css-validator/check/referer">
-<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
-</a>
-</td>
-</tr></tr></table>
 </body>
 </html>

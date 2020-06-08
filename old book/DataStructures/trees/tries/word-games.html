@@ -7,18 +7,17 @@
 <link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
 <body>
-
 <h1>Tries in Word Games</h1>
 
 One application of tries is for implementing word games such as
-    BoggleÂ® or ScrabbleÂ®.  This section discusses how a trie can be
+    BoggleÃ‚Â® or ScrabbleÃ‚Â®.  This section discusses how a trie can be
     used to reduce dramatically the amount of time spent searching for
     words in such games.  We will focus specifically on Boggle, but
     the same principles apply to other word games as well.
 <p>
 A Boggle game consists of either 16 or 25 dice with letters on their
-      faces, along with a tray containing a 4 x 4 or
-      5 x 5 grid for holding these dice.  The face of each
+      faces, along with a tray containing a 4Ã‚Â xÃ‚Â 4 or
+      5Ã‚Â xÃ‚Â 5 grid for holding these dice.  The face of each
       die contains a single letter, except that one face of one die
       contains "Qu".  The tray has a large cover such that the dice can
       be placed in the cover and the tray placed upside-down on top of
@@ -73,7 +72,7 @@ In order to be able to implement such a traversal, we need to be able
       to find the children of a node.  These children are the adjacent
       cells that are not used in the path to the node.  An efficient
       way to keep track of the cells used in this path is with a
-      <b>bool[ , ]</b> of the same size as the Boggle board
+      <b>bool[Ã‚Â ,Ã‚Â ]</b> of the same size as the Boggle board
       - a value of <b>true</b> in this array will indicate that the
       corresponding cell on the board has been used in the current
       path.  The children of a node are then the adjacent cells
@@ -85,7 +84,7 @@ A preorder traversal of this tree will therefore need the following
 <ul>
 <li> The row index of the current cell. </li>
 <li> The column index of the current cell. </li>
-<li> The <b>bool[ , ]</b> described above.  The current cell
+<li> The <b>bool[Ã‚Â ,Ã‚Â ]</b> described above.  The current cell
 	will have a <b>false</b> entry in this array. </li>
 <li> A <b>StringBuilder</b> giving the letters on the path up to, but
 	  not including, the current cell. </li>
@@ -99,20 +98,20 @@ The preorder traversal will first need to update the cells used by
       contents of the <b>StringBuilder</b> - if this forms a word, it
       should output this word.  Then it should process the children:
       for each adjacent cell whose 
-      entry in the <b>bool[ , ]</b> is <b>false</b>, it
+      entry in the <b>bool[Ã‚Â ,Ã‚Â ]</b> is <b>false</b>, it
       should make a recursive call on that cell.  After all the
       children have been processed, it will need to return the
-      <b>bool[ , ]</b> and the <b>StringBuilder</b> to their
+      <b>bool[Ã‚Â ,Ã‚Â ]</b> and the <b>StringBuilder</b> to their
       earlier states by setting the array entry back to <b>false</b>
       and removing the character(s) appended earlier.
 </p>
 Once such a method is written, we can call it once for each cell on
     the board.  For each of these calls, all entries in the
-    <b>bool[ , ]</b> should be false, and the
+    <b>bool[Ã‚Â ,Ã‚Â ]</b> should be false, and the
     <b>StringBuilder</b> should be empty.
 <p>
 While the algorithm described above will find all the words on a
-      Boggle board, a 5 x 5 board will require quite a while
+      Boggle board, a 5Ã‚Â xÃ‚Â 5 board will require quite a while
       for the algorithm to process.  While this might be acceptable if
       we are implementing a game that humans can compete with, from an
       algorithmic standpoint, we would like to improve the
@@ -174,7 +173,7 @@ This revised preorder traversal needs an extra parameter - a trie
 	words beginning with the contents of the current cell.
 <li> If this subtrie is not <b>null</b>:
 <ul>
-<li> Set the location in the <b>bool[ , ]</b> corresponding
+<li> Set the location in the <b>bool[Ã‚Â ,Ã‚Â ]</b> corresponding
 	    to the current cell to <b>true</b>. </li>
 <li> Append the contents of the current cell to the
 	    <b>StringBuilder</b>. </li>
@@ -182,10 +181,10 @@ This revised preorder traversal needs an extra parameter - a trie
 	    output the contents 
 	    of the <b>StringBuilder</b> as a word found. </li>
 <li> Recursively traverse each adjacent cell whose corresponding entry
-	    in the <b>bool[ , ]</b> is <b>false</b>.  The
+	    in the <b>bool[Ã‚Â ,Ã‚Â ]</b> is <b>false</b>.  The
 	    recursive calls should use the subtrie obtained
 	    above. </li>
-<li> Set the location in the <b>bool[ , ]</b> corresponding
+<li> Set the location in the <b>bool[Ã‚Â ,Ã‚Â ]</b> corresponding
 	    to the current cell to <b>false</b>. </li>
 <li> Remove the contents of the current cell from the end of the
 	    <b>StringBuilder</b> (i.e., decrease its <b>Length</b> by
@@ -194,7 +193,7 @@ This revised preorder traversal needs an extra parameter - a trie
 </li>
 </li></ul>
 We would then apply the above algorithm to each cell on the board.
-    For each cell, we would use a <b>bool[ , ]</b> whose
+    For each cell, we would use a <b>bool[Ã‚Â ,Ã‚Â ]</b> whose
     entries are all <b>false</b>, an empty <b>StringBuilder</b>, and
     the entire trie.  Note that we have designed the preorder
     traversal so that it leaves each of these parameters unchanged;
@@ -202,31 +201,10 @@ We would then apply the above algorithm to each cell on the board.
     will find all of the words on the board quickly.
 
 <p></p>
-
 <p></p>
-
 <p></p>
-
 <p>
-
 </p>
-<small>
-<i> © Copyright 2014, <a href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i>
-</small>
 <p></p>
-<table border="0" cellpadding="2" summary="This table is used for layout
-purposes only.">
-<tr>
-<td align="center">
-<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
-</td>
-<tr>
-<td>
-<a href="http://jigsaw.w3.org/css-validator/check/referer">
-<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
-</a>
-</td>
-</tr></tr></table>
 </p></body>
 </html>

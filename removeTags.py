@@ -37,8 +37,14 @@ for (dirpath, dirnames, filenames) in walk(path):
             "Visual Studio is either a registered trademark"
             if any("Last modified" in part or "registered trademark" in part for part in s.contents):
                 s.decompose()
-            elif "Copyright" in s.i:
+            elif "Copyright" in s.i.text:
                 s.decompose()
+        for s in soup.select('table'):
+            if s.find("a", {'href': 'http://validator.w3.org/check/referer'}) \
+                    or s.find("a", {'href': 'http://jigsaw.w3.org/css-validator/check/referer'}):
+                print('Deleted table')
+                s.decompose()
+
         with open(dirpath + '\\' + file, 'w', encoding="utf-8") as f:
             f.write(str(soup))
     count += 1

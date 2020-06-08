@@ -7,7 +7,6 @@
 <link href="/~rhowell/style.css" rel="STYLESHEET"/>
 </head>
 <body>
-
 <h1>Enumerating a Hash Table</h1>
 
 The .NET implementation of a dictionary includes two <b>public</b>
@@ -19,8 +18,8 @@ The .NET implementation of a dictionary includes two <b>public</b>
     and <a href="http://msdn.microsoft.com/en-us/library/9eekhta0(v=vs.110).aspx"><b>IEnumerable&lt;TValue&gt;</b></a>,
     respectively, where <b>TKey</b> is the type of the keys and
     <b>TValue</b> is the type of the values.  Furthermore, the
-    <b>Dictionary&lt;TKey, TValue&gt;</b> class itself implements
-    <b>IEnumerable&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;</b>.  The
+    <b>Dictionary&lt;TKey,Ã‚Â TValue&gt;</b> class itself implements
+    <b>IEnumerable&lt;KeyValuePair&lt;TKey,Ã‚Â TValue&gt;&gt;</b>.  The
     <b>IEnumerable&lt;T&gt;</b> interface allows the <a href="/~rhowell/DataStructures/redirect/foreach"><b>foreach</b></a>
     statement to iterate through the data structure - in the case of a
     dictionary, either through the keys or the values or through the
@@ -32,14 +31,14 @@ The .NET implementation of a dictionary includes two <b>public</b>
 <p>
 We will begin by discussing how to make the dictionary class itself
       implement
-      <b>IEnumerable&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;</b>.
+      <b>IEnumerable&lt;KeyValuePair&lt;TKey,Ã‚Â TValue&gt;&gt;</b>.
       We will examine the details of the <b>IEnumerable&lt;T&gt;</b>
       interface shortly, but for now, we will simply observe that it
       contains two methods, each of which is responsible for returning
       an <i>enumerator</i>, which is an object that can be used to
       step through a sequence of data elements.  We make this
       enumerator available by causing the dictionary to implement
-      <b>IEnumerable&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;</b>.
+      <b>IEnumerable&lt;KeyValuePair&lt;TKey,Ã‚Â TValue&gt;&gt;</b>.
       A <b>foreach</b> loop can then iterate through the pairs that
       the supplied enumerator steps through.  
 </p>
@@ -61,15 +60,15 @@ An enumerator is an object that is a subtype of the interface <a href="http://ms
 	current position to the next position in the sequence.
 </p>
 We need to define an enumerator that iterates through objects of type
-    <b>KeyValuePair&lt;TKey TValue&gt;</b>; i.e., we need to
+    <b>KeyValuePair&lt;TKeyÃ‚Â TValue&gt;</b>; i.e., we need to
     define a class that implements
-    <b>IEnumerator&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;</b>.
+    <b>IEnumerator&lt;KeyValuePair&lt;TKey,Ã‚Â TValue&gt;&gt;</b>.
     In order to do this, we must place this definition where the
     compiler can understand that <b>TKey</b> and <b>TValue</b> are
-    type parameters to the <b>Dictionary&lt;TKey, TValue&gt;</b>
+    type parameters to the <b>Dictionary&lt;TKey,Ã‚Â TValue&gt;</b>
     class.  In order to accomplish this, we need to define it as a
     <i>nested class</i> - a class whose definition occurs within the
-    definition of the <b>Dictionary&lt;TKey, TValue&gt;</b>
+    definition of the <b>Dictionary&lt;TKey,Ã‚Â TValue&gt;</b>
     class.  This nesting allows the nested class to access the 
     private fields of any instance of the containing class, as well as
     the type parameters to the containing class.  However, nesting
@@ -138,7 +137,7 @@ In order to be able to implement the above members, the nested class
 </p>
 <ul>
 <li> The hash table to iterate through.  This can either be a
-	<b>Dictionary&lt;TKey, TValue&gt;</b> or an array of the
+	<b>Dictionary&lt;TKey,Ã‚Â TValue&gt;</b> or an array of the
 	type that implements the hash table.  We will assume that it
 	is an array, as this is the simplest approach.</li>
 <li> The current index into the hash table.  This is part of the
@@ -192,7 +191,7 @@ Once the above loop terminates we can return <b>true</b>, as we have
 <p>
 Once we have completed this nested class, we need to make the
       dictionary class implement
-      <b>IEnumerable&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;</b>.
+      <b>IEnumerable&lt;KeyValuePair&lt;TKey,Ã‚Â TValue&gt;&gt;</b>.
       The <b>IEnumerable&lt;T&gt;</b> interface requires the following
       members:
 </p>
@@ -252,27 +251,8 @@ At this point, we can implement the <b>Keys</b> and <b>Values</b>
       <b>IEnumerable&lt;TValue&gt;</b>, respectively, and return it.
 </p>
 <p></p>
-
 <p>
-
 </p>
-<small>
-<i> © Copyright 2014, 2015, 2017, <a href="/~rhowell/">Rod Howell</a>. All
-    rights reserved.</i>
-</small>
 <p></p>
-<table border="0" cellpadding="2" summary="This table is used for layout
-purposes only.">
-<tr>
-<td align="center">
-<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" border="0" height="31" src="/~rhowell/valid-html401.gif" width="88"/></a>
-</td>
-<tr>
-<td>
-<a href="http://jigsaw.w3.org/css-validator/check/referer">
-<img alt="Valid CSS!" border="0" height="31" src="/~howell/vcss.gif" width="88"/>
-</a>
-</td>
-</tr></tr></table>
 </body>
 </html>
