@@ -1,17 +1,12 @@
++++
+title = "Chapter 10.1  Hash Table Implementation"
+date = 2018-08-24T10:53:05-05:00
+weight = 51
+chapter = true
+pre = "<b>10.1 </b>"
++++
+
 # Implementing a Hash Table
-
-<div class="TOC">
-
-## Contents
-
-1.  [A Simple Hash Table
-    Implementation](/~rhowell/DataStructures/redirect/simple-hash-table-impl)
-2.  [Rehashing](/~rhowell/DataStructures/redirect/rehashing)
-3.  [Enumerating a Hash
-    Table](/~rhowell/DataStructures/redirect/hash-table-enumerator)
-4.  [Indexers](/~rhowell/DataStructures/redirect/indexers)
-
-</div>
 
 Because a hash table has a more complex structure than the data
 structures we've examined up to this point, we will look at the

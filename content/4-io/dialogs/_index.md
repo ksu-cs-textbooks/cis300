@@ -1,14 +1,13 @@
++++
+title = "Chapter 4.1 Dialogs"
+date = 2018-08-24T10:53:05-05:00
+weight = 21
+chapter = true
+pre = "<b>4.1 </b>"
++++
+
+
 # Dialogs
-
-<div class="TOC">
-
-## Contents
-
-1.  [**MessageBox**es](/~rhowell/DataStructures/redirect/message-boxes)
-2.  [File Dialogs](/~rhowell/DataStructures/redirect/file-dialogs)
-3.  [Custom Dialogs](/~rhowell/DataStructures/redirect/custom-dialogs)
-
-</div>
 
 Dialogs are windows displayed by a program for the purpose of exchanging
 specific information with the user. There are two kinds of dialogs:

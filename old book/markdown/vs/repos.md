@@ -54,7 +54,7 @@ to that repository. From that page you will be able to view all of the
 files in the repository.
 
 In order to be able to use this repository, you will need to clone it to
-your local machine. To do this, first open Visual Studio 2017, then find
+your local machine. To do this, first open Visual Studio 2019, then find
 the Team Explorer panel (if you don't see it, you can open it from the
 View menu). In the Team Explorer, click on the icon that resembles an
 electrical plug at the top of the window. Scroll down if necessary to

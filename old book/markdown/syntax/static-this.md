@@ -1,6 +1,6 @@
 # The Keywords static and this
 
-Object-oriented programming languages such as C\# are centered on the
+Object-oriented programming languages such as C# are centered on the
 concept of an object. Class and structure definitions give instructions
 for constructing individual objects of various types, normally by using
 the **new** keyword. When an object is constructed, it has its own
@@ -94,7 +94,7 @@ method is available to handle this situation:
     }
 
 Because this method is defined within the **object** class, which is a
-supertype of every other type in C\#, we can refer to this method
+supertype of every other type in C#, we can refer to this method
 without specifying the containing class, just as if we had defined it in
 the class or structure we are writing. Because this method does not
 belong to individual objects, we don't need any specific object

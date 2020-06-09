@@ -1,4 +1,4 @@
-# Data Structures in C\#
+# Data Structures in C#
 
 [Rod Howell](/~rhowell/)  
 Dept. of Computing and Information Sciences  
@@ -24,7 +24,7 @@ USA
 
 ## Appendices
 
-1.  [C\# Syntax](redirect/syntax)
+1.  [C# Syntax](redirect/syntax)
 2.  [Visual StudioÃ‚Â®](redirect/visual-studio)
 3.  [Programming Style Requirements](redirect/style)
 
@@ -34,7 +34,7 @@ This text is supplemental material for CIS 300 at Kansas State
 University. Its purpose is to provide a written summary of the material
 covered, with additional explanation and code examples beyond what are
 presented in class. A background of programming in Java is assumed, and
-an appendix summarizing some of the syntax of C\# is provided. Because
+an appendix summarizing some of the syntax of C# is provided. Because
 CIS 300 is a lab class, no attempt is made here to provide examples for
 all of the topics covered; instead, students are expected to provide
 many of their own examples through the lab exercises (in most cases,

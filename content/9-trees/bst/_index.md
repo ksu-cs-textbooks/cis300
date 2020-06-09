@@ -1,18 +1,12 @@
++++
+title = "Chapter 9.1 Binary Search Trees"
+date = 2018-08-24T10:53:05-05:00
+weight = 46
+chapter = true
+pre = "<b>9.1 </b>"
++++
+
 # Binary Search Trees
-
-<div class="TOC">
-
-## Contents
-
-1.  [Binary Trees](/~rhowell/DataStructures/redirect/binary-trees)
-2.  [Introduction to Binary Search
-    Trees](/~rhowell/DataStructures/redirect/bst-intro)
-3.  [Removing from a Binary Search
-    Tree](/~rhowell/DataStructures/redirect/bst-remove)
-4.  [Inorder
-    Traversal](/~rhowell/DataStructures/redirect/inorder-traversal)
-
-</div>
 
 We motivated our discussion of trees by expressing a need for a linked
 data structure that supports a binary search or something similar. We

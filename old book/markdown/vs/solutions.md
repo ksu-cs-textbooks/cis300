@@ -1,6 +1,6 @@
 # Visual Studio Solutions
 
-All code developed within Visual Studio 2017 must belong to one or more
+All code developed within Visual Studio 2019 must belong to one or more
 *solutions*. When you are using Visual Studio to develop a program, you
 will be working with a single solution. A solution will contain one or
 more *projects*. Each of these projects may belong to more than one
@@ -16,7 +16,7 @@ and Solution3. In this section, we will focus on solutions that contain
 exactly one project, which in turn belongs to no other solutions (e.g.,
 Solution1 in the above figure).
 
-Whenever you clone a Git repository using Visual Studio 2017 (see [the
+Whenever you clone a Git repository using Visual Studio 2019 (see [the
 previous section](/~rhowell/DataStructures/redirect/version-control)),
 the Visual Studio Solution Explorer will display the contents of the
 repository. In CIS 300, each repository will contain exactly one

@@ -39,7 +39,7 @@ as its only parameter and writes it to the file. It returns nothing.
 
 Because a **FileStream** has no **EndOfStream** property, we must code a
 loop to read to the end of the stream somewhat differently from what we
-have seen before. We can take advantage of the fact that in C\#, an
+have seen before. We can take advantage of the fact that in C#, an
 assignment statement can be used within an expression. When this is
 done, the value of the assignment statement is the value that it
 assigns. Thus, if `input` is a **FileStream** opened for input, we can

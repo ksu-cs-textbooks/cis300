@@ -1,15 +1,32 @@
 +++
-title = "Chapter 1 Title"
+title = "Chapter C# Syntax"
 date = 2018-08-24T10:53:05-05:00
-weight = 10
+weight = 5
 chapter = true
 pre = "<b>1. </b>"
 +++
 
-# Visual Studio®
+# C# Syntax
 
-This chapter will guide you through the use of Visual Studio 2017 and
-GitHub to obtain start code for your assignments, build, test, and debug
-graphical applications and class libraries, and submit assignment
-solutions. No attempt is meant to be exhaustive, as many of the features
-of Visual Studio are beyond the scope of CIS 300.
+This chapter discusses various C# features that are either unavailable
+in Java or are unlikely to have been covered in an introductory Java
+programming class. No attempt has been made to be exhaustive. Instead,
+we focus mainly on those features that are likely to be needed in CIS
+300. In addition, the following topics are covered in the main text,
+rather than in this appendix:
+
+  - [Generic Types](/~rhowell/DataStructures/redirect/generic)
+  - [Interfaces](/~rhowell/DataStructures/redirect/interfaces)
+  - [Overriding **virtual**
+    Methods](/~rhowell/DataStructures/redirect/method-overriding)
+  - [Operator
+    Overloading](/~rhowell/DataStructures/redirect/operator-overloading)
+  - [The **using**
+    Statement](/~rhowell/DataStructures/redirect/using-statement)
+  - [Equality](/~rhowell/DataStructures/redirect/equality)
+  - [Type Casting](/~rhowell/DataStructures/redirect/casts)
+
+For more information on C#, see the [C#
+Reference](http://msdn.microsoft.com/en-us/library/618ayhy6.aspx) manual
+and the [C# Programming
+Guide](http://msdn.microsoft.com/en-us/library/67ef8sbd.aspx).

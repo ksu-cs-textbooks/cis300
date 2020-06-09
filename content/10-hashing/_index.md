@@ -47,7 +47,7 @@ implementation. How then can it compute a hash function on an instance
 of this type? The short answer to this question is that the hash
 function is divided into two parts. The first part of the hash function
 is implemented within the key type itself, where code can access the
-implementation details of the key. Specifically, every type in C\# has a
+implementation details of the key. Specifically, every type in C# has a
 **public**
 [**GetHashCode**](https://msdn.microsoft.com/en-us/library/system.object.gethashcode.aspx)
 method, which takes no parameters and returns an **int**. Any new type
@@ -64,7 +64,7 @@ a hash table. We will then discuss how a dictionary can facilitate a
 technique called *memoization*, which can be used to improve
 dramatically the performance of certain algorithms. This discussion will
 provide a motivation for defining a new key type. We then take a close
-look at how equality is handled in C\#, as we will need to be able to
+look at how equality is handled in C#, as we will need to be able to
 implement equality tests if we are to define new types that can be used
 as keys. We then complete the discussion on defining new key types by
 illustrating how the **GetHashCode** method can be implemented.

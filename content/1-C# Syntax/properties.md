@@ -82,7 +82,7 @@ We can also provide an explicit implementation for the **set** accessor.
 Suppose, for example, that we want to allow the user read/write access
 to the length of `_word`. In order to be able to provide write access,
 we must be able to acquire the value that the user wishes to assign to
-the length. C\# provides a keyword **value** for this purpose - its type
+the length. C# provides a keyword **value** for this purpose - its type
 is the same as the type of the property, and it stores the value that
 user code assigns to the property. Hence, we can define the property as
 follows:
@@ -94,7 +94,7 @@ follows:
      }
 
 Again, the code to the right of the "=\>" must be an expression whose
-type is the same as the type of the property (note that in C\#, an
+type is the same as the type of the property (note that in C#, an
 assignment statement can be used as an expression whose type is that of
 the value being assigned).
 

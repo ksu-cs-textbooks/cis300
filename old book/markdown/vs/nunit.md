@@ -116,7 +116,7 @@ have installed the two Visual Studio extensions listed at the top of
 this page. To create a test project within a solution, go to the
 Solution Explorer, right-click on the solution (i.e., the top line), and
 select "Add-\>New Project...". In the panel on the left, under "Visual
-C\#", select "Test". Then in the large panel on the right, select "NUnit
+C#", select "Test". Then in the large panel on the right, select "NUnit
 3 Unit Test Project". At the bottom, select an appropriate name for the
 project, and click "OK". This will create a test project containing the
 class file, **TestClass.cs**, which you may rename if you wish. This

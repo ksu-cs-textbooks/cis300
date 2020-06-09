@@ -1,8 +1,8 @@
 # Reference Types and Value Types
 
-Data types in C\# come in two distinct flavors: *value types* and
+Data types in C# come in two distinct flavors: *value types* and
 *reference types*. In order to understand the distinction, it helps to
-consider how space is allocated in C\#. Whenever a method is called, the
+consider how space is allocated in C#. Whenever a method is called, the
 space needed to execute that method is allocated from a data structure
 known as the *call stack*. The space for a method includes its local
 variables, including its parameters (except for [**out** or **ref**
@@ -146,7 +146,7 @@ of a type. See "[Linked
 Lists](/~rhowell/DataStructures/redirect/linked-lists)" and
 "[Trees](/~rhowell/DataStructures/redirect/trees)" for more information.
 
-Because all types in C\# are subtypes of **object**, which is a
+Because all types in C# are subtypes of **object**, which is a
 reference type, every value type is a subtype of at least one reference
 type (however, value types cannot themselves have subtypes). It is
 therefore possible to assign an instance of a value type to a variable

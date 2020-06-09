@@ -1,15 +1,15 @@
 +++
-title = "Chapter 1 Title"
+title = "Chapter 5 Strings and StringBuilders"
 date = 2018-08-24T10:53:05-05:00
-weight = 10
+weight = 20
 chapter = true
-pre = "<b>1. </b>"
+pre = "<b>5. </b>"
 +++
 
-# Visual Studio®
-
-This chapter will guide you through the use of Visual Studio 2017 and
-GitHub to obtain start code for your assignments, build, test, and debug
-graphical applications and class libraries, and submit assignment
-solutions. No attempt is meant to be exhaustive, as many of the features
-of Visual Studio are beyond the scope of CIS 300.
+# Strings and StringBuilders
+C# and the .NET Framework provides two data structures for representing
+sequences of characters - **string**s and **StringBuilder**s. Each of
+these data structures has its own advantages and disadvantages. In this
+chapter, we will examine how these two types are used and implemented.
+In the process, we will note the tradeoffs involved in using one or the
+other.

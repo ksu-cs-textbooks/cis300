@@ -1,4 +1,4 @@
-# C\# Syntax
+# C# Syntax
 
 <div class="TOC">
 
@@ -24,7 +24,7 @@
 
 </div>
 
-This chapter discusses various C\# features that are either unavailable
+This chapter discusses various C# features that are either unavailable
 in Java or are unlikely to have been covered in an introductory Java
 programming class. No attempt has been made to be exhaustive. Instead,
 we focus mainly on those features that are likely to be needed in CIS
@@ -42,7 +42,7 @@ rather than in this appendix:
   - [Equality](/~rhowell/DataStructures/redirect/equality)
   - [Type Casting](/~rhowell/DataStructures/redirect/casts)
 
-For more information on C\#, see the [C\#
+For more information on C#, see the [C#
 Reference](http://msdn.microsoft.com/en-us/library/618ayhy6.aspx) manual
-and the [C\# Programming
+and the [C# Programming
 Guide](http://msdn.microsoft.com/en-us/library/67ef8sbd.aspx).

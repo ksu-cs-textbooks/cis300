@@ -1,11 +1,11 @@
-# Equality in C\#
+# Equality in C#
 
 Continuing our discussion from [the previous
 section](/~rhowell/DataStructures/redirect/memoization), we want to
 define a type that represents a Nim board. Furthermore, we need to be
 able to compare instances of this type for equality. Before we can
 address how this can be done, we first need to take a careful look at
-how C\# handles equality. In what follows, we will discuss how C\#
+how C# handles equality. In what follows, we will discuss how C#
 handles the == operator, the non-**static** **Equals** method, and two
 **static** methods for determining equality. We will then show how the
 comparison can be defined so that all of these mechanisms behave in a
@@ -106,7 +106,7 @@ this later.)
 
 The **object** class defines, in addition to the **Equals** method
 described above, two **public static** methods, which are in turn
-inherited by every type in C\#:
+inherited by every type in C#:
 
   - **bool Equals(object x, object y)**: The main purpose of this method
     is to avoid the **NullReferenceException** that is thrown by
@@ -198,7 +198,7 @@ Note that because all three calls to **Equals** have **null** as a
 parameter, these calls won't result in calling the **Equals** method
 that we will override below.
 
-Whenever we define the == operator, C\# requires that we also define the
+Whenever we define the == operator, C# requires that we also define the
 \!= operator. In virtually all cases, what we want this operator to do
 is to return the negation of what the == operator does:
 
@@ -211,7 +211,7 @@ We now turn to the (non-**static**) **Equals** method. This is defined
 in the **object** class to be a **virtual** method, meaning that
 sub-types are allowed to
 [override](/~rhowell/DataStructures/redirect/method-overriding) its
-behavior. Because every type in C\# is a subtype of **object**, this
+behavior. Because every type in C# is a subtype of **object**, this
 method is present in every type, and it can be overridden by any class
 or structure.
 
