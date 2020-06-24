@@ -19,11 +19,11 @@ example, if `i` is an **int**, we can convert it to a decimal with:
 A decimal is represented internally with the following three components:
 
   - A 96-bit value `v` storing the digits
-    (0Ã‚Â Ã¢â€°Â¤Ã‚Â `v`Ã‚Â Ã¢â€°Â¤79,228,162,514,264,337,593,543,950,335).
+    (0 Ã¢â€°Â¤ `v` Ã¢â€°Â¤79,228,162,514,264,337,593,543,950,335).
   - A sign bit `s`, where 1 denotes a negative value.
   - A scale factor `d` to indicate where the decimal point is
-    (0Ã‚Â Ã¢â€°Â¤Ã‚Â `d`Ã‚Â Ã¢â€°Â¤Ã‚Â 28).
+    (0 Ã¢â€°Â¤ `d` Ã¢â€°Â¤ 28).
 
 The value represented is then (-1)<sup>`s`</sup>`v`/10<sup>`d`</sup>.
-For example, 123.456 can be represented by setting `vÃ‚Â =Ã‚Â 123,456`,
-`sÃ‚Â =Ã‚Â 0`, and `dÃ‚Â =Ã‚Â 3`.
+For example, 123.456 can be represented by setting `v = 123,456`,
+`s = 0`, and `d = 3`.

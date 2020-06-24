@@ -99,8 +99,8 @@ field is named `_children`, and suppose `label` is a **char** variable
 containing a lower-case letter. Because **char** is technically a
 numeric type, we can perform arithmetic with **char**s; thus, we can
 obtain the child labeled by `label` by retrieving
-`_children[labelÃ‚Â -Ã‚Â 'a']`. More specifically, if `label`
-contains 'd', then the difference, `labelÃ‚Â -Ã‚Â 'a'` will be 3; hence,
+`_children[label - 'a']`. More specifically, if `label`
+contains 'd', then the difference, `label - 'a'` will be 3; hence,
 the child with label 'd' will be stored at index 3. We have therefore
 achieved our goal of providing quick access to a child with a given
 label.

@@ -16,7 +16,7 @@ focus on the second step, converting the **int** hash code returned by
 the key's **GetHashCode** method to a table location.
 
 One common technique, which is used in the .NET implementation of the
-[**Dictionary\<TKey,Ã‚Â TValue\>**](http://msdn.microsoft.com/en-us/library/xfhwa508.aspx)
+[**Dictionary\<TKey, TValue\>**](http://msdn.microsoft.com/en-us/library/xfhwa508.aspx)
 class, is called the *division method*. This technique consists of the
 following:
 
@@ -25,15 +25,15 @@ following:
     table.
 
 If `p` is a nonnegative **int** and `q` is a positive **int**, then
-`pÃ‚Â %Ã‚Â q` gives a nonnegative value less than `q`; hence, if `q`
-is the table length, `pÃ‚Â %Ã‚Â q` is a location within the table.
+`p % q` gives a nonnegative value less than `q`; hence, if `q`
+is the table length, `p % q` is a location within the table.
 Furthermore, this calculation often does a good job of distributing hash
 code values among the different table locations, but this depends on how
 the hash codes were computed and what the length of the table is.
 
 For example, suppose we use a size 2<sup>*k*</sup> for some positive
 integer *k*. In this case, the above computation can be simplified, as
-the values formed by *k* bits are 0 through 2<sup>*k*</sup>Ã‚Â -Ã‚Â 1,
+the values formed by *k* bits are 0 through 2<sup>*k*</sup> - 1,
 or all of the locations in the table. We can therefore simply use the
 low-order *k* bits of the hash code as the table location. However, it
 turns out that using the division method when the table size is a power

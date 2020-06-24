@@ -12,7 +12,7 @@
     One way of implementing a dictionary is to store all the keys and
     values in a linked list.  We want to do this in such a way that a
     key is stored together with its associated value.  To facilitate
-    this, the .NET Framework provides a structure <a href="https://msdn.microsoft.com/en-us/library/5tbh8a42.aspx"><b>KeyValuePair&lt;TKey,Ã‚Â TValue&gt;</b></a>
+    this, the .NET Framework provides a structure <a href="https://msdn.microsoft.com/en-us/library/5tbh8a42.aspx"><b>KeyValuePair&lt;TKey, TValue&gt;</b></a>
     in the <b>System.Collections.Generic</b> namespace.  This
     structure is used simply for storing a key and a value.  The type
     parameter <b>TKey</b> is used to define the type of the keys, and the
@@ -35,11 +35,11 @@
     key, and the second is the value.
     <p>
       Now that we have a way of storing keys and values together, we
-      can implement a <b>Dictionary&lt;TKey,Ã‚Â TValue&gt;</b> with
+      can implement a <b>Dictionary&lt;TKey, TValue&gt;</b> with
       a linked list comprised of instances of
-      <b>LinkedListCell&lt;KeyValuePair&lt;TKey,Ã‚Â TValue&gt;&gt;</b>.
+      <b>LinkedListCell&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;</b>.
       Thus, each cell of the list stores as its <b>Data</b> a
-      <b>KeyValuePair&lt;TKey,Ã‚Â TValue&gt;</b> containing a key
+      <b>KeyValuePair&lt;TKey, TValue&gt;</b> containing a key
       and its associated value.  To add a key and a value, we first
       need to search the list for a cell containing that key.  If we
       find such a cell, we either replace the <b>KeyValuePair</b> in
@@ -96,7 +96,7 @@ public class Dictionary&lt;TKey, TValue&gt; where TKey : IComparable&lt;TKey&gt;
     in increasing order.
     <p>
       Note that by constraining the key type in this way, we are
-      making the <b>Dictionary&lt;TKey,Ã‚Â TValue&gt;</b> less
+      making the <b>Dictionary&lt;TKey, TValue&gt;</b> less
       general, as we may sometimes want to use a key type that can't
       be ordered.  On the other hand, there are times when not only do
       we have a key type that can be ordered, but also we need to

@@ -21,23 +21,23 @@ We'll first consider the case in which *k* is not in the hash table. In
 this case, we will need to examine all of the keys in the linked list at
 the array location where *k* belongs. Because each of the *n* keys is
 equally likely to map to each of the *m* array locations, we would
-expect, on average, *n*Ã‚Â /Ã‚Â *m* keys to be mapped to the location
+expect, on average, *n* / *m* keys to be mapped to the location
 where *k* belongs. Hence, in this case, we would expect to examine
-*n*Ã‚Â /Ã‚Â *m* keys, on average.
+*n* / *m* keys, on average.
 
 Now let's consider the case in which *k* is in the hash table. In this
 case, we will examine the key *k*, plus all the keys that precede *k* in
 its linked list. The number of keys preceding *k* cannot be more than
 the total number of keys other than *k* in that linked list. Again,
-because each of the *n*Ã‚Â -Ã‚Â 1 keys other than *k* is equally likely
+because each of the *n* - 1 keys other than *k* is equally likely
 to map to each of the *m* array locations, we would expect, on average,
-(*n*Ã‚Â -Ã‚Â 1)Ã‚Â /Ã‚Â *m* keys other than *k* to be in the same linked
+(*n* - 1) / *m* keys other than *k* to be in the same linked
 list as *k*. Thus, we can expect, on average, to examine no more than
-1Ã‚Â +Ã‚Â  (*n*Ã‚Â -Ã‚Â 1)Ã‚Â /Ã‚Â *m* keys when looking for a key
+1 +  (*n* - 1) / *m* keys when looking for a key
 that is present.
 
 Notice that both of the values derived above decrease as *m* increases.
-Specifically, if *m*Ã‚Â Ã¢â€°Â¥Ã‚Â *n*, the expected number of examined
+Specifically, if *m* Ã¢â€°Â¥ *n*, the expected number of examined
 keys on a failed lookup is no more than 1, and the expected number of
 examined keys on a successful lookup is less than 2. We can therefore
 expect to achieve very good performance if we keep the number of array
@@ -66,7 +66,7 @@ appropriate size. While there are more efficient algorithms, we really
 don't need one. Suppose we start with an array size of 5 (there may be
 applications using many small hash tables - the .NET implementation
 starts with an array size of 3). 5 is larger than
-2<sup>2</sup>Ã‚Â =Ã‚Â 4. If we double this value 28 times, we
+2<sup>2</sup> = 4. If we double this value 28 times, we
 reach a value larger than 2<sup>30</sup>, which is larger than 1
 billion. More importantly, this value is large enough that we can't
 double it again, as an array in C\# must contain fewer than

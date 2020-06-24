@@ -69,7 +69,7 @@ well.
 One case in which this mechanism is useful is when we would like to have
 a method return more than one value. Suppose, for example, that we would
 like to find both the maximum and minimum values in a given
-**int\[Ã‚Â \]**. A **return** statement can return only one value.
+**int\[ \]**. A **return** statement can return only one value.
 Although there are ways of packaging more than one value together in one
 object, a cleaner way is to use two parameters that use the
 call-by-reference mechanism. The method can then change the values of
@@ -97,7 +97,7 @@ Specifically, we can define the method using **out** parameters:
 
 The **out** keyword in the first line above specifies the
 call-by-reference mechanism for `min` and `max`. We could then call this
-code as follows, assuming `a` is an **int\[Ã‚Â \]** containing at least
+code as follows, assuming `a` is an **int\[ \]** containing at least
 one element:
 
     int minimum;

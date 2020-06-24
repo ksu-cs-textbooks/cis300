@@ -20,7 +20,7 @@ The most basic version of this algorithm operates as follows:
     that are divisible by *k*.
 3.  The remaining values are the prime numbers less than *n*.
 
-For example, suppose *n*Ã‚Â =Ã‚Â 20. We then place the integers from 2
+For example, suppose *n* = 20. We then place the integers from 2
 to 19 in a list:
 
     2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19
@@ -45,32 +45,32 @@ To see this, suppose *m* is a non-prime less than *n*, and let *a* be
 its smallest nontrivial factor. Then *a* must be prime because any
 nontrivial factor of *a* would be less than *a* and would also divide
 *m*. *a* therefore will not be removed from the list. When
-*k*Ã‚Â =Ã‚Â *a* in Step 2, *m* will be removed.
+*k* = *a* in Step 2, *m* will be removed.
 
 There is actually a good reason why the first two iterations in the
 above example removed all of the non-primes - once the algorithm reaches
-a divisor *k* such that *k*<sup>2</sup>Ã‚Â Ã¢â€°Â¥Ã‚Â *n* (in this
-example, 5<sup>2</sup>Ã‚Â =Ã‚Â 25Ã‚Â Ã¢â€°Â¥Ã‚Â 20), all of the
+a divisor *k* such that *k*<sup>2</sup> Ã¢â€°Â¥ *n* (in this
+example, 5<sup>2</sup> = 25 Ã¢â€°Â¥ 20), all of the
 non-primes will have been removed. To see why this is true, let *m* and
 *a* be as above. We can then write
 
     m = ab
 
-where *a*Ã‚Â Ã¢â€°Â¤Ã‚Â *b* and *m* is removed from the list when
-*k*Ã‚Â =Ã‚Â *a*. We can then multiply both sides of the above
+where *a* Ã¢â€°Â¤ *b* and *m* is removed from the list when
+*k* = *a*. We can then multiply both sides of the above
 equation by *a*/*b*, yielding:
 
 `  am/b = a2. `
 
-Finally, because *a*Ã‚Â Ã¢â€°Â¤Ã‚Â *b*, *a*/*b*Ã‚Â Ã¢â€°Â¤Ã‚Â 1.
+Finally, because *a* Ã¢â€°Â¤ *b*, *a*/*b* Ã¢â€°Â¤ 1.
 Therefore,
 
 `  m Ã¢â€°Â¥ a2. `
 
 We conclude that if *m* is a non-prime greater than 1, it is removed
 when the algorithm reaches some value *k* with
-*k*<sup>2</sup>Ã‚Â \<Ã‚Â *n*. We can therefore optimize the
-algorithm by stopping when *k*<sup>2</sup>Ã‚Â Ã¢â€°Â¥Ã‚Â *n*.
+*k*<sup>2</sup> \< *n*. We can therefore optimize the
+algorithm by stopping when *k*<sup>2</sup> Ã¢â€°Â¥ *n*.
 
 We can implement this algorithm using a linked list. A linked list is an
 appropriate data structure for this algorithm because once the list is
@@ -80,7 +80,7 @@ beginning to end - the same direction the links go.
 To implement Step 1, it is easier to build the list from back to front,
 as we don't need to maintain a separate reference to the end of the
 list. This step then consists of a loop that iterates from
-*n*Ã‚Â Ã¢â‚¬â€˜Ã‚Â 1 down to 2, with each iteration adding
+*n* Ã¢â‚¬â€˜ 1 down to 2, with each iteration adding
 to the front of the list a cell containing the loop index.
 
 In order to be able to implement Step 2, we will need to know how to
@@ -110,7 +110,7 @@ Step 2 of the algorithm. For one value of *k*, we need to remove all
 subsequent values that are divisible by *k*. In terms of the linked
 list, we need to start this process with the cell containing *k*. For
 example, consider the second iteration from the example above - i.e.,
-when *k*Ã‚Â =Ã‚Â 3:
+when *k* = 3:
 
 ![The beginning of an iteration with k = 3](sieve-example1.jpg)
 
@@ -118,7 +118,7 @@ We need to iterate `p` through the linked list, checking the *next* cell
 on each iteration to see whether its contents are divisible by *k*. We
 can check for divisibility by *k* using the [remainder
 operator](/~rhowell/DataStructures/syntax/remainder) - i.e., *k* divides
-*m* if *m*Ã‚Â %Ã‚Â *k* is 0. Thus, the first iteration would see if 3
+*m* if *m* % *k* is 0. Thus, the first iteration would see if 3
 divides 5. It doesn't, so we advance `p` to the next cell (containing
 5). We then see if 3 divides 7. Again it doesn't, so we advance `p` to
 the next cell (containing 7). At this point, 3 divides 9, so we remove
@@ -137,5 +137,5 @@ The loop described above represents a single iteration of the loop
 described for Step 2. Thus, for Step 2, we need to iterate a variable
 through the list, performing the above on each iteration. We stop when
 we either have run off the end of the list or have reached a value of
-*k* such that *k*<sup>2</sup>Ã‚Â Ã¢â€°Â¥Ã‚Â *n*. Note that at the end of
+*k* such that *k*<sup>2</sup> Ã¢â€°Â¥ *n*. Note that at the end of
 each iteration, we want to advance to the next cell.

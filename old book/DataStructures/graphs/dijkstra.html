@@ -21,7 +21,7 @@ In this section, we will consider a common graph problem - that of
     for example, the shortest path from <i>a</i> to <i>h</i> in the
     graph below is <i>a</i>-<i>c</i>-<i>g</i>-<i>f</i>-<i>h</i>, and
     its length is 
-    4.8Ã‚Â +Ã‚Â 6.4Ã‚Â +Ã‚Â 4.9Ã‚Â +Ã‚Â 3.2Ã‚Â =Ã‚Â 19.3. 
+    4.8 + 6.4 + 4.9 + 3.2 = 19.3. 
 <p>
 <img alt="A directed graph" src="directed-graph.jpg"/>
 </p>
@@ -114,7 +114,7 @@ Dijkstra's algorithm progresses by finding a shortest path to one node
       path.  This will allow us to retrieve a shortest path to a node
       <i>v</i> by starting at <i>v</i> and tracing the path backwards
       using the predecessor of each node until we reach <i>u</i>.
-      A <b>Dictionary&lt;TNode,Ã‚Â TNode&gt;</b> is an
+      A <b>Dictionary&lt;TNode, TNode&gt;</b> is an
       ideal choice for this data structure.  The keys in the
       dictionary will be the nodes in <i>S</i>, and the value
       associated with a key will be that key's 
@@ -135,7 +135,7 @@ Once the above initialization is done, the algorithm enters a loop
     that iterates as long as the min-priority queue is nonempty.  An
     iteration begins by obtaining the minimum priority <i>p</i> from
     the min-priority queue, then removing an edge
-    (<i>w</i>,Ã‚Â <i>x</i>) with minimum priority.  If <i>x</i> is a
+    (<i>w</i>, <i>x</i>) with minimum priority.  If <i>x</i> is a
     key in the dictionary, we can ignore this edge and go on to the
     next iteration.  Otherwise, we add to the dictionary the key
     <i>x</i> with a value of <i>w</i>.  Because we now have a shortest
@@ -172,10 +172,10 @@ We can now modify the above algorithm so that it finds a shortest path
 <ul>
 <li> Construct a new dictionary and a new min-priority queue.</li>
 <li> Add to the dictionary the key <i>u</i> with value <i>u</i>.</li>
-<li> If <i>u</i>Ã‚Â =Ã‚Â <i>v</i>, return 0.</li>
-<li> For each outgoing edge (<i>u</i>,Ã‚Â <i>w</i>) from <i>u</i>:
+<li> If <i>u</i> = <i>v</i>, return 0.</li>
+<li> For each outgoing edge (<i>u</i>, <i>w</i>) from <i>u</i>:
 <ul>
-<li> Add (<i>u</i>,Ã‚Â <i>w</i>) to the min-priority queue with a
+<li> Add (<i>u</i>, <i>w</i>) to the min-priority queue with a
 	    priority of the length of this edge.</li>
 </ul>
 </li>
@@ -183,18 +183,18 @@ We can now modify the above algorithm so that it finds a shortest path
 <ul>
 <li> Get the minimum priority <i>p</i> from the min-priority
 	    queue.</li>
-<li> Remove an edge (<i>w</i>,Ã‚Â <i>x</i>) with minimum priority
+<li> Remove an edge (<i>w</i>, <i>x</i>) with minimum priority
 	    from the min-priority queue.</li>
 <li> If <i>x</i> is not a key in the dictionary:
 <ul>
 <li> Add to the dictionary the key <i>x</i> with a value of
 		<i>w</i>.</li>
-<li> If <i>x</i>Ã‚Â =Ã‚Â <i>v</i>, return <i>p</i>.</li>
-<li> For each outgoing edge (<i>x</i>,Ã‚Â <i>y</i>) from <i>x</i>:
+<li> If <i>x</i> = <i>v</i>, return <i>p</i>.</li>
+<li> For each outgoing edge (<i>x</i>, <i>y</i>) from <i>x</i>:
 <ul>
-<li> Add (<i>x</i>,Ã‚Â <i>y</i>) to the min-priority queue with
+<li> Add (<i>x</i>, <i>y</i>) to the min-priority queue with
 		    priority <i>p</i> plus the length of
-		    (<i>x</i>,Ã‚Â <i>y</i>).</li>
+		    (<i>x</i>, <i>y</i>).</li>
 </ul>
 </li>
 </ul>

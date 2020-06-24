@@ -99,7 +99,7 @@ Though we won't give an analysis here, the above algorithm runs in
     sort</a>, the worst-case running time doesn't always tell the
     whole story.  Specifically, the expected running time of quick
     sort (this implementation and others) on random arrays is in
-    <i>O</i>(<i>n</i>Ã‚Â lgÃ‚Â <i>n</i>).
+    <i>O</i>(<i>n</i> lg <i>n</i>).
 <p>
 However, we don't often need to sort random data.  Let's therefore
       take a closer look at what makes the worst case bad.  In some
@@ -132,7 +132,7 @@ The most important thing we can do to improve the performance, in
       half.  The median element (i.e., the element that belongs in the
       middle after the array is sorted) will therefore give us the
       optimal split.  It is possible to design an
-      <i>O</i>(<i>n</i>Ã‚Â lgÃ‚Â <i>n</i>) algorithm that uses the
+      <i>O</i>(<i>n</i> lg <i>n</i>) algorithm that uses the
       median as the pivot; however, the time it takes to find the
       median makes this algorithm slower than merge sort in practice.
       It works much better to find a quick approximation for the
@@ -153,26 +153,26 @@ We can improve on the above strategy by doing a case analysis of the
       we just find the median of three values, <i>a</i>, <i>b</i>, and
       <i>c</i>, as follows:
 <ul>
-<li> If <i>a</i>Ã‚Â &lt;Ã‚Â <i>b</i>:
+<li> If <i>a</i> &lt; <i>b</i>:
 <ul>
-<li> If <i>b</i>Ã‚Â &lt;Ã‚Â <i>c</i>, then <i>b</i> is the
+<li> If <i>b</i> &lt; <i>c</i>, then <i>b</i> is the
 	    median.</li>
 <li> Otherwise, because <i>b</i> is the largest:
 <ul>
-<li> If <i>a</i>Ã‚Â &lt;Ã‚Â <i>c</i>, then <i>c</i> is
+<li> If <i>a</i> &lt; <i>c</i>, then <i>c</i> is
 	    the median.</li>
 <li> Otherwise, <i>a</i> is the median.</li>
 </ul>
 </li>
 </ul>
 </li>
-<li> Otherwise, because <i>b</i>Ã‚Â Ã¢â€°Â¤Ã‚Â <i>a</i>:
+<li> Otherwise, because <i>b</i> Ã¢â€°Â¤ <i>a</i>:
 <ul>
-<li> If <i>a</i>Ã‚Â &lt;Ã‚Â <i>c</i>, then <i>a</i> is
+<li> If <i>a</i> &lt; <i>c</i>, then <i>a</i> is
 	the median.</li>
 <li> Otherwise, because <i>a</i> is the largest:
 <ul>
-<li> If <i>b</i>Ã‚Â &lt;Ã‚Â <i>c</i>, then <i>c</i> is the
+<li> If <i>b</i> &lt; <i>c</i>, then <i>c</i> is the
 		median.</li>
 <li> Otherwise, <i>b</i> is the median.</li>
 </ul>

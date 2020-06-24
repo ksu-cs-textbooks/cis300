@@ -81,7 +81,7 @@ Having this information, we can now use the debugger to investigate
       Hovering over <tt>power</tt> shows that it has a value of 2.
       Thus, we can see that the exception was thrown because we gave
       the <b>Substring</b> method a length of
-      1Ã‚Â -Ã‚Â 2Ã‚Â =Ã‚Â -1.  This can be confirmed
+      1 - 2 = -1.  This can be confirmed
       by hovering the mouse over the "-" in the expression - the popup
       indicates that the value of the expression is, in fact, -1.
 </p>
@@ -158,7 +158,7 @@ While hovering the mouse over variable names is a useful way to
       discover their current values, there are other mechanisms for
       doing this as well.  For example, while the debugger is paused,
       you can go to the "Debug" menu and select
-      "WindowsÃ‚Â Ã¢â‚¬â€˜&gt;Ã‚Â Locals".  This will open a window
+      "Windows Ã¢â‚¬â€˜&gt; Locals".  This will open a window
       displaying all of the local variables for the current method,
       property, or constructor, together with their current values.
       If the debugger is paused within a constructor or a
@@ -175,7 +175,7 @@ Another mechanism for examining values of variables is through the
     expression.  This can be particularly useful when you have a large
     data structure, and you need to know a particular element in that
     structure.  For example, suppose <tt>array</tt> is a large
-    <b>int[Ã‚Â ]</b>, and suppose <tt>i</tt> is an <b>int</b>.
+    <b>int[ ]</b>, and suppose <tt>i</tt> is an <b>int</b>.
     Using the "Locals" window, it might be rather tedious to find the
     value of <tt>array[i]</tt>.  Using the Immediate window, however,
     you can just type in
@@ -221,7 +221,7 @@ After one iteration, the loop will terminate, and execution will reach
 When stepping through code, a "Watch" window is often a convenient way
       to keep track of the value of one or more specific variables
       and/or expressions.  You can open a Watch window from the
-      "Debug" menu under "WindowsÃ‚Â Ã¢â‚¬â€˜&gt;Ã‚Â Watch" - the four
+      "Debug" menu under "Windows Ã¢â‚¬â€˜&gt; Watch" - the four
       choices here are four different Watch windows that you may use
       (perhaps for debugging different parts of your program).  A
       Watch window combines some of the advantages of the Locals

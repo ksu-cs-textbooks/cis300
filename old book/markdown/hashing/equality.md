@@ -85,7 +85,7 @@ By default, if `x` is a reference type, **x.Equals(y)** returns **true**
 if `x` and `y` refer to the same object. Hence, this behavior is the
 same as for == once the types are determined (except that if `x` is
 **null**, **x.Equals(y)** will throw a **NullReferenceException**,
-whereas `xÃ‚Â ==Ã‚Â y` will not). However, classes may override this
+whereas `x == y` will not). However, classes may override this
 method to change this behavior. For example, the **string** class
 overrides this method to return **true** if **y** is a **string** of the
 same length and containing the same sequence of characters as `x`.
@@ -254,8 +254,8 @@ be made.
 Suppose, for example, that we want to define a class to represent a Nim
 board position (see the [previous
 section](/~rhowell/DataStructures/redirect/memoization)). This class
-will need to have two **private** fields: an **int\[Ã‚Â \]** storing the
-number of stones on each pile and an **int\[Ã‚Â \]** storing the limit
+will need to have two **private** fields: an **int\[ \]** storing the
+number of stones on each pile and an **int\[ \]** storing the limit
 for each pile. These two arrays should be non-**null** and have the same
 length, but this should be enforced by the constructor. By default, two
 instances of a class are considered to be equal (by either the ==

@@ -48,7 +48,7 @@ name (not the solution name), and selecting "AddÃ¢â‚¬â€˜\>Class...".
 Just having this project in the same solution isn't enough to allow it
 to access the class library. In order to enable this access, we need to
 go back to the Solution Explorer, right-click on the project we just
-added, and select, "AddÃ‚Â Ã¢â‚¬â€˜\>Ã‚Â Reference...". In the resulting
+added, and select, "Add Ã¢â‚¬â€˜\> Reference...". In the resulting
 dialog, we open the "Project" group on the left and select "Solution"
 from that group, then click the box next to
 "Ksu.Cis300.StringBuilderLibrary" in the main panel, and click the "OK"

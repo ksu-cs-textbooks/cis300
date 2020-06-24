@@ -4,7 +4,7 @@
 
 ## Contents
 
-1.  [The **Dictionary\<TKey,Ã‚Â TValue\>**
+1.  [The **Dictionary\<TKey, TValue\>**
     Class](/~rhowell/DataStructures/redirect/dictionary-class)
 2.  [Implementing a Dictionary with a Linked
     List](/~rhowell/DataStructures/redirect/dictionary-linked-lists)

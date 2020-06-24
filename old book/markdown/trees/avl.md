@@ -22,7 +22,7 @@ we say that the worst-case running time of each of these methods is in
 Depending on the shape of the tree, *O*(*h*) running time might be very
 good. For example, it is possible to show that if keys are randomly
 taken from a uniform distribution and successively added to an initially
-empty binary search tree, the expected height is in *O*(logÃ‚Â *n*),
+empty binary search tree, the expected height is in *O*(log *n*),
 where *n* is the number of nodes. In this case, we would expect
 logarithmic performance for lookups, insertions, and deletions. In fact,
 there are many applications in which the height of a binary search tree
@@ -38,7 +38,7 @@ tree would have the following shape:
 
 ![A badly-shaped binary search tree](bst-chain.jpg)
 
-The height of this tree is *n*Ã‚Â -Ã‚Â 1; consequently, lookups will
+The height of this tree is *n* - 1; consequently, lookups will
 take time linear in *n*, the number of elements, in the worst case. This
 performance is comparable with that of a linked list. In order to
 guaranteed good performance, we need a way to ensure that the height of
@@ -62,7 +62,7 @@ capture shows an AVL tree of height 8 having a minimum number of nodes:
 
 As the above picture illustrates, a minimum of 88 nodes are required for
 an AVL tree to reach a height of 8. In general, it can be shown that the
-height of an AVL tree is at worst proportional to logÃ‚Â *n*, where *n*
+height of an AVL tree is at worst proportional to log *n*, where *n*
 is the number of nodes in the tree. Thus, if we can maintain the shape
 of an AVL tree efficiently, we should have efficient lookups and
 updates.
@@ -128,7 +128,7 @@ trees (which may be empty). Note that the because the left child has a
 height 2 greater than the right child, we know that the left child
 cannot be empty; hence, we can safely depict it as a node with two
 children. The labels are chosen to indicate the order of the elements -
-e.g., as "a"Ã‚Â \<Ã‚Â "b", every key in tree *a* is less than the key in
+e.g., as "a" \< "b", every key in tree *a* is less than the key in
 node *b*. The tree on the right shows that tree that would be built by
 performing this rotation. Note that the rotation preserves the order of
 the keys.
@@ -171,22 +171,22 @@ were assuming that the given left child (i.e., the tree rooted at *b* in
 the tree on the left above) has a height 2 greater than the given right
 child (i.e., the tree *e* in the tree on the left above). Let's suppose
 the tree *e* has height *h*. Then the tree rooted at *b* has height
-*h*Ã‚Â +Ã‚Â 2. By the definition of the height of a tree, either *a*
-or *c* (or both) must have height *h*Ã‚Â +Ã‚Â 1. Assuming that every
+*h* + 2. By the definition of the height of a tree, either *a*
+or *c* (or both) must have height *h* + 1. Assuming that every
 tree we've built so far is an AVL tree, the children of *b* must differ
 in height by at most 2; hence, *a* and *c* must both have a height of at
-least *h* and at most *h*Ã‚Â +Ã‚Â 1.
+least *h* and at most *h* + 1.
 
 Given these heights, let's examine the tree on the right. We have
 assumed that every tree we've built up to this point is an AVL tree, so
 we don't need to worry about any balances within *a*, *c*, or *e*.
-Because *c* has either height *h* or height *h*Ã‚Â +Ã‚Â 1 and *e* has
+Because *c* has either height *h* or height *h* + 1 and *e* has
 height *h*, the tree rooted at *d* satisfies the balance criterion.
-However, if *c* has height *h*Ã‚Â +Ã‚Â 1 and *a* has height *h*, then
-the tree rooted at *d* has height *h*Ã‚Â +Ã‚Â 2, and the balance
+However, if *c* has height *h* + 1 and *a* has height *h*, then
+the tree rooted at *d* has height *h* + 2, and the balance
 criterion is *not* satisfied. On the other hand, if *a* has height
-*h*Ã‚Â +1Ã‚Â , the tree rooted at *d* will have a height of either
-*h*Ã‚Â +Ã‚Â 1 or *h*Ã‚Â +Ã‚Â 2, depending on the height of *c*. In these
+*h* +1 , the tree rooted at *d* will have a height of either
+*h* + 1 or *h* + 2, depending on the height of *c*. In these
 cases, the balance criterion is satisfied.
 
 We therefore conclude that a single rotate right will restore the
@@ -222,12 +222,12 @@ right*:
 Note that we have drawn the trees a bit differently by showing more
 detail. Let's now show that this rotation restores the balance in this
 case. Suppose that in the tree on the left, *g* has height *h*. Then the
-tree rooted at *b* has height *h*Ã‚Â +Ã‚Â 2. Because the height of *a*
+tree rooted at *b* has height *h* + 2. Because the height of *a*
 is no greater than the height of *g*, assuming all trees we have built
 so far are AVL trees, *a* must have height *h* and the tree rooted at
-*d* must have height *h*Ã‚Â +Ã‚Â 1 (thus, it makes sense to draw it as
+*d* must have height *h* + 1 (thus, it makes sense to draw it as
 having a root node). This means that *c* and *e* both must have heights
-of either *h* or *h*Ã‚Â -Ã‚Â 1. It is now not hard to verify that the
+of either *h* or *h* - 1. It is now not hard to verify that the
 balance criterion is satisfied at *b*, *f*, and *d* in the tree on the
 right.
 
@@ -319,5 +319,5 @@ time a new node is constructed, we need to check a few heights (which
 are stored in fields), and if a rotation is needed, construct one or two
 extra nodes. As a result, because the height of an AVL tree is
 guaranteed to be logarithmic in the number of nodes, the worst-case
-running times of both lookups and updates are in *O*(logÃ‚Â *n*), where
+running times of both lookups and updates are in *O*(log *n*), where
 *n* is the number of nodes in the tree.

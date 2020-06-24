@@ -12,8 +12,8 @@ and
 [**IEnumerable\<TValue\>**](http://msdn.microsoft.com/en-us/library/9eekhta0\(v=vs.110\).aspx),
 respectively, where **TKey** is the type of the keys and **TValue** is
 the type of the values. Furthermore, the
-**Dictionary\<TKey,Ã‚Â TValue\>** class itself implements
-**IEnumerable\<KeyValuePair\<TKey,Ã‚Â TValue\>\>**. The
+**Dictionary\<TKey, TValue\>** class itself implements
+**IEnumerable\<KeyValuePair\<TKey, TValue\>\>**. The
 **IEnumerable\<T\>** interface allows the
 [**foreach**](/~rhowell/DataStructures/redirect/foreach) statement to
 iterate through the data structure - in the case of a dictionary, either
@@ -24,13 +24,13 @@ implementation, which takes advantage of certain optimizations in the
 implementation of the linked lists.
 
 We will begin by discussing how to make the dictionary class itself
-implement **IEnumerable\<KeyValuePair\<TKey,Ã‚Â TValue\>\>**. We will
+implement **IEnumerable\<KeyValuePair\<TKey, TValue\>\>**. We will
 examine the details of the **IEnumerable\<T\>** interface shortly, but
 for now, we will simply observe that it contains two methods, each of
 which is responsible for returning an *enumerator*, which is an object
 that can be used to step through a sequence of data elements. We make
 this enumerator available by causing the dictionary to implement
-**IEnumerable\<KeyValuePair\<TKey,Ã‚Â TValue\>\>**. A **foreach** loop
+**IEnumerable\<KeyValuePair\<TKey, TValue\>\>**. A **foreach** loop
 can then iterate through the pairs that the supplied enumerator steps
 through.
 
@@ -50,13 +50,13 @@ retrieve from the enumerator the object at the current position
 to advance its current position to the next position in the sequence.
 
 We need to define an enumerator that iterates through objects of type
-**KeyValuePair\<TKeyÃ‚Â TValue\>**; i.e., we need to define a class that
-implements **IEnumerator\<KeyValuePair\<TKey,Ã‚Â TValue\>\>**. In order
+**KeyValuePair\<TKey TValue\>**; i.e., we need to define a class that
+implements **IEnumerator\<KeyValuePair\<TKey, TValue\>\>**. In order
 to do this, we must place this definition where the compiler can
 understand that **TKey** and **TValue** are type parameters to the
-**Dictionary\<TKey,Ã‚Â TValue\>** class. In order to accomplish this, we
+**Dictionary\<TKey, TValue\>** class. In order to accomplish this, we
 need to define it as a *nested class* - a class whose definition occurs
-within the definition of the **Dictionary\<TKey,Ã‚Â TValue\>** class.
+within the definition of the **Dictionary\<TKey, TValue\>** class.
 This nesting allows the nested class to access the private fields of any
 instance of the containing class, as well as the type parameters to the
 containing class. However, nesting classes does *not* nest instances of
@@ -121,7 +121,7 @@ In order to be able to implement the above members, the nested class
 will need the following **private** fields:
 
   - The hash table to iterate through. This can either be a
-    **Dictionary\<TKey,Ã‚Â TValue\>** or an array of the type that
+    **Dictionary\<TKey, TValue\>** or an array of the type that
     implements the hash table. We will assume that it is an array, as
     this is the simplest approach.
   - The current index into the hash table. This is part of the
@@ -170,7 +170,7 @@ Once the above loop terminates we can return **true**, as we have
 reached the next cell in the hash table.
 
 Once we have completed this nested class, we need to make the dictionary
-class implement **IEnumerable\<KeyValuePair\<TKey,Ã‚Â TValue\>\>**. The
+class implement **IEnumerable\<KeyValuePair\<TKey, TValue\>\>**. The
 **IEnumerable\<T\>** interface requires the following members:
 
   - **public IEnumerator\<T\> GetEnumerator()**: This method is used to

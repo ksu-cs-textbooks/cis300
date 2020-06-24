@@ -21,7 +21,7 @@ The fact that edges are 2-element sets means that the nodes that
     there is no notion of a "first" element or a "second" element -
     there are just two elements.  Thus, an edge expresses some
     symmetric relationship between two nodes; i.e., if
-    {<i>u</i>,Ã‚Â <i>v</i>} is an edge then node <i>u</i> is
+    {<i>u</i>, <i>v</i>} is an edge then node <i>u</i> is
     <i>adjacent</i> to node <i>v</i>, and node <i>v</i> is adjacent to
     node <i>u</i>.  We also might
     associate some data, such as a label or a length, with an edge.
@@ -41,9 +41,9 @@ A <i>directed graph</i> is similar to an undirected graph, but
       an edge its <i>source</i> and the second node its
       <i>destination</i>.  Thus, an edge in a directed
       graph expresses an asymmetric relationship between two nodes;
-      i.e., if (<i>u</i>,Ã‚Â <i>v</i>) is an edge, then <i>v</i> is
+      i.e., if (<i>u</i>, <i>v</i>) is an edge, then <i>v</i> is
       adjacent to <i>u</i>, but <i>u</i> is not adjacent to
-      <i>v</i> unless (<i>v</i>,Ã‚Â <i>u</i>) is also an edge in the
+      <i>v</i> unless (<i>v</i>, <i>u</i>) is also an edge in the
       graph.  As with undirected graphs, we might associate data with
       an edge in a directed graph.
 </p>
@@ -51,7 +51,7 @@ We can draw directed graphs like we draw undirected graphs, except
     that we use an arrow to distinguish between the source and the
     destination of an edge.  Specifically, the arrows point from the
     source to the destination.  If we have edges
-    (<i>u</i>,Ã‚Â <i>v</i>) and (<i>v</i>,Ã‚Â <i>u</i>), and if
+    (<i>u</i>, <i>v</i>) and (<i>v</i>, <i>u</i>), and if
     these edges have the same data associated with them, we might
     simplify the drawing by using a single line with arrows in both
     directions.  Following is an example of a directed graph with
@@ -61,21 +61,21 @@ We can draw directed graphs like we draw undirected graphs, except
 </p>
 <a href="Ksu.Cis300.Graphs.dll">This DLL</a> contains the definition
     of a namespace <b>Ksu.Cis300.Graphs</b> containing a class
-    <b>DirectedGraph&lt;TNode,Ã‚Â TEdgeData&gt;</b> and a structure
-    <b>Edge&lt;TNode,Ã‚Â TEdgeData&gt;</b>.  The class
-    <b>DirectedGraph&lt;TNode,Ã‚Â TEdgeData&gt;</b> 
+    <b>DirectedGraph&lt;TNode, TEdgeData&gt;</b> and a structure
+    <b>Edge&lt;TNode, TEdgeData&gt;</b>.  The class
+    <b>DirectedGraph&lt;TNode, TEdgeData&gt;</b> 
     implements a directed graph whose nodes are of type <b>TNode</b>,
     which must be a type suitable for hashing.  The edges each store a
     data item of type <b>TEdgeData</b>, which may be any type.   These
     edges can be represented using instances of the
-    <b>Edge&lt;TNode,Ã‚Â TEdgeData&gt;</b> structure.  We also
-    can use the <b>DirectedGraph&lt;TNode,Ã‚Â TEdgeData&gt;</b>
+    <b>Edge&lt;TNode, TEdgeData&gt;</b> structure.  We also
+    can use the <b>DirectedGraph&lt;TNode, TEdgeData&gt;</b>
     class to represent undirected graphs - we simply make
-    sure that whenever there is an edge (<i>u</i>,Ã‚Â <i>v</i>),
-    there is also an edge (<i>v</i>,Ã‚Â <i>u</i>) containing the
+    sure that whenever there is an edge (<i>u</i>, <i>v</i>),
+    there is also an edge (<i>v</i>, <i>u</i>) containing the
     same data.  
 <p>
-The <b>Edge&lt;TNode,Ã‚Â TEdgeData&gt;</b> structure contains the
+The <b>Edge&lt;TNode, TEdgeData&gt;</b> structure contains the
       following <b>public</b> members:
 </p>
 <ul>
@@ -93,7 +93,7 @@ The <b>Edge&lt;TNode,Ã‚Â TEdgeData&gt;</b> structure contains the
 Note that because no <b>public</b> members change the structure, it is
       immutable.
 </p>
-The <b>DirectedGraph&lt;TNode,Ã‚Â TEdgeData&gt;</b> class contains
+The <b>DirectedGraph&lt;TNode, TEdgeData&gt;</b> class contains
     the following <b>public</b> members:
 <ul>
 <li> <b>DirectedGraph()</b>: This constructor constructs a directed
@@ -133,7 +133,7 @@ The <b>DirectedGraph&lt;TNode,Ã‚Â TEdgeData&gt;</b> class contains
 	<tt>source</tt> to <tt>dest</tt>.</li>
 <li> <b>IEnumerable&lt;TNode&gt; Nodes</b>:  This property gets an
 	  enumerable collection of the nodes in the graph.</li>
-<li> <b>IEnumerable&lt;Edge&lt;TNode,Ã‚Â TEdgeData&gt;&gt;
+<li> <b>IEnumerable&lt;Edge&lt;TNode, TEdgeData&gt;&gt;
 	  OutgoingEdges(TNode source)</b>: This method gets an
 	  enumerable collection of the outgoing edges from the given
 	  node.  If <tt>source</tt> is not a node in the graph, it
@@ -141,7 +141,7 @@ The <b>DirectedGraph&lt;TNode,Ã‚Â TEdgeData&gt;</b> class contains
 	  <b>null</b>, it throws an <b>ArgumentNullException</b>.
 	  Otherwise, each edge in the collection returned is
 	  represented by an
-	  <b>Edge&lt;TNode,Ã‚Â TEdgeData&gt;</b></li>
+	  <b>Edge&lt;TNode, TEdgeData&gt;</b></li>
 </ul>
 This implementation is somewhat limited in its utility, as nodes or
     edges cannot be removed, and values associated with edges cannot

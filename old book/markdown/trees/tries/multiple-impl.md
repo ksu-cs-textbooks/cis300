@@ -69,7 +69,7 @@ statement, as follows:
 
 The [source code for the **IComparable\<T\>**
 interface](https://referencesource.microsoft.com/#mscorlib/system/icomparable.cs,3911354c40e0c30e)
-has been posted by MicrosoftÃ‚Â®. The essential part of this definition
+has been posted by Microsoft®. The essential part of this definition
 is:
 
 ``` 
@@ -101,7 +101,7 @@ instance of type **TKey**.
 
 Now suppose that we want to define a class **Fraction** and use it as a
 key in our dictionary implementation. We would begin the class
-definition within Visual StudioÃ‚Â® as follows:
+definition within Visual Studio® as follows:
 
 ![Beginning an interface](interface-example1.jpg)
 

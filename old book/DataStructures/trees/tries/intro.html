@@ -117,9 +117,9 @@ Note that in this implementation, no <b>char</b>s or <b>string</b>s
     technically a numeric type, we can perform arithmetic with
     <b>char</b>s; thus, we can obtain the child labeled by
     <tt>label</tt> by retrieving
-    <tt>_children[labelÃ‚Â -Ã‚Â 'a']</tt>.  More specifically, if
+    <tt>_children[label - 'a']</tt>.  More specifically, if
     <tt>label</tt> contains 'd', then the difference,
-    <tt>labelÃ‚Â -Ã‚Â 'a'</tt> will be 3; hence, the child with
+    <tt>label - 'a'</tt> will be 3; hence, the child with
     label 'd' will be stored at index 3.  We have therefore achieved
     our goal of providing quick access to a child with a given label.
 <p>

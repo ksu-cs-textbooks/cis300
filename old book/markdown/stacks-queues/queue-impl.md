@@ -48,7 +48,7 @@ completely fill the current array, and unless we need to do this, we
 don't need to move elements around. We need the following class members
 in order to keep track of everything:
 
-  - a **private T\[Ã‚Â \]** field in which to store the elements;
+  - a **private T\[ \]** field in which to store the elements;
   - a **public int Count** property; and
   - a **private int** field giving the index of the element at the front
     of the queue (if the queue is empty, this can be any valid index).

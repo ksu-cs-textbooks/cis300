@@ -26,7 +26,7 @@ We start by determining how we can represent a **StringBuilder** using
 more primitive data structures. One of the more useful primitive data
 structures that C\# provides for building more advanced data structures
 is the array. We can represent the characters in a **StringBuilder**
-using a **char\[Ã‚Â \]**. One difficulty in using an array, however, is
+using a **char\[ \]**. One difficulty in using an array, however, is
 that we don't know how many characters our **StringBuilder** might need.
 We will return to this issue shortly, but for now, let's just
 arbitrarily pick a size for our array, and define:
@@ -69,7 +69,7 @@ represent the sequence of characters:
 ![The implementation of a StringBuilder](stringbuilder-impl.jpg)
 
 Within the array referred to by `_characters`, the first `_length`
-locations (i.e., locations 0 through `_length`Ã‚Â -Ã‚Â 1) store the
+locations (i.e., locations 0 through `_length` - 1) store the
 characters in the **StringBuilder**. This means that
 `_characters[_length]` is the next available location, provided this is
 a valid array location. In this case, we can simply place the **char**
@@ -137,7 +137,7 @@ definition by default. However, the **ToString** method defined for
 **object**s doesn't give us the **string** we want. Fortunately, though,
 this method is a **virtual** method, meaning that we can re-define by
 *overriding* it. We do this by using the keyword, **override**, in its
-definition. Visual StudioÃ‚Â®'s auto-complete feature is helpful here,
+definition. Visual Studio®'s auto-complete feature is helpful here,
 as when we type the word **override**, it presents us with a list of the
 methods that can be overridden. Selecting **ToString** from this list
 will fill in a template for the method with a correct parameter list and
@@ -149,7 +149,7 @@ one of the [**string**
 constructor](http://msdn.microsoft.com/en-us/library/ms131424\(v=vs.110\).aspx)s.
 This constructor takes three parameters:
 
-  - a **char\[Ã‚Â \]** containing the characters to form the **string**;
+  - a **char\[ \]** containing the characters to form the **string**;
   - an **int** giving the index in this array of the first character to
     use; and
   - an **int** giving the number of characters to use.

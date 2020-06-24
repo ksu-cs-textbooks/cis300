@@ -95,7 +95,7 @@ We then need a loop to iterate as long as this search space is nonempty
       the index we compute is within the search space - otherwise, we
       may not reduce the search space, and an infinite loop will
       result.  Because the search space is nonempty,
-      <tt>start</tt>Ã‚Â &lt;Ã‚Â <tt>end</tt>; hence, the true
+      <tt>start</tt> &lt; <tt>end</tt>; hence, the true
       average is strictly between <tt>start</tt> and <tt>end</tt>.  If
       this average is not an integer, the result will be rounded down
       to the next smaller integer.  Because <tt>start</tt> is an integer, this
@@ -129,7 +129,7 @@ If the loop finishes without returning, then the search space is
 <p>
 Binary search is a very efficient way to search an ordered array-like
       structure.  In particular, it always makes no more than
-      <i>O</i>(logÃ‚Â <i>n</i>) comparisons, where <i>n</i> is the
+      <i>O</i>(log <i>n</i>) comparisons, where <i>n</i> is the
       number of elements in the data set.  The log function grows very
       slowly - much more slowly than <i>n</i>.
 </p>

@@ -10,7 +10,7 @@ lengths of all the edges along that path. A shortest path from *u* to
 *v* is then a path from *u* to *v* with minimum length. Thus, for
 example, the shortest path from *a* to *h* in the graph below is
 *a*-*c*-*g*-*f*-*h*, and its length is
-4.8Ã‚Â +Ã‚Â 6.4Ã‚Â +Ã‚Â 4.9Ã‚Â +Ã‚Â 3.2Ã‚Â =Ã‚Â 19.3.
+4.8 + 6.4 + 4.9 + 3.2 = 19.3.
 
 ![A directed graph](directed-graph.jpg)
 
@@ -86,7 +86,7 @@ have found. A convenient way to do this is, for each node to which we
 have found a shortest path, to keep track of this node's predecessor on
 this path. This will allow us to retrieve a shortest path to a node *v*
 by starting at *v* and tracing the path backwards using the predecessor
-of each node until we reach *u*. A **Dictionary\<TNode,Ã‚Â TNode\>** is
+of each node until we reach *u*. A **Dictionary\<TNode, TNode\>** is
 an ideal choice for this data structure. The keys in the dictionary will
 be the nodes in *S*, and the value associated with a key will be that
 key's predecessor on a shortest path. For node *u*, which is in *S* but
@@ -103,7 +103,7 @@ simply be its length.
 Once the above initialization is done, the algorithm enters a loop that
 iterates as long as the min-priority queue is nonempty. An iteration
 begins by obtaining the minimum priority *p* from the min-priority
-queue, then removing an edge (*w*,Ã‚Â *x*) with minimum priority. If *x*
+queue, then removing an edge (*w*, *x*) with minimum priority. If *x*
 is a key in the dictionary, we can ignore this edge and go on to the
 next iteration. Otherwise, we add to the dictionary the key *x* with a
 value of *w*. Because we now have a shortest path to *x*, there may be
@@ -135,20 +135,20 @@ unreachable. This modified algorithm is therefore as follows:
 
   - Construct a new dictionary and a new min-priority queue.
   - Add to the dictionary the key *u* with value *u*.
-  - If *u*Ã‚Â =Ã‚Â *v*, return 0.
-  - For each outgoing edge (*u*,Ã‚Â *w*) from *u*:
-      - Add (*u*,Ã‚Â *w*) to the min-priority queue with a priority of
+  - If *u* = *v*, return 0.
+  - For each outgoing edge (*u*, *w*) from *u*:
+      - Add (*u*, *w*) to the min-priority queue with a priority of
         the length of this edge.
   - While the min-priority queue is nonempty:
       - Get the minimum priority *p* from the min-priority queue.
-      - Remove an edge (*w*,Ã‚Â *x*) with minimum priority from the
+      - Remove an edge (*w*, *x*) with minimum priority from the
         min-priority queue.
       - If *x* is not a key in the dictionary:
           - Add to the dictionary the key *x* with a value of *w*.
-          - If *x*Ã‚Â =Ã‚Â *v*, return *p*.
-          - For each outgoing edge (*x*,Ã‚Â *y*) from *x*:
-              - Add (*x*,Ã‚Â *y*) to the min-priority queue with
-                priority *p* plus the length of (*x*,Ã‚Â *y*).
+          - If *x* = *v*, return *p*.
+          - For each outgoing edge (*x*, *y*) from *x*:
+              - Add (*x*, *y*) to the min-priority queue with
+                priority *p* plus the length of (*x*, *y*).
   - Return a negative value.
 
 The above algorithm computes all of the path information we need, but we

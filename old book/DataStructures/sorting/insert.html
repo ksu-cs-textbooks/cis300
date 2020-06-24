@@ -24,7 +24,7 @@ Initially, the sorted part will contain the first element, as a single
     each step, the first element in the unsorted part is inserted into
     its proper location in the sorted part.  As a result, the sorted
     part now contains one more element, and the unsorted part one
-    fewer element.  After <i>n</i>Ã‚Â -Ã‚Â 1 steps, where <i>n</i>
+    fewer element.  After <i>n</i> - 1 steps, where <i>n</i>
     is the number of elements in the array, the sorted part will
     contain all the elements, and the algorithm will be done.
 <p>
@@ -72,12 +72,12 @@ Unlike bubble sort, however, insertion sort has a clean
     characterization of its performance based on how sorted the array
     is.  This characterization is based on the notion of an
     <i>inversion</i>, which is a pair of array locations
-    <i>i</i>Ã‚Â &lt;Ã‚Â <i>j</i> such that the value at location
+    <i>i</i> &lt; <i>j</i> such that the value at location
     <i>i</i> is greater than the value at location <i>j</i>; i.e.,
     these two values are out of order with respect to each other.  A
     sorted array has no inversions, whereas in an array in reverse
     order, every pair of locations is an inversion, for a total of
-    <i>n</i>(<i>n</i>Ã‚Â -Ã‚Â 1)/2 inversions.  In general, we can
+    <i>n</i>(<i>n</i> - 1)/2 inversions.  In general, we can
     say that the fewer inversions an array has, the more sorted it is.
 <p>
 The reason why inversions are important to understanding the
@@ -86,12 +86,12 @@ The reason why inversions are important to understanding the
       removes exactly one inversion.  Consequently, if an array
       initially has <i>k</i> inversions, the inner loop will iterate a
       total of <i>k</i> times.  If we combine this with the
-      <i>n</i>Ã‚Â -Ã‚Â 1 iterations of the outer loop, we can
+      <i>n</i> - 1 iterations of the outer loop, we can
       conclude that the running time of insertion sort is in
-      <i>O</i>(<i>n</i>Ã‚Â +Ã‚Â <i>k</i>).  Thus, if the number of
+      <i>O</i>(<i>n</i> + <i>k</i>).  Thus, if the number of
       inversions is relatively small in comparison to <i>n</i> (i.e.,
       the array is nearly sorted), insertion sort runs in
-      <i>O</i>(<i>n</i>) time.  (By contrast, <i>n</i>Ã‚Â -Ã‚Â 2
+      <i>O</i>(<i>n</i>) time.  (By contrast, <i>n</i> - 2
       inversions can be enough to cause the inner loop of bubble sort
       to iterate its worst-case number of times.)  For this reason,
       insertion sort is the algorithm of choice when we expect the

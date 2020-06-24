@@ -117,7 +117,7 @@ instead, they will use **public** properties.
 
 In some cases, we need more than a single to expression to define a
 **get** or **set** accessor. For example, suppose a data structure
-stores an **int\[Ã‚Â \]** `_elements`, and we wish to provide read-only
+stores an **int\[ \]** `_elements`, and we wish to provide read-only
 access to this array. In order to ensure read-only access, we don't want
 to give user code a reference to the array, as the code would then be
 able to modify its contents. We therefore wish to make a copy of the

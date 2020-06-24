@@ -16,7 +16,7 @@ The following figure illustrates this arrangement.
 Initially, the sorted part will be empty. At each step, the unsorted
 part is rearranged so that its smallest element comes first. As a
 result, the sorted part can now contain one more element, and the
-unsorted part one fewer element. After *n*Ã‚Â -Ã‚Â 1 steps, where *n* is
+unsorted part one fewer element. After *n* - 1 steps, where *n* is
 the number of elements in the array, the sorted part will have all but
 one of the elements. Because the one element in the unsorted part must
 be at least as large as all elements in the sorted part, the entire
@@ -40,7 +40,7 @@ the unsorted part contains all *n* elements. On each successive
 iteration, the unsorted part is one element smaller, until on the last
 iteration, it has only 2 elements. If we add up all these values, we
 find that the inner loop iterates a total of exactly
-(*n*Ã‚Â -Ã‚Â 1)(*n*Ã‚Â +Ã‚Â 2)/2 times. This value is
+(*n* - 1)(*n* + 2)/2 times. This value is
 proportional to *n*<sup>2</sup> as *n* increases; hence, the running
 time of the algorithm is in *O*(*n*<sup>2</sup>). Furthermore, this
 performance occurs no matter how the data items are initially arranged.
@@ -77,8 +77,8 @@ smallest key, then this algorithm is stable.
 <span id="bubble-sort"></span> Another implementation of a select sort
 is *bubble sort*. It rearranges the unsorted part by swapping adjacent
 elements that are out of order. It starts with the last two elements
-(i.e., the elements at locations *n*Ã‚Â -Ã‚Â 1 and *n*Ã‚Â -Ã‚Â 2), then
-the elements at locations *n*Ã‚Â -Ã‚Â 2 and *n*Ã‚Â -Ã‚Â 3, etc.
+(i.e., the elements at locations *n* - 1 and *n* - 2), then
+the elements at locations *n* - 2 and *n* - 3, etc.
 Proceeding in this way, the smallest element in the unsorted part will
 end up at the beginning of the unsorted part. While the inner loop is
 doing this, it keeps track of whether it has made any swaps. If the loop
@@ -129,12 +129,12 @@ is the same. To rearrange the unsorted part, it:
 3.  Places the copy of the first element into the space vacated by its
     removal at the beginning of the sorted part.
 
-Heap sort runs in *O*(*n*Ã‚Â lgÃ‚Â *n*) time in the worst case.
+Heap sort runs in *O*(*n* lg *n*) time in the worst case.
 Information theory can be used to prove that any sorting algorithm that
 sorts by comparing elements must make at least lg(*n*\!) comparisons on
 some arrays of size *n*. Because lg(*n*\!) is proportional to
-*n*Ã‚Â lgÃ‚Â *n*, we cannot hope to do any better than
-*O*(*n*Ã‚Â lgÃ‚Â *n*) in the worst case. While this performance is a
+*n* lg *n*, we cannot hope to do any better than
+*O*(*n* lg *n*) in the worst case. While this performance is a
 significant improvement over selection sort and bubble sort, we will see
 in [a later section](/~rhowell/DataStructures/redirect/split-sorts) that
 there is an algorithm (quick sort) that does even better in practice.

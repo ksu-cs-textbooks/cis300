@@ -1,118 +1,90 @@
-# Enumerations
+---
+title: "Enumerations"
+weight: 10
+pre: "2. "
+---
 
-An *enumeration* is a [value
-type](/~rhowell/DataStructures/redirect/reference-value) containing a
-set of named constants. An example of an enumeration is
-[**DialogResult**](http://msdn.microsoft.com/en-us/library/system.windows.forms.dialogresult\(v=vs.110\).aspx)
-(see
-["**MessageBox**es"](/~rhowell/DataStructures/redirect/message-boxes)
-and ["File Dialogs"](/~rhowell/DataStructures/redirect/file-dialogs)).
-The **DialogResult** type contains the following members:
+An *enumeration* is a [value type](/~rhowell/DataStructures/redirect/reference-value) containing a set of named constants. An example of an enumeration is [**DialogResult**](http://msdn.microsoft.com/en-us/library/system.windows.forms.dialogresult\(v=vs.110\).aspx) (see ["**MessageBox**es"](/~rhowell/DataStructures/redirect/message-boxes) and ["File Dialogs"](/~rhowell/DataStructures/redirect/file-dialogs)). The **DialogResult** type contains the following members:
 
-  - **DialogResult.Abort**
-  - **DialogResult.Cancel**
-  - **DialogResult.Ignore**
-  - **DialogResult.No**
-  - **DialogResult.None**
-  - **DialogResult.OK**
-  - **DialogResult.Retry**
-  - **DialogResult.Yes**
+- **DialogResult.Abort**
+- **DialogResult.Cancel**
+- **DialogResult.Ignore**
+- **DialogResult.No**
+- **DialogResult.None**
+- **DialogResult.OK**
+- **DialogResult.Retry**
+- **DialogResult.Yes**
 
-Each of the above members has a different constant value. In many cases,
-we are not interested in the specific value of a given member. Instead,
-we are often only interested in whether two expressions of this type
-have the same value. For example, the following code fragment is given
-in the
-["**MessageBox**es"](/~rhowell/DataStructures/redirect/message-boxes)
-section:
+Each of the above members has a different constant value. In many cases, we are not interested in the specific value of a given member. Instead, we are often only interested in whether two expressions of this type have the same value. For example, the following code fragment is given in the ["**MessageBox**es"](/~rhowell/DataStructures/redirect/message-boxes) section: 
 
-    DialogResult result = MessageBox.Show("The file is not saved. Really quit?", 
-        "Confirm Quit", MessageBoxButtons.YesNo);
-    if (result == DialogResult.Yes)
-    {
-        Application.Exit();
-    }
+```C#
+DialogResult result = MessageBox.Show("The file is not saved. Really quit?", "Confirm Quit", MessageBoxButtons.YesNo);
+if (result == DialogResult.Yes)
+{
+    Application.Exit();
+}
+```
 
-In the **if**-statement above, we are only interested in whether the
-user closed the **MessageBox** with the "Yes" button; i.e., we want to
-know whether the **Show** method returned the same value as
-**DialogResult.Yes**. For this purpose, we don't need to know anything
-about the value of **DialogResult.Yes** or any of the other
-**DialogResult** members.
+In the **if**-statement above, we are only interested in whether the user closed the **MessageBox** with the "Yes" button; i.e., we want to know whether the **Show** method returned the same value as **DialogResult.Yes**. For this purpose, we don't need to know anything about the value of **DialogResult.Yes** or any of the other **DialogResult** members.
 
-However, there are times when it is useful to know that the values in an
-enumeration are always integers. Using a
-[cast](/~rhowell/DataStructures/redirect/casts), we can assign a member
-of an enumeration to an **int** variable or otherwise use it as we would
-an **int**; for example, after the code fragment above, we can write:
+However, there are times when it is useful to know that the values in an enumeration are always integers. Using a [cast](/~rhowell/DataStructures/redirect/casts), we can assign a member of an enumeration to an **int** variable or otherwise use it as we would an **int**; for example, after the code fragment above, we can write:
 
-    int i = (int)result;
+```C#
+int i = (int)result;
+```
 
-As a more involved example, we can loop through the values of an
-enumeration:
+As a more involved example, we can loop through the values of an enumeration:
 
-    for (DialogResult r = 0; (int)r < 8; r++)
-    {
-        MessageBox.Show(r.ToString());
-    }
+```c#
+for (DialogResult r = 0; (int)r < 8; r++)
+{
+    MessageBox.Show(r.ToString());
+}
+```
 
-The above loop will display 8 **MessageBox**es in sequence, each
-displaying the name of a member of the enumeration (i.e., "None", "OK",
-etc.).
+The above loop will display 8 **MessageBox**es in sequence, each displaying the name of a member of the enumeration (i.e., "None", "OK", etc.).
 
-Variables of an enumeration type may be assigned any value of the
-enumeration's underlying type (usually **int**, as we will discuss
-below). For example, if we had used the condition `(int)rÃ‚Â <Ã‚Â 10` in
-the above **for** statement, the loop would continue two more
-iterations, showing 8 and 9 in the last two **MessageBox**es.
+Variables of an enumeration type may be assigned any value of the enumeration's underlying type (usually **int**, as we will discuss below). For example, if we had used the condition `(int)r < 10` in the above **for** statement, the loop would continue two more iterations, showing 8 and 9 in the last two **MessageBox**es.
 
-<span id="enum-defn"></span> An enumeration is defined using an
-[**enum**](http://msdn.microsoft.com/en-us/library/sbbt4032.aspx)
-statement, which is similar to a **class** statement except that in the
-simplest case, the body of an **enum** is simply a listing of the
-members of the enumeration. For example, the **DialogResult**
-enumeration is defined as follows:
+An enumeration is defined using an [**enum**](http://msdn.microsoft.com/en-us/library/sbbt4032.aspx) statement, which is similar to a **class** statement except that in the simplest case, the body of an **enum** is simply a listing of the members of the enumeration. For example, the **DialogResult** enumeration is defined as follows:
 
-    public enum DialogResult
-    {
-        None, OK, Cancel, Abort, Retry, Ignore, Yes, No
-    }
+```C#
+public enum DialogResult
+{
+    None, OK, Cancel, Abort, Retry, Ignore, Yes, No
+}
+```
 
-This definition defines **DialogResult.None** as having the value 0,
-**DialogResult.OK** as having the value 1, etc.
+This definition defines **DialogResult.None** as having the value 0, **DialogResult.OK** as having the value 1, etc.
 
-As mentioned above, each enumeration has underlying type. By default,
-this type is **int**, but an **enum** statement may specify another
-underlying type, as follows:
+As mentioned above, each enumeration has underlying type. By default, this type is **int**, but an **enum** statement may specify another underlying type, as follows:
 
-    public enum Beatles : byte
-    {
-        John, Paul, George, Ringo
-    }
+```C#
+public enum Beatles : byte
+{
+    John, Paul, George, Ringo
+}
+```
 
-The above construct defines the underlying type for the enumeration
-**Beatles** to be **byte**; thus, a variable of type **Beatles** may be
-assigned any **byte** value. The following integer types may be used as
-underlying types for enumerations:
+The above construct defines the underlying type for the enumeration **Beatles** to be **byte**; thus, a variable of type **Beatles** may be assigned any **byte** value. The following integer types may be used as underlying types for enumerations:
 
-  - **byte** (0 through 255)
-  - **sbyte** (-128 through 127)
-  - **short** (-32,768 through 32,767)
-  - **ushort** (0 through 65,535)
-  - **int** (-2,147,483,648 through 2,147,483,647)
-  - **uint** (0 through 4,294,967,295)
-  - **long** (-9,223,372,036,854,775,808 through
-    9,223,372,036,854,775,807)
-  - **ulong** (0 through 18,446,744,073,709,551,615)
+- **byte** (0 through 255)
+- **sbyte** (-128 through 127)
+- **short** (-32,768 through 32,767)
+- **ushort** (0 through 65,535)
+- **int** (-2,147,483,648 through 2,147,483,647)
+- **uint** (0 through 4,294,967,295)
+- **long** (-9,223,372,036,854,775,808 through 9,223,372,036,854,775,807)
+- **ulong** (0 through 18,446,744,073,709,551,615)
 
-It is also possible to define members of an enumeration so that they are
-not simply the values 0, 1, etc. For example, we might alter the
-**Beatles** enumeration as follows:
+It is also possible to define members of an enumeration so that they are not simply the values 0, 1, etc. For example, we might alter the **Beatles** enumeration as follows:
 
-    public enum Beatles : byte
-    {
-        John = 1, Paul, George = 5, Ringo
-    }
+```C#
+public enum Beatles : byte
+{
+    John = 1, Paul, George = 5, Ringo
+}
+```
 
 This defines the following values for the members:
 

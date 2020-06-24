@@ -1,8 +1,8 @@
 # Indexers
 
 Recall that the
-**System.Collections.Generic.Dictionary\<TKey,Ã‚Â TValue\>** class
-(see "[The **Dictionary\<TKey,Ã‚Â TValue\>**
+**System.Collections.Generic.Dictionary\<TKey, TValue\>** class
+(see "[The **Dictionary\<TKey, TValue\>**
 Class](/~rhowell/DataStructures/redirect/dictionary-class)") allows keys
 to be used as indices for the purpose of adding new keys and values,
 changing the value associated with a key, and retrieving the value
@@ -32,7 +32,7 @@ The biggest differences are:
 
 Thus, an indexer is like a property with parameters. The parameters are
 the indices themselves; i.e., if `d` is a
-**Dictionary\<TKey,Ã‚Â TValue\>** and `key` is a **TKey**, `d[key]`
+**Dictionary\<TKey, TValue\>** and `key` is a **TKey**, `d[key]`
 invokes the indexer with parameter `key`. In general, either the getter
 or the setter may be omitted, but at least one of them must be included.
 As in a property definition, the setter can use the keyword **value**
@@ -43,7 +43,7 @@ keyword **this** in the above code.
 
 We want to implement the indexer to behave in the same way as the
 indexer for
-**System.Collections.Generic.Dictionary\<TKey,Ã‚Â TValue\>**. Thus,
+**System.Collections.Generic.Dictionary\<TKey, TValue\>**. Thus,
 the getter is similar to the **TryGetValue** method, as outlined in "[A
 Simple Hash Table
 Implementation](/~rhowell/DataStructures/redirect/simple-hash-table-impl)",

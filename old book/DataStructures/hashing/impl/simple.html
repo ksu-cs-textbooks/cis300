@@ -28,7 +28,7 @@ At the core of our implementation is the computation of the hash
     location.
 <p>
 One common technique, which is used in the .NET implementation of the
-      <a href="http://msdn.microsoft.com/en-us/library/xfhwa508.aspx"><b>Dictionary&lt;TKey,Ã‚Â TValue&gt;</b></a>
+      <a href="http://msdn.microsoft.com/en-us/library/xfhwa508.aspx"><b>Dictionary&lt;TKey, TValue&gt;</b></a>
       class, is called the <i>division method</i>.  This technique
       consists of the following:
 </p>
@@ -38,9 +38,9 @@ One common technique, which is used in the .NET implementation of the
 	table.</li>
 </ol>
 If <tt>p</tt> is a nonnegative <b>int</b> and <tt>q</tt> is a positive
-    <b>int</b>, then <tt>pÃ‚Â %Ã‚Â q</tt> gives a nonnegative
+    <b>int</b>, then <tt>p % q</tt> gives a nonnegative
     value less than <tt>q</tt>; hence, if <tt>q</tt> is the table
-    length, <tt>pÃ‚Â %Ã‚Â q</tt> is a location within the table.
+    length, <tt>p % q</tt> is a location within the table.
     Furthermore, this calculation often does a good job of distributing hash
     code values among the different table locations, but this depends
     on how the hash codes were computed and what the length of the
@@ -50,7 +50,7 @@ If <tt>p</tt> is a nonnegative <b>int</b> and <tt>q</tt> is a positive
 For example, suppose we use a size 2<sup><i>k</i></sup> for some
       positive integer <i>k</i>.  In this case, the above computation
       can be simplified, as the values formed by <i>k</i> bits are 0
-      through 2<sup><i>k</i></sup>Ã‚Â -Ã‚Â 1, or all of the
+      through 2<sup><i>k</i></sup> - 1, or all of the
       locations in the table.  We can therefore simply use the
       low-order <i>k</i> bits of the hash code as the table location.
       However, it turns out that using the division method when the

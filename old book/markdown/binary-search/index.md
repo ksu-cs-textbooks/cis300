@@ -79,7 +79,7 @@ doing integer division, which may involve rounding. As a result, we may
 not get exactly the average. In any case, we need to ensure that the
 index we compute is within the search space - otherwise, we may not
 reduce the search space, and an infinite loop will result. Because the
-search space is nonempty, `start`Ã‚Â \<Ã‚Â `end`; hence, the true
+search space is nonempty, `start` \< `end`; hence, the true
 average is strictly between `start` and `end`. If this average is not an
 integer, the result will be rounded down to the next integer. Because
 `start` is an integer, this result will be no less than `start`, but
@@ -105,6 +105,6 @@ hence, the key we are looking for is not in the data set. However,
 hence, the binary search can be used for both lookups and insertions.
 
 Binary search is a very efficient way to search an ordered array-like
-structure. In particular, it always makes no more than *O*(logÃ‚Â *n*)
+structure. In particular, it always makes no more than *O*(log *n*)
 comparisons, where *n* is the number of elements in the data set. The
 log function grows very slowly - much more slowly than *n*.

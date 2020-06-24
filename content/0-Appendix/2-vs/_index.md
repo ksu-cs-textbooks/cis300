@@ -1,12 +1,12 @@
 +++
-title = "Chapter 2 Visual Studio"
+title = "Visual Studio"
 date = 2018-08-24T10:53:05-05:00
 weight = 10
 chapter = true
-pre = "<b>2. </b>"
+pre = "<b>a2. </b>"
 +++
 
-# Visual Studio®
+### Visual Studio
 
 This chapter will guide you through the use of Visual Studio 2019 and
 GitHub to obtain start code for your assignments, build, test, and debug

@@ -77,7 +77,7 @@ Use camel case, and begin names with "ux" followed by a capital letter.
 Make your names descriptive of the functionality, not the type of
 control. For example, `uxAccept`, `uxCustomerName`. (You will not
 typically declare these names in code, but will enter them in the Visual
-StudioÃ‚Â® design window.)
+Studio® design window.)
 
 ### Public [Constants](../syntax/const.html)
 

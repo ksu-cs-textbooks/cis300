@@ -10,7 +10,7 @@ The fact that edges are 2-element sets means that the nodes that
 comprise an edge must be distinct. Furthermore, within a set, there is
 no notion of a "first" element or a "second" element - there are just
 two elements. Thus, an edge expresses some symmetric relationship
-between two nodes; i.e., if {*u*,Ã‚Â *v*} is an edge then node *u* is
+between two nodes; i.e., if {*u*, *v*} is an edge then node *u* is
 *adjacent* to node *v*, and node *v* is adjacent to node *u*. We also
 might associate some data, such as a label or a length, with an edge.
 
@@ -27,15 +27,15 @@ ordered pairs of distinct nodes rather than 2-element sets. Within an
 ordered pair, there is a first element and a second element. We call the
 first node of an edge its *source* and the second node its
 *destination*. Thus, an edge in a directed graph expresses an asymmetric
-relationship between two nodes; i.e., if (*u*,Ã‚Â *v*) is an edge, then
+relationship between two nodes; i.e., if (*u*, *v*) is an edge, then
 *v* is adjacent to *u*, but *u* is not adjacent to *v* unless
-(*v*,Ã‚Â *u*) is also an edge in the graph. As with undirected
+(*v*, *u*) is also an edge in the graph. As with undirected
 graphs, we might associate data with an edge in a directed graph.
 
 We can draw directed graphs like we draw undirected graphs, except that
 we use an arrow to distinguish between the source and the destination of
 an edge. Specifically, the arrows point from the source to the
-destination. If we have edges (*u*,Ã‚Â *v*) and (*v*,Ã‚Â *u*), and if
+destination. If we have edges (*u*, *v*) and (*v*, *u*), and if
 these edges have the same data associated with them, we might simplify
 the drawing by using a single line with arrows in both directions.
 Following is an example of a directed graph with numeric values
@@ -45,19 +45,19 @@ associated with the edges:
 
 [This DLL](Ksu.Cis300.Graphs.dll) contains the definition of a namespace
 **Ksu.Cis300.Graphs** containing a class
-**DirectedGraph\<TNode,Ã‚Â TEdgeData\>** and a structure
-**Edge\<TNode,Ã‚Â TEdgeData\>**. The class
-**DirectedGraph\<TNode,Ã‚Â TEdgeData\>** implements a directed
+**DirectedGraph\<TNode, TEdgeData\>** and a structure
+**Edge\<TNode, TEdgeData\>**. The class
+**DirectedGraph\<TNode, TEdgeData\>** implements a directed
 graph whose nodes are of type **TNode**, which must be a type suitable
 for hashing. The edges each store a data item of type **TEdgeData**,
 which may be any type. These edges can be represented using instances of
-the **Edge\<TNode,Ã‚Â TEdgeData\>** structure. We also can use the
-**DirectedGraph\<TNode,Ã‚Â TEdgeData\>** class to represent undirected
+the **Edge\<TNode, TEdgeData\>** structure. We also can use the
+**DirectedGraph\<TNode, TEdgeData\>** class to represent undirected
 graphs - we simply make sure that whenever there is an edge
-(*u*,Ã‚Â *v*), there is also an edge (*v*,Ã‚Â *u*) containing the
+(*u*, *v*), there is also an edge (*v*, *u*) containing the
 same data.
 
-The **Edge\<TNode,Ã‚Â TEdgeData\>** structure contains the following
+The **Edge\<TNode, TEdgeData\>** structure contains the following
 **public** members:
 
   - **Edge(TNode source, TNode dest, TEdgeData data)**: This constructor
@@ -72,7 +72,7 @@ The **Edge\<TNode,Ã‚Â TEdgeData\>** structure contains the following
 Note that because no **public** members change the structure, it is
 immutable.
 
-The **DirectedGraph\<TNode,Ã‚Â TEdgeData\>** class contains the
+The **DirectedGraph\<TNode, TEdgeData\>** class contains the
 following **public** members:
 
   - **DirectedGraph()**: This constructor constructs a directed graph
@@ -105,13 +105,13 @@ following **public** members:
     whether the graph contains an edge from `source` to `dest`.
   - **IEnumerable\<TNode\> Nodes**: This property gets an enumerable
     collection of the nodes in the graph.
-  - **IEnumerable\<Edge\<TNode,Ã‚Â TEdgeData\>\> OutgoingEdges(TNode
+  - **IEnumerable\<Edge\<TNode, TEdgeData\>\> OutgoingEdges(TNode
     source)**: This method gets an enumerable collection of the outgoing
     edges from the given node. If `source` is not a node in the graph,
     it throws an **ArgumentException**. If `source` is **null**, it
     throws an **ArgumentNullException**. Otherwise, each edge in the
     collection returned is represented by an
-    **Edge\<TNode,Ã‚Â TEdgeData\>**
+    **Edge\<TNode, TEdgeData\>**
 
 This implementation is somewhat limited in its utility, as nodes or
 edges cannot be removed, and values associated with edges cannot be

@@ -10,9 +10,9 @@
 <h1>Indexers</h1>
 
 Recall that the
-    <b>System.Collections.Generic.Dictionary&lt;TKey,Ã‚Â TValue&gt;</b>
+    <b>System.Collections.Generic.Dictionary&lt;TKey, TValue&gt;</b>
     class (see "<a href="/~rhowell/DataStructures/redirect/dictionary-class">The
-    <b>Dictionary&lt;TKey,Ã‚Â TValue&gt;</b> Class</a>") allows keys
+    <b>Dictionary&lt;TKey, TValue&gt;</b> Class</a>") allows keys
     to be used as indices for the purpose of adding new keys and
     values, changing the value associated with a key, and retrieving
     the value associated with a key in the table.  In this section, we
@@ -43,7 +43,7 @@ Note the resemblance of the above code to the definition of a
 </ul>
 Thus, an indexer is like a property with parameters.  The parameters
     are the indices themselves; i.e., if <tt>d</tt> is a
-    <b>Dictionary&lt;TKey,Ã‚Â TValue&gt;</b> and <tt>key</tt> is a
+    <b>Dictionary&lt;TKey, TValue&gt;</b> and <tt>key</tt> is a
     <b>TKey</b>, <tt>d[key]</tt> invokes the indexer with parameter
     <tt>key</tt>.  In general, either the getter or the setter may be
     omitted, but at least one of them must be included.  As in a
@@ -55,7 +55,7 @@ Thus, an indexer is like a property with parameters.  The parameters
 <p>
 We want to implement the indexer to behave in the same way as the
       indexer for
-      <b>System.Collections.Generic.Dictionary&lt;TKey,Ã‚Â TValue&gt;</b>.
+      <b>System.Collections.Generic.Dictionary&lt;TKey, TValue&gt;</b>.
       Thus, the getter is similar to the <b>TryGetValue</b> method, as
       outlined in "<a href="/~rhowell/DataStructures/redirect/simple-hash-table-impl">A
       Simple Hash Table Implementation</a>",

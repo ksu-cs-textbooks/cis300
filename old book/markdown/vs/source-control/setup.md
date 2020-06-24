@@ -1,8 +1,8 @@
 # Setting up Source Control
 
-Setting up source control with Visual StudioÃ‚Â® requires a few steps:
+Setting up source control with Visual Studio® requires a few steps:
 
-1.  **Get a MicrosoftÃ‚Â® account.** If you already have a Microsoft
+1.  **Get a Microsoft® account.** If you already have a Microsoft
     account, you can go on to Step 2. Otherwise, go to [the Microsoft
     Account web page](http://www.microsoft.com/en-us/account) and click
     the "Create account" button. In the form on that page, the user name

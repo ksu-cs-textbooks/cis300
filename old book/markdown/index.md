@@ -25,7 +25,7 @@ USA
 ## Appendices
 
 1.  [C# Syntax](redirect/syntax)
-2.  [Visual StudioÃ‚Â®](redirect/visual-studio)
+2.  [Visual Studio®](redirect/visual-studio)
 3.  [Programming Style Requirements](redirect/style)
 
 </div>
@@ -39,7 +39,7 @@ CIS 300 is a lab class, no attempt is made here to provide examples for
 all of the topics covered; instead, students are expected to provide
 many of their own examples through the lab exercises (in most cases,
 solutions to these exercises will be provided to enrolled students
-following the lab). We assume the use of [Visual StudioÃ‚Â® Enterprise
+following the lab). We assume the use of [Visual Studio® Enterprise
 2017](http://www.visualstudio.com/downloads/download-visual-studio-vs).
 
 All sections of this text are now complete, though revisions will

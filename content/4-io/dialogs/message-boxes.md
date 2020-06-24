@@ -127,8 +127,8 @@ method having a fourth parameter of type
     ![A picture of an information icon should appear
     here.](information-icon.jpg)
   - **MessageBoxIcon.None** (no icon)
-  - **MessageBoxIcon.Question** (MicrosoftÃ‚Â® recommends avoiding this,
-    although they use it in Visual StudioÃ‚Â® 2013):  
+  - **MessageBoxIcon.Question** (Microsoft® recommends avoiding this,
+    although they use it in Visual Studio® 2013):  
     ![A picture of a question icon should appear
     here.](question-icon.jpg)
   - **MessageBoxIcon.Warning**:  

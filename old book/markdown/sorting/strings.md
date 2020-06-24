@@ -59,11 +59,11 @@ less than `p`, equal to `p`, or greater than `p`, respectively.
 After these three groups are formed, the first and third group are
 sorted recursively using the same value for `k`. Furthermore, the second
 group may not be completely sorted yet - all we know is that all strings
-in this group agree on the first `k`Ã‚Â +Ã‚Â 1 characters. Thus, unless
+in this group agree on the first `k` + 1 characters. Thus, unless
 `p` is -1 (indicating that that these strings all have length `k`, and
 are therefore all equal), we need to recursively sort this group as
 well. However, because we know that the strings in this group all agree
-on the first `k`Ã‚Â +Ã‚Â 1 characters, we pass `k`Ã‚Â +Ã‚Â 1 as the last
+on the first `k` + 1 characters, we pass `k` + 1 as the last
 parameter.
 
 One aspect of this algorithm that we need to address is whether the

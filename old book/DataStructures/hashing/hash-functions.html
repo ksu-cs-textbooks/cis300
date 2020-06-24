@@ -17,7 +17,7 @@ Whenever equality is redefined for a type, the hash code computation
     efficiently, this method should satisfy the following goals:
 <ul>
 <li> Equal keys must have the same hash code.  This is necessary in
-	order for the <b>Dictionary&lt;TKey,Ã‚Â TValue&gt;</b> class
+	order for the <b>Dictionary&lt;TKey, TValue&gt;</b> class
 	to be able to find a given key that it has stored.  On the
 	other hand, because the number of possible keys is usually
 	larger than the number of possible hash codes, unequal keys
@@ -29,7 +29,7 @@ Whenever equality is redefined for a type, the hash code computation
 The last goal above may seem rather daunting, particularly in light of
     our desire for a quick computation.  In fact, it is impossible to
     guarantee in general - provided there are more than
-    2<sup>32</sup>(<i>k</i>Ã‚Â -Ã‚Â 1) possible keys from which to
+    2<sup>32</sup>(<i>k</i> - 1) possible keys from which to
     choose, no matter how the hash code computation is implemented, we
     can always find at least <i>k</i> keys with the same hash code.
     However, this is a problem that has been studied a great deal, and
@@ -84,10 +84,10 @@ Likewise, if we want to ensure that an exception is thrown if overflow
 In order to understand this computation a little better, let's first
     ignore the effect of this overflow.  We'll denote the fixed odd
     integer by <i>x</i>, and the components of the key as
-    <i>k</i><sub>1</sub>,Ã‚Â .Ã‚Â .Ã‚Â .,Ã‚Â <i>k<sub>n</sub></i>.
+    <i>k</i><sub>1</sub>, . . ., <i>k<sub>n</sub></i>.
     Then this is the result of the computation:
 <p>
-(Ã‚Â .Ã‚Â .Ã‚Â .Ã‚Â ((0xÃ‚Â +Ã‚Â <i>k</i><sub>1</sub>)<i>x</i>Ã‚Â +Ã‚Â <i>k</i><sub>2</sub>)Ã‚Â .Ã‚Â .Ã‚Â .Ã‚Â )<i>x</i>Ã‚Â +Ã‚Â <i>k<sub>n</sub></i>Ã‚Â =Ã‚Â <i>k</i><sub>1</sub><i>x</i><sup><i>n</i>-1</sup>Ã‚Â +Ã‚Â <i>k</i><sub>2</sub><i>x</i><sup><i>n</i>-2</sup>Ã‚Â +Ã‚Â .Ã‚Â .Ã‚Â .Ã‚Â +Ã‚Â <i>k<sub>n</sub></i>.
+( . . . ((0x + <i>k</i><sub>1</sub>)<i>x</i> + <i>k</i><sub>2</sub>) . . . )<i>x</i> + <i>k<sub>n</sub></i> = <i>k</i><sub>1</sub><i>x</i><sup><i>n</i>-1</sup> + <i>k</i><sub>2</sub><i>x</i><sup><i>n</i>-2</sup> + . . . + <i>k<sub>n</sub></i>.
 </p>
 Because the above is a polynomial, this hashing scheme is called
     <i>polynomial hashing</i>.  While the computation itself is
@@ -113,10 +113,10 @@ There are other potential problems with using certain odd numbers for
     key.  Using -1 would be almost as bad, as we would multiply all
     components in odd positions by -1 and all components in even
     positions by 1.  The effect of overflow can cause similar
-    behavior; for example, if we place 2<sup>31</sup>Ã‚Â -Ã‚Â 1 in
+    behavior; for example, if we place 2<sup>31</sup> - 1 in
     an <b>int</b> variable and square it, the overflow causes the
     result to be 1.  Successive powers will then alternate between
-    2<sup>31</sup>Ã‚Â -Ã‚Â 1 and 1.
+    2<sup>31</sup> - 1 and 1.
 <p>
 It turns out that this cyclic behavior occurs no matter what odd
       number we use for <i>x</i>.  However, in most cases the cycle is
@@ -129,7 +129,7 @@ It turns out that this cyclic behavior occurs no matter what odd
 The other potential problem occurs when we are hashing fairly short
     keys.  In such cases, if <i>x</i> is also small enough, the values
     computed will all be much smaller than the maximum possible
-    integer value (2<sup>31</sup>Ã‚Â -Ã‚Â 1).  As a result, we
+    integer value (2<sup>31</sup> - 1).  As a result, we
     will not have a uniform distribution of values.  We therefore want
     to avoid making <i>x</i> too small.
 <p>

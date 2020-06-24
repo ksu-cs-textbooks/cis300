@@ -3,18 +3,18 @@
 Traditionally, there are two main techniques for implementing a graph.
 Each of these techniques has advantages and disadvantages, depending on
 the characteristics of the graph. In this section, we describe the
-implementation of the **DirectedGraph\<TNode,Ã‚Â TEdgeData\>** class
+implementation of the **DirectedGraph\<TNode, TEdgeData\>** class
 from [**Ksu.Cis300.Graphs.dll**](Ksu.Cis300.Graphs.dll). This
 implementation borrows from both traditional techniques to obtain an
 implementation that provides good performance for any graph. In what
 follows, we will first describe the two traditional techniques and
 discuss the strengths and weaknesses of each. We will then outline the
-implementation of **DirectedGraph\<TNode,Ã‚Â TEdgeData\>**.
+implementation of **DirectedGraph\<TNode, TEdgeData\>**.
 
 The first traditional technique is to use what we call an *adjacency
-matrix*. This matrix is a **bool\[n,Ã‚Â n\]**, where *n* is the number
+matrix*. This matrix is a **bool\[n, n\]**, where *n* is the number
 of nodes in the graph. In this implementation, each node is represented
-by an **int** value *i*, where 0Ã‚Â Ã¢â€°Â¤Ã‚Â *i*Ã‚Â \<Ã‚Â *n*. The
+by an **int** value *i*, where 0 Ã¢â€°Â¤ *i* \< *n*. The
 value at row *i* and column *j* will be **true** if there is an edge
 from node *i* to node *j*.
 
@@ -23,10 +23,10 @@ determine whether an edge exists - we only need to look up one element
 in an array. There are several disadvantages, however. First, we are
 forced to use a specific range of **int** values as the nodes. If we
 wish to have a generic node type, we need an additional data structure
-(such as a **Dictionary\<TNode,Ã‚Â int\>**) to map each node to its
+(such as a **Dictionary\<TNode, int\>**) to map each node to its
 **int** representation. It also fails to provide a way to associate a
 value with an edge; hence, we would need an additional data structure
-(such as a **TEdgeData\[int,Ã‚Â int\]**) to store this information.
+(such as a **TEdgeData\[int, int\]**) to store this information.
 
 Perhaps the most serious shortcoming for the adjacency matrix, however,
 is that if the graph contains a large number of nodes, but relatively
@@ -62,9 +62,9 @@ number of edges is large in comparison to the number of nodes, this
 search can be expensive.
 
 As we mentioned above, our implementation of
-**DirectedGraph\<TNode,Ã‚Â TEdgeData\>** borrows from both of these
+**DirectedGraph\<TNode, TEdgeData\>** borrows from both of these
 traditional techniques. We start by modifying the adjacency lists
-technique to use a **Dictionary\<TNode,Ã‚Â LinkedListCell\<TNode\>\>**
+technique to use a **Dictionary\<TNode, LinkedListCell\<TNode\>\>**
 instead of an array of linked lists. Thus, we can accommodate a generic
 node type while maintaining efficient access to the adjacency lists.
 While a dictionary lookup is not quite as efficient as an array lookup,
@@ -75,8 +75,8 @@ list associated with a given node in this dictionary will then contain
 the destination node of each outgoing edge from the given node.
 
 In addition to this dictionary, we use a
-**Dictionary\<(TNode,Ã‚Â TNode),Ã‚Â TEdgeData\>** to facilitate
-efficient edge lookups. The notation **(T1,Ã‚Â T2)** defines a *value
+**Dictionary\<(TNode, TNode), TEdgeData\>** to facilitate
+efficient edge lookups. The notation **(T1, T2)** defines a *value
 tuple*, which is an ordered pair of elements, the first of type **T1**,
 and the second of type **T2**. Elements of this type are described with
 similar notation, `(x, y)`, where `x` is of type **T1** and `y` is of
@@ -129,7 +129,7 @@ dictionaries:
     the
     [**Keys**](http://msdn.microsoft.com/en-us/library/yt2fy5zk.aspx)
     property of `_adjacencyLists`.
-  - **IEnumerable\<Edge\<TNode,Ã‚Â TEdgeData\>\> OutgoingEdges(TNode
+  - **IEnumerable\<Edge\<TNode, TEdgeData\>\> OutgoingEdges(TNode
     source)**: See below.
 
 Let's now consider the implementation of the **AddEdge** method. Recall
@@ -150,7 +150,7 @@ method, and that we do this before making any other changes to the
 graph. Because a dictionary's **Add** method will throw an
 **ArgumentException** if the given key is already in the dictionary, it
 takes care of this error checking for us. The key that we need to add
-will be a **(TNode,Ã‚Â TNode)** containing the two nodes, and the value
+will be a **(TNode, TNode)** containing the two nodes, and the value
 will be the `value`.
 
 After we have updated `_edges`, we need to update `_adjacencyLists`. To
@@ -168,12 +168,12 @@ associated with `source` in `_adjacencyLists`. Finally, if
 add it with **null** as its associated value.
 
 Finally, we need to implement the **OutgoingEdges** method. Because this
-method returns an **IEnumerable\<Edge\<TNode,Ã‚Â TEdgeData\>\>**, it
+method returns an **IEnumerable\<Edge\<TNode, TEdgeData\>\>**, it
 needs to iterate through the cells of the linked list associated with
 the given node in `_adjacencyLists`. For each of these cells, it will
 need to **yield return** (see
 "[Enumerators](http://people.cs.ksu.edu/~rhowell/DataStructures/redirect/enumerators)")
-an **Edge\<TNode,Ã‚Â TEdgeData\>** describing the edge represented by
+an **Edge\<TNode, TEdgeData\>** describing the edge represented by
 that cell. The source node for this edge will be the node given to this
 method. The destination node will be the node stored in the cell. The
 edge data can be obtained from the dictionary `_edges`.

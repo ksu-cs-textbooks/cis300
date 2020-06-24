@@ -108,12 +108,12 @@ property of the **KeyValuePair**, and we have constrained this type so
 that it has a **CompareTo** method that will compare one instance with
 another. Once we have determined which root has a smaller priority, we
 can construct and return a new
-**LeftistTree\<KeyValuePair\<TPriority,Ã‚Â TValue\>\>** whose data
+**LeftistTree\<KeyValuePair\<TPriority, TValue\>\>** whose data
 is the data element with smaller priority, and whose children are the
 left child of this data element and the result of recursively merging
 the right child of this element with the parameter whose root has larger
 priority.
 
 The remaining methods and properties of
-**MinPriorityQueue\<TPriority,Ã‚Â TValue\>** are now fairly
+**MinPriorityQueue\<TPriority, TValue\>** are now fairly
 straightforward.

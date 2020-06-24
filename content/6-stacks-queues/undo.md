@@ -52,7 +52,7 @@ content of `uxDisplay` each time it is modified. We can do this via an
 event handler for the **TextChanged** event on the **TextBox**. Because
 this event is the default event for a **TextBox**, we can add such an
 event handler by double-clicking on the **TextBox** within the Visual
-StudioÃ‚Â® Design window. This event handler will then be called every
+Studio® Design window. This event handler will then be called every
 time the contents of the **TextBox** are changed.
 
 We need to deal with one important issue before we can write the code

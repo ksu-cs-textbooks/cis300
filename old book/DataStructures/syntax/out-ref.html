@@ -86,7 +86,7 @@ While the call-by-value mechanism is used by default, another
 One case in which this mechanism is useful is when we would like to
     have a method return more than one value.  Suppose, for example,
     that we would like to find both the maximum and minimum values in
-    a given <b>int[Ã‚Â ]</b>.  A <b>return</b> statement can return
+    a given <b>int[ ]</b>.  A <b>return</b> statement can return
     only one value.  Although there are ways of packaging more than one
     value together in one object, a cleaner way is to use two
     parameters that use the call-by-reference mechanism.  The method
@@ -116,7 +116,7 @@ private void MinimumAndMaximum(int[] array, out int min, out int max)
 The <b>out</b> keyword in the first line above specifies the
     call-by-reference mechanism for <tt>min</tt> and <tt>max</tt>.  We
     could then call this code as follows, assuming <tt>a</tt> is an
-    <b>int[Ã‚Â ]</b> containing at least one element:
+    <b>int[ ]</b> containing at least one element:
 <pre>
 int minimum;
 int maximum;

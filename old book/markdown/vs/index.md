@@ -1,4 +1,4 @@
-# Visual StudioÃ‚Â®
+# Visual Studio®
 
 <div class="TOC">
 

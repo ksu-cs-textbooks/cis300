@@ -33,16 +33,16 @@ A decimal is represented internally with the following three
 </p>
 <ul>
 <li> A 96-bit value <tt>v</tt> storing the digits
-	(0Ã‚Â Ã¢â€°Â¤Ã‚Â <tt>v</tt>Ã‚Â Ã¢â€°Â¤79,228,162,514,264,337,593,543,950,335). </li>
+	(0 Ã¢â€°Â¤ <tt>v</tt> Ã¢â€°Â¤79,228,162,514,264,337,593,543,950,335). </li>
 <li> A sign bit <tt>s</tt>, where 1 denotes a negative value. </li>
 <li> A scale factor <tt>d</tt> to indicate where the decimal point is
-	(0Ã‚Â Ã¢â€°Â¤Ã‚Â <tt>d</tt>Ã‚Â Ã¢â€°Â¤Ã‚Â 28). </li>
+	(0 Ã¢â€°Â¤ <tt>d</tt> Ã¢â€°Â¤ 28). </li>
 </ul>
 The value represented is then
     (-1)<sup><tt>s</tt></sup><tt>v</tt>/10<sup><tt>d</tt></sup>.
     For example, 123.456 can be represented by setting
-    <tt>vÃ‚Â =Ã‚Â 123,456</tt>, 
-    <tt>sÃ‚Â =Ã‚Â 0</tt>, and <tt>dÃ‚Â =Ã‚Â 3</tt>.
+    <tt>v = 123,456</tt>, 
+    <tt>s = 0</tt>, and <tt>d = 3</tt>.
 
 <p></p>
 <p>

@@ -27,7 +27,7 @@ control provided by Visual Studio:
 
 Setting up source control with Visual Studio requires a few steps:
 
-1.  **Get a MicrosoftÃ‚Â® account.** If you already have a Microsoft
+1.  **Get a Microsoft® account.** If you already have a Microsoft
     account, you can go on to Step 2. Otherwise, from Visual Studio,
     click the "Sign in" button near the upper right corner, then click
     the "Sign up" link in the resulting dialog. In the account setup
@@ -147,7 +147,7 @@ Now suppose that at some point in writing a program, you decide you want
 to look at an earlier version that you checked in. There are several
 ways to do this. First, you can right-click on the file you want in the
 Solution Explorer and select
-"SourceÃ‚Â ControlÃ¢â‚¬â€˜\>ViewÃ‚Â History". This
+"Source ControlÃ¢â‚¬â€˜\>View History". This
 will open a window listing the different versions of this file, together
 with the date and time each was checked in and the comment that was
 supplied for the check-in. One way of viewing a specific version is to
@@ -169,7 +169,7 @@ current version.
 Alternatively, you may want to revert an entire solution to an earlier
 version. To do this, right-click on the solution in the Solution
 Explorer, and select
-"SourceÃ‚Â ControlÃ¢â‚¬â€˜\>GetÃ‚Â SpecificÃ‚Â Version...".
+"Source ControlÃ¢â‚¬â€˜\>Get Specific Version...".
 If you want to revert back to the latest version that was checked in by
 a specific date and time, in the resulting dialog, set the type to
 "Date", fill in the date and time you want, and click the "Get" button.

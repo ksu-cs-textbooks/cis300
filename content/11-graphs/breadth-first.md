@@ -28,12 +28,12 @@ queue to differ by no more than 1. To see this, we will show that we can
 never reach a point where we change the maximum difference in priorities
 from no more than 1 to more than 1. First observe that when the outgoing
 edges from *u* are added, the priorities all differ by
-0Ã‚Â Ã¢â€°Â¤Ã‚Â 1. Removing an edge can't increase the
+0 Ã¢â€°Â¤ 1. Removing an edge can't increase the
 difference in the priorities stored. Suppose the edge we remove has
 priority *p*. Assuming we have not yet achieved a priority difference
 greater than 1, any priorities remaining in the min-priority queue must
-be either *p* or *p*Ã‚Â +Ã‚Â 1. Any edges we add before removing the
-next edge have priority *p*Ã‚Â +Ã‚Â 1. Hence, the priority difference
+be either *p* or *p* + 1. Any edges we add before removing the
+next edge have priority *p* + 1. Hence, the priority difference
 remains no more than 1. Because we have covered all changes to the
 priority queue, we can never cause the priority difference to exceed 1.
 
@@ -42,7 +42,7 @@ added, its priority is the largest of any in the min-priority queue.
 This is certainly true when we add the outgoing edges from *u*, as all
 these edges have the same priority. Furthermore, whenever we remove an
 edge with priority *p*, any edges we subsequently add have priority
-*p*Ã‚Â +Ã‚Â 1, which must be the maximum priority in the min-priority
+*p* + 1, which must be the maximum priority in the min-priority
 queue.
 
 As a result of this behavior, we can replace the min-priority queue with

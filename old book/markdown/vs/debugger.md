@@ -67,7 +67,7 @@ thrown by hovering the mouse over them. For example, if we hover over
 move the mouse to hover over its **Length** property, we can see that it
 has a value of 1. Hovering over `power` shows that it has a value of 2.
 Thus, we can see that the exception was thrown because we gave the
-**Substring** method a length of 1Ã‚Â -Ã‚Â 2Ã‚Â =Ã‚Â -1. This can be
+**Substring** method a length of 1 - 2 = -1. This can be
 confirmed by hovering the mouse over the "-" in the expression - the
 popup indicates that the value of the expression is, in fact, -1.
 
@@ -138,7 +138,7 @@ the breakpoint condition is checked on each iteration.
 While hovering the mouse over variable names is a useful way to discover
 their current values, there are other mechanisms for doing this as well.
 For example, while the debugger is paused, you can go to the "Debug"
-menu and select "WindowsÃ‚Â Ã¢â‚¬â€˜\>Ã‚Â Locals". This will open a
+menu and select "Windows Ã¢â‚¬â€˜\> Locals". This will open a
 window displaying all of the local variables for the current method,
 property, or constructor, together with their current values. If the
 debugger is paused within a constructor or a non-**static** method or
@@ -153,7 +153,7 @@ expression involving the variables that are currently visible, press
 "Enter", and it will display the value of that expression. This can be
 particularly useful when you have a large data structure, and you need
 to know a particular element in that structure. For example, suppose
-`array` is a large **int\[Ã‚Â \]**, and suppose `i` is an **int**. Using
+`array` is a large **int\[ \]**, and suppose `i` is an **int**. Using
 the "Locals" window, it might be rather tedious to find the value of
 `array[i]`. Using the Immediate window, however, you can just type in
 
@@ -194,7 +194,7 @@ pause after it returns, we can click the "Step Out" button.
 When stepping through code, a "Watch" window is often a convenient way
 to keep track of the value of one or more specific variables and/or
 expressions. You can open a Watch window from the "Debug" menu under
-"WindowsÃ‚Â Ã¢â‚¬â€˜\>Ã‚Â Watch" - the four choices here are four
+"Windows Ã¢â‚¬â€˜\> Watch" - the four choices here are four
 different Watch windows that you may use (perhaps for debugging
 different parts of your program). A Watch window combines some of the
 advantages of the Locals window and the Immediate window. If you type in

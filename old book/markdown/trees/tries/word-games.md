@@ -1,13 +1,13 @@
 # Tries in Word Games
 
 One application of tries is for implementing word games such as
-BoggleÃ‚Â® or ScrabbleÃ‚Â®. This section discusses how a trie can be
+Boggle® or Scrabble®. This section discusses how a trie can be
 used to reduce dramatically the amount of time spent searching for words
 in such games. We will focus specifically on Boggle, but the same
 principles apply to other word games as well.
 
 A Boggle game consists of either 16 or 25 dice with letters on their
-faces, along with a tray containing a 4Ã‚Â xÃ‚Â 4 or 5Ã‚Â xÃ‚Â 5 grid
+faces, along with a tray containing a 4 x 4 or 5 x 5 grid
 for holding these dice. The face of each die contains a single letter,
 except that one face of one die contains "Qu". The tray has a large
 cover such that the dice can be placed in the cover and the tray placed
@@ -57,7 +57,7 @@ and output it if it is a word in the dictionary.
 In order to be able to implement such a traversal, we need to be able to
 find the children of a node. These children are the adjacent cells that
 are not used in the path to the node. An efficient way to keep track of
-the cells used in this path is with a **bool\[Ã‚Â ,Ã‚Â \]** of the same
+the cells used in this path is with a **bool\[ , \]** of the same
 size as the Boggle board - a value of **true** in this array will
 indicate that the corresponding cell on the board has been used in the
 current path. The children of a node are then the adjacent cells whose
@@ -69,7 +69,7 @@ words found):
 
   - The row index of the current cell.
   - The column index of the current cell.
-  - The **bool\[Ã‚Â ,Ã‚Â \]** described above. The current cell will
+  - The **bool\[ , \]** described above. The current cell will
     have a **false** entry in this array.
   - A **StringBuilder** giving the letters on the path up to, but not
     including, the current cell.
@@ -80,19 +80,19 @@ Likewise, it will need to update the **StringBuilder** by appending the
 contents of the current cell. Then it will need to process the root by
 looking up the contents of the **StringBuilder** - if this forms a word,
 it should output this word. Then it should process the children: for
-each adjacent cell whose entry in the **bool\[Ã‚Â ,Ã‚Â \]** is
+each adjacent cell whose entry in the **bool\[ , \]** is
 **false**, it should make a recursive call on that cell. After all the
 children have been processed, it will need to return the
-**bool\[Ã‚Â ,Ã‚Â \]** and the **StringBuilder** to their
+**bool\[ , \]** and the **StringBuilder** to their
 earlier states by setting the array entry back to **false** and removing
 the character(s) appended earlier.
 
 Once such a method is written, we can call it once for each cell on the
-board. For each of these calls, all entries in the **bool\[Ã‚Â ,Ã‚Â \]**
+board. For each of these calls, all entries in the **bool\[ , \]**
 should be false, and the **StringBuilder** should be empty.
 
 While the algorithm described above will find all the words on a Boggle
-board, a 5Ã‚Â xÃ‚Â 5 board will require quite a while for the algorithm
+board, a 5 x 5 board will require quite a while for the algorithm
 to process. While this might be acceptable if we are implementing a game
 that humans can compete with, from an algorithmic standpoint, we would
 like to improve the performance. (In fact, there are probably better
@@ -146,23 +146,23 @@ is never **null**. The algorithm then proceeds as follows:
   - From the given trie, get the subtrie containing the completions of
     words beginning with the contents of the current cell.
   - If this subtrie is not **null**:
-      - Set the location in the **bool\[Ã‚Â ,Ã‚Â \]** corresponding to
+      - Set the location in the **bool\[ , \]** corresponding to
         the current cell to **true**.
       - Append the contents of the current cell to the
         **StringBuilder**.
       - If the subtrie obtained above contains the empty **string**,
         output the contents of the **StringBuilder** as a word found.
       - Recursively traverse each adjacent cell whose corresponding
-        entry in the **bool\[Ã‚Â ,Ã‚Â \]** is **false**. The recursive
+        entry in the **bool\[ , \]** is **false**. The recursive
         calls should use the subtrie obtained above.
-      - Set the location in the **bool\[Ã‚Â ,Ã‚Â \]** corresponding to
+      - Set the location in the **bool\[ , \]** corresponding to
         the current cell to **false**.
       - Remove the contents of the current cell from the end of the
         **StringBuilder** (i.e., decrease its **Length** by the
         appropriate amount).
 
 We would then apply the above algorithm to each cell on the board. For
-each cell, we would use a **bool\[Ã‚Â ,Ã‚Â \]** whose entries are all
+each cell, we would use a **bool\[ , \]** whose entries are all
 **false**, an empty **StringBuilder**, and the entire trie. Note that we
 have designed the preorder traversal so that it leaves each of these
 parameters unchanged; hence, we only need to initialize them once. The

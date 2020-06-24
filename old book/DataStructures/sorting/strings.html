@@ -77,12 +77,12 @@ After these three groups are formed, the first and third group are
     sorted recursively using the same value for <tt>k</tt>.
     Furthermore, the second group may not be completely sorted yet -
     all we know is that all strings in this group agree on the first
-    <tt>k</tt>Ã‚Â +Ã‚Â 1 characters.  Thus, unless <tt>p</tt> is
+    <tt>k</tt> + 1 characters.  Thus, unless <tt>p</tt> is
     -1 (indicating that that these strings all have length <tt>k</tt>,
     and are therefore all equal), we need to recursively sort this
     group as well.  However, because we know that the strings in this
-    group all agree on the first <tt>k</tt>Ã‚Â +Ã‚Â 1 characters,
-    we pass <tt>k</tt>Ã‚Â +Ã‚Â 1 as the last parameter.
+    group all agree on the first <tt>k</tt> + 1 characters,
+    we pass <tt>k</tt> + 1 as the last parameter.
 <p>
 One aspect of this algorithm that we need to address is whether the
       recursion is valid.  Recall that <a href="/~rhowell/DataStructures/redirect/recursion">when we

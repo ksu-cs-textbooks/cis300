@@ -80,7 +80,7 @@ Before we can find a Huffman tree for a file, we need to determine how
 many times each byte value occurs. There are 256 different byte values
 possible; hence we will need an array of 256 elements to keep track of
 the number of occurrences of each. Because files can be large, this
-array should be a **long\[Ã‚Â \]**. We can then use element *i* of this
+array should be a **long\[ \]**. We can then use element *i* of this
 array to keep track of the number of occurrences of byte value *i*.
 Thus, after constructing this array, we can read the file one byte at a
 time as described in "[Other File

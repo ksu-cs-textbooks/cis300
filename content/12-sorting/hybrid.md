@@ -6,9 +6,9 @@ with both [heap sort](/~rhowell/DataStructures/redirect/heap-sort) and
 [merge sort](/~rhowell/DataStructures/redirect/merge-sorts) on the vast
 majority of inputs. However, quick sort has a very bad worst case -
 *O*(*n*<sup>2</sup>) running time and *O*(*n*) stack usage. By
-comparison, both heap sort and merge sort have *O*(*n*Ã‚Â lgÃ‚Â *n*)
+comparison, both heap sort and merge sort have *O*(*n* lg *n*)
 worst-case running time, together with a stack usage of *O*(1) for heap
-sort or *O*(lgÃ‚Â *n*) for merge sort. Furthermore, [insertion
+sort or *O*(lg *n*) for merge sort. Furthermore, [insertion
 sort](/~rhowell/DataStructures/redirect/insert-sorts) performs better
 than any of these algorithms on small data sets. In this section, we
 look at ways to combine some of these algorithms to obtain a sorting
@@ -53,20 +53,20 @@ gerneral-purpose sorting. On modern hardware architectures, the first
 approach above tends to give the better performance.
 
 Nevertheless, neither of the above approaches can guarantee
-*O*(*n*Ã‚Â lgÃ‚Â *n*) performance - in the worst case, they are all
+*O*(*n* lg *n*) performance - in the worst case, they are all
 still in *O*(*n*<sup>2</sup>). Furthermore, the bad cases still use
 linear stack space. To overcome these shortfalls, we can put a limit on
 the depth of recursion. Once this limit is reached, we can finish
-sorting this portion with an *O*(*n*Ã‚Â lgÃ‚Â *n*) algorithm such as
+sorting this portion with an *O*(*n* lg *n*) algorithm such as
 [heap sort](/~rhowell/DataStructures/redirect/heap-sort). The idea is to
 pick a limit that is large enough that it is rarely reached, but still
 small enough that bad cases will cause the alternative sort to be
-invoked before too much time is spent. A limit of about 2Ã‚Â lgÃ‚Â *n*,
+invoked before too much time is spent. A limit of about 2 lg *n*,
 where *n* is the size of the entire array, has been suggested. Because
 arrays in C\# must have fewer than 2<sup>31</sup> elements, this value
 is always less than 62; hence, it is also safe to use a constant for the
 limit. The resulting algorithm has a worst-case running time in
-*O*(*n*Ã‚Â lgÃ‚Â *n*) and a worst-case stack usage of *O*(lgÃ‚Â *n*).
+*O*(*n* lg *n*) and a worst-case stack usage of *O*(lg *n*).
 This logarithmic bound on the stack usage is sufficient to avoid a
 **StackOverflowException**.
 

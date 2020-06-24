@@ -83,7 +83,7 @@ elements being sorted. However, as we saw with [insertion
 sort](/~rhowell/DataStructures/redirect/insert-sorts), the worst-case
 running time doesn't always tell the whole story. Specifically, the
 expected running time of quick sort (this implementation and others) on
-random arrays is in *O*(*n*Ã‚Â lgÃ‚Â *n*).
+random arrays is in *O*(*n* lg *n*).
 
 However, we don't often need to sort random data. Let's therefore take a
 closer look at what makes the worst case bad. In some ways this
@@ -113,7 +113,7 @@ choose the pivot element. We want to choose an element that partitions
 the data elements roughly in half. The median element (i.e., the element
 that belongs in the middle after the array is sorted) will therefore
 give us the optimal split. It is possible to design an
-*O*(*n*Ã‚Â lgÃ‚Â *n*) algorithm that uses the median as the
+*O*(*n* lg *n*) algorithm that uses the median as the
 pivot; however, the time it takes to find the median makes this
 algorithm slower than merge sort in practice. It works much better to
 find a quick approximation for the median.
@@ -131,15 +131,15 @@ We can improve on the above strategy by doing a case analysis of the
 three values. If we do this, we don't need a separate array - we just
 find the median of three values, *a*, *b*, and *c*, as follows:
 
-  - If *a*Ã‚Â \<Ã‚Â *b*:
-      - If *b*Ã‚Â \<Ã‚Â *c*, then *b* is the median.
+  - If *a* \< *b*:
+      - If *b* \< *c*, then *b* is the median.
       - Otherwise, because *b* is the largest:
-          - If *a*Ã‚Â \<Ã‚Â *c*, then *c* is the median.
+          - If *a* \< *c*, then *c* is the median.
           - Otherwise, *a* is the median.
-  - Otherwise, because *b*Ã‚Â Ã¢â€°Â¤Ã‚Â *a*:
-      - If *a*Ã‚Â \<Ã‚Â *c*, then *a* is the median.
+  - Otherwise, because *b* Ã¢â€°Â¤ *a*:
+      - If *a* \< *c*, then *a* is the median.
       - Otherwise, because *a* is the largest:
-          - If *b*Ã‚Â \<Ã‚Â *c*, then *c* is the median.
+          - If *b* \< *c*, then *c* is the median.
           - Otherwise, *b* is the median.
 
 The above algorithm is quite efficient, using at most three comparisons

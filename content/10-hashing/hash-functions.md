@@ -9,7 +9,7 @@ method. In order for hashing to be implemented correctly and
 efficiently, this method should satisfy the following goals:
 
   - Equal keys must have the same hash code. This is necessary in order
-    for the **Dictionary\<TKey,Ã‚Â TValue\>** class to be able to find a
+    for the **Dictionary\<TKey, TValue\>** class to be able to find a
     given key that it has stored. On the other hand, because the number
     of possible keys is usually larger than the number of possible hash
     codes, unequal keys are also allowed to have the same hash code.
@@ -19,7 +19,7 @@ efficiently, this method should satisfy the following goals:
 The last goal above may seem rather daunting, particularly in light of
 our desire for a quick computation. In fact, it is impossible to
 guarantee in general - provided there are more than
-2<sup>32</sup>(*k*Ã‚Â -Ã‚Â 1) possible keys from which to choose, no
+2<sup>32</sup>(*k* - 1) possible keys from which to choose, no
 matter how the hash code computation is implemented, we can always find
 at least *k* keys with the same hash code. However, this is a problem
 that has been studied a great deal, and several techniques have been
@@ -71,10 +71,10 @@ occurs, we can enclose code within a **checked** construct.
 In order to understand this computation a little better, let's first
 ignore the effect of this overflow. We'll denote the fixed odd integer
 by *x*, and the components of the key as
-*k*<sub>1</sub>,Ã‚Â .Ã‚Â .Ã‚Â .,Ã‚Â *k<sub>n</sub>*. Then
+*k*<sub>1</sub>, . . ., *k<sub>n</sub>*. Then
 this is the result of the computation:
 
-(Ã‚Â .Ã‚Â .Ã‚Â .Ã‚Â ((0xÃ‚Â +Ã‚Â *k*<sub>1</sub>)*x*Ã‚Â +Ã‚Â *k*<sub>2</sub>)Ã‚Â .Ã‚Â .Ã‚Â .Ã‚Â )*x*Ã‚Â +Ã‚Â *k<sub>n</sub>*Ã‚Â =Ã‚Â *k*<sub>1</sub>*x*<sup>*n*-1</sup>Ã‚Â +Ã‚Â *k*<sub>2</sub>*x*<sup>*n*-2</sup>Ã‚Â +Ã‚Â .Ã‚Â .Ã‚Â .Ã‚Â +Ã‚Â *k<sub>n</sub>*.
+( . . . ((0x + *k*<sub>1</sub>)*x* + *k*<sub>2</sub>) . . . )*x* + *k<sub>n</sub>* = *k*<sub>1</sub>*x*<sup>*n*-1</sup> + *k*<sub>2</sub>*x*<sup>*n*-2</sup> + . . . + *k<sub>n</sub>*.
 
 Because the above is a polynomial, this hashing scheme is called
 *polynomial hashing*. While the computation itself is efficient,
@@ -98,9 +98,9 @@ information regarding their positions within the key. Using -1 would be
 almost as bad, as we would multiply all components in odd positions by
 -1 and all components in even positions by 1. The effect of overflow can
 cause similar behavior; for example, if we place
-2<sup>31</sup>Ã‚Â -Ã‚Â 1 in an **int** variable and square it,
+2<sup>31</sup> - 1 in an **int** variable and square it,
 the overflow causes the result to be 1. Successive powers will then
-alternate between 2<sup>31</sup>Ã‚Â -Ã‚Â 1 and 1.
+alternate between 2<sup>31</sup> - 1 and 1.
 
 It turns out that this cyclic behavior occurs no matter what odd number
 we use for *x*. However, in most cases the cycle is long enough that
@@ -112,7 +112,7 @@ multiple of any integer).
 The other potential problem occurs when we are hashing fairly short
 keys. In such cases, if *x* is also small enough, the values computed
 will all be much smaller than the maximum possible integer value
-(2<sup>31</sup>Ã‚Â -Ã‚Â 1). As a result, we will not have a uniform
+(2<sup>31</sup> - 1). As a result, we will not have a uniform
 distribution of values. We therefore want to avoid making *x* too small.
 
 Putting all this together, choosing *x* to be an odd number between 30

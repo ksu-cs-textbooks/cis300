@@ -20,7 +20,7 @@ exams:
   - **Extension methods:** These methods are not defined within the
     class on which they operate, but elsewhere. Consequently, they tend
     to be much less efficient than the methods defined within the class.
-    If the Visual StudioÃ‚Â® auto-complete gives you a method that looks
+    If the Visual Studio® auto-complete gives you a method that looks
     like it gives you what you want, first click on it and take a look
     at its popup documentation. If it is an extension method, this
     documentation will begin with "(extension)".

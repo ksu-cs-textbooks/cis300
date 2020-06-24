@@ -62,7 +62,7 @@ etc.).
 
 Variables of an enumeration type may be assigned any value of the
 enumeration's underlying type (usually **int**, as we will discuss
-below). For example, if we had used the condition `(int)rÃ‚Â <Ã‚Â 10` in
+below). For example, if we had used the condition `(int)r < 10` in
 the above **for** statement, the loop would continue two more
 iterations, showing 8 and 9 in the last two **MessageBox**es.
 

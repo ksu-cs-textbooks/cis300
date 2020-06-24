@@ -22,7 +22,7 @@ surprising result - that we can achieve better performance if we don't
 have to keep the keys in any particular order (i.e., so that we can
 process them in that order). The technique uses a data structure known
 as a *hash table*, which is the underlying data structure in the .NET
-Framework's **Dictionary\<TKey,Ã‚Â TValue\>** class.
+Framework's **Dictionary\<TKey, TValue\>** class.
 
 A hash table is typically organized as an array of linked lists. The
 individual cells in the linked lists each store a key and a value.

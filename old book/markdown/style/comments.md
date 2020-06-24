@@ -1,7 +1,7 @@
 # Comments
 
 Within each source file that you edit, you will need to provide certain
-comments as documentation. Visual StudioÃ‚Â® automatically generates
+comments as documentation. Visual Studio® automatically generates
 source files that you will not need to modify - you don't need to add
 comments to those files.
 

@@ -69,7 +69,7 @@ folder; for example:
 
 In addition, its
 [**GetDirectories**](http://msdn.microsoft.com/en-us/library/s7xk2b58.aspx)
-method takes no parameters and returns a **DirectoryInfo\[Ã‚Â \]** whose
+method takes no parameters and returns a **DirectoryInfo\[ \]** whose
 elements describe the contained folders (i.e., the elements of the array
 are the children of the folder). For example, if `d` refers to a
 **DirectoryInfo** for the folder **Ksu.Cis300.HelloWorld** from the
@@ -333,7 +333,7 @@ variables and the address of the current code location are pushed onto
 the *call stack*. This call stack is just like any other stack, except
 that it has a smaller amount of space available to it. You can, in fact,
 examine the call stack when debugging - from the "Debug" menu, select
-"WindowsÃ‚Â Ã¢â‚¬â€˜\>Ã‚Â CallÃ‚Â Stack". This will open a window
+"Windows Ã¢â‚¬â€˜\> Call Stack". This will open a window
 showing the contents of the call stack. The line on top shows the line
 of code currently ready for execution. Below it is the line that called
 the current method, and below that line is the line that called that

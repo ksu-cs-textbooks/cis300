@@ -5,7 +5,7 @@ weight: 30
 date: 2018-08-24T10:53:26-05:00
 ---
 
-Some of the lab assignments in CIS 300 use a technique called *unit testing* for testing the correctness of your code. Unit testing is an automated technique for testing individual **public** methods and properties using a pre-defined set of test cases. We will be using an open-source unit-testing framework called [NUnit](http://nunit.org/). Two Visual StudioÃ‚Â® extensions provide access to NUnit. Both of these extensions have been installed on the lab machines, but if you want to use NUnit on your own machine, you will need to install the following:
+Some of the lab assignments in CIS 300 use a technique called *unit testing* for testing the correctness of your code. Unit testing is an automated technique for testing individual **public** methods and properties using a pre-defined set of test cases. We will be using an open-source unit-testing framework called [NUnit](http://nunit.org/). Two Visual Studio® extensions provide access to NUnit. Both of these extensions have been installed on the lab machines, but if you want to use NUnit on your own machine, you will need to install the following:
 
 - [**NUnit 3 Test   Adapter**](https://marketplace.visualstudio.com/items?itemName=NUnitDevelopers.NUnit3TestAdapter) 
 - [**NUnit VS   Templates**](https://marketplace.visualstudio.com/items?itemName=NUnitDevelopers.NUnitTemplatesforVisualStudio)

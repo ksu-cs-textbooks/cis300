@@ -4,7 +4,7 @@ One way of implementing a dictionary is to store all the keys and values
 in a linked list. We want to do this in such a way that a key is stored
 together with its associated value. To facilitate this, the .NET
 Framework provides a structure
-[**KeyValuePair\<TKey,Ã‚Â TValue\>**](https://msdn.microsoft.com/en-us/library/5tbh8a42.aspx)
+[**KeyValuePair\<TKey, TValue\>**](https://msdn.microsoft.com/en-us/library/5tbh8a42.aspx)
 in the **System.Collections.Generic** namespace. This structure is used
 simply for storing a key and a value. The type parameter **TKey** is
 used to define the type of the keys, and the other type parameter
@@ -24,11 +24,11 @@ The first parameter to this constructor is the key, and the second is
 the value.
 
 Now that we have a way of storing keys and values together, we can
-implement a **Dictionary\<TKey,Ã‚Â TValue\>** with a linked list
+implement a **Dictionary\<TKey, TValue\>** with a linked list
 comprised of instances of
-**LinkedListCell\<KeyValuePair\<TKey,Ã‚Â TValue\>\>**. Thus, each
+**LinkedListCell\<KeyValuePair\<TKey, TValue\>\>**. Thus, each
 cell of the list stores as its **Data** a
-**KeyValuePair\<TKey,Ã‚Â TValue\>** containing a key and its
+**KeyValuePair\<TKey, TValue\>** containing a key and its
 associated value. To add a key and a value, we first need to search the
 list for a cell containing that key. If we find such a cell, we either
 replace the **KeyValuePair** in that cell with a new **KeyValuePair**
@@ -77,7 +77,7 @@ We can therefore use this **CompareTo** method to keep the list in
 increasing order.
 
 Note that by constraining the key type in this way, we are making the
-**Dictionary\<TKey,Ã‚Â TValue\>** less general, as we may sometimes want
+**Dictionary\<TKey, TValue\>** less general, as we may sometimes want
 to use a key type that can't be ordered. On the other hand, there are
 times when not only do we have a key type that can be ordered, but also
 we need to access the keys in increasing order (for example, to print an

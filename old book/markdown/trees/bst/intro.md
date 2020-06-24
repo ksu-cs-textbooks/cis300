@@ -28,10 +28,10 @@ are shown):
 The hierarchical nature of this structure allows us to do something like
 a binary search to find a key. Suppose, for example, that we are looking
 for 41 in the above tree. We first compare 41 with the key in the root.
-Because 41Ã‚Â \<Ã‚Â 54, we can safely ignore the right child, as all
+Because 41 \< 54, we can safely ignore the right child, as all
 keys there must be greater than 54. We therefore compare 41 to the key
-in the root of the left child. Because 41Ã‚Â \>Ã‚Â 23, we look in the
-right child, and compare 41 to 35. Because 41Ã‚Â \>Ã‚Â 35, we look in
+in the root of the left child. Because 41 \> 23, we look in the
+right child, and compare 41 to 35. Because 41 \> 35, we look in
 the right child, where we find the key we are looking for.
 
 Note the similarity of the search described above to a binary search. It
@@ -70,12 +70,12 @@ elements using a
 method, it would be more efficient to structure the code so that this
 method is only called once; e.g.,
 
-  - If the tree is emptyÃ‚Â .Ã‚Â .Ã‚Â .Ã‚Â .
+  - If the tree is empty . . . .
   - Otherwise:
       - Get the result of the comparison.
-      - If the result is 0Ã‚Â .Ã‚Â .Ã‚Â .Ã‚Â .
-      - Otherwise, if the result is negativeÃ‚Â .Ã‚Â .Ã‚Â .Ã‚Â .
-      - OtherwiseÃ‚Â .Ã‚Â .Ã‚Â .Ã‚Â .
+      - If the result is 0 . . . .
+      - Otherwise, if the result is negative . . . .
+      - Otherwise . . . .
 
 This method would need to take two parameters - the key we are looking
 for and the tree we are looking in. This second parameter will actually
@@ -135,7 +135,7 @@ page](/~rhowell/viewer/index.html) contains an application that will
 show the result of adding a key at a time to a binary search tree. The
 keys in this application are treated as strings; hence, you can use
 numbers if you want, but they will be compared as strings (e.g.,
-"10"Ã‚Â \<Ã‚Â "5" because '1'Ã‚Â \<Ã‚Â '5'). For this reason, it is
+"10" \< "5" because '1' \< '5'). For this reason, it is
 usually better to use either letters, words, or integers that all have
 the same number of digits.
 

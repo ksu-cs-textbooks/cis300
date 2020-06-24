@@ -3,7 +3,7 @@
 While the dialogs provided by the .NET Framework are useful in a variety
 of applications, there are times when we need to be able to design our
 own special-purpose dialog to obtain specific information from the user.
-This section outlines how Visual StudioÃ‚Â® can be used to build such a
+This section outlines how Visual Studio® can be used to build such a
 dialog.
 
 Let's begin by considering a simple example. Suppose we are building an
@@ -32,7 +32,7 @@ clicks "Cancel", the main window will be unchanged.
 After building the main form in Visual Studio's Design Window, we can
 build the dialog by creating another form. To do this, in the Solution
 Explorer, right-click on the project name and select
-"AddÃ¢â‚¬â€˜\>WindowsÃ‚Â Form...". This will open a dialog for
+"AddÃ¢â‚¬â€˜\>Windows Form...". This will open a dialog for
 adding a new item, where the type of item is pre-selected to be a
 Windows Form. You will need to supply a name for the form. This name
 will serve as both a file name for a source file and the name of a class

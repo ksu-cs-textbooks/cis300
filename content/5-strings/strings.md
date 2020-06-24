@@ -19,7 +19,7 @@ a **string** variable, we can write:
     string t = s;
 
 Note that this is *not* safe when dealing with mutable reference types,
-such as arrays. For example, let `a` be an **int\[Ã‚Â \]** with at least
+such as arrays. For example, let `a` be an **int\[ \]** with at least
 one element, and consider the following code sequence:
 
     int[ ] b = a;

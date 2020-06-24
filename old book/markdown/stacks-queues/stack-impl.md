@@ -40,7 +40,7 @@ section](/~rhowell/DataStructures/redirect/where).
 For the class **Stack\<T\>**, only one type parameter is needed. The
 type parameter **T** denotes the type of the values that are stored in
 the stack. Therefore, the array in which we will store the elements will
-be of type **T\[Ã‚Â \]**. As in the [**StringBuilder**
+be of type **T\[ \]**. As in the [**StringBuilder**
 implementation](/~rhowell/DataStructures/redirect/stringbuilder-impl),
 we will need a **private** field for this array. This field can be
 initialized in a manner similar to the **StringBuilder** implementation;

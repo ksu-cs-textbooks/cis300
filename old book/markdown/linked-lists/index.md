@@ -10,7 +10,7 @@
     Lists](/~rhowell/DataStructures/redirect/linked-list-stacks-queues)
 3.  [Finding Prime
     Numbers](/~rhowell/DataStructures/redirect/sieve-eratosthenes)
-4.  [The **Dictionary\<TKey,Ã‚Â TValue\>**
+4.  [The **Dictionary\<TKey, TValue\>**
     Class](/~rhowell/DataStructures/redirect/dictionary-class)
 5.  [Implementing a Dictionary with a Linked
     List](/~rhowell/DataStructures/redirect/dictionary-linked-lists)

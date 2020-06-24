@@ -1,4 +1,4 @@
-# The Dictionary\<TKey,Ã‚Â TValue\> Class
+# The Dictionary\<TKey, TValue\> Class
 
 The generic term for a data structure providing storage and retrieval
 via keys, but not necessarily the ability to process the data in any
@@ -9,7 +9,7 @@ of comparing keys) where *n* is the number of elements in the structure.
 In this section, we will give an overview of a data structure called a
 *hash table*, which provides even better performance without keeping the
 keys in any particular order. We then present the
-**Dictionary\<TKey,Ã‚Â TValue\>** class, which is provided by the
+**Dictionary\<TKey, TValue\>** class, which is provided by the
 .NET Framework for keyed storage and retrieval and is implemented using
 a hash table.
 
@@ -37,19 +37,19 @@ number of elements increases.
 
 We will look at the implementation details more carefully in later
 sections. For now, we will focus on the
-[**Dictionary\<TKey,Ã‚Â TValue\>**](http://msdn.microsoft.com/en-us/library/xfhwa508.aspx)
+[**Dictionary\<TKey, TValue\>**](http://msdn.microsoft.com/en-us/library/xfhwa508.aspx)
 class, an implementation of a hash table found in the
 **System.Collections.Generic** namespace. In order to be able to utilize
-a **Dictionary\<TKey,Ã‚Â TValue\>** fully, though, it's important to
+a **Dictionary\<TKey, TValue\>** fully, though, it's important to
 have some understanding of its implementation. Specifically, in order
-for a **Dictionary\<TKey,Ã‚Â TValue\>** to work on a user-defined key
+for a **Dictionary\<TKey, TValue\>** to work on a user-defined key
 type, it must have a hash function that maps instances of this key type
 to array locations. A part of this hash function must be provided by the
 implementer of the key type. For now, however, we will focus on
 predefined key types such as **string** and **int** which already have
 hash functions defined.
 
-Within a **Dictionary\<TKey,Ã‚Â TValue\>**, the keys are of type
+Within a **Dictionary\<TKey, TValue\>**, the keys are of type
 **TKey** and the values are of type **TValue**. Keys must always be
 non-**null** - any attempt to use a **null** key will result in an
 **ArgumentNullException**. Its most basic **public** methods are:
@@ -74,7 +74,7 @@ well as for looking up values by their keys. It is also possible to do
 updates and lookups using indexing. Specifically, a key may be used as
 an index in a dictionary, as if the dictionary were an array. For
 example, suppose that `dictionary` is a
-**Dictionary\<TKey,Ã‚Â TValue\>**, `k` is a **TKey**, and `v` is a
+**Dictionary\<TKey, TValue\>**, `k` is a **TKey**, and `v` is a
 **TValue**. We can then do the following:
 
     dictionary[k] = v;
@@ -119,7 +119,7 @@ the value of each key in turn:
         . . .
     }
 
-Thus, using a **Dictionary\<TKey,Ã‚Â TValue\>** with key types such as
+Thus, using a **Dictionary\<TKey, TValue\>** with key types such as
 **string** or **int** is fairly straightforward. In the sections that
 follow, we'll consider how user-defined types may be built to be used as
 keys.

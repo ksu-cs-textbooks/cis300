@@ -107,7 +107,7 @@ By default, if <tt>x</tt> is a reference type, <b>x.Equals(y)</b>
     object.  Hence, this behavior is the same as for == once the types
     are determined (except that if <tt>x</tt> is <b>null</b>,
     <b>x.Equals(y)</b> will throw a <b>NullReferenceException</b>,
-    whereas <tt>xÃ‚Â ==Ã‚Â y</tt> will not).  However, classes may
+    whereas <tt>x == y</tt> will not).  However, classes may
     override this method to change this behavior.  For example, the
     <b>string</b> class overrides this method to return <b>true</b> if
     <b>y</b> is a <b>string</b> of the same length and containing the
@@ -290,8 +290,8 @@ The above definitions give a template for defining the == and !=
 Suppose, for example, that we want to define a class to represent a
       Nim board position (see the <a href="/~rhowell/DataStructures/redirect/memoization">previous
       section</a>).  This class will need to have two <b>private</b>
-      fields: an <b>int[Ã‚Â ]</b> storing the number of stones on
-      each pile and an <b>int[Ã‚Â ]</b> storing the limit for each
+      fields: an <b>int[ ]</b> storing the number of stones on
+      each pile and an <b>int[ ]</b> storing the limit for each
       pile.  These two arrays should be non-<b>null</b> and have the
       same length, but this 
       should be enforced by the constructor.  By default, two

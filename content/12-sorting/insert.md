@@ -13,7 +13,7 @@ Initially, the sorted part will contain the first element, as a single
 element is always sorted. At each step, the first element in the
 unsorted part is inserted into its proper location in the sorted part.
 As a result, the sorted part now contains one more element, and the
-unsorted part one fewer element. After *n*Ã‚Â -Ã‚Â 1 steps, where *n* is
+unsorted part one fewer element. After *n* - 1 steps, where *n* is
 the number of elements in the array, the sorted part will contain all
 the elements, and the algorithm will be done.
 
@@ -54,11 +54,11 @@ already sorted.
 Unlike bubble sort, however, insertion sort has a clean characterization
 of its performance based on how sorted the array is. This
 characterization is based on the notion of an *inversion*, which is a
-pair of array locations *i*Ã‚Â \<Ã‚Â *j* such that the value at location
+pair of array locations *i* \< *j* such that the value at location
 *i* is greater than the value at location *j*; i.e., these two values
 are out of order with respect to each other. A sorted array has no
 inversions, whereas in an array in reverse order, every pair of
-locations is an inversion, for a total of *n*(*n*Ã‚Â -Ã‚Â 1)/2
+locations is an inversion, for a total of *n*(*n* - 1)/2
 inversions. In general, we can say that the fewer inversions an array
 has, the more sorted it is.
 
@@ -67,11 +67,11 @@ of insertion sort is that each iteration of the inner loop (i.e., step 2
 of the insertion algorithm above) removes exactly one inversion.
 Consequently, if an array initially has *k* inversions, the inner loop
 will iterate a total of *k* times. If we combine this with the
-*n*Ã‚Â -Ã‚Â 1 iterations of the outer loop, we can conclude that
-the running time of insertion sort is in *O*(*n*Ã‚Â +Ã‚Â *k*). Thus, if
+*n* - 1 iterations of the outer loop, we can conclude that
+the running time of insertion sort is in *O*(*n* + *k*). Thus, if
 the number of inversions is relatively small in comparison to *n* (i.e.,
 the array is nearly sorted), insertion sort runs in *O*(*n*) time. (By
-contrast, *n*Ã‚Â -Ã‚Â 2 inversions can be enough to cause the inner loop
+contrast, *n* - 2 inversions can be enough to cause the inner loop
 of bubble sort to iterate its worst-case number of times.) For this
 reason, insertion sort is the algorithm of choice when we expect the
 data to be nearly sorted - a scenario that occurs frequently in

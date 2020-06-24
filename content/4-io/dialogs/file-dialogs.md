@@ -69,7 +69,7 @@ via the dialog's
 Note that this and other properties are accessible for initialization
 purposes through a file dialog's Properties window in the Designer. This
 is useful for an **OpenFileDialog**'s **FileName** property, as the
-default supplied by Visual StudioÃ‚Â® is rather odd. Other properties
+default supplied by Visual Studio® is rather odd. Other properties
 that we might want to initialize here (in addition to **(Name)**, the
 name of the variable referring to the dialog) include:
 

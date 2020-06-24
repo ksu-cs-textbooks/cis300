@@ -2,7 +2,7 @@
 
 Many of the I/O tools provided by the .NET Framework are found in the
 [System.IO](http://msdn.microsoft.com/en-us/library/system.io.aspx)
-namespace. Note, however, that Visual StudioÃ‚Â® does not automatically
+namespace. Note, however, that Visual Studio® does not automatically
 provide a **using** directive for this namespace; hence, if you want to
 avoid the need to add the prefix "System.IO." to each type that you use
 from this namespace, you should add a **using** directive for it. One

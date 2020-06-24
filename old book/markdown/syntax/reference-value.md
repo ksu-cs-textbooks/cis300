@@ -102,9 +102,9 @@ in these variables.
 
 The constructor in the first line of the method above sets the **X**
 property of `a` to 1 and the **Y** property of `a` to 2. The next
-statement simply copies the value of `a` - i.e., the point (1,Ã‚Â 2) -
+statement simply copies the value of `a` - i.e., the point (1, 2) -
 to `b`. Thus, when the **X** property of `a` is then changed to 3, `b`
-is unchanged - it still contains the point (1,Ã‚Â 2).
+is unchanged - it still contains the point (1, 2).
 
 On the other hand, consider what happens when something similar is done
 with array variables. When `c` is constructed, it is assigned a new
@@ -166,7 +166,7 @@ suppose we have a method:
 
     private object F(object x)
     {
-        .Ã‚Â .Ã‚Â .
+        . . .
     }
 
 If we call **F** with a parameter of 3, then 3 will need to be copied to

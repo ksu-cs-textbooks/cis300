@@ -25,7 +25,7 @@ The following figure illustrates this arrangement.
 Initially, the sorted part will be empty.  At each step, the unsorted
     part is rearranged so that its smallest element comes first.  As a
     result, the sorted part can now contain one more element, and the
-    unsorted part one fewer element.  After <i>n</i>Ã‚Â -Ã‚Â 1
+    unsorted part one fewer element.  After <i>n</i> - 1
     steps, where <i>n</i> is the number of elements in the array, the
     sorted part will have all but one of the elements.  Because the
     one element in the unsorted part must be at least as large as all
@@ -51,7 +51,7 @@ Note that the inner loop in selection sort iterates once for every
     successive iteration, the unsorted part is one element smaller,
     until on the last iteration, it has only 2 elements.  If we add up
     all these values, we find that the inner loop iterates a total of
-    exactly (<i>n</i>Ã‚Â -Ã‚Â 1)(<i>n</i>Ã‚Â +Ã‚Â 2)/2 times.
+    exactly (<i>n</i> - 1)(<i>n</i> + 2)/2 times.
     This value is proportional to <i>n</i><sup>2</sup> as <i>n</i>
     increases; hence, the running time of the algorithm is in
     <i>O</i>(<i>n</i><sup>2</sup>).  Furthermore, this performance
@@ -95,9 +95,9 @@ Performance issues aside, however, there is one positive aspect to
 Another implementation of a select sort is <i>bubble sort</i>.  It
     rearranges the unsorted part by swapping adjacent elements that
     are out of order.  It starts with the last two elements (i.e., the
-    elements at locations <i>n</i>Ã‚Â -Ã‚Â 1 and
-    <i>n</i>Ã‚Â -Ã‚Â 2), then the elements at locations
-    <i>n</i>Ã‚Â -Ã‚Â 2 and <i>n</i>Ã‚Â -Ã‚Â 3, etc.
+    elements at locations <i>n</i> - 1 and
+    <i>n</i> - 2), then the elements at locations
+    <i>n</i> - 2 and <i>n</i> - 3, etc.
     Proceeding in this way, the smallest element in the unsorted part
     will end up at the beginning of the unsorted part.  While the
     inner loop is doing this, it keeps track of whether it has made
@@ -152,13 +152,13 @@ Heap sort then works by pre-processing the array to arrange it into a
 <li> Places the copy of the first element into the space vacated by its
 	removal at the beginning of the sorted part.</li>
 </ol>
-Heap sort runs in <i>O</i>(<i>n</i>Ã‚Â lgÃ‚Â <i>n</i>) time in the
+Heap sort runs in <i>O</i>(<i>n</i> lg <i>n</i>) time in the
     worst case.  Information theory can be used to prove that any
     sorting algorithm that sorts by comparing elements must make at
     least lg(<i>n</i>!) comparisons on some arrays of size <i>n</i>.
     Because lg(<i>n</i>!) is proportional to
-    <i>n</i>Ã‚Â lgÃ‚Â <i>n</i>, we cannot hope to do any better
-    than <i>O</i>(<i>n</i>Ã‚Â lgÃ‚Â <i>n</i>) in the worst case.
+    <i>n</i> lg <i>n</i>, we cannot hope to do any better
+    than <i>O</i>(<i>n</i> lg <i>n</i>) in the worst case.
     While this performance is a significant improvement over selection
     sort and bubble sort, we will see
     in <a href="/~rhowell/DataStructures/redirect/split-sorts">a later

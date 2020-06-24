@@ -35,7 +35,7 @@ Depending on the shape of the tree, <i>O</i>(<i>h</i>) running time
     might be very good.  For example, it is possible to show that if
     keys are randomly taken from a uniform distribution and
     successively added to an initially empty binary search tree, the
-    expected height is in <i>O</i>(logÃ‚Â <i>n</i>), where <i>n</i>
+    expected height is in <i>O</i>(log <i>n</i>), where <i>n</i>
     is the number of nodes.  In this case, we would expect logarithmic
     performance for lookups, insertions, and deletions.  In fact,
     there are many applications in which the height of a binary search
@@ -53,7 +53,7 @@ On the other hand, such a shape is by no means guaranteed.  For
 </p>
 <img alt="A badly-shaped binary search tree" src="bst-chain.jpg"/>
 <p>
-The height of this tree is <i>n</i>Ã‚Â -Ã‚Â 1; consequently,
+The height of this tree is <i>n</i> - 1; consequently,
       lookups will take time linear in <i>n</i>, the number of
       elements, in the worst case.  This performance is comparable with
       that of a linked list.  In order to guaranteed good performance,
@@ -80,7 +80,7 @@ One way to accomplish this is to require that each node always has
 As the above picture illustrates, a minimum of 88 nodes are required
       for an AVL tree to reach a height of 8.  In general, it can be
       shown that the height of an AVL tree is at worst proportional to
-      logÃ‚Â <i>n</i>, where <i>n</i> is the number of nodes in the
+      log <i>n</i>, where <i>n</i> is the number of nodes in the
       tree.  Thus, if we can maintain the shape of an AVL tree
       efficiently, we should have efficient lookups and updates.
 </p>
@@ -154,7 +154,7 @@ arbitrary trees (which may be empty).  Note that the because the left
 child has a height 2 greater than the right child, we know that the
 left child cannot be empty; hence, we can safely depict it as a node
 with two children.  The labels are chosen to indicate the order of the
-elements - e.g., as "a"Ã‚Â &lt;Ã‚Â "b", every key in tree <i>a</i>
+elements - e.g., as "a" &lt; "b", every key in tree <i>a</i>
 is less than the key in node <i>b</i>.  The tree on the right shows
 that tree that would be built by performing this rotation.  Note that
 the rotation preserves the order of the keys.
@@ -200,26 +200,26 @@ Now that we have seen what a single rotate right does and how to code
       greater than the given right child (i.e., the tree <i>e</i> in
       the tree on the left above).  Let's suppose the tree <i>e</i>
       has height <i>h</i>.  Then the tree rooted at <i>b</i> has
-      height <i>h</i>Ã‚Â +Ã‚Â 2.  By the definition of the height
+      height <i>h</i> + 2.  By the definition of the height
       of a tree, either <i>a</i> or <i>c</i> (or both) must have height
-      <i>h</i>Ã‚Â +Ã‚Â 1.  Assuming that every tree we've built so
+      <i>h</i> + 1.  Assuming that every tree we've built so
       far is an AVL tree, the children of <i>b</i> must differ in
       height by at most 2; hence, <i>a</i> and <i>c</i> must both have
       a height of at least <i>h</i> and at most
-      <i>h</i>Ã‚Â +Ã‚Â 1.
+      <i>h</i> + 1.
 </p>
 Given these heights, let's examine the tree on the right.  We have
     assumed that every tree we've built up to this point is an AVL
     tree, so we don't need to worry about any balances within
     <i>a</i>, <i>c</i>, or <i>e</i>.  Because <i>c</i> has either
-    height <i>h</i> or height <i>h</i>Ã‚Â +Ã‚Â 1 and <i>e</i> has
+    height <i>h</i> or height <i>h</i> + 1 and <i>e</i> has
     height <i>h</i>, the tree rooted at <i>d</i> satisfies the balance
-    criterion.  However, if <i>c</i> has height <i>h</i>Ã‚Â +Ã‚Â 1
+    criterion.  However, if <i>c</i> has height <i>h</i> + 1
     and <i>a</i> has height <i>h</i>, then the tree rooted at <i>d</i>
-    has height <i>h</i>Ã‚Â +Ã‚Â 2, and the balance criterion is
+    has height <i>h</i> + 2, and the balance criterion is
     <i>not</i> satisfied.  On the other hand, if <i>a</i> has height
-    <i>h</i>Ã‚Â +1Ã‚Â , the tree rooted at <i>d</i> will have a
-    height of either <i>h</i>Ã‚Â +Ã‚Â 1 or <i>h</i>Ã‚Â +Ã‚Â 2,
+    <i>h</i> +1 , the tree rooted at <i>d</i> will have a
+    height of either <i>h</i> + 1 or <i>h</i> + 2,
     depending on the height of <i>c</i>.  In these cases, the balance
     criterion is satisfied.
 <p>
@@ -261,13 +261,13 @@ Note that we have drawn the trees a bit differently by showing more
       detail.  Let's now show that this rotation restores the balance
       in this case.  Suppose that in the tree on the left, <i>g</i>
       has height <i>h</i>.  Then the tree rooted at <i>b</i> has
-      height <i>h</i>Ã‚Â +Ã‚Â 2.  Because the height of <i>a</i>
+      height <i>h</i> + 2.  Because the height of <i>a</i>
       is no greater than the height of <i>g</i>, assuming all trees we
       have built so far are AVL trees, <i>a</i> must have height
       <i>h</i> and the tree rooted at <i>d</i> must have height
-      <i>h</i>Ã‚Â +Ã‚Â 1 (thus, it makes sense to draw it as
+      <i>h</i> + 1 (thus, it makes sense to draw it as
       having a root node).  This means that <i>c</i> and <i>e</i> both
-      must have heights of either <i>h</i> or <i>h</i>Ã‚Â -Ã‚Â 1.
+      must have heights of either <i>h</i> or <i>h</i> - 1.
       It is now not hard to verify that the balance criterion is
       satisfied at <i>b</i>, <i>f</i>, and <i>d</i> in the tree on the
       right.
@@ -390,7 +390,7 @@ In order to build and maintain an AVL tree, user code simply needs to
     rotation is needed, construct one or two extra nodes.  As a
     result, because the height of an AVL tree is guaranteed to be
     logarithmic in the number of nodes, the worst-case running times
-    of both lookups and updates are in <i>O</i>(logÃ‚Â <i>n</i>),
+    of both lookups and updates are in <i>O</i>(log <i>n</i>),
     where <i>n</i> is the number of nodes in the tree.
 
 <p></p>

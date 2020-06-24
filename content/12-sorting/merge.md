@@ -174,13 +174,13 @@ hold *m* data items. Then the number of sorted sequences written by the
 initialization is *n*/*m*, with any fractional part rounded up. Each
 iteration of the main loop then reduces the number of sorted sequences
 by half, with any fractional part again rounded up. The total number of
-iterations of the main loop is therefore lgÃ‚Â (*n*/*m*), rounding
+iterations of the main loop is therefore lg (*n*/*m*), rounding
 upward again. Each iteration of this loop makes one pass through the
 entire data set. In addition, the initialization makes one pass, and the
 final copying makes one pass. The total number of passes through the
-data is therefore lgÃ‚Â (*n*/*m*)Ã‚Â +Ã‚Â 2. For example, if we are
+data is therefore lg (*n*/*m*) + 2. For example, if we are
 sorting 10 billion data items using an array of size 1 million, we need
-lgÃ‚Â 10,000Ã‚Â +Ã‚Â 2 passes, rounded up; i.e., we need 16 passes
+lg 10,000 + 2 passes, rounded up; i.e., we need 16 passes
 through the data.
 
 Various improvements can be made to reduce the number of passes through
@@ -194,9 +194,9 @@ the first input file, rather than copying it.
 A more substantial improvement involves using more temporary files.
 *k-way external merge sort* uses *k* input and *k* output files. Each
 merge then merges *k* sorted sequences into 1. This reduces the number
-of iterations of the main loop to log<sub>*k*</sub>Ã‚Â (*n*/*m*). Using
+of iterations of the main loop to log<sub>*k*</sub> (*n*/*m*). Using
 the fact that
-log<sub>*k*<sup>2</sup></sub>Ã‚Â *n*Ã‚Â =Ã‚Â (log<sub>*k*</sub>Ã‚Â *n*)/2,
+log<sub>*k*<sup>2</sup></sub> *n* = (log<sub>*k*</sub> *n*)/2,
 we can conclude that squaring *k* will reduce the number of passes
 through the data by about half. Thus, 4-way external merge sort will
 make about half as many passes through the data as 2-way external merge

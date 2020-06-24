@@ -24,6 +24,6 @@ how to implement enumerators for iterating through the keys and values.
 Finally, we will show how to implement indexers.
 
 The implementation we describe here is similar to the implementation of
-[**Dictionary\<TKey,Ã‚Â TValue\>**](https://msdn.microsoft.com/en-us/library/xfhwa508.aspx)
+[**Dictionary\<TKey, TValue\>**](https://msdn.microsoft.com/en-us/library/xfhwa508.aspx)
 in the .NET Framework. However, we will not discuss all of the
 optimizations found in that implementation.

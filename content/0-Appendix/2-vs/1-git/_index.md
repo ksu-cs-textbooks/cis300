@@ -6,7 +6,7 @@ chapter = false
 pre = "<b>1. </b>"
 +++
 
-# Source Control - Git
+# Source Control
 
 In CIS 300, start code for each assignment will be distributed via a Git repository. Git is a source control system integrated into Visual Studio 2017. Source control systems are powerful mechanisms for teams of programmers and other collaborators to manage multiple copies of various source files and other documents that all collaborators may be modifying. While CIS 300 does not involve teamwork, source control provides a convenient mechanism for distribution of code and submission of assignment solutions. In addition, as we will discuss later in this chapter, source control provides mechanisms for accessing your code on multiple machines and for "checkpointing" your code.
 

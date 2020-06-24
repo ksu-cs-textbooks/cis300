@@ -15,7 +15,7 @@ require that access modifiers (i.e., **public** or **private**) be used
 on all declarations except where C# does not allow them (C# does not
 allow access modifiers for namespaces, members of interfaces or
 enumerations, or local variables within methods). In particular, note
-that when Visual StudioÃ‚Â® automatically generates a **class**
+that when Visual Studio® automatically generates a **class**
 statement, it does not always supply an access modifier. We require that
 **public** be explicitly inserted (C# does not allow **private** here).
 
