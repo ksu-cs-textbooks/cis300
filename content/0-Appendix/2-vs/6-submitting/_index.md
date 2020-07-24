@@ -1,14 +1,15 @@
 ---
 title: "Submitting Assignments"
-pre: "7. "
-weight: 35
+pre: "6. "
+weight: 30
 date: 2018-08-24T10:53:26-05:00
 ---
-# Submitting Assignments
 
 To submit a lab or homework assignment in CIS 300, you will need to do the following steps:
 
-1.  **Refresh** the changes tracked by Git. Do this by going to the Team Explorer and clicking on the circular arrow icon (i.e., ![A picture of an icon should appear here.](git-refresh-icon.JPG)) at the top. Note that this refresh is normally done automatically; however, it occasionally is not. Doing this manual refresh helps to ensure that all of your code gets uploaded.
+1.  **Refresh** the changes tracked by Git. Do this by going to the
+    Team Explorer and clicking on the circular arrow icon (i.e., <img
+    style="padding: 0px; display: inline; ! important" src="git-refresh-icon.JPG" alt="A picture of an icon should appear here."> at the top. Note that this refresh is normally done automatically; however, it occasionally is not. Doing this manual refresh helps to ensure that all of your code gets uploaded.
 
 2.  **Commit** your changes to your local Git repository. Do this by clicking the icon that looks like a pencil at the bottom of the Visual Studio window. The Team Explorer will now show a window titled, "Changes". In the yellow box, type in a message to be associated with the changes you are committing. Then click "Commit All".
 

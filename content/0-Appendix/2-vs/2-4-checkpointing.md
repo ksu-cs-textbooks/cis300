@@ -1,7 +1,7 @@
 ---
 title: "Checkpointing"
-pre: "4. "
-weight: 20
+pre: "9. "
+weight: 38
 date: 2018-08-24T10:53:26-05:00
 ---
 

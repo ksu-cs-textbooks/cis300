@@ -3,7 +3,7 @@ title = "Programming Style"
 date = 2018-08-24T10:53:05-05:00
 weight = 15
 chapter = true
-pre = "<b>a3. </b>"
+pre = "<b>A3. </b>"
 +++
 
 ### Requirements

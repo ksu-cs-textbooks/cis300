@@ -1,9 +1,8 @@
 ---
-title: "Access"
+title: "The Decimal Type"
 weight: 10
 pre: "2. "
 ---
-# The decimal Type
 
 A
 [**decimal**](http://msdn.microsoft.com/en-us/library/system.decimal\(v=vs.110\).aspx)
@@ -23,12 +22,12 @@ example, if `i` is an **int**, we can convert it to a decimal with:
 
 A decimal is represented internally with the following three components:
 
-  - A 96-bit value `v` storing the digits
-    (0 Ã¢â€°Â¤ `v` Ã¢â€°Â¤79,228,162,514,264,337,593,543,950,335).
-  - A sign bit `s`, where 1 denotes a negative value.
-  - A scale factor `d` to indicate where the decimal point is
-    (0 Ã¢â€°Â¤ `d` Ã¢â€°Â¤ 28).
+  - A 96-bit value *v* storing the digits
+    (0 ≤ *v* ≤ 79,228,162,514,264,337,593,543,950,335).
+  - A sign bit *s*, where 1 denotes a negative value.
+  - A scale factor *d* to indicate where the decimal point is
+    (0 ≤ *d* ≤ 28).
 
-The value represented is then (-1)<sup>`s`</sup>`v`/10<sup>`d`</sup>.
-For example, 123.456 can be represented by setting `v = 123,456`,
-`s = 0`, and `d = 3`.
+The value represented is then (-1)<sup>*s*</sup>*v*/10<sup>*d*</sup>.
+For example, 123.456 can be represented by setting *v* to 123,456,
+*s* to 0, and *d* to 3.

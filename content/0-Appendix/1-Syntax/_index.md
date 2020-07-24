@@ -3,7 +3,7 @@ title = "C# Syntax"
 date = 2018-08-24T10:53:05-05:00
 weight = 5
 chapter = false
-pre = "<b>a1. </b>"
+pre = "<b>A1. </b>"
 +++
 
 This chapter discusses various C# features that are either unavailable in Java or are unlikely to have been covered in an introductory Java programming class. No attempt has been made to be exhaustive. Instead, we focus mainly on those features that are likely to be needed in CIS 300. In addition, the following topics are covered in the main text, rather than in this appendix:

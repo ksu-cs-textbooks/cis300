@@ -1,6 +1,6 @@
 baseURL = "https://people.cs.ksu.edu/~weeser/"
 languageCode = "en-us"
-title = "K-State CS Hugo Framework"
+title = "Data Structures in C#"
 publishDir = "../cis300-book-html/"
 
 # Change the default theme to be use when building the site with Hugo

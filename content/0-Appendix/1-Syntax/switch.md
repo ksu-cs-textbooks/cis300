@@ -1,10 +1,8 @@
 ---
-title: "Switch Statement"
+title: "The switch Statement"
 weight: 60
 pre: "12. "
 ---
-
-#### The switch Statement
 
 The **switch** statement provides an alternative to the **if** statement for certain contexts. It is used when different cases must be handled based on the value of an expression that can have only a few possible results.
 

@@ -1,6 +1,6 @@
 ---
 title: "Structures"
-weight: 15
+weight: 9
 pre: "3. "
 ---
 

@@ -1,10 +1,8 @@
 ---
-title: "Reference vs Value"
+title: "Reference Types and Value Types"
 weight: 5
 pre: "1. "
 ---
-
-### Reference Types and Value Types
 
 Data types in C# come in two distinct flavors: *value types* and *reference types*. In order to understand the distinction, it helps to consider how space is allocated in C#. Whenever a method is called, the space needed to execute that method is allocated from a data structure known as the *call stack*. The space for a method includes its local variables, including its parameters (except for [**out** or **ref** parameters](/~rhowell/DataStructures/redirect/out-ref)). The organization of the call stack is shown in the following figure:
 

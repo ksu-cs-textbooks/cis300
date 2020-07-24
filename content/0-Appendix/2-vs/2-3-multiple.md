@@ -1,7 +1,7 @@
 ---
 title: "Using Multiple Machines"
-pre: "3. "
-weight: 15
+pre: "8. "
+weight: 37
 date: 2018-08-24T10:53:26-05:00
 ---
 

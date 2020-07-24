@@ -1,7 +1,7 @@
 ---
 title: "Unit Testing"
-pre: "6. "
-weight: 30
+pre: "7. "
+weight: 35
 date: 2018-08-24T10:53:26-05:00
 ---
 
@@ -29,7 +29,7 @@ Two potential errors deserve special mention. Sometimes, the unit testing doesn'
 The other potential error we need to discuss is an exception that cannot be caught by a **try-catch** block. By far the most common of these exceptions is the **StackOverflowException**. When this exception is thrown during unit testing, one of the following will occur:
 
 - Some or all of the tests are not run, and the Output window contains the message, "The active test run was aborted. Reason: Process is terminated due to StackOverflowException."
-- Alternatively, the following dialog may be displayed: ![Picture of an error dialog](testhost.x86-has-stopped-working.JPG) You can simply close this dialog by clicking the "X" in the upper right-hand corner.
+- Alternatively, the following dialog may be displayed: ![Picture of an error dialog](testhost.x86-has-stopped-working.jpg) You can simply close this dialog by clicking the "X" in the upper right-hand corner.
 
 Unfortunately, when this error occurs, it's more difficult to determine which test caused the exception. You can run the debugger on each test individually to see if it throws a **StackOverflowException**. In many cases, however, it is easier to examine each recursive call to make sure the call is made on a smaller problem instance.
 

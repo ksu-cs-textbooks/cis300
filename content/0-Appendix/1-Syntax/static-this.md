@@ -1,10 +1,8 @@
 ---
-title: "Static and This"
+title: "The Keywords static and this"
 weight: 40
 pre: "8. "
 ---
-
-### The Keywords static and this
 
 Object-oriented programming languages such as C# are centered on the concept of an object. Class and structure definitions give instructions for constructing individual objects of various types, normally by using the **new** keyword. When an object is constructed, it has its own fields in which values may be stored. Specifically, if type **T** has an **int** field called `_length`, then each object of type **T** will have have such a field, and each of these fields may store a different **int**. Thus, for example, if `x` and `y` are instances of type **T**, then `x._length` may contain 7, while `y._length` may contain 12.
 

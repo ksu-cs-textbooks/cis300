@@ -1,17 +1,16 @@
-+++
-title = "Homepage"
-date = 2018-08-24T10:53:05-05:00
-+++
+# Data Structures in C#
 
-# K-State CS Hugo Theme
+[Rod Howell](/~rhowell/)  
+Dept. of Computing and Information Sciences  
+Kansas State University  
+Manhattan, KS 66506  
+USA
 
-This is an adaptation of [Hugo Theme Learn](https://learn.netlify.com/en/) that has been customized for use by K-State Computer Science to build online textbooks. It contains some featuers that are unique to our use case, but they may be useful to others.
+**Email:** [rhowell@ksu.edu](mailto:rhowell@ksu.edu)
 
-More information can be found on [GitHub](https://www.github.com/russfeld/ksucs-hugo-theme)
+This text is supplemental material for CIS 300 at Kansas State University. Its purpose is to provide a written summary of the material covered, with additional explanation and code examples beyond what are presented in class. A background of programming in Java is assumed, and an appendix summarizing some of the syntax of C# is provided. Because CIS 300 is a lab class, no attempt is made here to provide examples for all of the topics covered; instead, students are expected to provide many of their own examples through the lab exercises (in most cases, solutions to these exercises will be provided to enrolled students following the lab). We assume the use of [Visual Studio® Enterprise 2019](http://www.visualstudio.com/downloads/download-visual-studio-vs).
 
-Some unique features to this theme:
-* Fonts and layouts customized to match K-State's websites and color scheme, as well as [Instructure Canvas](https://canvas.instructure.com/).
-* Each page generates an embeddable version that strips menus, headers and footers (add /embed.html to almost any URL). This is meant to be embedded in an iFrame within another page, such as an HTML wiki page in Canvas. 
-  * By doing so, we can embed course content in Canvas while editing it via Hugo, taking advantage of tools such as git for versioning. In addition, by updating the source website, all versions of the course in Canvas are updated immediately. 
-* Each page also generates a teleprompter version to allow creation of course videos (add /tele.html to almost any URL). Many pages are used as a video script for multi-modal learning. 
-  * The teleprompter pages include auto-scroll capabilities. It is compatible with an [IKAN Teleprompter Remote](https://ikancorp.com/shop/teleprompters/tablet-teleprompters-accessories/ikan-elite-remote-bluetooth-teleprompter-remote-for-pt-elite-prompters/), but can be controlled using the number keys or easily customized. See /static/js/tele-scroll.js for details.
+All sections of this text are now complete, though revisions will
+continue to be made as needed. Please send any corrections, including
+typographical errors and broken links, to [Rod
+Howell](mailto:rhowell@ksu.edu).
