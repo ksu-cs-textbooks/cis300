@@ -1,9 +1,9 @@
 +++
 title = "Visual Studio Solutions"
 date = 2018-08-24T10:53:05-05:00
-weight = 20
+weight = 30
 chapter = true
-pre = "<b>A2.2. </b>"
+pre = "<b>A2.3. </b>"
 +++
 
 ## Visual Studio Solutions
