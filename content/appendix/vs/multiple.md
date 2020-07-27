@@ -1,0 +1,22 @@
++++
+title = "Using Multiple Machines"
+date = 2018-08-24T10:53:05-05:00
+weight = 80
+chapter = true
+pre = "<b>A2.8. </b>"
++++
+
+## Using Multiple Machines
+
+Source control provides one way to access your code from multiple machines. Before you decide to do this, however, you should consider whether this is the best approach. For example, if you have a [CS Account](https://selfserv.cs.ksu.edu/), you have a network file system (the U: drive on CS Windows systems) that you can use whenever you have internet access. From off campus, you need to tunnel into campus using a Virtual Private Network, or VPN (see [the KSU Information Technology Services page on Virtual Private Networking](http://www.k-state.edu/its/security/vpn/) for instructions). Once on campus, you can mount this file system as a network drive by following the instructions on the CS support page, "[DiskUsage](https://support.cs.ksu.edu/CISDocs/wiki/Disk_Usage)".
+
+As an alternative to the U: drive or some cloud service, you can use your GitHub repositories to store a master copy of each assignment, and clone local copies as needed on the different machines you use. Once you have code in a GitHub repository, you can clone that repository to a local machine as described in "[Git Repositories](/~rhowell/DataStructures/redirect/version-control)". When you are finished working on that machine, commit all changes and push them to GitHub. If at some later point you need to resume working on a machine whose Git repository is out of date, you can update it as follows:
+
+1.  Open the Visual Studio Team Explorer.
+2.  Click the icon that looks like a house at the top.
+3.  Click the "Sync" button.
+4.  In the "Incoming Commits" section, click "Pull".
+
+If you are careful about pushing all changes to GitHub and updating each local copy whenever you begin working on it, everything should go smoothly. Problems can occur, however, if you have made changes to a local version that is out of date, then either try to update it by pulling the GitHub copy, or try to push these changes to GitHub. In such cases, there may be conflicts between the two versions. Git will try to resolve these conflicts, but in many cases it will need help from you in determining how to merge the conflicting changes.
+
+If Git needs help in resolving conflicts, the Team Explorer will show a "Resolve Conflicts" page listing the files containing the conflicts. Clicking on a file will show two versions of the file - one obtained by applying the changes made on the the local copy, and one obtained by applying the changes recorded with the GitHub copy. You may select one of these versions by clicking either "Take Source" or "Keep Target" at the bottom, or you may click the "Merge" button to select changes individually from each version. If you click the "Merge" button, checkboxes will appear next to each change in each version. Check the boxes next to the changes you want to keep. As you do this, the changes you select will be reflected in the version shown below the two original versions. You may also edit this result directly. When you are finished, click the "Accept Merge" button at the top.
