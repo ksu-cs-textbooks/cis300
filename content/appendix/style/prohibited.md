@@ -8,7 +8,7 @@ pre = "<b>A3.5 </b>"
 
 ## Prohibited Features
 
-The following features of C\# should not be used on assignments or exams unless otherwise stated:
+The following features of C\# should not be used on assignments or quizzes unless otherwise stated:
 
 - **The goto statement:** It has been over 45 years since Dijkstra published ["Go To Statement Considered Harmful"](http://www.cs.utexas.edu/users/EWD/ewd02xx/EWD215.PDF) (*Communications of the ACM*, vol. 11 (1968), pp. 147-148). I am
 amazed that languages continue to include this statement.

@@ -12,10 +12,10 @@ The naming conventions described below use the following terminology:
 - **Pascal case:** Multiple words are joined without spaces, using
 capital letters at the beginning of each word. If acronyms of 3 or
 more letters are included, only the first letter of the acronym is
-capitalized. For example, AverageAge, ContextBoundObject, RgbCode.
+capitalized. For example, `AverageAge`, `ContextBoundObject`, `RgbCode`.
 - **Camel case:** The same as pascal case, except the first letter is
-not capitalized. For example, averageAge, contextBoundObject,
-rgbCode.
+not capitalized. For example, `averageAge`, `contextBoundObject`,
+`rgbCode`.
 
 ### Namespaces
 
@@ -39,7 +39,7 @@ public class AccountManager
 }
 ```
 
-### [Interfaces](../syntax/interfaces.html)
+### [Interfaces](/trees/tries/multiple-impl)
 
 Use the above conventions with a capital "I" preceding the first letter (which must also be capitalized). For example:
 
@@ -61,27 +61,34 @@ private void InitializeComponent()
 }
 ```
 
-Note that automatically-generated event handlers don't follow this convention - this is an allowable exception to the rule. If you need to write your own event handlers, follow the style of the automatically generated ones.
+{{% notice note %}}
+Automatically-generated event handlers don't follow this convention -
+this is an allowable exception to the rule. If you need to write your
+own event handlers, follow the style of the automatically generated
+ones.
+{{% /notice %}}
 
-### [Properties](../syntax/properties.html)
+### [Properties](/appendix/syntax/properties)
 
 Use pascal case. Make your names descriptive without abbreviations. For example:
 
 ```c#
-public bool IsEmpty
-{
-    get
-    {
-        
-    }
-}
+public int Count { get; private set; }
 ```
 
 ### Controls on Forms
 
-Use camel case, and begin names with "ux" followed by a capital letter. Make your names descriptive of the functionality, not the type of control. For example, `uxAccept`, `uxCustomerName`. (You will not typically declare these names in code, but will enter them in the Visual Studio® design window.)
+Use camel case, and begin names with "ux" followed by a capital letter
+(this "ux" stands for "user experience"). Make your names descriptive
+of the functionality, not the type of control. For example,
+`uxAccept`, `uxCustomerName`. 
 
-### Public [Constants](../syntax/const.html)
+{{% notice note %}}
+You will not typically declare these names in code, but will enter
+them in the Visual Studio® design window.
+{{% /notice %}}
+
+### **public** [Constants](/appendix/syntax/const)
 
 Use pascal case. Make your names descriptive. For example:
 
@@ -89,7 +96,7 @@ Use pascal case. Make your names descriptive. For example:
 public const double GravitationalAcceleration = 9.80665;
 ```
 
-### Private Fields
+### **private** Fields
 
 Use camel case with an underscore character preceding the first letter. For example:
 
@@ -99,7 +106,8 @@ private double _weight;
 
 ### Parameters and Local Variables Within Methods
 
-Use camel case. For example:
+Use camel case. For example, `inString` and `outString` in the
+following code:
 
 ```c#
 public string ToMixedCase(string inString)
