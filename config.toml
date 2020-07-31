@@ -2,6 +2,7 @@ baseURL = "https://people.cs.ksu.edu/~weeser/"
 languageCode = "en-us"
 title = "Data Structures in C#"
 publishDir = "../cis300-book-html/"
+canonifyURLs = true
 
 # Change the default theme to be use when building the site with Hugo
 theme = "ksucs-hugo-theme"

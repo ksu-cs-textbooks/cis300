@@ -10,7 +10,7 @@ pre = "<b>A2.1 </b>"
 
 Visual Studio Enterprise 2019 is available on the machines we use
 for CIS 300 labs. Students can also connect to these machines
-remotely -- see [the CS Department Support
+remotely --- see [the CS Department Support
 Wiki](https://support.cs.ksu.edu/CISDocs/wiki/Remote_Access#Remote_Windows_Access)
 for details. However, if you are enrolled in CIS 300, you have free access
 to this software to install on your own PC for your own personal
@@ -24,7 +24,7 @@ obtain one for free from the Azure Portal using the same process as
 for obtain Visual Studio, as described below. You will need to install
 the operating system either on a separate bootable partition or using
 an emulator such as VMware Fusion. VMware Fusion is also available for
-free through the VMware Academic Program -- see [the CS Department
+free through the VMware Academic Program --- see [the CS Department
 Support Wiki](https://support.cs.ksu.edu/CISDocs/wiki/FAQ#VMWare) for
 details.
 
@@ -51,7 +51,7 @@ by your IT department":
 Once you have logged in, click on the "Software" link on the
 left. Then type "Visual" into the search box below the "Education |
 Software" heading. "Visual Studio Enterprise 2019" should then appear
-in the list below the search box - click this link. This should bring
+in the list below the search box --- click this link. This should bring
 up a window containing three buttons: "View Key", "Download", and
 "Cancel". Before downloading the software, click "View Key" button,
 and copy the key to a file so that you can retrieve it later.

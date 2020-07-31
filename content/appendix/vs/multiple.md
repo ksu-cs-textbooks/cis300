@@ -13,8 +13,11 @@ Source control provides one way to access your code from multiple machines. Befo
 As an alternative to the U: drive or some cloud service, you can use your GitHub repositories to store a master copy of each assignment, and clone local copies as needed on the different machines you use. Once you have code in a GitHub repository, you can clone that repository to a local machine as described in "[Git Repositories](/~rhowell/DataStructures/redirect/version-control)". When you are finished working on that machine, commit all changes and push them to GitHub. If at some later point you need to resume working on a machine whose Git repository is out of date, you can update it as follows:
 
 1.  Open the Visual Studio Team Explorer.
+
 2.  Click the icon that looks like a house at the top.
+
 3.  Click the "Sync" button.
+
 4.  In the "Incoming Commits" section, click "Pull".
 
 If you are careful about pushing all changes to GitHub and updating each local copy whenever you begin working on it, everything should go smoothly. Problems can occur, however, if you have made changes to a local version that is out of date, then either try to update it by pulling the GitHub copy, or try to push these changes to GitHub. In such cases, there may be conflicts between the two versions. Git will try to resolve these conflicts, but in many cases it will need help from you in determining how to merge the conflicting changes.
