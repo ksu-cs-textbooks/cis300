@@ -20,9 +20,9 @@ specific information with the user. There are two kinds of dialogs:
 We will examine three classes provided by the Microsoft® .NET
 Framework, each of which implements a modal dialog. The .NET Framework
 provides various other classes, such as
-[**FolderBrowserDialog**](http://msdn.microsoft.com/en-us/library/system.windows.forms.folderbrowserdialog\(v=vs.110\).aspx),
-[**FontDialog**](http://msdn.microsoft.com/en-us/library/system.windows.forms.fontdialog\(v=vs.110\).aspx),
+[**FolderBrowserDialog**](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.folderbrowserdialog?view=netframework-4.7.2),
+[**FontDialog**](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.fontdialog?view=netframework-4.7.2),
 and
-[**ColorDialog**](http://msdn.microsoft.com/en-us/library/system.windows.forms.colordialog\(v=vs.110\).aspx),
+[**ColorDialog**](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.colordialog?view=netframework-4.7.2),
 that also implement specific kinds of dialogs. We conclude by discussing
 how custom dialogs may be built using Visual Studio®.

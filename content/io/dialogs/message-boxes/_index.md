@@ -9,25 +9,25 @@ pre = "<b>1.1.1. </b>"
 ## **Message Box**es
 
 The
-[**MessageBox**](http://msdn.microsoft.com/en-us/library/system.windows.forms.messagebox\(v=vs.110\).aspx)
+[**MessageBox**](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messagebox?view=netframework-4.7.2)
 class (found in the
-[**System.Windows.Forms**](http://msdn.microsoft.com/en-us/library/System.Windows.Forms\(v=vs.110\).aspx)
+[**System.Windows.Forms**](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms?view=netframework-4.7.2)
 namespace) provides a simple mechanism for displaying a message and
 obtaining one of a few simple responses from the user. The most common
-usage of a **MessageBox** is to call one of its various **Show**
+usage of a **MessageBox** is to call one of its various [**Show**](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messagebox.show?view=netframework-4.7.2)
 methods, each of which is
-[**static**](/~rhowell/DataStructures/redirect/static-this). The
+[**static**](/appendix/syntax/static-this). The
 simplest
-[**Show**](http://msdn.microsoft.com/en-us/library/519bytz3\(v=vs.110\).aspx)
+[**Show**](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messagebox.show?view=netframework-4.7.2#System_Windows_Forms_MessageBox_Show_System_String_)
 method takes a **string** as its only parameter. The method then
 displays this **string** in a modal dialog containing an "OK" button.
 Thus, for example,
-
-    MessageBox.Show("Hello world!");
-
+```C#
+MessageBox.Show("Hello world!");
+```
 will display the following dialog:
 
-![A picture of a window should appear here.](simple-message-box.jpg)
+![A picture of a window should appear here.](simple-message-box.png)
 
 Because the dialog is modal, it will block all other interaction with
 the program until the user closes it by clicking either the "OK" button
@@ -36,24 +36,24 @@ return until that time.
 
 Other **Show** methods allow greater customization of a **MessageBox**.
 For example, one
-[**Show**](http://msdn.microsoft.com/en-us/library/20stz12s\(v=vs.110\).aspx)
+[**Show**](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messagebox.show?view=netframework-4.7.2#System_Windows_Forms_MessageBox_Show_System_String_System_String_)
 method takes as an additional parameter a second **string** giving a
 caption for the **MessageBox**. Thus, the statment,
-
-    MessageBox.Show("Hello world!", "Hello");
-
+```C#
+MessageBox.Show("Hello world!", "Hello");
+```
 will display the following modal dialog:
 
 ![A picture of a window should appear
-here.](message-box-with-caption.jpg)
+here.](message-box-with-caption.png)
 
 Other **Show** methods allow the buttons to be customized. For example,
 one
-[**Show**](http://msdn.microsoft.com/en-us/library/0x49kd7z\(v=vs.110\).aspx)
+[**Show**](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messagebox.show?view=netframework-4.7.2#System_Windows_Forms_MessageBox_Show_System_String_System_String_System_Windows_Forms_MessageBoxButtons_)
 method takes, as its third parameter, an element from the
-[**MessageBoxButtons**](http://msdn.microsoft.com/en-us/library/system.windows.forms.messageboxbuttons\(v=vs.110\).aspx)
-[enumeration](/~rhowell/DataStructures/redirect/enumerations). This
-[enumeration](/~rhowell/DataStructures/redirect/enumerations) contains
+[**MessageBoxButtons**](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messageboxbuttons?view=netframework-4.7.2)
+[enumeration](/appendix/syntax/enumerations). This
+[enumeration](/appendix/syntax/enumerations) contains
 the following values:
 
   - **MessageBoxButtons.AbortRetryIgnore**: Buttons labeled "Abort",
@@ -79,9 +79,8 @@ button is disabled.
 
 In order to provide appropriate functionality to each of the buttons,
 each **Show** method returns a value of type
-[**DialogResult**](http://msdn.microsoft.com/en-us/library/system.windows.forms.dialogresult\(v=vs.110\).aspx).
-This type is another
-[enumeration](/~rhowell/DataStructures/redirect/enumerations) containing
+[**DialogResult**](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.dialogresult?view=netframework-4.7.2).
+This type is another enumeration containing
 the following values to indicate which button the user clicked:
 
   - **DialogResult.Abort**
@@ -99,18 +98,18 @@ other application in which the user builds a document. If the user
 attempts to exit the program when the document is unsaved, we would like
 to give an opportunity to save the document. We can accomplish this with
 the following code:
-
-    DialogResult result = MessageBox.Show("The file is not saved. Really quit?", 
-        "Confirm Quit", MessageBoxButtons.YesNo);
-    if (result == DialogResult.Yes)
-    {
-        Application.Exit();
-    }
-
+```C#
+DialogResult result = MessageBox.Show("The file is not saved. Really quit?", 
+    "Confirm Quit", MessageBoxButtons.YesNo);
+if (result == DialogResult.Yes)
+{
+    Application.Exit();
+}
+```
 The first statement displays the following dialog:
 
 ![A picture of a window should appear
-here.](message-box-with-buttons.jpg)
+here.](message-box-with-buttons.png)
 
 Again, because the dialog is modal, the **Show** method does not return
 until the user closes the dialog by clicking one of the two buttons (the
@@ -124,42 +123,39 @@ further user action).
 
 We can also decorate a **MessageBox** with an icon that indicates what
 type of message it is. This requires another
-[**Show**](http://msdn.microsoft.com/en-us/library/365dky5y\(v=vs.110\).aspx)
+[**Show**](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messagebox.show?view=netframework-4.7.2#System_Windows_Forms_MessageBox_Show_System_String_System_String_System_Windows_Forms_MessageBoxButtons_System_Windows_Forms_MessageBoxIcon_)
 method having a fourth parameter of type
-[**MessageBoxIcon**](http://msdn.microsoft.com/en-us/library/system.windows.forms.messageboxicon\(v=vs.110\).aspx).
+[**MessageBoxIcon**](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messageboxicon?view=netframework-4.7.2).
 **MessageBoxIcon** is another enumeration. Some of its values are:
 
   - **MessageBoxIcon.Error**:  
-    ![A picture of an error icon should appear here.](error-icon.jpg)
+    ![A picture of an error icon should appear here.](messagebox-error.png)
   - **MessageBoxIcon.Information**:  
     ![A picture of an information icon should appear
-    here.](information-icon.jpg)
+    here.](messagebox-information.png)
   - **MessageBoxIcon.None** (no icon)
-  - **MessageBoxIcon.Question** (Microsoft® recommends avoiding this,
-    although they use it in Visual Studio® 2013):  
-    ![A picture of a question icon should appear
-    here.](question-icon.jpg)
   - **MessageBoxIcon.Warning**:  
-    ![A picture of a warning icon should appear here.](warning-icon.jpg)
+    ![A picture of a warning icon should appear here.](messagebox-exclamation.png)
 
 This enumeration contains a few other values as well, but they currently
-are simply duplicate values for the above icons. To add a warning icon
+are simply duplicate values for the above icons or values that
+Microsoft recommends against using. To add a warning icon
 to the above example, we could replace the first statement with:
-
-    DialogResult result = MessageBox.Show("The file is not saved. Really quit?", 
-        "Confirm Quit", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
+```C#
+DialogResult result = MessageBox.Show("The file is not saved. Really quit?", 
+    "Confirm Quit", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+```
 This will display the following dialog:
 
-![A picture of a window should appear here.](message-box-with-icon.jpg)
+![A picture of a window should appear here.](message-box-with-icon.png)
 
 Notice that in the above example, the "Yes" button has the focus; i.e.,
 pressing "Enter" has the same effect as clicking this button. It is
 usually desirable to have the safest response as the default - in this
 case, the "No" button. To achieve this, a
-[**Show**](http://msdn.microsoft.com/en-us/library/ctd56yay\(v=vs.110\).aspx)
+[**Show**](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messagebox.show?view=netframework-4.7.2#System_Windows_Forms_MessageBox_Show_System_String_System_String_System_Windows_Forms_MessageBoxButtons_System_Windows_Forms_MessageBoxIcon_System_Windows_Forms_MessageBoxDefaultButton_)
 method having a fifth parameter, of type
-[**MessageBoxDefaultButton**](http://msdn.microsoft.com/en-us/library/system.windows.forms.messageboxdefaultbutton\(v=vs.110\).aspx),
+[**MessageBoxDefaultButton**](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messageboxdefaultbutton?view=netframework-4.7.2),
 is required. **MessageBoxDefaultButton** is another enumeration having
 the following values to select an appropriate button to be the default:
 
@@ -168,11 +164,11 @@ the following values to select an appropriate button to be the default:
   - **MessageBoxDefaultButton.Button3**
 
 Thus, the following statement:
-
-    DialogResult result = MessageBox.Show("The file is not saved. Really quit?", 
-        "Confirm Quit", MessageBoxButtons.YesNo, MessageBoxIcon.Warning,
-        MessageBoxDefaultButton.Button2);
-
+```C#
+DialogResult result = MessageBox.Show("The file is not saved. Really quit?", 
+    "Confirm Quit", MessageBoxButtons.YesNo, MessageBoxIcon.Warning,
+    MessageBoxDefaultButton.Button2);
+```
 produces a dialog similar to the one above, but having the "No" button
 as its default.
 
@@ -180,4 +176,4 @@ There are other **Show** methods that allow additional fine-tuning;
 however, the ones described here cover most of the functionality. For
 details on other **Show** methods, see the [documentation for the
 **MessageBox**
-class](http://msdn.microsoft.com/en-us/library/system.windows.forms.messagebox\(v=vs.110\).aspx).
+class](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messagebox?view=netframework-4.7.2).
