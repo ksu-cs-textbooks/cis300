@@ -14,7 +14,7 @@ git add .
 git commit -m "Automatic Deploy on `date +'%Y-%m-%d %H:%M:%S'`"
 git push -u origin master
 
-ssh weeser@cslinux.cs.ksu.edu "cd /home/w/weeser/public_html/ && git pull"
-#ssh russfeld@cslinux.cs.ksu.edu "cd /home/r/russfeld/cc-website-html && git pull && rsync -aP --exclude='.git' /home/r/russfeld/cc-website-html/ /web/core"
+ssh weeser@cslinux.cs.ksu.edu "cd /home/w/weeser/git-proj/cis300-book-html/ && git pull"
+ssh weeser@cslinux.cs.ksu.edu "cd /home/w/weeser/git-proj/cis300-book-html/ && git pull && rsync -aP --exclude='.git' /home/w/weeser/git-proj/cis300-book-html/ /web/cis300"
 
 exit 0
