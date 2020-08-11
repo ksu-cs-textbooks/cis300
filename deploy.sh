@@ -8,7 +8,7 @@ send_message(){
     JSON="{\"title\": \"${1}\", \"text\": \"${2}\" }"
 
     # Post to Microsoft Teams.
-    curl -H "Content-Type: application/json" -d "${JSON}" "${WEBHOOK_URL}"
+    curl -H "Content-Type: application/json" -d "${JSON}" "${WEBHOOK_URL}" 2> ${LOG_FILE}
 }
 
 echo ${current_time} >> ${LOG_FILE}
