@@ -14,8 +14,9 @@ send_message(){
 echo ${current_time} >> ${LOG_FILE}
 echo "pull and clean book html git" >> ${LOG_FILE}
 send_message "Deploy bot" "pull and clean book html git"
+
 cd ../cis300-book-html
-git pull 2> ${LOG_FILE}
+git pull 2>> ${LOG_FILE}
 git rm -rf .
 git clean -fxd
 
@@ -26,11 +27,14 @@ git pull --recurse-submodules 2>> ${LOG_FILE}
 
 echo "running hugo to generate html" >> ${LOG_FILE}
 send_message "Deploy bot" "running hugo to generate html"
-hugo 2> ${LOG_FILE}
+
+hugo 2>> ${LOG_FILE}
+
 echo "pushing HTML to cis300-book-html" >> ${LOG_FILE}
 send_message "Deploy bot" "pushing HTML to cis300-book-html"
+
 cd ../cis300-book-html
-git add . 2> ${LOG_FILE}
+git add . 2>> ${LOG_FILE}
 git commit -m "Automatic Deploy on `date +'%Y-%m-%d %H:%M:%S'`" 2>> ${LOG_FILE}
 git push -u origin master 2>> ${LOG_FILE}
 
