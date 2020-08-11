@@ -1,4 +1,6 @@
 #!/bin/bash
+LOG_FILE=/weeser/log/cis300deploy.log
+exec > >(tee ${LOG_FILE}) 2>&1
 
 echo "pull and clean book html"
 cd ../cis300-book-html
