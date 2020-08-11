@@ -1,4 +1,4 @@
-baseURL = "https://people.cs.ksu.edu/~weeser/"
+baseURL = "https://cis300.cs.ksu.edu/"
 languageCode = "en-us"
 title = "Data Structures in C#"
 publishDir = "../cis300-book-html/"
@@ -15,8 +15,8 @@ section = [ "HTML", "Iframeable", "Teleprompter"]
 
 [params]
   editURL = "https://gitlab.cs.ksu.edu/cis300/cis300-book/tree/master/content/"
-  description = "K-State CS Hugo Framework"
-  author = "Russell Feldhausen"
+  description = "K-State CIS 300: Data Structures" 
+  author = "Rod Howell and Josh Weese"
   showVisitedLinks = false
   themeVariant = "purple"
   disableLanguageSwitchingButton = true
