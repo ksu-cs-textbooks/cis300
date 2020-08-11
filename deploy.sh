@@ -11,6 +11,8 @@ send_message(){
     curl -H "Content-Type: application/json" -d "${JSON}" "${WEBHOOK_URL}" 2>> ${LOG_FILE}
 }
 
+whoami >> ${LOG_FILE}
+
 echo ${current_time} >> ${LOG_FILE}
 echo "pull and clean book html git" >> ${LOG_FILE}
 send_message "Deploy bot" "pull and clean book html git"
