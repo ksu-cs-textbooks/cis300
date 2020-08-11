@@ -26,4 +26,5 @@ echo "pull on cs linux and copy to web" >> ${LOG_FILE}
 ssh weeser@linux.cs.ksu.edu "cd /home/w/weeser/git-proj/cis300-book-html/ && git pull && rsync -aP --exclude='.git' /home/w/weeser/git-proj/cis300-book-html/ /web/cis300"
 echo "completed" >> ${LOG_FILE}
 date | tee ${LOG_FILE}
+echo "______________________________________________________" >> ${LOG_FILE}
 exit 0
