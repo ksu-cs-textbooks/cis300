@@ -13,7 +13,7 @@ send_message(){
     curl -H "Content-Type: application/json" -d "${JSON}" "${WEBHOOK_URL}"
 }
 
-echo "${current_TIME}" >> ${LOG_FILE}
+echo ${current_TIME} >> ${LOG_FILE}
 echo "pull and clean book html git" >> ${LOG_FILE}
 send_message current_time "Deploy bot: pull and clean book html git"
 cd ../cis300-book-html
@@ -44,6 +44,5 @@ ssh weeser@linux.cs.ksu.edu "cd /home/w/weeser/git-proj/cis300-book-html/ && git
 echo "completed" >> ${LOG_FILE}
 
 send_message current_time "Deploy bot: Finished deploying CIS 300 Book"
-date | tee ${LOG_FILE}
 echo "______________________________________________________" >> ${LOG_FILE}
 exit 0
