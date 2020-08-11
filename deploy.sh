@@ -5,8 +5,7 @@ WEBHOOK_URL=https://outlook.office.com/webhook/e27fa57a-e17c-4e4c-aa3a-3eb5d88fc
 
 current_time=$(date)
 send_message(){
-    MESSAGE=$( echo ${3} | sed 's/"/\"/g' | sed "s/'/\'/g" )
-    JSON="{\"title\": \"${1}\", \"text\": \"${MESSAGE}\" }"
+    JSON="{\"title\": \"${1}\", \"text\": \"${2}\" }"
 
     # Post to Microsoft Teams.
     curl -H "Content-Type: application/json" -d "${JSON}" "${WEBHOOK_URL}"
