@@ -74,7 +74,7 @@ catch
 ```
 
 {{% notice note %}}
-See the section, "[The foreach
+See the section, "[The **foreach**
 Statement](/appendix/syntax/foreach)" for an
 explanation of **foreach** loops. The
 [**Char.IsUpper**](https://docs.microsoft.com/en-us/dotnet/api/system.char.isupper?view=netframework-4.7.2#System_Char_IsUpper_System_Char_)

@@ -12,7 +12,7 @@ To submit a lab or homework assignment in CIS 300, you will need to do the follo
 
 1.  **Refresh** the changes tracked by Git. Do this by going to the
     Team Explorer and clicking on the circular arrow icon (i.e., <img
-    style="padding: 0px; display: inline; ! important"
+    style="padding: 0px; margin: 0px; display: inline; ! important"
     src="git-refresh-icon.JPG" alt="A picture of an icon should appear
     here.">) at the top. Note that this refresh is normally done
     automatically; however, it occasionally is not. Doing this manual
