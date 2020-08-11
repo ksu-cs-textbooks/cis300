@@ -15,7 +15,7 @@ section = [ "HTML", "Iframeable", "Teleprompter"]
 
 [params]
   editURL = "https://gitlab.cs.ksu.edu/cis300/cis300-book/tree/master/content/"
-  description = "K-State CIS 300: Data Structures"
+  description = "K-State CIS 300: Data Structures" 
   author = "Rod Howell and Josh Weese"
   showVisitedLinks = false
   themeVariant = "purple"
