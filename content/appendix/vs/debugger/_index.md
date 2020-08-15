@@ -49,6 +49,8 @@ To stop the debugger, notice the buttons that are available at the top of the Vi
 
 As you might guess, the "Stop" button stops the debugger. In what follows, we will discuss each of the other buttons indicated in the above figure, as well as other features of the debugger.
 
+<a name="breakpoints"></a>
+
 When debugging code, it is often useful to be able to pause execution at a particular place in order to be able to examine the values of variables as we did above. To accomplish this, we can set a *breakpoint* by clicking in the left margin of the code window at the line where we would like execution to pause. This places a large red dot in the margin where we clicked and colors the line red:
 
 ![A picture of part of a code window should appear here.](breakpoint.png)
