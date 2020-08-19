@@ -13,13 +13,14 @@ The [**MessageBox**](https://docs.microsoft.com/en-us/dotnet/api/system.windows.
 ```C#
 MessageBox.Show("Hello world!");
 ```
+
 will display the following dialog:
 
 ![A picture of a window should appear here.](simple-message-box.png)
 
 Because the dialog is modal, it will block all other interaction with the program until the user closes it by clicking either the "OK" button or the "X" in the upper right. Furthermore, the **Show** method will not return until that time.
 
-Other **Show** methods allow greater customization of a **MessageBox**. For example, one [**Show**](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messagebox.show?view=netframework-4.7.2#System_Windows_Forms_MessageBox_Show_System_String_System_String_) method takes as an additional parameter a second **string** giving a caption for the **MessageBox**. Thus, the statment,
+Other **Show** methods allow greater customization of a **MessageBox**. For example, one [**Show**](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messagebox.show?view=netframework-4.7.2#System_Windows_Forms_MessageBox_Show_System_String_System_String_) method takes as an additional parameter a second **string** giving a caption for the **MessageBox**. Thus, the statement,
 
 ```C#
 MessageBox.Show("Hello world!", "Hello");
