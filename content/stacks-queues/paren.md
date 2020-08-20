@@ -10,13 +10,13 @@ pre = "<b>3.3. </b>"
 
 The problem of finding matching parentheses must be solved in many
 computing applications. For example, consider a C\# compiler. Matching
-parentheses ('(' and '('), brackets ('\[' and '\]'), and braces ('{' and
-'}') delimit various parts of the source code. In order for these parts
+parentheses (`(` and `)`), brackets (`[` and `]`), and braces (`{` and
+`}`) delimit various parts of the source code. In order for these parts
 to be interpreted correctly, the compiler must be able to determine how
 these different kinds of parentheses match up with each other. Another
 example is processing structured data stored in XML format. Different
 parts of such a data set are delimited by nested begin tags like
-"\<summary\>" and end tags like "\</summary\>" (documentation comments
+`<summary>` and end tags like `</summary>` (documentation comments
 in C\# code are in XML format). These tags are essentially different
 kinds of parentheses that need to be matched.
 
@@ -32,7 +32,7 @@ For example, suppose we have the **string**, "`([]{()[]})[{}]`". We can
 apply the matching-pair removal process described above as follows
 (blank space is inserted to make it easier to see which parentheses are
 removed):
-
+<pre>
     ([]{()[]})[{}]
     (  {()[]})[{}]
     (  {  []})[{}]
@@ -40,18 +40,18 @@ removed):
     (        )[{}]
               [{}]
               [  ]
-
+</pre>
 Hence, this **string** is matched. On the other hand, consider the
 **string**, "`([]{()[])}[{}]`". When we apply the above process to this
 **string**, we obtain:
-
+<pre>
     ([]{()[])}[{}]
     (  {()[])}[{}]
     (  {  [])}[{}]
     (  {    )}[{}]
     (  {    )}[  ]
     (  {    )}
-
+</pre>
 and we can go no further. Hence, this **string** is not matched.
 
 We can extend the definition of a matched **string** to include other
@@ -92,35 +92,35 @@ then the **string** is matched; otherwise, it is not.
 For example, consider the **string**, "`{a[b]([c]){de}}f[(g)]`". In what
 follows, we will simulate the above algorithm, showing the result of
 processing each character on a separate line. The portion of the line
-with a grey background will be the stack contents, with the top element
-shown at the right. We will insert blank space in the grey area for
+with an orange background will be the stack contents, with the top element
+shown at the right. We will insert blank space in the orange area for
 clarity, but the stack will only contain opening parentheses. The first
-character with a white background is the character currently being
+character with a black background is the character currently being
 processed.
-
-    {a[b]([c]){de}}f[(g)]    --- an opening parenthesis - push it onto the stack
-    {a[b]([c]){de}}f[(g)]    --- ignore
-    { [b]([c]){de}}f[(g)]    --- push onto stack
-    { [b]([c]){de}}f[(g)]    --- ignore
-    { [ ]([c]){de}}f[(g)]    --- closing parenthesis that matches the top - remove top
-    {    ([c]){de}}f[(g)]    --- push onto stack
-    {    ([c]){de}}f[(g)]    --- push onto stack
-    {    ([c]){de}}f[(g)]    --- ignore
-    {    ([ ]){de}}f[(g)]    --- a match - remove top
-    {    (   ){de}}f[(g)]    --- a match - remove top
-    {         {de}}f[(g)]    --- push onto stack
-    {         {de}}f[(g)]    --- ignore
-    {         { e}}f[(g)]    --- ignore
-    {         {  }}f[(g)]    --- a match - remove top
-    {             }f[(g)]    --- a match - remove top
-                   f[(g)]    --- ignore
-                    [(g)]    --- push onto stack
-                    [(g)]    --- push onto stack
-                    [(g)]    --- ignore
-                    [( )]    --- a match - remove top
-                    [   ]    --- a match - remove top
-                             --- end of string and stack empty - matched string
-
+<pre>
+{a[b]([c]){de}}f[(g)]    --- an opening parenthesis - push it onto the stack
+<span style="background-color:#ff7f00">{</span>a[b]([c]){de}}f[(g)]    --- ignore
+<span style="background-color:#ff7f00">{ </span>[b]([c]){de}}f[(g)]    --- push onto stack
+<span style="background-color:#ff7f00">{ [</span>b]([c]){de}}f[(g)]    --- ignore
+<span style="background-color:#ff7f00">{ [ </span>]([c]){de}}f[(g)]    --- closing parenthesis that matches the top - remove top
+<span style="background-color:#ff7f00">{    </span>([c]){de}}f[(g)]    --- push onto stack
+<span style="background-color:#ff7f00">{    (</span>[c]){de}}f[(g)]    --- push onto stack
+<span style="background-color:#ff7f00">{    ([</span>c]){de}}f[(g)]    --- ignore
+<span style="background-color:#ff7f00">{    ([ </span>]){de}}f[(g)]    --- a match - remove top
+<span style="background-color:#ff7f00">{    (   </span>){de}}f[(g)]    --- a match - remove top
+<span style="background-color:#ff7f00">{         </span>{de}}f[(g)]    --- push onto stack
+<span style="background-color:#ff7f00">{         {</span>de}}f[(g)]    --- ignore
+<span style="background-color:#ff7f00">{         { </span>e}}f[(g)]    --- ignore
+<span style="background-color:#ff7f00">{         {  </span>}}f[(g)]    --- a match - remove top
+<span style="background-color:#ff7f00">{             </span>}f[(g)]    --- a match - remove top
+<span style="background-color:#ff7f00">               </span>f[(g)]    --- ignore
+<span style="background-color:#ff7f00">                </span>[(g)]    --- push onto stack
+<span style="background-color:#ff7f00">                [</span>(g)]    --- push onto stack
+<span style="background-color:#ff7f00">                [(</span>g)]    --- ignore
+<span style="background-color:#ff7f00">                [( </span>)]    --- a match - remove top
+<span style="background-color:#ff7f00">                [   </span>]    --- a match - remove top
+<span style="background-color:#ff7f00">                     </span>    --- end of string and stack empty - matched string
+</pre>
 If at any time during the above process we had encountered a closing
 parenthesis while the stack was empty, this would have indicated that
 this closing parenthesis has no matching opening parenthesis. In this
