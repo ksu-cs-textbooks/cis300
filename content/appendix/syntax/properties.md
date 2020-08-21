@@ -8,12 +8,13 @@ pre = "<b>A1.6. </b>"
 
 ## Properties
 
-A property is used syntactically like a field of a class or structure, but provides greater flexibility in implementation. For example, the **string** class contains a **public** property called [**Length**](http://msdn.microsoft.com/en-us/library/system.string.length.aspx). This property is accessed in code much as if it were a **public int** field; i.e., if `s` is a **string** variable, we can access its **Length** property with the expression:
-
-```C#
-s.Length
-```
-
+A property is used syntactically like a field of a class or structure,
+but provides greater flexibility in implementation. For example, the
+**string** class contains a **public** property called
+[**Length**](https://docs.microsoft.com/en-us/dotnet/api/system.string.length?view=netframework-4.7.2). This
+property is accessed in code much as if it were a **public int**
+field; i.e., if `s` is a **string** variable, we can access its
+**Length** property with the expression `s.Length`,
 which evaluates to an **int**. If **Length** were a **public int** field, we would access it in just the same way. However, it turns out that we cannot assign a value to this property, as we can to a **public** field; i.e., the statement,
 
 ```C#
@@ -69,11 +70,9 @@ public int WordLength
 }
 ```
 
-Again, the code to the right of the "=\>" must be an expression whose type is the same as the type of the property (note that in C#, an assignment statement can be used as an expression whose type is that of the value being assigned).
+It is this flexibility in defining the implementation of a property that makes **public** properties more maintainable than **public** fields. Returning to the example at the beginning of this section, suppose we had simply defined **X** as a **public double** field. As we pointed out above, such a field could be used by user code in the same way as the first definition of the property **X**. However, a field is part of the implementation of a class or structure. By making it **public**, we have exposed part of the implementation to user code. This means that if we later change this part of the implementation, we will potentially break user code that relies on it. If, instead, we were to use a property, we can then change the implementation by modifying the **get** and/or **set** accessors. As long as we don't remove either accessor (or make it **private**), such a change is invisible to user code. Due to this maintainability, good programmers will never use **public** fields (unless they are [constants](/appendix/syntax/const)); instead, they will use **public** properties.
 
-It is this flexibility in defining the implementation of a property that makes **public** properties more maintainable than **public** fields. Returning to the example at the beginning of this section, suppose we had simply defined **X** as a **public double** field. As we pointed out above, such a field could be used by user code in the same way as the first definition of the property **X**. However, a field is part of the implementation of a class or structure. By making it **public**, we have exposed part of the implementation to user code. This means that if we later change this part of the implementation, we will potentially break user code that relies on it. If, instead, we were to use a property, we can then change the implementation by modifying the **get** and/or **set** accessors. As long as we don't remove either accessor (or make it **private**), such a change is invisible to user code. Due to this maintainability, good programmers will never use **public** fields (unless they are [constants](/~rhowell/DataStructures/redirect/const)); instead, they will use **public** properties.
-
-In some cases, we need more than a single to expression to define a **get** or **set** accessor. For example, suppose a data structure stores an **int\[ \]** `_elements`, and we wish to provide read-only access to this array. In order to ensure read-only access, we don't want to give user code a reference to the array, as the code would then be able to modify its contents. We therefore wish to make a copy of the array, and return that array to the user code (though a better solution might be to define an [indexer](/~rhowell/DataStructures/redirect/indexers)). We can accomplish this as follows:
+In some cases, we need more than a single to expression to define a **get** or **set** accessor. For example, suppose a data structure stores an **int\[ \]** `_elements`, and we wish to provide read-only access to this array. In order to ensure read-only access, we don't want to give user code a reference to the array, as the code would then be able to modify its contents. We therefore wish to make a copy of the array, and return that array to the user code (though a better solution might be to define an [indexer](/appendix/syntax/indexers)). We can accomplish this as follows:
 
 ```C#
 public int[ ] Elements

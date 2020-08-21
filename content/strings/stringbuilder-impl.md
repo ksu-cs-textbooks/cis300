@@ -22,45 +22,55 @@ In what follows, we will develop an implementation of a simplified
 **StringBuilder** class. Specifically, we will only implement enough to
 support the program that flips the case of all characters in a
 **string** (see [the previous
-section](/~rhowell/DataStructures/redirect/stringbuilders)). Most other
+section](/strings/stringbuilders)). Most other
 features of a **StringBuilder** have a rather straightforward
 implementation once the basics are done (we will show how to implement
 an indexer in [a later
-section](/~rhowell/DataStructures/redirect/indexers)). The actual
-implementation in the .NET Framework is somewhat more complicated in
-order to achieve even better performance.
+section](/appendix/syntax/indexers)). 
 
-We start by determining how we can represent a **StringBuilder** using
-more primitive data structures. One of the more useful primitive data
-structures that C\# provides for building more advanced data structures
+{{% notice note %}}
+The 
+implementation described here is much simpler than the actual
+implementation in the .NET Framework.  Their implementation achieves
+even better performance. 
+{{% /notice %}}
+
+In order to illustrate more clearly the techniques used to implement a
+**StringBuilder**, we will present an implementation that uses only
+those types provided by the C\#
+core language, rather than those found in a library such as the .NET
+Framework. One 
+of the more useful data 
+structures that the C\# core language provides for building more
+advanced data structures 
 is the array. We can represent the characters in a **StringBuilder**
 using a **char\[ \]**. One difficulty in using an array, however, is
 that we don't know how many characters our **StringBuilder** might need.
 We will return to this issue shortly, but for now, let's just
 arbitrarily pick a size for our array, and define:
-
-    /// <summary>
-    /// The characters in this StringBuilder.
-    /// </summary>
-    private char[] _characters = new char[100];
-
+```C#
+/// <summary>
+/// The characters in this StringBuilder.
+/// </summary>
+private char[] _characters = new char[100];
+```
 An array with 100 elements will give us room enough to store up to 100
 characters. In fact, initializing the array in this way actually gives
 us 100 characters, as each array element is initialized to a Unicode
 NULL character (a **char** with a decimal value of 0). Because **char**
-is a [value type](/~rhowell/DataStructures/redirect/reference-value),
+is a [value type](/appendix/syntax/reference-value),
 each array element is going to store a **char** - it's just a question
 of which **char** it is going to store. Therefore, if we want to be able
 to represent a sequence of *fewer* than 100 characters, we need an
 additional field to keep track of how many characters of the array
 actually represent characters in the **StringBuilder**. We therefore
 define:
-
-    /// <summary>
-    /// The number of characters in this StringBuilder.
-    /// </summary>
-    private int _length = 0;
-
+```C#
+/// <summary>
+/// The number of characters in this StringBuilder.
+/// </summary>
+private int _length = 0;
+```
 Thus, for example, if `_length` is 25, the first 25 characters in
 `_characters` will be the characters in the **StringBuilder**.
 
@@ -95,25 +105,25 @@ into it. We will then make `_characters` refer to the new array. (The
 to show the details of what is happening, we will not use it.) Now that
 there is enough room, we can append the new character as above. The code
 is as follows:
-
-    /// <summary>
-    /// Appends the given character to the end of this StringBuilder.
-    /// </summary>
-    /// <param name="c">The character to append.</param>
-    /// <returns>This StringBuilder.</returns>
-    public StringBuilder Append(char c)
+```C#
+/// <summary>
+/// Appends the given character to the end of this StringBuilder.
+/// </summary>
+/// <param name="c">The character to append.</param>
+/// <returns>This StringBuilder.</returns>
+public StringBuilder Append(char c)
+{
+    if (_length == _characters.Length)
     {
-        if (_length == _characters.Length)
-        {
-            char[] chars = new char[2 * _length];
-            _characters.CopyTo(chars, 0);
-            _characters = chars;
-        }
-        _characters[_length] = c;
-        _length++;
-        return this;
+        char[] chars = new char[2 * _length];
+        _characters.CopyTo(chars, 0);
+        _characters = chars;
     }
-
+    _characters[_length] = c;
+    _length++;
+    return this;
+}
+```
 A few comments on the above code are in order. First, when we need a new
 array, we allocate one of twice the size as the original array. We do
 this for a couple of reasons. First, notice that copying every character
@@ -125,7 +135,7 @@ other hand, doubling the array doesn't waste too much space if we don't
 need to fill it entirely.
 
 The
-[**CopyTo**](http://msdn.microsoft.com/en-us/library/06x742cw\(v=vs.110\).aspx)
+[**CopyTo**](https://docs.microsoft.com/en-us/dotnet/api/system.array.copyto?view=netframework-4.7.2#System_Array_CopyTo_System_Array_System_Int32_)
 method used above copies all of the elements in the array to which this
 method belongs (in this case, `_characters`) to the array given by the
 first parameter (`chars` in this case), placing them beginning at the
@@ -154,7 +164,7 @@ return type.
 We want this method to return the **string** formed from the first
 `_length` characters in `_characters`. We can form such a string using
 one of the [**string**
-constructor](http://msdn.microsoft.com/en-us/library/ms131424\(v=vs.110\).aspx)s.
+constructor](https://docs.microsoft.com/en-us/dotnet/api/system.string.-ctor?view=netframework-4.7.2#System_String__ctor_System_Char___System_Int32_System_Int32_)s.
 This constructor takes three parameters:
 
   - a **char\[ \]** containing the characters to form the **string**;
@@ -163,26 +173,27 @@ This constructor takes three parameters:
   - an **int** giving the number of characters to use.
 
 We can therefore define the **ToString** method as follows:
-
-    /// <summary>
-    /// Converts this StringBuilder to a string.
-    /// </summary>
-    /// <returns>The string equivalent of this StringBuilder.</returns>
-    public override string ToString()
-    {
-        return new string(_characters, 0, _length);
-    }
-
+```C#
+/// <summary>
+/// Converts this StringBuilder to a string.
+/// </summary>
+/// <returns>The string equivalent of this StringBuilder.</returns>
+public override string ToString()
+{
+    return new string(_characters, 0, _length);
+}
+```
 You can obtain a program containing the complete **class** definition by
 creating a Git repository (see "[Git
-Repositories](/~rhowell/DataStructures/redirect/version-control)") using
+Repositories](/appendix/vs/repos)") using
 [this URL](https://classroom.github.com/a/lQSbxCEo). This program is a
 modification of the program used in [the previous
-section](/~rhowell/DataStructures/redirect/stringbuilders) to compare
-**string**s with **StringBuilder**s when building **string**s a
+section](/strings/stringbuilders) to compare the performance
+differences between using
+**string**s or **StringBuilder**s when building **string**s a
 character at a time. Its only modification is to use this
 **StringBuilder** class, defined within a [class
-library](/~rhowell/DataStructures/redirect/class-libraries), instead of
+library](/appendix/vs/class-libraries), instead of
 the class defined in the .NET Framework. By running the program on long
 **string**s, you can verify that the performance of this
 **StringBuilder** class is comparable to that of the **StringBuilder**
