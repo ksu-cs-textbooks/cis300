@@ -22,8 +22,13 @@ Explorer showing output resembling the following:
 here.](test-explorer.png)
 
 {{% notice note %}}
+If the "Run All Tests" menu item is disabled, you may need to open the
+Test Explorer first by selecting "Test Explorer" from the "Test" menu.
+{{% /notice %}}
+
+{{% notice note %}}
 To see all of the output, you will need to open all of the elements by
-clicking on the small triangles to the right of each element.
+clicking on the small triangles to the left of each element.
 {{% /notice %}}
 
 The above output shows that there were two tests in the test suite. The names of the tests are simply the names of the methods comprising the tests. The output further shows that one of the tests, **LengthIsCorrect**, failed, whereas the other test, **FirstElementIs2**, passed.
