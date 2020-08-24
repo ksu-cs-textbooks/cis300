@@ -9,8 +9,8 @@ pre = "<b>A1.4. </b>"
 ## The **decimal** Type
 
 A
-[**decimal**](http://msdn.microsoft.com/en-us/library/system.decimal\(v=vs.110\).aspx)
-is a [structure](/~rhowell/DataStructures/redirect/structs) representing
+[**decimal**](https://docs.microsoft.com/en-us/dotnet/api/system.decimal?view=netframework-4.7.2)
+is a [structure](/appendix/syntax/structs) representing
 a floating-point decimal number. The main difference between a
 **decimal** and a **float** or a **double** is that a **decimal** can
 store any value that can be written using no more than 28 decimal
@@ -21,9 +21,9 @@ a **double** because its binary representation is infinite
 Various types, such as **int**, **double**, or **string**, may be
 converted to a **decimal** using a **Convert.ToDecimal** method; for
 example, if `i` is an **int**, we can convert it to a decimal with:
-
-    decimal d = Convert.ToDecimal(i);
-
+```C#
+decimal d = Convert.ToDecimal(i);
+```
 A decimal is represented internally with the following three components:
 
   - A 96-bit value *v* storing the digits

@@ -134,7 +134,8 @@ therefore makes sense to assign **default(T)** to an array location
 after we are no longer using it.
 
 {{% notice tip %}}
-Often the parameter to **default** can be omitted because the compiler
+Often the parameter to **default** (including the parentheses) can be
+omitted because the compiler 
 can detect what type is needed. This is the case in the current
 context. If using **default** without the
 parameter gives a syntax error, supply the parameter.

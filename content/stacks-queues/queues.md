@@ -8,7 +8,8 @@ pre = "<b>3.5. </b>"
 
 ## Introduction to Queues
 
-Stacks provide LIFO access to data, but sometimes we need FIFO access.
+Stacks provide LIFO access to data, but sometimes we need
+first-in-first-out, or *FIFO*, access.
 Consider, for example, the computation of capital gains from stock
 sales. Typically an investor will buy shares of a stock commodity at
 various times and for different prices. When shares are sold, the amount
@@ -38,34 +39,34 @@ Likewise, new data items are added to the back of a queue, and data
 items are retrieved from the front.
 
 The .NET Framework provides both a non-generic queue of **object**s
-([**System.Collections.Queue**](http://msdn.microsoft.com/en-us/library/system.collections.queue.aspx))
+([**System.Collections.Queue**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.queue?view=netframework-4.7.2))
 and a generic queue
-([**System.Collections.Generic.Queue\<T\>**](http://msdn.microsoft.com/en-us/library/7977ey2c\(v=vs.110\).aspx)).
+([**System.Collections.Generic.Queue\<T\>**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1?view=netframework-4.7.2)).
 For simplicity, we will focus on the generic version. The non-generic
 version is the same, except that wherever the type parameter **T** is
 used in the generic version, **object** is used in the non-generic
 version.
 
 Like **Stack\<T\>**, **Queue\<T\>** has a **public**
-[constructor](http://msdn.microsoft.com/en-us/library/e99tfk1a\(v=vs.110\).aspx)
+[constructor](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1.-ctor?view=netframework-4.7.2#System_Collections_Generic_Queue_1__ctor)
 that takes no parameters and constructs an empty queue, along with a
 **public**
-[**Count**](http://msdn.microsoft.com/en-us/library/fy0wwyz4\(v=vs.110\).aspx)
+[**Count**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1.count?view=netframework-4.7.2)
 property that gets the number of elements in the queue (as an **int**).
 It also has the following **public** methods:
 
   - An
-    [**Enqueue**](http://msdn.microsoft.com/en-us/library/t249c2y7\(v=vs.110\).aspx)
+    [**Enqueue**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1.enqueue?view=netframework-4.7.2)
     method that takes a single parameter of type **T** and places it at
     the back of the queue.
   - A
-    [**Peek**](http://msdn.microsoft.com/en-us/library/1cz28y5c\(v=vs.110\).aspx)
+    [**Peek**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1.peek?view=netframework-4.7.2)
     method that takes no parameters and returns the element (of type
     **T**) at the front of the queue without changing the queue's
     contents. If the queue is empty, this method throws an
     **InvalidOperationException**.
   - A
-    [**Dequeue**](http://msdn.microsoft.com/en-us/library/1c8bzx97\(v=vs.110\).aspx)
+    [**Dequeue**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1.dequeue?view=netframework-4.7.2)
     method, which takes no parameters and removes and returns the
     element at the front of the queue. If the queue is empty, this
     method throws an **InvalidOperationException**.
@@ -74,7 +75,7 @@ To implement a capital gain calculator using a **Queue\<T\>**, we first
 need to determine what type to make the elements. We will need to store
 the purchase price of each share we buy in the queue. An appropriate
 type for storing monetary amounts is the
-[**decimal**](/~rhowell/DataStructures/redirect/decimals) type.
+[**decimal**](/appendix/syntax/decimals) type.
 Therefore, we will use an initially empty **Queue\<decimal\>**. Each
 time we buy shares, we enqueue the purchase price of each share onto the
 queue. When we sell shares, we need to compute the sum of the capital
