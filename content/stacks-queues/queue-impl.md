@@ -10,7 +10,7 @@ pre = "<b>3.6. </b>"
 
 We will approach the implementation of a queue much like we did the
 [implementation of a
-stack](/~rhowell/DataStructures/redirect/stack-impl) - we will use part
+stack](/stacks-queues/stack-impl) - we will use part
 of an array to store the elements, and create a larger array as needed.
 However, efficiently implementing a stack is easier because we only need
 to access one end of a stack, but we need to access both ends of a
@@ -21,7 +21,7 @@ array, as we did for a stack; i.e.:
 array](bad-queue-impl.jpg)
 
 This implementation works well as long as we are only enqueuing elements
-- each element is placed at the back, much like pushing an element onto
+--- each element is placed at the back, much like pushing an element onto
 a stack. However, consider what happens when we dequeue an element. The
 element is easy to locate, as it must be at index 0, but in order to
 maintain the above picture, we would need to move all of the remaining
@@ -65,9 +65,9 @@ Let us now consider how we would implement **Enqueue**. We first need to
 determine whether the array is full by comparing the **Count** with the
 size of the array. If it is full, we need to construct a new array of
 twice the size, as we did for both the [**StringBuilder**
-implementation](/~rhowell/DataStructures/redirect/stringbuilder-impl)
+implementation](/strings/stringbuilder-impl)
 and the [stack
-implementation](/~rhowell/DataStructures/redirect/stack-impl). However,
+implementation](/stacks-queues/stack-impl). However,
 we can't simply copy the entire array to the beginning of the new array,
 as we did for these other two implementations. To do so would leave a
 gap in the middle of the queue, as shown in the following illustration:
@@ -83,7 +83,7 @@ queue remains unchanged; i.e., we copy as follows:
 
 In order to copy the elements like this, we can use the **static**
 method,
-[**Array.Copy**](http://msdn.microsoft.com/en-us/library/z50k9bft.aspx).
+[**Array.Copy**](https://docs.microsoft.com/en-us/dotnet/api/system.array.copy?view=netframework-4.7.2#System_Array_Copy_System_Array_System_Int32_System_Array_System_Int32_System_Int32_).
 This method takes the following parameters:
 
   - The array to copy from.
@@ -101,7 +101,7 @@ number of elements to copy, first observe that we know the number of
 elements in the original array (we can use either the **Count** property
 or the length of this array, as these values are equal whenever we need
 a larger array). To get the number of elements we want to copy, we can
-subtract from this value the number of elements we are *not* copying -
+subtract from this value the number of elements we are *not* copying ---
 i.e., the number of elements preceding the index of the front of the
 queue. The number of elements preceding any index *i* is always *i*;
 hence, by subtracting the index of the front of the queue from the
@@ -127,7 +127,7 @@ this value is not beyond the end of the array. If it is, then we need to
 wrap it around by subtracting the length of the array. We can then
 increment the number of elements, and we are (finally) done.
 
-The **Peek** method is straightforward - after verifying that the queue
+The **Peek** method is straightforward --- after verifying that the queue
 is nonempty, we simply return the element at the front. The **Dequeue**
 method isn't much more difficult. We can obtain the element we want to
 return using the **Peek** method. We then need to place the default
