@@ -25,7 +25,7 @@ implementation:
     in the linked list.
 
 Because this is a **class**, it is a [reference
-type](/~rhowell/DataStructures/redirect/reference-value); hence, the
+type](/appendix/syntax/reference-value); hence, the
 **Next** property will store a reference to another
 **LinkedListCell\<T\>**.
 
@@ -55,22 +55,22 @@ Suppose we want to insert the **string** "Notice:" at the beginning of
 this linked list. Because we have not defined a constructor for the
 **LinkedListCell\<T\>** class, it has a default constructor that we can
 use to construct a new instance:
-
-    LinkedListCell<string> cell = new LinkedListCell<string>();
-
+```C#
+LinkedListCell<string> cell = new LinkedListCell<string>();
+```
 We can then set its **Data** property to "Notice:":
-
-    cell.Data = "Notice:";
-
+```C#
+cell.Data = "Notice:";
+```
 This gives us the following:
 
 ![Inserting to the beginning of a linked list](linked-list-insert-1.jpg)
 
 We have the cell we need, but it's not linked into the linked list. We
 can accomplish this by changing the cell's **Next** property:
-
-    cell.Next = p;
-
+```C#
+cell.Next = p;
+```
 This yields the following:
 
 ![Linking in the cell](linked-list-insert-2.jpg)
@@ -78,9 +78,9 @@ This yields the following:
 This is what we want, unless we want `p` to refer to the beginning of
 the linked list. We can take care of this by copying the value of `cell`
 to `p`:
-
-    p = cell;
-
+```C#
+p = cell;
+```
 This yields the following (we are not showing `cell` because we are no
 longer interested in it, but it still refers to the same cell):
 
@@ -88,9 +88,9 @@ longer interested in it, but it still refers to the same cell):
 
 We can also undo the above statement by copying into `p` the reference
 in the **Next** property of the cell to which `p` refers:
-
-    p = p.Next;
-
+```C#
+p = p.Next;
+```
 This yields the following:
 
 ![Removing the first cell](linked-list-remove-first.jpg)

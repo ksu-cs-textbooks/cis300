@@ -31,7 +31,7 @@ The **public** methods **Push**, **Peek**, and **Pop** are then fairly
 straightforward to implement. For **Push** we need to add the given
 element to a new cell at the beginning of the linked list, as shown in
 [the previous
-section](/~rhowell/DataStructures/redirect/linked-list-intro), and
+section](/linked-lists/intro), and
 update the **Count**. To implement **Peek**, if the stack is nonempty,
 we simply return the **Data** property of the cell at the beginning of
 the linked list; otherwise, we throw an **InvalidOperationException**.
@@ -40,7 +40,7 @@ To implement **Pop**:
 1.  Using **Peek**, obtain the element to be returned;
 2.  Remove the first element from the linked list as shown in [the
     previous
-    section](/~rhowell/DataStructures/redirect/linked-list-intro);
+    section](/linked-lists/intro);
 3.  Update the **Count**; and
 4.  Return the retrieved value.
 
@@ -54,7 +54,7 @@ the following:
 
 We now need to decide which end to make the front of the queue. As we
 saw in [the previous
-section](/~rhowell/DataStructures/redirect/linked-list-intro), both
+section](/linked-lists/intro), both
 inserting and removing can be done efficiently at the beginning of a
 linked list. Likewise, it is easy to insert an element at the end if we
 have a reference to the last cell. Suppose, for example, that `last`
@@ -69,15 +69,24 @@ list](linked-list-insert-end-1.jpg)
 To insert this cell at the end of the linked list, we just need to copy
 the reference in `cell` to the **Next** property of the cell to which
 `last` refers:
-
-    last.Next = cell;
-
+```C#
+last.Next = cell;
+```
 On the other hand, removing the last cell is problematic, even if we
 have a reference to it. The problem is that in order to remove it from
 the linked list, we need to change the **Next** property of the
 preceding cell. Unfortunately, the only way to obtain that cell is to
 start at the beginning of the list and work our way through it. If the
-linked list is long, this could be quite inefficient. Because we need to
+linked list is long, this could be quite inefficient. 
+
+{{% notice note %}}
+It doesn't help any to keep a reference to the next-to-last cell, as
+we encounter the same problem when we need to update this reference
+after removing the last cell --- we don't have a reference to its
+preceding cell.
+{{% /notice %}}
+
+Because we need to
 remove elements from the front of a queue, but not from the back, we
 conclude that it will work best to make the beginning of the linked list
 the front of the queue. We therefore need the following **private**
