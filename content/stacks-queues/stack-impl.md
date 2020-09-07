@@ -121,6 +121,8 @@ that is no longer needed by the program. However, because this array
 still stores a reference to it, the garbage collector cannot tell that
 it is no longer in use, and consequently, it cannot reclaim the storage.
 
+<a name="default-value"></a>
+
 It therefore makes sense to remove what is stored in this array
 location. However, we run into a difficulty when we try to do this. We
 can't simply assign **null** to this location because **T** might be a
