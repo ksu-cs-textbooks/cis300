@@ -9,16 +9,16 @@ pre = "<b>5.3. </b>"
 ## Implementing a Dictionary with an Array-Like Structure
 
 In [the previous
-section](http://people.cs.ksu.edu/~rhowell/DataStructures/redirect/dictionary-linked-lists),
+section](/dictionaries/linked-list-impl/),
 we discussed how linked lists could be used to implement a dictionary.
 An alternative to a linked list would be an array. A couple of other
 alternatives are the non-generic
-[**System.Collections.ArrayList**](http://msdn.microsoft.com/en-us/library/system.collections.arraylist.aspx)
+[**System.Collections.ArrayList**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.arraylist?view=netframework-4.7.2)
 or the generic
-[**System.Collections.Generic.List\<T\>**](http://msdn.microsoft.com/en-us/library/6sh2ey19\(v=vs.110\).aspx).
+[**System.Collections.Generic.List\<T\>**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=netframework-4.7.2).
 These classes are similar to singly-dimensioned arrays, but they can
 grow as needed. In this respect, they are like a
-[**StringBuilder**](http://msdn.microsoft.com/en-us/library/system.text.stringbuilder\(v=vs.110\).aspx),
+[**StringBuilder**](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=netframework-4.7.2),
 but instead of storing **char**s, an **ArrayList** stores **object**s
 and a **List\<T\>** stores instances of the type parameter **T**.
 Elements can be retrieved from instances of these classes using
@@ -30,9 +30,9 @@ the keys in order in any of these data structures. We can then search
 for a key in the same way as we described for a linked list. However,
 such a search can be expensive - to search for a key that is larger than
 any key in the dictionary, we need to examine all of the keys. We say
-that the performance of this sequential search is in O(*n*), where *n*
-is the number of keys in the dictionary. This means that as *n* grows,
-the time required for the search is at worst proportional to *n*.
+that the performance of this sequential search is in $O(n)$, where $n$
+is the number of keys in the dictionary. This means that as $n$ grows,
+the time required for the search is at worst proportional to $n$.
 
 We can improve this performance dramatically for arrays or array-like
 structures such as **ArrayList**s or **List\<T\>**s using a technique
@@ -83,7 +83,7 @@ We then need a loop to iterate as long as this search space is nonempty
 for). On each iteration, we need to find the midpoint of the search
 space. This midpoint is simply the average of `start` and `end` - i.e.,
 their sum divided by 2. We need to be a bit careful here because we are
-doing integer division, which may involve rounding. As a result, we may
+doing integer division, which may involve truncation. As a result, we may
 not get exactly the average. In any case, we need to ensure that the
 index we compute is within the search space - otherwise, we may not
 reduce the search space, and an infinite loop will result. Because the
@@ -114,6 +114,6 @@ hence, the key we are looking for is not in the data set. However,
 hence, the binary search can be used for both lookups and insertions.
 
 Binary search is a very efficient way to search an ordered array-like
-structure. In particular, it always makes no more than *O*(log *n*)
-comparisons, where *n* is the number of elements in the data set. The
-log function grows very slowly - much more slowly than *n*.
+structure. In particular, it always makes no more than $O(\log n)$
+comparisons, where $n$ is the number of elements in the data set. The
+$\log$ function grows very slowly - much more slowly than $n$.
