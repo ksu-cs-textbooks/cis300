@@ -15,14 +15,18 @@ tree may be *empty*, or it may consist of:
   - zero or more *children*, each of which is also a tree.
 
 Consider, for example, a folder (or directory) in a Windows file system.
-This folder and all its sub-folders form a tree - the root of the tree
+This folder and all its sub-folders form a tree --- the root of the tree
 is the folder itself, and its children are the folders directly
-contained within it. (**Note:** We are only considering actual folders,
-not shortcuts, symbolic links, etc.). Because a folder (with its
+contained within it. Because a folder (with its
 sub-folders) forms a tree, each of the sub-folders directly contained
 within the folder are also trees. In this example, there are no empty
-trees - an empty folder is a nonempty tree containing a root but no
+trees --- an empty folder is a nonempty tree containing a root but no
 children.
+
+{{% notice note %}}
+We are only considering actual folders,
+not shortcuts, symbolic links, etc. 
+{{% /notice %}}
 
 We have at least a couple of ways of presenting a tree graphically. One
 way is as done within Windows Explorer:
@@ -46,37 +50,38 @@ follow, we will consider various data structures that form trees.
 
 The .NET Framework provides access to the folders in a file system tree
 via the
-[**DirectoryInfo**](http://msdn.microsoft.com/en-us/library/system.io.directoryinfo.aspx)
+[**DirectoryInfo**](https://docs.microsoft.com/en-us/dotnet/api/system.io.directoryinfo?view=netframework-4.7.2)
 class, found in the **System.IO** namespace. This class has a
-[constructor](http://msdn.microsoft.com/en-us/library/system.io.directoryinfo.directoryinfo.aspx)
+[constructor](https://docs.microsoft.com/en-us/dotnet/api/system.io.directoryinfo.-ctor?view=netframework-4.7.2)
 that takes as its only parameter a **string** giving the path to a
 folder (i.e., a directory) and constructs a **DirectoryInfo** describing
 that folder. We can obtain such a **string** from the user using a
-[**FolderBrowserDialog**](http://msdn.microsoft.com/en-us/library/system.windows.forms.folderbrowserdialog\(v=vs.110\).aspx).
+[**FolderBrowserDialog**](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.folderbrowserdialog?view=netframework-4.7.2).
 This class is similar to a [file
-dialog](/~rhowell/DataStructures/redirect/file-dialogs) and can be added
+dialog](/io/dialogs/file-dialogs) and can be added
 to a form in the Design window in the same way. If `uxFolderBrowser` is
 a **FolderBrowserDialog**, we can use it to obtain a **DirectoryInfo**
 for a user-selected folder as follows:
-
-    if (uxFolderBrowser.ShowDialog() == DialogResult.OK)
-    {
-        DirectoryInfo folder = new DirectoryInfo(uxFolderBrowser.SelectedPath);
-        . . .
-    }
-
+```C#
+if (uxFolderBrowser.ShowDialog() == DialogResult.OK)
+{
+    DirectoryInfo folder = new DirectoryInfo(uxFolderBrowser.SelectedPath);
+    
+	// Process the folder
+}
+```
 Various properties of a **DirectoryInfo** give information about the
 folder; for example:
 
-  - [**Name**](http://msdn.microsoft.com/en-us/library/system.io.directoryinfo.name.aspx)
+  - [**Name**](https://docs.microsoft.com/en-us/dotnet/api/system.io.directoryinfo.name?view=netframework-4.7.2)
     gets the name of the folder as a **string**.
-  - [**FullName**](http://msdn.microsoft.com/en-us/library/system.io.filesysteminfo.fullname.aspx)
+  - [**FullName**](https://docs.microsoft.com/en-us/dotnet/api/system.io.directoryinfo.fullname?view=netframework-4.7.2)
     gets the full path of the folder as a **string**.
-  - [**Parent**](http://msdn.microsoft.com/en-us/library/system.io.directoryinfo.parent.aspx)
+  - [**Parent**](https://docs.microsoft.com/en-us/dotnet/api/system.io.directoryinfo.parent?view=netframework-4.7.2)
     gets the parent folder as a **DirectoryInfo**.
 
 In addition, its
-[**GetDirectories**](http://msdn.microsoft.com/en-us/library/s7xk2b58.aspx)
+[**GetDirectories**](https://docs.microsoft.com/en-us/dotnet/api/system.io.directoryinfo.getdirectories?view=netframework-4.7.2#System_IO_DirectoryInfo_GetDirectories)
 method takes no parameters and returns a **DirectoryInfo\[ \]** whose
 elements describe the contained folders (i.e., the elements of the array
 are the children of the folder). For example, if `d` refers to a
@@ -85,64 +90,64 @@ figures above, then **d.GetDirectories()** would return a 3-element
 array whose elements describe the folders **bin**, **obj**, and
 **Properties**. The following method illustrates how we can write the
 names of the folders contained within a given folder to a
-[**StreamWriter**](http://msdn.microsoft.com/en-us/library/system.io.streamwriter\(v=vs.110\).aspx):
-
-    /// <summary>
-    /// Writes the names of the directories contained in the given directory (excluding their
-    /// sub-directories) to the given StreamWriter.
-    /// </summary>
-    /// <param name="dir">The directory whose contained directories are to be written.</param>
-    /// <param name="output">The output stream to write to.</param>
-    private void WriteSubDirectories(DirectoryInfo dir, StreamWriter output)
+[**StreamWriter**](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=netframework-4.7.2):
+```C#
+/// <summary>
+/// Writes the names of the directories contained in the given directory 
+/// (excluding their sub-directories) to the given StreamWriter.
+/// </summary>
+/// <param name="dir">The directory whose contained directories are to
+/// be written.</param>
+/// <param name="output">The output stream to write to.</param>
+private void WriteSubDirectories(DirectoryInfo dir, StreamWriter output)
+{
+    foreach (DirectoryInfo d in dir.GetDirectories())
     {
-        foreach (DirectoryInfo d in dir.GetDirectories())
-        {
-            output.WriteLine(d.Name);
-        }
+        output.WriteLine(d.Name);
     }
-
+}
+```
 For a more interesting problem, suppose we want to write to a
 **StreamWriter** the structure of an entire folder, as follows:
-
-    Ksu.Cis300.HelloWorld
-      bin
-        Debug
-        Release
-      obj
-        Debug
-          TempPE
-      Properties
-
+<pre>
+Ksu.Cis300.HelloWorld
+  bin
+    Debug
+    Release
+  obj
+    Debug
+      TempPE
+  Properties
+</pre>
 We can break this task into the following steps:
 
 1.  Write the name of the folder:
-    
-        Ksu.Cis300.HelloWorld
+    <pre>Ksu.Cis300.HelloWorld</pre>
 
 2.  Write the structure of each child folder, indented one level (i.e.,
     two spaces):
     
       - First child:
         
-        ``` 
+        <pre>
           bin
             Debug
             Release
-        ```
+        </pre>
     
       - Second child:
         
-        ``` 
+        <pre>
           obj
             Debug
               TempPE
-        ```
+        </pre>
     
       - Third child:
         
-        ``` 
+        <pre>
           Properties
-        ```
+        </pre>
 
 <span id="recursion"></span> Note that writing the structure of a child
 folder is an instance of the original problem that we want to solve -
@@ -171,26 +176,27 @@ folder. In order to write such a method, we need three parameters:
 Because the root folder must be written first, we begin there. We first
 must write two blanks for every level of indentation, then write the
 name of the root folder:
-
-    /// <summary>
-    /// Writes the directory structure for the given root directory to the given StreamWriter,
-    /// indenting all entries to the given indentation level (incomplete).
-    /// </summary>
-    /// <param name="root">The root directory.</param>
-    /// <param name="output">The output stream to which to write</param>
-    /// <param name="level">The current indentation level.</param>
-    private void WriteTree(DirectoryInfo root, StreamWriter output, int level)
+```C#
+/// <summary>
+/// Writes the directory structure for the given root directory to the
+/// given StreamWriter, indenting all entries to the given indentation
+/// level (incomplete). 
+/// </summary>
+/// <param name="root">The root directory.</param>
+/// <param name="output">The output stream to which to write</param>
+/// <param name="level">The current indentation level.</param>
+private void WriteTree(DirectoryInfo root, StreamWriter output, int level)
+{
+    for (int i = 0; i < level; i++)
     {
-        for (int i = 0; i < level; i++)
-        {
-            output.Write("  ");
-        }
-        output.WriteLine(root.Name);
-    
-        // We now need to write the sub-directories . . .
-    
+        output.Write("  ");
     }
+    output.WriteLine(root.Name);
 
+    // We now need to write the sub-directories . . .
+
+}
+```
 We can get the children using **root.GetDirectories()**. Each of the
 elements of the array this method returns will be a **DirectoryInfo**
 whose structure we want to write. Looking back at how we described what
@@ -198,27 +204,28 @@ we want the **WriteTree** method to accomplish, we see that it is
 exactly what we want to do for each child. We can therefore make a
 recursive call for each child, specifying that the indentation level
 should be one deeper than the level for `root`:
-
-    /// <summary>
-    /// Writes the directory structure for the given root directory to the given StreamWriter,
-    /// indenting all entries to the given indentation level (incomplete).
-    /// </summary>
-    /// <param name="root">The root directory.</param>
-    /// <param name="output">The output stream to which to write</param>
-    /// <param name="level">The current indentation level.</param>
-    private void WriteTree(DirectoryInfo root, StreamWriter output, int level)
+```C#
+/// <summary>
+/// Writes the directory structure for the given root directory to the
+/// given StreamWriter, indenting all entries to the given indentation
+/// level (incomplete). 
+/// </summary>
+/// <param name="root">The root directory.</param>
+/// <param name="output">The output stream to which to write</param>
+/// <param name="level">The current indentation level.</param>
+private void WriteTree(DirectoryInfo root, StreamWriter output, int level)
+{
+    for (int i = 0; i < level; i++)
     {
-        for (int i = 0; i < level; i++)
-        {
-            output.Write("  ");
-        }
-        output.WriteLine(root.Name);
-        foreach (DirectoryInfo d in root.GetDirectories())
-        {
-            WriteTree(d, output, level + 1);
-        }
+        output.Write("  ");
     }
-
+    output.WriteLine(root.Name);
+    foreach (DirectoryInfo d in root.GetDirectories())
+    {
+        WriteTree(d, output, level + 1);
+    }
+}
+```
 This method accomplishes the desired task, provided the directory tree
 does not contain symbolic links or anything similar that might be
 represented using a **DirectoryInfo**, but is not an actual folder.
@@ -280,7 +287,7 @@ does not produce a correct result. Statement 2 is therefore false.
 
 Once we understand this strategy, recursion is as easy to use as calling
 a method written by someone else. In fact, we should treat recursive
-calls in exactly the same way - we need to understand what the recursive
+calls in exactly the same way --- we need to understand what the recursive
 call is supposed to accomplish, but not necessarily how it accomplishes
 it. Furthermore, because processing trees typically involves solving the
 same problem for multiple nodes in the tree, recursion is the natural
@@ -318,18 +325,18 @@ processed prior to any node contained in any of its children. For the
 before any folders contained anywhere within it.
 
 When debugging a recursive method, we should continue to think about it
-in the same way - that is, assume that all recursive calls work
+in the same way --- that is, assume that all recursive calls work
 correctly. In order to isolate an error, we need to find an instance
 that causes an error, but whose recursive calls all work correctly. It
-will almost always be possible to find such a case that is small - in
+will almost always be possible to find such a case that is small --- in
 fact, small cases tend to be the most likely ones to fit this
 description. When debugging, it therefore makes sense to start with the
 smallest cases, and slowly increase their size until one is found that
 causes an error. When using the debugger to step through code, first
 delete all breakpoints from this method, then use [Step
-Over](/~rhowell/DataStructures/redirect/debugger-buttons) to step over
+Over](/appendix/vs/debugger/#debugger-buttons) to step over
 the recursive calls. If a recursive call doesn't work correctly, you
-have found a smaller instance that causes an error - work on that
+have found a smaller instance that causes an error --- work on that
 instance instead. Otherwise, you can focus on the top-level code for the
 instance you are debugging. This is much easier to think about that
 trying to work through different levels of recursion.
@@ -340,8 +347,8 @@ transferring control to the top of the method being called, all local
 variables and the address of the current code location are pushed onto
 the *call stack*. This call stack is just like any other stack, except
 that it has a smaller amount of space available to it. You can, in fact,
-examine the call stack when debugging - from the "Debug" menu, select
-"Windows Ã¢â‚¬â€˜\> Call Stack". This will open a window
+examine the call stack when debugging --- from the "Debug" menu, select
+"Windows -> Call Stack". This will open a window
 showing the contents of the call stack. The line on top shows the line
 of code currently ready for execution. Below it is the line that called
 the current method, and below that line is the line that called that
@@ -349,14 +356,18 @@ method, etc. By double-clicking on an entry in the call stack, you can
 use the other debugging tools to examine the values of the local
 variables for the method containing that line of code. If this method is
 recursive, the values displayed for the local variables are their values
-at that level of recursion. Note that this only applies to the values
+at that level of recursion. 
+
+{{% notice note %}}
+This only applies to the values
 stored in local variables - in particular, if a local variable is a
-[reference type](/~rhowell/DataStructures/redirect/reference-value), the
+[reference type](/appendix/syntax/reference-value), the
 value of the object to which it refers will not revert to its earlier
 state. For example, if a local variable is an array, the debugger will
 show the value of this variable to refer to the array that it referred
 to at that point, but the values shown in that array will be its current
 values.
+{{% /notice %}}
 
 Once consequence of method calls using a call stack with limited space
 available is that moderately deep recursion can fill up the call stack.
@@ -364,7 +375,7 @@ If this happens, a **StackOverflowException** will be thrown. Thus,
 infinite recursion will always throw this exception, as will recursion
 that is nested too deeply. For this reason, it is usually a bad idea to
 use recursion on a [linked
-list](/~rhowell/DataStructures/redirect/linked-lists) - if the list is
+list](/linked-lists) - if the list is
 very long, the recursion will be nested too deeply. We must also take
 care in using recursion with trees, as long paths in a tree can lead to
 a **StackOverflowException**. Due to the branching nature of trees,

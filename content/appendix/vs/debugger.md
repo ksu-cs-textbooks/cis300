@@ -43,6 +43,7 @@ Having this information, we can now use the debugger to investigate further the 
 
 Actually fixing the error requires a little more understanding of the code. In this case, however, the comment immediately above the line in question helps us out. It tells us that the low-order part of the hex string we are building may need to be padded with 0s - this padding is what we are constructing. Furthermore, it tells us that the number of hex digits we need is the value of `power`. In order to get this many digits, we need to subtract the number of hex digits we already have in `lowOrder` from `power`; i.e., we need to reverse the order of the subtraction. However, we can't make the correction until we stop the debugger.
 
+<a name="debugger-buttons"></a>
 To stop the debugger, notice the buttons that are available at the top of the Visual Studio window while the debugger is running:
 
 ![A picture of a portion of a window should appear here.](debugger-buttons.jpg)
