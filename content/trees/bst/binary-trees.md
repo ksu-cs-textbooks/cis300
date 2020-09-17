@@ -24,7 +24,7 @@ the *right* child.
 We can implement a single node of a binary tree as a data structure and
 use it to store data. The implementation is simple, like [the
 implementation of a linked list
-cell](/~rhowell/DataStructures/redirect/linked-list-intro). Let's call
+cell](/linked-lists/intro). Let's call
 this type **BinaryTreeNode\<T\>**, where **T** will be the type of data
 we will store in it. We need three **public** properties:
 

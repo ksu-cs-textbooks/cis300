@@ -14,7 +14,7 @@ will present such a data structure - a binary search tree - in this
 section. While it will support efficient lookups, insertions, and
 deletions for many applications, we will see that there are cases in
 which it performs no better than a linked list. In [the next
-section](/~rhowell/DataStructures/redirect/avl-trees), we will add some
+section](/trees/avl), we will add some
 refinements that will guarantee good performance.
 
 Before we can define a binary search tree, we need to define a more

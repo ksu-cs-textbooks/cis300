@@ -9,18 +9,18 @@ pre = "<b>6.2.2. </b>"
 ## Introduction to Binary Search Trees
 
 In this section and [the
-next](http://people.cs.ksu.edu/~rhowell/DataStructures/redirect/bst-remove),
+next](/trees/bst/remove),
 we will present a binary search tree as a data structure that can be
 used to implement a
-[dictionary](http://people.cs.ksu.edu/~rhowell/DataStructures/redirect/dictionary-class)
+[dictionary](/dictionaries)
 whose key type can be ordered. This implementation will provide
 efficient lookups, insertions, and deletions in most cases; however,
 there will be cases in which the performance is bad. In [a later
-section](http://people.cs.ksu.edu/~rhowell/DataStructures/redirect/avl-trees),
+section](/trees/avl),
 we will show how to extend this good performance to all cases.
 
 A *binary search tree* is a [binary
-tree](/~rhowell/DataStructures/redirect/binary-trees) containing
+tree](/trees/bst/binary-trees) containing
 key-value pairs whose keys can be ordered. Furthermore, the data items
 are arranged such that the key in each node is:
 
@@ -44,11 +44,11 @@ the right child, where we find the key we are looking for.
 
 Note the similarity of the search described above to a binary search. It
 isn't exactly the same, because there is no guarantee that the root is
-the middle element in the tree - in fact, it could be the first or the
+the middle element in the tree --- in fact, it could be the first or the
 last. In many applications, however, when we build a binary search tree
 as we will describe below, the root of the tree tends to be roughly the
 middle element. When this is the case, looking up a key is very
-efficient. [Later](/~rhowell/DataStructures/redirect/avl-trees), we will
+efficient. [Later](/trees/avl), we will
 show how we can build and maintain a binary search tree so that this is
 always the case.
 
@@ -68,13 +68,17 @@ using recursion. The algorithm breaks into four cases:
   - The key we are looking for is greater than the key at the root. We
     then look in the right child using a recursive call.
 
+{{% notice warning %}}
 It is important to handle the case of an empty tree first, as the other
 cases don't make sense if the tree is empty. In fact, if we are using
 **null** to represent an empty binary search tree (as is fairly common),
-we will get a **NullReferenceException** if we try to compare a given
-key with the key at the root. Furthermore, if we need to compare
+we will get a **NullReferenceException** if we try to access the key
+at the root.
+{{% /notice %}}
+
+If we need to compare
 elements using a
-[**CompareTo**](http://msdn.microsoft.com/en-us/library/43hc6wht.aspx)
+[**CompareTo**](https://docs.microsoft.com/en-us/dotnet/api/system.icomparable-1.compareto?view=netframework-4.7.2)
 method, it would be more efficient to structure the code so that this
 method is only called once; e.g.,
 
@@ -85,7 +89,7 @@ method is only called once; e.g.,
       - Otherwise, if the result is negative . . . .
       - Otherwise . . . .
 
-This method would need to take two parameters - the key we are looking
+This method would need to take two parameters --- the key we are looking
 for and the tree we are looking in. This second parameter will actually
 be a reference to a node, which will either be the root of the tree or
 **null** if the tree is empty. Because this method requires a parameter
@@ -139,13 +143,18 @@ Note that the above algorithm only adds the given data item when it
 reaches an empty tree. Not only is this the most straightforward way to
 add items, but it also tends to keep paths in the tree short, as each
 insertion is only lengthening one path. [This
-page](/~rhowell/viewer/index.html) contains an application that will
-show the result of adding a key at a time to a binary search tree. The
+page](http://cs.ksu.edu/~rhowell/viewer/index.html) contains an
+application that will 
+show the result of adding a key at a time to a binary search tree. 
+
+{{% notice warning %}}
+The
 keys in this application are treated as strings; hence, you can use
 numbers if you want, but they will be compared as strings (e.g.,
 "10" \< "5" because '1' \< '5'). For this reason, it is
 usually better to use either letters, words, or integers that all have
 the same number of digits.
+{{% /notice %}}
 
 The above algorithm can be implemented in the same way if mutable binary
 tree nodes are used; however, we can improve its performance a bit by
