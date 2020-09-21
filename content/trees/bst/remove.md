@@ -20,12 +20,10 @@ looking for it). Still, we might want to know whether the key was found.
 We therefore need two pieces of information from this method - the
 resulting tree and a **bool** indicating whether the key was found. In
 order to accommodate this second piece of information, we make the
-**bool** an [**out**
-parameter](/~rhowell/DataStructures/redirect/out-ref).
+**bool** an [**out** parameter](/appendix/syntax/out-ref).
 
 We can again break the problem into cases and use recursion, as we did
-for [adding an element](/~rhowell/DataStructures/redirect/bst-intro).
-However, removing an element is complicated by the fact that its node
+for [adding an element](/trees/bst/intro). However, removing an element is complicated by the fact that its node
 might have two nonempty children. For example, suppose we want to remove
 the element whose key is 54 in the following binary search tree:
 
