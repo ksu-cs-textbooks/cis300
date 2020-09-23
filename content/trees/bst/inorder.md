@@ -50,6 +50,6 @@ The entire algorithm is therefore as follows:
 
 This algorithm is known as an *inorder traversal* because it processes
 the root between the processing of the two children. Unlike [preorder
-traversal](/~rhowell/DataStructures/redirect/trees-intro), this
+traversal](/trees/intro), this
 algorithm only makes sense for binary trees, as there must be exactly
 two children in order for "between" to make sense.
