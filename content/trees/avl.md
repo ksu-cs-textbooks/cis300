@@ -174,6 +174,12 @@ code first constructs the right child of the tree on the right and
 places it in the variable `newRight`. It then constructs the entire tree
 on the right and returns it.
 
+{{% notice warning %}}
+
+Don't try to write the code for doing rotations without looking at pictures of the rotations.
+
+{{% /notice %}}
+
 Now that we have seen what a single rotate right does and how to code
 it, we need to consider whether it fixes the problem. Recall that we
 were assuming that the given left child (i.e., the tree rooted at *b* in

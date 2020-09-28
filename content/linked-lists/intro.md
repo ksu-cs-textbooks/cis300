@@ -51,10 +51,17 @@ linked list:
   - `p.Next.Next.Next.Next` is **null** (if we try to get its **Data**
     property, we will get a **NullReferenceException**).
 
+{{% notice tip %}}
+
+When writing code for using and manipulating linked lists, it is helpful to draw pictures of the lists, as we do throughout this chapter.
+
+{{% /notice %}}
+
 Suppose we want to insert the **string** "Notice:" at the beginning of
 this linked list. Because we have not defined a constructor for the
 **LinkedListCell\<T\>** class, it has a default constructor that we can
 use to construct a new instance:
+
 ```C#
 LinkedListCell<string> cell = new LinkedListCell<string>();
 ```

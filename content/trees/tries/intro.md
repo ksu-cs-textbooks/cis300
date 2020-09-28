@@ -31,13 +31,13 @@ Suppose, for example, that we want to store the following words:
   - farm
 
 A trie storing these words (where we denote a value of **true** for the
-boolean with a '\*') is as follows:
+boolean with a `*`) is as follows:
 
 ![A trie](trie-example.jpg)
 
 Thus, for example, if we follow the path from the root through the
 labels 'c', 'a', and 'r', we reach a node with a **true** boolean value
-(shown by the '\*' in the above picture); hence, "car" is in this set of
+(shown by the `*` in the above picture); hence, "car" is in this set of
 words. However, if we follow the path through the labels 'c', 'u', and
 'r', the node we reach has a **false** boolean; hence, "cur" is not in
 this set. Likewise, if we follow the path through 'a', we reach a node
@@ -70,7 +70,7 @@ as it does not depend on any context, but instead focuses entirely on
 the trie rooted at that particular node.
 
 One of the main advantages of a trie over an [AVL
-tree](/~rhowell/DataStructures/redirect/avl-trees) is the speed with
+tree](/trees/avl) is the speed with
 which we can look up words. Assuming we can quickly find the child with
 a given label, the time we need to look up a word is proportional to the
 length of the word, no matter how many words are in the trie. Note that
@@ -86,7 +86,7 @@ using a trie if our set of words is large.
 Let's now consider how we can implement a trie. There are various ways
 that this can be done, but we'll consider a fairly straightforward
 approach in this section (we'll improve the implementation in [the next
-section](/~rhowell/DataStructures/redirect/tries-multiple-impl)). We
+section](/trees/tries/multiple-impl)). We
 will assume that the words we are storing are comprised of only the 26
 lower-case English letters. In this implementation, a single node will
 contain the following **private** fields:
@@ -115,19 +115,25 @@ label.
 
 Let's now consider how to implement a lookup. We can define a **public**
 method for this purpose within the class implementing a trie node:
-
-    public bool Contains(string s)
-    {
+```C#
+public bool Contains(string s)
+{
     
-        . . .
+    . . .
     
-    }
+}
+```
+{{% notice note %}}
 
-Note that this method does not need a trie node as a parameter because
+This method does not need a trie node as a parameter because
 the method will belong to a trie node. Thus, the method will be able to
 access the node as
-[**this**](/~rhowell/DataStructures/redirect/static-this), and may
-access its **private** fields directly by their names. The method
+[**this**](/appendix/syntax/static-this), and may
+access its **private** fields directly by their names. 
+
+{{% /notice %}}
+
+The method
 consists of four cases:
 
   - `s` is the empty **string**. In this case the **bool** stored in
@@ -154,14 +160,14 @@ with a new one (we would need to construct a new node for each letter of
 each word we added). We therefore should provide a **public** method
 within the trie node class for the purpose of adding a word to the trie
 rooted at this node:
-
-    public void Add(string s)
-    {
+```C#
+public void Add(string s)
+{
     
-        . . .
-    
-    }
+    . . .
 
+}
+```
 This time there are three cases:
 
   - `s` is the empty **string**. Then we can record this word by setting
