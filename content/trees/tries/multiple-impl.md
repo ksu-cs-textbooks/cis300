@@ -9,8 +9,8 @@ pre = "<b>6.4.2. </b>"
 ## Multiple Implementations of Children
 
 The trie implementation given in [the previous
-section](/~rhowell/DataStructures/redirect/tries-intro) offers very
-efficient lookups - a word of length *m* can be looked up in *O*(*m*)
+section](/trees/tries/intro) offers very
+efficient lookups - a word of length $m$ can be looked up in $O(m)$
 time, no matter how many words are in the trie. However, it wastes a
 large amount of space. In a typical trie, a majority of the nodes will
 have no more than one child; however, each node contains a 26-element
@@ -37,7 +37,7 @@ special cases:
 
 For all other nodes, we can use an implementation similar to the one
 outlined in [the previous
-section](/~rhowell/DataStructures/redirect/tries-intro). We will still
+section](/trees/tries/intro). We will still
 waste some space with the nodes having more than one child but fewer
 than 26; however, the amount of space wasted will now be much less.
 Furthermore, in each of these three implementations, we can quickly
@@ -63,16 +63,15 @@ has this functionality, and to define various sub-types that have
 different implementations, but still have this functionality.
 
 A simple example of an interface is
-[**IComparable\<T\>**](https://msdn.microsoft.com/en-us/library/4d7sx9hd.aspx).
-Recall from the section, "[Implementing a Dictionary with a Linked
-List](http://people.cs.ksu.edu/~rhowell/DataStructures/redirect/dictionary-linked-lists)",
+[**IComparable\<T\>**](https://docs.microsoft.com/en-us/dotnet/api/system.icomparable-1?view=netframework-4.7.2).
+Recall from the section, ["Implementing a Dictionary with a Linked
+List"](/dictionaries/linked-list-impl),
 that we can constrain the keys in a dictionary implementation to be of a
 type that can be ordered by using a **where** clause on the **class**
 statement, as follows:
 
-``` 
-      public class Dictionary<TKey, TValue> where TKey : IComparable<TKey>
-    
+```C# 
+public class Dictionary<TKey, TValue> where TKey : IComparable<TKey>
 ```
 
 The [source code for the **IComparable\<T\>**
@@ -80,12 +79,11 @@ interface](https://referencesource.microsoft.com/#mscorlib/system/icomparable.cs
 has been posted by Microsoft®. The essential part of this definition
 is:
 
-``` 
-      public interface IComparable<in T>
-      {
-          int CompareTo(T other);
-      }
-    
+```C# 
+public interface IComparable<in T>
+{
+    int CompareTo(T other);
+}
 ```
 
 (Don't worry about the **in** keyword with the type parameter in the
@@ -93,10 +91,10 @@ first line.) This definition defines the type **IComparable\<T\>** as
 having a method **CompareTo** that takes a parameter of the generic type
 **T** and returns an **int**. Note that there is no **public** or
 **private** access modifier on the method definition. This is because
-access modifiers are disallowed within interfaces - all definitions are
+access modifiers are disallowed within interfaces --- all definitions are
 implicitly **public**. Note also that there is no actual definition of
 the **CompareTo** method, but only a header followed by a semicolon.
-Definitions of method bodies are also disallowed within interfaces - an
+Definitions of method bodies are also disallowed within interfaces --- an
 interface doesn't define the behavior of a method, but only how it
 should be used (i.e., its parameter list and return type). For this
 reason, it is impossible to construct an instance of an interface
@@ -113,25 +111,31 @@ definition within Visual Studio® as follows:
 
 ![Beginning an interface](interface-example1.jpg)
 
-At the end of the first line of the **class** definition, "`:
-IComparable<Fraction>`" indicates that the class being defined is a
+At the end of the first line of the **class** definition, `:
+IComparable<Fraction>` indicates that the class being defined is a
 subtype of **IComparable\<Fraction\>**. In general, we can list one or
 more interface names after the colon, separating these names with
 commas. Each name that we list requires that all of the methods,
-properties, and [indexers](/~rhowell/DataStructures/redirect/indexers)
+properties, and [indexers](/appendix/syntax/indexers)
 from that interface must be fully defined within this class. If we hover
-the mouse over the word, "IComparable\<Fraction\>", a drop-down menu
+the mouse over the word, `IComparable<Fraction>`, a drop-down menu
 appears. By selecting "Implement interface" from this menu, all of the
 required members of the interface are provided for us:
 
 ![Interface members are auto-filled](interface-example2.jpg)
 
-Note that in order to implement a method specified in an interface, we
-must define it as **public**. We now just need to replace the **throw**
+{{% notice note %}}
+
+In order to implement a method specified in an interface, we
+must define it as **public**. 
+
+{{% /notice %}}
+
+We now just need to replace the **throw**
 with the proper code for the **CompareTo** method and fill in any other
 class members that we need; for example:
 
-``` 
+``` c#
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -190,57 +194,71 @@ namespace Ksu.Cis300.Fractions
     
 ```
 
-Note that the **CompareTo** method above is *not* recursive. The
+{{% notice note %}}
+
+The **CompareTo** method above is *not* recursive. The
 **CompareTo** method that it calls is a member of the **long**
 structure, not the **Fraction** class.
 
+{{% /notice %}}
+
 As we suggested above, interfaces can also include properties. For
 example,
-[**ICollection\<T\>**](http://msdn.microsoft.com/en-us/library/92t2ye13\(v=vs.110\).aspx)
+[**ICollection\<T\>**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.icollection-1?view=netframework-4.7.2)
 is a generic interface implemented by both arrays and the class
-[**List\<T\>**](http://msdn.microsoft.com/en-us/library/6sh2ey19\(v=vs.110\).aspx).
+<span style="white-space:nowrap">[**List\<T\>**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=netframework-4.7.2).</span>
 This interface contains the following member (among others):
 
-    int Count { get; }
+```c#
+int Count { get; }
+```
 
 This member specifies that every subclass must contain a property called
 **Count** with a getter. At first, it would appear that an array does
 not have such a property, as we cannot write something like:
 
-    int[] a = new int[10];
-    int k = a.Count;  // This gives a syntax error.
+```c#
+int[] a = new int[10];
+int k = a.Count;  // This gives a syntax error.
+```
 
 <span id="explicit-impl"></span> In fact, an array does contain a
 **Count** property, but this property is available only when the array
 is treated as an **ICollection\<T\>** (or an
-[**IList\<T\>**](http://msdn.microsoft.com/en-us/library/5y536ey6.aspx),
+<span style="white-space:nowrap">[**IList\<T\>**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ilist-1?view=netframework-4.7.2),</span>
 which is an interface that is a subtype of **ICollection\<T\>**, and is
 also implemented by arrays). For example, we can write:
 
-    int[] a = new int[10];
-    ICollection<int> col = a;
-    int k = col.Count;
+```c#
+int[] a = new int[10];
+ICollection<int> col = a;
+int k = col.Count;
+```
 
 or
 
-    int[] a = new int[10];
-    int k = ((ICollection<int>)a).Count;
+```c#
+int[] a = new int[10];
+int k = ((ICollection<int>)a).Count;
+```
 
 This behavior occurs because an array *explicitly implements* the
 **Count** property. We can do this as follows:
 
-    public class ExplicitImplementationExample<T> : ICollection<T>
+```c#
+public class ExplicitImplementationExample<T> : ICollection<T>
+{
+    int ICollection<T>.Count
     {
-        int ICollection<T>.Count
+        get
         {
-            get
-            {
-                // Code to return the proper value
-            }
+            // Code to return the proper value
         }
-    
-        // Other class members
     }
+
+    // Other class members
+}
+```
 
 Thus, if we create an instance of
 **ExplicitImplementationExample\<T\>**, we cannot access its **Count**
@@ -251,33 +269,35 @@ member, neither the **public** nor the **private** access modifier is
 allowed when *explicitly* implementing an interface member.
 
 We can also include
-[indexers](/~rhowell/DataStructures/redirect/indexers) within
+[indexers](/appendix/syntax/indexers) within
 interfaces. For example, the **IList\<T\>** interface is defined as
 follows:
 
-    public interface IList<T> : ICollection<T>
-    {
-        T this[int index] { get; set; }
-    
-        int IndexOf(T item);
-    
-        void Insert(int index, T item);
-    
-        void RemoveAt(int index);
-    }
+```c#
+public interface IList<T> : ICollection<T>
+{
+    T this[int index] { get; set; }
 
-The "`: ICollection<T>`" at the end of the first line specifies that
+    int IndexOf(T item);
+
+    void Insert(int index, T item);
+
+    void RemoveAt(int index);
+}
+```
+
+The `: ICollection<T>` at the end of the first line specifies that
 **IList\<T\>** is a subtype of **ICollection\<T\>**; thus, the interface
 includes all members of **ICollection\<T\>**, plus the ones listed. The
-first member listed above specifies an indexer with a getter and a
-setter.
+first member listed above specifies an indexer with a get accessor and a
+set accessor.
 
 Now that we have seen a little of what interfaces are all about, let's
 see how we can use them to provide three different implementations of
 trie nodes. We first need to define an interface, which we will call
 **ITrie**, specifying the two **public** members of [our previous
 implementation of a trie
-node](/~rhowell/DataStructures/redirect/tries-intro). We do, however,
+node](/trees/tries/intro). We do, however,
 need to make one change to the way the **Add** method is called. This
 change is needed because when we add a **string** to a trie, we may need
 to change the implementation of the root node. We can't simply change
@@ -287,25 +307,27 @@ to return the root of the resulting trie. Because this node may have any
 of the three implementations, the return type of this method should be
 **ITrie**. The **ITrie** interface is therefore as follows:
 
+```c#
+/// <summary>
+/// An interface for a trie.
+/// </summary>
+public interface ITrie
+{
     /// <summary>
-    /// An interface for a trie.
+    /// Determines whether this trie contains the given string.
     /// </summary>
-    public interface ITrie
-    {
-        /// <summary>
-        /// Determines whether this trie contains the given string.
-        /// </summary>
-        /// <param name="s">The string to look for.</param>
-        /// <returns>Whether this trie contains s.</returns>
-        bool Contains(string s);
-    
-        /// <summary>
-        /// Adds the given string to this trie.
-        /// </summary>
-        /// <param name="s">The string to add.</param>
-        /// <returns>The resulting trie.</returns>
-        ITrie Add(string s);
-    }
+    /// <param name="s">The string to look for.</param>
+    /// <returns>Whether this trie contains s.</returns>
+    bool Contains(string s);
+
+    /// <summary>
+    /// Adds the given string to this trie.
+    /// </summary>
+    /// <param name="s">The string to add.</param>
+    /// <returns>The resulting trie.</returns>
+    ITrie Add(string s);
+}
+```
 
 We will then need to define three classes, each of which implements the
 above interface. We will use the following names for these classes:
@@ -314,7 +336,7 @@ above interface. We will use the following names for these classes:
   - **TrieWithOneChild** will be used for nodes with exactly one child.
   - **TrieWithManyChildren** will be used for all other nodes; this will
     be the class described in [the previous
-    section](/~rhowell/DataStructures/redirect/tries-intro) with a few
+    section](/trees/tries/intro) with a few
     modifications.
 
 These three classes will be similar because they each will implement the
@@ -326,7 +348,7 @@ the **TrieWithNoChildren** and **TrieWithOneChild** classes need
 **private** fields as described at the beginning of this section,
 whereas the **TrieWithManyChildren** classes needs the same **private**
 fields as outlined in [the previous
-section](/~rhowell/DataStructures/redirect/tries-intro). In each case,
+section](/trees/tries/intro). In each case,
 whenever we need to refer to a trie, we will use the type **ITrie**.
 
 The **Add** methods for both **TrieWithNoChildren** and
@@ -368,7 +390,7 @@ giving the label of a child, and an **ITrie** giving a child (these last
 three parameters will come from the original **TrieWithOneChild**). It
 can use the last three parameters to initialize its **bool** field and
 one of its children (computing the child's index as in [the previous
-section](/~rhowell/DataStructures/redirect/tries-intro)). It can then
+section](/trees/tries/intro)). It can then
 use its own **Add** method to add the given **string**, as there will
 always be room to add a **string** to this implementation; hence, it can
 ignore the value returned by the **Add** method. Furthermore, because
@@ -378,7 +400,7 @@ verify that it is a lower-case English letter.
 
 The **Contains** method for **TrieWithManyChildren** can be exactly the
 same as for the implementation in [the previous
-section](/~rhowell/DataStructures/redirect/tries-intro). For the other
+section](/trees/tries/intro). For the other
 two classes, the structure of the method is similar. Specifically, the
 empty **string** needs to be handled first and in exactly the same way,
 as the empty **string** is represented in the same way in all three
@@ -394,7 +416,7 @@ as this **string** is not in this trie.
 
 The **Add** method for **TrieWithManyChildren** needs some modification
 from the description given in [the previous
-section](/~rhowell/DataStructures/redirect/tries-intro). First, the
+section](/trees/tries/intro). First, the
 method must return the resulting trie, which will always be **this**, as
 this implementation never needs to be replaced by another to accommodate
 a new **string**. The only other change that needs to be made is where a
@@ -425,10 +447,10 @@ The **Add** method for **TrieWithOneChild** will need three cases:
 Code that uses such a trie will need to refer to it as an **ITrie**
 whenever possible. The only exception to this rule occurs when we are
 constructing a new trie, as we cannot construct an instance of an
-interface. Here, we want to construct the simplest implementation - a
+interface. Here, we want to construct the simplest implementation --- a
 **TrieWithNoChildren**. Otherwise, the only difference in usage as
 compared to the implementation of [the previous
-section](/~rhowell/DataStructures/redirect/tries-intro) is that the
+section](/trees/tries/intro) is that the
 **Add** method now returns the resulting trie, whose root may be a
 different object; hence, we will need to be sure to replace the current
 trie with whatever the **Add** method returns.
