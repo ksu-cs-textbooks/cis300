@@ -19,7 +19,7 @@ a prefix of any string associated with any node in any of this node's
 children; hence, it is alphabetically less than any string found in any
 of the children. Thus, in order to process each of the strings in
 alphabetic order, we need to do a [preorder
-traversal](/~rhowell/DataStructures/redirect/trees-intro), which
+traversal](/trees/tries/intro), which
 processes the root before recursively processing the children.
 
 In order to process the string associated with a node, we need to be
@@ -29,7 +29,7 @@ we can build this string on the way to the node and pass it as a
 parameter to the preorder traversal of the trie rooted at this node.
 Because we will be building this string a character at a time, to do
 this efficiently we should use a
-[**StringBuilder**](/~rhowell/DataStructures/redirect/stringbuilders)
+[**StringBuilder**](/strings/stringbuilders)
 instead of a **string**. Thus, the preorder traversal method for a trie
 will take a **StringBuilder** parameter describing the path to that
 trie, in addition to any other parameters needed to process the strings
@@ -57,7 +57,7 @@ Once we have processed the root, we need to recursively process each of
 the children in alphabetic order of their labels. How we accomplish this
 depends on how we are implementing the trie - we will assume the
 implementation of [the previous
-section](/~rhowell/DataStructures/redirect/tries-multiple-impl). Because
+section](/trees/tries/multiple-impl). Because
 this implementation uses three different classes depending on how many
 children a node has, we will need to write three different versions of
 the preorder traversal, one for each class. The root is handled in the
@@ -71,7 +71,7 @@ children are represented:
     will need to append the child's label to the **StringBuilder**.
     Following the recursive call, we will need to remove the character
     that we added by reducing its
-    [**Length**](http://msdn.microsoft.com/en-us/library/system.text.stringbuilder.aspx)
+    [**Length**](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.length?view=netframework-4.7.2)
     property by 1.
   - We handle a **TrieWithManyChildren** in a similar way as a
     **TrieWithOneChild** , only we will need to iterate through the
@@ -80,5 +80,5 @@ children are represented:
     need to be appended to the **StringBuilder** prior to the recursive
     call and removed immediately after. We can obtain the label of a
     child by adding 'a' to its array index and
-    [casting](/~rhowell/DataStructures/redirect/casts) the result to a
+    [casting](/stacks-queues/stacks/#cast) the result to a
     **char**.
