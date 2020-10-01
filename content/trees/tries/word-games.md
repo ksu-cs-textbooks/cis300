@@ -58,7 +58,7 @@ stored anywhere. Rather, it is a mathematical object that helps us to
 design an algorithm for finding all of the words. Each word on the board
 is simply a path in this tree starting from the root. We can therefore
 traverse this tree in much the same way as we outlined in [the previous
-section](/~rhowell/DataStructures/redirect/traversing-tries) for tries.
+section](/trees/tries/traversing) for tries.
 For each node in the tree, we can look up the path leading to that node,
 and output it if it is a word in the dictionary.
 
