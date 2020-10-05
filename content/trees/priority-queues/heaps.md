@@ -15,7 +15,7 @@ contains the maximum priority of any node in the heap, and each of its
 children is also a heap. Note that this implies that, in any subtree,
 the maximum priority is at the root. We define a *min-heap* similarly,
 except that the minimum priority is at the root. Below is an example of
-a min-heap with integer priorities (the data elements are not shown -
+a min-heap with integer priorities (the data elements are not shown ---
 only their priorities):
 
 ![A min-heap.](heap.jpg)
@@ -30,15 +30,21 @@ min-heap tends to give better performance than an AVL tree, which could
 also be used to implement a min-priority queue. Although the definition
 of a heap does not require it, the implementations we will consider will
 be binary trees, as opposed to trees with an arbitrary number of
-children. (We should also point out that the heap data structure is
+children. 
+
+{{% notice note %}}
+
+The heap data structure is
 unrelated to the pool of memory from which instances of reference types
-are constructed - this also, unfortunately, is called a heap.)
+are constructed --- this also, unfortunately, is called a heap.
+
+{{% /notice %}}
 
 One advantage to using a min-heap to implement a min-priority queue is
-fairly obvious - an element with minimum priority is always at the root
+fairly obvious --- an element with minimum priority is always at the root
 if the min-heap is nonempty. This makes it easy to find the minimum
 priority and an element with this priority. Let's consider how we might
-remove a element with minimum priority. Assuming the min-heap is
+remove an element with minimum priority. Assuming the min-heap is
 nonempty, we need to remove the element at the root. Doing so leaves us
 with two min-heaps (either of which might be empty). To complete the
 removal, we need a way to merge two min-heaps into one. Note that if we
@@ -66,15 +72,15 @@ There two important details that we have omitted, though:
 
   - Which two min-heaps do we merge in the recursive call?
   - Which of the two resulting min-heaps do we make the new left child
-    of *s*?
+    of the new root?
 
 There are various ways these questions can be answered. Some ways lead
 to efficient implementations, whereas others do not. For example, if we
 always merge the right child of *s* with *b* and make the result the new
-right child of *s*, it turns out that all of our min-heaps will have
+right child of the new root, it turns out that all of our min-heaps will have
 empty left children. As a result, in the worst case, the time needed to
 merge two min-heaps is proportional to the total number of elements in
 the two min-heaps. This is poor performance. In [the next
-section](/~rhowell/DataStructures/redirect/leftist-heaps) we will
+section](/trees/priority-queues/leftist-heaps) we will
 consider a specific implementation that results in a worst-case running
 time proportional to the logarithm of the total number of nodes.
