@@ -21,7 +21,7 @@ null path length is $1$ because only one step is needed to reach an empty
 subtree.
 
 One reason that the null path length is important is that it can be
-shown that any binary tree with *n* nodes has a null path length that is
+shown that any binary tree with $n$ nodes has a null path length that is
 no more than <span style="white-space:nowrap">$\lg(n + 1)$.</span> Furthermore, recall that in the merging
 strategy outlined in [the previous
 section](/trees/priority-queues/heaps), there is some

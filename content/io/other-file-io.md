@@ -8,9 +8,9 @@ pre = "<b>1.5. </b>"
 
 ## Other File I/O
 
-Not all files are plain text files - often we need to read and/or write
+Not all files are plain text files --- often we need to read and/or write
 binary data. The .NET Framework provides the
-[**FileStream**](http://msdn.microsoft.com/en-us/library/system.io.filestream.aspx)
+[**FileStream**](https://docs.microsoft.com/en-us/dotnet/api/system.io.filestream?view=netframework-4.7.2)
 class for this purpose.
 
 The **FileStream** class provides constructors for creating a
@@ -20,24 +20,24 @@ access to be allowed (i.e., reading/writing), and how the file is to be
 locked. In most cases, however, a simpler way to construct an
 appropriate **FileStream** is to use one of the following **static**
 methods provided by the the
-[**File**](https://msdn.microsoft.com/en-us/library/system.io.file.aspx)
+[**File**](https://docs.microsoft.com/en-us/dotnet/api/system.io.file?view=netframework-4.7.2)
 class:
 
   - [**File.OpenRead(string
-    fn)**](https://msdn.microsoft.com/en-us/library/system.io.file.openread.aspx):
+    fn)**](https://docs.microsoft.com/en-us/dotnet/api/system.io.file.openread?view=netframework-4.7.2):
     returns a **FileStream** for reading the file with the given path
     name. A **FileNotFoundException** is thrown if the file does not
     exist.
   - [**File.OpenWrite(string
-    fn)**](https://msdn.microsoft.com/en-us/library/system.io.file.openwrite.aspx):
+    fn)**](https://docs.microsoft.com/en-us/dotnet/api/system.io.file.openwrite?view=netframework-4.7.2):
     returns a **FileStream** for writing to the file with the given path
     name. If the file exists, it will be replaced; otherwise, it will be
     created.
 
 Two of the most commonly-used methods of a **FileStream** are
-[**ReadByte**](http://msdn.microsoft.com/en-us/library/system.io.filestream.readbyte.aspx)
+[**ReadByte**](https://docs.microsoft.com/en-us/dotnet/api/system.io.filestream.readbyte?view=netframework-4.7.2)
 and
-[**WriteByte**](http://msdn.microsoft.com/en-us/library/system.io.filestream.writebyte.aspx).
+[**WriteByte**](https://docs.microsoft.com/en-us/dotnet/api/system.io.filestream.writebyte?view=netframework-4.7.2).
 The **ReadByte** method takes no parameters and returns an **int**. If
 there is at least one byte available to read, the next one is read and
 its value (a nonnegative integer less than 256) is returned; otherwise,
@@ -54,12 +54,14 @@ assigns. Thus, if `input` is a **FileStream** opened for input, we can
 set up a loop to read a byte at a time to the end of the stream as
 follows:
 
-    int k;
-    while ((k = input.ReadByte()) != -1)
-    {
-        byte b = (byte)k;
-        . . .
-    }
+```c#
+int k;
+while ((k = input.ReadByte()) != -1)
+{
+    byte b = (byte)k;
+    . . .
+}
+```
 
 In the above code, the **ReadByte** method reads a byte from the file as
 long as there is one to read, and assigns it to the **int** variable

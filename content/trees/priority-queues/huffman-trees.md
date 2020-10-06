@@ -91,8 +91,8 @@ the number of occurrences of each. Because files can be large, this
 array should be a **long\[ \]**. We can then use element *i* of this
 array to keep track of the number of occurrences of byte value *i*.
 Thus, after constructing this array, we can read the file one byte at a
-time as described in "[Other File
-I/O](/~rhowell/DataStructures/redirect/other-file-io)", and for each
+time as described in ["Other File
+I/O"](/io/other-file-io), and for each
 **byte** `b` that we read, we increment the value at location `b` of the
 array.
 
