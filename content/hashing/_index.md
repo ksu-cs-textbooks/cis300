@@ -11,7 +11,7 @@ pre = "<b>7. </b>"
 Throughout our discussion of dictionaries over the last three chapters,
 we have taken advantage of the fact that the keys were sorted when
 looking up specific keys. In this chapter, we examine a rather
-surprising result - that we can achieve better performance if we don't
+surprising result --- that we can achieve better performance if we don't
 have to keep the keys in any particular order (i.e., so that we can
 process them in that order). The technique uses a data structure known
 as a *hash table*, which is the underlying data structure in the .NET
@@ -31,9 +31,13 @@ function is denoted by *h*:
 
 ![A hash table.](hash-table.jpg)
 
+{{% notice note %}}
+
 In order to avoid cluttering the above picture, the **string**s are
 shown inside the linked list cells, even though **string** is a
 reference type.
+
+{{% /notice %}}
 
 In order to achieve good performance, we want all of the linked lists to
 be short. This requires, among other things, that we make the array
@@ -49,10 +53,10 @@ function is divided into two parts. The first part of the hash function
 is implemented within the key type itself, where code can access the
 implementation details of the key. Specifically, every type in C# has a
 **public**
-[**GetHashCode**](https://msdn.microsoft.com/en-us/library/system.object.gethashcode.aspx)
+[**GetHashCode**](https://docs.microsoft.com/en-us/dotnet/api/system.object.gethashcode?view=netframework-4.7.2#System_Object_GetHashCode)
 method, which takes no parameters and returns an **int**. Any new type
 that redefines how its elements are compared for equality should
-*override* this method so to ensure that it returns the same value
+*override* this method so as to ensure that it returns the same value
 whenever it is called on equal instances. The second part of the hash
 function is implemented within the dictionary itself. This part takes
 the **int** from the first part and uses it to compute an array
