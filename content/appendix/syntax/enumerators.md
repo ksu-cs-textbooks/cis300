@@ -8,7 +8,7 @@ pre = "<b>A1.11. </b>"
 
 ## Enumerators
 
-As we saw in [the previous section](/~rhowell/DataStructures/redirect/foreach), in order for a data structure to support a **foreach** loop, it must be a subtype of either [**IEnumerable**](http://msdn.microsoft.com/en-us/library/system.collections.ienumerable.aspx) or [**IEnumerable\<T\>**](http://msdn.microsoft.com/en-us/library/9eekhta0\(v=vs.110\).aspx), where **T** is the type of the elements in the data structure. Thus, because [**Dictionary\<TKey, TValue\>**](https://msdn.microsoft.com/en-us/library/xfhwa508.aspx) is a subtype of **IEnumerable\<KeyValuePair\<TKey, TValue\>\>**, we can use a **foreach** loop to iterate through the key-value pairs that it stores. Likewise, its [**Keys**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.keys?view=netframework-4.7.2#System_Collections_Generic_Dictionary_2_Keys) and [**Values**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.values?view=netframework-4.7.2) properties get objects that are subtypes of **IEnumerable\<TKey\>** and **IEnumerable\<TValue\>**, respectively, **foreach** loops may be used to iterate these objects as well, in order to process all the keys or all the values stored in the dictionary. **IEnumerable** and **IEnumerable\<T\>** are [interfaces](http://people.cs.ksu.edu/~rhowell/DataStructures/redirect/interfaces); hence, we must define any subtypes so that they implement these interfaces. In this section, we will show how to implement the **IEnumerable\<T\>** interface to support a **foreach** loop.
+As we saw in [the previous section](/appendix/syntax/foreach), in order for a data structure to support a **foreach** loop, it must be a subtype of either [**IEnumerable**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.ienumerable?view=netframework-4.7.2) or [**IEnumerable\<T\>**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ienumerable-1?view=netframework-4.7.2), where **T** is the type of the elements in the data structure. Thus, because [**Dictionary\<TKey, TValue\>**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2?view=netframework-4.7.2) is a subtype of **IEnumerable\<KeyValuePair\<TKey, TValue\>\>**, we can use a **foreach** loop to iterate through the key-value pairs that it stores. Likewise, because its [**Keys**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.keys?view=netframework-4.7.2) and [**Values**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.values?view=netframework-4.7.2) properties get objects that are subtypes of **IEnumerable\<TKey\>** and **IEnumerable\<TValue\>**, respectively, **foreach** loops may be used to iterate these objects as well, in order to process all the keys or all the values stored in the dictionary. **IEnumerable** and **IEnumerable\<T\>** are [interfaces](/trees/tries/multiple-impl); hence, we must define any subtypes so that they implement these interfaces. In this section, we will show how to implement the **IEnumerable\<T\>** interface to support a **foreach** loop.
 
 The **IEnumerable\<T\>** interface requires two methods:
 
@@ -58,7 +58,7 @@ public IEnumerator> GetEnumerator()
 }
 ```
 
-However, the above example illustrates a more general technique that can be used when we don't have the desired enumerator already available. For instance, continuing the above example, suppose we wish to define a **Keys** property to get an **IEnumerable\<KeyValuePair\<TKey, TValue\>\>** that iterates through the keys in the dictionary. Because the dictionary now supports a **foreach** loop, we can define this code to iterate through the key-value pairs in the dictionary, rather than the key-value pairs stored in the **List\<KeyVauePair\<TKey, TValue\>\>**:
+However, the first solution illustrates a more general technique that can be used when we don't have the desired enumerator already available. For instance, continuing the above example, suppose we wish to define a **Keys** property to get an **IEnumerable\<TKey\>** that iterates through the keys in the dictionary. Because the dictionary now supports a **foreach** loop, we can define this code to iterate through the key-value pairs in the dictionary, rather than the key-value pairs stored in the **List\<KeyVauePair\<TKey, TValue\>\>**:
 
 ```C#
 public IEnumerable<TKey> Keys
@@ -75,10 +75,11 @@ public IEnumerable<TKey> Keys
 
 The above code is more maintainable than iterating through the **List\<KeyValuePair\<TKey, TValue\>\>** as it doesn't depend on the specific implementation of the dictionary.
 
-While this technique usually works best with iterative code, it can also be used with recursion, although the translation usually ends up being less direct and less efficient. Suppose, for example, our dictionary were implemented as in "[Binary Search Trees](http://people.cs.ksu.edu/~rhowell/DataStructures/redirect/binary-search-trees)", where a binary search tree is used. The idea is to adapt the [inorder traversal](http://people.cs.ksu.edu/~rhowell/DataStructures/redirect/inorder-traversal) algorithm. However, we can't use this directly to implement a recursive version of the **GetEnumerator** method because this method does not take any parameters; hence, we can't apply it to arbitrary subtrees. Instead, we need a separate recursive method that takes a **BinaryTreeNode\<KeyValuePair\<TKey, TValue\>\>** as its parameter and returns the enumerator we need. Another problem, though, is that the recursive calls will no longer do the processing that needs to be done on the children - they will simply return enumerators. We therefore need to iterate through each of these enumerators to include their elements in the enumerator we are returning:
+While this technique usually works best with iterative code, it can also be used with recursion, although the translation usually ends up being less direct and less efficient. Suppose, for example, our dictionary were implemented as in ["Binary Search Trees"](/trees/bst), where a binary search tree is used. The idea is to adapt the [inorder traversal](/trees/bst/inorder) algorithm. However, we can't use this directly to implement a recursive version of the **GetEnumerator** method because this method does not take any parameters; hence, we can't apply it to arbitrary subtrees. Instead, we need a separate recursive method that takes a **BinaryTreeNode\<KeyValuePair\<TKey, TValue\>\>** as its parameter and returns the enumerator we need. Another problem, though, is that the recursive calls will no longer do the processing that needs to be done on the children - they will simply return enumerators. We therefore need to iterate through each of these enumerators to include their elements in the enumerator we are returning:
 
 ```C#
-private static IEnumerable<KeyValuePair<TKey, TValue>> GetEnumerable(BinaryTreeNode<KeyValuePair<TKey, TValue>> t)
+private static IEnumerable<KeyValuePair<TKey, TValue>>
+    GetEnumerable(BinaryTreeNode<KeyValuePair<TKey, TValue>> t)
 {
     if (t != null)
     {
@@ -104,12 +105,13 @@ public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator()
 }
 ```
 
-In transforming the inorder traversal into the above code, we have introduced some extra loops. These loops lead to less efficient code. Specifically, if the binary search tree is an AVL tree or other balanced binary tree, the time to iterate through this enumerator is in *O*(*n* lg *n*), where *n* is the number of nodes in the tree. The inorder traversal, by contrast, runs in *O*(*n*) time. In order to achieve this running time with an enumerator, we need to translate the inorder traversal to iterative code using a stack. However, this code isn't easy to understand:
+In transforming the inorder traversal into the above code, we have introduced some extra loops. These loops lead to less efficient code. Specifically, if the binary search tree is an AVL tree or other balanced binary tree, the time to iterate through this enumerator is in <span style="white-space:nowrap">$O(n \lg n)$,</span> where $n$ is the number of nodes in the tree. The inorder traversal, by contrast, runs in $O(n)$ time. In order to achieve this running time with an enumerator, we need to translate the inorder traversal to iterative code using a stack. However, this code isn't easy to understand:
 
 ```C#
 public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator()
 {
-    Stack<BinaryTreeNode<KeyValuePair<TKey, TValue>>> s = new Stack<BinaryTreeNode<KeyValuePair<TKey, TValue>>>();
+    Stack<BinaryTreeNode<KeyValuePair<TKey, TValue>>> s = 
+        new Stack<BinaryTreeNode<KeyValuePair<TKey, TValue>>>();
     BinaryTreeNode<KeyValuePair<TKey, TValue>> t = _elements;
     while (t != null || s.Count > 0)
     {
