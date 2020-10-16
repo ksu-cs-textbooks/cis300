@@ -1,3 +1,7 @@
+# Checkers AI - NegaMax with Alpha Beta Pruning
+
+<iframe width="560" height="560" src="https://www.youtube.com/embed/krDD1j7bb8U" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Functional Requirements
 
 For this assignment, you will be writing a AI that can be used  to play checkers (aka English Draughts).  For this implementation, a human versus human version is provided.  Your task is to add an computer player that will play against a human.  Checkers is a simple game  played on a 8x8 checkered board (32 dark squares and 32 light squares).   There are two colors of pieces, red and black, each being played by one player.  Each player starts with 12 pieces. The black piece  player goes first.  Rules of moving, jumping (capturing), and board  layout can be found at [this link](https://www.itsyourturn.com/t_helptopic2030.html) (ignore instructions specific to the site).  The objective of the game is to capture all of the opposing pieces. 
