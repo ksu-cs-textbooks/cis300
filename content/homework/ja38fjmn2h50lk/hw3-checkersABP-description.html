@@ -1,0 +1,524 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>hw3-checkersABP-description</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    padding-bottom: .3em;
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+   padding-bottom: .3em;
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table tr th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+
+</style>
+</head>
+<body class='typora-export os-windows' >
+<div  id='write'  class = 'is-node'><h1><a name="-checkers-ai---negamax-with-alpha-beta-pruning" class="md-header-anchor"></a><span>Checkers AI - NegaMax with Alpha Beta Pruning</span></h1><iframe width="560" height="560" src="https://www.youtube.com/embed/krDD1j7bb8U" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe><h2><a name="functional-requirements" class="md-header-anchor"></a><span>Functional Requirements</span></h2><p><span>For this assignment, you will be writing an AI that can be used  to play checkers (aka English Draughts).  For this implementation, a human versus human version is provided.  Your task is to add a computer player that will play against a human.  Checkers is a simple game  played on a 8x8 checkered board (32 dark squares and 32 light squares).   There are two colors of pieces, red and black, each being played by one player.  Each player starts with 12 pieces. The black piece  player goes first.  Rules of moving, jumping (capturing), and board  layout can be found at </span><a href='https://www.itsyourturn.com/t_helptopic2030.html'><span>this link</span></a><span> (ignore instructions specific to the site).  The objective of the game is to capture all of the opposing pieces. </span></p><h2><a name="finding-the-best-play" class="md-header-anchor"></a><span>Finding the Best Play</span></h2><p><span>At the heart of the game engine is an algorithm for trying to find the best move. To understand this algorithm, we need to view the various board configurations as forming a tree. (Note that this tree will not be implemented as a data structure - it is just how we think about the relationships between board configurations in order to guide our algorithm development.) Any board configuration can form the root of a  tree. Its children are the board configurations that can be reached by making a single play from this configuration. Thus, a node in this tree may have numerous children.</span></p><p><span>In principle, we could determine the best move by examining this entire tree. However, this tree is so large that we have no hope of  exploring the whole thing. For this reason, we will search only a portion of the tree, and use an </span><em><span>evaluation function</span></em><span> to compute a number estimating the strength of a player&#39;s position for each node whose children we don&#39;t examine. By combining this evaluation function with a partial search of the tree, we can typically do a better job of finding the best move than if we were to use the evaluation function by itself. In what follows, we will first describe the tree search algorithm, then we will describe the evaluation function.</span></p><h3><a name="the-negamax-algorithm" class="md-header-anchor"></a><span>The Negamax Algorithm</span></h3><p><span>The algorithm we will use to search the tree is called the </span><em><span>negamax</span></em><span> algorithm, which is a more succinct presentation of the </span><em><span>minimax</span></em><span> algorithm. We will assume that the evaluation function attempts to give a higher value for a stronger position for the player whose turn it is  to move. A value of 0 indicates a perfectly balanced configuration. The result of the evaluation function acts as a heuristic for our AI player to chose the best move with the information it knows at the time.  </span></p><h3><a name="alpha-beta-pruning" class="md-header-anchor"></a><span>Alpha-Beta Pruning</span></h3><p><span>Checkers is a simple game, but the number of board configurations make it very difficult represent the entire tree, even when the depth is limited.  To improve our search of the tree, we will use a technique called </span><em><span>alpha-beta pruning</span></em><span>.  Alpha-beta pruning improves the efficiency of the negamax algorithm by pruning branches of the tree that will not yield an optimal play given the current state of the game.  This pruning uses information that has been obtained by searching other branches in the tree to provide bounds on the score that can be obtained by further exploring children of the current node. Alpha will represent a lower bound on the score the current player can achieve, and beta will represent an upper bound on the score the opposing player can achieve.  At any node, we are trying to maximize the value that can be attained by the current player for this node. As this value increases, alpha also increases. However, it doesn&#39;t make sense to increase alpha above beta, because the opponent can simply avoid this node if its value is that high. Therefore, if this happens, we can stop exploring from this node.</span></p><p><span>In a game like checkers, this pruning greatly increases our search speed since the branching factor (how fast the tree spreads out) is very high.  If the best moves are searched first, alpha-beta pruning can decrease the running time from </span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="5.667ex" height="2.901ex" viewBox="0 -935.7 2439.8 1249" role="img" focusable="false" style="vertical-align: -0.728ex;"><defs><path stroke-width="0" id="E1-MJMATHI-4F" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path stroke-width="0" id="E1-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E1-MJMATHI-62" d="M73 647Q73 657 77 670T89 683Q90 683 161 688T234 694Q246 694 246 685T212 542Q204 508 195 472T180 418L176 399Q176 396 182 402Q231 442 283 442Q345 442 383 396T422 280Q422 169 343 79T173 -11Q123 -11 82 27T40 150V159Q40 180 48 217T97 414Q147 611 147 623T109 637Q104 637 101 637H96Q86 637 83 637T76 640T73 647ZM336 325V331Q336 405 275 405Q258 405 240 397T207 376T181 352T163 330L157 322L136 236Q114 150 114 114Q114 66 138 42Q154 26 178 26Q211 26 245 58Q270 81 285 114T318 219Q336 291 336 325Z"></path><path stroke-width="0" id="E1-MJMATHI-64" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path><path stroke-width="0" id="E1-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E1-MJMATHI-4F" x="0" y="0"></use><use xlink:href="#E1-MJMAIN-28" x="763" y="0"></use><g transform="translate(1152,0)"><use xlink:href="#E1-MJMATHI-62" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E1-MJMATHI-64" x="606" y="513"></use></g><use xlink:href="#E1-MJMAIN-29" x="2050" y="0"></use></g></svg></span><script type="math/tex">O(b^d)</script><span> to </span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="7.601ex" height="3.142ex" viewBox="0 -1039.5 3272.8 1352.7" role="img" focusable="false" style="vertical-align: -0.728ex;"><defs><path stroke-width="0" id="E2-MJMATHI-4F" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path stroke-width="0" id="E2-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E2-MJMATHI-62" d="M73 647Q73 657 77 670T89 683Q90 683 161 688T234 694Q246 694 246 685T212 542Q204 508 195 472T180 418L176 399Q176 396 182 402Q231 442 283 442Q345 442 383 396T422 280Q422 169 343 79T173 -11Q123 -11 82 27T40 150V159Q40 180 48 217T97 414Q147 611 147 623T109 637Q104 637 101 637H96Q86 637 83 637T76 640T73 647ZM336 325V331Q336 405 275 405Q258 405 240 397T207 376T181 352T163 330L157 322L136 236Q114 150 114 114Q114 66 138 42Q154 26 178 26Q211 26 245 58Q270 81 285 114T318 219Q336 291 336 325Z"></path><path stroke-width="0" id="E2-MJMATHI-64" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path><path stroke-width="0" id="E2-MJMAIN-221A" d="M95 178Q89 178 81 186T72 200T103 230T169 280T207 309Q209 311 212 311H213Q219 311 227 294T281 177Q300 134 312 108L397 -77Q398 -77 501 136T707 565T814 786Q820 800 834 800Q841 800 846 794T853 782V776L620 293L385 -193Q381 -200 366 -200Q357 -200 354 -197Q352 -195 256 15L160 225L144 214Q129 202 113 190T95 178Z"></path><path stroke-width="0" id="E2-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E2-MJMATHI-4F" x="0" y="0"></use><use xlink:href="#E2-MJMAIN-28" x="763" y="0"></use><g transform="translate(1152,0)"><use xlink:href="#E2-MJMAIN-221A" x="0" y="105"></use><rect stroke="none" width="898" height="60" x="833" y="845"></rect><g transform="translate(833,0)"><use xlink:href="#E2-MJMATHI-62" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E2-MJMATHI-64" x="606" y="408"></use></g></g><use xlink:href="#E2-MJMAIN-29" x="2883" y="0"></use></g></svg></span><script type="math/tex">O(\sqrt{b^d})</script><span> where </span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="0.996ex" height="2.057ex" viewBox="0 -780.1 429 885.9" role="img" focusable="false" style="vertical-align: -0.246ex;"><defs><path stroke-width="0" id="E3-MJMATHI-62" d="M73 647Q73 657 77 670T89 683Q90 683 161 688T234 694Q246 694 246 685T212 542Q204 508 195 472T180 418L176 399Q176 396 182 402Q231 442 283 442Q345 442 383 396T422 280Q422 169 343 79T173 -11Q123 -11 82 27T40 150V159Q40 180 48 217T97 414Q147 611 147 623T109 637Q104 637 101 637H96Q86 637 83 637T76 640T73 647ZM336 325V331Q336 405 275 405Q258 405 240 397T207 376T181 352T163 330L157 322L136 236Q114 150 114 114Q114 66 138 42Q154 26 178 26Q211 26 245 58Q270 81 285 114T318 219Q336 291 336 325Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E3-MJMATHI-62" x="0" y="0"></use></g></svg></span><script type="math/tex">b</script><span> is the branching factor and </span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.215ex" height="2.057ex" viewBox="0 -780.1 523 885.9" role="img" focusable="false" style="vertical-align: -0.246ex;"><defs><path stroke-width="0" id="E4-MJMATHI-64" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E4-MJMATHI-64" x="0" y="0"></use></g></svg></span><script type="math/tex">d</script><span> is the depth.</span></p><p><span>An illustration of the negamax algorithm with alpha beta pruning can be found on the </span><a href='https://en.wikipedia.org/wiki/Negamax#Negamax_with_alpha_beta_pruning'><span>Wikipedia page</span></a><span>. Note that the algorithm shown on that page is slightly different from the one described later in the description of the </span><code>GameTree</code><span>class, specifically the need to flip the sign of the result of the evaluation function.</span></p><h2><a name="starting-the-assignment" class="md-header-anchor"></a><span>Starting the Assignment</span></h2><p><span>Create a GitHub repository using </span><a href='https://classroom.github.com/a/wGt4RToR'><strong><span>this URL</span></strong></a><span> and clone it to your local machine. This solution contains a Checkers implementation that allows for human vs. human play.  The pictures used for the checker pieces are in the included </span><strong><span>pics</span></strong><span> folder.</span></p><h2><a name="user-interface" class="md-header-anchor"></a><span>User Interface</span></h2><p><span>The base interface for a functional checkers game is provided.</span></p><p><img src="pics\ui.png" alt="Checkers Interface"/></p><p><span>To the given interface, you will need to add a few new menu options.  Under ‘File’, add an option for creating a new game versus the AI.  Add a new menu called ‘Edit’ that has a menu item ‘Undo’ mapped to the key </span><strong><span>Ctrl + Z</span></strong><span>.  Selecting this menu item will undo a single move; specifically, if a multi-jump move has been made, it will undo only one jump. There must also be a new </span><strong><span>NumericUpDown</span></strong><span> control, in the top-right corner.  This has an initial value of 3 and a </span><strong><span>minimum</span></strong><span> value of 1and </span><strong><span>maximum</span></strong><span> value of 12. This will control the level at which the AI plays (i.e., the number of plays it looks ahead). It may be changed at any time, but the level of play will only be set when a new player vs. AI game is started (i.e., changes during a game will have no effect).</span></p><p><img src="pics\ui-ai.png" alt="Checkers Interface with AI"/></p><h2><a name="software-architecture" class="md-header-anchor"></a><span>Software Architecture</span></h2><p><img src="pics\UML.png" referrerpolicy="no-referrer" alt="Software Architecture"></p><p><span>The </span><strong><span>UserInterface</span></strong><span> class is primarily used for drawing/updating the UI  for when the game is created and when a piece is interacted with.  All  of the actual logic for playing checkers will be contained inside the </span><strong><span>Checkers</span></strong><span> and </span><strong><span>GameTree</span></strong><span> classes.   Each square on the checker board will be represented using  </span><strong><span>BoardSquare</span></strong><span>s.  This class also stores whether or not a square  contains an actual piece.  The enumeration </span><strong><span>SquareColor</span></strong><span> is used to represent this  information. The </span><strong><span>Move</span></strong><span> class will be used to represent individual moves. If the move is a jump, only a single jump is represented - multi-jump moves will be represented by several </span><strong><span>Move</span></strong><span> objects, one for each jump. The piece captured by a jump will be represented by the </span><strong><span>CapturedPiece</span></strong><span> structure. </span></p><p><span>The start code contains definitions for </span><strong><span>UserInterface</span></strong><span>, </span><strong><span>Checkers</span></strong><span>, </span><strong><span>BoardSquare</span></strong><span>, and </span><strong><span>SquareColor</span></strong><span> (</span><strong><span>SquareColor</span></strong><span> is defined in </span><code>BoardSquare.cs</code><span>). You will need to make some changes to </span><strong><span>UserInterface</span></strong><span> and </span><strong><span>Checkers</span></strong><span>, but you will not need to change </span><strong><span>BoardSquare</span></strong><span> or </span><strong><span>SquareColor</span></strong><span>. You will need to add the remaining definitions. </span></p><h2><a name="coding-requirements" class="md-header-anchor"></a><span>Coding Requirements</span></h2><p><span>Specific requirements for the above software architecture are given in what follows. Feel free to add more </span><strong><span>private</span></strong><span> methods if you feel it improves the code.  There is some room for the use of helper methods to reduce code for repeated logic.</span></p><h3><a name="the-boardsquare-class" class="md-header-anchor"></a><span>The </span><strong><span>BoardSquare</span></strong><span> Class</span></h3><p><span>This class has been completed for you.  It is used to represent each square on the checkers board.  Each square may have a piece (that might be a king), which has a color.</span></p><h3><a name="the-capturedpiece-structure" class="md-header-anchor"></a><span>The </span><strong><span>CapturedPiece</span></strong><span> Structure</span></h3><p><span>This </span><a href='https://cis300.cs.ksu.edu/appendix/syntax/structs/'><span>structure</span></a><span> contains all the information regarding a piece that is captured during a move.  It is used in the </span><strong><span>Move</span></strong><span> class to help keep information from a jump organized.  For this structure:</span></p><p><span>Add the following </span><strong><span>public</span></strong><span> properties, each of which should have a get accessor with default implementation (no set accessors):</span></p><ul><li><p><code>public SquareColor CapturedColor</code></p><ul><li><span>Represents the color of the captured piece.</span></li></ul></li><li><p><code>public int CapturedRow</code></p><ul><li><span>Represents the row in the board of the captured piece.</span></li></ul></li><li><p><code>public int CapturedCol</code></p><ul><li><span>Represents the column in the board of the captured piece.</span></li></ul></li><li><p><code>public bool CapturedKing</code></p><ul><li><span>Represents whether or not the captured piece was a king.</span></li></ul></li></ul><p><span>Then add the following constructor: </span></p><ul><li><p><code>public CapturedPiece(int captRow, int captCol, SquareColor captColor, bool captKing)</code></p><ul><li><span>This is a basic constructor that sets the properties of the struct to the corresponding values.</span></li></ul></li></ul><h3><a name="the-move-class" class="md-header-anchor"></a><span>The </span><strong><span>Move</span></strong><span> Class</span></h3><p><span>The </span><strong><span>Move</span></strong><span> class contains the information needed to describe a move - either a non-jump or a single jump.  You will need to add the following </span><strong><span>public</span></strong><span> properties, each of which should have a get accessor using the default implementation (no set accessors):</span></p><ul><li><p><code>public bool FromKing</code></p><ul><li><span>Indicates if the piece being moved was initially a king</span></li></ul></li><li><p><code>FromRow</code><span>, </span><code>ToRow</code><span>, </span><code>FromColumn</code><span>, </span><code>ToColumn</code></p><ul><li><span>Each of these are </span><strong><span>int</span></strong><span>s.  These represent the coordinates on the board where a piece (From) was moved (To).</span></li></ul></li><li><p><code>public bool IsJump</code></p><ul><li><span>Indicates whether this move is a jump.  </span></li></ul></li><li><p><code>public SquareColor Color</code></p><ul><li><span>Indicates the color of the piece that was moved.  </span></li></ul></li><li><p><code>public CapturedPiece Captured</code></p><ul><li><span>Gives the piece captured, if any.</span></li></ul></li></ul><p><span>Then add the following </span><strong><span>constructor</span></strong><span>s:</span></p><ul><li><p><code>public Move(int fromRow, int fromColumn,int toRow, int toColumn, bool fromKing, SquareColor color)</code></p><ul><li><span>This constructor is used to construct a non-jump. It assigns each of the given parameters to the corresponding property, and assigns </span><code>false</code><span> to </span><strong><span>IsJump</span></strong><span>. Because </span><strong><span>Captured</span></strong><span> is unused for a non-jump, this property doesn&#39;t need to be initialized.</span></li></ul></li><li><p><code>public Move(int fromRow, int fromColumn, int toRow, int toColumn, bool fromKing, SquareColor color, CapturedPiece cap)</code></p><ul><li><span>This constructor is used to construct a jump. It assigns each of the given parameters to the corresponding property, and assigns </span><code>true</code><span> to </span><strong><span>IsJump</span></strong><span>.</span></li></ul></li></ul><p><span>Add the following method:</span></p><ul><li><p><code>public override string ToString()</code></p><ul><li><span>This method overrides the base </span><strong><span>ToString</span></strong><span> method in order to get a string representation of a </span><strong><span>Move</span></strong><span>.  If the </span><strong><span>Move</span></strong><span> is a non-jump, return a string of the form, &quot;</span><em><span>Color</span></em><span>-(</span><em><span>fromRow</span></em><span>, </span><em><span>fromColumn</span></em><span>) to (</span><em><span>toRow</span></em><span>, </span><em><span>toColumn</span></em><span>)&quot;, where </span><em><span>Color</span></em><span> is the color of the piece being moved, </span><em><span>fromRow</span></em><span> is the row where the piece started, </span><em><span>fromColumn</span></em><span> is the column where the piece started, </span><em><span>toRow</span></em><span> is the row where the piece landed, and </span><em><span>toColumn</span></em><span> is the column where the piece landed. If the </span><strong><span>Move</span></strong><span> is a jump, return a string of the form &quot;</span><em><span>Color</span></em><span> Jump--</span><em><span>Move</span></em><span>(capt: (</span><em><span>capturedRow</span></em><span>, </span><em><span>capturedColumn</span></em><span>))&quot;, where </span><em><span>Color</span></em><span> is as above, </span><em><span>Move</span></em><span> is the string described above, and </span><em><span>capturedRow</span></em><span> and </span><em><span>capturedColumn</span></em><span> are the row and column of the captured piece. This method is used to display the last move in the user interface.  It is also extremely useful when debugging your program.</span></li></ul></li></ul><h3><a name="the-checkers-class" class="md-header-anchor"></a><span>The </span><strong><span>Checkers</span></strong><span> Class</span></h3><p><span>The </span><strong><span>Checkers</span></strong><span> class holds most of the logic for checkers.  All of the code supporting a player vs. player game of checkers has been provided for you.  This class will need to be modified in order to allow the AI to play.</span></p><p><span>Add the following fields:</span></p><ul><li><p><code>private Stack&lt;Move&gt; _moveHistory</code></p><ul><li><span>This stack will keep track of moves that are made so that you can either undo your move (if playing human vs human) or allow the AI to backtrack as it generates its game tree.</span></li></ul></li><li><p><code>int[] _weights = new int[] { 5, 10, 1, 3};</code></p><ul><li><span>This array is contains the weights to apply when evaluating a board for the game tree.  The weights, in order, are: pawn count, king count, number of pieces in their own back row, and pieces that are in a protected location (any edge of the board).</span></li></ul></li></ul><p><span>Add the following properties:</span></p><ul><li><p><code>public Dictionary&lt;(int, int), BoardSquare&gt; RedPieces</code><span> and </span><code>public Dictionary&lt;(int, int), BoardSquare&gt; BlackPieces</code></p><ul><li><span>These two properties have a default get accessor and a default </span><strong><span>private</span></strong><span> set accessor.  They contain each of the red and black pieces respectively on the board.  The Key in the dictionary is a tuple (see this </span><a href='https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-tuples'><span>documentation</span></a><span>) which represents the row and column where that piece is at on the board.  A tuple is a data structure that allows you to group multiple pieces of information into one.  You can think of it as a light-weight array, except that it is a value type, not a reference type.</span></li></ul></li><li><p><code>public Move LastMove</code></p><ul><li><span>This property only has a get accessor which will return the last element on the </span><code>_moveHistory</code><span> stack (without removing it).  If there is nothing on the stack, it should return </span><strong><span>null</span></strong><span>.</span></li></ul></li></ul><p><span>Modify the default constructor: </span></p><ul><li><span>Initialize the </span><code>_moveHistory</code><span> stack to a new stack.</span></li></ul><p><span>Modify the following methods:</span></p><ul><li><p><code>private void CreateBoard()</code></p><ul><li><span>Update the method to initialize the red and black pieces properties to be new dictionaries.  Then, as each piece gets created, add it to the corresponding dictionary.</span></li></ul></li><li><p><code>public bool Jump(BoardSquare current, BoardSquare target, SquareColor enemyColor)</code><span> </span></p><ul><li><span>To this method, add a new </span><strong><span>out</span></strong><span> parameter of type </span><strong><span>Move</span></strong><span>,  making the new method signature </span><code>public bool Jump(BoardSquare current, BoardSquare target, SquareColor enemyColor, out Move jumpMove)</code><span>.</span></li><li><span>Set the </span><strong><span>out</span></strong><span> parameter to be null initially, and if a jump is made, set the </span><strong><span>out</span></strong><span> parameter to be a new </span><strong><span>Move</span></strong><span> object representing the jump made.  Once created, add it to the move history.  Be sure to do this before the captured piece&#39;s color is set to </span><code>None</code><span>.</span></li><li><span>You will also need to be sure to remove the captured piece from the correct pieces dictionary (the call to </span><strong><span>MovePiece</span></strong><span> will update the other dictionary).</span></li></ul></li><li><p><code>public bool MoveSelectedPiece(int targetRow, int targetCol)</code></p><ul><li><span>You will need to update the </span><strong><span>Jump</span></strong><span> call to include the </span><strong><span>out</span></strong><span> parameter, but you do not need to do anything with the value assigned to it.</span></li></ul></li><li><p><code>public void MovePiece(BoardSquare piece, BoardSquare targetSquare, SquareColor enemyColor, bool jumped)</code></p><ul><li><span>Update the method such that if a jump was not made, you add a new move to the move history using the from and to squares.</span></li><li><span>Depending on the color of the piece moved, be sure to update the corresponding pieces dictionary to reflect the move.</span></li></ul></li></ul><p><span>Add the following methods:</span></p><ul><li><p><code>public bool Undo()</code></p><ul><li><span>This method should undo the last move if there was one. If </span><strong><span>SelectedPiece</span></strong><span> is not </span><strong><span>null</span></strong><span>, set its </span><strong><span>Selected</span></strong><span> property to &#39;false&#39;. Then if the move history is nonempty, remove the last move. Use the </span><strong><span>GetSquare</span></strong><span> method to get the &quot;from&quot; square and the &quot;to&quot; square. Reset the </span><strong><span>Color</span></strong><span> and </span><strong><span>King</span></strong><span> properties in the &quot;from&quot; square back to their original values and the &quot;to&quot; square color to </span><strong><span>SquareColor.None</span></strong><span>. Also reset the </span><strong><span>SelectedPiece</span></strong>
+<span>to </span><strong><span>null</span></strong><span> and the </span><strong><span>Turn</span></strong><span> property to the color of the player making the move being undone. Be sure to update the appropriate pieces dictionary to reflect the undo. If the move is a jump, get the square of the captured piece, set its </span><strong><span>King</span></strong><span> and </span><strong><span>Color</span></strong><span> properties to those of the captured piece, and update the appropriate pieces dictionary and pieces count. The method should return </span><code>true</code><span> if a move was undone or </span><code>false</code><span> otherwise.</span></li></ul></li><li><p><code>private List&lt;BoardSquare&gt; GetMoveSquares(BoardSquare piece, int distance)</code></p><ul><li><span>This method returns a list of squares that the given square can move to.  The distance parameter should be 1 for a normal move and 2 for jumps.  Remember that kings can move on each diagonal, but a normal piece cannot.  Helper methods are very useful here to reduce repeated code.</span></li></ul></li><li><p><code>public List&lt;Move&gt; GetJumps(BoardSquare piece, SquareColor enemyColor)</code></p><ul><li><span>This method returns a list of all jump moves possible from the given piece.  The enemy color is the color of the piece we are trying to capture.  You will need to utilize the </span><strong><span>GetMovesSquares</span></strong><span> method (passing in 2 for the distance) to get all of the possible jump targets, then use the </span><strong><span>Jump</span></strong><span> method to try to execute the jump.  If the jump is successful, add the jump move to the list of possible moves, then call the </span><strong><span>Undo</span></strong><span> method to reverse the jump before trying the next target.  If no jumps are found, the method should return an empty list.</span></li></ul></li><li><p><code>public List&lt;Move&gt; FindPossibleMoves(BoardSquare piece, SquareColor enemyColor, out bool seenJump)</code></p><ul><li><span>Given a piece&#39;s board square, this method should return a list of all possible moves for it.  If there are any jumps to be made, the list returned should </span><em><span>only</span></em><span> contain jumps since the game enforces the rule that if a jump is possible, it must be made.  If there are no jumps possible, use the </span><code>GetMoveSquares</code><span> (passing 1 for distance) to get all of the valid squares the piece can move to and add each of those  as a valid move to the list you return.</span></li></ul></li><li><p><code>public List&lt;Move&gt; FindPossibleMoves(out bool seenJump)</code></p><ul><li><span>This method is similar to the one previously described; however, it returns a list of possible moves for all pieces of the current player.  Similar to before, if any piece has a jump available, this method should only return moves that are jumps.</span></li></ul></li><li><p><code>public int EvaluateBoard()</code></p><ul><li><span>This method evaluates the current board to create the heuristic value for the Negamax algorithm.  For each of the red pieces and black pieces, count the number of pawns, kings, pieces on their own back row, and pieces that are protected (edges of the board).  Note that a piece can be counted in more than one category.  A helper method is useful for counting each piece so logic does not have to be duplicated for red and black.  Once counted, the weights should be applied. Then return the sum of the weighted counts of the current player minus the other player.</span></li></ul></li></ul><h3><a name="the-gametree-class" class="md-header-anchor"></a><span>The </span><strong><span>GameTree</span></strong><span> Class</span></h3><p><span>The </span><strong><span>GameTree</span></strong><span> class contains the logic for how the AI player in the checkers game makes its move.</span></p><p><span>Add the following fields:</span></p><ul><li><p><code>private Checkers _game</code></p><ul><li><span>The reference to the Checkers game that is currently being played with this AI.</span></li></ul></li><li><p><code>private int _depth</code></p><ul><li><span>The depth represents the maximum number of individual player turns the AI will look ahead in the game tree before making a move.</span></li></ul></li></ul><p><span>Add the following constructor: </span></p><ul><li><p><code>public GameTree(Checkers game, int depth)</code></p><ul><li><span>The constructor of this class only assigns the given values to the corresponding fields.</span></li></ul></li></ul><p><span>Add the following methods:</span></p><ul><li><p><code>private void DoMove(Move move)</code></p><ul><li><span>This method will execute the given move on the board.  You can check if it is a jump by looking at the </span><strong><span>IsJump</span></strong><span> property.  If it is a jump, you can call the game&#39;s </span><strong><span>Jump</span></strong><span> method, passing the from and to squares from the given move.  If it is not a jump, you will call the </span><strong><span>MovePiece</span></strong><span> method.</span></li></ul></li><li><p><code>public int Negamax(int alpha, int beta, int depth, out Move bestMove)</code></p><ul><li><p><span>This method will execute the negamax algorithm with alpha-beta pruning as it was described previously.  </span><code>depth</code><span> is how deep this algorithm will search the tree from the current node.  (Remember, we are not storing the tree anywhere - it is just how we are thinking about the board positions as we conduct our search).  The algorithm is as follows:</span></p><ol start='' ><li><p><span>Set </span><code>bestMove</code><span> to </span><strong><span>null</span></strong></p></li><li><p><span>Base case: depth is 0</span></p><ol start='' ><li><span>return the heuristic of the current game (use the </span><code>EvaluateBoard</code><span>method)</span></li></ol></li><li><p><span>Declare two variables, one of type </span><strong><span>Move</span></strong><span> (referred to as </span><code>localBest</code><span>below) and one of type </span><strong><span>int</span></strong><span> (this is initially </span><code>int.MinValue</code><span> and is referred to as </span><code>score</code><span>).  These will keep track of what the current best score for the tree node is and the current best move.  Remember that each &quot;node&quot; of the tree represents the state of a checkers game.</span></p></li><li><p><span>For all moves in the current game (for the current player)</span></p><ol start='' ><li><p><span>store the current player&#39;s turn in a temporary variable so we can tell if the turn changes after the move is made (this is for the multi-jump scenario)</span></p></li><li><p><span>Do the move</span></p></li><li><p><span>Find the score of the current state of the game by recursively calling NegaMax. Be sure to store the result of the recursive call in a local variable as this will be the best score for the move that was made for the current state.  There are two  recursive cases:</span></p><ol start='' ><li><span>The move did not change whose turn it is.  Therefore pass to NegaMax </span><code>alpha</code><span>, </span><code>beta</code><span>, </span><code>depth</code><span>, and </span><code>localBest</code><span>.</span></li><li><span>Else, the move changed the turn, therefore we are now trying to maximize the score of the board for the other player.  To do so, we will flip the alpha and beta parameters by calling </span><strong><span>NegaMax</span></strong><span> with </span><code>-beta</code><span>, </span><code>-alpha</code><span>, </span><code>depth-1</code><span>, and </span><code>localBest</code><span>.  Notice that </span><code>alpha</code><span> and </span><code>beta</code><span> get swapped and their signs flipped. Finally, we negate the returned value.</span></li></ol></li><li><p><span>If the value obtained by step 3 is greater than or equal to </span><code>score</code><span>, then update </span><code>score</code><span> with this value and store the current move into </span><code>bestMove</code><span>.</span></p></li><li><p><span>Update </span><code>alpha</code><span> to the maximum of </span><code>alpha</code><span> and </span><code>score</code></p></li><li><p><span>Undo the move that was made so we do not corrupt the state of the board with the next move.</span></p></li><li><p><span>if </span><code>alpha</code><span> is greater than or equal to </span><code>beta</code><span>, there is no point in evaluating any more moves from this node, so exit the loop</span></p></li></ol></li><li><p><span>Return </span><code>score</code></p></li></ol></li></ul></li><li><p><code>public bool MakeBestMove()</code></p><ul><li><span>This method is used by the </span><strong><span>UserInterface</span></strong><span> class to make the best move for the AI when it is the AI&#39;s turn.  Simply call the </span><strong><span>Negamax</span></strong><span> method, with </span><code>int.MinValue</code><span>, and </span><code>int.MaxValue</code><span> as </span><code>alpha</code><span> and </span><code>beta</code><span> and </span><code>_depth</code><span> for the depth of the game tree.  If the best move returned through the </span><strong><span>out</span></strong><span> parameter is not </span><strong><span>null</span></strong><span>, then a move is available.  Do that move and return </span><code>true</code><span>.  Return </span><code>false</code><span> otherwise to indicate to the UI that there are no more moves available for the AI to make (this is a deadlock scenario).</span></li></ul></li></ul><h3><a name="the-userinterface-class" class="md-header-anchor"></a><span>The </span><strong><span>UserInterface</span></strong><span> Class</span></h3><p><span>The </span><strong><span>UserInterface</span></strong><span> class is responsible for drawing and updating the checker board. This class is mostly finished for you; however, you will need to make some modifications:</span></p><ul><li><p><span>Add two private fields </span><code>private bool _aiPlayer</code><span> and </span><code>private GameTree _ai</code><span> which will indicate if the game is player vs. AI and hold the AI&#39;s game tree.</span></p></li><li><p><code>private void RedrawBoard()</code></p><ul><li><span>Modify this method to update </span><strong><span>uxTurn</span></strong><span>&#39;s </span><strong><span>Text</span></strong><span> property to also display the last move that was made (if one was made) along with whose turn it is.  If there was a last move, the text should be updated in the form: &quot;(Last Move: </span><em><span>moveGoesHere</span></em><span>)---Now </span><em><span>turnGoesHere</span></em><span>&#39;s turn&quot;</span></li></ul></li><li><p><code>private void BoardSquare_Click(object sender, EventArgs e)</code></p><ul><li><span>Modify this method so that it handles both player vs player and player vs AI games.  Note that when it is the AI&#39;s turn, this will have to be in a loop until it switches to the other player in order to handle multi-jump moves.  The method should handle situations when the AI run&#39;s out of moves (deadlocks) and show a winner (if there is not, show a tie).</span></li></ul></li><li><p><code>private void uxNewGame_Click(object sender, EventArgs e)</code></p><ul><li><span>Modify this method to switch the </span><code>_aiPlayer</code><span> to false and enable the undo feature in the user interface.</span></li></ul></li><li><p><code>private void uxNewGamePVsAI_Click(object sender, EventArgs e)</code></p><ul><li><span>This is a new click event handler for the menu option for creating a game vs an AI.  The method should set the </span><code>_aiPlayer</code><span> to be true and the </span><code>_ai</code><span> (the game tree) to be </span><strong><span>null</span></strong><span>.  It should then draw the board and disable the undo feature in the user interface.</span></li></ul></li><li><p><code>private void uxUndo_Click(object sender, EventArgs e)</code></p><ul><li><span>This is a new click event handler for the undo menu item. It simply need&#39;s to call the </span><strong><span>Checkers</span></strong><span> object&#39;s </span><strong><span>Undo</span></strong><span> method, and if that method returns </span><code>true</code><span>, call the </span><strong><span>RedrawBoard</span></strong><span> method.</span></li></ul></li></ul><h2><a name="testing-your-program" class="md-header-anchor"></a><span>Testing Your Program</span></h2><p><span>Be sure to test win conditions for both sides (human and AI, and each kind of move/jump. To assist in testing your program, board squares are labeled with their row and column.  Adding the last move made to the status bar where the current player is displayed can be helpful as well (the AI can make very fast moves).  Overall, testing this homework can be tricky.  Your AI should not blindly throw pieces away (especially at levels higher than 3 or 4) and be more difficult to beat as you increase the AI level.  Note that the AI is not the most sophisticated in choosing moves at times (due to the evaluation function), but it should play a decent game of checkers at higher levels.</span></p><h2><a name="performance" class="md-header-anchor"></a><span>Performance</span></h2><p><span>There will be a cascade effect when creating a new game, but moves will be made instantly for player vs player.  For games with the AI, moves should be made instantly up to around level 9 or 10.  At 10, you will start to see some delay in each move, but it should be around 1-2 seconds for some moves and 3-4 seconds for others.  At level 12, you will start to see longer delays (5-10 seconds).  Your AI should play a good game of checkers and be harder to beat as you increase the level.</span></p><h2><a name="submitting-your-assignment" class="md-header-anchor"></a><span>Submitting Your Assignment</span></h2><p><span>Be sure to </span><strong><span>refresh</span></strong><span> your Team Explorer, </span><strong><span>commit</span></strong><span> all your changes, then </span><strong><span>push</span></strong><span> your commits to your GitHub repository. Then submit the </span><em><span>entire URL</span></em><span> of the commit that you want graded. </span></p><p><strong><span>Important:</span></strong><span> If the URL you submit does not contain the 40-hex-digit fingerprint of the commit you want graded, </span><strong><span>you will receive a 0</span></strong><span>,  as this fingerprint is the only way we can verify that you completed  your code prior to submitting your assignment. We will only grade the  source code that is included in the commit that you submit. Therefore,  be sure that the commit on GitHub contains all of the &quot;.cs&quot; files, and that  they are the version you want graded. This is especially important if  you had any trouble committing or pushing your code.</span></p></div>
+</body>
+</html>
