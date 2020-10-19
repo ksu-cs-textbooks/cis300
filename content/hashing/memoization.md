@@ -25,7 +25,7 @@ according to the following rules:
     that pile, the new limit is the number of stones remaining.)
 
 The player taking the last stone wins. Note that by the rules of the
-game, there will always be a winner - a draw is impossible.
+game, there will always be a winner --- a draw is impossible.
 
 For example, suppose we start a game with three piles, each containing
 10 stones with a limit of 9. We will denote this board position as
@@ -68,8 +68,7 @@ Consider the following examples:
 
 Given enough stones and piles, finding a winning play or determining
 that there is none is challenging. In order to develop a search
-algorithm somewhat similar to the one described in "[Tries in Word
-Games](/~rhowell/DataStructures/redirect/word-games)", we can define the
+algorithm somewhat similar to the one described in ["Tries in Word Games"](/trees/tries/word-games), we can define the
 following tree:
 
   - The root is the current board position.
@@ -81,7 +80,7 @@ Thus, the tree defined by (2/2; 2/2) is as follows:
 ![The tree defined by a Nim position.](nim-tree.jpg)
 
 The winning plays have been marked with a 'W' in the above tree. As in
-"[Tries in Word Games](/~rhowell/DataStructures/redirect/word-games)",
+["Tries in Word Games"](/trees/tries/word-games),
 this tree is not a data structure, but simply a mental guide to building
 a search algorithm. Specifically, we can find a winning play (or
 determine whether there is none) by traversing the tree in the following
@@ -113,15 +112,15 @@ large tree, the number of duplicate nodes in the tree increases
 dramatically. The only thing that determines the presence of a winning
 move is the board position; hence, once we have a winning move (or know
 that none exists) for a given position, it will be the same wherever
-this position may occur in the tree. It can therefore save a great deal
-of time if we save the winning move for any position we examine. Then
+this position may occur in the tree. We can therefore save a great deal
+of time by saving the winning move for any position we examine. Then
 whenever we need to examine a position, we first check to see if we've
-already processed it - if so, we just use the result we obtained earlier
+already processed it --- if so, we just use the result we obtained earlier
 rather than processing it again. Because processing it again may involve
 searching a large tree, the savings in time might be huge.
 
 The technique outlined in the above paragraph is known as *memoization*
-(not to be confused with *memorization*) - we make a *memo* of the
+(not to be confused with *memorization*) --- we make a *memo* of the
 results we compute so that we can look them up again later if we need
 them. A dictionary whose keys are board positions and whose values are
 plays is an ideal data structure for augmenting the above search with

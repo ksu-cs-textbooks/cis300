@@ -8,7 +8,7 @@ pre = "<b>A1.7. </b>"
 
 ## Indexers
 
-Recall that the ```System.Collections.Generic.Dictionary<TKey, TValue>``` class (see "[The **Dictionary\<TKey, TValue\>** Class](/dictionaries/dictionary-tkey-tvalue)") allows keys to be used as indices for the purpose of adding new keys and values, changing the value associated with a key, and retrieving the value associated with a key in the table. In this section, we will discuss how to implement this functionality.
+Recall that the ```System.Collections.Generic.Dictionary<TKey, TValue>``` class (see ["The **Dictionary\<TKey, TValue\>** Class"](/dictionaries/dictionary-tkey-tvalue)) allows keys to be used as indices for the purpose of adding new keys and values, changing the value associated with a key, and retrieving the value associated with a key in the table. In this section, we will discuss how to implement this functionality.
 
 An indexer in C# is defined using the following syntax:
 
