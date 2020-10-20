@@ -10,9 +10,9 @@ pre = "<b>7.5. </b>"
 
 Whenever equality is redefined for a type, the hash code computation for
 that type needs to be redefined in a consistent way. This is done by
-[overriding](/~rhowell/DataStructures/redirect/method-overriding) that
+[overriding](/strings/stringbuilder-impl/#overriding) that
 type's
-[**GetHashCode**](https://msdn.microsoft.com/en-us/library/system.object.gethashcode.aspx)
+[**GetHashCode**](https://docs.microsoft.com/en-us/dotnet/api/system.object.gethashcode?view=netframework-4.7.2)
 method. In order for hashing to be implemented correctly and
 efficiently, this method should satisfy the following goals:
 
@@ -26,10 +26,10 @@ efficiently, this method should satisfy the following goals:
 
 The last goal above may seem rather daunting, particularly in light of
 our desire for a quick computation. In fact, it is impossible to
-guarantee in general - provided there are more than
-2<sup>32</sup>(*k* - 1) possible keys from which to choose, no
+guarantee in general --- provided there are more than
+$2^{32}(k - 1)$ possible keys from which to choose, no
 matter how the hash code computation is implemented, we can always find
-at least *k* keys with the same hash code. However, this is a problem
+at least $k$ keys with the same hash code. However, this is a problem
 that has been studied a great deal, and several techniques have been
 developed that are effective in practice. We will caution, however, that
 not every technique that looks like it should be effective actually is
@@ -50,7 +50,7 @@ One specific technique initializes the hash code to 0, then processes
 the key one component at a time. These components may be bytes,
 characters, or other parts no larger than 32 bits each. For example, for
 the Nim board positions discussed in
-"[Memoization](/~rhowell/DataStructures/redirect/memoization)", the
+["Memoization"](/hashing/memoization), the
 components would be the number of stones on each pile, the limit for
 each pile, and the total number of piles (to distinguish between a board
 ending with empty piles and a board with fewer piles). For each
@@ -59,74 +59,61 @@ component, it does the following:
   - Multiply the hash code by some fixed odd integer.
   - Add the current component to the hash code.
 
-<span id="checked-unchecked"></span> Due to the repeated
+Due to the repeated
 multiplications, the above computation will often overflow an **int**.
-This is not a problem - in fact, we want to be sure that this overflow
-is allowed to happen without throwing an exception. By default, whether
-an exception is thrown in this situation depends upon certain settings
-in the execution environment. However, we can override these settings to
-avoid throwing an exception by enclosing the code within an
-**unchecked** construct:
-
-    unchecked
-    {
-        // Code in which we want to allow integer overflow to occur.
-    }
-
-Likewise, if we want to ensure that an exception is thrown if overflow
-occurs, we can enclose code within a **checked** construct.
+This is not a problem --- the remaining bits are sufficient for the hash code.
 
 In order to understand this computation a little better, let's first
 ignore the effect of this overflow. We'll denote the fixed odd integer
-by *x*, and the components of the key as
-*k*<sub>1</sub>, . . ., *k<sub>n</sub>*. Then
+by $x$, and the components of the key as
+<span style="white-space:nowrap">$k_1, \dots, k_n$.</span> Then
 this is the result of the computation:
 
-( . . . ((0x + *k*<sub>1</sub>)*x* + *k*<sub>2</sub>) . . . )*x* + *k<sub>n</sub>* = *k*<sub>1</sub>*x*<sup>*n*-1</sup> + *k*<sub>2</sub>*x*<sup>*n*-2</sup> + . . . + *k<sub>n</sub>*.
+$$(\dots ((0x + k_1)x + k_2) \dots)x + k_n = k_1 x^{n-1} + k_2 x^{n-2} + \dots + k_n.$$
 
 Because the above is a polynomial, this hashing scheme is called
 *polynomial hashing*. While the computation itself is efficient,
 performing just a couple of arithmetic operations on each component, the
-result is to multiply each component by a unique value (*x<sup>i</sup>*
-for some *i*) depending on its position within the key.
+result is to multiply each component by a unique value ($x^i$
+for some <span style="white-space:nowrap">$i$)</span> depending on its position within the key.
 
 Now let's consider the effect of overflow on the above polynomial. What
 this does is to keep only the low-order 32 bits of the value of the
 polynomial. Looking at it another way, we end up multiplying
-*k<sub>i</sub>* by only the low-order 32 bits of *x*<sup>*n*-*i*</sup>.
-This helps to explain why *x* is an odd number - raising an even number
-to the *i*th power forms a number ending in *i* 0s in binary. Thus, if
+$k_i$ by only the low-order 32 bits of <span style="white-space:nowrap">$x^{n-i}$.</span>
+This helps to explain why $x$ is an odd number --- raising an even number
+to the <span style="white-space:nowrap">$i$th</span> power forms a number ending in $i$ 0s in binary. Thus, if
 there are more than 32 components in the key, all but the last 32 will
-be multiplied by 0, and hence, ignored.
+be multiplied by <span style="white-space:nowrap">$0$,</span> and hence, ignored.
 
 There are other potential problems with using certain odd numbers for
-*x*. For example, we wouldn't want to use 1, because that would result
+$x$. For example, we wouldn't want to use <span style="white-space:nowrap">$1$,</span> because that would result
 in simply adding all the components together, and we would lose any
-information regarding their positions within the key. Using -1 would be
+information regarding their positions within the key. Using $-1$ would be
 almost as bad, as we would multiply all components in odd positions by
--1 and all components in even positions by 1. The effect of overflow can
+$-1$ and all components in even positions by <span style="white-space:nowrap">$1$.</span> The effect of overflow can
 cause similar behavior; for example, if we place
-2<sup>31</sup> - 1 in an **int** variable and square it,
-the overflow causes the result to be 1. Successive powers will then
-alternate between 2<sup>31</sup> - 1 and 1.
+$2^{31} - 1$ in an **int** variable and square it,
+the overflow causes the result to be <span style="white-space:nowrap">1.</span> Successive powers will then
+alternate between $2^{31} - 1$ and <span style="white-space:nowrap">$1$.</span>
 
 It turns out that this cyclic behavior occurs no matter what odd number
-we use for *x*. However, in most cases the cycle is long enough that
+we use for <span style="white-space:nowrap">$x$.</span> However, in most cases the cycle is long enough that
 keys of a reasonable size will have each component multiplied by a
 unique value. The only odd numbers that result in short cycles are those
-that are adjacent to a multiple of a large power of 2 (note that 0 is a
+that are adjacent to a multiple of a large power of $2$ (note that $0$ is a
 multiple of any integer).
 
 The other potential problem occurs when we are hashing fairly short
-keys. In such cases, if *x* is also small enough, the values computed
+keys. In such cases, if $x$ is also small enough, the values computed
 will all be much smaller than the maximum possible integer value
-(2<sup>31</sup> - 1). As a result, we will not have a uniform
-distribution of values. We therefore want to avoid making *x* too small.
+<span style="white-space:nowrap">$(2^{31} - 1)$.</span> As a result, we will not have a uniform
+distribution of values. We therefore want to avoid making $x$ too small.
 
-Putting all this together, choosing *x* to be an odd number between 30
-and 40 works pretty well. These values are large enough so that 7 key
+Putting all this together, choosing $x$ to be an odd number between $30$
+and $40$ works pretty well. These values are large enough so that seven key
 components will usually overflow an **int**. Furthermore, they all have
-a cycle length greater than 100 million.
+a cycle length greater than $100$ million.
 
 We should always save the hash code in a **private** field after we
 compute it so that subsequent requests for the same hash code don't
