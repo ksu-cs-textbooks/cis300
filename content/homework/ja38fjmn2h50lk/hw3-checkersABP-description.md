@@ -141,6 +141,8 @@ Modify the following methods:
 
 Add the following methods:
 
+- `public BoardSquare GetSquare(int row, int col)`
+    - This is a method that will return the board square at the given row and column if the row and column are within the bounds of the board.  If not, it will return null.
 - `public bool Undo()`
     - This method should undo the last move if there was one. If **SelectedPiece** is not **null**, set its **Selected** property to 'false'. Then if the move history is nonempty, remove the last move. Use the **GetSquare** method to get the "from" square and the "to" square. Reset the **Color** and **King** properties in the "from" square back to their original values and the "to" square color to **SquareColor.None**. Also reset the **SelectedPiece**
       to **null** and the **Turn** property to the color of the player making the move being undone. Be sure to update the appropriate pieces dictionary to reflect the undo. If the move is a jump, get the square of the captured piece, set its **King** and **Color** properties to those of the captured piece, and update the appropriate pieces dictionary and pieces count. The method should return `true` if a move was undone or `false` otherwise.
