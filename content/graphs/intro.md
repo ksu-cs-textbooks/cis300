@@ -18,8 +18,8 @@ The fact that edges are 2-element sets means that the nodes that
 comprise an edge must be distinct. Furthermore, within a set, there is
 no notion of a "first" element or a "second" element - there are just
 two elements. Thus, an edge expresses some symmetric relationship
-between two nodes; i.e., if {*u*, *v*} is an edge then node *u* is
-*adjacent* to node *v*, and node *v* is adjacent to node *u*. We also
+between two nodes; i.e., if $\\{u, v\\}$ is an edge then node $u$ is
+*adjacent* to node <span style="white-space:nowrap">$v$,</span> and node $v$ is adjacent to node <span style="white-space:nowrap">$u$.</span> We also
 might associate some data, such as a label or a length, with an edge.
 
 We can think of an edge as "connecting" the two nodes that comprise it.
@@ -35,15 +35,15 @@ ordered pairs of distinct nodes rather than 2-element sets. Within an
 ordered pair, there is a first element and a second element. We call the
 first node of an edge its *source* and the second node its
 *destination*. Thus, an edge in a directed graph expresses an asymmetric
-relationship between two nodes; i.e., if (*u*, *v*) is an edge, then
-*v* is adjacent to *u*, but *u* is not adjacent to *v* unless
-(*v*, *u*) is also an edge in the graph. As with undirected
+relationship between two nodes; i.e., if $(u, v)$ is an edge, then
+$v$ is adjacent to <span style="white-space:nowrap">$u$,</span> but $u$ is not adjacent to $v$ unless
+$(v, u)$ is also an edge in the graph. As with undirected
 graphs, we might associate data with an edge in a directed graph.
 
 We can draw directed graphs like we draw undirected graphs, except that
 we use an arrow to distinguish between the source and the destination of
 an edge. Specifically, the arrows point from the source to the
-destination. If we have edges (*u*, *v*) and (*v*, *u*), and if
+destination. If we have edges $(u, v)$ and <span style="white-space:nowrap">$(v, u)$,</span> and if
 these edges have the same data associated with them, we might simplify
 the drawing by using a single line with arrows in both directions.
 Following is an example of a directed graph with numeric values
@@ -61,8 +61,8 @@ for hashing. The edges each store a data item of type **TEdgeData**,
 which may be any type. These edges can be represented using instances of
 the **Edge\<TNode, TEdgeData\>** structure. We also can use the
 **DirectedGraph\<TNode, TEdgeData\>** class to represent undirected
-graphs - we simply make sure that whenever there is an edge
-(*u*, *v*), there is also an edge (*v*, *u*) containing the
+graphs --- we simply make sure that whenever there is an edge
+<span style="white-space:nowrap">$(u, v)$,</span> there is also an edge $(v, u)$ containing the
 same data.
 
 The **Edge\<TNode, TEdgeData\>** structure contains the following
@@ -125,7 +125,7 @@ This implementation is somewhat limited in its utility, as nodes or
 edges cannot be removed, and values associated with edges cannot be
 changed. However, it will be sufficient for our purposes. We will
 examine its implementation details in [a later
-section](/~rhowell/DataStructures/redirect/graph-impl). For now, we will
+section](/graphs/impl). For now, we will
 examine how it can be used.
 
 Building a graph is straightforward using the constructor and the
