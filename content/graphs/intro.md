@@ -16,7 +16,7 @@ graph* consists of:
 
 The fact that edges are 2-element sets means that the nodes that
 comprise an edge must be distinct. Furthermore, within a set, there is
-no notion of a "first" element or a "second" element - there are just
+no notion of a "first" element or a "second" element --- there are just
 two elements. Thus, an edge expresses some symmetric relationship
 between two nodes; i.e., if $\\{u, v\\}$ is an edge then node $u$ is
 *adjacent* to node <span style="white-space:nowrap">$v$,</span> and node $v$ is adjacent to node <span style="white-space:nowrap">$u$.</span> We also

@@ -8,7 +8,7 @@ pre = "<b>8.2. </b>"
 
 ## Shortest Paths
 
-In this section, we will consider a common graph problem - that of
+In this section, we will consider a common graph problem --- that of
 finding a shortest path from a node *u* to a node *v* in a directed
 graph. We will assume that each edge contains as its data a nonnegative
 number. This number may represent a physical distance or some other
@@ -27,7 +27,7 @@ the number of paths in a graph can be huge, even for relatively small
 graphs. For example, a directed graph with 15 nodes might contain over
 10 billion paths from a node *u* to a node *v*. Clearly, an algorithm
 that simply checks all paths would be impractical for solving a problem
-such as finding the shortest route between two given points in the US.
+such as finding the shortest route between two given locations in North America.
 In what follows, we will present a much more efficient algorithm due to
 Edsger W. Dijkstra.
 
@@ -120,7 +120,7 @@ edges will be edges from *x* that lead to nodes that are not keys in the
 dictionary; however, because the min-priority queue can contain edges to
 nodes that are already keys, we can simply add all outgoing edges from
 *x*. Because the length of the shortest path to *x* is *p*, the priority
-of each of these edges is *p* plus the length of the edge.
+of each of these outgoing edges is *p* plus the length of the outgoing edge.
 
 Note that an edge is added to the min-priority queue only when its
 source is added as a key to the dictionary. Because we can only add a
