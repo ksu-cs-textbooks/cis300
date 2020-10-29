@@ -39,7 +39,7 @@ git push -u origin master
 
 send_message "Deploy bot" "pull on cs linux and copy to web directory (this may take a while)"
 
-ssh weeser@linux.cs.ksu.edu "cd /home/w/weeser/git-proj/cis300-book-html/ && git pull && rsync -aP --exclude='.git' /home/w/weeser/git-proj/cis300-book-html/ /web/cis300" 2>> ${LOG_FILE}
+ssh weeser@linux.cs.ksu.edu "cd /home/w/weeser/git-proj/cis300-book-html/ && git pull && rsync -aP --exclude='.git' /home/w/weeser/git-proj/cis300-book-html/ /web/cis300 && chmod 755 -R /web/cis300/*" 2>> ${LOG_FILE}
 echo "completed"
 
 send_message "Deploy bot" "Finished deploying CIS 300 Book"
