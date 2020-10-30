@@ -20,14 +20,14 @@ discuss the strengths and weaknesses of each. We will then outline the
 implementation of **DirectedGraph\<TNode, TEdgeData\>**.
 
 The first traditional technique is to use what we call an *adjacency
-matrix*. This matrix is a **bool\[n, n\]**, where *n* is the number
+matrix*. This matrix is an $n \times n$ boolean array, where $n$ is the number
 of nodes in the graph. In this implementation, each node is represented
-by an **int** value *i*, where 0 Ã¢â€°Â¤ *i* \< *n*. The
-value at row *i* and column *j* will be **true** if there is an edge
-from node *i* to node *j*.
+by an **int** value <span style="white-space:nowrap">$i$,</span> where <span style="white-space:nowrap">$0 \leq i \lt n$.</span> The
+value at row $i$ and column $j$ will be **true** if there is an edge
+from node $i$ to node <span style="white-space:nowrap">$j$.</span>
 
 The main advantage to this technique is that we can very quickly
-determine whether an edge exists - we only need to look up one element
+determine whether an edge exists --- we only need to look up one element
 in an array. There are several disadvantages, however. First, we are
 forced to use a specific range of **int** values as the nodes. If we
 wish to have a generic node type, we need an additional data structure
@@ -50,11 +50,11 @@ edges from that node.
 The other traditional technique involves using what we call *adjacency
 lists*. An adjacency list is simply a linked list containing
 descriptions of the outgoing edges from a single node. These lists are
-traditionally grouped together in an array of size *n*, where *n* is
+traditionally grouped together in an array of size <span style="white-space:nowrap">$n$,</span> where $n$ is
 again the number of nodes in the graph. As with the adjacency matrix
-technique, the nodes must be nonnegative **int**s less than *n*. The
-linked list at location *i* of the array then contains the descriptions
-of the outgoing edges from node *i*.
+technique, the nodes must be nonnegative **int**s less than <span style="white-space:nowrap">$n$.</span> The
+linked list at location $i$ of the array then contains the descriptions
+of the outgoing edges from node $i$.
 
 One advantage to this technique is that the amount of space it uses is
 proportional to the size of the graph (i.e., the number of nodes plus
@@ -84,8 +84,7 @@ the destination node of each outgoing edge from the given node.
 
 In addition to this dictionary, we use a
 **Dictionary\<(TNode, TNode), TEdgeData\>** to facilitate
-efficient edge lookups. The notation **(T1, T2)** defines a *value
-tuple*, which is an ordered pair of elements, the first of type **T1**,
+efficient edge lookups. The notation **(T1, T2)** defines a *tuple*, which is an ordered pair of elements, the first of type **T1**,
 and the second of type **T2**. Elements of this type are described with
 similar notation, `(x, y)`, where `x` is of type **T1** and `y` is of
 type **T2**. These elements can be accessed using the **public**
@@ -105,44 +104,44 @@ implementation needs. We will refer to them as `_adjacencyLists` and
 `_edges`, respectively. Because we can initialize both fields to new
 dictionaries, there is no need to define a constructor. Furthermore,
 given these two dictionaries, most of the **public** methods and
-properties (see "[Introduction to
-Graphs](/~rhowell/DataStructures/redirect/graph-intro)") can be
+properties (see ["Introduction to
+Graphs"](/graphs/intro)) can be
 implemented using a single call to one of the members of one of these
 dictionaries:
 
   - **void AddNode(TNode node)**: We can implement this method using the
-    [**Add**](http://msdn.microsoft.com/en-us/library/k7z0zy8k.aspx)
+    [**Add**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.add?view=netframework-4.7.2)
     method of `_adjacencyLists`. We associate an empty linked list with
     this node.
   - **void AddEdge(TNode source, TNode dest, TEdgeData value)**: See
     below.
   - **bool TryGetEdge(TNode source, TNode dest, out TEdgeData value)**:
     We can implement this method using the
-    [**TryGetValue**](http://msdn.microsoft.com/en-us/library/bb347013.aspx)
+    [**TryGetValue**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.trygetvalue?view=netframework-4.7.2)
     method of `_edges`.
   - **int NodeCount**: Because `_adjacencyLists` contains all of the
     nodes as keys, we can implement this property using this
     dictionary's
-    [**Count**](http://msdn.microsoft.com/en-us/library/zhcy256f.aspx)
+    [**Count**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.count?view=netframework-4.7.2)
     property.
   - **int EdgeCount**: We can implement this property using the
     **Count** property of `_edges`.
   - **bool ContainsNode(TNode node)**: We can implement this method
     using the
-    [**ContainsKey**](http://msdn.microsoft.com/en-us/library/kw5aaea4.aspx)
+    [**ContainsKey**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.containskey?view=netframework-4.7.2)
     method of `_adjacencyLists`.
   - **bool ContainsEdge(TNode source, TNode dest)**: We can implement
     this method using the **ContainsKey** method of `_edges`.
   - **IEnumerable\<TNode\> Nodes**: We can implement this property using
     the
-    [**Keys**](http://msdn.microsoft.com/en-us/library/yt2fy5zk.aspx)
+    [**Keys**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.keys?view=netframework-4.7.2)
     property of `_adjacencyLists`.
   - **IEnumerable\<Edge\<TNode, TEdgeData\>\> OutgoingEdges(TNode
     source)**: See below.
 
 Let's now consider the implementation of the **AddEdge** method. Recall
-from "[Introduction to
-Graphs](/~rhowell/DataStructures/redirect/graph-intro)" that this method
+from ["Introduction to
+Graphs"](/graphs/intro) that this method
 adds an edge from `source` to `dest` with data item `value`. If either
 `source` or `dest` is not already in the graph, it will be added. If
 either `source` or `dest` is **null**, it will throw an
@@ -153,7 +152,7 @@ the edge already exists in the graph, it will throw an
 In order to avoid changing the graph if the parameters are bad, we
 should do the error checking first. However, there is no need to check
 whether the edge already exists, provided we update `_edges` using its
-[**Add**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.add?view=netframework-4.7.2#System_Collections_Generic_Dictionary_2_Add__0__1_)
+[**Add**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.add?view=netframework-4.7.2)
 method, and that we do this before making any other changes to the
 graph. Because a dictionary's **Add** method will throw an
 **ArgumentException** if the given key is already in the dictionary, it
@@ -165,7 +164,7 @@ After we have updated `_edges`, we need to update `_adjacencyLists`. To
 do this, we first need to obtain the linked list associated with the key
 `source` in `_adjacencyLists`; however, because `source` may not exist
 as a key in this dictionary, we should use the
-[**TryGetValue**](http://msdn.microsoft.com/en-us/library/bb347013.aspx)
+[**TryGetValue**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.trygetvalue?view=netframework-4.7.2)
 method to do this lookup (note that if `source` is not a key in this
 dictionary, the **out** parameter will be set to **null**, which we can
 interpret as an empty list). We then construct a new linked list cell,
@@ -180,7 +179,7 @@ method returns an **IEnumerable\<Edge\<TNode, TEdgeData\>\>**, it
 needs to iterate through the cells of the linked list associated with
 the given node in `_adjacencyLists`. For each of these cells, it will
 need to **yield return** (see
-"[Enumerators](http://people.cs.ksu.edu/~rhowell/DataStructures/redirect/enumerators)")
+"[Enumerators](/appendix/syntax/enumerators)")
 an **Edge\<TNode, TEdgeData\>** describing the edge represented by
 that cell. The source node for this edge will be the node given to this
 method. The destination node will be the node stored in the cell. The
