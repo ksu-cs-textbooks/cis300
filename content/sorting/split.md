@@ -58,7 +58,7 @@ all segments except U are initially empty, the location following
 segment L will initially be the first location in the array portion that
 we are sorting, and the other two variables will initially be the last
 location in this portion. We then need a loop that iterates as long as
-segment U is nonempty - i.e., as long as the location following segment
+segment U is nonempty --- i.e., as long as the location following segment
 L is no greater than the location preceding segment E. Each iteration of
 this loop will compare the last element in segment U (i.e., the element
 at the location preceding segment E) with *p*. We will swap this element
@@ -86,16 +86,16 @@ pivot using a recursive call, and sort the elements greater than the
 pivot with another.
 
 Though we won't give an analysis here, the above algorithm runs in
-*O*(*n*<sup>2</sup>) time in the worst case, where *n* is the number of
+$O(n^2)$ time in the worst case, where $n$ is the number of
 elements being sorted. However, as we saw with [insertion
-sort](/~rhowell/DataStructures/redirect/insert-sorts), the worst-case
+sort](/sorting/insert), the worst-case
 running time doesn't always tell the whole story. Specifically, the
 expected running time of quick sort (this implementation and others) on
-random arrays is in *O*(*n* lg *n*).
+random arrays is in <span style="white-space:nowrap">$O(n \lg n)$.</span>
 
 However, we don't often need to sort random data. Let's therefore take a
 closer look at what makes the worst case bad. In some ways this
-algorithm is like merge sort - it does two recursive calls, and the
+algorithm is like merge sort --- it does two recursive calls, and the
 additional work is proportional to the number of elements being sorted.
 The difference is that the recursive calls in merge sort are both on
 array portions that are about half the size of the portion being sorted.
@@ -111,7 +111,7 @@ Before we look at how we can improve the performance, we need to
 consider one other aspect of this implementation's performance. For a
 recursive method, the amount of data pushed on the runtime stack is
 proportional to the depth of the recursion. In the worst cases (i.e., on
-a sorted array), the recursion depth is *n*. Thus, for large *n* if the
+a sorted array), the recursion depth is <span style="white-space:nowrap">$n$.</span> Thus, for large <span style="white-space:nowrap">$n$,</span> if the
 array is sorted or nearly sorted, a **StackOverflowException** is
 likely. <span id="median-of-3"></span>
 
@@ -121,7 +121,7 @@ choose the pivot element. We want to choose an element that partitions
 the data elements roughly in half. The median element (i.e., the element
 that belongs in the middle after the array is sorted) will therefore
 give us the optimal split. It is possible to design an
-*O*(*n* lg *n*) algorithm that uses the median as the
+$O(n \lg n)$ algorithm that uses the median as the
 pivot; however, the time it takes to find the median makes this
 algorithm slower than merge sort in practice. It works much better to
 find a quick approximation for the median.
@@ -132,23 +132,23 @@ partitioning*, which uses as its pivot element the median of the first,
 middle, and last elements of the array portion we are sorting. An easy
 way to implement this strategy is to place these three elements in an
 array of size 3, then sort this array using [insertion
-sort](/~rhowell/DataStructures/redirect/insert-sorts). The element that
+sort](/sorting/insert). The element that
 ends up at location 1 is then the used as the pivot.
 
 We can improve on the above strategy by doing a case analysis of the
-three values. If we do this, we don't need a separate array - we just
-find the median of three values, *a*, *b*, and *c*, as follows:
+three values. If we do this, we don't need a separate array --- we just
+find the median of three values, <span style="white-space:nowrap">$a$,</span> <span style="white-space:nowrap">$b$,</span> and <span style="white-space:nowrap">$c$,</span> as follows:
 
-  - If *a* \< *b*:
-      - If *b* \< *c*, then *b* is the median.
-      - Otherwise, because *b* is the largest:
-          - If *a* \< *c*, then *c* is the median.
-          - Otherwise, *a* is the median.
-  - Otherwise, because *b* Ã¢â€°Â¤ *a*:
-      - If *a* \< *c*, then *a* is the median.
-      - Otherwise, because *a* is the largest:
-          - If *b* \< *c*, then *c* is the median.
-          - Otherwise, *b* is the median.
+  - If <span style="white-space:nowrap">$a \lt b$:</span>
+      - If <span style="white-space:nowrap">$b \lt c$,</span> then $b$ is the median.
+      - Otherwise, because $b$ is the largest:
+          - If <span style="white-space:nowrap">$a \lt c$,</span> then $c$ is the median.
+          - Otherwise, $a$ is the median.
+  - Otherwise, because <span style="white-space:nowrap">$b \leq a$:</span>
+      - If <span style="white-space:nowrap">$a \lt c$,</span> then $a$ is the median.
+      - Otherwise, because $a$ is the largest:
+          - If <span style="white-space:nowrap">$b \lt c$,</span> then $c$ is the median.
+          - Otherwise, $b$ is the median.
 
 The above algorithm is quite efficient, using at most three comparisons
 and requiring no values to be copied other than the result if we
@@ -159,14 +159,14 @@ likely.
 
 This version of quick sort gives good performance most of the time,
 typically outperforming either [heap
-sort](/~rhowell/DataStructures/redirect/heap-sort) or [merge
-sort](/~rhowell/DataStructures/redirect/merge-sorts). However, it still
-has a worst-case running time in *O*(*n*<sup>2</sup>) and a worst-case
-stack usage in *O*(*n*). Furthermore, it is unstable and does not
+sort](/sorting/select/#heap-sort) or [merge
+sort](/sorting/merge). However, it still
+has a worst-case running time in $O(n^2)$ and a worst-case
+stack usage in <span style="white-space:nowrap">$O(n)$.</span> Furthermore, it is unstable and does not
 perform as well as [insertion
-sort](/~rhowell/DataStructures/redirect/insert-sorts) on small or nearly
+sort](/sorting/insert) on small or nearly
 sorted data sets. In [the next
-section](/~rhowell/DataStructures/redirect/hybrid-sorts), we will show
+section](/sorting/hybrid), we will show
 how quick sort can be combined with some of the other sorting algorithms
 to address some of these issues, including the bad worst-case
 performance.
