@@ -50,7 +50,7 @@ the unshaded areas are nonempty. On each iteration, we want to place the
 next element into the temporary array. This element needs to be the
 smallest of the unmerged elements. Because both parts of the given array
 are sorted, the smallest unmerged element will be the first element from
-one of the two unshaded parts of this array - whichever one is smaller
+one of the two unshaded parts of this array --- whichever one is smaller
 (for stability, we use the first if they are equal). We copy that
 element to the beginning of the unshaded portion of the temporary array,
 then update the local variables to reflect that we have another merged
@@ -67,14 +67,14 @@ remaining items in one of the two sorted parts). Once all items have
 been merged into the temporary array, we copy all items back to the
 original array to complete the merge.
 
-We won't do a running time analysis here, but merge sort runs in *O*(*n*
-lg *n*) time in the worst case. Furthermore, unlike [heap
-sort](/~rhowell/DataStructures/redirect/heap-sort), it is stable.
+We won't do a running time analysis here, but merge sort runs in $O(n
+\lg n)$ time in the worst case. Furthermore, unlike [heap
+sort](/sorting/select/#heap-sort), it is stable.
 Because it tends to perform better in practice than [tree
-sort](/~rhowell/DataStructures/redirect/tree-sort), it is a better
+sort](/sorting/insert/#tree-sort), it is a better
 choice when we need a stable sorting algorithm. In fact, it is the basis
 (along with [insertion
-sort](/~rhowell/DataStructures/redirect/insert-sorts)) of a stable
+sort](/sorting/insert)) of a stable
 hybrid sorting algorithm that performs very well in practice. This
 algorithm, called *Tim sort*, is rather complicated; hence, we won't
 describe it here. If we don't need a stable sorting algorithm, though,
@@ -107,9 +107,7 @@ iteration of this loop does the following:
 
 1.  Fill a large array with data items from the input (if there aren't
     enough items to fill this array, we just use part of it).
-2.  Sort this array using whatever sorting algorithm is appropriate
-    (most likely, one outlined in [the next
-    section](/~rhowell/DataStructures/redirect/split-sorts)).
+2.  Sort this array using whatever sorting algorithm is appropriate.
 3.  Write each element of the sorted array to the current output file.
 4.  Write a special end marker to the output file.
 5.  Swap the contents of the variables referring to the current output
@@ -132,17 +130,17 @@ the current output file and the alternate output file. The loop then
 iterates as long as the second input file is nonempty. Each iteration
 does the following:
 
-1.  While there is data remaining in the second input file:
-    1.  Merge the next sorted sequence in the first input file with the
+1.  While there is data remaining in the second input file: <ol type="a">
+    <li />  Merge the next sorted sequence in the first input file with the
         next sorted sequence in the second input file, writing the
         result to the current output file (see below for details).
-    2.  Write an end marker to the current output file.
-    3.  Swap the current output file and the alternate output file.
-2.  If there is data remaining in the first input file:
-    1.  Copy the remaining data from the first input file to the current
+    <li />  Write an end marker to the current output file.
+    <li />  Swap the current output file and the alternate output file.</ol>
+2.  If there is data remaining in the first input file:<ol type="a">
+    <li />  Copy the remaining data from the first input file to the current
         output file
-    2.  Write an end marker to the current output file.
-    3.  Swap the current output file and the alternate output file.
+    <li />  Write an end marker to the current output file.
+    <li />  Swap the current output file and the alternate output file.</ol>
 3.  Close all four temporary files.
 4.  Swap the first input file with the alternate output file.
 5.  Swap the second input file with the current output file.
@@ -176,19 +174,19 @@ sequences.
 For an external sorting algorithm, the most important measure of
 performance is the number of file I/O operations it requires, as these
 operations are often much more expensive than any other (depending, of
-course, on the storage medium). Suppose the initial input file has *n*
+course, on the storage medium). Suppose the initial input file has $n$
 data items, and suppose the array we use in the initialization step can
-hold *m* data items. Then the number of sorted sequences written by the
-initialization is *n*/*m*, with any fractional part rounded up. Each
+hold $m$ data items. Then the number of sorted sequences written by the
+initialization is  <span style="white-space:nowrap">$n/m$,</span> with any fractional part rounded up. Each
 iteration of the main loop then reduces the number of sorted sequences
 by half, with any fractional part again rounded up. The total number of
-iterations of the main loop is therefore lg (*n*/*m*), rounding
+iterations of the main loop is therefore  <span style="white-space:nowrap">$\lg (n/m)$,</span> rounding
 upward again. Each iteration of this loop makes one pass through the
 entire data set. In addition, the initialization makes one pass, and the
 final copying makes one pass. The total number of passes through the
-data is therefore lg (*n*/*m*) + 2. For example, if we are
-sorting 10 billion data items using an array of size 1 million, we need
-lg 10,000 + 2 passes, rounded up; i.e., we need 16 passes
+data is therefore  <span style="white-space:nowrap">$\lg (n/m) + 2$.</span> For example, if we are
+sorting $10$ billion data items using an array of size $1$ million, we need
+$\lg 10,000 + 2$ passes, rounded up; i.e., we need $16$ passes
 through the data.
 
 Various improvements can be made to reduce the number of passes through
@@ -200,13 +198,13 @@ directory as the output file, we can finish the sort by simply renaming
 the first input file, rather than copying it.
 
 A more substantial improvement involves using more temporary files.
-*k-way external merge sort* uses *k* input and *k* output files. Each
-merge then merges *k* sorted sequences into 1. This reduces the number
-of iterations of the main loop to log<sub>*k*</sub> (*n*/*m*). Using
+*$k$-way external merge sort* uses $k$ input and $k$ output files. Each
+merge then merges $k$ sorted sequences into  <span style="white-space:nowrap">$1$.</span> This reduces the number
+of iterations of the main loop to  <span style="white-space:nowrap">$\log_k (n/m)$.</span> Using
 the fact that
-log<sub>*k*<sup>2</sup></sub> *n* = (log<sub>*k*</sub> *n*)/2,
-we can conclude that squaring *k* will reduce the number of passes
-through the data by about half. Thus, 4-way external merge sort will
-make about half as many passes through the data as 2-way external merge
+ <span style="white-space:nowrap">$\log_{k^2} n = (\log_k n)/2$,</span>
+we can conclude that squaring $k$ will reduce the number of passes
+through the data by about half. Thus, $4$-way external merge sort will
+make about half as many passes through the data as $2$-way external merge
 sort. The gain diminishes quickly after that, however, as we must
-increase *k* to 16 to cut the number of passes in half again.
+increase $k$ to $16$ to cut the number of passes in half again.
