@@ -31,7 +31,7 @@ applies specifically to sorting strings; however, it can be applied to
 other multi-keyed data as well.
 
 One problem with sorting strings using a version of quick sort described
-in "[Split Sorts](/~rhowell/DataStructures/redirect/split-sorts)" is
+in "[Split Sorts](/sorting/split)" is
 that string comparisons can be expensive. Specifically, they must
 compare the strings a character at a time until they reach either a
 mismatch or the end of a string. Thus, comparing strings that have a
@@ -53,12 +53,12 @@ focus on the character at location `k` (i.e., following the first `k`
 characters) of each string. We need to be careful, however, because some
 of the strings may not have a character at location `k`. We will
 therefore use an **int** to store the value of the character at location
-`k` of a string, letting -1 denote the absence of a character at that
+`k` of a string, letting $-1$ denote the absence of a character at that
 location.
 
 The algorithm then proceeds a lot like those described in "[Split
-Sorts](/~rhowell/DataStructures/redirect/split-sorts)". If the number of
-elements being sorted is greater than 1, a pivot element `p` is found.
+Sorts](/sorting/split)". If the number of
+elements being sorted is greater than <span style="white-space:nowrap">$1$,</span> a pivot element `p` is found.
 Note that `p` is not a **string**, but an **int** representing a
 character at location `k`, as described above. The elements are then
 partitioned into groups of strings whose character at location `k` is
@@ -66,17 +66,17 @@ less than `p`, equal to `p`, or greater than `p`, respectively.
 
 After these three groups are formed, the first and third group are
 sorted recursively using the same value for `k`. Furthermore, the second
-group may not be completely sorted yet - all we know is that all strings
-in this group agree on the first `k` + 1 characters. Thus, unless
-`p` is -1 (indicating that that these strings all have length `k`, and
+group may not be completely sorted yet --- all we know is that all strings
+in this group agree on the first `k + 1` characters. Thus, unless
+`p` is $-1$ (indicating that that these strings all have length `k`, and
 are therefore all equal), we need to recursively sort this group as
 well. However, because we know that the strings in this group all agree
-on the first `k` + 1 characters, we pass `k` + 1 as the last
+on the first `k + 1` characters, we pass `k + 1` as the last
 parameter.
 
 One aspect of this algorithm that we need to address is whether the
 recursion is valid. Recall that [when we introduced
-recursion](/~rhowell/DataStructures/redirect/recursion), we stated that
+recursion](/trees/intro/#recursion), we stated that
 in order to guarantee termination, all recursive calls must be on
 smaller problem instances, where the size of a problem instance is given
 by a nonnegative integer. In the algorithm described above, we might
@@ -92,7 +92,7 @@ beginning at location `k` in all strings being sorted. Because there is
 at least one string containing `p` at location `k`, the number of
 strings in both the first and the third recursive call must be smaller,
 while the total number of characters beginning at location `k` can be no
-larger. Because `k` increases by 1 in the second recursive call, the
+larger. Because `k` increases by $1$ in the second recursive call, the
 total number of characters past this location must be smaller, while the
 number of strings can be no larger. Hence, the size decreases in all
 recursive calls.
@@ -105,7 +105,7 @@ call on the second group to a loop. We can do this by changing the
 **while**-loop that iterates as long as the portion being sorted is
 large enough to split. Then at the bottom of the loop, after doing
 recursive calls on the first and third parts, we check to see if `p` is
--1 - if so, we terminate the loop. Otherwise, we do the following:
+$-1$ --- if so, we exit the loop. Otherwise, we do the following:
 
   - increment `k`;
   - change the index giving the start of the portion we are sorting to
@@ -116,10 +116,10 @@ recursive calls on the first and third parts, we check to see if `p` is
 The next iteration will then sort the second part.
 
 This algorithm can be combined with [insertion
-sort](/~rhowell/DataStructures/redirect/insert-sorts) and [heap
-sort](/~rhowell/DataStructures/redirect/heap-sort), as was done for
+sort](/sorting/insert) and [heap
+sort](/sorting/select/#heap-sort), as was done for
 introsort in [the previous
-section](/~rhowell/DataStructures/redirect/hybrid-sorts). However, we
+section](/sorting/hybrid). However, we
 should also modify insertion sort and heap sort to use the information
 we already have about equal prefixes when we are comparing elements.
 Specifically, rather than comparing entire strings, we should begin
