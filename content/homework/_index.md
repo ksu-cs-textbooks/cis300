@@ -10,3 +10,4 @@ hidden = true
 ### CIS 300 Homework
 
 - [Homework 3 - Checkers with Negamax and Alpha Beta Pruning](/homework/ja38fjmn2h50lk)
+- [Homework 5 - Snake with AI](/homework/7fjas9348fjjjpwmcqt)

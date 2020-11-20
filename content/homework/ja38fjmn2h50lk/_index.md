@@ -1,5 +1,5 @@
 +++
-title = "CIS 300 Homwork 3"
+title = "CIS 300 Homework 3"
 date = 2020-09-27T10:53:05-05:00
 weight = 10
 chapter = true
