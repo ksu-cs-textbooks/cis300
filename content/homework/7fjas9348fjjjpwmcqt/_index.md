@@ -4,10 +4,10 @@ date = 2020-09-27T10:53:05-05:00
 weight = 20
 chapter = true
 hidden = true
-pre = "<b>3. </b>"
+pre = "<b>5. </b>"
 +++
 
-## Checkers AI with Negamax and Alpha Beta Pruning
+## The Game Snake with Hamiltonian Path AI
 
 - [Homework Requirements (html)](/homework/7fjas9348fjjjpwmcqt/hw5.html)
 - [Homework Requirements (html-dark mode)](/homework/7fjas9348fjjjpwmcqt/hw5-dark.html)
