@@ -7,7 +7,7 @@ hidden = true
 pre = "<b>3. </b>"
 +++
 
-## The Game Snake with Hamiltonian Path AI
+## Checkers AI with Negamax and Alpha Beta Pruning
 
 - [Homework Requirements (html)](/homework/ja38fjmn2h50lk/hw3-checkersABP-description.html)
 - [Homework Requirements (html-dark mode)](/homework/ja38fjmn2h50lk/hw3-checkersABP-description-dark.html)
