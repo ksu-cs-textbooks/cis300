@@ -29,11 +29,7 @@ If the path cannot be extended any farther, move on to the next position in the 
 7. The algorithm progresses to (2,3) where the path gets extended right.
 8. In this step, the main algorithm finishes before the last direction is added to the path.  The main algorithm ends here since we have reached the end of the path (in blue), but in order for it to be a true Hamiltonian cycle, we need to include the rest of the snake in the path so we traverse the snake from the tail to add the remaining direction to the path. 
 
-The resulting path is traversed in order of number continuously by the AI in order to solve the game.  The ordering can be seen laid on top of the grid below:
-
-![image-20201119230205448](image-20201119230205448.png)
-
-An example of the AI working can be found below (url: https://www.youtube.com/watch?v=yXLp50i8Olk):
+The resulting path is traversed in order from head to tail continuously by the AI in order to solve the game.  An example of the AI working can be found below (url: https://www.youtube.com/watch?v=yXLp50i8Olk):
 
 <iframe width="375" height="375" src="https://www.youtube.com/embed/yXLp50i8Olk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -43,9 +39,9 @@ Create a GitHub repository using [**this URL**](https://classroom.github.com/a/E
 
 # User Interface
 
-![img](clip_image004.jpg)
+<img src="ui.png" alt="img" style="zoom:50%;" />
 
-The user interface is fairly simple.  At the top, there is a **MenuStrip** that has one menu, File. This menu contains a single item, **New Game**, which in turn has a sub-menu with **Easy**, **Normal**, and **Hard** as options.  Clicking one of these sub-menu items will start a new game of that difficulty.  When a new game option is clicked, the game is reset with a snake of size 2 in the center and started automatically (the snake starts moving upward on its own). If the **CheckBox** for the AI player is checked when a new game is created, then the AI player will take control of the snake.  During this mode, the human should not be able to control the snake. If this box in not checked, the user will be able to control the direction the snake is moving using the arrow keys.
+The user interface is fairly simple.  At the top, there is a **MenuStrip** that has one menu, File. This menu contains a single item, **New Game**, which in turn has a sub-menu with **Easy**, **Normal**, and **Hard** as options.  Clicking one of these sub-menu items will start a new game of that difficulty.  When a new game option is clicked, the game is reset with a snake of size 2 in the center and started automatically (the snake starts moving upward on its own).  Since the snake is grown by the game by one before control is given to the user or AI, the score is set to 2 to start.  The score correlates to the size of the snake. If the **CheckBox** for the AI player is checked when a new game is created, then the AI player will take control of the snake.  During this mode, the human should not be able to control the snake. If this box in not checked, the user will be able to control the direction the snake is moving using the arrow keys.
 
 In the top right hand corner, there are two labels that will be used to keep track of the player’s score.  The **Label** in the top right-hand corner is used for the score itself.  The **AutoSize** property should be set to **false** (this will let you size it yourself).  The text **size** should be adjusted for both of the Labels and the font should be **bolded**.   Both of these labels should be **anchored** to the top and the right.
 
@@ -66,7 +62,7 @@ This project takes a simple approach to creating a game in C# that can perform b
 
 # Software Architecture
 
-![snake-uml](snake-uml.png)
+<img src="snake-uml.png" alt="snake-uml" style="zoom:80%;" />
 
 You do not need to use the same names as shown in the class diagram, as long as you follow the [naming conventions](https://cis300.cs.ksu.edu/appendix/style/naming/) for CIS 300. You may add any **private** methods that you feel improve the code.  
 
@@ -120,14 +116,16 @@ This class contains the majority of the game’s logic.  It keeps information ab
   - This field keeps track of the dimension (n) of the board.
 - `private Direction[] _aiDirection`
   - This array contains all four possible directions to make it easier to find adjacent nodes to search when finding the shortest path in the board.  My order is up, left, right, down...but this should not impact functionality, just the path order your snake AI takes.
-- `private Direction[] _lr` and `private Direction[] _ud`
+- `private Direction[] _leftRight` and `private Direction[] _upDown`
   - These arrays contain the directions left, right and up down respectively.  These are used for determining which directions the AI can use to extend the path when calculating the Hamiltonian path.
+- `private static Random _random`
+  - This field is initialized to a new Random object.  This will be utilized in the `AddFood` method to place the food in a random location.
 
 ### Methods
 
 - `public GameBoard(int size)`
   
-  - This is a constructor that initializes the game board to a new board of the given size.  Each node should be initialized with its x-y location, but nothing else.  Once the board is made, then the head and tail should be placed in its center.  This will be slightly off-center if the board is of even size.  Be sure to set the data of this node to be the snake head and store a reference to the node in the head and tail fields.  Then, add the food to the board by using the method below.
+  - This is a constructor that initializes the game board to a new board of the given size.  Each node should be initialized with its x-y location, but nothing else.  Once the board is made, then the head and tail should be placed in its center.  This will be slightly off-center if the board is of even size.  Be sure to set the data of this node to be the snake head and store a reference to the node in the head and tail fields.  Then, add the food to the board by using the method below. 
   
 - `public void AddFood()`
   
@@ -143,7 +141,7 @@ This class contains the majority of the game’s logic.  It keeps information ab
   
     If none of the above are true, then the snake can move forward into the next node.  To do this, make the next node to be the snake head, the current head to be part of the snake body, and link the edge of the current head to the next node.  If the data in the node where the snake is moving to contains the food, add a new piece of food to the board and return that the snake is eating. Note that if the game is won (the snake fills the entire grid), then no food should be added and a Win status should be returned.
   
-    If the snake is not eating and it did not collide with something, then we need to determine if we need to cut the snake’s tail.  If we do not do this, the snake will continuously grow even if it is not eating.  If the head of the snake is not the tail of the snake, set the tail node data to be empty.  Then, the edge of the tail should be set to null and the value of the edge should become the new tail.  This process can be done with a temporary variable.  In the method above, no new game nodes should be created.  
+    If the snake is not eating and it did not collide with something, then we need to determine if we need to cut the snake’s tail.  If we do not do this, the snake will continuously grow even if it is not eating.  If the head of the snake is not the tail of the snake, set the tail node data to be empty (if the head is the tail, we let the snake grow…this is a special case for the start of the game).  Then, the edge of the tail should be set to null and the value of the edge should become the new tail.  This process can be done with a temporary variable.  In the method above, no new game nodes should be created.  
   
 - `public List<GameNode> GetSnakePath()`
   
@@ -159,7 +157,7 @@ This class contains the majority of the game’s logic.  It keeps information ab
 
 - `public List<Direction> FindLongestAiPath()`
 
-  - This method is used to find the Hamiltonian path as described in the "The Perfect Snake AI" sections.  Utilize the `FindShortestAiPath` to find a path to the tail of the snake.  Then use the process previously described to extend this path.  You will need to keep track of which nodes you have visited (be sure to mark all in the shortest path to be visited before you start extending it). You will need to keep track of which node you are currently at and which direction in the path you are currently at (and which node that leads to).  If the current direction you are at in the path is up or down, try to extend the path left or right (up or down if the direction in the path is left or right).  If you can extend the current node and the next node (the node the current direction leads to) in either of the extension directions, then insert the direction and its opposite into the path (at the current location in the path and current location + 2 respectively).  Note that you cannot extend to a location that has already been visited.   If the path cannot be extended at its current location, advance to the next node, otherwise, keep trying to extend the current node. Once you have reached the end of the path (this should  be the tail), link the path to the rest of the snake and return the path
+  - This method is used to find the Hamiltonian path as described in the "The Perfect Snake AI" sections.  Utilize the `FindShortestAiPath` to find a path to the tail of the snake.  Then use the process previously described to extend this path.  You will need to keep track of which nodes you have visited (be sure to mark all in the shortest path to be visited before you start extending it). You will need to keep track of which node you are currently at and which direction in the path you are currently at (and which node that leads to).  If the current direction you are at in the path is up or down, try to extend the path left or right (up or down if the direction in the path is left or right).  If you can extend the current node and the next node (the node the current direction leads to) in either of the extension directions, then insert the direction and its opposite into the path (at the current location in the path and current location + 2 respectively).  Note that you cannot extend to a location that has already been visited.   If the path cannot be extended at its current location, advance to the next node, otherwise, keep trying to extend the current node. Once you have reached the end of the path (this should  be the tail), link the path to the rest of the snake.  Finally, load the path into a queue before returning it.
 
 ## The Game Class
 
@@ -173,9 +171,7 @@ The game class is the communication between the UI and the game logic.  It will 
     - Indicates how many milliseconds the game should wait before ticks (controls how fast the snake moves)
 - `private bool _isAI`
     - Indicates if the game should be controlled by the AI
-- `private int _pathIdx`
-    - This keeps track of the position (index) in the AI is current at in the AI's path.
-- `private List<Direction> _aiPath`
+- `private Queue<Direction> _aiPath`
     - This will store the AI path, if the AI is enabled.
 
 ### Properties
@@ -220,7 +216,7 @@ The game class is the communication between the UI and the game logic.  It will 
 - `public async Task StartMoving(IProgress<SnakeStatus> progress, CancellationToken cancelToken)`
 
     - This is an asynchronous method that acts as a game clock.  The snake in the game is always moving, the user (or AI) only controls the direction.  Therefore, every game “tick” we need to move the snake.  Since this is asynchronous, it will not block the UI completely.  This method contains a loop that continues until Play is false or a cancelation request has been made from the UI (`cancelToken.IsCancellationRequested`).  Inside the loop, you will tell the game board (**Board**) to move the snake in the direction of **KeyPress**.  Then you will report the new status back to the UI using the progress interface passed to this method.  This can be done using `progress.Report(Status)`  If the snake collided with something, **Play** should be set to false.  If the snake is still moving, the last direction should be set to the key press.  If the snake is eating, increase the score (be sure to use the property here so it triggers the data binding events).  If the snake reported an invalid direction, try to move the snake in the last direction (be sure to check for collisions and eating here as well.  If a win status is reported, still increase the score by 1, but set Play to false.  Lastly, at the end of the loop, use the following code to control how often a tick occurs:  `await Task.Delay(_delay)`.
-    - To add the AI control, add a check at the beginning of the loop to see if the AI is enabled, if so, override the `KeyPress ` value with the direction stored at the current position in the path.  If you hit the end of the path, reset the position to 0. 
+    - To add the AI control, add a check at the beginning of the loop to see if the AI is enabled, if so, override the `KeyPress ` value with the next direction in the path queue.  Once the move has been made, add this direction back to the queue.
 
 - `private void OnPropertyChanged(string propertyName)`
 
@@ -280,7 +276,9 @@ The user interface class is responsible for handling the event where a key is do
 
 - `private void NewGame(int size, int speed)`
 
-    - This creates a new game with the given size and speed.  This also sets the width and height of the picture box in the UI to 600.  You can change this size, but this seems to be a good balance on a standard resolution monitor.  You will also need to change the Size property of this (the form) to be a new size taking into account the picture box and the menu strip.  The square width should be calculated to be the picture box width divided by the size.  You also need to setup the databinding to the score label.  This can be done by clearing the `DataBindings` property of the score label control, then calling Add on the same property to add a new Binding.  The parameters you pass when creating the new Binding object should be “Text” (this is the property of the label you are binding to), the **_game** field (the object that has your data), and “Score”, the name of the property in the data which will be your source.  Then you need to create a new progress object (you may use the code below).  Before you tell the game to start moving, set the `_cancelSource` to a new instance, then call the `StartMoving` method, passing the progress object and `_cancelSource.Token`.  This token allows the UI to communicate to the `StartMoving` method when a new game is created.  Be sure to add `_cancelSource.Cancel();` at the beginning of the this method (**NewGame**) so that any previous games are completely stopped before a new one is started.
+    - This creates a new game with the given size and speed.  This also sets the width and height of the picture box in the UI to 600.  You can change this size, but this seems to be a good balance on a standard resolution monitor.  You will also need to change the Size property of this (the form) to be a new size taking into account the picture box and the menu strip.  The square width should be calculated to be the picture box width divided by the size.  You also need to setup the databinding to the score label.  This can be done by clearing the `DataBindings` property of the score label control, then calling Add on the same property to add a new Binding.  The parameters you pass when creating the new Binding object should be “Text” (this is the property of the label you are binding to), the **_game** field (the object that has your data), and “Score”, the name of the property in the data which will be your source.  Then you need to create a new progress object (you may use the code below).  Before you tell the game to start moving, set the `_cancelSource` to a new instance, then call the `StartMoving` method, passing the progress object and `_cancelSource.Token`.  This token allows the UI to communicate to the `StartMoving` method when a new game is created.  Note that Visual Studio will try to suggest that you should add the `await` keyword to the call to `StartMoving`, do **not** do this.  That would cause the UI to not refresh/animate the snake.
+
+    - Be sure to add `_cancelSource.Cancel();` at the beginning of the this method (**NewGame**) so that any previous games are completely stopped before a new one is started.
 
         ```c#
         //this line of code goes inside the NewGame method
