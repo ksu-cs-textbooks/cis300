@@ -39,13 +39,13 @@ Create a GitHub repository using [**this URL**](https://classroom.github.com/a/E
 
 # User Interface
 
-<img src="ui.png" alt="img" style="zoom:50%;" />
+<img src="ui.png" alt="img" style="zoom:80%;" />
 
-The user interface is fairly simple.  At the top, there is a **MenuStrip** that has one menu, File. This menu contains a single item, **New Game**, which in turn has a sub-menu with **Easy**, **Normal**, and **Hard** as options.  Clicking one of these sub-menu items will start a new game of that difficulty.  When a new game option is clicked, the game is reset with a snake of size 2 in the center and started automatically (the snake starts moving upward on its own).  Since the snake is grown by the game by one before control is given to the user or AI, the score is set to 2 to start.  The score correlates to the size of the snake. If the **CheckBox** for the AI player is checked when a new game is created, then the AI player will take control of the snake.  During this mode, the human should not be able to control the snake. If this box in not checked, the user will be able to control the direction the snake is moving using the arrow keys.
+The user interface is fairly simple.  At the top, there is a **MenuStrip** that has one menu, File. This menu contains a single item, **New Game**, which in turn has a sub-menu with **Easy**, **Normal**, and **Hard** as options.  Clicking one of these sub-menu items will start a new game of that difficulty.  When a new game option is clicked, the game is reset with a snake of size 2 in the center and started automatically (the snake starts moving upward on its own).  Since the snake is grown by the game by one before control is given to the user or AI, the score is set to 2 to start.  The score correlates to the size of the snake. If the **CheckBox** for the AI player is checked when a new game is created, then the AI player will take control of the snake.  During this mode, the human should not be able to control the snake. If this box in not checked, the user will be able to control the direction the snake is moving using the arrow keys.  Next to the checkbox, there is a **NumericUpDown** control with a minimum value of 1.  This control will indicate the delay (speed) of the AI if the AI is enabled.
 
 In the top right hand corner, there are two labels that will be used to keep track of the player’s score.  The **Label** in the top right-hand corner is used for the score itself.  The **AutoSize** property should be set to **false** (this will let you size it yourself).  The text **size** should be adjusted for both of the Labels and the font should be **bolded**.   Both of these labels should be **anchored** to the top and the right.
 
-The main part of the form (the black area) is a **PictureBox**.  You do not need to worry about sizing this control as it will be done programmatically.  Lastly, for the **Form** control AND the **CheckBox** control, be sure to set the **KeyPreview** property to **True**.  This is very important.  Without this, the arrow keys will not register the correct event handlers.  This lets the user control the snake with the arrow keys regardless of which control has focus (clicked on, etc.).  If this is not set, when the Score is updated, the controls for the snake will not register properly.
+The main part of the form (the black area) is a **PictureBox**.  You do not need to worry about sizing this control as it will be done programmatically.  Lastly, for the **Form** control, be sure to set the **KeyPreview** property to **True**.  This is very important.  Without this, the arrow keys will not register the correct event handlers.  This lets the user control the snake with the arrow keys regardless of which control has focus (clicked on, etc.).  If this is not set, when the Score is updated, the controls for the snake will not register properly.
 
 # Tasks
 
@@ -131,9 +131,9 @@ This class contains the majority of the game’s logic.  It keeps information ab
   
   - This method randomly places the snake food on the board. This is done by setting data of a random node to be SnakeFood.  The food cannot be placed in a node unless it is empty.  Be sure to store the reference to the node you place the food in the **Food** property above.
   
-- `public GameNode GetNextNode(Direction dir)`
+- `public GameNode GetNextNode(Direction dir, GameNode current)`
   
-  - This is a helper method that will return the node that the snake would be going to if it were headed in the given direction.  The method should return **null** if the snake would move off of the board.
+  - This is a helper method that will return the node that would be next from current if were headed in the given direction.  The method should return **null** if it would move off of the board.
   
 - `public SnakeStatus MoveSnake(Direction dir)`
   
@@ -149,7 +149,7 @@ This class contains the majority of the game’s logic.  It keeps information ab
   
 - `private List<Direction> BuildPath(Dictionary<GameNode, (GameNode, Direction)> path, GameNode dest)`
 
-  - This method reverses the given path from the destination to the head of the snake.  The resulting list is a series of directions that leads the head of the snake to `dest`.  This method works similarly to the **AddPath** method in [Lab 33](https://classroom.github.com/a/dT-eocng).  The given path dictionary's keys represent the destination and the corresponding value is a tuple which has the source node and the direction required to go to get to the destination.
+  - This method reverses the given path from the destination to the head of the snake.  The resulting list is a series of directions that leads the head of the snake to `dest`.  This method works similarly to the **AddPath** method in [Lab 33](https://classroom.github.com/a/WmDXPqFk).  The given path dictionary's keys represent the destination and the corresponding value is a tuple which has the source node and the direction required to go to get to the destination.
 
 - `public List<Direction> FindShortestAiPath(GameNode dest)`
 
@@ -211,7 +211,7 @@ The game class is the communication between the UI and the game logic.  It will 
 
 - `public Game(int size, int speed, bool isAI)`
 
-    - The constructor for the Game class.  Sets the size, initializes the game board, score to 2, and Play to true. Once the board is initialized, the snake should be moved up one (use `MoveSnake`).  The constructor should also set the `_delay` based off the given speed.  If the AI is enabled, set `_aiPath` to the result of the `FindAiPath` method from the GameBoard class and set the `_delay` to be a 10th of the given speed (this will speed up the AI, but give the human player reasonable reaction time).
+    - The constructor for the Game class.  Sets the size, initializes the game board, score to 2, and Play to true. Once the board is initialized, the snake should be moved up one (use `MoveSnake`).  The constructor should also set the `_delay` based off the given speed.  If the AI is enabled, set `_aiPath` to the result of the `FindAiPath` method from the GameBoard class.
 
 - `public async Task StartMoving(IProgress<SnakeStatus> progress, CancellationToken cancelToken)`
 
@@ -272,7 +272,7 @@ The user interface class is responsible for handling the event where a key is do
 
 - `public UserInterface()`
 
-    - This is the default constructor that simply calls the **NewGame** method below.
+    - This is the default constructor for the interface.  No changes are needed.
 
 - `private void NewGame(int size, int speed)`
 
@@ -313,6 +313,8 @@ The user interface class is responsible for handling the event where a key is do
     - Easy: size 10 and speed 250
     - Normal: size 20 and speed 150
     - Hard: size 30 and speed 100
+
+    **Note: If the AI is enabled, the speed should be the value in the NumericUpDown control.**
 
 - Finally, add the following event handler, hooking it as a **PreviewKeyDown** event handler for both the **Form** control AND the **CheckBox**.  This enables the use of the arrow keys, otherwise they will not trigger the **KeyDown** event.
 
