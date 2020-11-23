@@ -6,6 +6,8 @@ For this assignment, you will be creating a video game classic: Snake.  Snake wa
 
 The game you will construct has two modes. The first mode is the normal video game mode in which a user plays until the game ends. The second mode is an AI that plays without user input and always maximizes its score.
 
+<iframe width="560" height="560" src="https://www.youtube.com/embed/DFDG3TmLC0Y" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## The Perfect Snake AI
 
 AI for Snake is a solved problem.  There are many different approaches, some seem seemingly more random than others, but there exist solutions that produce an AI player that always plays until the snake fills the entire board.  One solution to this problem is generating a [Hamiltonian cycle](https://en.wikipedia.org/wiki/Hamiltonian_path).  A Hamiltonian cycle is a path that visits all nodes in a graph exactly once before returning to the beginning of path.  This path does not necessarily include all edges in the graph.  We can generate a Hamiltonian cycle for Snake if we split our game space out into an **n x n** grid, where each grid square represents a graph node that has edges to each adjacent node (vertically or horizontally, but not diagonally).  
