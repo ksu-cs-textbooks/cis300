@@ -7,7 +7,7 @@ chapter = true
 
 ## Enumerations
 
-An *enumeration* is a [value type](/~rhowell/DataStructures/redirect/reference-value) containing a set of named constants. An example of an enumeration is [**DialogResult**](http://msdn.microsoft.com/en-us/library/system.windows.forms.dialogresult\(v=vs.110\).aspx) (see ["**MessageBox**es"](/~rhowell/DataStructures/redirect/message-boxes) and ["File Dialogs"](/~rhowell/DataStructures/redirect/file-dialogs)). The **DialogResult** type contains the following members:
+An *enumeration* is a [value type](/appendix/syntax/reference-value) containing a set of named constants. An example of an enumeration is [**DialogResult**](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.dialogresult?view=netframework-4.7.2) (see ["**MessageBox**es"](/io/dialogs/message-boxes) and ["File Dialogs"](/io/dialogs/file-dialogs)). The **DialogResult** type contains the following members:
 
 - **DialogResult.Abort**
 - **DialogResult.Cancel**
@@ -18,7 +18,7 @@ An *enumeration* is a [value type](/~rhowell/DataStructures/redirect/reference-v
 - **DialogResult.Retry**
 - **DialogResult.Yes**
 
-Each of the above members has a different constant value. In many cases, we are not interested in the specific value of a given member. Instead, we are often only interested in whether two expressions of this type have the same value. For example, the following code fragment is given in the ["**MessageBox**es"](/~rhowell/DataStructures/redirect/message-boxes) section: 
+Each of the above members has a different constant value. In many cases, we are not interested in the specific value of a given member. Instead, we are often only interested in whether two expressions of this type have the same value. For example, the following code fragment is given in the ["**MessageBox**es"](/io/dialogs/message-boxes) section: 
 
 ```C#
 DialogResult result = MessageBox.Show("The file is not saved. Really quit?", "Confirm Quit", MessageBoxButtons.YesNo);
@@ -30,7 +30,7 @@ if (result == DialogResult.Yes)
 
 In the **if**-statement above, we are only interested in whether the user closed the **MessageBox** with the "Yes" button; i.e., we want to know whether the **Show** method returned the same value as **DialogResult.Yes**. For this purpose, we don't need to know anything about the value of **DialogResult.Yes** or any of the other **DialogResult** members.
 
-However, there are times when it is useful to know that the values in an enumeration are always integers. Using a [cast](/~rhowell/DataStructures/redirect/casts), we can assign a member of an enumeration to an **int** variable or otherwise use it as we would an **int**; for example, after the code fragment above, we can write:
+However, there are times when it is useful to know that the values in an enumeration are always integers. Using a [cast](/stacks-queues/stacks/#cast), we can assign a member of an enumeration to an **int** variable or otherwise use it as we would an **int**; for example, after the code fragment above, we can write:
 
 ```C#
 int i = (int)result;
@@ -108,9 +108,9 @@ were assigned 255 in the above definition).
 One reason we might want to define explicit values for members of an
 enumeration is if we want to use the members as flags. For example, one
 of the
-[**MessageBox.Show**](http://msdn.microsoft.com/en-us/library/ba3x8zfh\(v=vs.110\).aspx)
+[**MessageBox.Show**](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messagebox.show?view=netframework-4.7.2)
 methods takes as one of its parameters a
-[**MessageBoxOptions**](http://msdn.microsoft.com/en-us/library/system.windows.forms.messageboxoptions\(v=vs.110\).aspx),
+[**MessageBoxOptions**](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messageboxoptions?view=netframework-4.7.2),
 which is an enumeration containing the following members:
 
   - **MessageBoxOptions.DefaultDesktopOnly**
@@ -130,20 +130,27 @@ using a *logical AND* operator.
 For example, suppose the **MessageBoxOptions** enumeration is defined as
 follows:
 ```C#
-    public enum MessageBoxOptions
-    {
-        DefaultDesktopOnly = 1,
-        RightAlign = 2,
-        RtlReading = 4,
-        ServiceNotification = 8
-    }
+public enum MessageBoxOptions
+{
+    DefaultDesktopOnly = 1,
+    RightAlign = 2,
+    RtlReading = 4,
+    ServiceNotification = 8
+}
 ```
-(The definition in the .NET Framework uses different powers of 2, but
-the priciple is the same.) Now suppose we want to create a
+{{% notice note %}}
+
+The definition in the .NET Framework uses different powers of 2, but
+the priciple is the same.
+
+{{% /notice %}} 
+
+Now suppose we want to create a
 **MessageBox** that will be displayed on the default desktop with
 right-aligned text. We can combine these options using the expression
+
 ```C#
-    MessageBoxOptions.DefaultDesktopOnly | MessageBoxOptions.RightAlign
+MessageBoxOptions.DefaultDesktopOnly | MessageBoxOptions.RightAlign
 ```
 This expression combines corresponding bits of the two operands using a
 logical OR. Recall that the logical OR of two bits is 1 if at least one
@@ -152,18 +159,20 @@ example, the operands have a 1 in different bit locations. When we
 combine them using logical OR, both of these bit positions will contain
 a 1:
 
-    0000 0000 0000 0000 0000 0000 0000 0001
-    0000 0000 0000 0000 0000 0000 0000 0010
-    ---------------------------------------
-    0000 0000 0000 0000 0000 0000 0000 0011
+<pre>
+0000 0000 0000 0000 0000 0000 0000 0001
+0000 0000 0000 0000 0000 0000 0000 0010
+---------------------------------------
+0000 0000 0000 0000 0000 0000 0000 0011
+</pre>
 
 We can therefore specify both of these options to the **Show** method as
 folows:
 ```C#
-    MessageBox.Show("Hello\nworld!", "Hello", MessageBoxButtons.OK,
-        MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, 
-        MessageBoxOptions.DefaultDesktopOnly |
-        MessageBoxOptions.RightAlign);
+MessageBox.Show("Hello\nworld!", "Hello", MessageBoxButtons.OK,
+    MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, 
+    MessageBoxOptions.DefaultDesktopOnly |
+    MessageBoxOptions.RightAlign);
 ```
 The `\n` in the above example specifies the end of a line; hence,
 "Hello" and "world\!" will be displayed on separate lines, aligned on
@@ -180,7 +189,7 @@ member of the **MessageBoxOptions** enumeration (e.g.,
 **MessageBoxOptions.RightAlign**) has exactly one bit with a value of 1,
 an expression like
 ```C#
-    options & MessageBoxOptions.RightAlign
+options & MessageBoxOptions.RightAlign
 ```
 can have only two possible values:
 
@@ -191,14 +200,14 @@ can have only two possible values:
 
 Thus, the **Show** method can use code like:
 ```C#
-    if ((options & MessageBoxOptions.RightAlign) == MessageBoxOptions.RightAlign)
-    {
-        // Code to right-align the text
-    }
-    else
-    {
-        // Code to left-align the text
-    }
+if ((options & MessageBoxOptions.RightAlign) == MessageBoxOptions.RightAlign)
+{
+    // Code to right-align the text
+}
+else
+{
+    // Code to left-align the text
+}
 ```
 Defining enumerations to be used as flags in this way can be made easier
 by writing the powers of 2 in hexadecimal, or base 16. Each hex digit
@@ -210,31 +219,31 @@ number in hex in a C\# program, start with `0x`, then give the hex
 digits. For example, we can define the following enumeration to
 represent the positions a baseball player is capable of playing:
 ```C#
-    public enum Positions
-    {
-        Pitcher = 0x1,
-        Catcher = 0x2,
-        FirstBase = 0x4,
-        SecondBase = 0x8,
-        ThirdBase = 0x10,
-        Shortstop = 0x20,
-        LeftField = 0x40,
-        CenterField = 0x80,
-        RightField = 0x100
-    }
+public enum Positions
+{
+    Pitcher = 0x1,
+    Catcher = 0x2,
+    FirstBase = 0x4,
+    SecondBase = 0x8,
+    ThirdBase = 0x10,
+    Shortstop = 0x20,
+    LeftField = 0x40,
+    CenterField = 0x80,
+    RightField = 0x100
+}
 ```
 We can then encode that a player is capable of playing 1st base, left
 field, center field, or right field with the expression:
 ```C#
-    Positions.FirstBase | Positions.LeftField | Positions.CenterField | Positions.RightField
+Positions.FirstBase | Positions.LeftField | Positions.CenterField | Positions.RightField
 ```
 This expression would give a value having four bit positions containing
 1:
 
-    0000 0000 0000 0000 0000 0001 1100 0100
+<pre>
+0000 0000 0000 0000 0000 0001 1100 0100
+</pre>
 
 For more information on enumerations, see the section,
-[enum](http://msdn.microsoft.com/en-us/library/sbbt4032.aspx) in the
-*C\# Reference* and the section [Enumeration
-Types](http://msdn.microsoft.com/en-us/library/cc138362.aspx) in the
-*C\# Programming Guide*.
+[Enumeration Types](http://msdn.microsoft.com/en-us/library/sbbt4032.aspx) in the
+*C\# Reference*.

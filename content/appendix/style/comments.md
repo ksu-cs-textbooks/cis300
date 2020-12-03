@@ -16,8 +16,8 @@ At the top of each file in which you provide code, add a comment of the followin
 
 ```C#
 /* filename.cs
-* Author: Name 
-*/
+ * Author: Name 
+ */
 ```
 
 where `filename.cs` is the name of the file, and `Name` is the name of
@@ -31,8 +31,8 @@ by someone else, below the `Author` line, insert a line of the following form:
 
 ```C#
 /*
-* Modified by: Your Name
-*/
+ * Modified by: Your Name
+ */
 ```
 
 Prior to each class, [structure](/appendix/syntax/structs), [enumeration](/appendix/syntax/enumerations), field, [property](/appendix/syntax/properties), and method, place a comment documenting its use. This comment should be delimited by `///` on each line. When you type `///` immediately above a class, structure, enumeration, field, property, or method, the IDE will automatically insert additional text to form a comment stub such as:
