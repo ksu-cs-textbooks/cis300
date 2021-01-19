@@ -10,9 +10,6 @@ USA
 
 This text is supplemental material for CIS 300 at Kansas State University. Its purpose is to provide a written summary of the material covered, with additional explanation and code examples beyond what are presented in class. A background of programming in Java is assumed, and an appendix summarizing some of the syntax of C# is provided. Because CIS 300 is a lab class, no attempt is made here to provide examples for all of the topics covered; instead, students are expected to provide many of their own examples through the lab exercises (in most cases, solutions to these exercises will be provided to enrolled students following the lab). We assume the use of [Visual Studio® Enterprise 2019](http://www.visualstudio.com/downloads/download-visual-studio-vs).
 
-This text is currently undergoing a major reformatting.  All text
-content is complete, but some images may be missing and some links
-broken, particularly in later chapters. Please send to [Rod
+Please send to [Rod
 Howell](mailto:rhowell@ksu.edu) any corrections, including
-typographical errors, missing images and broken links, in sections
-assigned for reading material in CIS 300.
+typographical errors, missing images and broken links.
