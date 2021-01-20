@@ -197,3 +197,9 @@ catch (FileNotFoundException)
     MessageBox.Show("Could not find the file " + fileName);
 }
 ```
+
+{{% notice warning %}}
+
+Don't use exception handling (i.e., `try`-`catch`) to handle cases that are expected to occur under normal conditions. In such cases, use an `if`-statement instead. Not only is this better style, but it is also more efficient.
+
+{{% /notice %}}
