@@ -37,7 +37,7 @@ For each lab and homework assignment in CIS 300, you will be provided a URL that
 Before you can access GitHub, you will need a GitHub account. If you don't already have one, you can sign up for one at [github.com](https://github.com). At some point after you have completed the sign-up process, GitHub will send you an email asking you to verify the email address you provided during the sign-up process. After you have done this, you will be able to set up GitHub repositories.
 
 For each assignment in CIS 300, you will be given an invitation URL, such as:
-- <a href=https://classroom.github.com/a/qSZ6_g_W target="_blank"> `https://classroom.github.com/a/qSZ6_g_W`</a>
+- <a href="https://classroom.github.com/a/HPnOcv6d" target="_blank"> `https://classroom.github.com/a/HPnOcv6d`</a>
 
 Over the next few sections, we will be working through a simple example based on the above invitation link. If you wish to work through this example, click on the above link. You may be asked to sign in to GitHub, but once you are signed in, you will be shown a page asking you to accept the assignment. Clicking the "Accept this assignment" button will create a GitHub repository for you. You will be given a link that will take you to that repository. From that page you will be able to view all of the files in the repository.
 

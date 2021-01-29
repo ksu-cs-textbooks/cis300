@@ -15,7 +15,7 @@ While it is possible to create a solution containing a single project that is a 
 Suppose, for example, that we have a solution containing the program
 from the section, "[**StringBuilder**s](/strings/stringbuilders)"
 (this solution may be obtained by creating Git repository using [this
-URL](https://classroom.github.com/a/lQSbxCEo)). We wish to replace the
+URL](https://classroom.github.com/a/f6GfXQfc)). We wish to replace the
 implementation of **StringBuilder** from the .NET Framework with the
 class defined in "[Implementation of
 **StringBuilder**s](/strings/stringbuilder-impl)". Furthermore, we
@@ -36,7 +36,7 @@ same way as for a Windows Forms Application. Code for the
 **StringBuilder** class can now be copied either from the section,
 ["Implementation of **StringBuilder**s"](/strings/stringbuilder-impl)
 or the Git repository created using [this
-URL](https://classroom.github.com/a/C2R3XPjX). Although we don't need
+URL](https://classroom.github.com/a/u_vizKQg). Although we don't need
 them for this example, additional class files can be added to the
 project by going to the Solution Explorer, right-clicking on the
 project name (not the solution name), and selecting "Add -> Class...".

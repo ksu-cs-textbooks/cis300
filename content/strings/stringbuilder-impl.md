@@ -184,9 +184,9 @@ public override string ToString()
 }
 ```
 You can obtain a program containing the complete **class** definition by
-creating a Git repository (see "[Git
-Repositories](/appendix/vs/repos)") using
-[this URL](https://classroom.github.com/a/lQSbxCEo). This program is a
+creating a Git repository (see ["Git
+Repositories"](/appendix/vs/repos)) using
+[this URL](https://classroom.github.com/a/u_vizKQg). This program is a
 modification of the program used in [the previous
 section](/strings/stringbuilders) to compare the performance
 differences between using

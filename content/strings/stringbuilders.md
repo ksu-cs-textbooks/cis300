@@ -99,9 +99,9 @@ directly.
 
 A program that runs the above code and the code given in [the previous
 section](/strings/strings) on user-provided
-text files can be obtained by creating a Git repository (see "[Git
-Repositories](/appendix/vs/repos)") using
-[this URL](https://classroom.github.com/a/lQSbxCEo). A noticeable
+text files can be obtained by creating a Git repository (see ["Git
+Repositories"](/appendix/vs/repos)) using
+[this URL](https://classroom.github.com/a/f6GfXQfc). A noticeable
 performance difference can be seen on text files larger than 100K - for
 example, the full text of [Lewis Carroll's *Through the Looking
 Glass*](http://www.gutenberg.org/cache/epub/12/pg12.txt).
