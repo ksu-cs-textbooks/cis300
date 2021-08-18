@@ -17,11 +17,25 @@ Note that in the above figure, Project4 is contained in both Solution2 and Solut
 Whenever you open a solution in Studio 2019, the Solution Explorer
 (which you can always find on the "View" menu) will give you a view of
 the structure of your solution; for example, opening the solution in
-the repository given in the previous section will result in the
+the repository given in [the previous section](/appendix/vs/repos/) should result in the
 following being shown in the Solution Explorer:
+
+![A picture of a Solution Explorer should appear here](initial-solution-explorer.jpg)
+
+You will normally want to see the Solution view, which you can get by double clicking the line that ends in ".sln". This will give you the following view:
 
 ![A picture of a Solution Explorer should appear
 here](solution-explorer1.png)
+
+{{% notice warning %}}
+
+You ordinarily will not want to use Folder view, as this will cause files to be edited without any syntax or consistency checking. As a result, you can end up with a solution that is unusable. If your Solution Explorer ever looks like this:
+
+![A picture of a Solution Explorer in folder view should appear here](folder-view.png)
+
+(note the indication "Folder View" at the top and the absence of any boldface line), then it is in Folder view. To return to Solution view, click the icon indicated by the arrow in the above figure. This will return the Solution Explorer to its initial view, where you can double-click the solution to select Solution view.
+
+{{% /notice %}}
 
 If you click on the small triangle to the left of
 "Ksu.Cis300.HelloWorld", you will get a more-detailed view:
@@ -47,7 +61,7 @@ The project components having a suffix of ".cs" are C\# source code files. When 
   using System.Linq;
   using System.Threading.Tasks;
   using System.Windows.Forms;
-
+  
   namespace Ksu.Cis300.HelloWorld
   {
       static class Program
