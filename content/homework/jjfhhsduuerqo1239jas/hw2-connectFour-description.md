@@ -76,7 +76,7 @@ This is a **generic** class that represents a cell in a doubly linked list as de
 
 ### GamePiece Class
 
-The **GamePiece** class is a public class that represents a chip the player places in the board:
+The **GamePiece** class is a public class that represents a chip the player places in the board. Note that if it is not already there, you will need to add `using System.Drawing;` at the top of the file in order to utilize the `Color` data type.
 
 #### Properties
 
@@ -104,7 +104,7 @@ This enum should be placed directly inside the namespace and **not** inside of a
 
 ### Game Class
 
-The **Game** class is a public class to represent the game board.
+The **Game** class is a public class to represent the game board. Note that if it is not already there, you will need to add `using System.Drawing;` at the top of the file in order to utilize the `Color` data type.
 
 #### Fields
 
@@ -119,7 +119,7 @@ The **Game** class is a public class to represent the game board.
 
 #### Constructors
 
-- `public Game()`: This is the constructor for the Game class.  For each of the column labels, use the `Columns` property to create the column headers double linked list as outlined in "Representing the Board" section above.  Note that the columns will not have any thing placed in them, so the Data property will not need to be set here.  The unit tests will be expecting that the Column property to be referencing the last column (column G) once the constructor has finished.
+- `public Game()`: This is the constructor for the Game class.  For each of the column labels, use the `Columns` property to create the double linked list that represents the column headers as outlined in "Representing the Board" section above (this is the horizontal list at the top of the drawn image in that section).  Note that the columns will not have any thing placed in them, so the Data property will not need to be set here.  The unit tests will be expecting that the Column property to be referencing the last column (column G) once the constructor has finished.
 
 #### Methods
 
@@ -132,7 +132,7 @@ The **Game** class is a public class to represent the game board.
 
 ### UserInterface Class
 
-This class serves as the UI class.  Overall, it will populate the UI dynamically, as well as handle all of the in-game events. The ux fields referenced relate back to the UI components as described in the above "User Interface" section.
+This class serves as the UI class.  Overall, it will populate the UI dynamically, as well as handle all of the in-game events. The ux fields referenced relate back to the UI components as described in the above "User Interface" section. Note that if it is not already there, you will need to add `using System.Drawing;` at the top of the file in order to utilize the `Color` data type.
 
 #### Fields
 
