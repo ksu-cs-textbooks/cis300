@@ -76,7 +76,7 @@ This is a **generic** class that represents a cell in a doubly linked list as de
 
 ### GamePiece Class
 
-The **GamePiece** class is a public class that represents a chip the player places in the board. Note that if it is not already there, you will need to add `using System.Drawing;` at the top of the file in order to utilize the `Color` data type.
+The **GamePiece** class is a public class that represents a chip the player places in the board:
 
 #### Properties
 
@@ -104,7 +104,7 @@ This enum should be placed directly inside the namespace and **not** inside of a
 
 ### Game Class
 
-The **Game** class is a public class to represent the game board. Note that if it is not already there, you will need to add `using System.Drawing;` at the top of the file in order to utilize the `Color` data type.
+The **Game** class is a public class to represent the game board.
 
 #### Fields
 
@@ -119,12 +119,12 @@ The **Game** class is a public class to represent the game board. Note that if i
 
 #### Constructors
 
-- `public Game()`: This is the constructor for the Game class.  For each of the column labels, use the `Columns` property to create the double linked list that represents the column headers as outlined in "Representing the Board" section above (this is the horizontal list at the top of the drawn image in that section).  Note that the columns will not have any thing placed in them, so the Data property will not need to be set here.  The unit tests will be expecting that the Column property to be referencing the last column (column G) once the constructor has finished.
+- `public Game()`: This is the constructor for the Game class.  For each of the column labels, use the `Columns` property to create the column headers double linked list as outlined in "Representing the Board" section above.  Note that the columns will not have any thing placed in them, so the Data property will not need to be set here.  The unit tests will be expecting that the Column property to be referencing the last column (column G) once the constructor has finished.
 
 #### Methods
 
 - `public void ChangeColumn(string columnId)`:  This method sets `Columns` to the cell that corresponds to the given column ID.  This should be a cell in the column headers doubly linked list as shown in "Representing the Board" above. You will need to search, potentially in both directions, starting from the current column.
-- `public string PlaceNewPiece(Color color, string col, out int row)`: This method is used to put a new **GamePiece** into the double linked list.  Before creating and placing the piece, you will need to call the `ChangeColumn` method to make sure you are placing the piece in the right column.  If the **Data** in that column is `null` then you are placing the first piece into that double linked list, otherwise, it is not the first piece so you will have to link the new piece to the existing ones in that column.
+- `public string PlaceNewPiece(Color color, string col, out int row)`: This method is used to put a new **GamePiece** into the double linked list and should return the ID of the piece that is placed.  Before creating and placing the piece, you will need to call the `ChangeColumn` method to make sure you are placing the piece in the right column.  If the **Data** in that column is `null` then you are placing the first piece into that double linked list, otherwise, it is not the first piece so you will have to link the new piece to the existing ones in that column.
 - `public bool FindCell (char col, int row, out DoubleLinkedListCell<GamePiece> found)`: This method will return true/false if there is a  cell from `Column` that matches the given row and column.    This method should call `ChangeColumn` first in order to set `Column` to the correct column you should be searching in.  The cell found should be returned through the *out* parameter.  If no cell is found or the given row or column is outside the bounds of the game, the *out* parameter should be set to `null` and the method should return `false`.  
 - `private bool Check(int row, char col, int rowDirection, int colDirection, Color color)`: This is a helper method to the CheckWin method. This method checks whether there are four in a row of the given color in the given direction containing the given location.  The Check method should start looking at the cell at the given *row* and *col* location.  Traverse through the game board in the direction given by *rowDirection* and *colDirection* and compare color to each cell.  If it finds four of the given color in a row, then return **true**.  If there are not four of the given color in the given direction, reverse direction to check the other way.  If this doesn't yield four in a row, then you can safely return **false**. 
     - Note: The direction parameters help identify which axis you are checking for four in a row.  There are four different axes: horizontal (`rowDirection=1`, `colDirection=0`), vertical(`rowDirection=0`, `colDirection=1`), top-right to bottom-left diagonal(`rowDirection=-1`, `colDirection=-1`), and  top-left to bottom-right diagonal(`rowDirection=-1`, `colDirection=1`).  It is important to remember that a winning piece may be placed in the middle of a winning sequence of pieces, so you will need to check both directions on the axis to be sure there is or is not four in a row.
@@ -132,7 +132,7 @@ The **Game** class is a public class to represent the game board. Note that if i
 
 ### UserInterface Class
 
-This class serves as the UI class.  Overall, it will populate the UI dynamically, as well as handle all of the in-game events. The ux fields referenced relate back to the UI components as described in the above "User Interface" section. Note that if it is not already there, you will need to add `using System.Drawing;` at the top of the file in order to utilize the `Color` data type.
+This class serves as the UI class.  Overall, it will populate the UI dynamically, as well as handle all of the in-game events. The ux fields referenced relate back to the UI components as described in the above "User Interface" section.
 
 #### Fields
 
