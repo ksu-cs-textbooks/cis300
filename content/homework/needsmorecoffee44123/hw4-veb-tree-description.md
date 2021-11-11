@@ -51,7 +51,7 @@ Your program should be organized into the following classes.  Note that many thi
 - `public int Min`:  This property stores the smallest key in this tree.  This should have a public get accessor and a private set accessor using the default implementation.
 - `public int Max`:  This property stores the largest key in this tree.  This should have a public get accessor and a private set accessor using the default implementation.
 - `public VebTreeNode[] Clusters`:  This property stores subtrees that correspond to clusters of bits in the vEB Tree.  The number of subtrees is equal to the upper square root of the universe for a universe greater than 2.  For a universe of size 2, no clusters are stored.   This  property should have a public get accessor and a private set accessor using the default implementation.
-- `public VebTree Summary`:  This property stores an auxiliary tree that keeps track of which clusters contain elements.  This should have a public get accessor and a private set accessor using the default implementation.
+- `public VebTreeNode Summary`:  This property stores an auxiliary tree that keeps track of which clusters contain elements.  This should have a public get accessor and a private set accessor using the default implementation.
 - `public int Universe`:  This property keeps track of maximum number of bits/keys this tree can contain.  This should have a public get accessor and a private set accessor using the default implementation.
 
 #### Fields
