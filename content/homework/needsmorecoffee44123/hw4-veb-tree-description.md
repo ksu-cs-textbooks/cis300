@@ -128,7 +128,7 @@ The **MinPriorityQueue ** class is a public class that implements a minimum prio
 #### Methods
 
 - `public void Enqueue(int num)`:  This method inserts the given number into the queue.
-- `public void Dequeue(int num)`:  This method removes the element with the minimum priority (the smallest element) from the queue and returns it.  This method should throw an InvalidOperationException if there are no elements in the queue.
+- `public int Dequeue(int num)`:  This method removes the element with the minimum priority (the smallest element) from the queue and returns it.  This method should throw an InvalidOperationException if there are no elements in the queue.
 
 ### Testing
 
