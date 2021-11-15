@@ -51,7 +51,7 @@ Your program should be organized into the following classes.  Note that many thi
 - `public int Min`:  This property stores the smallest key in this tree.  This should have a public get accessor and a private set accessor using the default implementation.
 - `public int Max`:  This property stores the largest key in this tree.  This should have a public get accessor and a private set accessor using the default implementation.
 - `public VebTreeNode[] Clusters`:  This property stores subtrees that correspond to clusters of bits in the vEB Tree.  The number of subtrees is equal to the upper square root of the universe for a universe greater than 2.  For a universe of size 2, no clusters are stored.   This  property should have a public get accessor and a private set accessor using the default implementation.
-- `public VebTreeNode Summary`:  This property stores an auxiliary tree that keeps track of which clusters contain elements.  This should have a public get accessor and a private set accessor using the default implementation.
+- `public VebTree Summary`:  This property stores an auxiliary tree that keeps track of which clusters contain elements.  This should have a public get accessor and a private set accessor using the default implementation.
 - `public int Universe`:  This property keeps track of maximum number of bits/keys this tree can contain.  This should have a public get accessor and a private set accessor using the default implementation.
 
 #### Fields
@@ -77,12 +77,13 @@ Your program should be organized into the following classes.  Note that many thi
 
 - `public int Index(int subtree, int offset)`: returns the element based from the given subtree and offset values  as described in the earlier "van Embde Boas Trees" section.
 
-- `public void Insert(int key)`: This recursive method inserts the given key into the tree.  The key must be a positive integer that is strictly less than the `Universe`.  If it is not, an argument exception should be thrown.  
+- `public void Insert(int key)`: This recursive method inserts the given key into the tree.  The key must be a non-negative integer that is strictly less than the `Universe`.  If it is not, an argument exception should be thrown.  
 
     - If the value of `Min` has not been set, then this key is the first element to be inserted into this node, therefore we only need to set the min and max to the value of the key.
-    - Otherwise, if the key is strictly less than the minimum element, then the key is the new smallest element so swap it with `Min` (i.e. key becomes the new `Min` and `Min` becomes the key we are inserting).
-    - If we are on an internal tree node (the universe is larger than 2), then we need to calculate which cluster the key should be inserted into (utilize the `High` and `Low` functions above).  If this is the first key to be inserted into the corresponding cluster, then the index of that cluster should be inserted into the `Summary`.   Recursion should be used to insert into the summary and cluster.  Note that you are not strictly inserting the key into the cluster, but the position of the key within that cluster.
-    - Lastly, if the key being inserted is larger than the current maximum element, update `Max`.
+    - Otherwise, 
+      - if the key is strictly less than the minimum element, then the key is the new smallest element so swap it with `Min` (i.e. key becomes the new `Min` and `Min` becomes the key we are inserting).
+      - if we are on an internal tree node (the universe is larger than 2), then we need to calculate which cluster the key should be inserted into (utilize the `High` and `Low` functions above).  If this is the first key to be inserted into the corresponding cluster, then the index of that cluster should be inserted into the `Summary`.   Recursion should be used to insert into the summary and cluster.  Note that you are not strictly inserting the key into the cluster, but the position of the key within that cluster.
+      - Lastly, if the key being inserted is larger than the current maximum element, update `Max`.
 
 - `public bool Find(int key)`:  This recursive method searches the tree to determine whether or not the given key exists in this tree.  If the key is larger than or equal to the universe, then return false as this key is outside the possible universe of keys this tree can hold.  If the `Min` or `Max` are equal to the key, then this key exists in the tree, but if not, and the universe is of size 2, then the key does not exists in this tree.  Otherwise, we recursively call `Find` on the key's corresponding cluster, passing the position of the key in that cluster as a parameter (utilize the `High` and `Low` functions).
 
@@ -128,7 +129,7 @@ The **MinPriorityQueue ** class is a public class that implements a minimum prio
 #### Methods
 
 - `public void Enqueue(int num)`:  This method inserts the given number into the queue.
-- `public int Dequeue(int num)`:  This method removes the element with the minimum priority (the smallest element) from the queue and returns it.  This method should throw an InvalidOperationException if there are no elements in the queue.
+- `public void Dequeue(int num)`:  This method removes the element with the minimum priority (the smallest element) from the queue and returns it.  This method should throw an InvalidOperationException if there are no elements in the queue.
 
 ### Testing
 
