@@ -103,7 +103,7 @@ so far. Because **string**s are immutable, this concatenation must be
 done by copying all the characters in `result`, along with the
 concatenated character, to a new **string**. As a result, if we were to
 add up the total number of characters copied over the course of the
-entire loop, we would come up with 50,000,050,000 character copies done.
+entire loop, we would come up with 5,000,050,000 character copies done.
 This may take a while. In general, we say that this code runs in
 *O*(*n*<sup>2</sup>) time, where *n* is the length of `text`. This means
 that as *n* increases, the running time of the code is at worst
