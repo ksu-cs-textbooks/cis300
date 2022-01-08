@@ -8,7 +8,7 @@ pre = "<b>A2.2. </b>"
 
 ## Git Repositories
 
-In CIS 300, start code for each assignment will be distributed via a *Git repository*. Git is a *source control* system integrated into Visual Studio 2019. Source control systems are powerful mechanisms for teams of programmers and other collaborators to manage multiple copies of various source files and other documents that all collaborators may be modifying. While CIS 300 does not involve teamwork, source control provides a convenient mechanism for distribution of code and submission of assignment solutions. In addition, as we will discuss later, source control provides mechanisms for [accessing your code on multiple machines](/appendix/vs/multiple/) and for ["checkpointing" your code](/appendix/vs/checkpointing/).
+In CIS 300, start code for each assignment will be distributed via a *Git repository*. Git is a *source control* system integrated into Visual Studio 2022. Source control systems are powerful mechanisms for teams of programmers and other collaborators to manage multiple copies of various source files and other documents that all collaborators may be modifying. While CIS 300 does not involve teamwork, source control provides a convenient mechanism for distribution of code and submission of assignment solutions. In addition, as we will discuss later, source control provides mechanisms for [accessing your code on multiple machines](/appendix/vs/multiple/) and for ["checkpointing" your code](/appendix/vs/checkpointing/).
 
 At the heart of Git is the concept of a Git repository. A Git
 repository is essentially a folder on your local machine. As you make
@@ -42,7 +42,7 @@ For each assignment in CIS 300, you will be given an invitation URL, such as:
 Over the next few sections, we will be working through a simple example based on the above invitation link. If you wish to work through this example, click on the above link. You may be asked to sign in to GitHub, but once you are signed in, you will be shown a page asking you to accept the assignment. Clicking the "Accept this assignment" button will create a GitHub repository for you. You will be given a link that will take you to that repository. From that page you will be able to view all of the files in the repository.
 
 In order to be able to use this repository, you will need to clone it
-to your local machine. To do this, first open Visual Studio 2019, and
+to your local machine. To do this, first open Visual Studio 2022, and
 click on the "Clone a Repository" button on the right.  In your web
 browser, navigate to the GitHub repository that you wish to clone, and
 click on the "Code" button. This will display a URL - click on the
@@ -50,21 +50,7 @@ button to its right to copy this URL to your clipboard. Then go back
 to Visual Studio and paste this URL into the text
 box labeled, "Repository location". In the text box below that, fill
 in a new folder you want to use for this repository on your machine,
-then click the "Clone" button (if you are asked for your GitHub login
-credentials, supply them). This will copy the Git repository from
+then click the "Clone" button (if you are asked to sign in to GitHub, click the link to sign in through your web browser). This will copy the Git repository from
 GitHub into the folder you selected, and open the solution it contains.
-
-{{% notice tip %}}
-If you have a solution open in Visual Studio and want to clone another
-repository, you don't have to restart Visual Studio. First find the
-Team Explorer (if you don't see it, you can find it on the View menu),
-then click on the icon that looks like an electrical plug at the
-top. Scroll down to the section, "Local Git Repositories", and click
-the "Clone" link. Enter the addresses of the GitHub repository and the
-local repository into the two text boxes, and click the "Clone"
-button. This will add the repository to the list of local
-repositories. To open the solution it contains, double-click the name
-of the repository, then double-click the solution it contains.
-{{% /notice %}}
 
 The following sections give an overview of how to use Visual Studio to edit and debug an application, as well as how to use Git within Visual Studio to maintain the local Git repository and synchronize it with the GitHub repository. 

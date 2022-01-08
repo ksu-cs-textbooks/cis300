@@ -14,21 +14,24 @@ An NUnit test suite is a separate project contained within the same solution as 
 
 A test project will contain one or more classes having the attribute, **\[TestFixture\]**. These classes will contain the specific tests, each of which is a method with the attribute, **\[Test\]**. The name of the method will briefly describe the test, and a more detailed explanation will be provided in comments.
 
-To run all of the tests, go to the
-"Test" menu and select "Run All Tests". This will open the Test
-Explorer showing output resembling the following:
+To run the tests, first go to the
+"Test" menu and select "Test Explorer". This will open the Test
+Explorer, which should resemble the following:
 
 ![A picture of the Test Explorer should appear
 here.](test-explorer.png)
 
 {{% notice note %}}
-If the "Run All Tests" menu item is disabled, you may need to open the
-Test Explorer first by selecting "Test Explorer" from the "Test" menu.
+Depending on whether the test project has been successfully compiled, the tests in the large panel may or may not be shown.
 {{% /notice %}}
 
+Then click the "Run All Tests in View" button in the upper-left corner of the Test Explorer. The Test Explorer should then show the results of all the tests:
+
+![A picture of the Test Explorer should appear here.](test-explorer-results.png)
+
 {{% notice note %}}
-To see all of the output, you will need to open all of the elements by
-clicking on the small triangles to the left of each element.
+To see all of the output, you will need to open all of the elements either by
+clicking on the small triangles to the left of each element or by clicking the icon containing the '+' symbol.
 {{% /notice %}}
 
 The above output shows that there were two tests in the test suite. The names of the tests are simply the names of the methods comprising the tests. The output further shows that one of the tests, **LengthIsCorrect**, failed, whereas the other test, **FirstElementIs2**, passed.
@@ -45,7 +48,7 @@ cases, the exception will be displayed. A stack trace will also be
 displayed, so that you can tell what line of code threw the
 exception. Finally, you can run the debugger on the test itself by
 right-clicking on the test and selecting "Debug". This will allow you
-to debug your code using the techniques describe in the section, "[The
+to debug your code using the techniques describe in the section, ["The
 Debugger"](/appendix/vs/debugger).
 
 {{% notice tip %}}
@@ -61,7 +64,7 @@ far the most common of these exceptions is the
 testing, the test explorer will simply show some or all of the tests
 in gray letters. This indicates that these tests were not
 completed. To see why the tests were not completed, you can open the
-"Output" window and change the drop-down menu at the top to
+"Output" window from the "View" menu and change the drop-down menu at the top to
 "Tests". This will indicate what error stopped the tests; for example,
 the following indicates that a **StackOverflowException** has
 occurred:

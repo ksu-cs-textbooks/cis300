@@ -10,36 +10,17 @@ pre = "<b>A2.7. </b>"
 
 To submit a lab or homework assignment in CIS 300, you will need to do the following steps:
 
-1.  **Refresh** the changes tracked by Git. Do this by going to the
-    Team Explorer and clicking on the circular arrow icon (i.e., <img
-    style="padding: 0px; margin: 0px; display: inline; ! important"
-    src="git-refresh-icon.JPG" alt="A picture of an icon should appear
-    here.">) at the top. Note that this refresh is normally done
-    automatically; however, it occasionally is not. Doing this manual
-    refresh helps to ensure that all of your code gets uploaded. 
-
-2.  **Commit** your changes to your local Git repository. Do this by
-    clicking the icon that looks like a pencil at the bottom of the
-    Visual Studio window. The Team Explorer will now show a window
-    titled, "Changes". In the yellow box, type in a message to be
+1.  **Commit** your changes to your local Git repository. You will do this through the "Git Changes" tab in Visual Studio (if you don't see this tab, click the icon that looks like a pencil at the bottom of the
+    Visual Studio window). In the "Git Changes" tab, in the box that says "Enter a message \<Required\>", type in a message to be
     associated with the changes you are committing. Then click "Commit
-    All". 
-
+    All". A message at the top of the "Git Changes" tab will indicate whether the commit was successful.
+    
 3.  **Push** your committed changes to GitHub. Do this by clicking the
-    up-arrow icon at the bottom of the Visual Studio window. This will
-    cause the Team Explorer to open. Click the "Push" link to push the
-    repository to GitHub. Note that *only committed changes will be
-    pushed*. 
-
-4.  **Submit** the URL of the commit you want graded and (for lab
-    assignments) your completed or attempted code using the submission
+    up-arrow icon at the top of the "Git Changes" tab. Note that *only committed changes will be pushed*. A message at the top of the "Git Changes" tab will indicate whether the push was successful.
+    
+4.  **Submit** the URL of the commit you want graded using the submission
     form provided in the assignment instructions. This requires the
     following steps: 
-
-    -   To reveal the submission form, click the "Submit Assignment"
-        button at the top of the assignment instructions. This will
-        cause the submission form to appear at the bottom of the page. 
-
     -   Reload the GitHub repository for this assignment in your web
         browser, and click on the link showing the number of commits
         (this is in the top right corner of the list of files and
@@ -50,32 +31,23 @@ To submit a lab or homework assignment in CIS 300, you will need to do the follo
         commit. (It's a good idea to check to see that all of your
         source code files are present, in case something went wrong.)
         The URL of this page will end in a 40-digit hexadecimal number
-        giving a digital fingerprint of the commit. Copy this URL to
-        the submission form. 
-        <!--
-        -   For a lab assignment, enter your completed code (8 digits) or
-        your attempted code (4 digits) into the Comments box in the
-        assignment submission form. (You don't need to enter anything
-        in this box for a homework assignment.) If you need to provide
-        additional information with your submission, you can do so in
-        this box. 
-        -->
-
+        giving a digital fingerprint of the commit. Copy this *entire URL* to
+        the submission form at the bottom of the assignment. 
     -   To complete your submission, click the "Submit Assignment"
         button in  the assignment submission form. The time at which
         this button was clicked will be the official submission time
         for your assignment. 
 
 {{% notice warning %}}
-It is important to do all four of these steps in this order. In
+It is important to do all three of these steps in this order. In
 particular, if you make any changes between your last commit and the
 push, these changes won't be included in the submission. It is also important to include the correct URL. In particular, the digital fingerprint of the commit is the only reliable evidence we have that the commit was made prior to the form submission; hence, this digital fingerprint is required in order for you to receive any credit for the assignment. (For an example showing how unreliable time stamps on GitHub are, see [this repository](https://github.com/rhowell-cis300/Time-Stamps-Unreliable).)
 {{% /notice %}}
 
 {{% notice tip %}}
 You can double-check that all changes have been pushed by looking at
-the numbers next to the up-arrow and pencil icons at the bottom of the
-Visual Studio window. If all changes have been pushed, both numbers
+the numbers next to the up-down-arrows and pencil icons at the bottom of the
+Visual Studio window. If all changes have been pushed, all numbers
 should be 0.
 {{% /notice %}}
 
@@ -110,4 +82,4 @@ To use this alternative submission procedure, do the following steps:
 
 7.  Make sure all of your ".cs" files are present in the GitHub repository, and that they contain the code you want. (If you have removed or renamed any files, the original files may still be in the repository; however, they shouldn't be in the solution, and therefore shouldn't interfere with the program's execution.)
 
-8.  Submit the URL of this commit by following Step 4 above.
+8.  Submit the URL of this commit by following Step 3 of the assignment submission process given above.

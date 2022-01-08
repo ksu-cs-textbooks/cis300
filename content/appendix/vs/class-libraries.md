@@ -14,7 +14,7 @@ While it is possible to create a solution containing a single project that is a 
 
 Suppose, for example, that we have a solution containing the program
 from the section, "[**StringBuilder**s](/strings/stringbuilders)"
-(this solution may be obtained by creating Git repository using [this
+(this solution may be obtained by creating a Git repository using [this
 URL](https://classroom.github.com/a/f6GfXQfc)). We wish to replace the
 implementation of **StringBuilder** from the .NET Framework with the
 class defined in "[Implementation of
@@ -26,7 +26,9 @@ New Project...". From the resulting dialog, select "Class Library
 (.NET Framework)" and name it `Ksu.Cis300.StringBuilderLibrary`. For
 the location, use the folder containing the Git repository that
 includes the Visual Studio solution, so that this project will be
-included in the same Git repository. When the project is created, a
+included in the same Git repository. 
+
+When the project is created, a
 code window containing a template for a **public class** definition
 will appear. There will be no Design window, as you are not building a
 graphical application (although graphical controls can be built within

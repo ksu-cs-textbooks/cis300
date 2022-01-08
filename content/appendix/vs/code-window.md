@@ -17,11 +17,11 @@ We also indicated briefly how functionality could be added to the button by doub
 ![A picture of a window should appear here.](code-window.png)
 
 [Here is a ZIP archive containing the entire Visual Studio
-solution](PracticeAssignment.zip). After downloading and expanding it, you may need to navigate through a folder or two, but you should be able to find a file, **Ksu.Cis300.HelloWorld.sln** (the ".sln" suffix may not be visible, but it should show as type "Microsoft Visual Studio Solution"). If you double-click on this file, Visual Studio 2019 should open the solution.
+solution](PracticeAssignment.zip). After downloading and expanding it, you may need to navigate through a folder or two, but you should be able to find a file, **Ksu.Cis300.HelloWorld.sln** (the ".sln" suffix may not be visible, but it should show as type "Microsoft Visual Studio Solution"). If you double-click on this file, Visual Studio 2022 should open the solution (if you have an older version of Visual Studio on your machine, you may need to right-click the file and select "Open with -&gt; Microsoft Visual Studio 2022").
 
 Note in the **class** statement the keyword, **partial**. This indicates that not all of this class definition is in this file. The remainder of the definition is in the file, **UserInterface.Design.cs**. Recall that that file contains code for laying out the GUI and making the **uxGo\_Click** method an event handler for the "Go" button. One of the method definitions that it contains is the **InitializeComponent** method, which does the layout of the GUI and sets up the event handlers. Recall also that the **Main** method in **Program.cs** constructs an instance of this class, then displays it and begins processing events for it. Because the constructor (see the code window above) calls the **InitializeComponent** method, everything will be set up to run the application - all that is needed is code for the event handler. This code will then be executed every time the "Go" button is clicked.
 
-In order for this code to provide meaningful functionality, it will need to interact with the controls on the GUI. It needs to use their variable names to do this. The name of the **TextBox** in this code is `uxDisplay` (recall that you can find this variable name by [opening the design window](/appendix/vs/design-window), clicking on the control, and finding its "(Name)" property in its Properties window). Suppose we want to respond to the event by placing the text, "Hello world\!", in this **TextBox**. We therefore need to change its [**Text**](http://msdn.microsoft.com/en-us/library/a19tt6sk\(v=vs.110\).aspx) [property](/appendix/syntax/properties) to contain this string; i.e.:
+In order for this code to provide meaningful functionality, it will need to interact with the controls on the GUI. It needs to use their variable names to do this. The name of the **TextBox** in this code is `uxDisplay` (recall that you can find this variable name by [opening the design window](/appendix/vs/design-window), clicking on the control, and finding its "(Name)" property in its Properties window). Suppose we want to respond to the event by placing the text, "Hello world\!", in this **TextBox**. We therefore need to change its [**Text**](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.textbox.text?view=netframework-4.7.2) [property](/appendix/syntax/properties) to contain this string; i.e.:
 
 
 ```C#
@@ -81,7 +81,7 @@ The code window has several features that help with code writing. One of these f
 
 Another feature of the code window is parameter information that shows as a popup box when you are typing a parameter list in a method call; for example:
 
-![A picture of part of a code window should appear here.](parameter-info.png)
+<img src="parameter-info.png" alt="A picture of part of a code window should appear here." style="zoom:67%;" />
 
 This popup box gives the return type of the method, followed by the name of the method, followed by the parameter list, with the type of each parameter shown and the current parameter in bold face. When there are more than one method with the same name, this is indicated in the upper-left corner of the popup box ("1 of 21" in the figure above --- the method shown is the first of 21 methods having that name). You can use either the arrows in the popup box or the up and down arrows on the keyboard to scroll through these different methods.
 

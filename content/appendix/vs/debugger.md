@@ -10,8 +10,8 @@ pre = "<b>A2.6. </b>"
 
 In previous sections, we discussed how a Windows Forms Application can be built using Visual Studio. Having built an application, we need to be able to run and test it. To do this, we use the Visual Studio Debugger. When an application is loaded into Visual Studio, we can invoke the debugger by clicking the "Start" button near the top:
 
-![A picture of part of a Visual Studio Window should appear
-here.](start-button.jpg)
+<img src="start-button.jpg" alt="A picture of part of a Visual Studio Window should appear
+here." style="zoom:67%;" />
 
 {{% notice note %}}
 A Visual Studio bug has sometimes caused this button to be missing. If
@@ -31,7 +31,11 @@ One of the problems that can occur is that the compiler can fail to produce exec
 
 ![A picture of a dialog should appear here.](syntax-error-dialog.jpg)
 
-Usually the best thing to do at this point is to click the "No" button. This will stop the debugger and open an Error List window containing all of the syntax errors found. Double-clicking on a syntax error will highlight the error in the code window. Normally, fixing the error will cause the corresponding entry in the Error List to disappear; however, there are times when the entry won't disappear until the debugger is started again (i.e., by clicking the "Start" button).
+Usually the best thing to do at this point is to click the "No" button. This will stop the debugger. To see a list of the syntax errors, click the error list button at the bottom of the Visual Studio window:
+
+<img src="error-list.png" alt="The error list button." />
+
+Double-clicking on a syntax error will highlight the error in the code window. Normally, fixing the error will cause the corresponding entry in the Error List to disappear; however, there are times when the entry won't disappear until the debugger is started again (i.e., by clicking the "Start" button).
 
 Once the syntax errors are removed, the debugger will be able to generate executable code and run it. However, more problems can occur at this point. One common problem is that an exception is thrown. For example, the GitHub repository created by [this invitation link](https://classroom.github.com/a/RJakDFQZ) (see "[Git Repositories](/appendix/vs/repos)") contains a Visual Studio solution for a program to convert decimal numbers to base-16. Don't worry about understanding the code, although the numerous comments may help you to do that. Instead, note that an exception is thrown when we try to convert 256:
 
@@ -46,13 +50,11 @@ Actually fixing the error requires a little more understanding of the code. In t
 <a name="debugger-buttons"></a>
 To stop the debugger, notice the buttons that are available at the top of the Visual Studio window while the debugger is running:
 
-![A picture of a portion of a window should appear here.](debugger-buttons.jpg)
+![A picture of a portion of a window should appear here.](debugger-buttons.png)
 
 As you might guess, the "Stop" button stops the debugger. In what follows, we will discuss each of the other buttons indicated in the above figure, as well as other features of the debugger.
 
-<a name="breakpoints"></a>
-
-When debugging code, it is often useful to be able to pause execution at a particular place in order to be able to examine the values of variables as we did above. To accomplish this, we can set a *breakpoint* by clicking in the left margin of the code window at the line where we would like execution to pause. This places a large red dot in the margin where we clicked and colors the line red:
+<a name="breakpoints"></a>When debugging code, it is often useful to be able to pause execution at a particular place in order to be able to examine the values of variables as we did above. To accomplish this, we can set a *breakpoint* by clicking in the left margin of the code window at the line where we would like execution to pause. This places a large red dot in the margin where we clicked and colors the line red:
 
 ![A picture of part of a code window should appear here.](breakpoint.png)
 
