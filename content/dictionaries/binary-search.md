@@ -34,8 +34,8 @@ that the performance of this sequential search is in $O(n)$, where $n$
 is the number of keys in the dictionary. This means that as $n$ grows,
 the time required for the search is at worst proportional to $n$.
 
-We can improve this performance dramatically for arrays or array-like
-structures such as **ArrayList**s or **List\<T\>**s using a technique
+We can improve this performance dramatically for an arrays or array-like
+structure such as an **ArrayList** or a **List\<T\>** using a technique
 called *binary search* (there isn't much we can do to improve the
 performance of searching a linked list, as its structure restricts us to
 traversing it sequentially). The idea is similar to what humans do when
