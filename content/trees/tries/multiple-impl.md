@@ -408,7 +408,7 @@ implementations. Nonempty **string**s, however, are represented
 differently, and hence need to be handled differently. This is easy for
 the **TrieWithNoChildren** class, as this implementation can't store a
 nonempty **string**; hence, its **Contains** method should simply return
-**false** in this case. For **TrieWithOneChild**, we need to check to
+**false** when the given **string** is nonempty. For **TrieWithOneChild**, we need to check to
 see if the first character of the given **string** matches the child's
 label. If so, we can recursively look for the remainder of the
 **string** in that child. Otherwise, we should simply return **false**,

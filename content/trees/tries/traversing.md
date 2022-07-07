@@ -60,12 +60,9 @@ implementation of [the previous
 section](/trees/tries/multiple-impl). Because
 this implementation uses three different classes depending on how many
 children a node has, we will need to write three different versions of
-the preorder traversal, one for each class. The root is handled in the
-same way (as described above) for each of these methods, but recursively
-processing the children requires different code depending on how the
-children are represented:
+the preorder traversal, one for each class:
 
-  - For a **TrieWithNoChildren**, there is nothing to do in this step.
+  - For a **TrieWithNoChildren**, there is nothing to do (after processing the root).
   - Because a **TrieWithOneChild** has exactly one child, we need a
     single recursive call on this child. Before we make this call, we
     will need to append the child's label to the **StringBuilder**.
