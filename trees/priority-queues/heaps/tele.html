@@ -1,0 +1,2494 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.89.4" />
+    <meta name="description" content="K-State CIS 300: Data Structures">
+<meta name="author" content="Rod Howell and Josh Weese">
+
+    <link rel="icon" href="https://ksu-cs-textbooks.github.io/cis300/images/favicon.png" type="image/png">
+
+    <title>Heaps :: Data Structures in C#</title>
+
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1657824514" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1657824514" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/hybrid.css?1657824514" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1657824514" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1657824514" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1657824514" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/atom-one-dark-reasonable.css?1657824514" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1657824514" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/tabs.css?1657824514" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/hugo-theme.css?1657824514" rel="stylesheet">
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-purple.css?1657824514" rel="stylesheet">
+    
+    
+    
+    
+      <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-tele.css?1657824514" rel="stylesheet">
+    
+
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery-3.3.1.min.js?1657824514"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    
+
+     
+    
+<script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$','$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  
+    window.addEventListener('load', (event) => {
+        document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+      });
+  
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="" data-url="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/heaps/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://ksu-cs-textbooks.github.io/cis300/">
+  CIS 300 - Data Structures
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="https://ksu-cs-textbooks.github.io/cis300/js/lunr.min.js?1657824514"></script>
+<script type="text/javascript" src="https://ksu-cs-textbooks.github.io/cis300/js/auto-complete.js?1657824514"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/ksu-cs-textbooks.github.io\/cis300\/";
+    
+</script>
+<script type="text/javascript" src="https://ksu-cs-textbooks.github.io/cis300/js/search.js?1657824514"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='https://ksu-cs-textbooks.github.io/cis300/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/io/" title="Input/Output" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/io/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>1. </b>Input/Output
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/strings/" title="strings and StringBuilders" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/strings/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>2. </b>strings and StringBuilders
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/stacks-queues/" title="Stacks and Queues" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>3. </b>Stacks and Queues
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/linked-lists/" title="Linked Lists" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>4. </b>Linked Lists
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/dictionaries/" title="Dictionaries" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>5. </b>Dictionaries
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/trees/" title="Trees" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/trees/">
+        
+        
+          
+          <i class="fas fa-angle-down fa-fw"></i>
+          
+        
+          <b>6. </b>Trees
+          
+
+      </a>
+    
+      
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/trees/intro/" title="Introduction to Trees" class="dd-item ">
+        <a href="https://ksu-cs-textbooks.github.io/cis300/trees/intro/">
+        <i class="fas fa-angle-down fa-fw" style="color: transparent;"></i>
+        <b>6.1. </b>Introduction to Trees
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/trees/bst/" title="Binary Search Trees" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>6.2. </b>Binary Search Trees
+          
+
+      </a>
+    
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/trees/avl/" title="AVL Trees" class="dd-item ">
+        <a href="https://ksu-cs-textbooks.github.io/cis300/trees/avl/">
+        <i class="fas fa-angle-down fa-fw" style="color: transparent;"></i>
+        <b>6.3. </b>AVL Trees
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/trees/tries/" title="Tries" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>6.4. </b>Tries
+          
+
+      </a>
+    
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/trees/priority-queues/" title="Priority Queues" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/">
+        
+        
+          
+          <i class="fas fa-angle-down fa-fw"></i>
+          
+        
+          <b>6.5. </b>Priority Queues
+          
+
+      </a>
+    
+      
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/trees/priority-queues/heaps/" title="Heaps" class="dd-item active">
+        <a href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/heaps/">
+        <i class="fas fa-angle-down fa-fw" style="color: transparent;"></i>
+        <b>6.5.1. </b>Heaps
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/trees/priority-queues/leftist-heaps/" title="Leftist Heaps" class="dd-item ">
+        <a href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/leftist-heaps/">
+        <i class="fas fa-angle-down fa-fw" style="color: transparent;"></i>
+        <b>6.5.2. </b>Leftist Heaps
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/trees/priority-queues/huffman-trees/" title="Huffman Trees" class="dd-item ">
+        <a href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/huffman-trees/">
+        <i class="fas fa-angle-down fa-fw" style="color: transparent;"></i>
+        <b>6.5.3. </b>Huffman Trees
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+    
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/hashing/" title="Hash Tables" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/hashing/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>7. </b>Hash Tables
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/graphs/" title="Graphs" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/graphs/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>8. </b>Graphs
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/sorting/" title="Sorting" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>9. </b>Sorting
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/appendix/" title="Appendices" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>A. </b>Appendices
+          
+
+      </a>
+    
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p>Built using <a href="http://gohugo.io/">Hugo</a>
+  and <a href="https://github.com/russfeld/ksucs-hugo-theme">ksucs-hugo-theme</a>
+  with assistance from Josh Weese and Russ Feldhausen.</p>
+<br/>
+<p>Microsoft and Visual Studio are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries. </p>
+<br/>
+<p><strong><i>© Copyright 2014-2020, <a href="http://people.cs.ksu.edu/~rhowell/" target="_">Rod Howell</a>. All rights reserved.</i></strong></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                  <div id="top-github-link">
+                    <a id="themelink" class="github-link" title='Toggle Light or Dark Mode' href="#">
+                      <i class="fas fa-moon"></i>
+                      <span id="top-github-link-text"></span>
+                    </a>
+                    <a class="github-link" title='Teleprompter View' href="tele.html" target="blank">
+                      <i class="fas fa-tv"></i>
+                      <span id="top-github-link-text"></span>
+                    </a>
+                    <a class="github-link" title='Embed this page' href="embed.html" target="blank">
+                      <i class="fas fa-expand-arrows-alt"></i>
+                      <span id="top-github-link-text"></span>
+                    </a>
+                
+                  
+                  
+                  
+                    <a class="github-link" title='Edit this page' href="https://gitlab.cs.ksu.edu/cis300/cis300-book/tree/master/content/trees/priority-queues/heaps.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text"></span>
+                    </a>
+                  
+                
+                  </div>
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='https://ksu-cs-textbooks.github.io/cis300/'></a> > <a href='https://ksu-cs-textbooks.github.io/cis300/trees/'>Trees</a> > <a href='https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/'>Priority Queues</a> > Heaps
+          
+        
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+          <div id="chapter">
+        
+        <div id="body-inner">
+          
+
+        
+
+
+<h2 id="heaps">Heaps</h2>
+<p>A common structure for implementing a priority queue is known as a
+<em>heap</em>. A heap is a tree whose nodes contain elements with priorities
+that can be ordered. Furthermore, if the heap is nonempty, its root
+contains the maximum priority of any node in the heap, and each of its
+children is also a heap. Note that this implies that, in any subtree,
+the maximum priority is at the root. We define a <em>min-heap</em> similarly,
+except that the minimum priority is at the root. Below is an example of
+a min-heap with integer priorities (the data elements are not shown &mdash;
+only their priorities):</p>
+<p><img src="heap.jpg" alt="A min-heap."></p>
+<p>Note that this structure is different from a binary search tree, as
+there are elements in the left child that have larger priorities than
+the root. Although some ordering is imposed on the nodes (i.e.,
+priorities do not decrease as we go down a path from the root), the
+ordering is less rigid than for a binary search tree. As a result, there
+is less overhead involved in maintaining this ordering; hence, a
+min-heap tends to give better performance than an AVL tree, which could
+also be used to implement a min-priority queue. Although the definition
+of a heap does not require it, the implementations we will consider will
+be binary trees, as opposed to trees with an arbitrary number of
+children.</p>
+
+<div class="notices note" ><p>Note</p><p>The heap data structure is
+unrelated to the pool of memory from which instances of reference types
+are constructed &mdash; this also, unfortunately, is called a heap.</p>
+</div>
+
+<p>One advantage to using a min-heap to implement a min-priority queue is
+fairly obvious &mdash; an element with minimum priority is always at the root
+if the min-heap is nonempty. This makes it easy to find the minimum
+priority and an element with this priority. Let&rsquo;s consider how we might
+remove an element with minimum priority. Assuming the min-heap is
+nonempty, we need to remove the element at the root. Doing so leaves us
+with two min-heaps (either of which might be empty). To complete the
+removal, we need a way to merge two min-heaps into one. Note that if we
+can do this, we also have a way of adding a new element: we form a
+1-node min-heap from the new element and its priority, then merge this
+min-heap with the original one.</p>
+<p>Let us therefore consider the problem of merging two min-heaps into one.
+If either min-heap is empty, we can simply use the other one. Suppose
+that both are nonempty. Then the minimum priority of each is located at
+its root. The minimum priority overall must therefore be the smaller of
+these two priorities. Let <em>s</em> denote the heap whose root has the smaller
+priority and <em>b</em> denote the heap whose root has the larger priority.
+Then the root of <em>s</em> should be the root of the resulting min-heap.</p>
+<p>Now that we have determined the root of the result, let&rsquo;s consider what
+we have left. <em>s</em> has two children, both of which are min-heaps, and <em>b</em>
+is also a min-heap. We therefore have three min-heaps, but only two
+places to put them - the new left and right children of <em>s</em>. To reduce
+the number of min-heaps to two, we can merge two of them into one. This
+is simply a recursive call.</p>
+<p>We have therefore outlined a general strategy for merging two min-heaps.
+There two important details that we have omitted, though:</p>
+<ul>
+<li>Which two min-heaps do we merge in the recursive call?</li>
+<li>Which of the two resulting min-heaps do we make the new left child
+of the new root?</li>
+</ul>
+<p>There are various ways these questions can be answered. Some ways lead
+to efficient implementations, whereas others do not. For example, if we
+always merge the right child of <em>s</em> with <em>b</em> and make the result the new
+right child of the new root, it turns out that all of our min-heaps will have
+empty left children. As a result, in the worst case, the time needed to
+merge two min-heaps is proportional to the total number of elements in
+the two min-heaps. This is poor performance. In <a href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/leftist-heaps">the next
+section</a> we will
+consider a specific implementation that results in a worst-case running
+time proportional to the logarithm of the total number of nodes.</p>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div> 
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/" title="Priority Queues"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/leftist-heaps/" title="Leftist Heaps" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1657824514"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1657824514"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.jquery.min.js?1657824514"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.sticky.js?1657824514"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1657824514"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/highlight.pack.js?1657824514"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/modernizr.custom-3.6.0.js?1657824514"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/learn.js?1657824514"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/hugo-learn.js?1657824514"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/themer.js?1657824514"></script>
+
+    
+        
+            <script src="https://ksu-cs-textbooks.github.io/cis300/mermaid/mermaid.js?1657824514"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+
+    
+        <script src="https://ksu-cs-textbooks.github.io/cis300/js/tele-scroll.js?1657824514"></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis300/js/hideyt.js?1657824514"></script>
+    
+
+    
+    
+
+    
+<script 
+src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/quizdown.js">
+</script>
+<script 
+src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/extensions/quizdownKatex.js">
+</script>
+<script 
+src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/extensions/quizdownHighlight.js">
+</script>
+<script>quizdown.register(quizdownHighlight).register(quizdownKatex).init()</script> 
+  </body>
+</html>
+
+
+
+

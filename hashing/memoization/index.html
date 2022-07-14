@@ -1,0 +1,2424 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.89.4" />
+    <meta name="description" content="K-State CIS 300: Data Structures">
+<meta name="author" content="Rod Howell and Josh Weese">
+
+    <link rel="icon" href="https://ksu-cs-textbooks.github.io/cis300/images/favicon.png" type="image/png">
+
+    <title>Memoization :: Data Structures in C#</title>
+
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1657824513" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1657824513" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/hybrid.css?1657824513" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1657824513" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1657824513" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1657824513" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/atom-one-dark-reasonable.css?1657824513" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1657824513" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/tabs.css?1657824513" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/hugo-theme.css?1657824513" rel="stylesheet">
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-purple.css?1657824513" rel="stylesheet">
+    
+    
+    
+    
+
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery-3.3.1.min.js?1657824513"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    
+
+     
+    
+<script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$','$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  
+    window.addEventListener('load', (event) => {
+        document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+      });
+  
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="" data-url="https://ksu-cs-textbooks.github.io/cis300/hashing/memoization/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://ksu-cs-textbooks.github.io/cis300/">
+  CIS 300 - Data Structures
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="https://ksu-cs-textbooks.github.io/cis300/js/lunr.min.js?1657824513"></script>
+<script type="text/javascript" src="https://ksu-cs-textbooks.github.io/cis300/js/auto-complete.js?1657824513"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/ksu-cs-textbooks.github.io\/cis300\/";
+    
+</script>
+<script type="text/javascript" src="https://ksu-cs-textbooks.github.io/cis300/js/search.js?1657824513"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='https://ksu-cs-textbooks.github.io/cis300/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/io/" title="Input/Output" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/io/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>1. </b>Input/Output
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/strings/" title="strings and StringBuilders" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/strings/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>2. </b>strings and StringBuilders
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/stacks-queues/" title="Stacks and Queues" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>3. </b>Stacks and Queues
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/linked-lists/" title="Linked Lists" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>4. </b>Linked Lists
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/dictionaries/" title="Dictionaries" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>5. </b>Dictionaries
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/trees/" title="Trees" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/trees/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>6. </b>Trees
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/hashing/" title="Hash Tables" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/hashing/">
+        
+        
+          
+          <i class="fas fa-angle-down fa-fw"></i>
+          
+        
+          <b>7. </b>Hash Tables
+          
+
+      </a>
+    
+      
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/hashing/simple/" title="A Simple Hash Table Implementation" class="dd-item ">
+        <a href="https://ksu-cs-textbooks.github.io/cis300/hashing/simple/">
+        <i class="fas fa-angle-down fa-fw" style="color: transparent;"></i>
+        <b>7.1. </b>A Simple Hash Table Implementation
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/hashing/rehashing/" title="Rehashing" class="dd-item ">
+        <a href="https://ksu-cs-textbooks.github.io/cis300/hashing/rehashing/">
+        <i class="fas fa-angle-down fa-fw" style="color: transparent;"></i>
+        <b>7.2. </b>Rehashing
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/hashing/memoization/" title="Memoization" class="dd-item active">
+        <a href="https://ksu-cs-textbooks.github.io/cis300/hashing/memoization/">
+        <i class="fas fa-angle-down fa-fw" style="color: transparent;"></i>
+        <b>7.3. </b>Memoization
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/hashing/equality/" title="Equality in C#" class="dd-item ">
+        <a href="https://ksu-cs-textbooks.github.io/cis300/hashing/equality/">
+        <i class="fas fa-angle-down fa-fw" style="color: transparent;"></i>
+        <b>7.4. </b>Equality in C#
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/hashing/hash-functions/" title="Hash Codes" class="dd-item ">
+        <a href="https://ksu-cs-textbooks.github.io/cis300/hashing/hash-functions/">
+        <i class="fas fa-angle-down fa-fw" style="color: transparent;"></i>
+        <b>7.5. </b>Hash Codes
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/graphs/" title="Graphs" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/graphs/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>8. </b>Graphs
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/sorting/" title="Sorting" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>9. </b>Sorting
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/appendix/" title="Appendices" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>A. </b>Appendices
+          
+
+      </a>
+    
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p>Built using <a href="http://gohugo.io/">Hugo</a>
+  and <a href="https://github.com/russfeld/ksucs-hugo-theme">ksucs-hugo-theme</a>
+  with assistance from Josh Weese and Russ Feldhausen.</p>
+<br/>
+<p>Microsoft and Visual Studio are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries. </p>
+<br/>
+<p><strong><i>© Copyright 2014-2020, <a href="http://people.cs.ksu.edu/~rhowell/" target="_">Rod Howell</a>. All rights reserved.</i></strong></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                  <div id="top-github-link">
+                    <a id="themelink" class="github-link" title='Toggle Light or Dark Mode' href="#">
+                      <i class="fas fa-moon"></i>
+                      <span id="top-github-link-text"></span>
+                    </a>
+                    <a class="github-link" title='Teleprompter View' href="tele.html" target="blank">
+                      <i class="fas fa-tv"></i>
+                      <span id="top-github-link-text"></span>
+                    </a>
+                    <a class="github-link" title='Embed this page' href="embed.html" target="blank">
+                      <i class="fas fa-expand-arrows-alt"></i>
+                      <span id="top-github-link-text"></span>
+                    </a>
+                
+                  
+                  
+                  
+                    <a class="github-link" title='Edit this page' href="https://gitlab.cs.ksu.edu/cis300/cis300-book/tree/master/content/hashing/memoization.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text"></span>
+                    </a>
+                  
+                
+                  </div>
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='https://ksu-cs-textbooks.github.io/cis300/'></a> > <a href='https://ksu-cs-textbooks.github.io/cis300/hashing/'>Hash Tables</a> > Memoization
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+          <div id="chapter">
+        
+        <div id="body-inner">
+          
+
+        
+
+
+<h2 id="memoization">Memoization</h2>
+<p>We we will now present an example of a common technique involving
+dictionaries. Consider the following variation of the 2-player game,
+Nim. The board consists of a number of stones arranged into several
+piles. Associated with each nonempty pile is a <em>limit</em>, which is a
+positive integer no greater than the number of stones on that pile (the
+limit for an empty pile is always 0). Players alternate taking stones
+according to the following rules:</p>
+<ul>
+<li>On each turn, the player must take some number of stones from a
+single pile.</li>
+<li>The number of stones taken must be at least 1, but no more than the
+current limit for that pile.</li>
+<li>Taking <em>n</em> stones from a pile changes the limit for that pile to
+2<em>n</em>. (If this limit is more than the number of stones remaining on
+that pile, the new limit is the number of stones remaining.)</li>
+</ul>
+<p>The player taking the last stone wins. Note that by the rules of the
+game, there will always be a winner &mdash; a draw is impossible.</p>
+<p>For example, suppose we start a game with three piles, each containing
+10 stones with a limit of 9. We will denote this board position as
+(10/9; 10/9; 10/9). If Player 1 removes two stones from Pile 1, the
+resulting position is (8/4; 10/9; 10/9). Note that because 2 stones were
+removed from Pile 1, its new limit is 2 x 2 = 4. If Player 2
+now removes 4 stones from Pile 2, the resulting position is (8/4; 6/6;
+10/9). Note that because 4 stones were removed, the new limit for Pile 2
+would become 2 x 4 = 8; however, because only 6 stones
+remain, the new limit is 6. Play then continues until a player wins by
+taking all remaining stones.</p>
+<p>Let us define a <em>winning play</em> as any play giving a position from which
+there is no winning play. Thus, if we make a winning play, there are two
+possible cases. In the first case, there are no winning plays from the
+resulting position because there are no legal plays. This means we just
+took the last stone and won the game. In the other case, there are legal
+plays, but none is a winning play. Our opponent must make one of these
+plays. Because it isn&rsquo;t a winning play, there must be a winning play
+from the resulting position. Therefore, an optimal strategy is to make a
+winning play whenever one exists. Because of the way a winning play is
+defined, if a winning play exists, following this strategy will enable
+us to continue to make winning plays until we eventually win the game.
+If no winning play exists, we just have to make some play and hope that
+our opponent blunders by making a play that is not a winning play. If
+that happens, a winning play will be available, and our strategy leads
+us to a win.</p>
+<p>Consider the following examples:</p>
+<ul>
+<li><strong>Example 1</strong>: (1/1; 0/0). Taking one stone from Pile 1 is a winning
+play because there is no legal play from the resulting position;
+hence, there can be no winning play from it.</li>
+<li><strong>Example 2</strong>: (1/1; 1/1). There is no winning play from this
+position because both legal plays give essentially the position from
+Example 1, from which there is a winning play.</li>
+<li><strong>Example 3</strong>: (2/2; 1/1). Taking one stone from Pile 1 is a winning
+play because it leads to (1/1; 1/1), from which there is no winning
+play, as shown in Example 2.</li>
+</ul>
+<p>Given enough stones and piles, finding a winning play or determining
+that there is none is challenging. In order to develop a search
+algorithm somewhat similar to the one described in <a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/word-games">“Tries in Word Games”</a>, we can define the
+following tree:</p>
+<ul>
+<li>The root is the current board position.</li>
+<li>The children of a node are all the positions that can be reached by
+making legal plays.</li>
+</ul>
+<p>Thus, the tree defined by (2/2; 2/2) is as follows:</p>
+<p><img src="nim-tree.jpg" alt="The tree defined by a Nim position."></p>
+<p>The winning plays have been marked with a &lsquo;W&rsquo; in the above tree. As in
+<a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/word-games">“Tries in Word Games”</a>,
+this tree is not a data structure, but simply a mental guide to building
+a search algorithm. Specifically, we can find a winning play (or
+determine whether there is none) by traversing the tree in the following
+way:</p>
+<ul>
+<li>For each legal play <em>p</em> from the given position:
+<ul>
+<li>Form the board position that results from making this play (this
+position is a child).</li>
+<li>Recursively find a winning play from this new position.</li>
+<li>If there was no winning play returned (i.e., it was <strong>null</strong>),
+return <em>p</em>, as it&rsquo;s a winning play.</li>
+</ul>
+</li>
+<li>If we get to this point we&rsquo;ve examined all the plays, and none of
+them is winning; hence we return <strong>null</strong>.</li>
+</ul>
+<p>Note that the above algorithm may not examine all the nodes in the tree
+because once it finds a winning play, it returns it immediately without
+needing to examine any more children. For example, when processing the
+children of the node (1/1; 2/2), it finds that from its second child,
+(1/1; 1/1), there is no winning play; hence, it immediately returns the
+play that removes one stone from Pile 2 without even looking at the
+third child, (1/1; 0/0). Even so, because the size of the tree grows
+exponentially as the number of stones increases, once the number of
+stones reaches about 25, the time needed for the algorithm becomes
+unacceptable.</p>
+<p>Notice that several of the nodes in the tree occur multiple times. For
+example, (1/1; 1/1) occurs twice and (1/1; 0/0) occurs five times. For a
+large tree, the number of duplicate nodes in the tree increases
+dramatically. The only thing that determines the presence of a winning
+move is the board position; hence, once we have a winning move (or know
+that none exists) for a given position, it will be the same wherever
+this position may occur in the tree. We can therefore save a great deal
+of time by saving the winning move for any position we examine. Then
+whenever we need to examine a position, we first check to see if we&rsquo;ve
+already processed it &mdash; if so, we just use the result we obtained earlier
+rather than processing it again. Because processing it again may involve
+searching a large tree, the savings in time might be huge.</p>
+<p>The technique outlined in the above paragraph is known as <em>memoization</em>
+(not to be confused with <em>memorization</em>) &mdash; we make a <em>memo</em> of the
+results we compute so that we can look them up again later if we need
+them. A dictionary whose keys are board positions and whose values are
+plays is an ideal data structure for augmenting the above search with
+memoization. As the first step, before we look at any plays from the
+given board position, we look up the position in the dictionary. If we
+find it, we immediately return the play associated with it. Otherwise,
+we continue the algorithm as before, but prior to returning a play (even
+if it is <strong>null</strong>), we save that play in the dictionary with the given
+board position as its key. This memoization will allow us to analyze
+board positions containing many more stones.</p>
+<p>To implement the above strategy, we need to define two types - one to
+represent a board position and one to represent a play. The type
+representing a play needs to be a class so that we can use <strong>null</strong> to
+indicate that there is no winning play. The type representing a board
+position can be either a class or a structure. Because the dictionary
+needs to be able to compare instances of this type for equality in order
+be able to find keys, its definition will need to re-define the equality
+comparisons. Consequently, we need to redefine the hash code computation
+to be consistent with the equality comparison. The next two sections
+will examine these topics.</p>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div> 
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="https://ksu-cs-textbooks.github.io/cis300/hashing/rehashing/" title="Rehashing"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="https://ksu-cs-textbooks.github.io/cis300/hashing/equality/" title="Equality in C#" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1657824513"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1657824513"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.jquery.min.js?1657824513"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.sticky.js?1657824513"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1657824513"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/highlight.pack.js?1657824513"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/modernizr.custom-3.6.0.js?1657824513"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/learn.js?1657824513"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/hugo-learn.js?1657824513"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/themer.js?1657824513"></script>
+
+    
+        
+            <script src="https://ksu-cs-textbooks.github.io/cis300/mermaid/mermaid.js?1657824513"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+
+    
+
+    
+    
+
+    
+<script 
+src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/quizdown.js">
+</script>
+<script 
+src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/extensions/quizdownKatex.js">
+</script>
+<script 
+src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/extensions/quizdownHighlight.js">
+</script>
+<script>quizdown.register(quizdownHighlight).register(quizdownKatex).init()</script> 
+  </body>
+</html>
+

@@ -1,0 +1,780 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Structures in C#</title>
+    <link>https://ksu-cs-textbooks.github.io/cis300/</link>
+    <description>Recent content on Data Structures in C#</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 27 Sep 2020 10:53:05 -0500</lastBuildDate><atom:link href="https://ksu-cs-textbooks.github.io/cis300/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reference Types and Value Types</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/reference-value/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/reference-value/</guid>
+      <description>Reference Types and Value Types Data types in C# come in two distinct flavors: value types and reference types. In order to understand the distinction, it helps to consider how space is allocated in C#. Whenever a method is called, the space needed to execute that method is allocated from a data structure known as the call stack. The space for a method includes its local variables, including its parameters (except for out or ref parameters).</description>
+    </item>
+    
+    <item>
+      <title>Enumerations</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/enumerations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/enumerations/</guid>
+      <description>Enumerations An enumeration is a value type containing a set of named constants. An example of an enumeration is DialogResult (see &amp;quot;MessageBoxes&amp;quot; and “File Dialogs”). The DialogResult type contains the following members:
+ DialogResult.Abort DialogResult.Cancel DialogResult.Ignore DialogResult.No DialogResult.None DialogResult.OK DialogResult.Retry DialogResult.Yes  Each of the above members has a different constant value. In many cases, we are not interested in the specific value of a given member. Instead, we are often only interested in whether two expressions of this type have the same value.</description>
+    </item>
+    
+    <item>
+      <title>A Simple Hash Table Implementation</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/hashing/simple/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/hashing/simple/</guid>
+      <description>A Simple Hash Table Implementation In this section, we will look at a simple hash table implementation using a fixed-length table. In subsequent sections, we will consider how to adjust the table size for better performance, as well as how to implement enumerators for iterating through the keys and/or values.
+At the core of our implementation is the computation of the hash function. Recall that the implementation of the hash function computation is divided into two parts.</description>
+    </item>
+    
+    <item>
+      <title>Binary Trees</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/trees/bst/binary-trees/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/trees/bst/binary-trees/</guid>
+      <description>Binary Trees A binary tree is a tree in which each node has exactly two children, either of which may be empty. For example, the following is a binary tree:
+Note that some of the nodes above are drawn with only one child or no children at all. In these cases, one or both children are empty. Note that we always draw one child to the left and one child to the right.</description>
+    </item>
+    
+    <item>
+      <title>General Formatting</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/style/formatting/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/style/formatting/</guid>
+      <description>General Formatting All programming will be done using Microsoft Visual Studio® 2019. This integrated development environment (IDE) does a certain amount of formatting automatically. All code formatting should be consistent with what the IDE does automatically, including how it formats code stubs that it inserts. Specifically, all braces should occur on lines by themselves, vertically aligned so that matching braces occupy the same column. (An exception to this rule can be made when the braces enclose a single statement or a part of a statement, and they occur on the same line; however, if it is possible to omit the braces, as in an if statement, this is preferable to placing them on the same line.</description>
+    </item>
+    
+    <item>
+      <title>Heaps</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/heaps/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/heaps/</guid>
+      <description>Heaps A common structure for implementing a priority queue is known as a heap. A heap is a tree whose nodes contain elements with priorities that can be ordered. Furthermore, if the heap is nonempty, its root contains the maximum priority of any node in the heap, and each of its children is also a heap. Note that this implies that, in any subtree, the maximum priority is at the root.</description>
+    </item>
+    
+    <item>
+      <title>Installing Visual Studio</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/vs/installing-vs/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/vs/installing-vs/</guid>
+      <description>Installing Visual Studio Visual Studio Enterprise 2019 is available on the machines we use for CIS 300 labs. Students can also connect to these machines remotely &amp;mdash; see the CS Department Support Wiki for details. However, if you are enrolled in CIS 300, you have free access to this software to install on your own PC for your own personal use. This section provides instructions for obtaining this software from the Azure Portal and installing it on your PC.</description>
+    </item>
+    
+    <item>
+      <title>Introduction to Graphs</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/graphs/intro/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/graphs/intro/</guid>
+      <description>Introduction to Graphs There are two kinds of graphs: undirected and directed. An undirected graph consists of:
+ a finite set of nodes; and a finite set of edges, which are 2-element subsets of the nodes.  The fact that edges are 2-element sets means that the nodes that comprise an edge must be distinct. Furthermore, within a set, there is no notion of a &amp;ldquo;first&amp;rdquo; element or a &amp;ldquo;second&amp;rdquo; element &amp;mdash; there are just two elements.</description>
+    </item>
+    
+    <item>
+      <title>Introduction to Linked Lists</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/linked-lists/intro/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/linked-lists/intro/</guid>
+      <description>Introduction to Linked Lists To build a linked list, we first need to define a simple class, which we will call LinkedListCell&amp;lt;T&amp;gt;. Instances of this class will be the individual building blocks that we will chain together to form linked lists. T will be the type of the data item we will store in each cell - i.e., the type of the data items that we will store in the linked list.</description>
+    </item>
+    
+    <item>
+      <title>Introduction to Stacks</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/stacks-queues/stacks/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/stacks-queues/stacks/</guid>
+      <description>Introduction to Stacks A stack provides last-in-first-out (LIFO) access to data items. We usually think of a stack as arranging data items vertically, like a stack of trays in a cafeteria. Access is normally provided only at the top of the stack; hence, if we want to add an item, we push it onto the top, and if we want to remove an item, we pop it from the top. Because we only access the top of the stack, the item that we pop is always the remaining item that we had pushed the most recently.</description>
+    </item>
+    
+    <item>
+      <title>Introduction to Trees</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/trees/intro/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/trees/intro/</guid>
+      <description>Introduction to Trees A tree is a mathematical structure having a hierarchical nature. A tree may be empty, or it may consist of:
+ a root, and zero or more children, each of which is also a tree.  Consider, for example, a folder (or directory) in a Windows file system. This folder and all its sub-folders form a tree &amp;mdash; the root of the tree is the folder itself, and its children are the folders directly contained within it.</description>
+    </item>
+    
+    <item>
+      <title>Introduction to Tries</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro/</guid>
+      <description>Introduction to Tries A trie is a nonempty tree storing a set of words in the following way:
+ Each child of a node is labeled with a character. Each node contains a boolean indicating whether the labels in the path from the root to that node form a word in the set.  The word, &amp;ldquo;trie&amp;rdquo;, is taken from the middle of the word, &amp;ldquo;retrieval&amp;rdquo;, but to avoid confusion, it is pronounced like &amp;ldquo;try&amp;rdquo; instead of like &amp;ldquo;tree&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>Select Sorts</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/sorting/select/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/sorting/select/</guid>
+      <description>Select Sorts A select sort operates by repeatedly selecting the smallest data element of an unsorted portion of the array and moving it to the end of a sorted portion. Thus, at each step, the data items will be arranged into two parts:
+ A sorted part; and An unsorted part in which each element is at least as large as all elements in the sorted part.  The following figure illustrates this arrangement.</description>
+    </item>
+    
+    <item>
+      <title>strings</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/strings/strings/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/strings/strings/</guid>
+      <description>strings Instances of the string class are immutable sequences of characters. Because string is a class, it is a reference type. Because instances are immutable, once they are constructed, their contents cannot change. Note that this does not mean that string variables cannot change - we can assign a string variable s the value &amp;ldquo;abc&amp;rdquo; and later assign it the value &amp;ldquo;xyz&amp;rdquo;. These assignments simply assign to s references to different instances of the string class.</description>
+    </item>
+    
+    <item>
+      <title>The Dictionary&lt;TKey, TValue&gt; Class</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/dictionaries/dictionary-tkey-tvalue/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/dictionaries/dictionary-tkey-tvalue/</guid>
+      <description>The Dictionary&amp;lt;TKey, TValue&amp;gt; Class A common problem in computing is that of keyed storage and retrieval. Specifically, we have a number of data items, each having a unique key. This key may be any type, and is used to find the associated data item; i.e., given a key we need to find the data item associated with that key. A data structure that provides this kind of access is called a dictionary.</description>
+    </item>
+    
+    <item>
+      <title>Access Modifiers</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/style/access-modifiers/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/style/access-modifiers/</guid>
+      <description>Access Modifiers C# provides 4 access modifiers for classes, fields, etc.: public, internal, protected, and private. For simplicity, however, we will not allow the use of the internal or protected access modifiers.
+When classes, fields, etc., are declared, C# does not require that an access modifier be used. If the access modifier is omitted, a default accessibility level will be used. However, the default depends on where it is being declared.</description>
+    </item>
+    
+    <item>
+      <title>Git Repositories</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/vs/repos/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/vs/repos/</guid>
+      <description>Git Repositories In CIS 300, start code for each assignment will be distributed via a Git repository. Git is a source control system integrated into Visual Studio 2019. Source control systems are powerful mechanisms for teams of programmers and other collaborators to manage multiple copies of various source files and other documents that all collaborators may be modifying. While CIS 300 does not involve teamwork, source control provides a convenient mechanism for distribution of code and submission of assignment solutions.</description>
+    </item>
+    
+    <item>
+      <title>Implementing a Dictionary with a Linked List</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/dictionaries/linked-list-impl/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/dictionaries/linked-list-impl/</guid>
+      <description>Implementing a Dictionary with a Linked List One way of implementing a dictionary is to store all the keys and values in a linked list. We want to do this in such a way that a key is stored together with its associated value. To facilitate this, the .NET Framework provides a structure KeyValuePair&amp;lt;TKey, TValue&amp;gt; in the System.Collections.Generic namespace. This structure is used simply for storing a key and a value.</description>
+    </item>
+    
+    <item>
+      <title>Implementing Stacks and Queues with Linked Lists</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/linked-lists/stacks-queues/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/linked-lists/stacks-queues/</guid>
+      <description>Implementing Stacks and Queues with Linked Lists Because linked lists store data elements in linear sequences, they can be used to give alternative implementations of stacks and queues. One advantage to using linked lists is that we don&amp;rsquo;t have to worry about filling up something like an array - we can just keep allocating cells as long as we need to (unless we run out of memory).
+Implementing a stack using a linked list is particularly easy because all accesses to a stack are at the top.</description>
+    </item>
+    
+    <item>
+      <title>Insert Sorts</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/sorting/insert/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/sorting/insert/</guid>
+      <description>Insert Sorts An insert sort operates by repeatedly inserting an element into a sorted portion of the array. Thus, as for select sorts, at each step the data items will be arranged into a sorted part, followed by an unsorted part; however, for insert sorts, there is no restriction on how elements in the unsorted part compare to elements in the sorted part. The following figure illustrates this arrangement.
+Initially, the sorted part will contain the first element, as a single element is always sorted.</description>
+    </item>
+    
+    <item>
+      <title>Introduction to Binary Search Trees</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/trees/bst/intro/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/trees/bst/intro/</guid>
+      <description>Introduction to Binary Search Trees In this section and the next, we will present a binary search tree as a data structure that can be used to implement a dictionary whose key type can be ordered. This implementation will provide efficient lookups, insertions, and deletions in most cases; however, there will be cases in which the performance is bad. In a later section, we will show how to extend this good performance to all cases.</description>
+    </item>
+    
+    <item>
+      <title>Leftist Heaps</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/leftist-heaps/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/leftist-heaps/</guid>
+      <description>Leftist Heaps One efficient way to complete the merge algorithm outlined in the previous section revolves around the concept of the null path length of a tree, which is defined to be $0$ for empty trees, or one more than the minimum of the null path lengths of the children for nonempty trees. Another way to understand this concept is that it gives the minimum number of steps needed to get from the root to an empty subtree.</description>
+    </item>
+    
+    <item>
+      <title>Multiple Implementations of Children</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/trees/tries/multiple-impl/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/trees/tries/multiple-impl/</guid>
+      <description>Multiple Implementations of Children The trie implementation given in the previous section offers very efficient lookups - a word of length $m$ can be looked up in $O(m)$ time, no matter how many words are in the trie. However, it wastes a large amount of space. In a typical trie, a majority of the nodes will have no more than one child; however, each node contains a 26-element array to store its children.</description>
+    </item>
+    
+    <item>
+      <title>Rehashing</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/hashing/rehashing/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/hashing/rehashing/</guid>
+      <description>Rehashing In this section, we will show how to improve the performance of a hash table by adjusting the size of the array. In order to see how the array size impacts the performance, let&amp;rsquo;s suppose we are using an array with $m$ locations, and that we are storing $n$ keys in the hash table. In what follows, we will analyze the number of keys we will need to examine while searching for a particular key, k.</description>
+    </item>
+    
+    <item>
+      <title>Shortest Paths</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/graphs/dijkstra/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/graphs/dijkstra/</guid>
+      <description>Shortest Paths In this section, we will consider a common graph problem &amp;mdash; that of finding a shortest path from a node u to a node v in a directed graph. We will assume that each edge contains as its data a nonnegative number. This number may represent a physical distance or some other cost, but for simplicity, we will refer to this value as the length of the edge. We can then define the length of a path to be the sum of the lengths of all the edges along that path.</description>
+    </item>
+    
+    <item>
+      <title>StringBuilders</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilders/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilders/</guid>
+      <description>StringBuilders In the previous section, we saw that building large strings from small pieces by concatenating them together is very inefficient. This inefficiency is due to the fact that strings are immutable. In order to overcome the inefficiency of concatenation, we need an alternative data structure that we can modify. The StringBuilder class fills this need.
+Like strings, StringBuilders implement sequences of characters, but the contents of StringBuilders can be changed.</description>
+    </item>
+    
+    <item>
+      <title>MessageBoxes</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/io/dialogs/message-boxes/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/io/dialogs/message-boxes/</guid>
+      <description>Message Boxes The MessageBox class (found in the System.Windows.Forms namespace) provides a simple mechanism for displaying a message and obtaining one of a few simple responses from the user. The most common usage of a MessageBox is to call one of its various Show methods, each of which is static. The simplest Show method takes a string as its only parameter. The method then displays this string in a modal dialog containing an &amp;ldquo;OK&amp;rdquo; button.</description>
+    </item>
+    
+    <item>
+      <title>Simple Text File I/O</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/io/simple-text-file/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/io/simple-text-file/</guid>
+      <description>Simple Text File I/O Many of the I/O tools provided by the .NET Framework are found in the System.IO namespace. Note, however, that Visual Studio® does not automatically provide a using directive for this namespace; hence, if you want to avoid the need to add the prefix System.IO. to each type that you use from this namespace, you should add a using directive for it. One class that provides several general-purpose static methods related to file I/O is the File class.</description>
+    </item>
+    
+    <item>
+      <title>AVL Trees</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/trees/avl/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/trees/avl/</guid>
+      <description>AVL Trees Up to this point, we haven&amp;rsquo;t addressed the performance of binary search trees. In considering this performance, let&amp;rsquo;s assume that the time needed to compare two keys is bounded by some fixed constant. The main reason we do this is that this cost doesn&amp;rsquo;t depend on the number of keys in the tree; however, it may depend on the sizes of the keys, as, for example, if keys are strings.</description>
+    </item>
+    
+    <item>
+      <title>Exception Handling</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/io/exceptions/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/io/exceptions/</guid>
+      <description>Exception Handling As was mentioned in the previous section, various problems can occur when doing file I/O. Some of these problems include:
+ Trying to write to a read-only file. Trying to access a file that is locked by another process. Accessing an external drive that becomes disconnected.  Note that some of these issues are beyond the programmer&amp;rsquo;s control, while others may be tedious for the programmer to check. When one of these problems prevents an I/O operation from completing successfully, an exception is thrown.</description>
+    </item>
+    
+    <item>
+      <title>File Dialogs</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/io/dialogs/file-dialogs/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/io/dialogs/file-dialogs/</guid>
+      <description>File Dialogs The System.Windows.Forms namespace contains two other classes that implement modal dialogs for obtaining file names from the user. These classes are OpenFileDialog, which is designed to obtain the name of a file to read, and SaveFileDialog, which is designed to obtain the name of a file to write. Because we often need to obtain the name of a file prior to doing file I/O, it is appropriate to consider these classes now.</description>
+    </item>
+    
+    <item>
+      <title>Finding Prime Numbers</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/linked-lists/sieve-eratosthenes/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/linked-lists/sieve-eratosthenes/</guid>
+      <description>Finding Prime Numbers An integer greater than $1$ is said to be prime if it is not divisible by any positive integers other than itself and $1$. Thus, $2$, $3$, and $5$ are prime, but not $1$ (it is not greater than $1$) or $4$ (it is divisible by $2$). Because every integer is divisible by itself and $1$, we will call any other positive factors nontrivial factors; thus, a prime number is an integer greater than $1$ that has no nontrivial factors.</description>
+    </item>
+    
+    <item>
+      <title>Implementation of StringBuilders</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilder-impl/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilder-impl/</guid>
+      <description>Implementation of StringBuilders In this section, we will examine some of the implementation details of the StringBuilder class. There are several reasons for doing this. First, by examining these details, we can begin to understand why a StringBuilder is so much more efficient than a string when it comes to building long strings a character at a time. Second, by studying implementations of data structures, we can learn techniques that might be useful to us if we need to build our own data structures.</description>
+    </item>
+    
+    <item>
+      <title>Implementing a Dictionary with an Array-Like Structure</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/dictionaries/binary-search/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/dictionaries/binary-search/</guid>
+      <description>Implementing a Dictionary with an Array-Like Structure In the previous section, we discussed how linked lists could be used to implement a dictionary. An alternative to a linked list would be an array. A couple of other alternatives are the non-generic System.Collections.ArrayList or the generic System.Collections.Generic.List&amp;lt;T&amp;gt;. These classes are similar to singly-dimensioned arrays, but they can grow as needed. In this respect, they are like a StringBuilder, but instead of storing chars, an ArrayList stores objects and a List&amp;lt;T&amp;gt; stores instances of the type parameter T.</description>
+    </item>
+    
+    <item>
+      <title>Implementing Undo and Redo for a TextBox</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/stacks-queues/undo/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/stacks-queues/undo/</guid>
+      <description>Implementing Undo and Redo for a TextBox A TextBox has a rather crude Undo/Redo feature. By right-clicking on a TextBox, a popup menu containing an Undo entry is presented. This Undo will undo only one action, which may include several edits. An immediate subsequent Undo will undo the Undo - in essence, a Redo. The same behavior can be achieved using Ctrl+Z. A more powerful Undo/Redo feature would allow an arbitrary sequence of edits to be undone, with the option of redoing any of these Undo operations.</description>
+    </item>
+    
+    <item>
+      <title>Memoization</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/hashing/memoization/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/hashing/memoization/</guid>
+      <description>Memoization We we will now present an example of a common technique involving dictionaries. Consider the following variation of the 2-player game, Nim. The board consists of a number of stones arranged into several piles. Associated with each nonempty pile is a limit, which is a positive integer no greater than the number of stones on that pile (the limit for an empty pile is always 0). Players alternate taking stones according to the following rules:</description>
+    </item>
+    
+    <item>
+      <title>Merge Sorts</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/sorting/merge/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/sorting/merge/</guid>
+      <description>Merge Sorts A merge sort works by merging together two sorted parts of an array. Thus, we should focus our attention on an array that is partitioned into two sorted parts, as shown in the following figure.
+The different ways of implementing a merge sort depend both on how the above arrangement is achieved, and also on how the two parts are merged together. The simplest implementation is an algorithm simply called merge sort.</description>
+    </item>
+    
+    <item>
+      <title>Naming Conventions</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/style/naming/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/style/naming/</guid>
+      <description>Naming Conventions The naming conventions described below use the following terminology:
+ Pascal case: Multiple words are joined without spaces, using capital letters at the beginning of each word. If acronyms of 3 or more letters are included, only the first letter of the acronym is capitalized. For example, AverageAge, ContextBoundObject, RgbCode. Camel case: The same as pascal case, except the first letter is not capitalized. For example, averageAge, contextBoundObject, rgbCode.</description>
+    </item>
+    
+    <item>
+      <title>Parenthesis Matching</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/stacks-queues/paren/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/stacks-queues/paren/</guid>
+      <description>Parenthesis Matching The problem of finding matching parentheses must be solved in many computing applications. For example, consider a C# compiler. Matching parentheses (( and )), brackets ([ and ]), and braces ({ and }) delimit various parts of the source code. In order for these parts to be interpreted correctly, the compiler must be able to determine how these different kinds of parentheses match up with each other. Another example is processing structured data stored in XML format.</description>
+    </item>
+    
+    <item>
+      <title>Removing from a Binary Search Tree</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/trees/bst/remove/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/trees/bst/remove/</guid>
+      <description>Removing from a Binary Search Tree Before we can discuss how to remove an element from a binary search tree, we must first define exactly how we want the method to behave. Consider first the case in which the tree is built from immutable nodes. We are given a key and a binary search tree, and we want to return the result of removing the element having the given key. However, we need to decide what we will do if there is no element having the given key.</description>
+    </item>
+    
+    <item>
+      <title>Structures</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/structs/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/structs/</guid>
+      <description>Structures A structure is similar to a class, except that it is a value type, whereas a class is a reference type. A structure definition looks a lot like a class definition; for example, the following defines a structure for storing information associated with a name:
+/// &amp;lt;summary&amp;gt; /// A structure containing a name, frequency, and rank. /// &amp;lt;/summary&amp;gt; public struct NameInformation { /// &amp;lt;summary&amp;gt;  /// The name.  /// &amp;lt;/summary&amp;gt;  private string _name; /// &amp;lt;summary&amp;gt;  /// The frequency.</description>
+    </item>
+    
+    <item>
+      <title>Traversing a Trie</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/trees/tries/traversing/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/trees/tries/traversing/</guid>
+      <description>Traversing a Trie As with other kinds of trees, there are occasions where we need to process all the elements stored in a trie in order. Here, the elements are strings, which are not stored explicitly in the trie, but implicitly based on the labels of various nodes. Thus, an individual node does not contain a string; however, if its bool has a value of true, then the path to that node describes a string stored in the trie.</description>
+    </item>
+    
+    <item>
+      <title>Unweighted Shortest Paths</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/graphs/breadth-first/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/graphs/breadth-first/</guid>
+      <description>Unweighted Shortest Paths In some shortest path problems, all edges have the same length. For example, we may be trying to find the shortest path out of a maze. Each cell in the maze is a node, and an edge connects two nodes if we can move between them in a single step. In this problem, we simply want to minimize the number of edges in a path to an exit.</description>
+    </item>
+    
+    <item>
+      <title>Visual Studio Solutions</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/vs/solutions/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/vs/solutions/</guid>
+      <description>Visual Studio Solutions All code developed within Visual Studio 2019 must belong to one or more solutions. When you are using Visual Studio to develop a program, you will be working with a single solution. A solution will contain one or more projects. Each of these projects may belong to more than one solution. Each project typically contains several files, including source code files. Each file will typically belong to only one project.</description>
+    </item>
+    
+    <item>
+      <title>Advanced Text File I/O</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/io/advanced-text-file/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/io/advanced-text-file/</guid>
+      <description>Advanced Text File I/O Though the File.ReadAllText and File.WriteAllText methods provide simple mechanisms for reading and writing text files, they are not always the best choices. For one reason, files can be very large &amp;mdash; too large to fit into memory, or possibly even larger than the maximum length of a string in C# (2,147,483,647 characters). Even when it is possible to store the entire contents of a file as a string, it may not be desirable, as the high memory usage may degrade the overall performance of the system.</description>
+    </item>
+    
+    <item>
+      <title>Comments</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/style/comments/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/style/comments/</guid>
+      <description>Comments Within each source code file that you edit, you will need to provide certain comments as documentation. Visual Studio® automatically generates some source code files that you will not need to modify &amp;mdash; you don&amp;rsquo;t need to add comments to those files.
+At the top of each file in which you provide code, add a comment of the following form:
+/* filename.cs * Author: Name */ where filename.cs is the name of the file, and Name is the name of the primary author.</description>
+    </item>
+    
+    <item>
+      <title>Custom Dialogs</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/io/dialogs/custom/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/io/dialogs/custom/</guid>
+      <description>Custom Dialogs While the dialogs provided by the .NET Framework are useful in a variety of applications, there are times when we need to be able to design our own special-purpose dialog to obtain specific information from the user. This section outlines how Visual Studio® can be used to build such a dialog.
+Let&amp;rsquo;s begin by considering a simple example. Suppose we are building an application that needs a dialog to obtain from the user the following pieces of information:</description>
+    </item>
+    
+    <item>
+      <title>Equality in C#</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/hashing/equality/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/hashing/equality/</guid>
+      <description>Equality in C# Continuing our discussion from the previous section, we want to define a type that represents a Nim board. Furthermore, we need to be able to compare instances of this type for equality. Before we can address how this can be done, we first need to take a careful look at how C# handles equality. In what follows, we will discuss how C# handles the == operator, the non-static Equals method, and two static methods for determining equality.</description>
+    </item>
+    
+    <item>
+      <title>Implementing a Graph</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/graphs/impl/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/graphs/impl/</guid>
+      <description>Implementing a Graph Traditionally, there are two main techniques for implementing a graph. Each of these techniques has advantages and disadvantages, depending on the characteristics of the graph. In this section, we describe the implementation of the DirectedGraph&amp;lt;TNode, TEdgeData&amp;gt; class from Ksu.Cis300.Graphs.dll. This implementation borrows from both traditional techniques to obtain an implementation that provides good performance for any graph. In what follows, we will first describe the two traditional techniques and discuss the strengths and weaknesses of each.</description>
+    </item>
+    
+    <item>
+      <title>Implementing a Stack</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/stacks-queues/stack-impl/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/stacks-queues/stack-impl/</guid>
+      <description>Implementing a Stack This section gives an overview of perhaps the most common way to implement a stack. For example, the implementations of both System.Collections.Stack and System.Collections.Generic.Stack&amp;lt;T&amp;gt; use this technique. This implementation uses an array to store the elements of the stack, and is quite similar to the StringBuilder implementation we described in the last chapter. We have discussed two kinds of stacks in this chapter - stacks of objects and generic stacks.</description>
+    </item>
+    
+    <item>
+      <title>Inorder Traversal</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/trees/bst/inorder/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/trees/bst/inorder/</guid>
+      <description>Inorder Traversal When we store keys and values in an ordered dictionary, we typically want to be able to process the keys in increasing order. The &amp;ldquo;processing&amp;rdquo; that we do may be any of a number of things - for example, writing the keys and values to a file or adding them to the end of a list. Whatever processing we want to do, we want to do it increasing order of keys.</description>
+    </item>
+    
+    <item>
+      <title>Split Sorts</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/sorting/split/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/sorting/split/</guid>
+      <description>Split Sorts A split sort operates by splitting the array into three parts:
+ An unsorted part containing elements less than or equal to some pivot element p. A nonempty part containing elements equal to p. An unsorted part containing elements greater than or equal to p.  This arrangement is illustrated in the following figure.
+To complete the sort, it then sorts the two unsorted parts. Note that because the second part is nonempty, each of the two unsorted parts is smaller than the original data set; hence, the algorithm will always make progress.</description>
+    </item>
+    
+    <item>
+      <title>The decimal Type</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/decimals/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/decimals/</guid>
+      <description>The decimal Type A decimal is a structure representing a floating-point decimal number. The main difference between a decimal and a float or a double is that a decimal can store any value that can be written using no more than 28 decimal digits, a decimal point, and optionally a &amp;lsquo;-&amp;rsquo;, without rounding. For example, the value 0.1 cannot be stored exactly in either a float or a double because its binary representation is infinite (0.</description>
+    </item>
+    
+    <item>
+      <title>The Design Window</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/vs/design-window/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/vs/design-window/</guid>
+      <description>The Design Window The Design Window in Visual Studio is a window used to build graphical components. To open the Design Window for a graphical component, double-click on the component&amp;rsquo;s file name in the Solution Explorer. If you are working through the example from the previous two sections, double-click &amp;ldquo;UserInterface.cs&amp;rdquo; to open its Design Window. It will initially contain a blank form:
+You can resize the form by dragging the handles on the right and bottom edges.</description>
+    </item>
+    
+    <item>
+      <title>Tries in Word Games</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/trees/tries/word-games/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/trees/tries/word-games/</guid>
+      <description>Tries in Word Games One application of tries is for implementing word games such as Boggle® or Scrabble®. This section discusses how a trie can be used to reduce dramatically the amount of time spent searching for words in such games. We will focus specifically on Boggle, but the same principles apply to other word games as well.
+A Boggle game consists of either 16 or 25 dice with letters on their faces, along with a tray containing a 4 x 4 or 5 x 5 grid for holding these dice.</description>
+    </item>
+    
+    <item>
+      <title>Constant Fields</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/const/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/const/</guid>
+      <description>Constant Fields Field declarations may contain the keyword const to indicate that these fields will always contain the same values. Such declarations are useful for defining a value that is to be used throughout a class or structure definition, or throughout an entire program. For example, we might define:
+public class ConstantsExample { public const int VerticalPadding = 12; private const string _humanPlayer = &amp;#34;X&amp;#34;; . . . } Subsequently throughout the above class, the identifier _humanPlayer will refer to the string, &amp;ldquo;X&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>Hash Codes</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/hashing/hash-functions/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/hashing/hash-functions/</guid>
+      <description>Hash Codes Whenever equality is redefined for a type, the hash code computation for that type needs to be redefined in a consistent way. This is done by overriding that type&amp;rsquo;s GetHashCode method. In order for hashing to be implemented correctly and efficiently, this method should satisfy the following goals:
+ Equal keys must have the same hash code. This is necessary in order for the Dictionary&amp;lt;TKey, TValue&amp;gt; class to be able to find a given key that it has stored.</description>
+    </item>
+    
+    <item>
+      <title>Huffman Trees</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/huffman-trees/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/huffman-trees/</guid>
+      <description>Huffman Trees In this section, we&amp;rsquo;ll consider an application of min-priority queues to the general problem of compressing files. Consider, for example, a plain text file like this copy of the U. S. Constitution. This file is encoded using UTF-8, the most common encoding for plain text files. The characters most commonly appearing in English-language text files are each encoded as one byte (i.e., eight bits) using this scheme. For example, in the text file referenced above, every character is encoded as a single byte (the first three bytes of the file are an optional code indicating that it is encoded in UTF-8 format).</description>
+    </item>
+    
+    <item>
+      <title>Hybrid Sorting Algorithms</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/sorting/hybrid/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/sorting/hybrid/</guid>
+      <description>Hybrid Sorting Algorithms The best versions of quick sort are competitive with both heap sort and merge sort on the vast majority of inputs. However, quick sort has a very bad worst case &amp;mdash; $O(n^2)$ running time and $O(n)$ stack usage. By comparison, both heap sort and merge sort have $O(n \lg n)$ worst-case running time, together with a stack usage of $O(1)$ for heap sort or $O(\lg n)$ for merge sort.</description>
+    </item>
+    
+    <item>
+      <title>Introduction to Queues</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queues/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queues/</guid>
+      <description>Introduction to Queues Stacks provide LIFO access to data, but sometimes we need first-in-first-out, or FIFO, access. Consider, for example, the computation of capital gains from stock sales. Typically an investor will buy shares of a stock commodity at various times and for different prices. When shares are sold, the amount of money received doesn&amp;rsquo;t depend on which shares of a given commodity are sold, as each share is worth the same amount at that time.</description>
+    </item>
+    
+    <item>
+      <title>Other File I/O</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/io/other-file-io/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/io/other-file-io/</guid>
+      <description>Other File I/O Not all files are plain text files &amp;mdash; often we need to read and/or write binary data. The .NET Framework provides the FileStream class for this purpose.
+The FileStream class provides constructors for creating a FileStream for reading, writing, or both. These constructors can be used to specify how the file is to be opened or created, the type of access to be allowed (i.e., reading/writing), and how the file is to be locked.</description>
+    </item>
+    
+    <item>
+      <title>Prohibited Features</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/style/prohibited/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/style/prohibited/</guid>
+      <description>Prohibited Features The following features of C# should not be used on assignments or quizzes unless otherwise stated:
+ The goto statement: It has been over 45 years since Dijkstra published “Go To Statement Considered Harmful” (Communications of the ACM, vol. 11 (1968), pp. 147-148). I am amazed that languages continue to include this statement. The unsafe keyword: The name pretty much says it all. The var keyword: There are very few contexts in which this is needed, and these contexts won&amp;rsquo;t occur in this class.</description>
+    </item>
+    
+    <item>
+      <title>The Code Window</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/vs/code-window/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/vs/code-window/</guid>
+      <description>The Code Window In the previous section, we designed the following GUI:
+We also indicated briefly how functionality could be added to the button by double-clicking it in the design window to create an event handler. Creating this event handler also opens the code window to display it. The code window for this file can also be displayed by pressing F7 in the design window or by right-clicking the source code file name in the Solution Explorer and selecting &amp;ldquo;View Code&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>Implementing a Queue</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queue-impl/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queue-impl/</guid>
+      <description>Implementing a Queue We will approach the implementation of a queue much like we did the implementation of a stack - we will use part of an array to store the elements, and create a larger array as needed. However, efficiently implementing a stack is easier because we only need to access one end of a stack, but we need to access both ends of a queue. Suppose, for example, that we were to use the initial part of the array, as we did for a stack; i.</description>
+    </item>
+    
+    <item>
+      <title>Properties</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/properties/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/properties/</guid>
+      <description>Properties A property is used syntactically like a field of a class or structure, but provides greater flexibility in implementation. For example, the string class contains a public property called Length. This property is accessed in code much as if it were a public int field; i.e., if s is a string variable, we can access its Length property with the expression s.Length, which evaluates to an int. If Length were a public int field, we would access it in just the same way.</description>
+    </item>
+    
+    <item>
+      <title>Sorting Strings</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/sorting/strings/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/sorting/strings/</guid>
+      <description>Sorting Strings We conclude our discussion of sorting with a look at a sorting algorithm designed specifically for sorting multi-keyed data. In such data there is a primary key, a secondary key, and so on. We want to sort the data so that element a precedes element b if:
+ the primary key of a is less than the primary key of b; or their primary keys are equal, but the secondary key of a is less than the secondary key of b; etc.</description>
+    </item>
+    
+    <item>
+      <title>The Debugger</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/vs/debugger/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/vs/debugger/</guid>
+      <description>The Debugger In previous sections, we discussed how a Windows Forms Application can be built using Visual Studio. Having built an application, we need to be able to run and test it. To do this, we use the Visual Studio Debugger. When an application is loaded into Visual Studio, we can invoke the debugger by clicking the &amp;ldquo;Start&amp;rdquo; button near the top:
+Note
+A Visual Studio bug has sometimes caused this button to be missing.</description>
+    </item>
+    
+    <item>
+      <title>Indexers</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/indexers/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/indexers/</guid>
+      <description>Indexers Recall that the System.Collections.Generic.Dictionary&amp;lt;TKey, TValue&amp;gt; class (see “The Dictionary&amp;lt;TKey, TValue&amp;gt; Class”) allows keys to be used as indices for the purpose of adding new keys and values, changing the value associated with a key, and retrieving the value associated with a key in the table. In this section, we will discuss how to implement this functionality.
+An indexer in C# is defined using the following syntax:
+public TValue this[TKey k] { get { // Code to retrieve the value with key k  } set { // Code to associate the given value with key k  } } Note the resemblance of the above code to the definition of a property.</description>
+    </item>
+    
+    <item>
+      <title>Submitting Assignments</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/vs/submitting/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/vs/submitting/</guid>
+      <description>Submitting Assignments To submit a lab or homework assignment in CIS 300, you will need to do the following steps:
+  Refresh the changes tracked by Git. Do this by going to the Team Explorer and clicking on the circular arrow icon (i.e., ) at the top. Note that this refresh is normally done automatically; however, it occasionally is not. Doing this manual refresh helps to ensure that all of your code gets uploaded.</description>
+    </item>
+    
+    <item>
+      <title>The Keywords static and this</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/static-this/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/static-this/</guid>
+      <description>The Keywords static and this Object-oriented programming languages such as C# are centered on the concept of an object. Class and structure definitions give instructions for constructing individual objects of various types, normally by using the new keyword. When an object is constructed, it has its own fields in which values may be stored. Specifically, if type T has an int field called _length, then each object of type T will have have such a field, and each of these fields may store a different int.</description>
+    </item>
+    
+    <item>
+      <title>Unit Testing</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/vs/nunit/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/vs/nunit/</guid>
+      <description>Unit Testing Some of the lab assignments in CIS 300 use a technique called unit testing for testing the correctness of your code. Unit testing is an automated technique for testing individual public methods and properties using a pre-defined set of test cases. We will be using an open-source unit-testing framework called NUnit.
+An NUnit test suite is a separate project contained within the same solution as the project it is to test.</description>
+    </item>
+    
+    <item>
+      <title>out and ref Parameters</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/out-ref/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/out-ref/</guid>
+      <description>out and ref Parameters Normally, when a method is called, the call-by-value mechanism is used. Suppose, for example, we have a method:
+private void DoSomething(int k) { } We can call this method with a statement like:
+DoSomething(n); provided n is an initialized variable consistent with the int type. For example, suppose n is an int variable containing a value of 28. The call-by-value mechanism works by copying the value of n (i.</description>
+    </item>
+    
+    <item>
+      <title>Using Multiple Machines</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/vs/multiple/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/vs/multiple/</guid>
+      <description>Using Multiple Machines Source control provides one way to access your code from multiple machines. Before you decide to do this, however, you should consider whether this is the best approach. For example, if you have a CS Account, you have a network file system (the U: drive on CS Windows systems) that you can use whenever you have internet access. From off campus, you need to tunnel into campus using a Virtual Private Network, or VPN (see the KSU Information Technology Services page on Virtual Private Networking for instructions).</description>
+    </item>
+    
+    <item>
+      <title>Checkpointing</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/vs/checkpointing/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/vs/checkpointing/</guid>
+      <description>Checkpointing Sometimes when writing code, we see that we have gone down a wrong path and would like to undo some major changes we have made. Source control can help us with this if we checkpoint by committing our changes from time to time, using commit messages that clearly describe the changes made in that commit. (Note that it is not necessary to push these commits to GitHub until you are ready to submit the assignment.</description>
+    </item>
+    
+    <item>
+      <title>The foreach Statement</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/foreach/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/foreach/</guid>
+      <description>The foreach Statement C# provides a foreach statement that is often useful for iterating through the elements of certain data structures. A foreach can be used when all of the following conditions hold:
+ The data structure is a subtype of either IEnumerable or IEnumerable&amp;lt;T&amp;gt; for some type T. You do not need to know the locations in the data structure of the individual elements. You do not need to modify the data structure with this loop.</description>
+    </item>
+    
+    <item>
+      <title>Class Libraries</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/vs/class-libraries/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/vs/class-libraries/</guid>
+      <description>Class Libraries Besides Windows Forms Applications, the other type of Visual Studio project that we will be building in CIS 300 is a Class Library. A Class Library is not a stand-alone application, but rather a collection of code that can be used by various applications. The .NET Framework is a collection of class libraries. When we implement a data structure, we often want to place it in a class library so that it is available to a variety of applications.</description>
+    </item>
+    
+    <item>
+      <title>Enumerators</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/enumerators/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/enumerators/</guid>
+      <description>Enumerators As we saw in the previous section, in order for a data structure to support a foreach loop, it must be a subtype of either IEnumerable or IEnumerable&amp;lt;T&amp;gt;, where T is the type of the elements in the data structure. Thus, because Dictionary&amp;lt;TKey, TValue&amp;gt; is a subtype of IEnumerable&amp;lt;KeyValuePair&amp;lt;TKey, TValue&amp;gt;&amp;gt;, we can use a foreach loop to iterate through the key-value pairs that it stores. Likewise, because its Keys and Values properties get objects that are subtypes of IEnumerable&amp;lt;TKey&amp;gt; and IEnumerable&amp;lt;TValue&amp;gt;, respectively, foreach loops may be used to iterate these objects as well, in order to process all the keys or all the values stored in the dictionary.</description>
+    </item>
+    
+    <item>
+      <title>The switch Statement</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/switch/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/switch/</guid>
+      <description>The switch Statement The switch statement provides an alternative to the if statement for certain contexts. It is used when different cases must be handled based on the value of an expression that can have only a few possible results.
+For example, suppose we want to display a MessageBox containing &amp;ldquo;Abort&amp;rdquo;, &amp;ldquo;Retry&amp;rdquo;, and &amp;ldquo;Ignore&amp;rdquo; buttons. The user can respond in only three ways, and we need different code in each case.</description>
+    </item>
+    
+    <item>
+      <title>The Remainder Operator</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/remainder/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/remainder/</guid>
+      <description>The Remainder Operator The remainder operator (%) computes the remainder that results when one number is divided by another. Specifically, suppose m and n are of some numeric type, where n ≠ 0. We can then define a quotient q and a remainder r as the unique values such that:
+ qn + r = m; q is an integer; |qn| ≤ |m|; and |r| &amp;lt; |n|.  Then m % n gives r, and we can compute q by:</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/homework/jjfhhsduuerqo1239jas/hw2-connectfour-description/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/homework/jjfhhsduuerqo1239jas/hw2-connectfour-description/</guid>
+      <description>User Requirements This assignment will focus on the game called Connect Four, also referred to as four in a row or four in a line. It is a two player game where each player takes turns in placing chips in a vertically standing board that has six rows and seven columns. The person who gets four of their chips in a row (diagonally, vertically, or horizontally) wins. This game can also be drawn.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/homework/needsmorecoffee44123/hw4-veb-tree-description/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ksu-cs-textbooks.github.io/cis300/homework/needsmorecoffee44123/hw4-veb-tree-description/</guid>
+      <description>User Requirements The task for this assignment is to implement a minimum priority queue implemented using a van Emde Boas tree. The algorithms described below are adapted from Introduction to Algorithms - 3rd edition by Corman, T.H, Leiserson, C.E., Rivest, R.L., and Stein, C.
+van Emde Boas Trees The van Emde Boas tree, aka vEB tree, is a tree that utilizes an associative array with $u$-bit integer keys. This data structure is very efficient in operations it is able to perform (this includes search, predecessor, successor, insert, and delete).</description>
+    </item>
+    
+  </channel>
+</rss>

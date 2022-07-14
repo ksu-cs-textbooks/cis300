@@ -1,0 +1,2615 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.89.4" />
+    <meta name="description" content="K-State CIS 300: Data Structures">
+<meta name="author" content="Rod Howell and Josh Weese">
+
+    <link rel="icon" href="https://ksu-cs-textbooks.github.io/cis300/images/favicon.png" type="image/png">
+
+    <title>The Debugger :: Data Structures in C#</title>
+
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1657824514" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1657824514" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/hybrid.css?1657824514" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1657824514" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1657824514" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1657824514" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/atom-one-dark-reasonable.css?1657824514" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1657824514" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/tabs.css?1657824514" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/hugo-theme.css?1657824514" rel="stylesheet">
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-purple.css?1657824514" rel="stylesheet">
+    
+    
+    
+    
+      <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-tele.css?1657824514" rel="stylesheet">
+    
+
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery-3.3.1.min.js?1657824514"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    
+
+     
+    
+<script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$','$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  
+    window.addEventListener('load', (event) => {
+        document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+      });
+  
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="" data-url="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/debugger/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://ksu-cs-textbooks.github.io/cis300/">
+  CIS 300 - Data Structures
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="https://ksu-cs-textbooks.github.io/cis300/js/lunr.min.js?1657824514"></script>
+<script type="text/javascript" src="https://ksu-cs-textbooks.github.io/cis300/js/auto-complete.js?1657824514"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/ksu-cs-textbooks.github.io\/cis300\/";
+    
+</script>
+<script type="text/javascript" src="https://ksu-cs-textbooks.github.io/cis300/js/search.js?1657824514"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='https://ksu-cs-textbooks.github.io/cis300/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/io/" title="Input/Output" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/io/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>1. </b>Input/Output
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/strings/" title="strings and StringBuilders" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/strings/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>2. </b>strings and StringBuilders
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/stacks-queues/" title="Stacks and Queues" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>3. </b>Stacks and Queues
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/linked-lists/" title="Linked Lists" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>4. </b>Linked Lists
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/dictionaries/" title="Dictionaries" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>5. </b>Dictionaries
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/trees/" title="Trees" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/trees/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>6. </b>Trees
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/hashing/" title="Hash Tables" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/hashing/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>7. </b>Hash Tables
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/graphs/" title="Graphs" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/graphs/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>8. </b>Graphs
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/sorting/" title="Sorting" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>9. </b>Sorting
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/appendix/" title="Appendices" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/">
+        
+        
+          
+          <i class="fas fa-angle-down fa-fw"></i>
+          
+        
+          <b>A. </b>Appendices
+          
+
+      </a>
+    
+      
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/appendix/syntax/" title="C# Syntax" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>A1. </b>C# Syntax
+          
+
+      </a>
+    
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/appendix/vs/" title="Visual Studio" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/">
+        
+        
+          
+          <i class="fas fa-angle-down fa-fw"></i>
+          
+        
+          <b>A2. </b>Visual Studio
+          
+
+      </a>
+    
+      
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/appendix/vs/installing-vs/" title="Installing Visual Studio" class="dd-item ">
+        <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/installing-vs/">
+        <i class="fas fa-angle-down fa-fw" style="color: transparent;"></i>
+        <b>A2.1 </b>Installing Visual Studio
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/appendix/vs/repos/" title="Git Repositories" class="dd-item ">
+        <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/repos/">
+        <i class="fas fa-angle-down fa-fw" style="color: transparent;"></i>
+        <b>A2.2. </b>Git Repositories
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/appendix/vs/solutions/" title="Visual Studio Solutions" class="dd-item ">
+        <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/solutions/">
+        <i class="fas fa-angle-down fa-fw" style="color: transparent;"></i>
+        <b>A2.3. </b>Visual Studio Solutions
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/appendix/vs/design-window/" title="The Design Window" class="dd-item ">
+        <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/design-window/">
+        <i class="fas fa-angle-down fa-fw" style="color: transparent;"></i>
+        <b>A2.4. </b>The Design Window
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/appendix/vs/code-window/" title="The Code Window" class="dd-item ">
+        <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/code-window/">
+        <i class="fas fa-angle-down fa-fw" style="color: transparent;"></i>
+        <b>A2.5. </b>The Code Window
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/appendix/vs/debugger/" title="The Debugger" class="dd-item active">
+        <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/debugger/">
+        <i class="fas fa-angle-down fa-fw" style="color: transparent;"></i>
+        <b>A2.6. </b>The Debugger
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/appendix/vs/submitting/" title="Submitting Assignments" class="dd-item ">
+        <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/submitting/">
+        <i class="fas fa-angle-down fa-fw" style="color: transparent;"></i>
+        <b>A2.7. </b>Submitting Assignments
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/appendix/vs/nunit/" title="Unit Testing" class="dd-item ">
+        <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/nunit/">
+        <i class="fas fa-angle-down fa-fw" style="color: transparent;"></i>
+        <b>A2.8. </b>Unit Testing
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/appendix/vs/multiple/" title="Using Multiple Machines" class="dd-item ">
+        <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/multiple/">
+        <i class="fas fa-angle-down fa-fw" style="color: transparent;"></i>
+        <b>A2.9. </b>Using Multiple Machines
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/appendix/vs/checkpointing/" title="Checkpointing" class="dd-item ">
+        <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/checkpointing/">
+        <i class="fas fa-angle-down fa-fw" style="color: transparent;"></i>
+        <b>A2.10. </b>Checkpointing
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/appendix/vs/class-libraries/" title="Class Libraries" class="dd-item ">
+        <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/class-libraries/">
+        <i class="fas fa-angle-down fa-fw" style="color: transparent;"></i>
+        <b>A2.11. </b>Class Libraries
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+    
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/appendix/style/" title="Programming Style Requirements" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>A3. </b>Programming Style Requirements
+          
+
+      </a>
+    
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+    
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p>Built using <a href="http://gohugo.io/">Hugo</a>
+  and <a href="https://github.com/russfeld/ksucs-hugo-theme">ksucs-hugo-theme</a>
+  with assistance from Josh Weese and Russ Feldhausen.</p>
+<br/>
+<p>Microsoft and Visual Studio are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries. </p>
+<br/>
+<p><strong><i>© Copyright 2014-2020, <a href="http://people.cs.ksu.edu/~rhowell/" target="_">Rod Howell</a>. All rights reserved.</i></strong></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                  <div id="top-github-link">
+                    <a id="themelink" class="github-link" title='Toggle Light or Dark Mode' href="#">
+                      <i class="fas fa-moon"></i>
+                      <span id="top-github-link-text"></span>
+                    </a>
+                    <a class="github-link" title='Teleprompter View' href="tele.html" target="blank">
+                      <i class="fas fa-tv"></i>
+                      <span id="top-github-link-text"></span>
+                    </a>
+                    <a class="github-link" title='Embed this page' href="embed.html" target="blank">
+                      <i class="fas fa-expand-arrows-alt"></i>
+                      <span id="top-github-link-text"></span>
+                    </a>
+                
+                  
+                  
+                  
+                    <a class="github-link" title='Edit this page' href="https://gitlab.cs.ksu.edu/cis300/cis300-book/tree/master/content/appendix/vs/debugger.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text"></span>
+                    </a>
+                  
+                
+                  </div>
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='https://ksu-cs-textbooks.github.io/cis300/'></a> > <a href='https://ksu-cs-textbooks.github.io/cis300/appendix/'>Appendices</a> > <a href='https://ksu-cs-textbooks.github.io/cis300/appendix/vs/'>Visual Studio</a> > The Debugger
+          
+        
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+          <div id="chapter">
+        
+        <div id="body-inner">
+          
+
+        
+
+
+<h2 id="the-debugger">The Debugger</h2>
+<p>In previous sections, we discussed how a Windows Forms Application can be built using Visual Studio. Having built an application, we need to be able to run and test it. To do this, we use the Visual Studio Debugger. When an application is loaded into Visual Studio, we can invoke the debugger by clicking the &ldquo;Start&rdquo; button near the top:</p>
+<p><img src="start-button.jpg" alt="A picture of part of a Visual Studio Window should appearhere."></p>
+
+<div class="notices note" ><p>Note</p><p>A Visual Studio bug has sometimes caused this button to be missing. If
+this happens, you can instead click &ldquo;Start
+Debugging&rdquo; on the &ldquo;Debug&rdquo; menu.</p>
+</div>
+
+<p>When the debugger starts, it attempts to do the following things:</p>
+<ul>
+<li>Save any unsaved files.</li>
+<li>Compile the source code into executable code.</li>
+<li>Run the compiled code as an application.</li>
+</ul>
+<p>If everything works correctly, the application is complete. Rarely, however, does everything work correctly the first time. Through the remainder of this section, we will discuss some of the ways the debugger can be used to find and fix errors.</p>
+<p>One of the problems that can occur is that the compiler can fail to produce executable code because the source code contains syntax errors. When this happens, the following dialog is displayed:</p>
+<p><img src="syntax-error-dialog.jpg" alt="A picture of a dialog should appear here."></p>
+<p>Usually the best thing to do at this point is to click the &ldquo;No&rdquo; button. This will stop the debugger and open an Error List window containing all of the syntax errors found. Double-clicking on a syntax error will highlight the error in the code window. Normally, fixing the error will cause the corresponding entry in the Error List to disappear; however, there are times when the entry won&rsquo;t disappear until the debugger is started again (i.e., by clicking the &ldquo;Start&rdquo; button).</p>
+<p>Once the syntax errors are removed, the debugger will be able to generate executable code and run it. However, more problems can occur at this point. One common problem is that an exception is thrown. For example, the GitHub repository created by <a href="https://classroom.github.com/a/RJakDFQZ" target="_blank">this invitation link</a> (see &ldquo;<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/repos">Git Repositories</a>&quot;) contains a Visual Studio solution for a program to convert decimal numbers to base-16. Don&rsquo;t worry about understanding the code, although the numerous comments may help you to do that. Instead, note that an exception is thrown when we try to convert 256:</p>
+<p><img src="exception.png" alt="A picture of a window should appear here."></p>
+<p>This message gives us quite a bit of information already. First, it tells us which line threw the exception - the line highlighted in green. The arrow in the left margin tells us the same thing, but more generally, when the debugger is running, it indicates the line that is currently being executed or that is ready to be executed. The popup window indicates what kind of exception was thrown: an <strong>ArgumentOutOfRangeException</strong>. It also provides the additional information that a length was less than zero when it should not have been.</p>
+<p>Having this information, we can now use the debugger to investigate further the cause of the exception. First, in order to see the code more clearly, we might want to close the popup window (we can always get it back by clicking the red circle containing the white &lsquo;X&rsquo;). We can now examine the values of any of the variables at the time the exception was thrown by hovering the mouse over them. For example, if we hover over <code>lowOrder</code>, a popup appears indicating that it has a value of &ldquo;0&rdquo;. If we move the mouse to hover over its <strong>Length</strong> property, we can see that it has a value of 1. Hovering over <code>power</code> shows that it has a value of 2. Thus, we can see that the exception was thrown because we gave the <strong>Substring</strong> method a length of 1 - 2 = -1. This can be confirmed by hovering the mouse over the &ldquo;-&rdquo; in the expression - the popup indicates that the value of the expression is, in fact, -1.</p>
+<p>Actually fixing the error requires a little more understanding of the code. In this case, however, the comment immediately above the line in question helps us out. It tells us that the low-order part of the hex string we are building may need to be padded with 0s - this padding is what we are constructing. Furthermore, it tells us that the number of hex digits we need is the value of <code>power</code>. In order to get this many digits, we need to subtract the number of hex digits we already have in <code>lowOrder</code> from <code>power</code>; i.e., we need to reverse the order of the subtraction. However, we can&rsquo;t make the correction until we stop the debugger.</p>
+<p><a name="debugger-buttons"></a>
+To stop the debugger, notice the buttons that are available at the top of the Visual Studio window while the debugger is running:</p>
+<p><img src="debugger-buttons.jpg" alt="A picture of a portion of a window should appear here."></p>
+<p>As you might guess, the &ldquo;Stop&rdquo; button stops the debugger. In what follows, we will discuss each of the other buttons indicated in the above figure, as well as other features of the debugger.</p>
+<p><a name="breakpoints"></a></p>
+<p>When debugging code, it is often useful to be able to pause execution at a particular place in order to be able to examine the values of variables as we did above. To accomplish this, we can set a <em>breakpoint</em> by clicking in the left margin of the code window at the line where we would like execution to pause. This places a large red dot in the margin where we clicked and colors the line red:</p>
+<p><img src="breakpoint.png" alt="A picture of part of a code window should appear here."></p>
+<p>Whenever execution reaches a breakpoint, execution stops prior to executing that line. At this point, we can examine the values of variables as we described above. When we are ready to continue execution of the program, we click the &ldquo;Continue&rdquo; button. A breakpoint can be deleted by clicking on the red dot, or all breakpoints may be deleted by selecting &ldquo;Delete All Breakpoints&rdquo; from the &ldquo;Debug&rdquo; menu.</p>
+<p>Sometimes we only want the execution to pause at a breakpoint when a certain condition is met. Such a situation might occur if we have a bug that only surfaces after the code containing it has already executed many times. Rather than letting the program stop and clicking &ldquo;Continue&rdquo; until we reach the point we are interested in, we can instead specify a condition on the breakpoint. To do this, right-click on the breakpoint in the left margin, and select &ldquo;Conditions&hellip;&rdquo; from the resulting popup menu. This causes a large box to be inserted into to the code below this line:</p>
+<p><img src="breakpoint-condition.png" alt="A picture of a Visual Studio window should appear here."></p>
+<p>In this box, we can type an expression using variables visible at that program location. We can also choose whether we want execution to pause when that expression is true or whenever that expression has changed.</p>
+<p>For example, we could add to the above breakpoint the condition:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#">power == <span style="color:#ae81ff">8</span>
+</code></pre></div><p>Then when we run the debugger, execution will only pause at this breakpoint when <code>power</code> reaches a value of 8. Note that this line is executed at the top of each iteration of the loop; hence, the breakpoint condition is checked on each iteration.</p>
+<p>While hovering the mouse over variable names is a useful way to
+discover their current values, there are other mechanisms for doing
+this as well. For example, while the debugger is paused, you can go to
+the &ldquo;Debug&rdquo; menu and select &ldquo;Windows -&gt; Locals&rdquo;. This will open a window displaying all of the local variables for the current method, property, or constructor, together with their current values. If the debugger is paused within a constructor or a non-<strong>static</strong> method or property, this window also contains <strong>this</strong>, which refers to the object that contains the constructor, method, or property. From <strong>this</strong>, you can access the non-<strong>static</strong> fields of this object.</p>
+<p>Another mechanism for examining values of variables is through the &ldquo;Immediate&rdquo; window, which can also be accessed from the &ldquo;Debug&rdquo; menu via its &ldquo;Windows&rdquo; sub-menu. Within the Immediate window, you may type an expression involving the variables that are currently visible, press &ldquo;Enter&rdquo;, and it will display the value of that expression. This can be particularly useful when you have a large data structure, and you need to know a particular element in that structure. For example, suppose <code>array</code> is a large <strong>int[ ]</strong>, and suppose <code>i</code> is an <strong>int</strong>. Using the &ldquo;Locals&rdquo; window, it might be rather tedious to find the value of <code>array[i]</code>. Using the Immediate window, however, you can just type in</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#">array[i]
+</code></pre></div><p>and it will display its value.</p>
+<p>When debugging, it is often useful to be able to step through the
+execution of a piece of code so that you can see exactly what it is
+doing. Three buttons are available for this purpose: &ldquo;Step Into&rdquo;,
+&ldquo;Step Over&rdquo;, and &ldquo;Step Out&rdquo;. Suppose we were to run the code in the
+GitHub repository provided above with the (unconditional) breakpoint shown in the above picture, and suppose we were to enter the value, 12345. Execution will then pause at this breakpoint with <code>divisor</code> equal to 16 and <code>power</code> equal to 1. Clicking either the &ldquo;Step Into&rdquo; button or the &ldquo;Step Over&rdquo; button will cause the debugger to evaluate the loop condition and, because its value is <strong>true</strong>, advance to the &ldquo;{&rdquo; on the next line. We may continue to walk through the execution a step at a time using either of these buttons - as long as we are in this loop, they will have the same effect. If the Locals window is open, whenever a variable changes value, this value will be shown in red.</p>
+<p>After one iteration, the loop will terminate, and execution will reach the line where <code>highOrder</code> is defined. At this point, the functionality of the &ldquo;Step Into&rdquo; and &ldquo;Step Over&rdquo; buttons becomes different because this line contains a method call. The &ldquo;Step Over&rdquo; button will cause execution to run normally through the method call, and pause again as soon as the method call returns (however, because this is a recursive call, if the breakpoint is still set, execution will pause when it reaches the breakpoint within the recursive call). Thus, we can see the net effect of this method call without having to walk through it a step at a time. On the other hand, we might want to step through it in order to see what it is doing. We can do this using the &ldquo;Step Into&rdquo; button. If at some point we want to finish executing the method we are in, but pause after it returns, we can click the &ldquo;Step Out&rdquo; button.</p>
+<p>When stepping through code, a &ldquo;Watch&rdquo; window is often a convenient way
+to keep track of the value of one or more specific variables and/or
+expressions. You can open a Watch window from the &ldquo;Debug&rdquo; menu under
+&ldquo;Windows -&gt; Watch&rdquo; &mdash; the four choices here are four different Watch windows that you may use (perhaps for debugging different parts of your program). A Watch window combines some of the advantages of the Locals window and the Immediate window. If you type in a value or expression, it will appear in the &ldquo;Name&rdquo; column, and if it can be evaluated in the current context, its value will be displayed in the &ldquo;Value&rdquo; column. Furthermore the value will be updated as the debugger executes code. You may list several values or expressions in the same Watch window, and their values will all be tracked. To delete an entry from a Watch window, right-click on it and select &ldquo;Delete Watch&rdquo;.</p>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div> 
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/code-window/" title="The Code Window"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/submitting/" title="Submitting Assignments" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1657824514"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1657824514"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.jquery.min.js?1657824514"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.sticky.js?1657824514"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1657824514"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/highlight.pack.js?1657824514"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/modernizr.custom-3.6.0.js?1657824514"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/learn.js?1657824514"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/hugo-learn.js?1657824514"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/themer.js?1657824514"></script>
+
+    
+        
+            <script src="https://ksu-cs-textbooks.github.io/cis300/mermaid/mermaid.js?1657824514"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+
+    
+        <script src="https://ksu-cs-textbooks.github.io/cis300/js/tele-scroll.js?1657824514"></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis300/js/hideyt.js?1657824514"></script>
+    
+
+    
+    
+
+    
+<script 
+src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/quizdown.js">
+</script>
+<script 
+src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/extensions/quizdownKatex.js">
+</script>
+<script 
+src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/extensions/quizdownHighlight.js">
+</script>
+<script>quizdown.register(quizdownHighlight).register(quizdownKatex).init()</script> 
+  </body>
+</html>
+
+
+
+

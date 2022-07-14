@@ -1,0 +1,2542 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.89.4" />
+    <meta name="description" content="K-State CIS 300: Data Structures">
+<meta name="author" content="Rod Howell and Josh Weese">
+
+    <link rel="icon" href="https://ksu-cs-textbooks.github.io/cis300/images/favicon.png" type="image/png">
+
+    <title>Equality in C# :: Data Structures in C#</title>
+
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1657824513" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1657824513" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/hybrid.css?1657824513" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1657824513" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1657824513" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1657824513" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/atom-one-dark-reasonable.css?1657824513" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1657824513" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/tabs.css?1657824513" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/hugo-theme.css?1657824513" rel="stylesheet">
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-purple.css?1657824513" rel="stylesheet">
+    
+    
+    
+    
+
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery-3.3.1.min.js?1657824513"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    
+
+     
+    
+<script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$','$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  
+    window.addEventListener('load', (event) => {
+        document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+      });
+  
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="" data-url="https://ksu-cs-textbooks.github.io/cis300/hashing/equality/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://ksu-cs-textbooks.github.io/cis300/">
+  CIS 300 - Data Structures
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="https://ksu-cs-textbooks.github.io/cis300/js/lunr.min.js?1657824513"></script>
+<script type="text/javascript" src="https://ksu-cs-textbooks.github.io/cis300/js/auto-complete.js?1657824513"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/ksu-cs-textbooks.github.io\/cis300\/";
+    
+</script>
+<script type="text/javascript" src="https://ksu-cs-textbooks.github.io/cis300/js/search.js?1657824513"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='https://ksu-cs-textbooks.github.io/cis300/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/io/" title="Input/Output" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/io/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>1. </b>Input/Output
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/strings/" title="strings and StringBuilders" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/strings/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>2. </b>strings and StringBuilders
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/stacks-queues/" title="Stacks and Queues" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>3. </b>Stacks and Queues
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/linked-lists/" title="Linked Lists" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>4. </b>Linked Lists
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/dictionaries/" title="Dictionaries" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>5. </b>Dictionaries
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/trees/" title="Trees" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/trees/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>6. </b>Trees
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/hashing/" title="Hash Tables" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/hashing/">
+        
+        
+          
+          <i class="fas fa-angle-down fa-fw"></i>
+          
+        
+          <b>7. </b>Hash Tables
+          
+
+      </a>
+    
+      
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/hashing/simple/" title="A Simple Hash Table Implementation" class="dd-item ">
+        <a href="https://ksu-cs-textbooks.github.io/cis300/hashing/simple/">
+        <i class="fas fa-angle-down fa-fw" style="color: transparent;"></i>
+        <b>7.1. </b>A Simple Hash Table Implementation
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/hashing/rehashing/" title="Rehashing" class="dd-item ">
+        <a href="https://ksu-cs-textbooks.github.io/cis300/hashing/rehashing/">
+        <i class="fas fa-angle-down fa-fw" style="color: transparent;"></i>
+        <b>7.2. </b>Rehashing
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/hashing/memoization/" title="Memoization" class="dd-item ">
+        <a href="https://ksu-cs-textbooks.github.io/cis300/hashing/memoization/">
+        <i class="fas fa-angle-down fa-fw" style="color: transparent;"></i>
+        <b>7.3. </b>Memoization
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/hashing/equality/" title="Equality in C#" class="dd-item active">
+        <a href="https://ksu-cs-textbooks.github.io/cis300/hashing/equality/">
+        <i class="fas fa-angle-down fa-fw" style="color: transparent;"></i>
+        <b>7.4. </b>Equality in C#
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/hashing/hash-functions/" title="Hash Codes" class="dd-item ">
+        <a href="https://ksu-cs-textbooks.github.io/cis300/hashing/hash-functions/">
+        <i class="fas fa-angle-down fa-fw" style="color: transparent;"></i>
+        <b>7.5. </b>Hash Codes
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/graphs/" title="Graphs" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/graphs/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>8. </b>Graphs
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/sorting/" title="Sorting" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>9. </b>Sorting
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/appendix/" title="Appendices" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>A. </b>Appendices
+          
+
+      </a>
+    
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p>Built using <a href="http://gohugo.io/">Hugo</a>
+  and <a href="https://github.com/russfeld/ksucs-hugo-theme">ksucs-hugo-theme</a>
+  with assistance from Josh Weese and Russ Feldhausen.</p>
+<br/>
+<p>Microsoft and Visual Studio are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries. </p>
+<br/>
+<p><strong><i>© Copyright 2014-2020, <a href="http://people.cs.ksu.edu/~rhowell/" target="_">Rod Howell</a>. All rights reserved.</i></strong></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                  <div id="top-github-link">
+                    <a id="themelink" class="github-link" title='Toggle Light or Dark Mode' href="#">
+                      <i class="fas fa-moon"></i>
+                      <span id="top-github-link-text"></span>
+                    </a>
+                    <a class="github-link" title='Teleprompter View' href="tele.html" target="blank">
+                      <i class="fas fa-tv"></i>
+                      <span id="top-github-link-text"></span>
+                    </a>
+                    <a class="github-link" title='Embed this page' href="embed.html" target="blank">
+                      <i class="fas fa-expand-arrows-alt"></i>
+                      <span id="top-github-link-text"></span>
+                    </a>
+                
+                  
+                  
+                  
+                    <a class="github-link" title='Edit this page' href="https://gitlab.cs.ksu.edu/cis300/cis300-book/tree/master/content/hashing/equality.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text"></span>
+                    </a>
+                  
+                
+                  </div>
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='https://ksu-cs-textbooks.github.io/cis300/'></a> > <a href='https://ksu-cs-textbooks.github.io/cis300/hashing/'>Hash Tables</a> > Equality in C#
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+          <div id="chapter">
+        
+        <div id="body-inner">
+          
+
+        
+
+
+<h2 id="equality-in-c">Equality in C#</h2>
+<p>Continuing our discussion from <a href="https://ksu-cs-textbooks.github.io/cis300/hashing/memoization">the previous
+section</a>, we want to
+define a type that represents a Nim board. Furthermore, we need to be
+able to compare instances of this type for equality. Before we can
+address how this can be done, we first need to take a careful look at
+how C# handles equality. In what follows, we will discuss how C#
+handles the <code>==</code> operator, the non-<strong>static</strong> <strong>Equals</strong> method, and two
+<strong>static</strong> methods for determining equality. We will then show how the
+comparison can be defined so that all of these mechanisms behave in a
+consistent way.</p>
+<p>We first consider the <code>==</code> operator. The behavior of this operator is
+determined by the <em>compile-time</em> types of its operands. This is
+determined by the declared types of variables, the declared return types
+of methods or properties, and the rules for evaluating expressions.
+Thus, for example, if we have a statement</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#66d9ef">object</span> x = <span style="color:#e6db74">&#34;abc&#34;</span>;
+</code></pre></div><p>the compile-time type of <code>x</code> is <strong>object</strong>, even though it actually
+refers to a <strong>string</strong>.</p>
+<p>For pre-defined <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/reference-value">value
+types</a>, <code>==</code> evaluates
+to <strong>true</strong> if its operands contain the same values. Because
+<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/enumerations">enumerations</a> are
+represented as numeric types such as <strong>int</strong> or <strong>byte</strong>, this rule
+applies to them as well. For user-defined structures, <code>==</code> is undefined
+unless the structure definition explicitly defines the <code>==</code> and <code>!=</code>
+operators. We will show how this can be done below.</p>
+<p>By default, when <code>==</code> is applied to reference types, it evaluates to
+<strong>true</strong> when the two operands refer to the same object (i.e., they
+refer to the same memory location). A class may override this behavior
+by explicitly defining the <code>==</code> and <code>!=</code> operators. For example, the
+<strong>string</strong> class defines the <code>==</code> operator to evaluate to <strong>true</strong> if the
+given <strong>string</strong>s are the same length and contain the same sequence of
+characters.</p>
+<p>Let&rsquo;s consider an example that illustrates the rules for reference
+types:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">string</span> a = <span style="color:#e6db74">&#34;abc&#34;</span>;
+<span style="color:#66d9ef">string</span> b = <span style="color:#e6db74">&#34;0abc&#34;</span>.Substring(<span style="color:#ae81ff">1</span>);
+<span style="color:#66d9ef">object</span> x = a;
+<span style="color:#66d9ef">object</span> y = b;
+<span style="color:#66d9ef">bool</span> comp1 = a == b;
+<span style="color:#66d9ef">bool</span> comp2 = x == y;
+</code></pre></div><p>The first two lines assign to <code>a</code> and <code>b</code> the same sequence of
+characters; however, because the <strong>string</strong>s are computed differently,
+they are different objects. The next two lines copy the reference in <code>a</code>
+to <code>x</code> and the reference in <code>b</code> to <code>y</code>. Thus, at this point, all four
+variables refer to a <strong>string</strong> &ldquo;abc&rdquo;; however, <code>a</code> and <code>x</code> refer to a
+different object than do <code>b</code> and <code>y</code>. The fifth line compares <code>a</code> and
+<code>b</code> for equality using <code>==</code>. The compile-time types of <code>a</code> and <code>b</code> are
+both <strong>string</strong>; hence, these variables are compared using the rules for
+comparing <strong>string</strong>s. Because they refer to <strong>string</strong>s of the same
+length and containing the same sequence of characters, <code>comp1</code> is
+assigned <strong>true</strong>. The behavior of the last line is determined by the
+compile-time types of <code>x</code> and <code>y</code>. These types are both <strong>object</strong>,
+which defines the default behavior of this operator for reference types.
+Thus, the comparison determines whether the two variables refer to the
+same object. Because they do not, <code>comp2</code> is assigned <strong>false</strong>.</p>
+<p>Now let&rsquo;s consider the non-<strong>static</strong> <strong>Equals</strong> method. The biggest
+difference between this method and the <code>==</code> operator is that the behavior
+of <code>x.Equals(y)</code> is determined by the <em>run-time</em> type of <code>x</code>. This is
+determined by the actual type of the object, independent of how any
+variables or return types are declared.</p>
+<p>By default, if <code>x</code> is a value type and <code>y</code> can be treated as having the
+same type, then <code>x.Equals(y)</code> returns <strong>true</strong> if <code>x</code> and <code>y</code> have the
+same value (if <code>y</code> can&rsquo;t be treated as having the same type as <code>x</code>, then
+this method returns <strong>false</strong>). Thus, for pre-defined value types, the
+behavior is the same as for <code>==</code> once the types are determined (provided
+the types are consistent). However, the <strong>Equals</strong> method is always
+defined, whereas the <code>==</code> operator may not be. Furthermore, structures may
+<em>override</em> this method to change this behavior &mdash; we will show how to do
+this below.</p>
+<p>By default, if <code>x</code> is a reference type, <code>x.Equals(y)</code> returns <strong>true</strong>
+if <code>x</code> and <code>y</code> refer to the same object. Hence, this behavior is the
+same as for <code>==</code> once the types are determined (except that if <code>x</code> is
+<strong>null</strong>, <code>x.Equals(y)</code> will throw a <strong>NullReferenceException</strong>,
+whereas <code>x == y</code> will not). However, classes may override this
+method to change this behavior. For example, the <strong>string</strong> class
+overrides this method to return <strong>true</strong> if <code>y</code> is a <strong>string</strong> of the
+same length and contains the same sequence of characters as <code>x</code>.</p>
+<p>Let&rsquo;s now continue the above example by adding the following lines:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">bool</span> comp3 = a.Equals(b);
+<span style="color:#66d9ef">bool</span> comp4 = a.Equals(x);
+<span style="color:#66d9ef">bool</span> comp5 = x.Equals(a);
+<span style="color:#66d9ef">bool</span> comp6 = x.Equals(y);
+</code></pre></div><p>These all evaluate to <strong>true</strong> for one simple reason &mdash; the behavior is
+determined by the run-time type of <code>a</code> in the case of the first two
+lines, or of <code>x</code> in the case of the last two lines. Because these types
+are both <strong>string</strong>, the objects are compared as <strong>string</strong>s.</p>
+
+<div class="notices note" ><p>Note</p><p>It&rsquo;s actually a bit more complicated in the case of <code>comp3</code>, but we&rsquo;ll explain
+this later.</p>
+</div>
+
+<p>The <strong>object</strong> class defines, in addition to the <strong>Equals</strong> method
+described above, two <strong>public static</strong> methods, which are in turn
+inherited by every type in C#:</p>
+<ul>
+<li><strong>bool Equals(object x, object y)</strong>: The main purpose of this method
+is to avoid the <strong>NullReferenceException</strong> that is thrown by
+<code>x.Equals(y)</code> when <code>x</code> is <strong>null</strong>. If neither <code>x</code> nor <code>y</code> is
+<strong>null</strong>, this method simply returns the value of <code>x.Equals(y)</code>.
+Otherwise, it will return <strong>true</strong> if both <code>x</code> and <code>y</code> are <strong>null</strong>, or <strong>false</strong> if only one is <strong>null</strong>.
+User-defined types cannot override this method, but because it calls
+the non-<strong>static Equals</strong> method, which they can override, they can
+affect its behavior indirectly.</li>
+<li><strong>bool ReferenceEquals(object x, object y)</strong>: This method returns
+<strong>true</strong> if <code>x</code> and <code>y</code> refer to the same object or are both
+<strong>null</strong>. If either <code>x</code> or <code>y</code> is a value type, it will return
+<strong>false</strong>. User-defined types cannot override this method.</li>
+</ul>
+<p>Finally, there is nothing to prevent user-defined types from including
+their own <strong>Equals</strong> methods with different parameter lists. In fact,
+the <strong>string</strong> class includes definitions of the following <strong>public</strong>
+methods:</p>
+<ul>
+<li><strong>bool Equals(string s)</strong>: This method actually does the same thing
+as the non-<strong>static</strong> <strong>Equals</strong> method defined in the <strong>object</strong>
+class, but is slightly more efficient because less run-time type
+checking needs to be done. This is the method that is called in the
+computation of <code>comp3</code> in the above example.</li>
+<li><strong>static bool Equals(string x, string y)</strong>: This method does the
+same thing as the <strong>static Equals</strong> method defined in the <strong>object</strong>
+class, but again is slightly more efficient because less run-time
+type checking needs to be done.</li>
+</ul>
+<p>All of this can be rather daunting at first. Fortunately, in most cases
+these comparisons end up working the way we expect them to. The main
+thing we want to focus on here is how to define equality properly in a
+user-defined type.</p>
+<p><span id="operator-overloading"></span> Let&rsquo;s start with the <code>==</code>
+operator. This is one of several operators that may be defined within
+class and structure definitions. If we are defining a class or structure
+called <strong>SomeType</strong>, we can include a definition of the <code>==</code> operator as
+follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">bool</span> <span style="color:#66d9ef">operator</span> ==(SomeType x, SomeType y)
+{
+    <span style="color:#75715e">// Definition of the behavior of ==
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>Note the resemblance to the definition of a <strong>static</strong> method. Even
+though we define it using the syntax for a method definition, we still
+use it as we typically use the <code>==</code> operator; e.g.,</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">if</span> (a == b)
+{
+    . . .
+}
+</code></pre></div><p>If <code>a</code> and <code>b</code> are both of type <strong>SomeType</strong>, the above definition will
+be called using <code>a</code> as the parameter <code>x</code> and <code>b</code> as the parameter <code>y</code>.</p>
+<p>Within the operator definition, if it is within a class definition, the
+first thing we need to do is to handle the cases in which one or both
+parameters are <strong>null</strong>. We don&rsquo;t need to do this for a structure
+definition because value types can&rsquo;t be <strong>null</strong>, but if we omit this
+part for a reference type, comparing a variable or expression of this
+type to <strong>null</strong> will most likely result in a
+<strong>NullReferenceException</strong>. We need to be a bit careful here, because if
+we use <code>==</code> to compare one of the parameters to <strong>null</strong> it will be a
+recursive call &mdash; infinite recursion, in fact. Furthermore, using
+<code>x.Equals(null)</code> is always a bad idea, as if <code>x</code> does, in fact, equal
+<strong>null</strong>, this will throw a <strong>NullReferenceException</strong>. We therefore
+need to use one of the <strong>static</strong> methods, <strong>Equals</strong> or
+<strong>ReferenceEquals</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">bool</span> <span style="color:#66d9ef">operator</span> ==(SomeType x, SomeType y)
+{
+    <span style="color:#66d9ef">if</span> (Equals(x, <span style="color:#66d9ef">null</span>))
+    {
+         <span style="color:#66d9ef">return</span> (Equals(y, <span style="color:#66d9ef">null</span>));
+    }
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (Equals(y, <span style="color:#66d9ef">null</span>))
+    {
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+    }
+    <span style="color:#66d9ef">else</span>
+    {
+        <span style="color:#75715e">// Code to determine if x == y
+</span><span style="color:#75715e"></span>    }
+}
+</code></pre></div><p>Note that because all three calls to <strong>Equals</strong> have <strong>null</strong> as a
+parameter, these calls won&rsquo;t result in calling the <strong>Equals</strong> method
+that we will override below.</p>
+<p>Whenever we define the <code>==</code> operator, C# requires that we also define the
+<code>!=</code> operator. In virtually all cases, what we want this operator to do
+is to return the negation of what the <code>==</code> operator does:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">bool</span> <span style="color:#66d9ef">operator</span> !=(SomeType x, SomeType y)
+{
+    <span style="color:#66d9ef">return</span> !(x == y);
+}
+</code></pre></div><p>We now turn to the (non-<strong>static</strong>) <strong>Equals</strong> method. This is defined
+in the <strong>object</strong> class to be a <strong>virtual</strong> method, meaning that
+sub-types are allowed to
+<a href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilder-impl/#overriding">override</a> its
+behavior. Because every type in C# is a subtype of <strong>object</strong>, this
+method is present in every type, and it can be overridden by any class
+or structure.</p>
+<p>We override this method as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">bool</span> Equals(<span style="color:#66d9ef">object</span> obj)
+{
+    <span style="color:#75715e">// Definition of the behavior of Equals
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>For the body of the method, we first need to take care of the fact that
+the parameter is of type <strong>object</strong>; hence, it may not even have the
+same type as what we want to compare it to. If this is the case, we can
+immediately return <strong>false</strong>. Otherwise, in order to ensure consistency
+between this method and the <code>==</code> operator, we can do the actual comparison
+using the <code>==</code> operator:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">bool</span> Equals(<span style="color:#66d9ef">object</span> obj)
+{
+    <span style="color:#66d9ef">if</span> (obj <span style="color:#66d9ef">is</span> SomeType)
+    {
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span> == (SomeType)obj;
+    }
+    <span style="color:#66d9ef">else</span>
+    {
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+    }
+}
+</code></pre></div><p>The above definitions give a template for defining the <code>==</code> and <code>!=</code>
+operators and the non-<strong>static Equals</strong> method for most classes that we
+would want to compare for equality. For structures, we can remove the
+code that handles <strong>null</strong> parameters from the <code>==</code> definition. In either
+case, all we then need to do to complete the definitions is to replace
+the name <strong>SomeType</strong>, wherever it occurs, with the name of the type we
+are defining, and to fill in the hole left in the definition of the <code>==</code>
+operator. It is here where we actually define how the comparison is to
+be made.</p>
+<p>Suppose, for example, that we want to define a class to represent a Nim
+board position (see the <a href="https://ksu-cs-textbooks.github.io/cis300/hashing/memoization">previous
+section</a>). This class
+will need to have two <strong>private</strong> fields: an <strong>int[ ]</strong> storing the
+number of stones on each pile and an <strong>int[ ]</strong> storing the limit
+for each pile. These two arrays should be non-<strong>null</strong> and have the same
+length, but this should be enforced by the constructor. By default, two
+instances of a class are considered to be equal (by either the <code>==</code>
+operator or the non-<strong>static Equals</strong> method) if they are the same
+object. This is too strong for our purposes; instead, two instances <code>x</code>
+and <code>y</code> of the board position class should be considered equal if</p>
+<ul>
+<li>Their arrays giving the number of stones on each pile have the same
+length; and</li>
+<li>For each index<code>i</code> into the arrays giving the number of stones on
+each pile, the elements at location <code>i</code> of these arrays have the
+same value, and the elements at location <code>i</code> of the arrays giving
+the limit for each pile have the same value.</li>
+</ul>
+<p>Code to make this determination and return the result can be inserted
+into the above template defining of the <code>==</code> operator, and the other two
+templates can be customized to refer to this type.</p>
+<p>Any class that redefines equality should also redefine the hash code
+computation to be consistent with the equality definition. We will show
+how to do this in the next section.</p>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div> 
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="https://ksu-cs-textbooks.github.io/cis300/hashing/memoization/" title="Memoization"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="https://ksu-cs-textbooks.github.io/cis300/hashing/hash-functions/" title="Hash Codes" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1657824513"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1657824513"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.jquery.min.js?1657824513"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.sticky.js?1657824513"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1657824513"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/highlight.pack.js?1657824513"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/modernizr.custom-3.6.0.js?1657824513"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/learn.js?1657824513"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/hugo-learn.js?1657824513"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/themer.js?1657824513"></script>
+
+    
+        
+            <script src="https://ksu-cs-textbooks.github.io/cis300/mermaid/mermaid.js?1657824513"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+
+    
+
+    
+    
+
+    
+<script 
+src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/quizdown.js">
+</script>
+<script 
+src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/extensions/quizdownKatex.js">
+</script>
+<script 
+src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/extensions/quizdownHighlight.js">
+</script>
+<script>quizdown.register(quizdownHighlight).register(quizdownKatex).init()</script> 
+  </body>
+</html>
+

@@ -1,0 +1,2674 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.89.4" />
+    <meta name="description" content="K-State CIS 300: Data Structures">
+<meta name="author" content="Rod Howell and Josh Weese">
+
+    <link rel="icon" href="https://ksu-cs-textbooks.github.io/cis300/images/favicon.png" type="image/png">
+
+    <title>Introduction to Trees :: Data Structures in C#</title>
+
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1657824513" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1657824513" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/hybrid.css?1657824513" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1657824513" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1657824513" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1657824513" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/atom-one-dark-reasonable.css?1657824513" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1657824513" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/tabs.css?1657824513" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/hugo-theme.css?1657824513" rel="stylesheet">
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-purple.css?1657824513" rel="stylesheet">
+    
+    
+    
+    
+
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery-3.3.1.min.js?1657824513"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    
+
+     
+    
+<script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$','$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  
+    window.addEventListener('load', (event) => {
+        document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+      });
+  
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="" data-url="https://ksu-cs-textbooks.github.io/cis300/trees/intro/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://ksu-cs-textbooks.github.io/cis300/">
+  CIS 300 - Data Structures
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="https://ksu-cs-textbooks.github.io/cis300/js/lunr.min.js?1657824513"></script>
+<script type="text/javascript" src="https://ksu-cs-textbooks.github.io/cis300/js/auto-complete.js?1657824513"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/ksu-cs-textbooks.github.io\/cis300\/";
+    
+</script>
+<script type="text/javascript" src="https://ksu-cs-textbooks.github.io/cis300/js/search.js?1657824513"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='https://ksu-cs-textbooks.github.io/cis300/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/io/" title="Input/Output" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/io/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>1. </b>Input/Output
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/strings/" title="strings and StringBuilders" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/strings/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>2. </b>strings and StringBuilders
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/stacks-queues/" title="Stacks and Queues" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>3. </b>Stacks and Queues
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/linked-lists/" title="Linked Lists" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>4. </b>Linked Lists
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/dictionaries/" title="Dictionaries" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>5. </b>Dictionaries
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/trees/" title="Trees" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/trees/">
+        
+        
+          
+          <i class="fas fa-angle-down fa-fw"></i>
+          
+        
+          <b>6. </b>Trees
+          
+
+      </a>
+    
+      
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/trees/intro/" title="Introduction to Trees" class="dd-item active">
+        <a href="https://ksu-cs-textbooks.github.io/cis300/trees/intro/">
+        <i class="fas fa-angle-down fa-fw" style="color: transparent;"></i>
+        <b>6.1. </b>Introduction to Trees
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/trees/bst/" title="Binary Search Trees" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>6.2. </b>Binary Search Trees
+          
+
+      </a>
+    
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/trees/avl/" title="AVL Trees" class="dd-item ">
+        <a href="https://ksu-cs-textbooks.github.io/cis300/trees/avl/">
+        <i class="fas fa-angle-down fa-fw" style="color: transparent;"></i>
+        <b>6.3. </b>AVL Trees
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/trees/tries/" title="Tries" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>6.4. </b>Tries
+          
+
+      </a>
+    
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/trees/priority-queues/" title="Priority Queues" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>6.5. </b>Priority Queues
+          
+
+      </a>
+    
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/hashing/" title="Hash Tables" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/hashing/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>7. </b>Hash Tables
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/graphs/" title="Graphs" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/graphs/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>8. </b>Graphs
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/sorting/" title="Sorting" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>9. </b>Sorting
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/appendix/" title="Appendices" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>A. </b>Appendices
+          
+
+      </a>
+    
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p>Built using <a href="http://gohugo.io/">Hugo</a>
+  and <a href="https://github.com/russfeld/ksucs-hugo-theme">ksucs-hugo-theme</a>
+  with assistance from Josh Weese and Russ Feldhausen.</p>
+<br/>
+<p>Microsoft and Visual Studio are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries. </p>
+<br/>
+<p><strong><i>© Copyright 2014-2020, <a href="http://people.cs.ksu.edu/~rhowell/" target="_">Rod Howell</a>. All rights reserved.</i></strong></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                  <div id="top-github-link">
+                    <a id="themelink" class="github-link" title='Toggle Light or Dark Mode' href="#">
+                      <i class="fas fa-moon"></i>
+                      <span id="top-github-link-text"></span>
+                    </a>
+                    <a class="github-link" title='Teleprompter View' href="tele.html" target="blank">
+                      <i class="fas fa-tv"></i>
+                      <span id="top-github-link-text"></span>
+                    </a>
+                    <a class="github-link" title='Embed this page' href="embed.html" target="blank">
+                      <i class="fas fa-expand-arrows-alt"></i>
+                      <span id="top-github-link-text"></span>
+                    </a>
+                
+                  
+                  
+                  
+                    <a class="github-link" title='Edit this page' href="https://gitlab.cs.ksu.edu/cis300/cis300-book/tree/master/content/trees/intro.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text"></span>
+                    </a>
+                  
+                
+                  </div>
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='https://ksu-cs-textbooks.github.io/cis300/'></a> > <a href='https://ksu-cs-textbooks.github.io/cis300/trees/'>Trees</a> > Introduction to Trees
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+          <div id="chapter">
+        
+        <div id="body-inner">
+          
+
+        
+
+
+<h2 id="introduction-to-trees">Introduction to Trees</h2>
+<p>A <em>tree</em> is a mathematical structure having a hierarchical nature. A
+tree may be <em>empty</em>, or it may consist of:</p>
+<ul>
+<li>a <em>root</em>, and</li>
+<li>zero or more <em>children</em>, each of which is also a tree.</li>
+</ul>
+<p>Consider, for example, a folder (or directory) in a Windows file system.
+This folder and all its sub-folders form a tree &mdash; the root of the tree
+is the folder itself, and its children are the folders directly
+contained within it. Because a folder (with its
+sub-folders) forms a tree, each of the sub-folders directly contained
+within the folder are also trees. In this example, there are no empty
+trees &mdash; an empty folder is a nonempty tree containing a root but no
+children.</p>
+
+<div class="notices note" ><p>Note</p><p>We are only considering actual folders,
+not shortcuts, symbolic links, etc.</p>
+</div>
+
+<p>We have at least a couple of ways of presenting a tree graphically. One
+way is as done within Windows Explorer:</p>
+<p><img src="windows-tree.jpg" alt="A Windows file system tree"></p>
+<p>Here, children are shown in a vertically-aligned list, indented under
+the root. An alternative depiction is as follows:</p>
+<p><img src="tree-example.jpg" alt="A tree"></p>
+<p>Here, children are shown by drawing lines to them downward from the
+root.</p>
+<p>Other examples of trees include various kinds of search spaces. For
+example, for a chess-playing program, the search for a move can be
+performed on a game tree whose root is a board position and whose
+children are the game trees formed from each board position reachable
+from the root position by a single move. Also, in the sections that
+follow, we will consider various data structures that form trees.</p>
+<p>The .NET Framework provides access to the folders in a file system tree
+via the
+<a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.directoryinfo?view=netframework-4.7.2" target="_blank"><strong>DirectoryInfo</strong></a>
+class, found in the <strong>System.IO</strong> namespace. This class has a
+<a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.directoryinfo.-ctor?view=netframework-4.7.2" target="_blank">constructor</a>
+that takes as its only parameter a <strong>string</strong> giving the path to a
+folder (i.e., a directory) and constructs a <strong>DirectoryInfo</strong> describing
+that folder. We can obtain such a <strong>string</strong> from the user using a
+<a href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.folderbrowserdialog?view=netframework-4.7.2" target="_blank"><strong>FolderBrowserDialog</strong></a>.
+This class is similar to a <a href="https://ksu-cs-textbooks.github.io/cis300/io/dialogs/file-dialogs">file
+dialog</a> and can be added
+to a form in the Design window in the same way. If <code>uxFolderBrowser</code> is
+a <strong>FolderBrowserDialog</strong>, we can use it to obtain a <strong>DirectoryInfo</strong>
+for a user-selected folder as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#66d9ef">if</span> (uxFolderBrowser.ShowDialog() == DialogResult.OK)
+{
+    DirectoryInfo folder = <span style="color:#66d9ef">new</span> DirectoryInfo(uxFolderBrowser.SelectedPath);
+    
+	<span style="color:#75715e">// Process the folder
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>Various properties of a <strong>DirectoryInfo</strong> give information about the
+folder; for example:</p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.directoryinfo.name?view=netframework-4.7.2" target="_blank"><strong>Name</strong></a>
+gets the name of the folder as a <strong>string</strong>.</li>
+<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.directoryinfo.fullname?view=netframework-4.7.2" target="_blank"><strong>FullName</strong></a>
+gets the full path of the folder as a <strong>string</strong>.</li>
+<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.directoryinfo.parent?view=netframework-4.7.2" target="_blank"><strong>Parent</strong></a>
+gets the parent folder as a <strong>DirectoryInfo</strong>.</li>
+</ul>
+<p>In addition, its
+<a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.directoryinfo.getdirectories?view=netframework-4.7.2#System_IO_DirectoryInfo_GetDirectories" target="_blank"><strong>GetDirectories</strong></a>
+method takes no parameters and returns a <strong>DirectoryInfo[ ]</strong> whose
+elements describe the contained folders (i.e., the elements of the array
+are the children of the folder). For example, if <code>d</code> refers to a
+<strong>DirectoryInfo</strong> for the folder <strong>Ksu.Cis300.HelloWorld</strong> from the
+figures above, then <strong>d.GetDirectories()</strong> would return a 3-element
+array whose elements describe the folders <strong>bin</strong>, <strong>obj</strong>, and
+<strong>Properties</strong>. The following method illustrates how we can write the
+names of the folders contained within a given folder to a
+<a href="https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=netframework-4.7.2" target="_blank"><strong>StreamWriter</strong></a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e">/// Writes the names of the directories contained in the given directory 
+</span><span style="color:#75715e">/// (excluding their sub-directories) to the given StreamWriter.
+</span><span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e">/// &lt;param name=&#34;dir&#34;&gt;The directory whose contained directories are to
+</span><span style="color:#75715e">/// be written.&lt;/param&gt;
+</span><span style="color:#75715e">/// &lt;param name=&#34;output&#34;&gt;The output stream to write to.&lt;/param&gt;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> WriteSubDirectories(DirectoryInfo dir, StreamWriter output)
+{
+    <span style="color:#66d9ef">foreach</span> (DirectoryInfo d <span style="color:#66d9ef">in</span> dir.GetDirectories())
+    {
+        output.WriteLine(d.Name);
+    }
+}
+</code></pre></div><p>For a more interesting problem, suppose we want to write to a
+<strong>StreamWriter</strong> the structure of an entire folder, as follows:</p>
+<pre>
+Ksu.Cis300.HelloWorld
+  bin
+    Debug
+    Release
+  obj
+    Debug
+      TempPE
+  Properties
+</pre>
+<p>We can break this task into the following steps:</p>
+<ol>
+<li>
+<p>Write the name of the folder:</p>
+<pre>Ksu.Cis300.HelloWorld</pre>
+</li>
+<li>
+<p>Write the structure of each child folder, indented one level (i.e.,
+two spaces):</p>
+<ul>
+<li>
+<p>First child:</p>
+<pre>
+  bin
+    Debug
+    Release
+</pre>
+</li>
+<li>
+<p>Second child:</p>
+<pre>
+  obj
+    Debug
+      TempPE
+</pre>
+</li>
+<li>
+<p>Third child:</p>
+<pre>
+  Properties
+</pre>
+</li>
+</ul>
+</li>
+</ol>
+<p><span id="recursion"></span> Note that writing the structure of a child
+folder is an instance of the original problem that we want to solve -
+i.e., writing the structure of a folder. The only difference is that the
+folders are different and the amount of indentation is different. We can
+solve such a problem using a technique called <em>recursion</em>. Recursion
+involves a method calling itself. Because of the recursive nature of a
+tree (i.e., each child of a tree is also a tree), recursion is commonly
+used in processing trees.</p>
+<p>In order to use recursion, we first must define precisely what we want
+our method to accomplish, wherever it might be called. For this problem,
+we want to write to a given <strong>StreamWriter</strong> a list of all the folders
+contained within a given folder, including the given folder itself and
+all sub-folders in the entire tree, where each folder is indented two
+spaces beyond its parent&rsquo;s indentation. Furthermore, the entire tree
+below a given folder (i.e., excluding the folder itself) should be
+listed below that folder, but before any folders that are outside that
+folder. In order to write such a method, we need three parameters:</p>
+<ul>
+<li>a <strong>DirectoryInfo</strong> giving the root folder;</li>
+<li>a <strong>StreamWriter</strong> where the output is to be written; and</li>
+<li>an <strong>int</strong> giving the level of indentation for the root folder,
+where each level of indentation is two spaces.</li>
+</ul>
+<p>Because the root folder must be written first, we begin there. We first
+must write two blanks for every level of indentation, then write the
+name of the root folder:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e">/// Writes the directory structure for the given root directory to the
+</span><span style="color:#75715e">/// given StreamWriter, indenting all entries to the given indentation
+</span><span style="color:#75715e">/// level (incomplete). 
+</span><span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e">/// &lt;param name=&#34;root&#34;&gt;The root directory.&lt;/param&gt;
+</span><span style="color:#75715e">/// &lt;param name=&#34;output&#34;&gt;The output stream to which to write&lt;/param&gt;
+</span><span style="color:#75715e">/// &lt;param name=&#34;level&#34;&gt;The current indentation level.&lt;/param&gt;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> WriteTree(DirectoryInfo root, StreamWriter output, <span style="color:#66d9ef">int</span> level)
+{
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i = <span style="color:#ae81ff">0</span>; i &lt; level; i++)
+    {
+        output.Write(<span style="color:#e6db74">&#34;  &#34;</span>);
+    }
+    output.WriteLine(root.Name);
+
+    <span style="color:#75715e">// We now need to write the sub-directories . . .
+</span><span style="color:#75715e"></span>
+}
+</code></pre></div><p>We can get the children using <strong>root.GetDirectories()</strong>. Each of the
+elements of the array this method returns will be a <strong>DirectoryInfo</strong>
+whose structure we want to write. Looking back at how we described what
+we want the <strong>WriteTree</strong> method to accomplish, we see that it is
+exactly what we want to do for each child. We can therefore make a
+recursive call for each child, specifying that the indentation level
+should be one deeper than the level for <code>root</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e">/// Writes the directory structure for the given root directory to the
+</span><span style="color:#75715e">/// given StreamWriter, indenting all entries to the given indentation
+</span><span style="color:#75715e">/// level (incomplete). 
+</span><span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e">/// &lt;param name=&#34;root&#34;&gt;The root directory.&lt;/param&gt;
+</span><span style="color:#75715e">/// &lt;param name=&#34;output&#34;&gt;The output stream to which to write&lt;/param&gt;
+</span><span style="color:#75715e">/// &lt;param name=&#34;level&#34;&gt;The current indentation level.&lt;/param&gt;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> WriteTree(DirectoryInfo root, StreamWriter output, <span style="color:#66d9ef">int</span> level)
+{
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i = <span style="color:#ae81ff">0</span>; i &lt; level; i++)
+    {
+        output.Write(<span style="color:#e6db74">&#34;  &#34;</span>);
+    }
+    output.WriteLine(root.Name);
+    <span style="color:#66d9ef">foreach</span> (DirectoryInfo d <span style="color:#66d9ef">in</span> root.GetDirectories())
+    {
+        WriteTree(d, output, level + <span style="color:#ae81ff">1</span>);
+    }
+}
+</code></pre></div><p>This method accomplishes the desired task, provided the directory tree
+does not contain symbolic links or anything similar that might be
+represented using a <strong>DirectoryInfo</strong>, but is not an actual folder.
+While it is possible to detect these and avoid following them, we will
+not consider that here.</p>
+<p>There is something that may seem mysterious about what we have done. In
+order to convince ourselves that this method is written correctly, we
+need to know that the recursive calls work correctly; however, the
+recursive calls are to the same method. Our reasoning therefore seems
+circular. However, we are actually using a mathematical principle from
+the discipline of formally proving software correctness: in order to
+prove that a recursive method meets its specification we may assume that
+any recursive calls meet that same specification, provided that these
+recursive calls are all on smaller problem instances.</p>
+<p>The restriction that recursive calls are on smaller problem instances is
+what avoids circular reasoning regarding recursion. We associate with
+each problem instance a nonnegative integer describing its size. For a
+problem involving a tree, this size is typically the number of <em>nodes</em>
+in the tree, where a node is a root of some subtree. Because every node
+in a child is also in the tree containing the child, but the root of the
+containing tree is not in the child, a child is always smaller, provided
+the tree is finite. (For directory trees, if the underlying file system
+is a Windows system, the tree will be finite; however if it is a
+non-Windows system, the trees may appear to Windows as being infinite -
+the above method actually will not work in such cases.)</p>
+<p>The validity of this strategy is based on the fact that for any method,
+the following three statements cannot be simultaneously true:</p>
+<ol>
+<li>All of the method&rsquo;s recursive calls (if there are any) are on inputs
+of smaller size, where the size is defined to be a nonnegative
+integer.</li>
+<li>When the method is given any input, if all of the method&rsquo;s recursive
+calls produce correct results, then the method itself produces a
+correct result.</li>
+<li>There is at least one input for which the method does not produce a
+correct result.</li>
+</ol>
+<p>Thus, if we can ensure that Statements 1 and 2 are true, then Statement
+3 must be false; i.e., the method will be correct. To ensure Statement
+2, we only need to concern ourselves with cases in which all recursive
+calls produce correct results; hence, we simply assume that each
+recursive call produces correct results.</p>
+<p>To see why the three statements above cannot be simultaneously true,
+let&rsquo;s first suppose Statement 3 is true. Let <em>S</em> be the set of all
+inputs for which the method does not produce a correct result. Then
+because Statement 3 is true, this set is nonempty. Because each input in
+<em>S</em> has a nonnegative integer size, there is an input <em>I</em> in <em>S</em> with
+smallest size. Now suppose Statement 1 is true. Then when the method is
+run on input <em>I</em>, each of the recursive calls is given an input smaller
+than <em>I</em>; hence, because <em>I</em> is a smallest input in <em>S</em>, none of these
+inputs is in <em>S</em>. Therefore, each of the recursive calls produces a
+correct result. We therefore have an input, <em>I</em> on which all of the
+method&rsquo;s recursive calls produce correct results, but the method itself
+does not produce a correct result. Statement 2 is therefore false.</p>
+<p>Once we understand this strategy, recursion is as easy to use as calling
+a method written by someone else. In fact, we should treat recursive
+calls in exactly the same way &mdash; we need to understand what the recursive
+call is supposed to accomplish, but not necessarily how it accomplishes
+it. Furthermore, because processing trees typically involves solving the
+same problem for multiple nodes in the tree, recursion is the natural
+technique to use.</p>
+<p>A recursive method for processing a tree will break down into cases,
+each fitting into one of the following categories:</p>
+<ul>
+<li>A <em>base case</em> is a case that is simple enough that a recursive call
+is not needed. Empty trees are always base cases, and sometimes
+other trees are as well.</li>
+<li>A <em>recursive case</em> is a case that requires one or more recursive
+calls to handle it.</li>
+</ul>
+<p>A recursive method will always contain cases of <em>both</em> these types. If
+there were no base cases, the recursion would never terminate. If there
+were no recursive cases, the method wouldn&rsquo;t be recursive. Most
+recursive methods are, in fact, structured as an <strong>if</strong>-statement, with
+some cases being base cases and some cases being recursive cases.
+However, for some recursive methods, such as <strong>WriteTree</strong> above, the
+base cases aren&rsquo;t as obvious. Note that in that method, the recursive
+call appears in a loop; hence, if the loop doesn&rsquo;t iterate (because the
+array returned is empty), no recursive calls are made. Furthermore, if
+the directory tree is finite, there must be some sub-directories that
+have no children. When the <strong>GetDirectories</strong> method is called for such
+a directory, it returns an empty array. These directories are therefore
+the base cases.</p>
+<p>The <strong>WriteTree</strong> method above is actually an example of processing an
+entire tree using a <em>preorder traversal</em>. In a preorder traversal, the
+root of the tree is processed first, then each of the children is
+processed using a recursive call. This results in each node&rsquo;s being
+processed prior to any node contained in any of its children. For the
+<strong>WriteTree</strong> method, this means that the name of any folder is written
+before any folders contained anywhere within it.</p>
+<p>When debugging a recursive method, we should continue to think about it
+in the same way &mdash; that is, assume that all recursive calls work
+correctly. In order to isolate an error, we need to find an instance
+that causes an error, but whose recursive calls all work correctly. It
+will almost always be possible to find such a case that is small &mdash; in
+fact, small cases tend to be the most likely ones to fit this
+description. When debugging, it therefore makes sense to start with the
+smallest cases, and slowly increase their size until one is found that
+causes an error. When using the debugger to step through code, first
+delete all breakpoints from this method, then use <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/debugger/#debugger-buttons">Step
+Over</a> to step over
+the recursive calls. If a recursive call doesn&rsquo;t work correctly, you
+have found a smaller instance that causes an error &mdash; work on that
+instance instead. Otherwise, you can focus on the top-level code for the
+instance you are debugging. This is much easier to think about that
+trying to work through different levels of recursion.</p>
+<p>There are times when it is useful to know exactly what happens when a
+recursive call (or any method call, for that matter) is made. Prior to
+transferring control to the top of the method being called, all local
+variables and the address of the current code location are pushed onto
+the <em>call stack</em>. This call stack is just like any other stack, except
+that it has a smaller amount of space available to it. You can, in fact,
+examine the call stack when debugging &mdash; from the &ldquo;Debug&rdquo; menu, select
+&ldquo;Windows -&gt; Call Stack&rdquo;. This will open a window
+showing the contents of the call stack. The line on top shows the line
+of code currently ready for execution. Below it is the line that called
+the current method, and below that line is the line that called that
+method, etc. By double-clicking on an entry in the call stack, you can
+use the other debugging tools to examine the values of the local
+variables for the method containing that line of code. If this method is
+recursive, the values displayed for the local variables are their values
+at that level of recursion.</p>
+
+<div class="notices note" ><p>Note</p><p>This only applies to the values
+stored in local variables - in particular, if a local variable is a
+<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/reference-value">reference type</a>, the
+value of the object to which it refers will not revert to its earlier
+state. For example, if a local variable is an array, the debugger will
+show the value of this variable to refer to the array that it referred
+to at that point, but the values shown in that array will be its current
+values.</p>
+</div>
+
+<p>Once consequence of method calls using a call stack with limited space
+available is that moderately deep recursion can fill up the call stack.
+If this happens, a <strong>StackOverflowException</strong> will be thrown. Thus,
+infinite recursion will always throw this exception, as will recursion
+that is nested too deeply. For this reason, it is usually a bad idea to
+use recursion on a <a href="https://ksu-cs-textbooks.github.io/cis300/linked-lists">linked
+list</a> - if the list is
+very long, the recursion will be nested too deeply. We must also take
+care in using recursion with trees, as long paths in a tree can lead to
+a <strong>StackOverflowException</strong>. Due to the branching nature of trees,
+however, we can have very large trees with no long paths. In fact, there
+are many cases in which we can be sure that a tree doesn&rsquo;t contain any
+long paths. In such cases, recursion is often a useful technique.</p>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div> 
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="https://ksu-cs-textbooks.github.io/cis300/trees/" title="Trees"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/" title="Binary Search Trees" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1657824513"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1657824513"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.jquery.min.js?1657824513"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.sticky.js?1657824513"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1657824513"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/highlight.pack.js?1657824513"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/modernizr.custom-3.6.0.js?1657824513"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/learn.js?1657824513"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/hugo-learn.js?1657824513"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/themer.js?1657824513"></script>
+
+    
+        
+            <script src="https://ksu-cs-textbooks.github.io/cis300/mermaid/mermaid.js?1657824513"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+
+    
+
+    
+    
+
+    
+<script 
+src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/quizdown.js">
+</script>
+<script 
+src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/extensions/quizdownKatex.js">
+</script>
+<script 
+src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/extensions/quizdownHighlight.js">
+</script>
+<script>quizdown.register(quizdownHighlight).register(quizdownKatex).init()</script> 
+  </body>
+</html>
+

@@ -1,0 +1,2452 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.89.4" />
+    <meta name="description" content="K-State CIS 300: Data Structures">
+<meta name="author" content="Rod Howell and Josh Weese">
+
+    <link rel="icon" href="https://ksu-cs-textbooks.github.io/cis300/images/favicon.png" type="image/png">
+
+    <title>Implementation of StringBuilders :: Data Structures in C#</title>
+
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1657824514" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1657824514" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/hybrid.css?1657824514" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1657824514" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1657824514" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1657824514" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/atom-one-dark-reasonable.css?1657824514" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1657824514" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/tabs.css?1657824514" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/hugo-theme.css?1657824514" rel="stylesheet">
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-purple.css?1657824514" rel="stylesheet">
+    
+    
+    
+      <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-iframe.css?1657824514" rel="stylesheet">
+    
+    
+
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery-3.3.1.min.js?1657824514"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    
+
+     
+    
+<script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$','$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  
+    window.addEventListener('load', (event) => {
+        document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+      });
+  
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="" data-url="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilder-impl/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://ksu-cs-textbooks.github.io/cis300/">
+  CIS 300 - Data Structures
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="https://ksu-cs-textbooks.github.io/cis300/js/lunr.min.js?1657824514"></script>
+<script type="text/javascript" src="https://ksu-cs-textbooks.github.io/cis300/js/auto-complete.js?1657824514"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/ksu-cs-textbooks.github.io\/cis300\/";
+    
+</script>
+<script type="text/javascript" src="https://ksu-cs-textbooks.github.io/cis300/js/search.js?1657824514"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='https://ksu-cs-textbooks.github.io/cis300/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/io/" title="Input/Output" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/io/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>1. </b>Input/Output
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/strings/" title="strings and StringBuilders" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/strings/">
+        
+        
+          
+          <i class="fas fa-angle-down fa-fw"></i>
+          
+        
+          <b>2. </b>strings and StringBuilders
+          
+
+      </a>
+    
+      
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/strings/strings/" title="strings" class="dd-item ">
+        <a href="https://ksu-cs-textbooks.github.io/cis300/strings/strings/">
+        <i class="fas fa-angle-down fa-fw" style="color: transparent;"></i>
+        <b>2.1. </b>strings
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/strings/stringbuilders/" title="StringBuilders" class="dd-item ">
+        <a href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilders/">
+        <i class="fas fa-angle-down fa-fw" style="color: transparent;"></i>
+        <b>2.2. </b>StringBuilders
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/strings/stringbuilder-impl/" title="Implementation of StringBuilders" class="dd-item active">
+        <a href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilder-impl/">
+        <i class="fas fa-angle-down fa-fw" style="color: transparent;"></i>
+        <b>2.3. </b>Implementation of StringBuilders
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/stacks-queues/" title="Stacks and Queues" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>3. </b>Stacks and Queues
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/linked-lists/" title="Linked Lists" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>4. </b>Linked Lists
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/dictionaries/" title="Dictionaries" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>5. </b>Dictionaries
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/trees/" title="Trees" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/trees/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>6. </b>Trees
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/hashing/" title="Hash Tables" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/hashing/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>7. </b>Hash Tables
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/graphs/" title="Graphs" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/graphs/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>8. </b>Graphs
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/sorting/" title="Sorting" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>9. </b>Sorting
+          
+
+      </a>
+    
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/appendix/" title="Appendices" class="dd-item
+        
+        
+        
+        ">
+      <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/">
+        
+        
+          
+          <i class="fas fa-angle-right fa-fw"></i>
+          
+        
+          <b>A. </b>Appendices
+          
+
+      </a>
+    
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p>Built using <a href="http://gohugo.io/">Hugo</a>
+  and <a href="https://github.com/russfeld/ksucs-hugo-theme">ksucs-hugo-theme</a>
+  with assistance from Josh Weese and Russ Feldhausen.</p>
+<br/>
+<p>Microsoft and Visual Studio are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries. </p>
+<br/>
+<p><strong><i>© Copyright 2014-2020, <a href="http://people.cs.ksu.edu/~rhowell/" target="_">Rod Howell</a>. All rights reserved.</i></strong></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                  <div id="top-github-link">
+                    <a id="themelink" class="github-link" title='Toggle Light or Dark Mode' href="#">
+                      <i class="fas fa-moon"></i>
+                      <span id="top-github-link-text"></span>
+                    </a>
+                    <a class="github-link" title='Teleprompter View' href="tele.html" target="blank">
+                      <i class="fas fa-tv"></i>
+                      <span id="top-github-link-text"></span>
+                    </a>
+                    <a class="github-link" title='Embed this page' href="embed.html" target="blank">
+                      <i class="fas fa-expand-arrows-alt"></i>
+                      <span id="top-github-link-text"></span>
+                    </a>
+                
+                  
+                  
+                  
+                    <a class="github-link" title='Edit this page' href="https://gitlab.cs.ksu.edu/cis300/cis300-book/tree/master/content/strings/stringbuilder-impl.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text"></span>
+                    </a>
+                  
+                
+                  </div>
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='https://ksu-cs-textbooks.github.io/cis300/'></a> > <a href='https://ksu-cs-textbooks.github.io/cis300/strings/'>strings and StringBuilders</a> > Implementation of StringBuilders
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+          <div id="chapter">
+        
+        <div id="body-inner">
+          
+
+        
+
+
+<h2 id="implementation-of-stringbuilders">Implementation of <strong>StringBuilder</strong>s</h2>
+<p>In this section, we will examine some of the implementation details of
+the <strong>StringBuilder</strong> class. There are several reasons for doing this.
+First, by examining these details, we can begin to understand why a
+<strong>StringBuilder</strong> is so much more efficient than a <strong>string</strong> when it
+comes to building long <strong>string</strong>s a character at a time. Second, by
+studying implementations of data structures, we can learn techniques
+that might be useful to us if we need to build our own data structures.
+Finally, a computing professional who better understands the underlying
+software will be better equipped to use that software effectively.</p>
+<p>In what follows, we will develop an implementation of a simplified
+<strong>StringBuilder</strong> class. Specifically, we will only implement enough to
+support the program that flips the case of all characters in a
+<strong>string</strong> (see <a href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilders">the previous
+section</a>). Most other
+features of a <strong>StringBuilder</strong> have a rather straightforward
+implementation once the basics are done (we will show how to implement
+an indexer in <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/indexers">a later
+section</a>).</p>
+
+<div class="notices note" ><p>Note</p><p>The
+implementation described here is much simpler than the actual
+implementation in the .NET Framework.  Their implementation achieves
+even better performance.</p>
+</div>
+
+<p>In order to illustrate more clearly the techniques used to implement a
+<strong>StringBuilder</strong>, we will present an implementation that uses only
+those types provided by the C#
+core language, rather than those found in a library such as the .NET
+Framework. One
+of the more useful data
+structures that the C# core language provides for building more
+advanced data structures
+is the array. We can represent the characters in a <strong>StringBuilder</strong>
+using a <strong>char[ ]</strong>. One difficulty in using an array, however, is
+that we don&rsquo;t know how many characters our <strong>StringBuilder</strong> might need.
+We will return to this issue shortly, but for now, let&rsquo;s just
+arbitrarily pick a size for our array, and define:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e">/// The characters in this StringBuilder.
+</span><span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">char</span>[] <span style="color:#ae81ff">_</span>characters = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">char</span>[<span style="color:#ae81ff">100</span>];
+</code></pre></div><p>An array with 100 elements will give us room enough to store up to 100
+characters. In fact, initializing the array in this way actually gives
+us 100 characters, as each array element is initialized to a Unicode
+NULL character (a <strong>char</strong> with a decimal value of 0). Because <strong>char</strong>
+is a <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/reference-value">value type</a>,
+each array element is going to store a <strong>char</strong> - it&rsquo;s just a question
+of which <strong>char</strong> it is going to store. Therefore, if we want to be able
+to represent a sequence of <em>fewer</em> than 100 characters, we need an
+additional field to keep track of how many characters of the array
+actually represent characters in the <strong>StringBuilder</strong>. We therefore
+define:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e">/// The number of characters in this StringBuilder.
+</span><span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> <span style="color:#ae81ff">_l</span>ength = <span style="color:#ae81ff">0</span>;
+</code></pre></div><p>Thus, for example, if <code>_length</code> is 25, the first 25 characters in
+<code>_characters</code> will be the characters in the <strong>StringBuilder</strong>.</p>
+<p>Because both fields have initializers, the default constructor will
+initialize them both; hence, we don&rsquo;t need to write a constructor. Let&rsquo;s
+focus instead on the <strong>Append</strong> method. This method needs to take a
+<strong>char</strong> as its only parameter and return a <strong>StringBuilder</strong> (itself).
+Its effect needs to be to add the given <strong>char</strong> to the end of the
+sequence of characters in the <strong>StringBuilder</strong>.</p>
+<p>In order to see how this can be done, consider how our fields together
+represent the sequence of characters:</p>
+<p><img src="stringbuilder-impl.jpg" alt="The implementation of a StringBuilder"></p>
+<p>Within the array referred to by <code>_characters</code>, the first <code>_length</code>
+locations (i.e., locations 0 through <code>_length</code> - 1) store the
+characters in the <strong>StringBuilder</strong>. This means that
+<code>_characters[_length]</code> is the next available location, provided this is
+a valid array location. In this case, we can simply place the <strong>char</strong>
+to be appended in <code>_characters[_length]</code>, increment <code>_length</code> (because
+the number of characters in the <strong>StringBuilder</strong> has increased by 1),
+and return the <strong>StringBuilder</strong>.</p>
+<p>However, what if we are already using all of the array locations for
+characters in the <strong>StringBuilder</strong>? In this case, <code>_length</code> is the
+length of the array, and therefore is not a valid array location. In
+order to handle this case, we need to make more room. The only way to do
+this to construct a new, larger array, and copy all of the characters
+into it. We will then make <code>_characters</code> refer to the new array. (The
+.NET Framework actually provides a method to do all this, but in order
+to show the details of what is happening, we will not use it.) Now that
+there is enough room, we can append the new character as above. The code
+is as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e">/// Appends the given character to the end of this StringBuilder.
+</span><span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e">/// &lt;param name=&#34;c&#34;&gt;The character to append.&lt;/param&gt;
+</span><span style="color:#75715e">/// &lt;returns&gt;This StringBuilder.&lt;/returns&gt;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> StringBuilder Append(<span style="color:#66d9ef">char</span> c)
+{
+    <span style="color:#66d9ef">if</span> (<span style="color:#ae81ff">_l</span>ength == <span style="color:#ae81ff">_</span>characters.Length)
+    {
+        <span style="color:#66d9ef">char</span>[] chars = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">char</span>[<span style="color:#ae81ff">2</span> * <span style="color:#ae81ff">_l</span>ength];
+        <span style="color:#ae81ff">_</span>characters.CopyTo(chars, <span style="color:#ae81ff">0</span>);
+        <span style="color:#ae81ff">_</span>characters = chars;
+    }
+    <span style="color:#ae81ff">_</span>characters[<span style="color:#ae81ff">_l</span>ength] = c;
+    <span style="color:#ae81ff">_l</span>ength++;
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>;
+}
+</code></pre></div><p>A few comments on the above code are in order. First, when we need a new
+array, we allocate one of twice the size as the original array. We do
+this for a couple of reasons. First, notice that copying every character
+from one array to another is expensive if there are a lot of characters.
+For this reason, we don&rsquo;t want to do it very often. By doubling the size
+of the array every time we run out of room, we increase the size by
+enough that it will be a while before we need to do it again. On the
+other hand, doubling the array doesn&rsquo;t waste too much space if we don&rsquo;t
+need to fill it entirely.</p>
+<p>The
+<a href="https://docs.microsoft.com/en-us/dotnet/api/system.array.copyto?view=netframework-4.7.2#System_Array_CopyTo_System_Array_System_Int32_" target="_blank"><strong>CopyTo</strong></a>
+method used above copies all of the elements in the array to which this
+method belongs (in this case, <code>_characters</code>) to the array given by the
+first parameter (<code>chars</code> in this case), placing them beginning at the
+location given by the second parameter (0 in this case). Thus, we are
+copying all the elements of <code>_characters</code> to <code>chars</code>, placing them
+beginning at location 0.</p>
+<p>The last statement within the <strong>if</strong> block assigns the reference stored
+in <code>chars</code> to <code>_characters</code>; i.e., it makes <code>_characters</code> refer to the
+same array as does <code>chars</code>. The last statement in the method returns the
+<strong>StringBuilder</strong> whose <strong>Append</strong> method was called.</p>
+<p><span id="overriding"></span> To complete this simple implementation, we
+need to provide a <strong>ToString</strong> method. This method is already defined
+for every <strong>object</strong>; hence, <strong>StringBuilder</strong> <em>inherits</em> this
+definition by default. However, the <strong>ToString</strong> method defined for
+<strong>object</strong>s doesn&rsquo;t give us the <strong>string</strong> we want. Fortunately, though,
+this method is a <strong>virtual</strong> method, meaning that we can re-define by
+<em>overriding</em> it. We do this by using the keyword, <strong>override</strong>, in its
+definition. Visual Studio®'s auto-complete feature is helpful here,
+as when we type the word <strong>override</strong>, it presents us with a list of the
+methods that can be overridden. Selecting <strong>ToString</strong> from this list
+will fill in a template for the method with a correct parameter list and
+return type.</p>
+<p>We want this method to return the <strong>string</strong> formed from the first
+<code>_length</code> characters in <code>_characters</code>. We can form such a string using
+one of the <a href="https://docs.microsoft.com/en-us/dotnet/api/system.string.-ctor?view=netframework-4.7.2#System_String__ctor_System_Char___System_Int32_System_Int32_" target="_blank"><strong>string</strong>
+constructor</a>s.
+This constructor takes three parameters:</p>
+<ul>
+<li>a <strong>char[ ]</strong> containing the characters to form the <strong>string</strong>;</li>
+<li>an <strong>int</strong> giving the index in this array of the first character to
+use; and</li>
+<li>an <strong>int</strong> giving the number of characters to use.</li>
+</ul>
+<p>We can therefore define the <strong>ToString</strong> method as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e">/// Converts this StringBuilder to a string.
+</span><span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e">/// &lt;returns&gt;The string equivalent of this StringBuilder.&lt;/returns&gt;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">string</span> ToString()
+{
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">string</span>(<span style="color:#ae81ff">_</span>characters, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">_l</span>ength);
+}
+</code></pre></div><p>You can obtain a program containing the complete <strong>class</strong> definition by
+creating a Git repository (see <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/repos">“Git
+Repositories”</a>) using
+<a href="https://classroom.github.com/a/u_vizKQg" target="_blank">this URL</a>. This program is a
+modification of the program used in <a href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilders">the previous
+section</a> to compare the performance
+differences between using
+<strong>string</strong>s or <strong>StringBuilder</strong>s when building <strong>string</strong>s a
+character at a time. Its only modification is to use this
+<strong>StringBuilder</strong> class, defined within a <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/class-libraries">class
+library</a>, instead of
+the class defined in the .NET Framework. By running the program on long
+<strong>string</strong>s, you can verify that the performance of this
+<strong>StringBuilder</strong> class is comparable to that of the <strong>StringBuilder</strong>
+in the .NET Framework.</p>
+<p>Now that we have the details of a <strong>StringBuilder</strong> implementation, we
+can begin to see why it is so much more efficient to build a <strong>string</strong>
+a character at a time using a <strong>StringBuilder</strong>, as opposed to using a
+<strong>string</strong>. As we have noted, allocating a new array and copying all
+characters to it is expensive; however, we have tried to reduce the
+number of times this is done. To see how this is accomplished, suppose
+we are building a <strong>string</strong> of 100,000 characters. The first time we
+need a larger array, we will copy 100 characters to a 200-element array.
+The next time, we will copy 200 characters to a 400-element array. This
+will continue until we copy 51,200 characters to a 102,400-element
+array, which is large enough to hold all of the characters. If we add up
+all of the character copies we have done when allocating new arrays, we
+find that there are a total of 102,300 copies. In addition, each time we
+call <strong>Append</strong>, we copy the <strong>char</strong> parameter to the array. This is
+another 100,000 copies. Finally, the <strong>ToString</strong> method must copy all
+of the characters to the <strong>string</strong> it is constructing. This is another
+100,000 character copies, for a total of 302,300 copies. In general, the
+number of character copies will always be less than 4<em>n</em>, where <em>n</em> is
+the length of the <strong>string</strong> being built.</p>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div> 
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilders/" title="StringBuilders"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/" title="Stacks and Queues" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1657824514"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1657824514"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.jquery.min.js?1657824514"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.sticky.js?1657824514"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1657824514"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/highlight.pack.js?1657824514"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/modernizr.custom-3.6.0.js?1657824514"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/learn.js?1657824514"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/hugo-learn.js?1657824514"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/themer.js?1657824514"></script>
+
+    
+        
+            <script src="https://ksu-cs-textbooks.github.io/cis300/mermaid/mermaid.js?1657824514"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+
+    
+
+    
+    
+
+    
+<script 
+src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/quizdown.js">
+</script>
+<script 
+src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/extensions/quizdownKatex.js">
+</script>
+<script 
+src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/extensions/quizdownHighlight.js">
+</script>
+<script>quizdown.register(quizdownHighlight).register(quizdownKatex).init()</script> 
+  </body>
+</html>
+
+
+
+
