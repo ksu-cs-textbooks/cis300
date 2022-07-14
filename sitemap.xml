@@ -9,6 +9,9 @@
   </url><url>
     <loc>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/enumerations/</loc>
   </url><url>
+    <loc>https://ksu-cs-textbooks.github.io/cis300/appendix/vs-2019/</loc>
+    <lastmod>2018-08-24T10:53:05-05:00</lastmod>
+  </url><url>
     <loc>https://ksu-cs-textbooks.github.io/cis300/homework/jjfhhsduuerqo1239jas/</loc>
     <lastmod>2020-09-27T10:53:05-05:00</lastmod>
   </url><url>
@@ -31,6 +34,9 @@
     <lastmod>2018-08-24T10:53:05-05:00</lastmod>
   </url><url>
     <loc>https://ksu-cs-textbooks.github.io/cis300/io/</loc>
+    <lastmod>2018-08-24T10:53:05-05:00</lastmod>
+  </url><url>
+    <loc>https://ksu-cs-textbooks.github.io/cis300/appendix/vs-2019/installing-vs/</loc>
     <lastmod>2018-08-24T10:53:05-05:00</lastmod>
   </url><url>
     <loc>https://ksu-cs-textbooks.github.io/cis300/appendix/vs/installing-vs/</loc>
@@ -70,6 +76,9 @@
     <lastmod>2018-08-24T10:53:05-05:00</lastmod>
   </url><url>
     <loc>https://ksu-cs-textbooks.github.io/cis300/trees/bst/</loc>
+    <lastmod>2018-08-24T10:53:05-05:00</lastmod>
+  </url><url>
+    <loc>https://ksu-cs-textbooks.github.io/cis300/appendix/vs-2019/repos/</loc>
     <lastmod>2018-08-24T10:53:05-05:00</lastmod>
   </url><url>
     <loc>https://ksu-cs-textbooks.github.io/cis300/appendix/vs/repos/</loc>
@@ -162,6 +171,9 @@
     <loc>https://ksu-cs-textbooks.github.io/cis300/graphs/breadth-first/</loc>
     <lastmod>2018-08-24T10:53:05-05:00</lastmod>
   </url><url>
+    <loc>https://ksu-cs-textbooks.github.io/cis300/appendix/vs-2019/solutions/</loc>
+    <lastmod>2018-08-24T10:53:05-05:00</lastmod>
+  </url><url>
     <loc>https://ksu-cs-textbooks.github.io/cis300/appendix/vs/solutions/</loc>
     <lastmod>2018-08-24T10:53:05-05:00</lastmod>
   </url><url>
@@ -196,6 +208,9 @@
     <lastmod>2018-08-24T10:53:05-05:00</lastmod>
   </url><url>
     <loc>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/decimals/</loc>
+    <lastmod>2018-08-24T10:53:05-05:00</lastmod>
+  </url><url>
+    <loc>https://ksu-cs-textbooks.github.io/cis300/appendix/vs-2019/design-window/</loc>
     <lastmod>2018-08-24T10:53:05-05:00</lastmod>
   </url><url>
     <loc>https://ksu-cs-textbooks.github.io/cis300/appendix/vs/design-window/</loc>
@@ -237,6 +252,9 @@
     <loc>https://ksu-cs-textbooks.github.io/cis300/appendix/style/prohibited/</loc>
     <lastmod>2018-08-24T10:53:05-05:00</lastmod>
   </url><url>
+    <loc>https://ksu-cs-textbooks.github.io/cis300/appendix/vs-2019/code-window/</loc>
+    <lastmod>2018-08-24T10:53:05-05:00</lastmod>
+  </url><url>
     <loc>https://ksu-cs-textbooks.github.io/cis300/appendix/vs/code-window/</loc>
     <lastmod>2018-08-24T10:53:05-05:00</lastmod>
   </url><url>
@@ -255,6 +273,9 @@
     <loc>https://ksu-cs-textbooks.github.io/cis300/sorting/strings/</loc>
     <lastmod>2018-08-24T10:53:05-05:00</lastmod>
   </url><url>
+    <loc>https://ksu-cs-textbooks.github.io/cis300/appendix/vs-2019/debugger/</loc>
+    <lastmod>2018-08-24T10:53:05-05:00</lastmod>
+  </url><url>
     <loc>https://ksu-cs-textbooks.github.io/cis300/appendix/vs/debugger/</loc>
     <lastmod>2018-08-24T10:53:05-05:00</lastmod>
   </url><url>
@@ -264,10 +285,16 @@
     <loc>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/indexers/</loc>
     <lastmod>2018-08-24T10:53:05-05:00</lastmod>
   </url><url>
+    <loc>https://ksu-cs-textbooks.github.io/cis300/appendix/vs-2019/submitting/</loc>
+    <lastmod>2018-08-24T10:53:05-05:00</lastmod>
+  </url><url>
     <loc>https://ksu-cs-textbooks.github.io/cis300/appendix/vs/submitting/</loc>
     <lastmod>2018-08-24T10:53:05-05:00</lastmod>
   </url><url>
     <loc>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/static-this/</loc>
+    <lastmod>2018-08-24T10:53:05-05:00</lastmod>
+  </url><url>
+    <loc>https://ksu-cs-textbooks.github.io/cis300/appendix/vs-2019/nunit/</loc>
     <lastmod>2018-08-24T10:53:05-05:00</lastmod>
   </url><url>
     <loc>https://ksu-cs-textbooks.github.io/cis300/appendix/vs/nunit/</loc>
@@ -276,13 +303,22 @@
     <loc>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/out-ref/</loc>
     <lastmod>2018-08-24T10:53:05-05:00</lastmod>
   </url><url>
+    <loc>https://ksu-cs-textbooks.github.io/cis300/appendix/vs-2019/multiple/</loc>
+    <lastmod>2018-08-24T10:53:05-05:00</lastmod>
+  </url><url>
     <loc>https://ksu-cs-textbooks.github.io/cis300/appendix/vs/multiple/</loc>
+    <lastmod>2018-08-24T10:53:05-05:00</lastmod>
+  </url><url>
+    <loc>https://ksu-cs-textbooks.github.io/cis300/appendix/vs-2019/checkpointing/</loc>
     <lastmod>2018-08-24T10:53:05-05:00</lastmod>
   </url><url>
     <loc>https://ksu-cs-textbooks.github.io/cis300/appendix/vs/checkpointing/</loc>
     <lastmod>2018-08-24T10:53:05-05:00</lastmod>
   </url><url>
     <loc>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/foreach/</loc>
+    <lastmod>2018-08-24T10:53:05-05:00</lastmod>
+  </url><url>
+    <loc>https://ksu-cs-textbooks.github.io/cis300/appendix/vs-2019/class-libraries/</loc>
     <lastmod>2018-08-24T10:53:05-05:00</lastmod>
   </url><url>
     <loc>https://ksu-cs-textbooks.github.io/cis300/appendix/vs/class-libraries/</loc>

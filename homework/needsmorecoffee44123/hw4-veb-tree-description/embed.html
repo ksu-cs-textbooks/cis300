@@ -18,26 +18,26 @@
     <title> :: Data Structures in C#</title>
 
     
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1657824514" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1657824514" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/hybrid.css?1657824514" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1657824514" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1657824514" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1657824514" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/atom-one-dark-reasonable.css?1657824514" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1657824514" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/tabs.css?1657824514" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/hugo-theme.css?1657824514" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1657829540" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1657829540" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/hybrid.css?1657829540" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1657829540" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1657829540" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1657829540" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/atom-one-dark-reasonable.css?1657829540" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1657829540" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/tabs.css?1657829540" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/hugo-theme.css?1657829540" rel="stylesheet">
     
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-purple.css?1657824514" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-purple.css?1657829540" rel="stylesheet">
     
     
     
-      <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-iframe.css?1657824514" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-iframe.css?1657829540" rel="stylesheet">
     
     
 
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery-3.3.1.min.js?1657824514"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery-3.3.1.min.js?1657829540"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -92,14 +92,14 @@ src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://ksu-cs-textbooks.github.io/cis300/js/lunr.min.js?1657824514"></script>
-<script type="text/javascript" src="https://ksu-cs-textbooks.github.io/cis300/js/auto-complete.js?1657824514"></script>
+<script type="text/javascript" src="https://ksu-cs-textbooks.github.io/cis300/js/lunr.min.js?1657829540"></script>
+<script type="text/javascript" src="https://ksu-cs-textbooks.github.io/cis300/js/auto-complete.js?1657829540"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/ksu-cs-textbooks.github.io\/cis300\/";
     
 </script>
-<script type="text/javascript" src="https://ksu-cs-textbooks.github.io/cis300/js/search.js?1657824514"></script>
+<script type="text/javascript" src="https://ksu-cs-textbooks.github.io/cis300/js/search.js?1657829540"></script>
 
     
   </div>
@@ -580,7 +580,7 @@ These functions help segment out the bits in each level.  We want to separate th
 <li><code>public int Min</code>:  This property stores the smallest key in this tree.  This should have a public get accessor and a private set accessor using the default implementation.</li>
 <li><code>public int Max</code>:  This property stores the largest key in this tree.  This should have a public get accessor and a private set accessor using the default implementation.</li>
 <li><code>public VebTreeNode[] Clusters</code>:  This property stores subtrees that correspond to clusters of bits in the vEB Tree.  The number of subtrees is equal to the upper square root of the universe for a universe greater than 2.  For a universe of size 2, no clusters are stored.   This  property should have a public get accessor and a private set accessor using the default implementation.</li>
-<li><code>public VebTree Summary</code>:  This property stores an auxiliary tree that keeps track of which clusters contain elements.  This should have a public get accessor and a private set accessor using the default implementation.</li>
+<li><code>public VebTreeNode Summary</code>:  This property stores an auxiliary tree that keeps track of which clusters contain elements.  This should have a public get accessor and a private set accessor using the default implementation.</li>
 <li><code>public int Universe</code>:  This property keeps track of maximum number of bits/keys this tree can contain.  This should have a public get accessor and a private set accessor using the default implementation.</li>
 </ul>
 <h4 id="fields">Fields</h4>
@@ -611,7 +611,7 @@ These functions help segment out the bits in each level.  We want to separate th
 <p><code>public int Index(int subtree, int offset)</code>: returns the element based from the given subtree and offset values  as described in the earlier &ldquo;van Embde Boas Trees&rdquo; section.</p>
 </li>
 <li>
-<p><code>public void Insert(int key)</code>: This recursive method inserts the given key into the tree.  The key must be a non-negative integer that is strictly less than the <code>Universe</code>.  If it is not, an argument exception should be thrown.</p>
+<p><code>public void Insert(int key)</code>: This recursive method inserts the given key into the tree.  The key must be a positive integer that is strictly less than the <code>Universe</code>.  If it is not, an argument exception should be thrown.</p>
 <ul>
 <li>If the value of <code>Min</code> has not been set, then this key is the first element to be inserted into this node, therefore we only need to set the min and max to the value of the key.</li>
 <li>Otherwise,
@@ -665,7 +665,7 @@ These functions help segment out the bits in each level.  We want to separate th
 <h4 id="methods-1">Methods</h4>
 <ul>
 <li><code>public void Enqueue(int num)</code>:  This method inserts the given number into the queue.</li>
-<li><code>public void Dequeue(int num)</code>:  This method removes the element with the minimum priority (the smallest element) from the queue and returns it.  This method should throw an InvalidOperationException if there are no elements in the queue.</li>
+<li><code>public int Dequeue()</code>:  This method removes the element with the minimum priority (the smallest element) from the queue and returns it.  This method should throw an InvalidOperationException if there are no elements in the queue.</li>
 </ul>
 <h3 id="testing">Testing</h3>
 <p>The unit tests given with this project provide high code coverage for both the MinPriorityQueue and the VebTreeNode classes.  However, passing all of the test cases does not guarantee 100% on the homework assignment. The torture tests that verify efficiency of your solution should be able to be ran successfully on the remote desktop server within the allotted time.  Most computers will be able to complete those tests well under the time limits.</p>
@@ -2248,6 +2248,198 @@ These functions help segment out the bits in each level.  We want to separate th
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -2276,21 +2468,21 @@ These functions help segment out the bits in each level.  We want to separate th
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1657824514"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1657824514"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.jquery.min.js?1657824514"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.sticky.js?1657824514"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1657824514"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/highlight.pack.js?1657824514"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1657829540"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1657829540"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.jquery.min.js?1657829540"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.sticky.js?1657829540"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1657829540"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/highlight.pack.js?1657829540"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/modernizr.custom-3.6.0.js?1657824514"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/learn.js?1657824514"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/hugo-learn.js?1657824514"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/themer.js?1657824514"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/modernizr.custom-3.6.0.js?1657829540"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/learn.js?1657829540"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/hugo-learn.js?1657829540"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/themer.js?1657829540"></script>
 
     
         
-            <script src="https://ksu-cs-textbooks.github.io/cis300/mermaid/mermaid.js?1657824514"></script>
+            <script src="https://ksu-cs-textbooks.github.io/cis300/mermaid/mermaid.js?1657829540"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
