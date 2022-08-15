@@ -31,6 +31,16 @@ private void uxGo_Click(object sender, EventArgs e)
 }
 ```
 
+{{% notice warning %}}
+
+You might notice that as you type the above text, Visual Studio provides auto-completions for the entire line. In some cases, the auto-completion is what you need, but in other cases, it is not. This feature can speed up the code-writing process for experienced programmers who use an auto-completion when they see that it matches what they were going to type. For inexperienced programmers, however, it can actually slow both the coding process and the learning process by making bad suggestions. If you find yourself using the auto-complete suggestions as hints, it would make sense to disable them, as these "hints" are often misleading. To disable this feature:
+
+1. From the "Tools" menu, select "Options...".
+2. From the list on the left, select "IntelliCode".
+3. In the large box in the upper-right, find "Show completions for whole lines of code". Change the drop-down menu to the right of this entry to "Disabled".
+
+{{% /notice %}}
+
 Notice that when you type a quote mark, a matching quote is automatically added following the text cursor. As long as you don't reposition the text cursor, you can just type the closing quote as you normally would after typing the text string --- Visual Studio won't insert another quote mark, but will move the text cursor past the one it inserted automatically. The same behavior occurs when you type open parentheses, brackets, or braces.
 
 While we are here, we should also add [appropriate comments](/appendix/style/comments) to this method, the constructor, the class, and the file; for example:
