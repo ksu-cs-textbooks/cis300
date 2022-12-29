@@ -88,7 +88,7 @@ You will not typically declare these names in code, but will enter
 them in the Visual Studio® design window.
 {{% /notice %}}
 
-### **public** [Constants](/appendix/syntax/const)
+### **public** [Constants](/appendix/syntax/const) (const or readonly)
 
 Use pascal case. Make your names descriptive. For example:
 
@@ -103,6 +103,8 @@ Use camel case with an underscore character preceding the first letter. For exam
 ```c#
 private double _weight;
 ```
+
+This applies to all **private** fields, including those defined as **const** or **readonly**.
 
 ### Parameters and Local Variables Within Methods
 

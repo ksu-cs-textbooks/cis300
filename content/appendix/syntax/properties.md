@@ -43,6 +43,12 @@ public double X { get; private set; }
 
 The above examples are the simplest ways to define properties. They all rely on the *default implementation* of the property. Unlike a field, the name of the property is not actually a variable; instead, there is a *hidden* variable that is automatically defined. The only way this hidden variable can be accessed is through the property.
 
+{{% notice warning %}}
+
+Don't define a **private** property using the default implementation. Use a **private** field instead.
+
+{{% /notice %}}
+
 The distinction between a property and its hidden variable may seem artificial at first. However, the real flexibility of a property is revealed by the fact that we can define our own implementation, rather than relying on the default implementation. For example, suppose a certain data structure stores a **StringBuilder** called `_word`, and we want to provide read-only access to its length. We can facilitate this by defining the following property:
 
 ```C#
