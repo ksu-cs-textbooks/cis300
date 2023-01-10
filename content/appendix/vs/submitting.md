@@ -41,7 +41,7 @@ To submit a lab or homework assignment in CIS 300, you will need to do the follo
 {{% notice warning %}}
 It is important to do all three of these steps in this order. In
 particular, if you make any changes between your last commit and the
-push, these changes won't be included in the submission. It is also important to include the correct URL. In particular, the digital fingerprint of the commit is the only reliable evidence we have that the commit was made prior to the form submission; hence, this digital fingerprint is required in order for you to receive any credit for the assignment. (For an example showing how unreliable time stamps on GitHub are, see [this repository](https://github.com/rhowell-cis300/Time-Stamps-Unreliable).)
+push, these changes won't be included in the submission. It is also important to include the correct URL. 
 {{% /notice %}}
 
 {{% notice tip %}}
