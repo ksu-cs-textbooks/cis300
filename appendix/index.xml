@@ -529,11 +529,12 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://ksu-cs-textbooks.github.io/cis300/appendix/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Programming Style Requirements</title>
-      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/style/</link>
+      <title>C# Syntax</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/style/</guid>
-      <description>Programming Style Requirements Software companies typically have programming style requirements to which their programmers must adhere. Many of these requirements have become industry standards. These requirements help to make the developed code more readable, portable, and maintainable. This appendix contains a short set (much shorter than what is typically found in industry) of programming style requirements for CIS 300. Most of these requirements are derived from a style guide posted at Pete Brown&amp;rsquo;s 10rem.</description>
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/</guid>
+      <description>C# Syntax This chapter discusses various C# features that are either unavailable in Java or are unlikely to have been covered in an introductory Java programming class. No attempt has been made to be exhaustive. Instead, we focus mainly on those features that are likely to be needed in CIS 300. In addition, the following topics are covered in the main text, rather than in this appendix:
+Generic Types Interfaces Overriding virtual Methods Operator Overloading The using Statement Equality Type Casting For more information on C#, see the C# Reference manual and the C# Programming Guide.</description>
     </item>
   </channel>
 </rss>

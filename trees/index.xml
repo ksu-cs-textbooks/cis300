@@ -528,5 +528,12 @@
     <description>Recent content in Trees on Data Structures in C#</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://ksu-cs-textbooks.github.io/cis300/trees/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Priority Queues</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/</guid>
+      <description>Priority Queues Often we need a data structure that supports efficient storage of data items and their subsequent retrieval in order of some pre-determined priority. We have already seen two instances of such data structures: stacks and queues. With a stack, the later the item is stored, the higher its priority. With a queue, the earlier the item is stored, the higher its priority. More generally, we would like to be able to set priorities arbitrarily, in a way that may be unrelated to the order in which they were stored.</description>
+    </item>
   </channel>
 </rss>
