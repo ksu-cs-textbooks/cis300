@@ -1,665 +1,630 @@
+
+
+
+
+
+	
+	
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
 <!DOCTYPE html>
-<html lang="en" class="js csstransforms3d">
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.89.4" />
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.101.0">
+    <meta name="generator" content="Relearn 5.2.0+tip">
+    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
     <meta name="description" content="K-State CIS 300: Data Structures">
-<meta name="author" content="Rod Howell and Josh Weese">
-
-    <link rel="icon" href="https://ksu-cs-textbooks.github.io/cis300/images/favicon.png" type="image/png">
-
+    <meta name="author" content="Rod Howell and Josh Weese">
     <title>Select Sorts :: Data Structures in C#</title>
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1684785806" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1684785806" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1684785806" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1684785806" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1684785806" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1684785806" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1684785806" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1684785806" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1684785806" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1684785806" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1684785806" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1684785806" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1684785806" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1684785806" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1684785806" rel="stylesheet" media="print">
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1684785806"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
+      var root_url="https://ksu-cs-textbooks.github.io/cis300/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
+      window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
+    </script>
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1684785806" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.min.js?1684785806" defer></script>
 
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1657829540" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1657829540" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/hybrid.css?1657829540" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1657829540" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1657829540" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1657829540" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/atom-one-dark-reasonable.css?1657829540" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1657829540" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/tabs.css?1657829540" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/hugo-theme.css?1657829540" rel="stylesheet">
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-purple.css?1657829540" rel="stylesheet">
-    
-    
-    
-    
-
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery-3.3.1.min.js?1657829540"></script>
-
-    <style>
-      :root #header + #content > #left > #rlblock_left{
-          display:none !important;
-      }
-      
-    </style>
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    
-
-     
-    
-<script>
-    MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$','$$'], ['\\[', '\\]']],
-        processEscapes: true,
-        processEnvironments: true
-      },
-      options: {
-        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-      }
-    };
-  
-    window.addEventListener('load', (event) => {
-        document.querySelectorAll("mjx-container").forEach(function(x){
-          x.parentElement.classList += 'has-jax'})
-      });
-  
-</script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script type="text/javascript" id="MathJax-script" async
-src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   </head>
-  <body class="" data-url="https://ksu-cs-textbooks.github.io/cis300/sorting/select/">
-    <nav id="sidebar" class="">
-
-
-
-  <div id="header-wrapper">
-    <div id="header">
-      <a id="logo" href="https://ksu-cs-textbooks.github.io/cis300/">
-  CIS 300 - Data Structures
-</a>
-
-    </div>
-    
-        <div class="searchbox">
-    <label for="search-by"><i class="fas fa-search"></i></label>
-    <input data-search-input id="search-by" type="search" placeholder="Search...">
-    <span data-search-clear=""><i class="fas fa-times"></i></span>
-</div>
-
-<script type="text/javascript" src="https://ksu-cs-textbooks.github.io/cis300/js/lunr.min.js?1657829540"></script>
-<script type="text/javascript" src="https://ksu-cs-textbooks.github.io/cis300/js/auto-complete.js?1657829540"></script>
-<script type="text/javascript">
-    
-        var baseurl = "https:\/\/ksu-cs-textbooks.github.io\/cis300\/";
-    
-</script>
-<script type="text/javascript" src="https://ksu-cs-textbooks.github.io/cis300/js/search.js?1657829540"></script>
-
-    
-  </div>
-  
-    <section id="homelinks">
-      <ul>
-        <li>
-            <a class="padding" href='https://ksu-cs-textbooks.github.io/cis300/'><i class='fas fa-home'></i> Home</a>
-        </li>
-      </ul>
-    </section>
-  
-
-    <div class="highlightable">
-    <ul class="topics">
-
-        
-          
-          
-
-
-
-
- 
-  
-    
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/io/" title="Input/Output" class="dd-item
-        
-        
-        
-        ">
-      <a href="https://ksu-cs-textbooks.github.io/cis300/io/">
-        
-        
-          
-          <i class="fas fa-angle-right fa-fw"></i>
-          
-        
-          <b>1. </b>Input/Output
-          
-
-      </a>
-    
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/strings/" title="strings and StringBuilders" class="dd-item
-        
-        
-        
-        ">
-      <a href="https://ksu-cs-textbooks.github.io/cis300/strings/">
-        
-        
-          
-          <i class="fas fa-angle-right fa-fw"></i>
-          
-        
-          <b>2. </b>strings and StringBuilders
-          
-
-      </a>
-    
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/stacks-queues/" title="Stacks and Queues" class="dd-item
-        
-        
-        
-        ">
-      <a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/">
-        
-        
-          
-          <i class="fas fa-angle-right fa-fw"></i>
-          
-        
-          <b>3. </b>Stacks and Queues
-          
-
-      </a>
-    
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/linked-lists/" title="Linked Lists" class="dd-item
-        
-        
-        
-        ">
-      <a href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/">
-        
-        
-          
-          <i class="fas fa-angle-right fa-fw"></i>
-          
-        
-          <b>4. </b>Linked Lists
-          
-
-      </a>
-    
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/dictionaries/" title="Dictionaries" class="dd-item
-        
-        
-        
-        ">
-      <a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/">
-        
-        
-          
-          <i class="fas fa-angle-right fa-fw"></i>
-          
-        
-          <b>5. </b>Dictionaries
-          
-
-      </a>
-    
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/trees/" title="Trees" class="dd-item
-        
-        
-        
-        ">
-      <a href="https://ksu-cs-textbooks.github.io/cis300/trees/">
-        
-        
-          
-          <i class="fas fa-angle-right fa-fw"></i>
-          
-        
-          <b>6. </b>Trees
-          
-
-      </a>
-    
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/hashing/" title="Hash Tables" class="dd-item
-        
-        
-        
-        ">
-      <a href="https://ksu-cs-textbooks.github.io/cis300/hashing/">
-        
-        
-          
-          <i class="fas fa-angle-right fa-fw"></i>
-          
-        
-          <b>7. </b>Hash Tables
-          
-
-      </a>
-    
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/graphs/" title="Graphs" class="dd-item
-        
-        
-        
-        ">
-      <a href="https://ksu-cs-textbooks.github.io/cis300/graphs/">
-        
-        
-          
-          <i class="fas fa-angle-right fa-fw"></i>
-          
-        
-          <b>8. </b>Graphs
-          
-
-      </a>
-    
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/sorting/" title="Sorting" class="dd-item
-        parent
-        
-        
-        ">
-      <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/">
-        
-        
-          
-          <i class="fas fa-angle-down fa-fw"></i>
-          
-        
-          <b>9. </b>Sorting
-          
-
-      </a>
-    
-      
-      
-      
-        <ul>
-          
-          
-          
-
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/sorting/select/" title="Select Sorts" class="dd-item active">
-        <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/select/">
-        <i class="fas fa-angle-down fa-fw" style="color: transparent;"></i>
-        <b>9.1. </b>Select Sorts
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/sorting/insert/" title="Insert Sorts" class="dd-item ">
-        <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/insert/">
-        <i class="fas fa-angle-down fa-fw" style="color: transparent;"></i>
-        <b>9.2. </b>Insert Sorts
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/sorting/merge/" title="Merge Sorts" class="dd-item ">
-        <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/merge/">
-        <i class="fas fa-angle-down fa-fw" style="color: transparent;"></i>
-        <b>9.3. </b>Merge Sorts
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/sorting/split/" title="Split Sorts" class="dd-item ">
-        <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/split/">
-        <i class="fas fa-angle-down fa-fw" style="color: transparent;"></i>
-        <b>9.4. </b>Split Sorts
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/sorting/hybrid/" title="Hybrid Sorting Algorithms" class="dd-item ">
-        <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/hybrid/">
-        <i class="fas fa-angle-down fa-fw" style="color: transparent;"></i>
-        <b>9.5. </b>Hybrid Sorting Algorithms
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/sorting/strings/" title="Sorting Strings" class="dd-item ">
-        <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/strings/">
-        <i class="fas fa-angle-down fa-fw" style="color: transparent;"></i>
-        <b>9.6. </b>Sorting Strings
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-      
-    </li>
-    
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/appendix/" title="Appendices" class="dd-item
-        
-        
-        
-        ">
-      <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/">
-        
-        
-          
-          <i class="fas fa-angle-right fa-fw"></i>
-          
-        
-          <b>A. </b>Appendices
-          
-
-      </a>
-    
-  
- 
-
-          
-        
-    </ul>
-
-    
-    
-
-    
-    <section id="footer">
-      <p>Built using <a href="http://gohugo.io/">Hugo</a>
-  and <a href="https://github.com/russfeld/ksucs-hugo-theme">ksucs-hugo-theme</a>
-  with assistance from Josh Weese and Russ Feldhausen.</p>
-<br/>
-<p>Microsoft and Visual Studio are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries. </p>
-<br/>
-<p><strong><i>© Copyright 2014-2020, <a href="http://people.cs.ksu.edu/~rhowell/" target="_">Rod Howell</a>. All rights reserved.</i></strong></p>
-
-    </section>
-  </div>
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/sorting/select/">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div class="navigation">
+             <a class="nav nav-next" href="https://ksu-cs-textbooks.github.io/cis300/sorting/insert/" title="Insert Sorts (&#129106;)"><i class="fas fa-chevron-right fa-fw"></i></a>
+          </div>
+          <div class="navigation">
+             <a class="nav nav-prev" href="https://ksu-cs-textbooks.github.io/cis300/sorting/" title="Sorting (&#129104;)"><i class="fas fa-chevron-left fa-fw"></i></a>
+          </div>
+          <div id="top-print-link">
+            <a class="print-link" title='Print whole chapter (CTRL+ALT+p)' href="https://ksu-cs-textbooks.github.io/cis300/sorting/select/index.print.html">
+              <i class="fas fa-print fa-fw"></i>
+            </a>
+          </div>
+          <div id="top-tele-link">
+            <a class="print-link" title='Teleprompter View' href="https://ksu-cs-textbooks.github.io/cis300/sorting/select/tele.html">
+              <i class="fas fa-tv fa-fw"></i>
+            </a>
+          </div>
+          <div id="top-embed-link">
+            <a class="print-link" title='Embeddable Version' href="https://ksu-cs-textbooks.github.io/cis300/sorting/select/embed.html">
+              <i class="fas fa-expand-arrows-alt fa-fw"></i>
+            </a>
+          </div>
+          <div id="top-github-link">
+            <a class="github-link" title='Edit (CTRL+ALT+e)' href="https://gitlab.cs.ksu.edu/-/ide/project/cis300/cis300-book/edit/master/-/content/sorting/select.md" target="blank">
+              <i class="fas fa-pen fa-fw"></i>
+            </a>
+          </div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" title='Menu (CTRL+ALT+m)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <span id="toc-menu" title='Table of Contents (CTRL+ALT+t)'><i class="fas fa-list-alt fa-fw"></i></span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <meta itemprop="itemListOrder" content="Descending" />
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="3" /><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis300/"><span itemprop="name">Data Structures in C#</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="2" /><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis300/sorting/"><span itemprop="name">Sorting</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="1" /><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis300/sorting/select/" aria-disabled="true"><span itemprop="name">Select Sorts</span></a></li>
+            </ol>
+          </div>
+          <div class="default-animation progress">
+            <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#select-sorts">Select Sorts</a></li>
+  </ul>
 </nav>
-
-
-
-
-        <section id="body">
-        <div id="overlay"></div>
-        <div class="padding highlightable">
-              
-              <div>
-                <div id="top-bar">
-                  <div id="top-github-link">
-                    <a id="themelink" class="github-link" title='Toggle Light or Dark Mode' href="#">
-                      <i class="fas fa-moon"></i>
-                      <span id="top-github-link-text"></span>
-                    </a>
-                    <a class="github-link" title='Teleprompter View' href="tele.html" target="blank">
-                      <i class="fas fa-tv"></i>
-                      <span id="top-github-link-text"></span>
-                    </a>
-                    <a class="github-link" title='Embed this page' href="embed.html" target="blank">
-                      <i class="fas fa-expand-arrows-alt"></i>
-                      <span id="top-github-link-text"></span>
-                    </a>
-                
-                  
-                  
-                  
-                    <a class="github-link" title='Edit this page' href="https://gitlab.cs.ksu.edu/cis300/cis300-book/tree/master/content/sorting/select.md" target="blank">
-                      <i class="fas fa-code-branch"></i>
-                      <span id="top-github-link-text"></span>
-                    </a>
-                  
-                
-                  </div>
-                
-                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-                    <span id="sidebar-toggle-span">
-                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
-                          <i class="fas fa-bars"></i>
-                        </a>
-                    </span>
-                  
-                  <span class="links">
-                 
-                 
-                    
-          
-          
-            
-            
-          
-          
-            
-            
-          
-          
-            <a href='https://ksu-cs-textbooks.github.io/cis300/'></a> > <a href='https://ksu-cs-textbooks.github.io/cis300/sorting/'>Sorting</a> > Select Sorts
-          
-        
-          
-        
-          
-        
-                 
-                  </span>
-                </div>
-                
-              </div>
             </div>
-            
-        <div id="head-tags">
-        
+          </div>
         </div>
-        
-          <div id="chapter">
-        
-        <div id="body-inner">
-          
-
-        
-
-
+      </nav>
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="default">
+<div hidden><h1>Select Sorts</h1></div>
 <h2 id="select-sorts">Select Sorts</h2>
 <p>A select sort operates by repeatedly selecting the smallest data element
 of an unsorted portion of the array and moving it to the end of a sorted
@@ -675,7 +640,9 @@ elements in the sorted part.</li>
 <p>Initially, the sorted part will be empty. At each step, the unsorted
 part is rearranged so that its smallest element comes first. As a
 result, the sorted part can now contain one more element, and the
-unsorted part one fewer element. After $n - 1$ steps, where $n$ is
+unsorted part one fewer element. After 
+<span class="math align-center">$ n - 1 $</span> steps, where 
+<span class="math align-center">$ n $</span> is
 the number of elements in the array, the sorted part will have all but
 one of the elements. Because the one element in the unsorted part must
 be at least as large as all elements in the sorted part, the entire
@@ -693,20 +660,30 @@ Once the inner loop has finished, the smallest element is swapped with
 the first element in the unsorted part.</p>
 <p>Note that the inner loop in selection sort iterates once for every
 element in the unsorted part. On the first iteration of the outer loop,
-the unsorted part contains all $n$ elements. On each successive
+the unsorted part contains all 
+<span class="math align-center">$ n $</span> elements. On each successive
 iteration, the unsorted part is one element smaller, until on the last
-iteration, it has only $2$ elements. If we add up all these values, we
+iteration, it has only 
+<span class="math align-center">$ 2 $</span> elements. If we add up all these values, we
 find that the inner loop iterates a total of exactly
-$(n - 1)(n + 2)/2$ times. This value is
-proportional to $n^2$ as $n$ increases; hence, the running
-time of the algorithm is in $O(n^2)$. Furthermore, this
+
+<span class="math align-center">$ (n - 1)(n + 2)/2 $</span> times. This value is
+proportional to 
+<span class="math align-center">$ n^2 $</span> as 
+<span class="math align-center">$ n $</span> increases; hence, the running
+time of the algorithm is in 
+<span class="math align-center">$ O(n^2) $</span>. Furthermore, this
 performance occurs no matter how the data items are initially arranged.</p>
-<p>As we will see in what follows, $O(n^2)$ performance is not
+<p>As we will see in what follows, 
+<span class="math align-center">$ O(n^2) $</span> performance is not
 very good if we want to sort a moderately large data set. For example,
-sorting $10,000$ elements will require about $5$ billion iterations of the
+sorting 
+<span class="math align-center">$ 10,000 $</span> elements will require about 
+<span class="math align-center">$ 5 $</span> billion iterations of the
 inner loop. On the positive side, the only time data items are moved is
 when a swap is made at the end of the outer loop; hence, this number is
-proportional to $n$. This could be advantageous if we are sorting large
+proportional to 
+<span class="math align-center">$ n $</span>. This could be advantageous if we are sorting large
 value types, as we would not need to write these large data elements
 very many times. However, for general performance reasons, large data
 types shouldn&rsquo;t be value types &mdash; they should be reference types to avoid
@@ -731,8 +708,12 @@ smallest key, then this algorithm is stable.</p>
 <p><span id="bubble-sort"></span> Another implementation of a select sort
 is <em>bubble sort</em>. It rearranges the unsorted part by swapping adjacent
 elements that are out of order. It starts with the last two elements
-(i.e., the elements at locations $n - 1$ and <span style="white-space:nowrap">$n - 2$)</span>, then
-the elements at locations $n - 2$ and <span style="white-space:nowrap">$n - 3$,</span> etc.
+(i.e., the elements at locations 
+<span class="math align-center">$ n - 1 $</span> and <span style="white-space:nowrap">
+<span class="math align-center">$ n - 2 $</span>)</span>, then
+the elements at locations 
+<span class="math align-center">$ n - 2 $</span> and <span style="white-space:nowrap">
+<span class="math align-center">$ n - 3 $</span>,</span> etc.
 Proceeding in this way, the smallest element in the unsorted part will
 end up at the beginning of the unsorted part. While the inner loop is
 doing this, it keeps track of whether it has made any swaps. If the loop
@@ -740,7 +721,8 @@ completes without having made any swaps, then the array is sorted, and
 the algorithm therefore stops.</p>
 <p>Like selection sort, bubble sort is stable. In the worst case, however,
 the performance of bubble sort is even worse than that of selection
-sort. It is still in <span style="white-space:nowrap">$O(n^2)$,</span> but in the worst case, its
+sort. It is still in <span style="white-space:nowrap">
+<span class="math align-center">$ O(n^2) $</span>,</span> but in the worst case, its
 inner loop performs the same number of iterations, but does a lot more
 swaps. Bubble sort does outperform selection sort on some inputs, but
 describing when this will occur isn&rsquo;t easy. For example, in an array in
@@ -764,8 +746,10 @@ children are the next four elements, etc. Given an array location, we
 can then compute the locations of its parent and both of its children.
 The priorities are arranged so that the root of each subtree contains
 the maximum priority in that subtree. It is possible to arrange the
-elements of an array into a binary heap in $O(n)$ time, and to remove
-an element with maximum priority in $O(\lg n)$ time.</p>
+elements of an array into a binary heap in 
+<span class="math align-center">$ O(n) $</span> time, and to remove
+an element with maximum priority in 
+<span class="math align-center">$ O(\lg n) $</span> time.</p>
 <p>Heap sort then works by pre-processing the array to arrange it into a
 binary heap. The binary heap then forms the unsorted part, and it is
 followed by the sorted part, whose elements are all no smaller than any
@@ -779,1862 +763,257 @@ variable.</li>
 <li>Places the copy of the first element into the space vacated by its
 removal at the beginning of the sorted part.</li>
 </ol>
-<p>Heap sort runs in $O(n \lg n)$ time in the worst case.
+<p>Heap sort runs in 
+<span class="math align-center">$ O(n \lg n) $</span> time in the worst case.
 Information theory can be used to prove that any sorting algorithm that
-sorts by comparing elements must make at least $\lg(n!)$ comparisons on
-some arrays of size <span style="white-space:nowrap">$n$.</span> Because $\lg(n!)$ is proportional to
-<span style="white-space:nowrap">$n \lg n$,</span> we cannot hope to do any better than
-$O(n \lg n)$ in the worst case. While this performance is a
+sorts by comparing elements must make at least 
+<span class="math align-center">$ \lg(n!) $</span> comparisons on
+some arrays of size <span style="white-space:nowrap">
+<span class="math align-center">$ n $</span>.</span> Because 
+<span class="math align-center">$ \lg(n!) $</span> is proportional to
+<span style="white-space:nowrap">
+<span class="math align-center">$ n \lg n $</span>,</span> we cannot hope to do any better than
+
+<span class="math align-center">$ O(n \lg n) $</span> in the worst case. While this performance is a
 significant improvement over selection sort and bubble sort, we will see
-in <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/split">a later section</a> that
+in 
+
+<a href="https://ksu-cs-textbooks.github.io/cis300/sorting/split">a later section</a> that
 there is an algorithm (quick sort) that does even better in practice.
 Furthermore, heap sort is not stable.</p>
 <p>On the other hand, we will also see that in spite of the fact that quick
 sort usually outperforms heap sort, there are rare cases that cause it
 to perform badly. In order to avoid this bad behavior, a hybrid
 algorithm using both quick sort and heap sort has been developed. We
-will examine this approach in &ldquo;<a href="https://ksu-cs-textbooks.github.io/cis300/sorting/hybrid">Hybrid
+will examine this approach in &ldquo;
+
+<a href="https://ksu-cs-textbooks.github.io/cis300/sorting/hybrid">Hybrid
 Sorts</a>&rdquo;.</p>
 
-
-<footer class="footline">
-	
-</footer>
-
-        
-        </div> 
-        
+            <footer class="footline">
+            </footer>
+          </article>
         </div>
-        
-
-      </div>
-
-    <div id="navigation">
-        
-        
-
-        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-
-        
-
-
-	 
-	 
-		
-			<a class="nav nav-prev" href="https://ksu-cs-textbooks.github.io/cis300/sorting/" title="Sorting"> <i class="fa fa-chevron-left"></i></a>
-		
-		
-			<a class="nav nav-next" href="https://ksu-cs-textbooks.github.io/cis300/sorting/insert/" title="Insert Sorts" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
-		
-	
-    </div>
-
-    </section>
-
-    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
-      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
-    </div>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1657829540"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1657829540"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.jquery.min.js?1657829540"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.sticky.js?1657829540"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1657829540"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/highlight.pack.js?1657829540"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/modernizr.custom-3.6.0.js?1657829540"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/learn.js?1657829540"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/hugo-learn.js?1657829540"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/themer.js?1657829540"></script>
+      </main>
+    
+<div class="git-footer">
+<p>Last modified by: 
+            <i class='fas fa-user'></i> Russell Feldhausen
+            <i class='fas fa-calendar'></i> <a href="https://gitlab.cs.ksu.edu/cis300/cis300-book/-/commit/922f538e5bb242ebedcf7260f2a5ef759abe56f5">May 22, 2023</a>
+</p>
+</div>
 
     
-        
-            <script src="https://ksu-cs-textbooks.github.io/cis300/mermaid/mermaid.js?1657829540"></script>
-        
+    </div>
+    <aside id="sidebar" class="default-animation">
+      <div id="header-wrapper" class="default-animation">
+        <div id="header" class="default-animation">
+<a id="logo" href="https://ksu-cs-textbooks.github.io/cis300/">
+  CIS 300 - Data Structures
+</a>
+
+        </div>
+        <div class="searchbox default-animation">
+          <label for="search-by"><i class="fas fa-search"></i></label>
+          <input data-search-input id="search-by" type="search" placeholder="Search...">
+          <span data-search-clear=""><i class="fas fa-times"></i></span>
+        </div>
         <script>
-            mermaid.initialize({ startOnLoad: true });
+          var contentLangs=['en'];
         </script>
-    
+        <script src="https://ksu-cs-textbooks.github.io/cis300/js/auto-complete.js?1684785806" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr.min.js?1684785806" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr.stemmer.support.min.js?1684785806" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr.multi.min.js?1684785806" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr.en.min.js?1684785806" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis300/js/search.js?1684785806" defer></script>
+      </div>
+      <div id="content-wrapper" class="highlightable">
+        <ul class="topics collapsible-menu">
+          <li data-nav-id="/io/" title="Input/Output" class="dd-item"><input type="checkbox" id="section-cbd3b3207f24308a668546abfa69f213" class="toggle"/><label for="section-cbd3b3207f24308a668546abfa69f213" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/io/"><b>1. </b>Input/Output</a><ul>
+          <li data-nav-id="/io/dialogs/" title="Dialogs" class="dd-item"><input type="checkbox" id="section-61b1770a0bd16f4917e33b67edd271d2" class="toggle"/><label for="section-61b1770a0bd16f4917e33b67edd271d2" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/io/dialogs/"><b>1.1. </b>Dialogs</a><ul>
+          <li data-nav-id="/io/dialogs/message-boxes/" title="MessageBoxes" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/io/dialogs/message-boxes/"><b>1.1.1. </b>MessageBoxes</a></li>
+          <li data-nav-id="/io/dialogs/file-dialogs/" title="File Dialogs" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/io/dialogs/file-dialogs/"><b>1.1.2. </b>File Dialogs</a></li>
+          <li data-nav-id="/io/dialogs/custom/" title="Custom Dialogs" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/io/dialogs/custom/"><b>1.1.3. </b>Custom Dialogs</a></li></ul></li>
+          <li data-nav-id="/io/simple-text-file/" title="Simple Text File I/O" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/io/simple-text-file/"><b>1.2. </b>Simple Text File I/O</a></li>
+          <li data-nav-id="/io/exceptions/" title="Exception Handling" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/io/exceptions/"><b>1.3. </b>Exception Handling</a></li>
+          <li data-nav-id="/io/advanced-text-file/" title="Advanced Text File I/O" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/io/advanced-text-file/"><b>1.4. </b>Advanced Text File I/O</a></li>
+          <li data-nav-id="/io/other-file-io/" title="Other File I/O" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/io/other-file-io/"><b>1.5. </b>Other File I/O</a></li></ul></li>
+          <li data-nav-id="/strings/" title="strings and StringBuilders" class="dd-item"><input type="checkbox" id="section-9355ad26afa67cd4239c81429ad6e8ca" class="toggle"/><label for="section-9355ad26afa67cd4239c81429ad6e8ca" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/strings/"><b>2. </b>strings and StringBuilders</a><ul>
+          <li data-nav-id="/strings/strings/" title="strings" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/strings/strings/"><b>2.1. </b>strings</a></li>
+          <li data-nav-id="/strings/stringbuilders/" title="StringBuilders" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilders/"><b>2.2. </b>StringBuilders</a></li>
+          <li data-nav-id="/strings/stringbuilder-impl/" title="Implementation of StringBuilders" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilder-impl/"><b>2.3. </b>Implementation of StringBuilders</a></li></ul></li>
+          <li data-nav-id="/stacks-queues/" title="Stacks and Queues" class="dd-item"><input type="checkbox" id="section-deefdc256b7889ce66393d7269597a4b" class="toggle"/><label for="section-deefdc256b7889ce66393d7269597a4b" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/"><b>3. </b>Stacks and Queues</a><ul>
+          <li data-nav-id="/stacks-queues/stacks/" title="Introduction to Stacks" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/stacks/"><b>3.1. </b>Introduction to Stacks</a></li>
+          <li data-nav-id="/stacks-queues/undo/" title="Implementing Undo and Redo for a TextBox" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/undo/"><b>3.2. </b>Implementing Undo and Redo for a TextBox</a></li>
+          <li data-nav-id="/stacks-queues/paren/" title="Parenthesis Matching" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/paren/"><b>3.3. </b>Parenthesis Matching</a></li>
+          <li data-nav-id="/stacks-queues/stack-impl/" title="Implementing a Stack" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/stack-impl/"><b>3.4. </b>Implementing a Stack</a></li>
+          <li data-nav-id="/stacks-queues/queues/" title="Introduction to Queues" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queues/"><b>3.5. </b>Introduction to Queues</a></li>
+          <li data-nav-id="/stacks-queues/queue-impl/" title="Implementing a Queue" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queue-impl/"><b>3.6. </b>Implementing a Queue</a></li></ul></li>
+          <li data-nav-id="/linked-lists/" title="Linked Lists" class="dd-item"><input type="checkbox" id="section-a51df6d53eeee393764eb46edb53958a" class="toggle"/><label for="section-a51df6d53eeee393764eb46edb53958a" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/"><b>4. </b>Linked Lists</a><ul>
+          <li data-nav-id="/linked-lists/intro/" title="Introduction to Linked Lists" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/intro/"><b>4.1. </b>Introduction to Linked Lists</a></li>
+          <li data-nav-id="/linked-lists/stacks-queues/" title="Implementing Stacks and Queues with Linked Lists" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/stacks-queues/"><b>4.2. </b>Implementing Stacks and Queues with Linked Lists</a></li>
+          <li data-nav-id="/linked-lists/sieve-eratosthenes/" title="Finding Prime Numbers" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/sieve-eratosthenes/"><b>4.3. </b>Finding Prime Numbers</a></li></ul></li>
+          <li data-nav-id="/dictionaries/" title="Dictionaries" class="dd-item"><input type="checkbox" id="section-9011afb8a0159b09a13a971ca89bced8" class="toggle"/><label for="section-9011afb8a0159b09a13a971ca89bced8" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/"><b>5. </b>Dictionaries</a><ul>
+          <li data-nav-id="/dictionaries/dictionary-tkey-tvalue/" title="The Dictionary&lt;TKey, TValue&gt; Class" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/dictionary-tkey-tvalue/"><b>5.1. </b>The Dictionary&lt;TKey, TValue&gt; Class</a></li>
+          <li data-nav-id="/dictionaries/linked-list-impl/" title="Implementing a Dictionary with a Linked List" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/linked-list-impl/"><b>5.2. </b>Implementing a Dictionary with a Linked List</a></li>
+          <li data-nav-id="/dictionaries/binary-search/" title="Implementing a Dictionary with an Array-Like Structure" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/binary-search/"><b>5.3. </b>Implementing a Dictionary with an Array-Like Structure</a></li></ul></li>
+          <li data-nav-id="/trees/" title="Trees" class="dd-item"><input type="checkbox" id="section-5e8305205d74771c71a9ea85594a7914" class="toggle"/><label for="section-5e8305205d74771c71a9ea85594a7914" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/trees/"><b>6. </b>Trees</a><ul>
+          <li data-nav-id="/trees/intro/" title="Introduction to Trees" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/intro/"><b>6.1. </b>Introduction to Trees</a></li>
+          <li data-nav-id="/trees/bst/" title="Binary Search Trees" class="dd-item"><input type="checkbox" id="section-8d42cd93516505610f8b32c65bbeebda" class="toggle"/><label for="section-8d42cd93516505610f8b32c65bbeebda" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/"><b>6.2. </b>Binary Search Trees</a><ul>
+          <li data-nav-id="/trees/bst/binary-trees/" title="Binary Trees" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/binary-trees/"><b>6.2.1. </b>Binary Trees</a></li>
+          <li data-nav-id="/trees/bst/intro/" title="Introduction to Binary Search Trees" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/intro/"><b>6.2.2. </b>Introduction to Binary Search Trees</a></li>
+          <li data-nav-id="/trees/bst/remove/" title="Removing from a Binary Search Tree" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/remove/"><b>6.2.3. </b>Removing from a Binary Search Tree</a></li>
+          <li data-nav-id="/trees/bst/inorder/" title="Inorder Traversal" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/inorder/"><b>6.2.4. </b>Inorder Traversal</a></li></ul></li>
+          <li data-nav-id="/trees/avl/" title="AVL Trees" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/avl/"><b>6.3. </b>AVL Trees</a></li>
+          <li data-nav-id="/trees/tries/" title="Tries" class="dd-item"><input type="checkbox" id="section-5f1f75af2aa97dd0bdbedb3b3e5adc65" class="toggle"/><label for="section-5f1f75af2aa97dd0bdbedb3b3e5adc65" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/"><b>6.4. </b>Tries</a><ul>
+          <li data-nav-id="/trees/tries/intro/" title="Introduction to Tries" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro/"><b>6.4.1. </b>Introduction to Tries</a></li>
+          <li data-nav-id="/trees/tries/multiple-impl/" title="Multiple Implementations of Children" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/multiple-impl/"><b>6.4.2. </b>Multiple Implementations of Children</a></li>
+          <li data-nav-id="/trees/tries/traversing/" title="Traversing a Trie" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/traversing/"><b>6.4.3. </b>Traversing a Trie</a></li>
+          <li data-nav-id="/trees/tries/word-games/" title="Tries in Word Games" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/word-games/"><b>6.4.4. </b>Tries in Word Games</a></li></ul></li>
+          <li data-nav-id="/trees/priority-queues/" title="Priority Queues" class="dd-item"><input type="checkbox" id="section-0e087c42aa39c815f492e3767eaf2ef7" class="toggle"/><label for="section-0e087c42aa39c815f492e3767eaf2ef7" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/"><b>6.5. </b>Priority Queues</a><ul>
+          <li data-nav-id="/trees/priority-queues/heaps/" title="Heaps" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/heaps/"><b>6.5.1. </b>Heaps</a></li>
+          <li data-nav-id="/trees/priority-queues/leftist-heaps/" title="Leftist Heaps" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/leftist-heaps/"><b>6.5.2. </b>Leftist Heaps</a></li>
+          <li data-nav-id="/trees/priority-queues/huffman-trees/" title="Huffman Trees" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/huffman-trees/"><b>6.5.3. </b>Huffman Trees</a></li></ul></li></ul></li>
+          <li data-nav-id="/hashing/" title="Hash Tables" class="dd-item"><input type="checkbox" id="section-cd22fc50afca8a60e214c94b94daa169" class="toggle"/><label for="section-cd22fc50afca8a60e214c94b94daa169" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/hashing/"><b>7. </b>Hash Tables</a><ul>
+          <li data-nav-id="/hashing/simple/" title="A Simple Hash Table Implementation" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/hashing/simple/"><b>7.1. </b>A Simple Hash Table Implementation</a></li>
+          <li data-nav-id="/hashing/rehashing/" title="Rehashing" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/hashing/rehashing/"><b>7.2. </b>Rehashing</a></li>
+          <li data-nav-id="/hashing/memoization/" title="Memoization" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/hashing/memoization/"><b>7.3. </b>Memoization</a></li>
+          <li data-nav-id="/hashing/equality/" title="Equality in C#" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/hashing/equality/"><b>7.4. </b>Equality in C#</a></li>
+          <li data-nav-id="/hashing/hash-functions/" title="Hash Codes" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/hashing/hash-functions/"><b>7.5. </b>Hash Codes</a></li></ul></li>
+          <li data-nav-id="/graphs/" title="Graphs" class="dd-item"><input type="checkbox" id="section-fefd7704561bcadc124f3f3c72c54ab3" class="toggle"/><label for="section-fefd7704561bcadc124f3f3c72c54ab3" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/graphs/"><b>8. </b>Graphs</a><ul>
+          <li data-nav-id="/graphs/intro/" title="Introduction to Graphs" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/graphs/intro/"><b>8.1. </b>Introduction to Graphs</a></li>
+          <li data-nav-id="/graphs/dijkstra/" title="Shortest Paths" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/graphs/dijkstra/"><b>8.2. </b>Shortest Paths</a></li>
+          <li data-nav-id="/graphs/breadth-first/" title="Unweighted Shortest Paths" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/graphs/breadth-first/"><b>8.3. </b>Unweighted Shortest Paths</a></li>
+          <li data-nav-id="/graphs/impl/" title="Implementing a Graph" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/graphs/impl/"><b>8.4. </b>Implementing a Graph</a></li></ul></li>
+          <li data-nav-id="/sorting/" title="Sorting" class="dd-item parent"><input type="checkbox" id="section-fd2166a393af1c48d2ffe636e6f952d8" class="toggle" checked/><label for="section-fd2166a393af1c48d2ffe636e6f952d8" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/sorting/"><b>9. </b>Sorting</a><ul>
+          <li data-nav-id="/sorting/select/" title="Select Sorts" class="dd-item active"><a href="https://ksu-cs-textbooks.github.io/cis300/sorting/select/"><b>9.1. </b>Select Sorts</a></li>
+          <li data-nav-id="/sorting/insert/" title="Insert Sorts" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/sorting/insert/"><b>9.2. </b>Insert Sorts</a></li>
+          <li data-nav-id="/sorting/merge/" title="Merge Sorts" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/sorting/merge/"><b>9.3. </b>Merge Sorts</a></li>
+          <li data-nav-id="/sorting/split/" title="Split Sorts" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/sorting/split/"><b>9.4. </b>Split Sorts</a></li>
+          <li data-nav-id="/sorting/hybrid/" title="Hybrid Sorting Algorithms" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/sorting/hybrid/"><b>9.5. </b>Hybrid Sorting Algorithms</a></li>
+          <li data-nav-id="/sorting/strings/" title="Sorting Strings" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/sorting/strings/"><b>9.6. </b>Sorting Strings</a></li></ul></li>
+          <li data-nav-id="/appendix/" title="Appendices" class="dd-item"><input type="checkbox" id="section-8a7f152ea576b5a4047f92c2cc1cabad" class="toggle"/><label for="section-8a7f152ea576b5a4047f92c2cc1cabad" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/"><b>A. </b>Appendices</a><ul>
+          <li data-nav-id="/appendix/syntax/" title="C# Syntax" class="dd-item"><input type="checkbox" id="section-6a5a5cc3bca4007f0866907612ee033f" class="toggle"/><label for="section-6a5a5cc3bca4007f0866907612ee033f" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/"><b>A1. </b>C# Syntax</a><ul>
+          <li data-nav-id="/appendix/syntax/reference-value/" title="Reference Types and Value Types" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/reference-value/"><b>A1.1. </b>Reference Types and Value Types</a></li>
+          <li data-nav-id="/appendix/syntax/enumerations/" title="Enumerations" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/enumerations/"><b>A1.2. </b>Enumerations</a></li>
+          <li data-nav-id="/appendix/syntax/structs/" title="Structures" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/structs/"><b>A1.3. </b>Structures</a></li>
+          <li data-nav-id="/appendix/syntax/decimals/" title="The decimal Type" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/decimals/"><b>A1.4. </b>The decimal Type</a></li>
+          <li data-nav-id="/appendix/syntax/const/" title="Read-Only and Constant Fields" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/const/"><b>A1.5. </b>Read-Only and Constant Fields</a></li>
+          <li data-nav-id="/appendix/syntax/properties/" title="Properties" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/properties/"><b>A1.6. </b>Properties</a></li>
+          <li data-nav-id="/appendix/syntax/indexers/" title="Indexers" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/indexers/"><b>A1.7. </b>Indexers</a></li>
+          <li data-nav-id="/appendix/syntax/static-this/" title="The Keywords static and this" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/static-this/"><b>A1.8. </b>The Keywords static and this</a></li>
+          <li data-nav-id="/appendix/syntax/out-ref/" title="out and ref Parameters" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/out-ref/"><b>A1.9. </b>out and ref Parameters</a></li>
+          <li data-nav-id="/appendix/syntax/foreach/" title="The foreach Statement" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/foreach/"><b>A1.10. </b>The foreach Statement</a></li>
+          <li data-nav-id="/appendix/syntax/enumerators/" title="Enumerators" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/enumerators/"><b>A1.11. </b>Enumerators</a></li>
+          <li data-nav-id="/appendix/syntax/switch/" title="The switch Statement" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/switch/"><b>A1.12. </b>The switch Statement</a></li>
+          <li data-nav-id="/appendix/syntax/remainder/" title="The Remainder Operator" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/remainder/"><b>A1.13. </b>The Remainder Operator</a></li></ul></li>
+          <li data-nav-id="/appendix/vs/" title="Visual Studio" class="dd-item"><input type="checkbox" id="section-805451f3a5b538fc2959767d013f4e16" class="toggle"/><label for="section-805451f3a5b538fc2959767d013f4e16" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/"><b>A2. </b>Visual Studio</a><ul>
+          <li data-nav-id="/appendix/vs/installing-vs/" title="Installing Visual Studio" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/installing-vs/"><b>A2.1 </b>Installing Visual Studio</a></li>
+          <li data-nav-id="/appendix/vs/repos/" title="Git Repositories" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/repos/"><b>A2.2. </b>Git Repositories</a></li>
+          <li data-nav-id="/appendix/vs/solutions/" title="Visual Studio Solutions" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/solutions/"><b>A2.3. </b>Visual Studio Solutions</a></li>
+          <li data-nav-id="/appendix/vs/design-window/" title="The Design Window" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/design-window/"><b>A2.4. </b>The Design Window</a></li>
+          <li data-nav-id="/appendix/vs/code-window/" title="The Code Window" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/code-window/"><b>A2.5. </b>The Code Window</a></li>
+          <li data-nav-id="/appendix/vs/debugger/" title="The Debugger" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/debugger/"><b>A2.6. </b>The Debugger</a></li>
+          <li data-nav-id="/appendix/vs/submitting/" title="Submitting Assignments" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/submitting/"><b>A2.7. </b>Submitting Assignments</a></li>
+          <li data-nav-id="/appendix/vs/nunit/" title="Unit Testing" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/nunit/"><b>A2.8. </b>Unit Testing</a></li>
+          <li data-nav-id="/appendix/vs/multiple/" title="Using Multiple Machines" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/multiple/"><b>A2.9. </b>Using Multiple Machines</a></li>
+          <li data-nav-id="/appendix/vs/checkpointing/" title="Checkpointing" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/checkpointing/"><b>A2.10. </b>Checkpointing</a></li>
+          <li data-nav-id="/appendix/vs/class-libraries/" title="Class Libraries" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/class-libraries/"><b>A2.11. </b>Class Libraries</a></li></ul></li>
+          <li data-nav-id="/appendix/style/" title="Programming Style Requirements" class="dd-item"><input type="checkbox" id="section-3c7d664b64b84c9f89fc48179979363e" class="toggle"/><label for="section-3c7d664b64b84c9f89fc48179979363e" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/"><b>A3. </b>Programming Style Requirements</a><ul>
+          <li data-nav-id="/appendix/style/formatting/" title="General Formatting" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/formatting/"><b>A3.1. </b>General Formatting</a></li>
+          <li data-nav-id="/appendix/style/access-modifiers/" title="Access Modifiers" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/access-modifiers/"><b>A3.2. </b>Access Modifiers</a></li>
+          <li data-nav-id="/appendix/style/naming/" title="Naming Conventions" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/naming/"><b>A3.3. </b>Naming Conventions</a></li>
+          <li data-nav-id="/appendix/style/comments/" title="Comments" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/comments/"><b>A3.4. </b>Comments</a></li>
+          <li data-nav-id="/appendix/style/prohibited/" title="Prohibited Features" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/prohibited/"><b>A3.5 </b>Prohibited Features</a></li></ul></li></ul></li>
+        </ul>
+        <div class="footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"></div>
+        <hr class="default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"/>
+        <div id="prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVariantSwitch">
+          <ul>
+            <li id="select-language-container" class="footerLangSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-language fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-language" onchange="location = baseUri + this.value;">
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+            </li>
+            <li id="select-variant-container" class="footerVariantSwitch showVariantSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-paint-brush fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-variant" onchange="window.variants && variants.changeVariant( this.value );">
+                    <option id="light-theme" value="light-theme" selected>Light Theme</option>
+                    <option id="dark-theme" value="dark-theme">Dark Theme</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+              <script>window.variants && variants.markSelectedVariant();</script>
+            </li>
+            <li class="footerVisitedLinks"><a class="padding" onclick="clearHistory();"><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+          </ul>
+        </div>
+        <div id="footer" class="footerFooter showFooter"><style>
+  #footer {
+    font-size: 13px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem 1rem;
+    min-width: 230px;
+    max-width: 300px;
+  }
+  #footer p {
+    margin: 0;
+  }
+  </style>
 
-    
+<p>Built using <a href="http://gohugo.io/">Hugo</a> and <a href="https://github.com/ksu-cs-textbooks/hugo-theme-relearn">Hugo Relearn Theme</a> with assistance from Josh Weese and Russ Feldhausen.</p>
+<br/>
+<p>Microsoft and Visual Studio are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries. </p>
+<br/>
+<p><strong><i>© Copyright 2014-2020, <a href="http://people.cs.ksu.edu/~rhowell/" target="_">Rod Howell</a>. All rights reserved.</i></strong></p>
 
-    
-    
-
-    
-<script 
-src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/quizdown.js">
-</script>
-<script 
-src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/extensions/quizdownKatex.js">
-</script>
-<script 
-src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/extensions/quizdownHighlight.js">
-</script>
-<script>quizdown.register(quizdownHighlight).register(quizdownKatex).init()</script> 
+        </div>
+      </div>
+    </aside>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1684785806" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1684785806" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1684785806" defer></script>
+    <script>
+      function useMathJax( config ){
+        if( !Object.assign ){
+          
+          return;
+        }
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          loader: {
+            load: ['[tex]/mhchem']
+          },
+          startup: {
+            elements: [
+              '.math'
+            ]
+          },
+          tex: {
+            inlineMath: [
+              ['$', '$'], 
+              ['\\(', '\\)']
+            ]
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="https://ksu-cs-textbooks.github.io/cis300/js/mathjax/tex-mml-chtml.js?1684785806"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1684785806" defer></script>
   </body>
 </html>
-
