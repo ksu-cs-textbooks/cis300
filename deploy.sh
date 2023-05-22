@@ -29,7 +29,7 @@ git pull --recurse-submodules
 
 send_message "Deploy bot" "running hugo to generate html"
 
-hugo 2>> ${LOG_FILE}
+hugo-v0.101.0 2>> ${LOG_FILE}
 
 send_message "Deploy bot" "pushing HTML to cis300-book-html"
 
