@@ -1,8 +1,7 @@
 +++
 title = "Sorting Strings"
-date = 2018-08-24T10:53:05-05:00
 weight = 60
-chapter = true
+
 pre = "<b>9.6. </b>"
 +++
 
@@ -53,12 +52,12 @@ focus on the character at location `k` (i.e., following the first `k`
 characters) of each string. We need to be careful, however, because some
 of the strings may not have a character at location `k`. We will
 therefore use an **int** to store the value of the character at location
-`k` of a string, letting $-1$ denote the absence of a character at that
+`k` of a string, letting {{< math >}}$ -1 ${{< /math >}} denote the absence of a character at that
 location.
 
 The algorithm then proceeds a lot like those described in "[Split
 Sorts](/sorting/split)". If the number of
-elements being sorted is greater than <span style="white-space:nowrap">$1$,</span> a pivot element `p` is found.
+elements being sorted is greater than <span style="white-space:nowrap">{{< math >}}$ 1 ${{< /math >}},</span> a pivot element `p` is found.
 Note that `p` is not a **string**, but an **int** representing a
 character at location `k`, as described above. The elements are then
 partitioned into groups of strings whose character at location `k` is
@@ -68,7 +67,7 @@ After these three groups are formed, the first and third group are
 sorted recursively using the same value for `k`. Furthermore, the second
 group may not be completely sorted yet --- all we know is that all strings
 in this group agree on the first `k + 1` characters. Thus, unless
-`p` is $-1$ (indicating that that these strings all have length `k`, and
+`p` is {{< math >}}$ -1 ${{< /math >}} (indicating that that these strings all have length `k`, and
 are therefore all equal), we need to recursively sort this group as
 well. However, because we know that the strings in this group all agree
 on the first `k + 1` characters, we pass `k + 1` as the last
@@ -92,7 +91,7 @@ beginning at location `k` in all strings being sorted. Because there is
 at least one string containing `p` at location `k`, the number of
 strings in both the first and the third recursive call must be smaller,
 while the total number of characters beginning at location `k` can be no
-larger. Because `k` increases by $1$ in the second recursive call, the
+larger. Because `k` increases by {{< math >}}$ 1 ${{< /math >}} in the second recursive call, the
 total number of characters past this location must be smaller, while the
 number of strings can be no larger. Hence, the size decreases in all
 recursive calls.
@@ -105,7 +104,7 @@ call on the second group to a loop. We can do this by changing the
 **while**-loop that iterates as long as the portion being sorted is
 large enough to split. Then at the bottom of the loop, after doing
 recursive calls on the first and third parts, we check to see if `p` is
-$-1$ --- if so, we exit the loop. Otherwise, we do the following:
+{{< math >}}$ -1 ${{< /math >}} --- if so, we exit the loop. Otherwise, we do the following:
 
   - increment `k`;
   - change the index giving the start of the portion we are sorting to

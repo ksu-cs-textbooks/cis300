@@ -1,8 +1,7 @@
 +++
 title = "Split Sorts"
-date = 2018-08-24T10:53:05-05:00
 weight = 40
-chapter = true
+
 pre = "<b>9.4. </b>"
 +++
 
@@ -86,12 +85,12 @@ pivot using a recursive call, and sort the elements greater than the
 pivot with another.
 
 Though we won't give an analysis here, the above algorithm runs in
-$O(n^2)$ time in the worst case, where $n$ is the number of
+{{< math >}}$ O(n^2) ${{< /math >}} time in the worst case, where {{< math >}}$ n ${{< /math >}} is the number of
 elements being sorted. However, as we saw with [insertion
 sort](/sorting/insert), the worst-case
 running time doesn't always tell the whole story. Specifically, the
 expected running time of quick sort (this implementation and others) on
-random arrays is in <span style="white-space:nowrap">$O(n \lg n)$.</span>
+random arrays is in <span style="white-space:nowrap">{{< math >}}$ O(n \lg n) ${{< /math >}}.</span>
 
 However, we don't often need to sort random data. Let's therefore take a
 closer look at what makes the worst case bad. In some ways this
@@ -111,7 +110,7 @@ Before we look at how we can improve the performance, we need to
 consider one other aspect of this implementation's performance. For a
 recursive method, the amount of data pushed on the runtime stack is
 proportional to the depth of the recursion. In the worst cases (i.e., on
-a sorted array), the recursion depth is <span style="white-space:nowrap">$n$.</span> Thus, for large <span style="white-space:nowrap">$n$,</span> if the
+a sorted array), the recursion depth is <span style="white-space:nowrap">{{< math >}}$ n ${{< /math >}}.</span> Thus, for large <span style="white-space:nowrap">{{< math >}}$ n ${{< /math >}},</span> if the
 array is sorted or nearly sorted, a **StackOverflowException** is
 likely. <span id="median-of-3"></span>
 
@@ -121,7 +120,7 @@ choose the pivot element. We want to choose an element that partitions
 the data elements roughly in half. The median element (i.e., the element
 that belongs in the middle after the array is sorted) will therefore
 give us the optimal split. It is possible to design an
-$O(n \lg n)$ algorithm that uses the median as the
+{{< math >}}$ O(n \lg n) ${{< /math >}} algorithm that uses the median as the
 pivot; however, the time it takes to find the median makes this
 algorithm slower than merge sort in practice. It works much better to
 find a quick approximation for the median.
@@ -137,18 +136,18 @@ ends up at location 1 is then the used as the pivot.
 
 We can improve on the above strategy by doing a case analysis of the
 three values. If we do this, we don't need a separate array --- we just
-find the median of three values, <span style="white-space:nowrap">$a$,</span> <span style="white-space:nowrap">$b$,</span> and <span style="white-space:nowrap">$c$,</span> as follows:
+find the median of three values, <span style="white-space:nowrap">{{< math >}}$ a ${{< /math >}},</span> <span style="white-space:nowrap">{{< math >}}$ b ${{< /math >}},</span> and <span style="white-space:nowrap">{{< math >}}$ c ${{< /math >}},</span> as follows:
 
-  - If <span style="white-space:nowrap">$a \lt b$:</span>
-      - If <span style="white-space:nowrap">$b \lt c$,</span> then $b$ is the median.
-      - Otherwise, because $b$ is the largest:
-          - If <span style="white-space:nowrap">$a \lt c$,</span> then $c$ is the median.
-          - Otherwise, $a$ is the median.
-  - Otherwise, because <span style="white-space:nowrap">$b \leq a$:</span>
-      - If <span style="white-space:nowrap">$a \lt c$,</span> then $a$ is the median.
-      - Otherwise, because $a$ is the largest:
-          - If <span style="white-space:nowrap">$b \lt c$,</span> then $c$ is the median.
-          - Otherwise, $b$ is the median.
+  - If <span style="white-space:nowrap">{{< math >}}$ a \lt b ${{< /math >}}:</span>
+      - If <span style="white-space:nowrap">{{< math >}}$ b \lt c ${{< /math >}},</span> then {{< math >}}$ b ${{< /math >}} is the median.
+      - Otherwise, because {{< math >}}$ b ${{< /math >}} is the largest:
+          - If <span style="white-space:nowrap">{{< math >}}$ a \lt c ${{< /math >}},</span> then {{< math >}}$ c ${{< /math >}} is the median.
+          - Otherwise, {{< math >}}$ a ${{< /math >}} is the median.
+  - Otherwise, because <span style="white-space:nowrap">{{< math >}}$ b \leq a ${{< /math >}}:</span>
+      - If <span style="white-space:nowrap">{{< math >}}$ a \lt c ${{< /math >}},</span> then {{< math >}}$ a ${{< /math >}} is the median.
+      - Otherwise, because {{< math >}}$ a ${{< /math >}} is the largest:
+          - If <span style="white-space:nowrap">{{< math >}}$ b \lt c ${{< /math >}},</span> then {{< math >}}$ c ${{< /math >}} is the median.
+          - Otherwise, {{< math >}}$ b ${{< /math >}} is the median.
 
 The above algorithm is quite efficient, using at most three comparisons
 and requiring no values to be copied other than the result if we
@@ -161,8 +160,8 @@ This version of quick sort gives good performance most of the time,
 typically outperforming either [heap
 sort](/sorting/select/#heap-sort) or [merge
 sort](/sorting/merge). However, it still
-has a worst-case running time in $O(n^2)$ and a worst-case
-stack usage in <span style="white-space:nowrap">$O(n)$.</span> Furthermore, it is unstable and does not
+has a worst-case running time in {{< math >}}$ O(n^2) ${{< /math >}} and a worst-case
+stack usage in <span style="white-space:nowrap">{{< math >}}$ O(n) ${{< /math >}}.</span> Furthermore, it is unstable and does not
 perform as well as [insertion
 sort](/sorting/insert) on small or nearly
 sorted data sets. In [the next

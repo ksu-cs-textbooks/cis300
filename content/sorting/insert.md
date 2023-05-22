@@ -1,8 +1,7 @@
 +++
 title = "Insert Sorts"
-date = 2018-08-24T10:53:05-05:00
 weight = 20
-chapter = true
+
 pre = "<b>9.2. </b>"
 +++
 
@@ -21,7 +20,7 @@ Initially, the sorted part will contain the first element, as a single
 element is always sorted. At each step, the first element in the
 unsorted part is inserted into its proper location in the sorted part.
 As a result, the sorted part now contains one more element, and the
-unsorted part one fewer element. After $n - 1$ steps, where $n$ is
+unsorted part one fewer element. After {{< math >}}$ n - 1 ${{< /math >}} steps, where {{< math >}}$ n ${{< /math >}} is
 the number of elements in the array, the sorted part will contain all
 the elements, and the algorithm will be done.
 
@@ -51,35 +50,35 @@ sort](/sorting/select) is that the inner
 loop only iterates as long as necessary to find the insertion point. In
 the worst case, it will iterate over the entire sorted part. In this
 case, the number of iterations is the same as for selection sort; hence,
-the worst-case running time is in $O(n^2)$ --- the same as
+the worst-case running time is in {{< math >}}$ O(n^2) ${{< /math >}} --- the same as
 selection sort and [bubble
 sort](/sorting/select/#bubble-sort). At the other
 extreme, however, if the array is already sorted, the inner loop won't
-need to iterate at all. In this case, the running time is in <span style="white-space:nowrap">$O(n)$,</span>
+need to iterate at all. In this case, the running time is in <span style="white-space:nowrap">{{< math >}}$ O(n) ${{< /math >}},</span>
 which is the same as the running time of bubble sort on an array that is
 already sorted.
 
 Unlike bubble sort, however, insertion sort has a clean characterization
 of its performance based on how sorted the array is. This
 characterization is based on the notion of an *inversion*, which is a
-pair of array locations $i \lt j$ such that the value at location
-$i$ is greater than the value at location <span style="white-space:nowrap">$j$;</span> i.e., these two values
+pair of array locations {{< math >}}$ i \lt j ${{< /math >}} such that the value at location
+{{< math >}}$ i ${{< /math >}} is greater than the value at location <span style="white-space:nowrap">{{< math >}}$ j ${{< /math >}};</span> i.e., these two values
 are out of order with respect to each other. A sorted array has no
 inversions, whereas in an array of distinct elements in reverse order, every pair of
-locations is an inversion, for a total of $n(n - 1)/2$
+locations is an inversion, for a total of {{< math >}}$ n(n - 1)/2 ${{< /math >}}
 inversions. In general, we can say that the fewer inversions an array
 has, the more sorted it is.
 
 The reason why inversions are important to understanding the performance
 of insertion sort is that each iteration of the inner loop (i.e., step 2
 of the insertion algorithm above) removes exactly one inversion.
-Consequently, if an array initially has $k$ inversions, the inner loop
-will iterate a total of $k$ times. If we combine this with the
-$n - 1$ iterations of the outer loop, we can conclude that
-the running time of insertion sort is in <span style="white-space:nowrap">$O(n + k)$.</span> Thus, if
-the number of inversions is relatively small in comparison to $n$ (i.e.,
-the array is nearly sorted), insertion sort runs in $O(n)$ time. (By
-contrast, $n - 2$ inversions can be enough to cause the inner loop
+Consequently, if an array initially has {{< math >}}$ k ${{< /math >}} inversions, the inner loop
+will iterate a total of {{< math >}}$ k ${{< /math >}} times. If we combine this with the
+{{< math >}}$ n - 1 ${{< /math >}} iterations of the outer loop, we can conclude that
+the running time of insertion sort is in <span style="white-space:nowrap">{{< math >}}$ O(n + k) ${{< /math >}}.</span> Thus, if
+the number of inversions is relatively small in comparison to {{< math >}}$ n ${{< /math >}} (i.e.,
+the array is nearly sorted), insertion sort runs in {{< math >}}$ O(n) ${{< /math >}} time. (By
+contrast, {{< math >}}$ n - 2 ${{< /math >}} inversions can be enough to cause the inner loop
 of bubble sort to iterate its worst-case number of times.) For this
 reason, insertion sort is the algorithm of choice when we expect the
 data to be nearly sorted --- a scenario that occurs frequently in
@@ -124,10 +123,10 @@ instead is a separate data structure, it does hold an initial part of
 the array in sorted order, and successive elements from the unsorted
 portion are inserted into it.
 
-Because insertions into an AVL tree containing $k$ elements can be done
-in $O(\lg k)$ time in the worst case, and because an inorder traversal
-can be done in $O(k)$ time, it follows that tree sort runs in $O(n
-\lg n)$ time in the worst case, where $n$ is the number of elements in
+Because insertions into an AVL tree containing {{< math >}}$ k ${{< /math >}} elements can be done
+in {{< math >}}$ O(\lg k) ${{< /math >}} time in the worst case, and because an inorder traversal
+can be done in {{< math >}}$ O(k) ${{< /math >}} time, it follows that tree sort runs in $O(n
+\lg n){{< math >}}$  time in the worst case, where  ${{< /math >}}n$ is the number of elements in
 the array. However, because maintaining an AVL tree requires more
 overhead than maintaining a binary heap, heap sort tends to give better
 performance in practice. For this reason, tree sort is rarely used.

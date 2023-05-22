@@ -1,8 +1,7 @@
 +++
 title = "Multiple Implementations of Children"
-date = 2018-08-24T10:53:05-05:00
 weight = 20
-chapter = true
+
 pre = "<b>6.4.2. </b>"
 +++
 
@@ -10,7 +9,7 @@ pre = "<b>6.4.2. </b>"
 
 The trie implementation given in [the previous
 section](/trees/tries/intro) offers very
-efficient lookups - a word of length $m$ can be looked up in $O(m)$
+efficient lookups - a word of length {{< math >}}$ m ${{< /math >}} can be looked up in {{< math >}}$ O(m) ${{< /math >}}
 time, no matter how many words are in the trie. However, it wastes a
 large amount of space. In a typical trie, a majority of the nodes will
 have no more than one child; however, each node contains a 26-element

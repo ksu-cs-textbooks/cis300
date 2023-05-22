@@ -1,8 +1,7 @@
 +++
 title = "Implementing a Graph"
-date = 2018-08-24T10:53:05-05:00
 weight = 40
-chapter = true
+
 pre = "<b>8.4. </b>"
 +++
 
@@ -20,11 +19,11 @@ discuss the strengths and weaknesses of each. We will then outline the
 implementation of **DirectedGraph\<TNode, TEdgeData\>**.
 
 The first traditional technique is to use what we call an *adjacency
-matrix*. This matrix is an $n \times n$ boolean array, where $n$ is the number
+matrix*. This matrix is an {{< math >}}$ n \times n ${{< /math >}} boolean array, where {{< math >}}$ n ${{< /math >}} is the number
 of nodes in the graph. In this implementation, each node is represented
-by an **int** value <span style="white-space:nowrap">$i$,</span> where <span style="white-space:nowrap">$0 \leq i \lt n$.</span> The
-value at row $i$ and column $j$ will be **true** if there is an edge
-from node $i$ to node <span style="white-space:nowrap">$j$.</span>
+by an **int** value <span style="white-space:nowrap">{{< math >}}$ i ${{< /math >}},</span> where <span style="white-space:nowrap">{{< math >}}$ 0 \leq i \lt n ${{< /math >}}.</span> The
+value at row {{< math >}}$ i ${{< /math >}} and column {{< math >}}$ j ${{< /math >}} will be **true** if there is an edge
+from node {{< math >}}$ i ${{< /math >}} to node <span style="white-space:nowrap">{{< math >}}$ j ${{< /math >}}.</span>
 
 The main advantage to this technique is that we can very quickly
 determine whether an edge exists --- we only need to look up one element
@@ -50,11 +49,11 @@ edges from that node.
 The other traditional technique involves using what we call *adjacency
 lists*. An adjacency list is simply a linked list containing
 descriptions of the outgoing edges from a single node. These lists are
-traditionally grouped together in an array of size <span style="white-space:nowrap">$n$,</span> where $n$ is
+traditionally grouped together in an array of size <span style="white-space:nowrap">{{< math >}}$ n ${{< /math >}},</span> where {{< math >}}$ n ${{< /math >}} is
 again the number of nodes in the graph. As with the adjacency matrix
-technique, the nodes must be nonnegative **int**s less than <span style="white-space:nowrap">$n$.</span> The
-linked list at location $i$ of the array then contains the descriptions
-of the outgoing edges from node $i$.
+technique, the nodes must be nonnegative **int**s less than <span style="white-space:nowrap">{{< math >}}$ n ${{< /math >}}.</span> The
+linked list at location {{< math >}}$ i ${{< /math >}} of the array then contains the descriptions
+of the outgoing edges from node {{< math >}}$ i ${{< /math >}}.
 
 One advantage to this technique is that the amount of space it uses is
 proportional to the size of the graph (i.e., the number of nodes plus

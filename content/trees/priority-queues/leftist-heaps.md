@@ -1,8 +1,7 @@
 +++
 title = "Leftist Heaps"
-date = 2018-08-24T10:53:05-05:00
 weight = 20
-chapter = true
+
 pre = "<b>6.5.2. </b>"
 +++
 
@@ -11,18 +10,18 @@ pre = "<b>6.5.2. </b>"
 One efficient way to complete the merge algorithm outlined in [the
 previous section](/trees/priority-queues/heaps) revolves
 around the concept of the *null path length* of a tree, which is defined
-to be $0$ for empty trees, or one more than the minimum of the null path
+to be {{< math >}}$ 0 ${{< /math >}} for empty trees, or one more than the minimum of the null path
 lengths of the children for nonempty trees. Another way to understand
 this concept is that it gives the minimum number of steps needed to get
 from the root to an empty subtree. For an empty tree, there is no root,
-so we somewhat arbitrarily define the null path length to be <span style="white-space:nowrap">$0$.</span> For
+so we somewhat arbitrarily define the null path length to be <span style="white-space:nowrap">{{< math >}}$ 0 ${{< /math >}}.</span> For
 single-node trees or binary trees with at least one empty child, the
-null path length is $1$ because only one step is needed to reach an empty
+null path length is {{< math >}}$ 1 ${{< /math >}} because only one step is needed to reach an empty
 subtree.
 
 One reason that the null path length is important is that it can be
-shown that any binary tree with $n$ nodes has a null path length that is
-no more than <span style="white-space:nowrap">$\lg(n + 1)$.</span> Furthermore, recall that in the merging
+shown that any binary tree with {{< math >}}$ n ${{< /math >}} nodes has a null path length that is
+no more than <span style="white-space:nowrap">{{< math >}}$ \lg(n + 1) ${{< /math >}}.</span> Furthermore, recall that in the merging
 strategy outlined in [the previous
 section](/trees/priority-queues/heaps), there is some
 flexibility in choosing which child of a node will be used in the

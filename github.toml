@@ -1,5 +1,5 @@
 # Base URL where the site will be hosted
-baseURL = "https://cis300.cs.ksu.edu/"
+baseURL = "https://ksu-cs-textbooks.github.io/cis300/"
 # Default language for the site
 languageCode = "en-us"
 # Site Title
@@ -8,8 +8,6 @@ title = "Data Structures in C#"
 canonifyURLs = true
 # This displays last edited information at bottom of page
 enableGitInfo = true
-# Publish to different directory
-publishDir = "../cis300-book-html/"
 
 # Change the default theme to be use when building the site with Hugo
 theme = ["hugo-theme-relearn"]

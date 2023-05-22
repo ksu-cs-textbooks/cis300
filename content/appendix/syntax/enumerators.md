@@ -1,8 +1,7 @@
 +++
 title = "Enumerators"
-date = 2018-08-24T10:53:05-05:00
 weight = 110
-chapter = true
+
 pre = "<b>A1.11. </b>"
 +++
 
@@ -105,7 +104,7 @@ public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator()
 }
 ```
 
-In transforming the inorder traversal into the above code, we have introduced some extra loops. These loops lead to less efficient code. Specifically, if the binary search tree is an AVL tree or other balanced binary tree, the time to iterate through this enumerator is in <span style="white-space:nowrap">$O(n \lg n)$,</span> where $n$ is the number of nodes in the tree. The inorder traversal, by contrast, runs in $O(n)$ time. In order to achieve this running time with an enumerator, we need to translate the inorder traversal to iterative code using a stack. However, this code isn't easy to understand:
+In transforming the inorder traversal into the above code, we have introduced some extra loops. These loops lead to less efficient code. Specifically, if the binary search tree is an AVL tree or other balanced binary tree, the time to iterate through this enumerator is in <span style="white-space:nowrap">{{< math >}}$ O(n \lg n) ${{< /math >}},</span> where {{< math >}}$ n ${{< /math >}} is the number of nodes in the tree. The inorder traversal, by contrast, runs in {{< math >}}$ O(n) ${{< /math >}} time. In order to achieve this running time with an enumerator, we need to translate the inorder traversal to iterative code using a stack. However, this code isn't easy to understand:
 
 ```C#
 public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator()

@@ -1,8 +1,7 @@
 +++
 title = "Hybrid Sorting Algorithms"
-date = 2018-08-24T10:53:05-05:00
 weight = 50
-chapter = true
+
 pre = "<b>9.5. </b>"
 +++
 
@@ -13,10 +12,10 @@ sort](/sorting/split) are competitive
 with both [heap sort](/sorting/select/#heap-sort) and
 [merge sort](/sorting/merge) on the vast
 majority of inputs. However, quick sort has a very bad worst case ---
-$O(n^2)$ running time and $O(n)$ stack usage. By
-comparison, both heap sort and merge sort have $O(n \lg n)$
-worst-case running time, together with a stack usage of $O(1)$ for heap
-sort or $O(\lg n)$ for merge sort. Furthermore, [insertion
+{{< math >}}$ O(n^2) ${{< /math >}} running time and {{< math >}}$ O(n) ${{< /math >}} stack usage. By
+comparison, both heap sort and merge sort have {{< math >}}$ O(n \lg n) ${{< /math >}}
+worst-case running time, together with a stack usage of {{< math >}}$ O(1) ${{< /math >}} for heap
+sort or {{< math >}}$ O(\lg n) ${{< /math >}} for merge sort. Furthermore, [insertion
 sort](/sorting/insert) performs better
 than any of these algorithms on small data sets. In this section, we
 look at ways to combine some of these algorithms to obtain a sorting
@@ -32,7 +31,7 @@ Hence, when the portion we are sorting becomes small enough, rather than
 finding a pivot and splitting, we instead call insertion sort.
 
 An alternative to the above improvement is to use the fact that
-insertion sort runs in $O(n)$ time when the number of inversions is
+insertion sort runs in {{< math >}}$ O(n) ${{< /math >}} time when the number of inversions is
 linear in the number of array elements. To accomplish this, we modify
 quick sort slightly so that instead of sorting the array, it brings each
 element near where it belongs. We will refer to this modified algorithm
@@ -42,14 +41,14 @@ to obtain the partial sort is simply to change when we stop sorting. We
 only sort portions that are larger than some threshold --- we leave other
 portions unsorted.
 
-Suppose, for example, that we choose a threshold of <span style="white-space:nowrap">$10$.</span> Once the partial
+Suppose, for example, that we choose a threshold of <span style="white-space:nowrap">{{< math >}}$ 10 ${{< /math >}}.</span> Once the partial
 sort reaches an array portion with nine or fewer elements, we do nothing
 with it. Note, however, that these elements are all larger than the
 elements that precede this portion, and they are all smaller than the
 elements that follow this portion; hence, each element can form an
 inversion with at most eight other elements --- the other elements in the
 same portion. Because each inversion contains two elements, this means
-that there can be no more than $4n$ inversions in the entire array once
+that there can be no more than {{< math >}}$ 4n ${{< /math >}} inversions in the entire array once
 the partial sort finishes. The subsequent call to insertion sort will
 therefore finish the sorting in linear time.
 
@@ -61,20 +60,20 @@ general-purpose sorting. On modern hardware architectures, the first
 approach above tends to give the better performance.
 
 Nevertheless, neither of the above approaches can guarantee
-$O(n \lg n)$ performance --- in the worst case, they are all
-still in <span style="white-space:nowrap">$O(n^2)$.</span> Furthermore, the bad cases still use
+{{< math >}}$ O(n \lg n) ${{< /math >}} performance --- in the worst case, they are all
+still in <span style="white-space:nowrap">{{< math >}}$ O(n^2) ${{< /math >}}.</span> Furthermore, the bad cases still use
 linear stack space. To overcome these shortfalls, we can put a limit on
 the depth of recursion. Once this limit is reached, we can finish
-sorting this portion with an $O(n \lg n)$ algorithm such as
+sorting this portion with an {{< math >}}$ O(n \lg n) ${{< /math >}} algorithm such as
 [heap sort](/sorting/select/#heap-sort). The idea is to
 pick a limit that is large enough that it is rarely reached, but still
 small enough that bad cases will cause the alternative sort to be
-invoked before too much time is spent. A limit of about <span style="white-space:nowrap">$2 \lg n$,</span>
-where $n$ is the size of the entire array, has been suggested. Because
-arrays in C\# must have fewer than $2^{31}$ elements, this value
-is always less than <span style="white-space:nowrap">$62$;</span> hence, it is also safe to use a constant for the
+invoked before too much time is spent. A limit of about <span style="white-space:nowrap">{{< math >}}$ 2 \lg n ${{< /math >}},</span>
+where {{< math >}}$ n ${{< /math >}} is the size of the entire array, has been suggested. Because
+arrays in C\# must have fewer than {{< math >}}$ 2^{31} ${{< /math >}} elements, this value
+is always less than <span style="white-space:nowrap">{{< math >}}$ 62 ${{< /math >}};</span> hence, it is also safe to use a constant for the
 limit. The resulting algorithm has a worst-case running time in
-$O(n \lg n)$ and a worst-case stack usage of <span style="white-space:nowrap">$O(\lg n)$.</span>
+{{< math >}}$ O(n \lg n) ${{< /math >}} and a worst-case stack usage of <span style="white-space:nowrap">{{< math >}}$ O(\lg n) ${{< /math >}}.</span>
 This logarithmic bound on the stack usage is sufficient to avoid a
 **StackOverflowException**.
 

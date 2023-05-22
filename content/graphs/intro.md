@@ -1,8 +1,7 @@
 +++
 title = "Introduction to Graphs"
-date = 2018-08-24T10:53:05-05:00
 weight = 10
-chapter = true
+
 pre = "<b>8.1. </b>"
 +++
 
@@ -18,8 +17,8 @@ The fact that edges are 2-element sets means that the nodes that
 comprise an edge must be distinct. Furthermore, within a set, there is
 no notion of a "first" element or a "second" element --- there are just
 two elements. Thus, an edge expresses some symmetric relationship
-between two nodes; i.e., if $\\{u, v\\}$ is an edge then node $u$ is
-*adjacent* to node <span style="white-space:nowrap">$v$,</span> and node $v$ is adjacent to node <span style="white-space:nowrap">$u$.</span> We also
+between two nodes; i.e., if {{< math >}}$ \\{u, v\\} ${{< /math >}} is an edge then node {{< math >}}$ u ${{< /math >}} is
+*adjacent* to node <span style="white-space:nowrap">{{< math >}}$ v ${{< /math >}},</span> and node {{< math >}}$ v ${{< /math >}} is adjacent to node <span style="white-space:nowrap">{{< math >}}$ u ${{< /math >}}.</span> We also
 might associate some data, such as a label or a length, with an edge.
 
 We can think of an edge as "connecting" the two nodes that comprise it.
@@ -35,15 +34,15 @@ ordered pairs of distinct nodes rather than 2-element sets. Within an
 ordered pair, there is a first element and a second element. We call the
 first node of an edge its *source* and the second node its
 *destination*. Thus, an edge in a directed graph expresses an asymmetric
-relationship between two nodes; i.e., if $(u, v)$ is an edge, then
-$v$ is adjacent to <span style="white-space:nowrap">$u$,</span> but $u$ is not adjacent to $v$ unless
-$(v, u)$ is also an edge in the graph. As with undirected
+relationship between two nodes; i.e., if {{< math >}}$ (u, v) ${{< /math >}} is an edge, then
+{{< math >}}$ v ${{< /math >}} is adjacent to <span style="white-space:nowrap">{{< math >}}$ u ${{< /math >}},</span> but {{< math >}}$ u ${{< /math >}} is not adjacent to {{< math >}}$ v ${{< /math >}} unless
+{{< math >}}$ (v, u) ${{< /math >}} is also an edge in the graph. As with undirected
 graphs, we might associate data with an edge in a directed graph.
 
 We can draw directed graphs like we draw undirected graphs, except that
 we use an arrow to distinguish between the source and the destination of
 an edge. Specifically, the arrows point from the source to the
-destination. If we have edges $(u, v)$ and <span style="white-space:nowrap">$(v, u)$,</span> and if
+destination. If we have edges {{< math >}}$ (u, v) ${{< /math >}} and <span style="white-space:nowrap">{{< math >}}$ (v, u) ${{< /math >}},</span> and if
 these edges have the same data associated with them, we might simplify
 the drawing by using a single line with arrows in both directions.
 Following is an example of a directed graph with numeric values
@@ -62,7 +61,7 @@ which may be any type. These edges can be represented using instances of
 the **Edge\<TNode, TEdgeData\>** structure. We also can use the
 **DirectedGraph\<TNode, TEdgeData\>** class to represent undirected
 graphs --- we simply make sure that whenever there is an edge
-<span style="white-space:nowrap">$(u, v)$,</span> there is also an edge $(v, u)$ containing the
+<span style="white-space:nowrap">{{< math >}}$ (u, v) ${{< /math >}},</span> there is also an edge {{< math >}}$ (v, u) ${{< /math >}} containing the
 same data.
 
 The **Edge\<TNode, TEdgeData\>** structure contains the following

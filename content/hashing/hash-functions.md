@@ -1,8 +1,7 @@
 +++
 title = "Hash Codes"
-date = 2018-08-24T10:53:05-05:00
 weight = 50
-chapter = true
+
 pre = "<b>7.5. </b>"
 +++
 
@@ -27,9 +26,9 @@ efficiently, this method should satisfy the following goals:
 The last goal above may seem rather daunting, particularly in light of
 our desire for a quick computation. In fact, it is impossible to
 guarantee in general --- provided there are more than
-$2^{32}(k - 1)$ possible keys from which to choose, no
+{{< math >}}$ 2^{32}(k - 1) ${{< /math >}} possible keys from which to choose, no
 matter how the hash code computation is implemented, we can always find
-at least $k$ keys with the same hash code. However, this is a problem
+at least {{< math >}}$ k ${{< /math >}} keys with the same hash code. However, this is a problem
 that has been studied a great deal, and several techniques have been
 developed that are effective in practice. We will caution, however, that
 not every technique that looks like it should be effective actually is
@@ -65,55 +64,57 @@ This is not a problem --- the remaining bits are sufficient for the hash code.
 
 In order to understand this computation a little better, let's first
 ignore the effect of this overflow. We'll denote the fixed odd integer
-by $x$, and the components of the key as
-<span style="white-space:nowrap">$k_1, \dots, k_n$.</span> Then
+by {{< math >}}$ x ${{< /math >}}, and the components of the key as
+<span style="white-space:nowrap">{{< math >}}$ k_1, \dots, k_n ${{< /math >}}.</span> Then
 this is the result of the computation:
 
+{{< math align="left" >}}
 $$(\dots ((0x + k_1)x + k_2) \dots)x + k_n = k_1 x^{n-1} + k_2 x^{n-2} + \dots + k_n.$$
+{{< /math >}}
 
 Because the above is a polynomial, this hashing scheme is called
 *polynomial hashing*. While the computation itself is efficient,
 performing just a couple of arithmetic operations on each component, the
-result is to multiply each component by a unique value ($x^i$
-for some <span style="white-space:nowrap">$i$)</span> depending on its position within the key.
+result is to multiply each component by a unique value ({{< math >}}$ x^i ${{< /math >}}
+for some <span style="white-space:nowrap">{{< math >}}$ i ${{< /math >}})</span> depending on its position within the key.
 
 Now let's consider the effect of overflow on the above polynomial. What
 this does is to keep only the low-order 32 bits of the value of the
 polynomial. Looking at it another way, we end up multiplying
-$k_i$ by only the low-order 32 bits of <span style="white-space:nowrap">$x^{n-i}$.</span>
-This helps to explain why $x$ is an odd number --- raising an even number
-to the <span style="white-space:nowrap">$i$th</span> power forms a number ending in $i$ 0s in binary. Thus, if
+{{< math >}}$ k_i ${{< /math >}} by only the low-order 32 bits of <span style="white-space:nowrap">{{< math >}}$ x^{n-i} ${{< /math >}}.</span>
+This helps to explain why {{< math >}}$ x ${{< /math >}} is an odd number --- raising an even number
+to the <span style="white-space:nowrap">{{< math >}}$ i ${{< /math >}}th</span> power forms a number ending in {{< math >}}$ i ${{< /math >}} 0s in binary. Thus, if
 there are more than 32 components in the key, all but the last 32 will
-be multiplied by <span style="white-space:nowrap">$0$,</span> and hence, ignored.
+be multiplied by <span style="white-space:nowrap">{{< math >}}$ 0 ${{< /math >}},</span> and hence, ignored.
 
 There are other potential problems with using certain odd numbers for
-$x$. For example, we wouldn't want to use <span style="white-space:nowrap">$1$,</span> because that would result
+{{< math >}}$ x ${{< /math >}}. For example, we wouldn't want to use <span style="white-space:nowrap">{{< math >}}$ 1 ${{< /math >}},</span> because that would result
 in simply adding all the components together, and we would lose any
-information regarding their positions within the key. Using $-1$ would be
+information regarding their positions within the key. Using {{< math >}}$ -1 ${{< /math >}} would be
 almost as bad, as we would multiply all components in odd positions by
-$-1$ and all components in even positions by <span style="white-space:nowrap">$1$.</span> The effect of overflow can
+{{< math >}}$ -1 ${{< /math >}} and all components in even positions by <span style="white-space:nowrap">{{< math >}}$ 1 ${{< /math >}}.</span> The effect of overflow can
 cause similar behavior; for example, if we place
-$2^{31} - 1$ in an **int** variable and square it,
+{{< math >}}$ 2^{31} - 1 ${{< /math >}} in an **int** variable and square it,
 the overflow causes the result to be <span style="white-space:nowrap">1.</span> Successive powers will then
-alternate between $2^{31} - 1$ and <span style="white-space:nowrap">$1$.</span>
+alternate between {{< math >}}$ 2^{31} - 1 ${{< /math >}} and <span style="white-space:nowrap">{{< math >}}$ 1 ${{< /math >}}.</span>
 
 It turns out that this cyclic behavior occurs no matter what odd number
-we use for <span style="white-space:nowrap">$x$.</span> However, in most cases the cycle is long enough that
+we use for <span style="white-space:nowrap">{{< math >}}$ x ${{< /math >}}.</span> However, in most cases the cycle is long enough that
 keys of a reasonable size will have each component multiplied by a
 unique value. The only odd numbers that result in short cycles are those
-that are adjacent to a multiple of a large power of $2$ (note that $0$ is a
+that are adjacent to a multiple of a large power of {{< math >}}$ 2 ${{< /math >}} (note that {{< math >}}$ 0 ${{< /math >}} is a
 multiple of any integer).
 
 The other potential problem occurs when we are hashing fairly short
-keys. In such cases, if $x$ is also small enough, the values computed
+keys. In such cases, if {{< math >}}$ x ${{< /math >}} is also small enough, the values computed
 will all be much smaller than the maximum possible integer value
-<span style="white-space:nowrap">$(2^{31} - 1)$.</span> As a result, we will not have a uniform
-distribution of values. We therefore want to avoid making $x$ too small.
+<span style="white-space:nowrap">{{< math >}}$ (2^{31} - 1) ${{< /math >}}.</span> As a result, we will not have a uniform
+distribution of values. We therefore want to avoid making {{< math >}}$ x ${{< /math >}} too small.
 
-Putting all this together, choosing $x$ to be an odd number between $30$
-and $40$ works pretty well. These values are large enough so that seven key
+Putting all this together, choosing {{< math >}}$ x ${{< /math >}} to be an odd number between {{< math >}}$ 30 ${{< /math >}}
+and {{< math >}}$ 40 ${{< /math >}} works pretty well. These values are large enough so that seven key
 components will usually overflow an **int**. Furthermore, they all have
-a cycle length greater than $100$ million.
+a cycle length greater than {{< math >}}$ 100 ${{< /math >}} million.
 
 We should always save the hash code in a **private** field after we
 compute it so that subsequent requests for the same hash code don't

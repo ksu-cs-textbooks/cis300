@@ -1,8 +1,7 @@
 +++
 title = "A Simple Hash Table Implementation"
-date = 2018-08-24T10:53:05-05:00
 weight = 10
-chapter = true
+
 pre = "<b>7.1. </b>"
 +++
 
@@ -39,13 +38,13 @@ Furthermore, this calculation often does a good job of distributing hash
 code values among the different table locations, but this depends on how
 the hash codes were computed and what the length of the table is.
 
-For example, suppose we use a size $2^k$ for some positive
-integer <span style="white-space:nowrap">$k$.</span> In this case, the above computation can be simplified, as
-the values formed by $k$ bits are $0$ through <span style="white-space:nowrap">$2^k - 1$,</span>
+For example, suppose we use a size {{< math >}}$ 2^k ${{< /math >}} for some positive
+integer <span style="white-space:nowrap">{{< math >}}$ k ${{< /math >}}.</span> In this case, the above computation can be simplified, as
+the values formed by {{< math >}}$ k ${{< /math >}} bits are {{< math >}}$ 0 ${{< /math >}} through <span style="white-space:nowrap">{{< math >}}$ 2^k - 1 ${{< /math >}},</span>
 or all of the locations in the table. We can therefore simply use the
-low-order $k$ bits of the hash code as the table location. However, it
+low-order {{< math >}}$ k ${{< /math >}} bits of the hash code as the table location. However, it
 turns out that using the division method when the table size is a power
-of $2$ can lead to poor key distribution for some common hash code
+of {{< math >}}$ 2 ${{< /math >}} can lead to poor key distribution for some common hash code
 schemes. To avoid these problems, a prime number should be used as the
 table length. When a prime number is used, the division method tends to
 result in a good distribution of the keys.
@@ -54,7 +53,7 @@ The reason we need to reset the sign bit of the hash code to `0` is to
 ensure that the first operand to the `%` operator is nonnegative, and
 hence that the result is nonnegative. Furthermore, simply taking the
 absolute value of the hash code won't always work because
-$-2^{31}$ can be stored in an **int**, but $2^{31}$ is too
+{{< math >}}$ -2^{31} ${{< /math >}} can be stored in an **int**, but {{< math >}}$ 2^{31} ${{< /math >}} is too
 large. Resetting the sign bit to `0` is a quick way to ensure we have a
 nonnegative value without losing any additional information.
 
@@ -68,10 +67,10 @@ bit is the high-order bit; hence, we want to AND the hash code with an
 way to write this value is using hexadecimal notation, as each hex digit
 corresponds to exactly four bits. We begin writing a hexadecimal value
 with `0x`. The first four bits need to be one `0`, followed by three `1`s.
-These three `1` are in the <span style="white-space:nowrap">$1$,</span> <span style="white-space:nowrap">$2$,</span> and $4$ bit positions of the first hex digit; hence, the value of
+These three `1` are in the <span style="white-space:nowrap">{{< math >}}$ 1 ${{< /math >}},</span> <span style="white-space:nowrap">{{< math >}}$ 2 ${{< /math >}},</span> and {{< math >}}$ 4 ${{< /math >}} bit positions of the first hex digit; hence, the value of
 this hex digit should be `7`. We then want seven more hex digits, each
-containing four `1`s. An additional `1` in the $8$ position gives us a sum of
-<span style="white-space:nowrap">$15$,</span> which is denoted as either `f` or `F` in hex. We can therefore reset
+containing four `1`s. An additional `1` in the {{< math >}}$ 8 ${{< /math >}} position gives us a sum of
+<span style="white-space:nowrap">{{< math >}}$ 15 ${{< /math >}},</span> which is denoted as either `f` or `F` in hex. We can therefore reset
 the sign bit of an **int** `i` as follows:
 
 ```c#

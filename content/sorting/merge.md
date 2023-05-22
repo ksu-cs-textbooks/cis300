@@ -1,8 +1,7 @@
 +++
 title = "Merge Sorts"
-date = 2018-08-24T10:53:05-05:00
 weight = 30
-chapter = true
+
 pre = "<b>9.3. </b>"
 +++
 
@@ -174,19 +173,19 @@ sequences.
 For an external sorting algorithm, the most important measure of
 performance is the number of file I/O operations it requires, as these
 operations are often much more expensive than any other (depending, of
-course, on the storage medium). Suppose the initial input file has $n$
+course, on the storage medium). Suppose the initial input file has {{< math >}}$ n ${{< /math >}}
 data items, and suppose the array we use in the initialization step can
-hold $m$ data items. Then the number of sorted sequences written by the
-initialization is  <span style="white-space:nowrap">$n/m$,</span> with any fractional part rounded up. Each
+hold {{< math >}}$ m ${{< /math >}} data items. Then the number of sorted sequences written by the
+initialization is  <span style="white-space:nowrap">{{< math >}}$ n/m ${{< /math >}},</span> with any fractional part rounded up. Each
 iteration of the main loop then reduces the number of sorted sequences
 by half, with any fractional part again rounded up. The total number of
-iterations of the main loop is therefore  <span style="white-space:nowrap">$\lg (n/m)$,</span> rounding
+iterations of the main loop is therefore  <span style="white-space:nowrap">{{< math >}}$ \lg (n/m) ${{< /math >}},</span> rounding
 upward again. Each iteration of this loop makes one pass through the
 entire data set. In addition, the initialization makes one pass, and the
 final copying makes one pass. The total number of passes through the
-data is therefore  <span style="white-space:nowrap">$\lg (n/m) + 2$.</span> For example, if we are
-sorting $10$ billion data items using an array of size $1$ million, we need
-$\lg 10,000 + 2$ passes, rounded up; i.e., we need $16$ passes
+data is therefore  <span style="white-space:nowrap">{{< math >}}$ \lg (n/m) + 2 ${{< /math >}}.</span> For example, if we are
+sorting {{< math >}}$ 10 ${{< /math >}} billion data items using an array of size {{< math >}}$ 1 ${{< /math >}} million, we need
+{{< math >}}$ \lg 10,000 + 2 ${{< /math >}} passes, rounded up; i.e., we need {{< math >}}$ 16 ${{< /math >}} passes
 through the data.
 
 Various improvements can be made to reduce the number of passes through
@@ -198,13 +197,13 @@ directory as the output file, we can finish the sort by simply renaming
 the first input file, rather than copying it.
 
 A more substantial improvement involves using more temporary files.
-*$k$-way external merge sort* uses $k$ input and $k$ output files. Each
-merge then merges $k$ sorted sequences into  <span style="white-space:nowrap">$1$.</span> This reduces the number
-of iterations of the main loop to  <span style="white-space:nowrap">$\log_k (n/m)$.</span> Using
+*{{< math >}}$ k ${{< /math >}}-way external merge sort* uses {{< math >}}$ k ${{< /math >}} input and {{< math >}}$ k ${{< /math >}} output files. Each
+merge then merges {{< math >}}$ k ${{< /math >}} sorted sequences into  <span style="white-space:nowrap">{{< math >}}$ 1 ${{< /math >}}.</span> This reduces the number
+of iterations of the main loop to  <span style="white-space:nowrap">{{< math >}}$ \log_k (n/m) ${{< /math >}}.</span> Using
 the fact that
- <span style="white-space:nowrap">$\log_{k^2} n = (\log_k n)/2$,</span>
-we can conclude that squaring $k$ will reduce the number of passes
-through the data by about half. Thus, $4$-way external merge sort will
-make about half as many passes through the data as $2$-way external merge
+ <span style="white-space:nowrap">{{< math >}}$ \log_{k^2} n = (\log_k n)/2 ${{< /math >}},</span>
+we can conclude that squaring {{< math >}}$ k ${{< /math >}} will reduce the number of passes
+through the data by about half. Thus, {{< math >}}$ 4 ${{< /math >}}-way external merge sort will
+make about half as many passes through the data as {{< math >}}$ 2 ${{< /math >}}-way external merge
 sort. The gain diminishes quickly after that, however, as we must
-increase $k$ to $16$ to cut the number of passes in half again.
+increase {{< math >}}$ k ${{< /math >}} to {{< math >}}$ 16 ${{< /math >}} to cut the number of passes in half again.

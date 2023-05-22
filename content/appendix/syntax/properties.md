@@ -1,8 +1,7 @@
 +++
 title = "Properties"
-date = 2018-08-24T10:53:05-05:00
 weight = 60
-chapter = true
+
 pre = "<b>A1.6. </b>"
 +++
 

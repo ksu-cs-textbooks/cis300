@@ -1,8 +1,7 @@
 +++
 title = "Implementing a Dictionary with an Array-Like Structure"
-date = 2018-08-24T10:53:05-05:00
 weight = 30
-chapter = true
+
 pre = "<b>5.3. </b>"
 +++
 
@@ -30,9 +29,9 @@ the keys in order in any of these data structures. We can then search
 for a key in the same way as we described for a linked list. However,
 such a search can be expensive - to search for a key that is larger than
 any key in the dictionary, we need to examine all of the keys. We say
-that the performance of this sequential search is in $O(n)$, where $n$
-is the number of keys in the dictionary. This means that as $n$ grows,
-the time required for the search is at worst proportional to $n$.
+that the performance of this sequential search is in {{< math >}}$ O(n) ${{< /math >}}, where {{< math >}}$ n ${{< /math >}}
+is the number of keys in the dictionary. This means that as {{< math >}}$ n ${{< /math >}} grows,
+the time required for the search is at worst proportional to {{< math >}}$ n ${{< /math >}}.
 
 We can improve this performance dramatically for an arrays or array-like
 structure such as an **ArrayList** or a **List\<T\>** using a technique
@@ -114,6 +113,6 @@ hence, the key we are looking for is not in the data set. However,
 hence, the binary search can be used for both lookups and insertions.
 
 Binary search is a very efficient way to search an ordered array-like
-structure. In particular, it always makes no more than $O(\log n)$
-comparisons, where $n$ is the number of elements in the data set. The
-$\log$ function grows very slowly - much more slowly than $n$.
+structure. In particular, it always makes no more than {{< math >}}$ O(\log n) ${{< /math >}}
+comparisons, where {{< math >}}$ n ${{< /math >}} is the number of elements in the data set. The
+{{< math >}}$ \log ${{< /math >}} function grows very slowly - much more slowly than {{< math >}}$ n ${{< /math >}}.

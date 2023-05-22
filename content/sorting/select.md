@@ -1,8 +1,7 @@
 +++
 title = "Select Sorts"
-date = 2018-08-24T10:53:05-05:00
 weight = 10
-chapter = true
+
 pre = "<b>9.1. </b>"
 +++
 
@@ -24,7 +23,7 @@ The following figure illustrates this arrangement.
 Initially, the sorted part will be empty. At each step, the unsorted
 part is rearranged so that its smallest element comes first. As a
 result, the sorted part can now contain one more element, and the
-unsorted part one fewer element. After $n - 1$ steps, where $n$ is
+unsorted part one fewer element. After {{< math >}}$ n - 1 ${{< /math >}} steps, where {{< math >}}$ n ${{< /math >}} is
 the number of elements in the array, the sorted part will have all but
 one of the elements. Because the one element in the unsorted part must
 be at least as large as all elements in the sorted part, the entire
@@ -44,21 +43,21 @@ the first element in the unsorted part.
 
 Note that the inner loop in selection sort iterates once for every
 element in the unsorted part. On the first iteration of the outer loop,
-the unsorted part contains all $n$ elements. On each successive
+the unsorted part contains all {{< math >}}$ n ${{< /math >}} elements. On each successive
 iteration, the unsorted part is one element smaller, until on the last
-iteration, it has only $2$ elements. If we add up all these values, we
+iteration, it has only {{< math >}}$ 2 ${{< /math >}} elements. If we add up all these values, we
 find that the inner loop iterates a total of exactly
-$(n - 1)(n + 2)/2$ times. This value is
-proportional to $n^2$ as $n$ increases; hence, the running
-time of the algorithm is in $O(n^2)$. Furthermore, this
+{{< math >}}$ (n - 1)(n + 2)/2 ${{< /math >}} times. This value is
+proportional to {{< math >}}$ n^2 ${{< /math >}} as {{< math >}}$ n ${{< /math >}} increases; hence, the running
+time of the algorithm is in {{< math >}}$ O(n^2) ${{< /math >}}. Furthermore, this
 performance occurs no matter how the data items are initially arranged.
 
-As we will see in what follows, $O(n^2)$ performance is not
+As we will see in what follows, {{< math >}}$ O(n^2) ${{< /math >}} performance is not
 very good if we want to sort a moderately large data set. For example,
-sorting $10,000$ elements will require about $5$ billion iterations of the
+sorting {{< math >}}$ 10,000 ${{< /math >}} elements will require about {{< math >}}$ 5 ${{< /math >}} billion iterations of the
 inner loop. On the positive side, the only time data items are moved is
 when a swap is made at the end of the outer loop; hence, this number is
-proportional to $n$. This could be advantageous if we are sorting large
+proportional to {{< math >}}$ n ${{< /math >}}. This could be advantageous if we are sorting large
 value types, as we would not need to write these large data elements
 very many times. However, for general performance reasons, large data
 types shouldn't be value types --- they should be reference types to avoid
@@ -85,8 +84,8 @@ smallest key, then this algorithm is stable.
 <span id="bubble-sort"></span> Another implementation of a select sort
 is *bubble sort*. It rearranges the unsorted part by swapping adjacent
 elements that are out of order. It starts with the last two elements
-(i.e., the elements at locations $n - 1$ and <span style="white-space:nowrap">$n - 2$)</span>, then
-the elements at locations $n - 2$ and <span style="white-space:nowrap">$n - 3$,</span> etc.
+(i.e., the elements at locations {{< math >}}$ n - 1 ${{< /math >}} and <span style="white-space:nowrap">{{< math >}}$ n - 2 ${{< /math >}})</span>, then
+the elements at locations {{< math >}}$ n - 2 ${{< /math >}} and <span style="white-space:nowrap">{{< math >}}$ n - 3 ${{< /math >}},</span> etc.
 Proceeding in this way, the smallest element in the unsorted part will
 end up at the beginning of the unsorted part. While the inner loop is
 doing this, it keeps track of whether it has made any swaps. If the loop
@@ -95,7 +94,7 @@ the algorithm therefore stops.
 
 Like selection sort, bubble sort is stable. In the worst case, however,
 the performance of bubble sort is even worse than that of selection
-sort. It is still in <span style="white-space:nowrap">$O(n^2)$,</span> but in the worst case, its
+sort. It is still in <span style="white-space:nowrap">{{< math >}}$ O(n^2) ${{< /math >}},</span> but in the worst case, its
 inner loop performs the same number of iterations, but does a lot more
 swaps. Bubble sort does outperform selection sort on some inputs, but
 describing when this will occur isn't easy. For example, in an array in
@@ -121,8 +120,8 @@ children are the next four elements, etc. Given an array location, we
 can then compute the locations of its parent and both of its children.
 The priorities are arranged so that the root of each subtree contains
 the maximum priority in that subtree. It is possible to arrange the
-elements of an array into a binary heap in $O(n)$ time, and to remove
-an element with maximum priority in $O(\lg n)$ time.
+elements of an array into a binary heap in {{< math >}}$ O(n) ${{< /math >}} time, and to remove
+an element with maximum priority in {{< math >}}$ O(\lg n) ${{< /math >}} time.
 
 Heap sort then works by pre-processing the array to arrange it into a
 binary heap. The binary heap then forms the unsorted part, and it is
@@ -137,12 +136,12 @@ is the same. To rearrange the unsorted part, it:
 3.  Places the copy of the first element into the space vacated by its
     removal at the beginning of the sorted part.
 
-Heap sort runs in $O(n \lg n)$ time in the worst case.
+Heap sort runs in {{< math >}}$ O(n \lg n) ${{< /math >}} time in the worst case.
 Information theory can be used to prove that any sorting algorithm that
-sorts by comparing elements must make at least $\lg(n!)$ comparisons on
-some arrays of size <span style="white-space:nowrap">$n$.</span> Because $\lg(n!)$ is proportional to
-<span style="white-space:nowrap">$n \lg n$,</span> we cannot hope to do any better than
-$O(n \lg n)$ in the worst case. While this performance is a
+sorts by comparing elements must make at least {{< math >}}$ \lg(n!) ${{< /math >}} comparisons on
+some arrays of size <span style="white-space:nowrap">{{< math >}}$ n ${{< /math >}}.</span> Because {{< math >}}$ \lg(n!) ${{< /math >}} is proportional to
+<span style="white-space:nowrap">{{< math >}}$ n \lg n ${{< /math >}},</span> we cannot hope to do any better than
+{{< math >}}$ O(n \lg n) ${{< /math >}} in the worst case. While this performance is a
 significant improvement over selection sort and bubble sort, we will see
 in [a later section](/sorting/split) that
 there is an algorithm (quick sort) that does even better in practice.

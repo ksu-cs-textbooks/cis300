@@ -1,8 +1,7 @@
 +++
 title = "CIS 300 Homework 4"
-date = 2020-09-27T10:53:05-05:00
 weight = 10
-chapter = true
+
 hidden = true
 pre = "<b>2. </b>"
 +++

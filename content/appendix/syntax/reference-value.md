@@ -2,7 +2,7 @@
 title = "Reference Types and Value Types"
 weight = 5
 pre = "<b>A1.1. </b>"
-chapter = true
+
 +++
 
 ## Reference Types and Value Types

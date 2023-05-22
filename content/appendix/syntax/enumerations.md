@@ -2,7 +2,7 @@
 title = "Enumerations"
 weight = 7
 pre = "<b>A1.2. </b>"
-chapter = true
+
 +++
 
 ## Enumerations

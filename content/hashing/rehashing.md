@@ -1,8 +1,7 @@
 +++
 title = "Rehashing"
-date = 2018-08-24T10:53:05-05:00
 weight = 20
-chapter = true
+
 pre = "<b>7.2. </b>"
 +++
 
@@ -11,7 +10,7 @@ pre = "<b>7.2. </b>"
 In this section, we will show how to improve the performance of a hash
 table by adjusting the size of the array. In order to see how the array
 size impacts the performance, let's suppose we are using an array with
-$m$ locations, and that we are storing $n$ keys in the hash table. In
+{{< math >}}$ m ${{< /math >}} locations, and that we are storing {{< math >}}$ n ${{< /math >}} keys in the hash table. In
 what follows, we will analyze the number of keys we will need to examine
 while searching for a particular key, `k`.
 
@@ -27,27 +26,27 @@ distribution of keys throughout the table.
 
 We'll first consider the case in which `k` is not in the hash table. In
 this case, we will need to examine all of the keys in the linked list at
-the array location where `k` belongs. Because each of the $n$ keys is
-equally likely to map to each of the $m$ array locations, we would
-expect, on average, $n / m$ keys to be mapped to the location
+the array location where `k` belongs. Because each of the {{< math >}}$ n ${{< /math >}} keys is
+equally likely to map to each of the {{< math >}}$ m ${{< /math >}} array locations, we would
+expect, on average, {{< math >}}$ n / m ${{< /math >}} keys to be mapped to the location
 where `k` belongs. Hence, in this case, we would expect to examine
-$n / m$ keys, on average.
+{{< math >}}$ n / m ${{< /math >}} keys, on average.
 
 Now let's consider the case in which `k` is in the hash table. In this
 case, we will examine the key `k`, plus all the keys that precede `k` in
 its linked list. The number of keys preceding `k` cannot be more than
 the total number of keys other than `k` in that linked list. Again,
-because each of the $n - 1$ keys other than `k` is equally likely
-to map to each of the $m$ array locations, we would expect, on average,
-$(n - 1) / m$ keys other than `k` to be in the same linked
+because each of the {{< math >}}$ n - 1 ${{< /math >}} keys other than `k` is equally likely
+to map to each of the {{< math >}}$ m ${{< /math >}} array locations, we would expect, on average,
+{{< math >}}$ (n - 1) / m ${{< /math >}} keys other than `k` to be in the same linked
 list as `k`. Thus, we can expect, on average, to examine no more than
-$1 +  (n - 1) / m$ keys when looking for a key
+{{< math >}}$ 1 +  (n - 1) / m ${{< /math >}} keys when looking for a key
 that is present.
 
 Notice that both of the values derived above decrease as *m* increases.
-Specifically, if $m \geq n$, the expected number of examined
-keys on a failed lookup is no more than $1$, and the expected number of
-examined keys on a successful lookup is less than $2$. We can therefore
+Specifically, if {{< math >}}$ m \geq n ${{< /math >}}, the expected number of examined
+keys on a failed lookup is no more than {{< math >}}$ 1 ${{< /math >}}, and the expected number of
+examined keys on a successful lookup is less than {{< math >}}$ 2 ${{< /math >}}. We can therefore
 expect to achieve very good performance if we keep the number of array
 locations at least as large as the number of keys.
 
@@ -71,14 +70,14 @@ algorithm for finding all prime numbers less than a given `n` in
 Numbers](/linked-lists/sieve-eratosthenes)";
 however, this is a rather expensive way to find a prime number of an
 appropriate size. While there are more efficient algorithms, we really
-don't need one. Suppose we start with an array size of $5$ (there may be
+don't need one. Suppose we start with an array size of {{< math >}}$ 5 ${{< /math >}} (there may be
 applications using many small hash tables --- the .NET implementation
-starts with an array size of <span style="white-space:nowrap">$3$).</span> $5$ is larger than
-<span style="white-space:nowrap">$2^2 = 4$.</span> If we double this value $28$ times, we
-reach a value larger than <span style="white-space:nowrap">$2^{30}$,</span> which is larger than $1$
+starts with an array size of <span style="white-space:nowrap">{{< math >}}$ 3 ${{< /math >}}).</span> {{< math >}}$ 5 ${{< /math >}} is larger than
+<span style="white-space:nowrap">{{< math >}}$ 2^2 = 4 ${{< /math >}}.</span> If we double this value {{< math >}}$ 28 ${{< /math >}} times, we
+reach a value larger than <span style="white-space:nowrap">{{< math >}}$ 2^{30} ${{< /math >}},</span> which is larger than {{< math >}}$ 1 ${{< /math >}}
 billion. More importantly, this value is large enough that we can't
 double it again, as an array in C\# must contain fewer than
-$2^{31}$ locations. Hence, we need no more than $29$ different array
+{{< math >}}$ 2^{31} ${{< /math >}} locations. Hence, we need no more than {{< math >}}$ 29 ${{< /math >}} different array
 sizes. We can pre-compute these and hard-code them into our
 implementation; for example,
 
