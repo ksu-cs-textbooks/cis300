@@ -8,8 +8,6 @@ title = "Data Structures in C#"
 canonifyURLs = true
 # This displays last edited information at bottom of page
 enableGitInfo = true
-# Publish to different directory
-publishDir = "../cis300-book-html/"
 
 # Change the default theme to be use when building the site with Hugo
 theme = ["hugo-theme-relearn"]
