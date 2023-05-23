@@ -18,7 +18,7 @@ not capitalized. For example, `averageAge`, `contextBoundObject`,
 
 ### Namespaces
 
-Use the form `Ksu.Cis300.ProgramName`, where each of the 3 components is in pascal case. For the program name, use a name that tells what the program does, not something like `Homework1`. For example:
+In CIS 300 programming assignments, namespace names will typically be provided. They will use the form `Ksu.Cis300.ProgramName`, where each of the 3 components is in pascal case. For example:
 
 ```C#
 namespace Ksu.Cis300.Spreadsheet
@@ -29,7 +29,7 @@ namespace Ksu.Cis300.Spreadsheet
 
 ### Classes, Structures, and Enumerations
 
-Use pascal case. If the name begins with "I", the following letter must not be capitalized, as this would look like an interface - see below. For an exception class, append the word "Exception". Make your names descriptive nouns or noun phrases without abbreviations. For example:
+Use pascal case. If the name begins with "I", the following letter must not be capitalized, as this would look like an interface - see below. For an exception class, append the word "Exception". Make your names descriptive nouns or noun phrases without abbreviations (common abbreviations like "Min" are allowed). For example:
 
 ```c#
 public class AccountManager
@@ -40,7 +40,7 @@ public class AccountManager
 
 ### [Interfaces](/trees/tries/multiple-impl)
 
-Use the above conventions with a capital "I" preceding the first letter (which must also be capitalized). For example:
+Use the convention for a class name with a capital "I" preceding the first letter (which must also be capitalized). For example:
 
 ```c#
 public interface IPriorityQueue
@@ -51,7 +51,7 @@ public interface IPriorityQueue
 
 ### Methods
 
-Use pascal case. Make your names descriptive without abbreviations. For example:
+Use pascal case. Make your names descriptive without abbreviations (common abbreviations like "Min" are allowed). For example:
 
 ```c#
 private void InitializeComponent()
@@ -60,16 +60,13 @@ private void InitializeComponent()
 }
 ```
 
-{{% notice note %}}
-Automatically-generated event handlers don't follow this convention -
-this is an allowable exception to the rule. If you need to write your
-own event handlers, follow the style of the automatically generated
-ones.
+{{% notice warning %}}
+Automatically-generated event handlers don't follow this convention. For example, suppose you generate a Click event handler by double-clicking a **Button** named `uxUpdate`. The event handler generated will then be given a name of **uxUpdate_Click**. You will need to rename it to **UpdateClick**. Be sure to use [Visual Studio's rename feature](/appendix/vs/code-window/#renaming), as this name will also need to be changed in automatically-generated code that you normally won't edit.
 {{% /notice %}}
 
 ### [Properties](/appendix/syntax/properties)
 
-Use pascal case. Make your names descriptive without abbreviations. For example:
+Use pascal case. Make your names descriptive without abbreviations (common abbreviations are allowed). For example:
 
 ```c#
 public int Count { get; private set; }

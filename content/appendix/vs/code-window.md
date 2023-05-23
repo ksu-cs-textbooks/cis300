@@ -96,7 +96,7 @@ This popup box gives the return type of the method, followed by the name of the 
 
 A related feature allows certain information to be obtained by hovering the mouse over different code elements. For example, hovering the mouse over an identifier will display the declaration and documentation for that identifier in a popup box. Also, hovering the mouse over a syntax error (indicated by a red underline, as shown under "Show" in the above figure) will display an explanation of the error, in addition to any information on the code element.
 
-Finally, Visual Studio gives rich support for renaming identifiers in
+<span id="renaming"></span>Finally, Visual Studio gives rich support for renaming identifiers in
 a consistent way. For example, suppose we have a method called
 **DoSomething**, and we want to rename it to **DoSomethingElse**. We
 can make this change easily by right-clicking on the name,

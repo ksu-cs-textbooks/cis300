@@ -72,9 +72,19 @@ private int Occurrences(string x, string y)
 ```
 
 {{% notice note %}}
-You do not need to fill in descriptions of the parameters for event
-handlers unless you use these parameters.
+You do not need to fill in `<exception>` tags - you may remove any that are generated automatically.
 {{% /notice %}}
+
+Visual Studio often generates warnings when it cannot verify that the value being assigned to a non-nullable variable is not **null**. In cases where you can determine that the value will not be **null**, you are allowed to remove the warning by inserting `!` after the value. In such cases, prior to this line, insert a comment explaining why this value is not **null**. For example:
+
+```c#
+string line;
+while (!input.EndOfStream)
+{
+    // Because input isn't at the end of the stream, ReadLine won't return null.
+    line = input.ReadLine()!;
+}
+```
 
 Comments should also be used within methods to explain anything that is not obvious from the code itself. 
 
