@@ -19,7 +19,7 @@ bottom edges. You can also change the title of the form ("Form1" in the picture 
 2.  If the Properties window isn't showing on the right, select "Properties Window" from the "View" menu.
     
 3.  Look at the row of buttons near the top of the properties window,
-    and make sure the second and third button are highlighted:
+    and make sure the second and third buttons are highlighted:
 
     <img src="properties.jpg" alt="A picture of a portion of a Properties window should appear here." />
 
@@ -52,7 +52,7 @@ we want to allow multiple lines, we can set its **Multiline** property
 to **True**. This in turn will add handles to the top and bottom edges
 so that we can adjust its height. All of the properties of a GUI
 control are documented in that control's API documentation within the
-[.NET API browser](https://docs.microsoft.com/en-us/dotnet/api/?view=netframework-4.7.2).
+[.NET API browser](https://learn.microsoft.com/en-us/dotnet/api/?view=windowsdesktop-6.0).
 
 Thus, continuing the above example, if we modify the **TextBox**'s variable name to `uxDisplay`, its **Font** property to **Microsoft Sans Serif, 12pt** and its **ReadOnly** property to **True**, we would have the following form:
 

@@ -11,7 +11,9 @@ To submit a lab or homework assignment in CIS 300, you will need to do the follo
 
 1.  **Commit** your changes to your local Git repository. You will do this through the "Git Changes" tab in Visual Studio (if you don't see this tab, click the icon that looks like a pencil at the bottom of the
     Visual Studio window). In the "Git Changes" tab, in the box that says "Enter a message \<Required\>", type in a message to be
-    associated with the changes you are committing. Then click "Commit
+    associated with the changes you are committing. 
+    {{% notice warning %}}Do **not** check the "Amend" box. This causes the previous commit to be changed, rather than creating a new commit. If this commit is already on GitHub, you will be unable to push your amended commit. {{% /notice %}}
+    Then click "Commit
     All". A message at the top of the "Git Changes" tab will indicate whether the commit was successful.
     
 3.  **Push** your committed changes to GitHub. Do this by clicking the

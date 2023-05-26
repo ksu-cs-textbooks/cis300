@@ -61,7 +61,7 @@ private void InitializeComponent()
 ```
 
 {{% notice warning %}}
-Automatically-generated event handlers don't follow this convention. For example, suppose you generate a Click event handler by double-clicking a **Button** named `uxUpdate`. The event handler generated will then be given a name of **uxUpdate_Click**. You will need to rename it to **UpdateClick**. Be sure to use [Visual Studio's rename feature](/appendix/vs/code-window/#renaming), as this name will also need to be changed in automatically-generated code that you normally won't edit.
+Automatically-generated event handlers don't follow this convention. For example, suppose you generate a Click event handler by double-clicking a **Button** named `uxUpdate`. The event handler generated will then be given a name of **uxUpdate_Click**. You will need to rename it to **UpdateClick**. Be sure to use [Visual Studio's Rename feature](/appendix/vs/code-window/#renaming), as this name will also need to be changed in automatically-generated code that you normally won't edit.
 {{% /notice %}}
 
 ### [Properties](/appendix/syntax/properties)

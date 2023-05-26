@@ -16,12 +16,12 @@ Note that in the above figure, Project4 is contained in both Solution2 and Solut
 Whenever you open a solution in Studio 2022, the Solution Explorer
 (which you can always find on the "View" menu) will give you a view of
 the structure of your solution; for example, opening the solution in
-the repository given in [the previous section](/appendix/vs/repos/) should result in the
+the repository given in [the previous section](/appendix/vs/repos/) may result in the
 following being shown in the Solution Explorer:
 
 <img src="initial-solution-explorer.jpg" alt="A picture of a Solution Explorer should appear here" style="zoom:67%;" />
 
-You will normally want to see the Solution view, which you can get by double clicking the line that ends in ".sln". This will give you the following view:
+If you see the above, you will need to change to the Solution view, which you can get by double clicking the line that ends in ".sln". This will give you the following view:
 
 <img src="solution-explorer1.png" alt="A picture of a Solution Explorer should appear
 here" style="zoom:67%;" />
@@ -30,9 +30,9 @@ here" style="zoom:67%;" />
 
 You ordinarily will not want to use Folder view, as this will cause files to be edited without any syntax or consistency checking. As a result, you can end up with a solution that is unusable. If your Solution Explorer ever looks like this:
 
-<img src="folder-view.png" alt="A picture of a Solution Explorer in folder view should appear here" style="zoom:67%;" />
+<img src="folder-view1.png" alt="A picture of a Solution Explorer in folder view should appear here" style="zoom:60%;" />
 
-(note the indication "Folder View" at the top and the absence of any boldface line), then it is in Folder view. To return to Solution view, click the icon indicated by the arrow in the above figure. This will return the Solution Explorer to its initial view, where you can double-click the solution to select Solution view.
+(note the indication "Folder View" at the top and the absence of any boldface line), then it is in Folder view. To return to Solution view, click the icon indicated by the arrow in the above figure. This will return the Solution Explorer to the initial view shown above, where you can double-click the solution to select Solution view.
 
 {{% /notice %}}
 
@@ -55,34 +55,29 @@ The project components having a suffix of ".cs" are C\# source code files. When 
 
 - **Program.cs:** This file will contain something like the following:
   ```C#
-  using System;
-  using System.Collections.Generic;
-  using System.Linq;
-  using System.Threading.Tasks;
-  using System.Windows.Forms;
-  
   namespace Ksu.Cis300.HelloWorld
   {
-      static class Program
+      internal static class Program
       {
           /// <summary>
-          /// The main entry point for the application.
+          ///  The main entry point for the application.
           /// </summary>
           [STAThread]
           static void Main()
           {
-              Application.EnableVisualStyles();
-              Application.SetCompatibleTextRenderingDefault(false);
+              // To customize application configuration such as set high DPI settings or default font,
+              // see https://aka.ms/applicationconfiguration.
+              ApplicationConfiguration.Initialize();
               Application.Run(new Form1());
           }
       }
   }
   ```
+  
+  The **Main** method is where the application code begins. The last line of this method constructs a new instance of the class that implements the GUI. The call to [**Application.Run**](https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.application.run?view=windowsdesktop-6.0) displays the GUI and starts a loop that processes events such as mouse clicks and keystrokes. Ordinarily, there is no need to look at this code.
 
-  The **Main** method is where the application code begins. The last line of this method constructs a new instance of the class that implements the GUI. The call to [**Application.Run**](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.application.run?view=netframework-4.7.2) displays the GUI and starts a loop that processes events such as mouse clicks and keystrokes. Ordinarily, there is no need to look at this code.
+One of the first things you will need to do when starting a new Windows Forms App is to change the name of Form1.cs, as this name (without the ".cs" suffix) is also the name of the class implementing the GUI. Therefore, it will need to be changed in order to conform to the [naming convention](/appendix/style/naming) for classes. To do this, right-click on its name in the Solution Explorer, and select "Rename" from the resulting popup menu. You will then be able to edit the name in the Solution Explorer - change it to "UserInterface.cs". When you have entered the new name, the following window will be displayed:
 
-One of the first things you will need to do when starting a new Windows Forms App is to change the name of Form1.cs, as this name (without the ".cs" suffix) is also the name of the class implementing the GUI. Therefore, it will need to be changed in order to conform to the [naming convention](/appendix/style/naming) for classes. To do this, right-click on its name in the Solution Explorer, and select "Rename" from the resulting popup menu. You will then be able to edit the name in the Solution Explorer. When you have entered the new name, the following window will be displayed:
-
-![A picture of a window should appear here.](rename-prompt.jpg)
+<img src="rename-prompt.jpg" alt="The prompt to rename all occurrences of a file name." style="zoom:67%;" />
 
 You should click the "Yes" button in order to make the renaming consistent - particularly to rename the class as well.

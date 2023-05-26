@@ -7,16 +7,10 @@ pre = "<b>A2.6. </b>"
 
 ## The Debugger
 
-In previous sections, we discussed how a Windows Forms Application can be built using Visual Studio. Having built an application, we need to be able to run and test it. To do this, we use the Visual Studio Debugger. When an application is loaded into Visual Studio, we can invoke the debugger by clicking the "Start" button near the top:
+In previous sections, we discussed how a Windows Forms Application can be built using Visual Studio. Having built an application, we need to be able to run and test it. To do this, we use the Visual Studio Debugger. When an application is loaded into Visual Studio, we can invoke the debugger by clicking the "Start Debugging" button near the top:
 
 <img src="start-button.jpg" alt="A picture of part of a Visual Studio Window should appear
 here." style="zoom:67%;" />
-
-{{% notice note %}}
-A Visual Studio bug has sometimes caused this button to be missing. If
-this happens, you can instead click "Start
-Debugging" on the "Debug" menu.
-{{% /notice %}}
 
 When the debugger starts, it attempts to do the following things:
 
@@ -30,13 +24,13 @@ One of the problems that can occur is that the compiler can fail to produce exec
 
 ![A picture of a dialog should appear here.](syntax-error-dialog.jpg)
 
-Usually the best thing to do at this point is to click the "No" button. This will stop the debugger. To see a list of the syntax errors, click the error list button at the bottom of the Visual Studio window:
+Usually the best thing to do at this point is to click the "No" button. This will stop the debugger and display the error list. This error list can be displayed at any time by clicking the error list button at the bottom of the Visual Studio window:
 
-<img src="error-list.png" alt="The error list button." />
+<img src="error-list.png" alt="The error list button." style="zoom:50%;" />
 
-Double-clicking on a syntax error will highlight the error in the code window. Normally, fixing the error will cause the corresponding entry in the Error List to disappear; however, there are times when the entry won't disappear until the debugger is started again (i.e., by clicking the "Start" button).
+Double-clicking on a syntax error within the error list will highlight the error in the code window. Normally, fixing the error will cause the corresponding entry in the error list to disappear; however, there are times when the entry won't disappear until the debugger is started again (i.e., by clicking the "Start Debugging" button).
 
-Once the syntax errors are removed, the debugger will be able to generate executable code and run it. However, more problems can occur at this point. One common problem is that an exception is thrown. For example, the GitHub repository created by [this invitation link](https://classroom.github.com/a/RJakDFQZ) (see "[Git Repositories](/appendix/vs/repos)") contains a Visual Studio solution for a program to convert decimal numbers to base-16. Don't worry about understanding the code, although the numerous comments may help you to do that. Instead, note that an exception is thrown when we try to convert 256:
+Once the syntax errors are removed, the debugger will be able to generate executable code and run it. However, more problems can occur at this point. One common problem is that an exception is thrown. For example, the GitHub repository created by [this invitation link](https://classroom.github.com/a/a9s4MdIv) (see "[Git Repositories](/appendix/vs/repos)") contains a Visual Studio solution for a program to convert decimal numbers to base-16. Don't worry about understanding the code, although the numerous comments may help you to do that. Instead, note that an exception is thrown when we try to convert 256:
 
 ![A picture of a window should appear here.](exception.png)
 
@@ -44,12 +38,12 @@ This message gives us quite a bit of information already. First, it tells us whi
 
 Having this information, we can now use the debugger to investigate further the cause of the exception. First, in order to see the code more clearly, we might want to close the popup window (we can always get it back by clicking the red circle containing the white 'X'). We can now examine the values of any of the variables at the time the exception was thrown by hovering the mouse over them. For example, if we hover over `lowOrder`, a popup appears indicating that it has a value of "0". If we move the mouse to hover over its **Length** property, we can see that it has a value of 1. Hovering over `power` shows that it has a value of 2. Thus, we can see that the exception was thrown because we gave the **Substring** method a length of 1 - 2 = -1. This can be confirmed by hovering the mouse over the "-" in the expression - the popup indicates that the value of the expression is, in fact, -1.
 
-Actually fixing the error requires a little more understanding of the code. In this case, however, the comment immediately above the line in question helps us out. It tells us that the low-order part of the hex string we are building may need to be padded with 0s - this padding is what we are constructing. Furthermore, it tells us that the number of hex digits we need is the value of `power`. In order to get this many digits, we need to subtract the number of hex digits we already have in `lowOrder` from `power`; i.e., we need to reverse the order of the subtraction. However, we can't make the correction until we stop the debugger.
+Actually fixing the error requires a little more understanding of the code. In this case, however, the comment immediately above the line in question helps us out. It tells us that the low-order part of the hex string we are building may need to be padded with 0s - this padding is what we are constructing. Furthermore, it tells us that the number of hex digits we need is the value of `power`. In order to get this many digits, we need to subtract the number of hex digits we already have in `lowOrder` from `power`; i.e., we need to reverse the order of the subtraction. 
 
 <a name="debugger-buttons"></a>
 To stop the debugger, notice the buttons that are available at the top of the Visual Studio window while the debugger is running:
 
-![A picture of a portion of a window should appear here.](debugger-buttons.png)
+<img src="debugger-buttons.png" alt="Buttons used within the debugger." style="zoom:50%;" />
 
 As you might guess, the "Stop" button stops the debugger. In what follows, we will discuss each of the other buttons indicated in the above figure, as well as other features of the debugger.
 
@@ -57,7 +51,7 @@ As you might guess, the "Stop" button stops the debugger. In what follows, we wi
 
 ![A picture of part of a code window should appear here.](breakpoint.png)
 
-Whenever execution reaches a breakpoint, execution stops prior to executing that line. At this point, we can examine the values of variables as we described above. When we are ready to continue execution of the program, we click the "Continue" button. A breakpoint can be deleted by clicking on the red dot, or all breakpoints may be deleted by selecting "Delete All Breakpoints" from the "Debug" menu.
+Whenever execution reaches a breakpoint, execution stops prior to executing that line. At this point, we can examine the values of variables as we described above. When we are ready to continue execution of the program, we click the "Continue" button. A breakpoint can be deleted by clicking on the red dot, or all breakpoints may be deleted by selecting "Delete All Breakpoints" from the "Debug" menu. A breakpoint may be disabled, but not deleted, by hovering over the large red dot and selecting "Disable" from the resulting popup. All breakpoints may be disabled by selecting "Disable All Breakpoints" from the "Debug" menu.
 
 Sometimes we only want the execution to pause at a breakpoint when a certain condition is met. Such a situation might occur if we have a bug that only surfaces after the code containing it has already executed many times. Rather than letting the program stop and clicking "Continue" until we reach the point we are interested in, we can instead specify a condition on the breakpoint. To do this, right-click on the breakpoint in the left margin, and select "Conditions..." from the resulting popup menu. This causes a large box to be inserted into to the code below this line:
 
