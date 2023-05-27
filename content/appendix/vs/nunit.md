@@ -84,35 +84,12 @@ Whenever you run fewer than all the tests, the tests that were not run
 are dimmed in the Test Explorer to indicate that these results are not
 up to date. Be sure you always finish by running all the tests to make sure they all pass on the same version of your code.
 
-<!--
-Though it is not required for CIS 300, you might wish to experiment with unit testing on your homework assignments. In what follows, we will briefly introduce the construction of your own unit-test suites. We make no attempt here to be comprehensive - for more information, refer to the [NUnit Documentation Wiki](https://github.com/nunit/docs/wiki).
+Each CIS 300 lab assignment that uses unit testing is set up to use GitHub's auto-grading feature, so that whenever the assignment is pushed, the server will run the unit tests. The overall result of the tests is indicated by an icon on the line below the "\<\> Code" button on the repository's web page (you may need to refresh the page to show the latest commit). A brown dot indicates that the tests have not yet completed (this usually take a couple of minutes). A green check mark indicates that all tests have passed. A red X indicates that at least one test has failed, or that the tests couldn't be run.
 
-If you are using your own machine, you will first need to make sure you have installed the two Visual Studio extensions listed at the top of this page. To create a test project within a solution, go to the Solution Explorer, right-click on the solution (i.e., the top line), and select "Add-\>New Project...". In the panel on the left, under "Visual C#", select "Test". Then in the large panel on the right, select "NUnit 3 Unit Test Project". At the bottom, select an appropriate name for the project, and click "OK". This will create a test project containing the class file, **TestClass.cs**, which you may rename if you wish. This class is initialized with a trivial test method, which you may either remove or edit.
+Unit testing will not be done by the GitHub server on any homework assignments in CIS 300. Instead, the auto-grading feature is used for a different purpose - to record push times. Thus, each push will result in an indication that all tests have passed, even if the code doesn't compile.
 
-In order to allow your test project to access the project it is to test, you will need to add to your test project a reference to the project it will test. First, however, you need to correct a problem with the way Visual Studio creates the test project. In the Solution Explorer, double-click on "Properties" within the project you wish to test. Take note of the .NET Framework version that appears under "Target framework:". Now return to the Solution Explorer, and double-click "Properties" with your test project. Under "Target framework:", change the version to match the version for the project you wish to test, and click "Yes" in the resulting dialog. Return once more to the Solution Explorer, right-click on the test project name, and select "Add-\>Reference...". In the resulting dialog, click on "Projects" on the left, click the check box next to the project you wish to test, and click "OK".
+You may receive emails indicating the results of auto-grading. You can control this behavior as follows:
 
-You are now ready to begin writing your tests. Each test should be a single method having the **\[Test\]** attribute and an empty parameter list. Each method will need to contain code to set up and conduct a single test for the code in your project. Once you have collected all the output from the test, you will need to check its correctness. Within NUnit 3, this is typically done with the **static** method **Assert.That**. There are several overloads for this method, but the one we will discuss takes two parameters. The first is the output that you wish to check - it may be of any type. The second is a *constraint* that specifies a condition that the first parameter must satisfy in order to be correct.
-
-Constraints are typically generated using one of the **static** classes **Is** or **Has**. For example, the **Is** class has a method **EqualTo** that takes an **object** as its only parameter, and returns a constraint that specifies equality to the given object. Thus, we can assert that the **int** variable `n` has a value of 10 with the following statement:
-
-```C#
-Assert.That(n, Is.EqualTo(10));
-```
-
-Each constraint contains the properties **And** and **Or**, which can be used to combine constraints logically. For example, we can assert that 0 ≤ n ≤ 10 as follows:
-
-```C#
-Assert.That(n, Is.GreaterThanOrEqualTo(0).And.LessThanOrEqualTo(10));
-```
-
-There is also a property **Not**, both in the **Is** class and in the objects returned by the **And** and **Or** properties. For example:
-
-```C#
-Assert.That(n, Is.Not.InRange(0, 10).And.Not.InRange(100, 200));
-```
-
-All of the constraints available are documented at <https://github.com/nunit/docs/wiki/Constraints>. The constraints on that page are listed by their names; however, the names themselves are rarely used in writing assertions in test code. Because the names are descriptive, it is usually easy to find the one you want. Once you have found it, click on the link for documentation on how to use it. Pay attention to how it is used with **Is** or **Has**. It is usually not hard to express the assertion you need.
-
-When writing tests, it is possible to include multiple assertions within the same method. If one of the assertions fails, none of the subsequent assertions is checked. It is usually best, however, to include only one assertion within each method.
-
--->
+1. On any GitHub page, click on the icon in the upper-right corner and select "Settings".
+2. On the navigation pane on the left, click "Notifications".
+3. Scroll down to the "System" section, and select your desired notification behavior under "Actions".
