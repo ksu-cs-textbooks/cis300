@@ -38,7 +38,7 @@ _id = _nextId;
 
 is done, the value in the single `_nextId` field is copied to the value of the `_id` field belonging to the instance being constructed. Because the single `_nextId` field is incremented every time a new instance of **C** is constructed, each instance receives a different value for `_id`.
 
-We can also define **static** methods or properties. For example, the [**MessageBox.Show(string text)**](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messagebox.show?view=netframework-4.7.2#System_Windows_Forms_MessageBox_Show_System_String_) method is **static**. Because it is **static**, we don't need a **MessageBox** object in order to call this method - we simply call something like:
+We can also define **static** methods or properties. For example, the [**MessageBox.Show(string text)**](https://learn.microsoft.com/en-us/dotnet/api/system.windows.messagebox.show?view=windowsdesktop-6.0#system-windows-messagebox-show(system-string)) method is **static**. Because it is **static**, we don't need a **MessageBox** object in order to call this method - we simply call something like:
 
 ```c#
 MessageBox.Show("Hello world!");
@@ -53,7 +53,7 @@ if (x.Equals(null))
 }
 ```
 
-Such code will compile, but if `x` is **null**, then calling its **Equals** method will throw a **NullReferenceException**. In all other cases, the **if**-condition will evaluate to **false**. Fortunately, a [**static Equals**](https://docs.microsoft.com/en-us/dotnet/api/system.object.equals?view=netframework-4.7.2#System_Object_Equals_System_Object_System_Object_) method is available to handle this situation:
+Such code will compile, but if `x` is **null**, then calling its **Equals** method will throw a **NullReferenceException**. In all other cases, the **if**-condition will evaluate to **false**. Fortunately, a [**static Equals**](https://learn.microsoft.com/en-us/dotnet/api/system.object.equals?view=net-6.0#system-object-equals(system-object-system-object)) method is available to handle this situation:
 
 ```C#
 if (Equals(x, null))

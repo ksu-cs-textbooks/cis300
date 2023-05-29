@@ -7,7 +7,7 @@ pre = "<b>A1.11. </b>"
 
 ## Enumerators
 
-As we saw in [the previous section](/appendix/syntax/foreach), in order for a data structure to support a **foreach** loop, it must be a subtype of either [**IEnumerable**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.ienumerable?view=netframework-4.7.2) or [**IEnumerable\<T\>**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ienumerable-1?view=netframework-4.7.2), where **T** is the type of the elements in the data structure. Thus, because [**Dictionary\<TKey, TValue\>**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2?view=netframework-4.7.2) is a subtype of **IEnumerable\<KeyValuePair\<TKey, TValue\>\>**, we can use a **foreach** loop to iterate through the key-value pairs that it stores. Likewise, because its [**Keys**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.keys?view=netframework-4.7.2) and [**Values**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.values?view=netframework-4.7.2) properties get objects that are subtypes of **IEnumerable\<TKey\>** and **IEnumerable\<TValue\>**, respectively, **foreach** loops may be used to iterate these objects as well, in order to process all the keys or all the values stored in the dictionary. **IEnumerable** and **IEnumerable\<T\>** are [interfaces](/trees/tries/multiple-impl); hence, we must define any subtypes so that they implement these interfaces. In this section, we will show how to implement the **IEnumerable\<T\>** interface to support a **foreach** loop.
+As we saw in [the previous section](/appendix/syntax/foreach), in order for a data structure to support a **foreach** loop, it must be a subtype of either [**IEnumerable**](https://learn.microsoft.com/en-us/dotnet/api/system.collections.ienumerable?view=net-6.0) or [**IEnumerable\<T\>**](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.ienumerable-1?view=net-6.0), where **T** is the type of the elements in the data structure. Thus, because [**Dictionary\<TKey, TValue\>**](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2?view=net-6.0) is a subtype of **IEnumerable\<KeyValuePair\<TKey, TValue\>\>**, we can use a **foreach** loop to iterate through the key-value pairs that it stores. Likewise, because its [**Keys**](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.keys?view=net-6.0#system-collections-generic-dictionary-2-keys) and [**Values**](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.values?view=net-6.0#system-collections-generic-dictionary-2-values) properties get objects that are subtypes of **IEnumerable\<TKey\>** and **IEnumerable\<TValue\>**, respectively, **foreach** loops may be used to iterate through these objects as well, in order to process all the keys or all the values stored in the dictionary. **IEnumerable** and **IEnumerable\<T\>** are [interfaces](/trees/tries/multiple-impl); hence, we must define any subtypes so that they implement these interfaces. In this section, we will show how to implement the **IEnumerable\<T\>** interface to support a **foreach** loop.
 
 The **IEnumerable\<T\>** interface requires two methods:
 
@@ -78,7 +78,7 @@ While this technique usually works best with iterative code, it can also be used
 
 ```C#
 private static IEnumerable<KeyValuePair<TKey, TValue>>
-    GetEnumerable(BinaryTreeNode<KeyValuePair<TKey, TValue>> t)
+    GetEnumerable(BinaryTreeNode<KeyValuePair<TKey, TValue>>? t)
 {
     if (t != null)
     {
@@ -109,9 +109,8 @@ In transforming the inorder traversal into the above code, we have introduced so
 ```C#
 public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator()
 {
-    Stack<BinaryTreeNode<KeyValuePair<TKey, TValue>>> s = 
-        new Stack<BinaryTreeNode<KeyValuePair<TKey, TValue>>>();
-    BinaryTreeNode<KeyValuePair<TKey, TValue>> t = _elements;
+    Stack<BinaryTreeNode<KeyValuePair<TKey, TValue>>> s = new();
+    BinaryTreeNode<KeyValuePair<TKey, TValue>>? t = _elements;
     while (t != null || s.Count > 0)
     {
         while (t != null)

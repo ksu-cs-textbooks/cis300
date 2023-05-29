@@ -8,7 +8,7 @@ pre = "<b>A1.4. </b>"
 ## The **decimal** Type
 
 A
-[**decimal**](https://docs.microsoft.com/en-us/dotnet/api/system.decimal?view=netframework-4.7.2)
+[**decimal**](https://learn.microsoft.com/en-us/dotnet/api/system.decimal?view=net-6.0)
 is a [structure](/appendix/syntax/structs) representing
 a floating-point decimal number. The main difference between a
 **decimal** and a **float** or a **double** is that a **decimal** can

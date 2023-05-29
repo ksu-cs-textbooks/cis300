@@ -9,7 +9,7 @@ pre = "<b>A1.10. </b>"
 
 C# provides a **foreach** statement that is often useful for iterating through the elements of certain data structures. A **foreach** can be used when all of the following conditions hold:
 
-1.  The data structure is a subtype of either [**IEnumerable**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.ienumerable?view=netframework-4.7.2) or [**IEnumerable\<T\>**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ienumerable-1?view=netframework-4.7.2) for some type **T**. 
+1.  The data structure is a subtype of either [**IEnumerable**](https://learn.microsoft.com/en-us/dotnet/api/system.collections.ienumerable?view=net-6.0) or [**IEnumerable\<T\>**](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.ienumerable-1?view=net-6.0) for some type **T**. 
 2.  You do not need to know the locations in the data structure of the individual elements. 
 3.  You do not need to modify the data structure with this loop.
 
@@ -25,7 +25,7 @@ Framework, as well as all arrays, are subtypes of one of these types.
 For example, the **string** class is a subtype of both **IEnumerable**
 and **IEnumerable\<Char\>**. To see that this is the case, look in
 [the documentation for the **string**
-class](https://docs.microsoft.com/en-us/dotnet/api/system.string?view=netframework-4.7.2). In
+class](https://learn.microsoft.com/en-us/dotnet/api/system.string?view=net-6.0). In
 the "Implements" section, we see all of the
 [interfaces](/trees/tries/multiple-impl) implemented by **string**.
 Because **string** implements both of these interfaces, it is a
@@ -60,12 +60,12 @@ however, that if the data structure is not a subtype of
 **IEnumerable\<T\>**, but you know that the elements are some specific
 subtype of **object**, you can use that type for the loop variable -
 the type will not be checked until the code is executed. For example,
-[**ListBox**](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.listbox?view=netframework-4.7.2)
+[**ListBox**](https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.listbox?view=windowsdesktop-6.0)
 is a class that implements a GUI control displaying a list of
 elements. The elements in the **ListBox** are accessed via its
-[**Items**](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.listbox.items?view=netframework-4.7.2#System_Windows_Forms_ListBox_Items)
+[**Items**](https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.listbox.items?view=windowsdesktop-6.0#system-windows-forms-listbox-items)
 property, which gets a data structure of type
-[**ListBox.ObjectCollection**](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.listbox.objectcollection?view=netframework-4.7.2). Any
+[**ListBox.ObjectCollection**](https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.listbox.objectcollection?view=windowsdesktop-6.0). Any
 **object** can be added to this data structure, but we often just add **string**s. **ListBox.ObjectCollection** is a subtype of **IEnumerable**; however, it is permissible to set up a **foreach** loop as follows:
 
 ```C#

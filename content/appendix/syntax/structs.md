@@ -11,101 +11,81 @@ A structure is similar to a class, except that it is a [value type](/appendix/sy
 
 ```c#
 /// <summary>
-/// A structure containing a name, frequency, and rank.
+/// Stores a frequency and a rank.
 /// </summary>
-public struct NameInformation
+public readonly struct FrequencyAndRank
 {
     /// <summary>
-    /// The name.
+    /// Gets the Frequency.
     /// </summary>
-    private string _name;
+    public float Frequency { get; }
 
     /// <summary>
-    /// The frequency.
+    /// Gets the Rank.
     /// </summary>
-    private float _frequency;
+    public int Rank { get; }
 
     /// <summary>
-    /// The rank.
+    /// Initializes a FrequencyAndRank with the given values.
     /// </summary>
-    private int _rank;
-
-    /// <summary>
-    /// Gets the name.
-    /// </summary>
-    public string Name
-    {
-        get
-        {
-            return _name;
-        }
-    }
-
-    /// <summary>
-    /// Gets the frequency.
-    /// </summary>
-    public float Frequency
-    {
-        get
-        {
-            return _frequency;
-        }
-    }
-
-    /// <summary>
-    /// Gets the rank.
-    /// </summary>
-    public int Rank
-    {
-        get
-        {
-            return _rank;
-        }
-    }
-
-    /// <summary>
-    /// Constructs a new NameInformation containing the given name,
-    /// frequency, and rank.
-    /// </summary>
-    /// <param name="name">The name.</param>
-    /// <param name="frequency">The frequency.</param>
+    /// <param name="freq">The frequency.</param>
     /// <param name="rank">The rank.</param>
-    public NameInformation(string name, float frequency, int rank)
+    public FrequencyAndRank(float freq, int rank)
     {
-        _name = name;
-        _frequency = frequency;
-        _rank = rank;
+        Frequency = freq;
+        Rank = rank;
+    }
+
+    /// <summary>
+    /// Obtains a string representation of the frequency and rank.
+    /// </summary>
+    /// <returns>The string representation.</returns>
+    public override string ToString()
+    {
+        return Frequency + ", " + Rank;
     }
 }
 ```
 
-Note that the above definition looks just like a class definition, except that the keyword **struct** is used instead of the keyword **class**. A structure can be defined anywhere a class can be defined. However, there are several restrictions on what a structure definition may contain. Some of the more important restrictions include:
+Note that the above definition looks just like a class definition, except that the keyword **struct** is used instead of the keyword **class**, and the **readonly** modifier is used. The **readonly** modifier cannot be used with a class definition, but is often used with a structure definition to indicate that the structure is *immutable*. The compiler then verifies that the structure definition does not allow any fields to be changed; for example, it verifies that no property has a **set** accessor. 
 
-- A field may not be initialized in the statement that defines it unless it is declared
-  to be [**const**](/appendix/syntax/const) or 
-  [**static**](/appendix/syntax/static-this). For example, while the following
-  would be allowed in a class definition, it is not allowed in a structure definition:
+A structure can be defined anywhere a class can be defined. However, one important restriction on a structure definition is that no field can be of the same type as the structure itself. For example, the following definition is not allowed:
 
-  ```c#
-  private int _rank = -1;
-  ```
+```c#
+public struct S
+{
+    private S _nextS;
+}
+```
 
-  These fields are instead automatically initialized to the
-  default values for their types. If you want to initialize a
-  field to another value, you will need to use a constructor
-  (but see the next restriction).
+The reason for this restriction is that because a structure is a value type, each instance would need to contain enough space for another instance of the same type, and this instance would need enough space for another instance, and so on forever. This type of circular definition is prohibited even if it is indirect; for example, the following is also illegal:
 
-- All constructors must contain at least one parameter. There will always be a default constructor containing no parameters. It will initialize all non-**static**, non-**const** fields to the default values for their types.
+```C#
+public struct S
+{
+    public T NextT { get; }
+}
 
-- A field may not be defined to have same type as the structure
-  containing it. For example, the following is not allowed:
+public struct T
+{
+    public S? NextS { get; }
+}
+```
 
-  ```c#
-  public struct S
-  {
-      private S _nextS;
-  
-  }
-  ```
+Because the **NextT** [property](/appendix/syntax/properties) uses the default implementation, each instance of **S** contains a hidden field of type **T**. Because **T** is a value type, each instance of **S** needs enough space to store an instance of **T**. Likewise, because the **NextS** property uses the default implementation, each instance of **T** contains a hidden field of type **S?**. Because **S** is a value type, each instance of **T** - and hence each instance of **S** - needs enough space to store an instance of **S?**, which in turn needs enough space to store an instance of **S**. Again, this results in circularity that is impossible to satisfy.
 
-For more information on structures, see the section, ["Classes and Structs"](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/) in the *C\# Programming Guide*.
+Any structure must have a constructor that takes no parameters. If one is not explicitly provided, a default constructor containing no statements is included. If one is explicitly provided, it must be **public**. Thus, an instance of a structure can always be constructed using a no-parameter constructor. If no code for such a constructor is provided, each field that does not contain an initializer is set to its default value.
+
+If a variable of a structure type is assigned its [default value](/stacks-queues/stack-impl/#default-value), each of its fields is set to its default value, regardless of any initializers in the structure definition. For example, if **FrequencyAndRank** is defined as above, then the following statement will set both `x.Frequency` and `x.Rank` to 0:
+
+```C#
+FrequencyAndRank x = default;
+```
+
+{{% notice warning %}}
+
+Because the default value of a type can always be assigned to a variable of that type, care should be taken when including fields of reference types within a structure definition. Because the default instance of this structure will contain **null** values for all fields of reference types, these fields should be defined to be [nullable](/appendix/syntax/reference-value#nullable-types). The compiler provides no warnings about this.
+
+{{% /notice %}}  
+
+For more information on structures, see the section, ["Structure types"](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/struct) in the *C\# Language Reference*.

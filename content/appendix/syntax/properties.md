@@ -10,7 +10,7 @@ pre = "<b>A1.6. </b>"
 A property is used syntactically like a field of a class or structure,
 but provides greater flexibility in implementation. For example, the
 **string** class contains a **public** property called
-[**Length**](https://docs.microsoft.com/en-us/dotnet/api/system.string.length?view=netframework-4.7.2). This
+[**Length**](https://learn.microsoft.com/en-us/dotnet/api/system.string.length?view=net-6.0). This
 property is accessed in code much as if it were a **public int**
 field; i.e., if `s` is a **string** variable, we can access its
 **Length** property with the expression `s.Length`,

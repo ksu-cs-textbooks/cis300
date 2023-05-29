@@ -7,7 +7,7 @@ pre = "<b>A1.2. </b>"
 
 ## Enumerations
 
-An *enumeration* is a [value type](/appendix/syntax/reference-value) containing a set of named constants. An example of an enumeration is [**DialogResult**](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.dialogresult?view=netframework-4.7.2) (see ["**MessageBox**es"](/io/dialogs/message-boxes) and ["File Dialogs"](/io/dialogs/file-dialogs)). The **DialogResult** type contains the following members:
+An *enumeration* is a [value type](/appendix/syntax/reference-value) containing a set of named constants. An example of an enumeration is [**DialogResult**](https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.dialogresult?view=windowsdesktop-6.0) (see ["**MessageBox**es"](/io/dialogs/message-boxes) and ["File Dialogs"](/io/dialogs/file-dialogs)). The **DialogResult** type contains the following members:
 
 - **DialogResult.Abort**
 - **DialogResult.Cancel**
@@ -103,14 +103,14 @@ listed. Note that using this technique, it is possible to define two
 members with the same value, although this is usually undesirable. If
 assigning values in this way would lead to a value outside the range of
 the underlying type, a syntax error results (for example, if **George**
-were assigned 255 in the above definition).
+were assigned 255 in the above definition, thus causing **Ringo** to have a value outside the range of a **byte**).
 
 One reason we might want to define explicit values for members of an
 enumeration is if we want to use the members as flags. For example, one
 of the
-[**MessageBox.Show**](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messagebox.show?view=netframework-4.7.2)
+[**MessageBox.Show**](https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.messagebox.show?view=windowsdesktop-6.0#system-windows-forms-messagebox-show(system-string-system-string-system-windows-forms-messageboxbuttons-system-windows-forms-messageboxicon-system-windows-forms-messageboxdefaultbutton-system-windows-forms-messageboxoptions))
 methods takes as one of its parameters a
-[**MessageBoxOptions**](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messageboxoptions?view=netframework-4.7.2),
+[**MessageBoxOptions**](https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.messageboxoptions?view=windowsdesktop-6.0),
 which is an enumeration containing the following members:
 
   - **MessageBoxOptions.DefaultDesktopOnly**
@@ -140,7 +140,7 @@ public enum MessageBoxOptions
 ```
 {{% notice note %}}
 
-The definition in the .NET Framework uses different powers of 2, but
+The definition in .NET 6 uses different powers of 2, but
 the priciple is the same.
 
 {{% /notice %}} 
@@ -178,7 +178,7 @@ The `\n` in the above example specifies the end of a line; hence,
 "Hello" and "world\!" will be displayed on separate lines, aligned on
 the right:
 
-![A picture of a dialog should appear here.](message-box-options.jpg)
+<img src="message-box-options.jpg" alt="A picture of a dialog should appear here." style="zoom:67%;" />
 
 The **Show** method determines which bits are 1 in the
 **MessageBoxOptions** parameter using a logical AND. Recall that a

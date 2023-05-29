@@ -7,7 +7,7 @@ pre = "<b>A1.13. </b>"
 
 ## The Remainder Operator
 
-The remainder operator (%) computes the remainder that results when one number is divided by another. Specifically, suppose <tt>m</tt> and <tt>n</tt> are of some numeric type, where <tt>n ≠ 0</tt>. We can then define a _quotient_ <tt>q</tt> and a _remainder_ <tt>r</tt> as the unique values such that:
+The remainder operator `%` computes the remainder that results when one number is divided by another. Specifically, suppose <tt>m</tt> and <tt>n</tt> are of some numeric type, where <tt>n ≠ 0</tt>. We can then define a _quotient_ <tt>q</tt> and a _remainder_ <tt>r</tt> as the unique values such that:
 
 *   <tt>qn + r = m</tt>;
 *   <tt>q</tt> is an integer;
