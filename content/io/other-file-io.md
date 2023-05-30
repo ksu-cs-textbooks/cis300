@@ -8,8 +8,8 @@ pre = "<b>1.5. </b>"
 ## Other File I/O
 
 Not all files are plain text files --- often we need to read and/or write
-binary data. The .NET Framework provides the
-[**FileStream**](https://docs.microsoft.com/en-us/dotnet/api/system.io.filestream?view=netframework-4.7.2)
+binary data. .NET provides the
+[**FileStream**](https://learn.microsoft.com/en-us/dotnet/api/system.io.filestream?view=net-6.0)
 class for this purpose.
 
 The **FileStream** class provides constructors for creating a
@@ -19,24 +19,24 @@ access to be allowed (i.e., reading/writing), and how the file is to be
 locked. In most cases, however, a simpler way to construct an
 appropriate **FileStream** is to use one of the following **static**
 methods provided by the the
-[**File**](https://docs.microsoft.com/en-us/dotnet/api/system.io.file?view=netframework-4.7.2)
+[**File**](https://learn.microsoft.com/en-us/dotnet/api/system.io.file?view=net-6.0)
 class:
 
   - [**File.OpenRead(string
-    fn)**](https://docs.microsoft.com/en-us/dotnet/api/system.io.file.openread?view=netframework-4.7.2):
+    fn)**](https://learn.microsoft.com/en-us/dotnet/api/system.io.file.openread?view=net-6.0#system-io-file-openread(system-string)):
     returns a **FileStream** for reading the file with the given path
     name. A **FileNotFoundException** is thrown if the file does not
     exist.
   - [**File.OpenWrite(string
-    fn)**](https://docs.microsoft.com/en-us/dotnet/api/system.io.file.openwrite?view=netframework-4.7.2):
+    fn)**](https://learn.microsoft.com/en-us/dotnet/api/system.io.file.openwrite?view=net-6.0#system-io-file-openwrite(system-string)):
     returns a **FileStream** for writing to the file with the given path
     name. If the file exists, it will be replaced; otherwise, it will be
     created.
 
 Two of the most commonly-used methods of a **FileStream** are
-[**ReadByte**](https://docs.microsoft.com/en-us/dotnet/api/system.io.filestream.readbyte?view=netframework-4.7.2)
+[**ReadByte**](https://learn.microsoft.com/en-us/dotnet/api/system.io.filestream.writebyte?view=net-6.0#system-io-filestream-writebyte(system-byte))
 and
-[**WriteByte**](https://docs.microsoft.com/en-us/dotnet/api/system.io.filestream.writebyte?view=netframework-4.7.2).
+[**WriteByte**](https://learn.microsoft.com/en-us/dotnet/api/system.io.filestream.writebyte?view=net-6.0#system-io-filestream-writebyte(system-byte)).
 The **ReadByte** method takes no parameters and returns an **int**. If
 there is at least one byte available to read, the next one is read and
 its value (a nonnegative integer less than 256) is returned; otherwise,

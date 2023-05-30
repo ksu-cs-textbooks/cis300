@@ -17,15 +17,15 @@ may not be desirable, as the high memory usage may degrade the overall
 performance of the system.
 
 For the purpose of handling a sequence of input or output data in more
-flexible ways, the .NET Framework provides *streams*. These streams are
+flexible ways, .NET provides *streams*. These streams are
 classes that provide uniform access to a wide variety of sequences of
 input or output data, such as files, network connections, other
 processes, or even blocks of memory. The
-[**StreamReader**](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader?view=netframework-4.7.2)
+[**StreamReader**](https://learn.microsoft.com/en-us/dotnet/api/system.io.streamreader?view=net-6.0)
 and
-[**StreamWriter**](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=netframework-4.7.2)
+[**StreamWriter**](https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=net-6.0)
 classes (in the
-[**System.IO**](https://docs.microsoft.com/en-us/dotnet/api/system.io?view=netframework-4.7.2)
+[**System.IO**](https://learn.microsoft.com/en-us/dotnet/api/system.io?view=net-6.0)
 namespace) provide read and write, respectively, access to text streams,
 including text files.
 
@@ -33,23 +33,23 @@ Some of the more useful **public** members of the **StreamReader** class
 are:
 
   - A
-    [constructor](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader.-ctor?view=netframework-4.7.2#System_IO_StreamReader__ctor_System_String_)
+    [constructor](https://learn.microsoft.com/en-us/dotnet/api/system.io.streamreader.-ctor?view=net-6.0#system-io-streamreader-ctor(system-string))
     that takes a **string** giving a file name as its only parameter and
     constructs a **StreamReader** to read from that file.
   - A
-    [**Read**](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader.read?view=netframework-4.7.2#System_IO_StreamReader_Read)
+    [**Read**](https://learn.microsoft.com/en-us/dotnet/api/system.io.streamreader.read?view=net-6.0#system-io-streamreader-read)
     method that takes no parameters. It reads the next character from
     the stream and returns it as an **int**. If it cannot read a
     character because it is already at the end of the stream, it returns
     -1 (it returns an **int** because -1 is outside the range of
     **char** values).
   - A
-    [**ReadLine**](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader.readline?view=netframework-4.7.2)
+    [**ReadLine**](https://learn.microsoft.com/en-us/dotnet/api/system.io.streamreader.readline?view=net-6.0#system-io-streamreader-readline)
     method that takes no parameters. It reads the next line from the
-    stream and returns it as a **string**. If it cannot read a line
+    stream and returns it as a **string?**. If it cannot read a line
     because it is already at the end of the stream, it returns **null**.
   - An
-    [**EndOfStream**](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader.endofstream?view=netframework-4.7.2)
+    [**EndOfStream**](https://learn.microsoft.com/en-us/dotnet/api/system.io.streamreader.endofstream?view=net-6.0#system-io-streamreader-endofstream)
     property that gets a **bool** indicating whether the end of the
     stream has been reached.
 
@@ -58,32 +58,32 @@ or a line at a time until we reach the end of the file. The
 **StreamWriter** class has similar **public** members:
 
   - A
-    [constructor](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter.-ctor?view=netframework-4.7.2#System_IO_StreamWriter__ctor_System_String_)
+    [constructor](https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter.-ctor?view=net-6.0#system-io-streamwriter-ctor(system-string))
     that takes a **string** giving a file name as its only parameter and
     constructs a **StreamWriter** to write to this file. If the file
     already exists, it is replaced by what is written by the
     **StreamWriter**; otherwise, a new file is created.
-  - A [**Write**](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter.write?view=netframework-4.7.2#System_IO_StreamWriter_Write_System_Char_)
+  - A [**Write**](https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter.write?view=net-6.0#system-io-streamwriter-write(system-char))
     method that takes a **char** as its only parameter. It writes this
     **char** to the end of the stream.
   - Another
-    [**Write**](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter.write?view=netframework-4.7.2#System_IO_StreamWriter_Write_System_String_)
-    method that takes a **string** as its only parameter. It writes this
-    **string** to the end of the stream.
+    [**Write**](https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter.write?view=net-6.0#system-io-streamwriter-write(system-string))
+    method that takes a **string?** as its only parameter. It writes this
+    **string?** to the end of the stream. If the given **string?** is **null**, nothing is written.
   - A
-    [**WriteLine**](https://docs.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeline?view=netframework-4.7.2#System_IO_TextWriter_WriteLine)
+    [**WriteLine**](https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeline?view=net-6.0#system-io-textwriter-writeline)
     method that takes no parameters. It writes a line terminator to the
     end of the stream (i.e., it ends the current line of text).
   - Another
-    [**WriteLine**](https://docs.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeline?view=netframework-4.7.2#System_IO_TextWriter_WriteLine_System_Char_)
+    [**WriteLine**](https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeline?view=net-6.0#system-io-textwriter-writeline(system-char))
     method that takes a **char** as its only parameter. It writes this
     **char** to the end of the stream, then terminates the current line
     of text.
   - Yet another
-    [**WriteLine**](https://docs.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeline?view=netframework-4.7.2#System_IO_TextWriter_WriteLine_System_String_)
-    method that takes a **string** as its only parameter. It writes this
-    **string** to the end of the stream, then terminates the current
-    line of text.
+    [**WriteLine**](https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter.writeline?view=net-6.0#system-io-streamwriter-writeline(system-string))
+    method that takes a **string?** as its only parameter. It writes this
+    **string?** to the end of the stream, then terminates the current
+    line of text. If the **string?** is **null**, only the line terminator is written.
 
 Thus, with a **StreamWriter**, we can build a text file a character at a
 time, a line at a time, or an arbitrary **string** at a time. In fact, a
@@ -110,7 +110,7 @@ When the program is finished writing, it needs to make sure that this
 array is *flushed* to the underlying file.
 
 Both the **StreamReader** and **StreamWriter** classes have
-[**Dispose**](https://docs.microsoft.com/en-us/dotnet/api/system.idisposable.dispose?view=netframework-4.7.2)
+[**Dispose**](https://learn.microsoft.com/en-us/dotnet/api/system.idisposable.dispose?view=net-6.0#system-idisposable-dispose)
 methods to release them properly; however, because I/O typically
 requires exception handling, it can be tricky to ensure that this method
 is always called when the I/O is finished. Specifically, the
@@ -165,7 +165,7 @@ using (StreamReader input1 = new StreamReader(fileName1),
 }
 ```
 The type of variable(s) declared must be a subtype of
-[**IDisposable**](https://docs.microsoft.com/en-us/dotnet/api/system.idisposable?view=netframework-4.7.2).
+[**IDisposable**](https://learn.microsoft.com/en-us/dotnet/api/system.idisposable?view=net-6.0).
 This ensures that the variables each have a **Dispose** method.
 
 As a complete example of the use of a **StreamReader** and a
@@ -191,7 +191,9 @@ private void AddLineNumbers(string inFileName, string outFileName)
             int count = 0;
             while (!input.EndOfStream)
             {
-                string line = input.ReadLine();
+                // Because input is not at the end of the stream, its ReadLine
+                // method won't return null.
+                string line = input.ReadLine()!;
                 count++;
                 output.Write(count);
                 output.Write('\t');   // The tab character
@@ -201,6 +203,8 @@ private void AddLineNumbers(string inFileName, string outFileName)
     }
 }
 ```
+As noted above, a **StreamReader**'s **ReadLine** method has a return type of **string?** because it will return **null** if the end of the stream has already been reached. Furthermore, the compiler is unable to determine that the loop condition will prevent the call to **ReadLine** from returning **null**. Thus, in order to suppress the compiler warning when the returned **string?** is assigned to a **string**, we include a `!` following the call to **ReadLine**, and document the reason with a comment above this line.
+
 We can call the above method within a **try**-block to handle any
 exceptions that may be thrown during the I/O. The **catch**-block will
 not have access to either `input` or `output`, but it doesn't need it.

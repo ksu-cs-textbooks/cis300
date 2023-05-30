@@ -76,7 +76,7 @@ catch
 See the section, "[The **foreach**
 Statement](/appendix/syntax/foreach)" for an
 explanation of **foreach** loops. The
-[**Char.IsUpper**](https://docs.microsoft.com/en-us/dotnet/api/system.char.isupper?view=netframework-4.7.2#System_Char_IsUpper_System_Char_)
+[**Char.IsUpper**](https://learn.microsoft.com/en-us/dotnet/api/system.char.isupper?view=net-6.0#system-char-isupper(system-char))
 method returns a **bool** indicating whether the given **char** is an
 upper-case letter in some alphabet.
 {{% /notice %}}
@@ -88,7 +88,7 @@ example, if we tried to move the statement,
 MessageBox.Show("The file contains " + count + " upper-case letters.");
 ```
 outside the **try**-**catch**. First, we would have a syntax error
-because the variable `count` is declared with the **try**-block, and
+because the variable `count` is declared within the **try**-block, and
 hence cannot be used outside of it. We could fix this error by declaring
 and initializing `count` prior to the **try** statement. The resulting
 code would compile and run, but consider what happens if an exception is
@@ -126,9 +126,10 @@ like a parameter list, giving us access to the exception that was
 thrown. Having the exception available to examine, we can now give more
 meaningful feedback to the user. One rather crude way of doing this is
 to use the exception's
-[**ToString**](https://docs.microsoft.com/en-us/dotnet/api/system.exception.tostring?view=netframework-4.7.2)
+[**ToString**](https://learn.microsoft.com/en-us/dotnet/api/system.object.tostring?view=net-6.0#system-object-tostring)
 method to convert it to a **string**
 representation, which can then be displayed to the user; for example,
+
 ```C#
 catch (Exception ex)
 {
@@ -138,7 +139,7 @@ catch (Exception ex)
 Replacing the **catch**-block in the earler example with this
 **catch**-block might result in the following message:
 
-![A picture of a dialog should appear here.](exception-in-messagebox.png)
+<img src="exception-in-messagebox.png" alt="A MessageBox displaying an exception." style="zoom:67%;" />
 
 While this message is not something we would want to show to an end
 user, it does provide helpful debugging information, such as the
@@ -146,7 +147,7 @@ exception thrown and the line that threw the exception.
 
 {{% notice tip %}}
 Every object in C# has a
-[**ToString**](https://docs.microsoft.com/en-us/dotnet/api/system.object.tostring?view=netframework-4.7.2)
+[**ToString**](https://learn.microsoft.com/en-us/dotnet/api/system.object.tostring?view=net-6.0#system-object-tostring)
 method. Hence, we can convert an instance of any type to **string** by
 using its **ToString** method. This method will always return a
 **string**, but depending on the original type, this **string** may or

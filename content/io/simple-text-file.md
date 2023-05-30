@@ -7,21 +7,18 @@ pre = "<b>1.2. </b>"
 
 ## Simple Text File I/O
 
-Many of the I/O tools provided by the .NET Framework are found in the
-[System.IO](https://docs.microsoft.com/en-us/dotnet/api/system.io?view=netframework-4.7.2)
-namespace. Note, however, that Visual Studio® does not automatically
-provide a **using** directive for this namespace; hence, if you want to
-avoid the need to add the prefix `System.IO.` to each type that you use
-from this namespace, you should add a **using** directive for it. One
+Many of the I/O tools provided by .NET are found in the
+[**System.IO**](https://learn.microsoft.com/en-us/dotnet/api/system.io?view=windowsdesktop-6.0)
+namespace. One
 class that provides several general-purpose
 [**static**](/appendix/syntax/static-this) methods
 related to file I/O is the
-[**File**](https://docs.microsoft.com/en-us/dotnet/api/system.io.file?view=netframework-4.7.2)
+[**File**](https://learn.microsoft.com/en-us/dotnet/api/system.io.file?view=net-6.0)
 class. Two of the **static** methods provided by this class are:
 
--   [**File.ReadAllText**](https://docs.microsoft.com/en-us/dotnet/api/system.io.file.readalltext?view=netframework-4.7.2#System_IO_File_ReadAllText_System_String_)
+-   [**File.ReadAllText**](https://learn.microsoft.com/en-us/dotnet/api/system.io.file.readalltext?view=net-6.0#system-io-file-readalltext(system-string))
     and
--   [**File.WriteAllText**](https://docs.microsoft.com/en-us/dotnet/api/system.io.file.writealltext?view=netframework-4.7.2#System_IO_File_WriteAllText_System_String_System_String_)
+-   [**File.WriteAllText**](https://learn.microsoft.com/en-us/dotnet/api/system.io.file.writealltext?view=net-6.0#system-io-file-writealltext(system-string-system-string))
 
 The **File.ReadAllText** method takes a **string** as its only
 parameter. This **string** should give the path to a text file. It will
@@ -38,10 +35,10 @@ however we need to.
 The **File.WriteAllText** method takes two parameters:
 
 -   a **string** giving the path to a file; and
--   a **string** giving the text to be written.
+-   a **string?** (i.e., a [nullable](/appendix/syntax/reference-value#nullable-types) **string** - a **string** that may be **null**) giving the text to be written. 
 
 It will then attempt to write the given text as the entire contents of
-the given file. Thus, if `fileName` refers to a **string** containing
+the given file. If this text is **null**, an empty file will be written. Thus, if `fileName` refers to a **string** containing
 the path to a file and `contents` refers to some **string**, then
 ```C#
 File.WriteAllText(fileName, contents);
