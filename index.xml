@@ -523,12 +523,5 @@
     <description>Recent content on Data Structures in C#</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://ksu-cs-textbooks.github.io/cis300/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Assorted</title>
-      <link>https://ksu-cs-textbooks.github.io/cis300/_hidden/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ksu-cs-textbooks.github.io/cis300/_hidden/</guid>
-      <description>Assorted things </description>
-    </item>
   </channel>
 </rss>
