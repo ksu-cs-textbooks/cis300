@@ -29,16 +29,15 @@ section](/appendix/syntax/indexers)).
 
 {{% notice note %}}
 The 
-implementation described here is much simpler than the actual
-implementation in the .NET Framework.  Their implementation achieves
+implementation described here is much simpler than the .NET
+implementation, which achieves
 even better performance. 
 {{% /notice %}}
 
 In order to illustrate more clearly the techniques used to implement a
 **StringBuilder**, we will present an implementation that uses only
 those types provided by the C\#
-core language, rather than those found in a library such as the .NET
-Framework. One 
+core language, rather than those found in a library such as .NET. One 
 of the more useful data 
 structures that the C\# core language provides for building more
 advanced data structures 
@@ -47,6 +46,7 @@ using a **char\[ \]**. One difficulty in using an array, however, is
 that we don't know how many characters our **StringBuilder** might need.
 We will return to this issue shortly, but for now, let's just
 arbitrarily pick a size for our array, and define:
+
 ```C#
 /// <summary>
 /// The characters in this StringBuilder.
@@ -99,11 +99,11 @@ characters in the **StringBuilder**? In this case, `_length` is the
 length of the array, and therefore is not a valid array location. In
 order to handle this case, we need to make more room. The only way to do
 this to construct a new, larger array, and copy all of the characters
-into it. We will then make `_characters` refer to the new array. (The
-.NET Framework actually provides a method to do all this, but in order
+into it. We will then make `_characters` refer to the new array. (.NET actually provides a method to do all this, but in order
 to show the details of what is happening, we will not use it.) Now that
 there is enough room, we can append the new character as above. The code
 is as follows:
+
 ```C#
 /// <summary>
 /// Appends the given character to the end of this StringBuilder.
@@ -134,7 +134,7 @@ other hand, doubling the array doesn't waste too much space if we don't
 need to fill it entirely.
 
 The
-[**CopyTo**](https://docs.microsoft.com/en-us/dotnet/api/system.array.copyto?view=netframework-4.7.2#System_Array_CopyTo_System_Array_System_Int32_)
+[**CopyTo**](https://learn.microsoft.com/en-us/dotnet/api/system.array.copyto?view=net-6.0#system-array-copyto(system-array-system-int32))
 method used above copies all of the elements in the array to which this
 method belongs (in this case, `_characters`) to the array given by the
 first parameter (`chars` in this case), placing them beginning at the
@@ -185,18 +185,18 @@ public override string ToString()
 You can obtain a program containing the complete **class** definition by
 creating a Git repository (see ["Git
 Repositories"](/appendix/vs/repos)) using
-[this URL](https://classroom.github.com/a/u_vizKQg). This program is a
+[this URL](https://classroom.github.com/a/Nxy4T-la). This program is a
 modification of the program used in [the previous
 section](/strings/stringbuilders) to compare the performance
 differences between using
 **string**s or **StringBuilder**s when building **string**s a
 character at a time. Its only modification is to use this
-**StringBuilder** class, defined within a [class
-library](/appendix/vs/class-libraries), instead of
-the class defined in the .NET Framework. By running the program on long
+**StringBuilder** class, defined within a class
+library, instead of
+the class defined in .NET. By running the program on long
 **string**s, you can verify that the performance of this
 **StringBuilder** class is comparable to that of the **StringBuilder**
-in the .NET Framework.
+in .NET.
 
 Now that we have the details of a **StringBuilder** implementation, we
 can begin to see why it is so much more efficient to build a **string**

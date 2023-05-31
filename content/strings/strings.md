@@ -8,7 +8,7 @@ pre = "<b>2.1. </b>"
 ## **string**s
 
 Instances of the
-[**string**](https://docs.microsoft.com/en-us/dotnet/api/system.string?view=netframework-4.7.2)
+[**string**](https://learn.microsoft.com/en-us/dotnet/api/system.string?view=net-6.0)
 class are *immutable* sequences of characters. Because **string** is a
 class, it is a [reference
 type](/appendix/syntax/reference-value). Because
@@ -22,6 +22,7 @@ characters in either of these instances (i.e., in either "abc" or
 "xyz"). As a result, it is safe to copy a **string** by simply assigning
 the value of one **string** variable to another; for example, if `s` is
 a **string** variable, we can write:
+
 ```C#
 string t = s;
 ```
@@ -49,8 +50,9 @@ s[0] = 'x';
 is prohibited in order to enforce immutability.
 
 We obtain the number of characters in a **string** using its
-[**Length**](https://docs.microsoft.com/en-us/dotnet/api/system.string.length?view=netframework-4.7.2)
+[**Length**](https://learn.microsoft.com/en-us/dotnet/api/system.string.length?view=net-6.0#system-string-length)
 property; for example:
+
 ```C#
 int len = s.Length;
 ```
@@ -62,9 +64,10 @@ has a value of 0, but if `s` is **null**, then this expression will
 throw a **NullReferenceException**.
 {{% /notice %}}
 
-We can concatenate two **string**s using the + operator. For example, if
+We can concatenate two **string**s using the `+` operator. For example, if
 `s` refers to the **string** "abc" and `t` refers to the **string**
 "xyz", then
+
 ```C#
 string u = s + t;
 ```
@@ -81,13 +84,13 @@ string result = "";
 for (int i = 0; i < text.Length; i++)
 {
     char c = text[i];
-    if (Char.IsLower(c))
+    if (char.IsLower(c))
     {
-        result += Char.ToUpper(c);
+        result += char.ToUpper(c);
     }
-    else if (Char.IsUpper(c))
+    else if (char.IsUpper(c))
     {
-        result += Char.ToLower(c);
+        result += char.ToLower(c);
     }
     else
     {
@@ -112,5 +115,5 @@ how we can do this much more efficiently using another data structure.
 
 **string**s have many other methods to allow various kinds of
 manipulation - see [the documentation for the **string**
-class](https://docs.microsoft.com/en-us/dotnet/api/system.string?view=netframework-4.7.2)
+class](https://learn.microsoft.com/en-us/dotnet/api/system.string?view=net-6.0)
 for details.

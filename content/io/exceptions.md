@@ -59,7 +59,7 @@ try
     int count = 0;
     foreach (char c in contents)
     {
-        if (Char.IsUpper(c))
+        if (char.IsUpper(c))
         {
             count++;
         }
@@ -76,7 +76,7 @@ catch
 See the section, "[The **foreach**
 Statement](/appendix/syntax/foreach)" for an
 explanation of **foreach** loops. The
-[**Char.IsUpper**](https://learn.microsoft.com/en-us/dotnet/api/system.char.isupper?view=net-6.0#system-char-isupper(system-char))
+[**char.IsUpper**](https://learn.microsoft.com/en-us/dotnet/api/system.char.isupper?view=net-6.0#system-char-isupper(system-char))
 method returns a **bool** indicating whether the given **char** is an
 upper-case letter in some alphabet.
 {{% /notice %}}

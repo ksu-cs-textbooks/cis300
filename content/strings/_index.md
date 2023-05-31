@@ -7,7 +7,7 @@ pre = "<b>2. </b>"
 
 ## **string**s and **StringBuilder**s
 
-C# and the .NET Framework provides two data structures for representing
+C# and .NET provide two data structures for representing
 sequences of characters - **string**s and **StringBuilder**s. Each of
 these data structures has its own advantages and disadvantages. In this
 chapter, we will examine how these two types are used and implemented.

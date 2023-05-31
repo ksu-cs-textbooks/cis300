@@ -14,26 +14,28 @@ together is very inefficient. This inefficiency is due to the fact that
 **string**s are immutable. In order to overcome the inefficiency of
 concatenation, we need an alternative data structure that we can modify.
 The
-[**StringBuilder**](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=netframework-4.7.2)
+[**StringBuilder**](https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=net-6.0)
 class fills this need.
 
 Like **string**s, **StringBuilder**s implement sequences of characters,
 but the contents of **StringBuilder**s can be changed. The
 **StringBuilder** class has six constructors. The [simplest
 **StringBuilder**
-constructor](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.-ctor?view=netframework-4.7.2#System_Text_StringBuilder__ctor)
+constructor](https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.-ctor?view=net-6.0#system-text-stringbuilder-ctor)
 takes no parameters and constructs an empty **StringBuilder** --- i.e., a
 **StringBuilder** containing no characters:
+
 ```C#
-StringBuilder sb = new StringBuilder();
+StringBuilder sb = new();
 ```
 We can then modify a **StringBuilder** in various ways. First, we may
 append a **char** to the end using its
-[**Append**](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.append?view=netframework-4.7.2#System_Text_StringBuilder_Append_System_Char_)
+[**Append**](https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.append?view=net-6.0#system-text-stringbuilder-append(system-char))
 method. This method not only changes the contents of the
 **StringBuilder**, but it also returns a reference to it. Thus if we
 have **char** variables, `a`, `b`, and `c`, and a **StringBuilder**
 variable `sb`, we can write code such as:
+
 ```C#
 sb.Append(a).Append(b).Append(c);
 ```
@@ -49,7 +51,7 @@ cases, only the appended character needs to be copied (see
 **StringBuilder**s](/strings/stringbuilder-impl)"
 for details). This class has other **Append** methods as well, including
 one that [appends the contents of a given
-**string**](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.append?view=netframework-4.7.2#System_Text_StringBuilder_Append_System_String_).
+**string**](https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.append?view=net-6.0#system-text-stringbuilder-append(system-string)).
 This method likewise only needs to copy the appended characters.
 
 Let us now return to the problem of converting all lower-case letters in
@@ -59,17 +61,17 @@ lower-case, and leaving all other characters unchanged. We can use a
 efficiently than the code presented in [the previous
 section](/strings/strings):
 ```C#
-StringBuilder sb = new StringBuilder();
+StringBuilder sb = new();
 for (int i = 0; i < text.Length; i++)
 {
     char c = text[i];
-    if (Char.IsLower(c))
+    if (char.IsLower(c))
     {
-        sb.Append(Char.ToUpper(c));
+        sb.Append(char.ToUpper(c));
     }
-    else if (Char.IsUpper(c))
+    else if (char.IsUpper(c))
     {
-        sb.Append(Char.ToLower(c));
+        sb.Append(char.ToLower(c));
     }
     else
     {
@@ -88,8 +90,8 @@ are some iterations that copy more than one character, but even if we
 account for this, it turns out that fewer than 400,000 characters are
 copied, as opposed to over five billion character copies when
 **string**s are used directly (see [the previous
-section](/strings/strings)). The
-**StringBuilder** implementation in the .NET Framework performs even
+section](/strings/strings)). The .NET
+**StringBuilder** implementation performs even
 better. In either case, the above code runs in *O*(*n*) time, where *n*
 is the length of `text`; i.e., as *n* gets large, the running time is at
 worst proportional to *n*. Thus, its performance degrades much less
@@ -100,7 +102,7 @@ A program that runs the above code and the code given in [the previous
 section](/strings/strings) on user-provided
 text files can be obtained by creating a Git repository (see ["Git
 Repositories"](/appendix/vs/repos)) using
-[this URL](https://classroom.github.com/a/f6GfXQfc). A noticeable
+[this URL](https://classroom.github.com/a/PO7WgRNh). A noticeable
 performance difference can be seen on text files larger than 100K - for
 example, the full text of [Lewis Carroll's *Through the Looking
 Glass*](http://www.gutenberg.org/cache/epub/12/pg12.txt).
@@ -116,11 +118,12 @@ provided `sb` contains at least 3 characters:
 sb[2] = 'x';
 ```
 A **StringBuilder** also has a
-[**Length**](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.length?view=netframework-4.7.2)
+[**Length**](https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.length?view=net-6.0#system-text-stringbuilder-length)
 property, which gets the number of characters contained. However, we may
 also set this property to any nonnegative value, provided there is
 enough memory available to provide this length. For example, we may
 write:
+
 ```C#
 sb.Length = 10;
 ```
@@ -138,8 +141,8 @@ cannot store a **null** reference.
 
 **StringBuilder**s have many other methods to allow various kinds of
 manipulation - see [the documentation for the **StringBuilder**
-class](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=netframework-4.7.2)
+class](https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=net-6.0)
 for details. There is also a [**StringBuilder**
-constructor](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.-ctor?view=netframework-4.7.2#System_Text_StringBuilder__ctor_System_String_)
+constructor](https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.-ctor?view=net-6.0#system-text-stringbuilder-ctor(system-string))
 that takes a **string** as its only parameter and constructs a
 **StringBuilder** containing the contents of that **string**.
