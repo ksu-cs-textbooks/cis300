@@ -14,19 +14,26 @@ linked lists. **T** will be the type of the data item we will store in
 each cell - i.e., the type of the data items that we will store in the
 linked list.
 
-A **LinkedListCell\<T\>** will have as its only members two **public**
+A **LinkedListCell\<T\>** will contain two **public**
 properties, which can each be implemented using the default
 implementation:
 
   - The **Data** property gets or sets the data item (of type **T**)
     stored in the cell.
-  - The **Next** property gets or sets the next **LinkedListCell\<T\>**
-    in the linked list.
+  - The **Next** property gets or sets the next **LinkedListCell\<T\>?**
+    in the linked list. If there is no next cell, it gets **null**.
 
 Because this is a **class**, it is a [reference
 type](/appendix/syntax/reference-value); hence, the
 **Next** property will store a reference to another
 **LinkedListCell\<T\>**.
+
+The only other member of this class is a **public** constructor. Because we don't want to make **Data** nullable unless the user code specifies a nullable type for **T**, we need to make sure it is initialized to an appropriate value. For this purpose, we use a **public** constructor that takes the following parameters:
+
+- The initial **Data** value (of type **T**).
+- The next cell in the list (of type **LinkedListCell\<T\>?**).
+
+It simply sets the values of the two properties to the given parameters.
 
 Although the **LinkedListCell\<T\>** class is simple, we can use its
 **Next** property to chain together long sequences of its instances:
@@ -40,7 +47,7 @@ regions to indicate the two **public** properties for each cell. Because
 **string** is a reference type, we have shown each **Data** property as
 a reference to a **string**. The rightmost arrow that is bent downward
 is used to represent **null**. The entire sequence of
-**LinkedListCell\<string\>**s is called a *linked list*. Given this
+<strong>LinkedListCell\<string\></strong>s is called a *linked list*. Given this
 linked list:
 
   - `p.Data` is "Now";
@@ -57,25 +64,10 @@ When writing code for using and manipulating linked lists, it is helpful to draw
 {{% /notice %}}
 
 Suppose we want to insert the **string** "Notice:" at the beginning of
-this linked list. Because we have not defined a constructor for the
-**LinkedListCell\<T\>** class, it has a default constructor that we can
-use to construct a new instance:
+this linked list. We use the **LinkedListCell\<T\>** constructor to initialize a new cell:
 
 ```C#
-LinkedListCell<string> cell = new LinkedListCell<string>();
-```
-We can then set its **Data** property to "Notice:":
-```C#
-cell.Data = "Notice:";
-```
-This gives us the following:
-
-![Inserting to the beginning of a linked list](linked-list-insert-1.jpg)
-
-We have the cell we need, but it's not linked into the linked list. We
-can accomplish this by changing the cell's **Next** property:
-```C#
-cell.Next = p;
+LinkedListCell<string> cell = new("Notice", p);
 ```
 This yields the following:
 
@@ -97,7 +89,7 @@ in the **Next** property of the cell to which `p` refers:
 ```C#
 p = p.Next;
 ```
-This yields the following:
+(If this statement occurs in a context in which the compiler cannot determine that `p` is not **null**, an `!` will need to be inserted prior to `.Next`.) This yields the following:
 
 ![Removing the first cell](linked-list-remove-first.jpg)
 

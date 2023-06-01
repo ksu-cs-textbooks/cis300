@@ -140,7 +140,7 @@ We need to iterate `p` through the linked list, checking the *next* cell
 on each iteration to see whether its contents are divisible by <span style="white-space:nowrap">{{< math >}}$ k ${{< /math >}}.</span> We
 can check for divisibility by {{< math >}}$ k ${{< /math >}} using the [remainder
 operator](/appendix/syntax/remainder) --- i.e., {{< math >}}$ k ${{< /math >}} divides
-{{< math >}}$ m ${{< /math >}} if {{< math >}}$ m \mathbin{\texttt{\%}} k ${{< /math >}} is 0. Thus, the first iteration
+{{< math >}}$ m ${{< /math >}} if {{< math >}}$ m \mathbin{\texttt{%}} k ${{< /math >}} is 0. Thus, the first iteration
 would see if {{< math >}}$ 3 ${{< /math >}} 
 divides <span style="white-space:nowrap">{{< math >}}$ 5 ${{< /math >}}.</span> It doesn't, so we advance `p` to the next cell (containing
 <span style="white-space:nowrap">{{< math >}}$ 5 ${{< /math >}}).</span> We then see if {{< math >}}$ 3 ${{< /math >}} divides <span style="white-space:nowrap">{{< math >}}$ 7 ${{< /math >}}.</span> Again it doesn't, so we advance `p` to

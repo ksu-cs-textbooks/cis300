@@ -20,9 +20,9 @@ the elements so that the top element of the stack is at the beginning of
 the linked list, and the bottom element of the stack is at the end of
 the linked list. We can represent an empty stack with **null**.
 
-We therefore need a **private LinkedListCell\<T\>** field to implement a
+We therefore need a **private LinkedListCell\<T\>?** field to implement a
 generic stack **Stack\<T\>** using a linked list. This field will refer
-to the cell containing the data item at the top of the stack. A **public
+to the cell containing the data item at the top of the stack. If the stack is empty, this field will be **null**; hence, this field should be **null** initially. A **public
 Count** property will be used to keep track of the number of elements in
 the stack.
 
@@ -33,15 +33,18 @@ element to a new cell at the beginning of the linked list, as shown in
 section](/linked-lists/intro), and
 update the **Count**. To implement **Peek**, if the stack is nonempty,
 we simply return the **Data** property of the cell at the beginning of
-the linked list; otherwise, we throw an **InvalidOperationException**.
+the linked list; otherwise, we throw an **InvalidOperationException**. Note that we can determine whether the stack is empty by examining either the **LinkedListCell\<T\>?** field or the **Count** property; however, examining the **LinkedListCell\<T\>?** field allows the compiler to determine that the **Data** property of the first cell can be accessed without throwing a **NullReferenceException**.
+
 To implement **Pop**:
 
-1.  Using **Peek**, obtain the element to be returned;
+1.  Using **Peek**, obtain the element to be returned.
 2.  Remove the first element from the linked list as shown in [the
     previous
-    section](/linked-lists/intro);
-3.  Update the **Count**; and
+    section](/linked-lists/intro).
+3.  Update the **Count**.
 4.  Return the retrieved value.
+
+Note that the call to **Peek** in step 1 ensures that the stack is nonempty before we remove the first element; however, the compiler won't be able to determine this.
 
 Implementing a queue is a little more involved because we need to
 operate at both ends of the linked list. For efficiency, we should keep
@@ -91,19 +94,19 @@ conclude that it will work best to make the beginning of the linked list
 the front of the queue. We therefore need the following **private**
 fields to implement a generic queue **Queue\<T\>**:
 
-  - A **LinkedListCell\<T\>** giving the element at the front of the
+  - A **LinkedListCell\<T\>?** giving the element at the front of the
     queue. This will be the beginning of the linked list of queue
     elements.
-  - A **LinkedListCell\<T\>** giving the element at the back of the
+  - A **LinkedListCell\<T\>?** giving the element at the back of the
     queue. This will be the last cell in the linked list of queue
     elements.
 
 As we mentioned earlier, adding an element to an empty queue is a
 special case that we will need to handle separately. For this reason, it
-doesn't matter what values the two **LinkedListCell\<T\>** fields
+doesn't matter what values the two **LinkedListCell\<T\>?** fields
 contain when the queue is empty - we can always detect when the queue is
 empty by checking the **Count**. The initialization of the two
-**LinkedListCell\<T\>** fields is therefore unimportant. It is easiest
+**LinkedListCell\<T\>?** fields is therefore unimportant. It is easiest
 to just leave them **null**.
 
 Let us now consider the implementation of the **Enqueue** method. We
@@ -115,11 +118,10 @@ list:
 
 We therefore need to:
 
-1.  Construct a new **LinkedListCell\<T\>**;
-2.  Assign it to the field denoting the front of the queue;
-3.  Assign it to the field denoting the back of the queue;
-4.  Store the given element in its **Data** property; and
-5.  Update the **Count**.
+1.  Construct a new **LinkedListCell\<T\>** containing the element we want to enqueue and no next cell.
+2.  Assign it to the field denoting the front of the queue.
+3.  Assign it to the field denoting the back of the queue.
+4.  Update the **Count**.
 
 If the queue is nonempty, the only step that changes is Step 2. Because
 the queue is nonempty, we don't want to make the new cell the front of
