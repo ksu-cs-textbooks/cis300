@@ -527,18 +527,18 @@
     <meta name="author" content="Rod Howell and Josh Weese">
     <title>Implementing a Stack :: Data Structures in C#</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1685546791" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1685546791" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1685546791" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1685546791" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1685546791" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1685546791" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1685546791" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1685546791" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1685546791" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1685546791" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1685546791" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1685546791" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1685546791" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1685546791" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1685546791" rel="stylesheet" media="print">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1685546791"></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1685652317" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1685652317" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1685652317" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1685652317" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1685652317" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1685652317" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1685652317" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1685652317" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1685652317" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1685652317" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1685652317" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1685652317" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1685652317" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1685652317" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1685652317" rel="stylesheet" media="print">
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1685652317"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -555,8 +555,8 @@
       window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
     </script>
     
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1685546791" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.min.js?1685546791" defer></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1685652317" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.min.js?1685652317" defer></script>
 
   </head>
   <body class="mobile-support tele disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/stack-impl/">
@@ -584,7 +584,7 @@ quite similar to the
 <a href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilder-impl"><strong>StringBuilder</strong>
 implementation</a> we
 described in the last chapter. We have discussed two kinds of stacks in
-this chapter - stacks of <strong>object</strong>s and generic stacks. We will focus
+this chapter - stacks of <strong>object?</strong>s and generic stacks. We will focus
 on implementing a generic stack in this section, as it is easy to modify
 such an implementation to be non-generic.</p>
 <p><span id="generic"></span> We first need to consider how to define a
@@ -600,8 +600,8 @@ parameters, and local variables to be of type <strong>T</strong>. Even though th
 compiler knows nothing about <strong>T</strong>, it will still do type checking - you
 cannot assign an expression of any other type to a variable of type
 <strong>T</strong>, and you can only assign an expression of type <strong>T</strong> to variables
-of either type <strong>T</strong> or type <strong>object</strong> (because any type is a subtype
-of <strong>object</strong>). In general, we can define generic data types with any
+of either type <strong>T</strong> or type <strong>object?</strong> (because any type is a subtype
+of <strong>object?</strong>). Assigning an expression of type <strong>T</strong> to an <strong>object</strong> variable may generate a compiler warning, but is permitted as well. In general, we can define generic data types with any
 number of type parameters if more that one generic type is needed by the
 data structure. To do this, we would list the type parameters, separated
 by commas, between the <code>&lt;</code> and <code>&gt;</code> symbols of the generic <strong>class</strong>
@@ -614,7 +614,19 @@ section</a>.</p>
 <p>For the class <strong>Stack&lt;T&gt;</strong>, only one type parameter is needed. The
 type parameter <strong>T</strong> denotes the type of the values that are stored in
 the stack. Therefore, the array in which we will store the elements will
-be of type <strong>T[ ]</strong>. As in the 
+be of type <strong>T?[ ]</strong>. The <code>?</code> is needed because if a reference type is used for <strong>T</strong>, when the array is constructed, all locations will initially store <strong>null</strong>, and will continue to store <strong>null</strong> until stack elements are placed into them.</p>
+
+  
+  
+<div class="box notices cstyle note">
+    <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
+    <div class="box-content">
+<p>In the section, 
+
+<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/reference-value/#nullable-types">&ldquo;Reference Types and Value Types&rdquo;</a>, we explained how the <code>?</code> operator behaves differently depending on whether the underlying type is a reference type or a value type. Because a type parameter might represent either a reference type or a value type, we need to address how this operator behaves for a type parameter. Similar to its behavior for a reference type, when this operator is used with a type parameter, the code produced is unchanged. Instead, it is simply an annotation indicating that <strong>null</strong> values may be present. Note that this can happen only if the underlying type happens to be a reference type.</p>
+    </div>
+</div>
+<p>As in the 
 
 <a href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilder-impl"><strong>StringBuilder</strong>
 implementation</a>,
@@ -656,7 +668,16 @@ exception and throwing it with the <strong>throw</strong> keyword:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> InvalidOperationException();
 </span></span></code></pre></div><p>If there are elements in the stack, we need to return the one at the
 top. Note from the figure above that the top element is at the location
-preceding the location indexed by <strong>Count</strong>.</p>
+preceding the location indexed by <strong>Count</strong>. However, note that this element is of type <strong>T?</strong>, whereas the return type of <strong>Peek</strong> is <strong>T</strong>. Thus, returning this element will generate a warning unless we use the <code>!</code> operator. This operator is safe to use here because the location we are returning stores an element that was passed to <strong>Push</strong> as type <strong>T</strong>.</p>
+
+  
+  
+<div class="box notices cstyle note">
+    <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
+    <div class="box-content">
+<p>Note that because <strong>T</strong> can represent any type, it is possible that it represents a nullable type; for example, it is permissible to define a <strong>Stack&lt;string?&gt;</strong>. Therefore, it is possible that the element being returned is <strong>null</strong>. However, we don&rsquo;t need to concern ourselves with this case, as it will be handled by the calling code. The point is that we are returning something of type <strong>T</strong>, even if <strong>T</strong> represents a non-nullable reference type.</p>
+    </div>
+</div>
 <p>The other <strong>public</strong> method to retrieve an element is the <strong>Pop</strong>
 method. This method also takes no parameters and returns a <strong>T</strong>. Part
 of what it does we have already implemented in the <strong>Peek</strong> method. In
@@ -675,17 +696,16 @@ that we have done nothing to the array location that stored the value we
 popped - it still stores that value. This fact does not impact
 correctness, however, because after we update the number of elements, we
 are no longer considering that location to be storing a stack element -
-its contents are irrelevant. However, there is a performance issue here.
+its contents are irrelevant. Nevertheless, there is a performance issue here.
 If <strong>T</strong> is a 
 
 <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/reference-value">reference
 type</a>, then the
 reference stored in this location may refer to a large data structure
-that is no longer needed by the program. However, because this array
+that is no longer needed by the program. Because this array location
 still stores a reference to it, the garbage collector cannot tell that
 it is no longer in use, and consequently, it cannot reclaim the storage.</p>
-<p><a name="default-value"></a></p>
-<p>It therefore makes sense to remove what is stored in this array
+<p><span id="default-value"></span>It therefore makes sense to remove what is stored in this array
 location. However, we run into a difficulty when we try to do this. We
 can&rsquo;t simply assign <strong>null</strong> to this location because <strong>T</strong> might be a
 value type; hence, the compiler will not allow such an assignment. In
@@ -743,12 +763,12 @@ proportional to <em>n</em>.</p>
     
     
     
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1685546791" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1685546791" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1685546791" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1685546791" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1685652317" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1685652317" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1685652317" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1685652317" defer></script>
     
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/tele-scroll.js?1685546791 defer"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/tele-scroll.js?1685652317 defer"></script>
     
   </body>
 </html>

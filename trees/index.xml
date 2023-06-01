@@ -523,12 +523,5 @@
     <description>Recent content in Trees on Data Structures in C#</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://ksu-cs-textbooks.github.io/cis300/trees/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Binary Search Trees</title>
-      <link>https://ksu-cs-textbooks.github.io/cis300/trees/bst/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ksu-cs-textbooks.github.io/cis300/trees/bst/</guid>
-      <description>Binary Search Trees We motivated our discussion of trees by expressing a need for a linked data structure that supports a binary search or something similar. We will present such a data structure - a binary search tree - in this section. While it will support efficient lookups, insertions, and deletions for many applications, we will see that there are cases in which it performs no better than a linked list.</description>
-    </item>
   </channel>
 </rss>

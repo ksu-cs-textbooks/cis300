@@ -527,18 +527,18 @@
     <meta name="author" content="Rod Howell and Josh Weese">
     <title>Implementing Undo and Redo for a TextBox :: Data Structures in C#</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1685546791" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1685546791" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1685546791" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1685546791" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1685546791" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1685546791" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1685546791" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1685546791" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1685546791" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1685546791" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1685546791" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1685546791" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1685546791" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1685546791" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1685546791" rel="stylesheet" media="print">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1685546791"></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1685652317" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1685652317" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1685652317" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1685652317" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1685652317" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1685652317" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1685652317" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1685652317" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1685652317" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1685652317" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1685652317" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1685652317" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1685652317" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1685652317" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1685652317" rel="stylesheet" media="print">
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1685652317"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -555,8 +555,8 @@
       window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
     </script>
     
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1685546791" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.min.js?1685546791" defer></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1685652317" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.min.js?1685652317" defer></script>
 
   </head>
   <body class="mobile-support tele disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/undo/">
@@ -602,21 +602,21 @@ stack of <strong>string</strong>s:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// The history of the contents of the TextBox.</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> Stack&lt;<span style="color:#66d9ef">string</span>&gt; _editingHistory = <span style="color:#66d9ef">new</span> Stack&lt;<span style="color:#66d9ef">string</span>&gt;();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> Stack&lt;<span style="color:#66d9ef">string</span>&gt; _editingHistory = <span style="color:#66d9ef">new</span>();
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// The history of TextBox contents that have been undone and can be redone.</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> Stack&lt;<span style="color:#66d9ef">string</span>&gt; _undoHistory = <span style="color:#66d9ef">new</span> Stack&lt;<span style="color:#66d9ef">string</span>&gt;();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> Stack&lt;<span style="color:#66d9ef">string</span>&gt; _undoHistory = <span style="color:#66d9ef">new</span>();
 </span></span></code></pre></div><p>Before we can proceed to implementing the Undo and Redo operations, we
 need to do a bit more initialization. Note that by the way we have
 defined <code>_editingHistory</code>, this stack needs to contain the initial
 contents of the <strong>TextBox</strong>. Therefore, assuming the <strong>TextBox</strong> field
-is named <code>uxDisplay</code>, we need to add the following line to the end of
+is named <code>uxEditBuffer</code>, we need to add the following line to the end of
 the constructor of our user interface:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>_editingHistory.Push(uxDisplay.Text);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>_editingHistory.Push(uxEditBuffer.Text);
 </span></span></code></pre></div><p>In order to support Undo and Redo, we need to be able to record the
-content of <code>uxDisplay</code> each time it is modified. We can do this via an
+content of <code>uxEditBuffer</code> each time it is modified. We can do this via an
 event handler for the <strong>TextChanged</strong> event on the <strong>TextBox</strong>. Because
 this event is the default event for a <strong>TextBox</strong>, we can add such an
 event handler by double-clicking on the <strong>TextBox</strong> within the Visual
@@ -634,20 +634,20 @@ it would perform a Redo rather than an Undo.</p>
 the user and a change made by the program code. A <strong>TextBox</strong> has a
 
 
-<a href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.textboxbase.modified?view=netframework-4.7.2#System_Windows_Forms_TextBoxBase_Modified" target="_blank" rel="noopener"><strong>Modified</strong></a>
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.textboxbase.modified?view=windowsdesktop-6.0#system-windows-forms-textboxbase-modified" target="_blank" rel="noopener"><strong>Modified</strong></a>
 property, which is set to <strong>true</strong> when the user modifies the
 <strong>TextBox</strong> contents, and is set to <strong>false</strong> when the program modifies
 the contents. Thus, we only want to record the <strong>TextBox</strong> contents when
 this property is <strong>true</strong>. Assuming the <strong>TextBox</strong> is named
-<code>uxDisplay</code>, we can then set up the event handler as follows:</p>
+<code>uxEditBuffer</code>, we can then set up the event handler as follows:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// Handles a TextChanged event on the TextBox.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// Handles a TextChanged event on the edit buffer.</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;param name=&#34;sender&#34;&gt;&lt;/param&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;param name=&#34;e&#34;&gt;&lt;/param&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> uxDisplay_TextChanged(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;param name=&#34;sender&#34;&gt;The object signaling the event.&lt;/param&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;param name=&#34;e&#34;&gt;Information about the event.&lt;/param&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> EditBufferTextChanged(<span style="color:#66d9ef">object</span> sender, EventArgs e)
 </span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (uxDisplay.Modified)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (uxEditBuffer.Modified)
 </span></span><span style="display:flex;"><span>    {
 </span></span><span style="display:flex;"><span>        RecordEdit();
 </span></span><span style="display:flex;"><span>    }
@@ -665,7 +665,7 @@ modifies the contents of the <strong>TextBox</strong>, we need to do the followi
 <strong>TextBox</strong> contents was not an Undo. (A <strong>Stack&lt;T&gt;</strong> has a
 
 
-<a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.stack-1.clear?view=netframework-4.7.2" target="_blank" rel="noopener"><strong>Clear</strong></a>
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.stack-1.clear?view=net-6.0#system-collections-generic-stack-1-clear" target="_blank" rel="noopener"><strong>Clear</strong></a>
 method for this purpose.)</li>
 <li>Disable <code>uxRedo</code>.</li>
 </ul>
@@ -675,7 +675,7 @@ method for this purpose.)</li>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> RecordEdit()
 </span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    _editingHistory.Push(uxDisplay.Text);
+</span></span><span style="display:flex;"><span>    _editingHistory.Push(uxEditBuffer.Text);
 </span></span><span style="display:flex;"><span>    uxUndo.Enabled = <span style="color:#66d9ef">true</span>;
 </span></span><span style="display:flex;"><span>    _undoHistory.Clear();
 </span></span><span style="display:flex;"><span>    uxRedo.Enabled = <span style="color:#66d9ef">false</span>;
@@ -698,13 +698,13 @@ following event handler for a Click event on <code>uxUndo</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// Handles a Click event on Undo.</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;param name=&#34;sender&#34;&gt;&lt;/param&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;param name=&#34;e&#34;&gt;&lt;/param&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> uxUndo_Click(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;param name=&#34;sender&#34;&gt;The object signaling the event.&lt;/param&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;param name=&#34;e&#34;&gt;Information about the event.&lt;/param&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> UndoClick(<span style="color:#66d9ef">object</span> sender, EventArgs e)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    _undoHistory.Push(_editingHistory.Pop());
 </span></span><span style="display:flex;"><span>    uxRedo.Enabled = <span style="color:#66d9ef">true</span>;
-</span></span><span style="display:flex;"><span>    uxDisplay.Text = _editingHistory.Peek();
+</span></span><span style="display:flex;"><span>    uxEditBuffer.Text = _editingHistory.Peek();
 </span></span><span style="display:flex;"><span>    uxUndo.Enabled = _editingHistory.Count &gt; <span style="color:#ae81ff">1</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>The implementation of Redo is similar, but now we need to transfer a
@@ -717,13 +717,13 @@ following event handler for a Click event on <code>uxRedo</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// Handles a Click event on Redo.</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;param name=&#34;sender&#34;&gt;&lt;/param&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;param name=&#34;e&#34;&gt;&lt;/param&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> uxRedo_Click(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;param name=&#34;sender&#34;&gt;The object signaling the event.&lt;/param&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;param name=&#34;e&#34;&gt;Information about the event.&lt;/param&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> RedoClick(<span style="color:#66d9ef">object</span> sender, EventArgs e)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    _editingHistory.Push(_undoHistory.Pop());
 </span></span><span style="display:flex;"><span>    uxRedo.Enabled = _undoHistory.Count &gt; <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>    uxDisplay.Text = _editingHistory.Peek();
+</span></span><span style="display:flex;"><span>    uxEditBuffer.Text = _editingHistory.Peek();
 </span></span><span style="display:flex;"><span>    uxUndo.Enabled = <span style="color:#66d9ef">true</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>This solution will work, except that an Undo or Redo always brings the
@@ -790,7 +790,7 @@ following method for this purpose:</p>
 </span></span></code></pre></div><p>Note that the above code uses the <strong>TextBox</strong>&rsquo;s
 
 
-<a href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.textboxbase.textlength?view=netframework-4.7.2#System_Windows_Forms_TextBoxBase_TextLength" target="_blank" rel="noopener"><strong>TextLength</strong></a>
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.textboxbase.textlength?view=windowsdesktop-6.0#system-windows-forms-textboxbase-textlength" target="_blank" rel="noopener"><strong>TextLength</strong></a>
 property. This is more efficient than finding the length of its <strong>Text</strong>
 property because evaluating the <strong>Text</strong> property requires all the
 characters to be copied to a new <strong>string</strong>.</p>
@@ -801,18 +801,18 @@ the <strong>string</strong> currently in the <strong>TextBox</strong> and the la
 saw there. The
 
 
-<a href="https://docs.microsoft.com/en-us/dotnet/api/system.math?view=netframework-4.7.2" target="_blank" rel="noopener"><strong>Math</strong></a>
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.math?view=net-6.0" target="_blank" rel="noopener"><strong>Math</strong></a>
 class (in the
 
 
-<a href="https://docs.microsoft.com/en-us/dotnet/api/system?view=netframework-4.7.2" target="_blank" rel="noopener"><strong>System</strong></a>
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system?view=net-6.0" target="_blank" rel="noopener"><strong>System</strong></a>
 namespace) contains a
 
 
 <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/static-this"><strong>static</strong></a> method
 
 
-<a href="https://docs.microsoft.com/en-us/dotnet/api/system.math.abs?view=netframework-4.7.2#System_Math_Abs_System_Int32_" target="_blank" rel="noopener"><strong>Abs</strong></a>,
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.math.abs?view=net-6.0#system-math-abs%28system-int32%29" target="_blank" rel="noopener"><strong>Abs</strong></a>,
 which computes the absolute value of an <strong>int</strong>. We therefore have the
 following method:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
@@ -833,7 +833,7 @@ at which the deletion occurred is the point at which the text caret now
 resides. We can find this point using the <strong>TextBox</strong>&rsquo;s
 
 
-<a href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.textboxbase.selectionstart?view=netframework-4.7.2#System_Windows_Forms_TextBoxBase_SelectionStart" target="_blank" rel="noopener"><strong>SelectionStart</strong></a>
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.textboxbase.selectionstart?view=windowsdesktop-6.0#system-windows-forms-textboxbase-selectionstart" target="_blank" rel="noopener"><strong>SelectionStart</strong></a>
 property. When there is no current selection - and there never will be
 immediately following an edit - this property gives the location of the
 text caret in the <strong>TextBox</strong>. Now consider the case in which the edit
@@ -866,7 +866,7 @@ the edit occurred. We can therefore extract the deleted <strong>string</strong> 
 the previous contents using its
 
 
-<a href="https://docs.microsoft.com/en-us/dotnet/api/system.string.substring?view=netframework-4.7.2" target="_blank" rel="noopener"><strong>Substring</strong></a>
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.string.substring?view=net-6.0#system-string-substring%28system-int32-system-int32%29" target="_blank" rel="noopener"><strong>Substring</strong></a>
 method. We pass this method the beginning index of the substring and its
 length, and it returns the substring, which is the deleted <strong>string</strong>.
 On the other hand, if the edit was an insertion, we can find the
@@ -906,13 +906,13 @@ to accomplish this:</p>
 <li>The
 
 
-<a href="https://docs.microsoft.com/en-us/dotnet/api/system.string.remove?view=netframework-4.7.2#System_String_Remove_System_Int32_System_Int32_" target="_blank" rel="noopener"><strong>Remove</strong></a>
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.string.remove?view=net-6.0#system-string-remove%28system-int32-system-int32%29" target="_blank" rel="noopener"><strong>Remove</strong></a>
 method takes as its parameters the beginning index and length of the
 portion to remove, and returns the result.</li>
 <li>The
 
 
-<a href="https://docs.microsoft.com/en-us/dotnet/api/system.string.insert?view=netframework-4.7.2" target="_blank" rel="noopener"><strong>Insert</strong></a>
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.string.insert?view=net-6.0#system-string-insert%28system-int32-system-string%29" target="_blank" rel="noopener"><strong>Insert</strong></a>
 method takes as its parameters the index at which the <strong>string</strong>
 should be inserted, and the <strong>string</strong> to insert. It returns the
 result.</li>
@@ -967,12 +967,12 @@ must do the opposite.</p>
     
     
     
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1685546791" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1685546791" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1685546791" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1685546791" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1685652317" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1685652317" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1685652317" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1685652317" defer></script>
     
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/tele-scroll.js?1685546791 defer"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/tele-scroll.js?1685652317 defer"></script>
     
   </body>
 </html>
