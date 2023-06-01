@@ -55,7 +55,7 @@ completely fill the current array, and unless we need to do this, we
 don't need to move elements around. We need the following class members
 in order to keep track of everything:
 
-  - a **private T\[ \]** field in which to store the elements;
+  - a **private T?\[ \]** field in which to store the elements;
   - a **public int Count** property; and
   - a **private int** field giving the index of the element at the front
     of the queue (if the queue is empty, this can be any valid index).
@@ -82,7 +82,7 @@ queue remains unchanged; i.e., we copy as follows:
 
 In order to copy the elements like this, we can use the **static**
 method,
-[**Array.Copy**](https://docs.microsoft.com/en-us/dotnet/api/system.array.copy?view=netframework-4.7.2#System_Array_Copy_System_Array_System_Int32_System_Array_System_Int32_System_Int32_).
+[**Array.Copy**](https://learn.microsoft.com/en-us/dotnet/api/system.array.copy?view=net-6.0#system-array-copy(system-array-system-int32-system-array-system-int32-system-int32)).
 This method takes the following parameters:
 
   - The array to copy from.

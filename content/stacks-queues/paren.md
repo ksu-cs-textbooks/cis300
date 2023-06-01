@@ -94,8 +94,9 @@ processing each character on a separate line. The portion of the line
 with an orange background will be the stack contents, with the top element
 shown at the right. We will insert blank space in the orange area for
 clarity, but the stack will only contain opening parentheses. The first
-character with a black background is the character currently being
+character with a gray background is the character currently being
 processed.
+
 <pre>
 {a[b]([c]){de}}f[(g)]    --- an opening parenthesis - push it onto the stack
 <span style="background-color:#ff7f00">{</span>a[b]([c]){de}}f[(g)]    --- ignore
@@ -125,7 +126,7 @@ parenthesis while the stack was empty, this would have indicated that
 this closing parenthesis has no matching opening parenthesis. In this
 case, we would have stopped immediately, determining that the **string**
 is not matched. Likewise, if we had encountered a closing parenthesis
-that did not match the parentheis at the top of the stack, this would
+that did not match the parenthesis at the top of the stack, this would
 have indicated a mismatched pair. Again, we would have stopped
 immediately. Finally, if we had reached the end of the **string** with a
 nonempty stack, this would have indicated that we had at least one

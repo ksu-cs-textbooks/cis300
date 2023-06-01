@@ -37,35 +37,35 @@ the *back*, and the next person who is served is the person at the
 Likewise, new data items are added to the back of a queue, and data
 items are retrieved from the front.
 
-The .NET Framework provides both a non-generic queue of **object**s
-([**System.Collections.Queue**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.queue?view=netframework-4.7.2))
+.NET provides both a non-generic queue of <strong>object?</strong>s
+([**System.Collections.Queue**](https://learn.microsoft.com/en-us/dotnet/api/system.collections.queue?view=net-6.0))
 and a generic queue
-([**System.Collections.Generic.Queue\<T\>**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1?view=netframework-4.7.2)).
+([**System.Collections.Generic.Queue\<T\>**](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1?view=net-6.0)).
 For simplicity, we will focus on the generic version. The non-generic
 version is the same, except that wherever the type parameter **T** is
-used in the generic version, **object** is used in the non-generic
+used in the generic version, **object?** is used in the non-generic
 version.
 
 Like **Stack\<T\>**, **Queue\<T\>** has a **public**
-[constructor](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1.-ctor?view=netframework-4.7.2#System_Collections_Generic_Queue_1__ctor)
+[constructor](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1.-ctor?view=net-6.0#system-collections-generic-queue-1-ctor)
 that takes no parameters and constructs an empty queue, along with a
 **public**
-[**Count**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1.count?view=netframework-4.7.2)
+[**Count**](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1.count?view=net-6.0#system-collections-generic-queue-1-count)
 property that gets the number of elements in the queue (as an **int**).
 It also has the following **public** methods:
 
   - An
-    [**Enqueue**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1.enqueue?view=netframework-4.7.2)
+    [**Enqueue**](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1.enqueue?view=net-6.0#system-collections-generic-queue-1-enqueue(-0))
     method that takes a single parameter of type **T** and places it at
     the back of the queue.
   - A
-    [**Peek**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1.peek?view=netframework-4.7.2)
+    [**Peek**](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1.peek?view=net-6.0#system-collections-generic-queue-1-peek)
     method that takes no parameters and returns the element (of type
     **T**) at the front of the queue without changing the queue's
     contents. If the queue is empty, this method throws an
     **InvalidOperationException**.
   - A
-    [**Dequeue**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1.dequeue?view=netframework-4.7.2)
+    [**Dequeue**](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1.dequeue?view=net-6.0#system-collections-generic-queue-1-dequeue)
     method, which takes no parameters and removes and returns the
     element at the front of the queue. If the queue is empty, this
     method throws an **InvalidOperationException**.

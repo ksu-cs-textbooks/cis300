@@ -49,9 +49,14 @@ arbitrarily pick a size for our array, and define:
 
 ```C#
 /// <summary>
-/// The characters in this StringBuilder.
+/// The initial capacity of the underlying array.
 /// </summary>
-private char[] _characters = new char[100];
+private const int _initialCapacity = 100;
+
+/// <summary>
+/// The character in this StringBuilder.
+/// </summary>
+private char[] _characters = new char[_initialCapacity];
 ```
 An array with 100 elements will give us room enough to store up to 100
 characters. In fact, initializing the array in this way actually gives

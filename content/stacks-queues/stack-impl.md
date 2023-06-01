@@ -15,7 +15,7 @@ implementation uses an array to store the elements of the stack, and is
 quite similar to the [**StringBuilder**
 implementation](/strings/stringbuilder-impl) we
 described in the last chapter. We have discussed two kinds of stacks in
-this chapter - stacks of **object**s and generic stacks. We will focus
+this chapter - stacks of <strong>object?</strong>s and generic stacks. We will focus
 on implementing a generic stack in this section, as it is easy to modify
 such an implementation to be non-generic.
 
@@ -34,8 +34,8 @@ parameters, and local variables to be of type **T**. Even though the
 compiler knows nothing about **T**, it will still do type checking - you
 cannot assign an expression of any other type to a variable of type
 **T**, and you can only assign an expression of type **T** to variables
-of either type **T** or type **object** (because any type is a subtype
-of **object**). In general, we can define generic data types with any
+of either type **T** or type **object?** (because any type is a subtype
+of **object?**). Assigning an expression of type **T** to an **object** variable may generate a compiler warning, but is permitted as well. In general, we can define generic data types with any
 number of type parameters if more that one generic type is needed by the
 data structure. To do this, we would list the type parameters, separated
 by commas, between the `<` and `>` symbols of the generic **class**
@@ -47,7 +47,15 @@ section](/dictionaries/linked-list-impl/#where).
 For the class **Stack\<T\>**, only one type parameter is needed. The
 type parameter **T** denotes the type of the values that are stored in
 the stack. Therefore, the array in which we will store the elements will
-be of type **T\[ \]**. As in the [**StringBuilder**
+be of type **T?\[ \]**. The `?` is needed because if a reference type is used for **T**, when the array is constructed, all locations will initially store **null**, and will continue to store **null** until stack elements are placed into them. 
+
+{{% notice note %}}
+
+In the section, ["Reference Types and Value Types"](/appendix/syntax/reference-value/#nullable-types), we explained how the `?` operator behaves differently depending on whether the underlying type is a reference type or a value type. Because a type parameter might represent either a reference type or a value type, we need to address how this operator behaves for a type parameter. Similar to its behavior for a reference type, when this operator is used with a type parameter, the code produced is unchanged. Instead, it is simply an annotation indicating that **null** values may be present. Note that this can happen only if the underlying type happens to be a reference type.
+
+{{% /notice %}} 
+
+As in the [**StringBuilder**
 implementation](/strings/stringbuilder-impl),
 we will need a **private** field for this array. This field can be
 initialized in a manner similar to the **StringBuilder** implementation;
@@ -91,7 +99,13 @@ throw new InvalidOperationException();
 ```
 If there are elements in the stack, we need to return the one at the
 top. Note from the figure above that the top element is at the location
-preceding the location indexed by **Count**.
+preceding the location indexed by **Count**. However, note that this element is of type **T?**, whereas the return type of **Peek** is **T**. Thus, returning this element will generate a warning unless we use the `!` operator. This operator is safe to use here because the location we are returning stores an element that was passed to **Push** as type **T**.
+
+{{% notice note %}}
+
+Note that because **T** can represent any type, it is possible that it represents a nullable type; for example, it is permissible to define a **Stack\<string?\>**. Therefore, it is possible that the element being returned is **null**. However, we don't need to concern ourselves with this case, as it will be handled by the calling code. The point is that we are returning something of type **T**, even if **T** represents a non-nullable reference type.
+
+{{% /notice %}}
 
 The other **public** method to retrieve an element is the **Pop**
 method. This method also takes no parameters and returns a **T**. Part
@@ -112,17 +126,15 @@ that we have done nothing to the array location that stored the value we
 popped - it still stores that value. This fact does not impact
 correctness, however, because after we update the number of elements, we
 are no longer considering that location to be storing a stack element -
-its contents are irrelevant. However, there is a performance issue here.
+its contents are irrelevant. Nevertheless, there is a performance issue here.
 If **T** is a [reference
 type](/appendix/syntax/reference-value), then the
 reference stored in this location may refer to a large data structure
-that is no longer needed by the program. However, because this array
+that is no longer needed by the program. Because this array location
 still stores a reference to it, the garbage collector cannot tell that
 it is no longer in use, and consequently, it cannot reclaim the storage.
 
-<a name="default-value"></a>
-
-It therefore makes sense to remove what is stored in this array
+<span id="default-value"></span>It therefore makes sense to remove what is stored in this array
 location. However, we run into a difficulty when we try to do this. We
 can't simply assign **null** to this location because **T** might be a
 value type; hence, the compiler will not allow such an assignment. In
