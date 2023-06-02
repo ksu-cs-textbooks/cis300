@@ -12,18 +12,18 @@ section](/dictionaries/linked-list-impl/),
 we discussed how linked lists could be used to implement a dictionary.
 An alternative to a linked list would be an array. A couple of other
 alternatives are the non-generic
-[**System.Collections.ArrayList**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.arraylist?view=netframework-4.7.2)
+[**System.Collections.ArrayList**](https://learn.microsoft.com/en-us/dotnet/api/system.collections.arraylist?view=net-6.0)
 or the generic
-[**System.Collections.Generic.List\<T\>**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=netframework-4.7.2).
+[**System.Collections.Generic.List\<T\>**](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=net-6.0).
 These classes are similar to singly-dimensioned arrays, but they can
 grow as needed. In this respect, they are like a
-[**StringBuilder**](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=netframework-4.7.2),
-but instead of storing **char**s, an **ArrayList** stores **object**s
+[**StringBuilder**](https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=net-6.0),
+but instead of storing **char**s, an **ArrayList** stores <strong>object?</strong>s
 and a **List\<T\>** stores instances of the type parameter **T**.
 Elements can be retrieved from instances of these classes using
 indexing, just like retrieving an element from an array.
 
-Assuming we restrict the keys to be sub-types of
+Assuming we restrict the keys to be non-nullable sub-types of
 **IComparable\<TKey\>**, where **TKey** is the key type, we can store
 the keys in order in any of these data structures. We can then search
 for a key in the same way as we described for a linked list. However,
@@ -33,7 +33,7 @@ that the performance of this sequential search is in {{< math >}}$ O(n) ${{< /ma
 is the number of keys in the dictionary. This means that as {{< math >}}$ n ${{< /math >}} grows,
 the time required for the search is at worst proportional to {{< math >}}$ n ${{< /math >}}.
 
-We can improve this performance dramatically for an arrays or array-like
+We can improve this performance dramatically for an array or array-like
 structure such as an **ArrayList** or a **List\<T\>** using a technique
 called *binary search* (there isn't much we can do to improve the
 performance of searching a linked list, as its structure restricts us to

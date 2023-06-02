@@ -9,24 +9,24 @@ pre = "<b>5.2. </b>"
 
 One way of implementing a dictionary is to store all the keys and values
 in a linked list. We want to do this in such a way that a key is stored
-together with its associated value. To facilitate this, the .NET
-Framework provides a structure
-[**KeyValuePair\<TKey, TValue\>**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.keyvaluepair-2?view=netframework-4.7.2)
+together with its associated value. To facilitate this, .NET
+provides a structure
+[**KeyValuePair\<TKey, TValue\>**](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.keyvaluepair-2?view=net-6.0)
 in the **System.Collections.Generic** namespace. This structure is used
 simply for storing a key and a value. The type parameter **TKey** is
 used to define the type of the keys, and the other type parameter
 **TValue** is used to define the type of the values. It has two
 **public** properties:
 
-  -  [**Key**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.keyvaluepair-2.key?view=netframework-4.7.2),
+  -  [**Key**](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.keyvaluepair-2.key?view=net-6.0#system-collections-generic-keyvaluepair-2-key),
     which gets the key stored; and
-  - [**Value**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.keyvaluepair-2.value?view=netframework-4.7.2),
+  - [**Value**](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.keyvaluepair-2.value?view=net-6.0#system-collections-generic-keyvaluepair-2-value),
     which gets the value stored.
 
 Note that neither of these properties can be set; i.e., the structure is
 immutable. In order to set the key and value, we need to construct a new
 instance using its [2-parameter
-constructor](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.keyvaluepair-2.-ctor?view=netframework-4.7.2).
+constructor](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.keyvaluepair-2.-ctor?view=net-6.0#system-collections-generic-keyvaluepair-2-ctor(-0-1)).
 The first parameter to this constructor is the key, and the second is
 the value.
 
@@ -64,21 +64,24 @@ can restrict the type **TKey** by writing the **class** statement as
 follows:
 
 ```C#
-public class Dictionary<TKey, TValue> where TKey : IComparable<TKey>
+public class Dictionary<TKey, TValue> where TKey : notnull, IComparable<TKey>
     
 ```
 
-The **where** clause in this statement constrains **TKey** to be a
-subtype of
-[**IComparable\<TKey\>**](https://docs.microsoft.com/en-us/dotnet/api/system.icomparable-1?view=netframework-4.7.2).
-Each subtype of **IComparable\<TKey\>** contains a method [**public int
-CompareTo(TKey
-x)**](https://docs.microsoft.com/en-us/dotnet/api/system.icomparable-1.compareto?view=netframework-4.7.2). If `a`
-and `b` are of type **TKey**, then `a.CompareTo(b)` returns:
+The **where** clause in this statement constrains **TKey** in two ways:
+
+- `notnull` constrains it to be a [non-nullable](/appendix/syntax/reference-value#nullable-types) type. The compiler doesn't actually enforce this constraint, but will give a warning if a nullable type is used for **TKey**.
+- `IComparable<TKey>` constrains it to be a
+  subtype of
+  [**IComparable\<TKey\>**](https://learn.microsoft.com/en-us/dotnet/api/system.icomparable-1?view=net-6.0).
+  Each subtype of **IComparable\<TKey\>** contains a method [**public int
+  CompareTo(TKey?
+  x)**](https://learn.microsoft.com/en-us/dotnet/api/system.icomparable-1.compareto?view=net-6.0#system-icomparable-1-compareto(-0)). If `a`
+  and `b` are of type **TKey**, then `a.CompareTo(b)` returns:
 
   - A negative number if `a` is considered to be less than `b`;
   - 0 if `a` is considered to be equal to `b`; or
-  - A positive number if `a` is considered to be greater than `b`.
+  - A positive number if `a` is considered to be greater than `b` or if `b` is **null**.
 
 We can therefore use this **CompareTo** method to keep the list in
 increasing order.
@@ -106,7 +109,7 @@ the last cell whose key is less than the key we are removing.
 Furthermore, if we are looking up a key, we need to look in the cell
 that follows the last cell whose key is less than the key we are looking
 for. This suggests that we should provide a **private** method to find
-the last cell whose key is less than a given key.
+the last cell whose key is less than a given key, provided such a cell exists.
 
 Before we can write such a method, however, we first need to address a
 problem that occurs if we are trying to add, remove, or look up a key
@@ -119,8 +122,8 @@ This cell will not contain any meaningful data, but it will always be
 present. If we consider that its key is less than any other key (though
 we will never actually examine its key), then there will always be at
 least one key less than any given key. We can obtain this
-header cell by initializing the linked list to contain a new cell,
-rather than to **null**.
+header cell by initializing the linked list to contain a new cell containing the [default](/stacks-queues/stack-impl#default-value) key-value pair,
+rather than to **null**. Note that because the linked list will always contain at least the header cell, the reference to it should *not* be nullable.
 
 A method to find the last cell containing a key less than a given key is
 now straightforward. We initialize a variable to the first cell (i.e.,
