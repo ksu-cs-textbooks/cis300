@@ -523,5 +523,12 @@
     <description>Recent content in CIS 300 on Data Structures in C#</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://ksu-cs-textbooks.github.io/cis300/homework/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CIS 300 Homework 4</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/homework/needsmorecoffee44123/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis300/homework/needsmorecoffee44123/</guid>
+      <description>Homework 4: vEB Trees Homework Requirements (html) Homework Requirements (html-dark mode) Homework Requirements (PDF) Homework Requirements (Markdown) </description>
+    </item>
   </channel>
 </rss>

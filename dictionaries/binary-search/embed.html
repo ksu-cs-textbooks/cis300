@@ -527,18 +527,18 @@
     <meta name="author" content="Rod Howell and Josh Weese">
     <title>Implementing a Dictionary with an Array-Like Structure :: Data Structures in C#</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1685655897" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1685655897" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1685655897" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1685655897" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1685655897" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1685655897" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1685655897" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1685655897" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1685655897" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1685655897" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1685655897" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1685655897" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1685655897" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1685655897" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1685655897" rel="stylesheet" media="print">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1685655897"></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1685734614" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1685734614" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1685734614" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1685734614" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1685734614" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1685734614" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1685734614" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1685734614" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1685734614" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1685734614" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1685734614" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1685734614" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1685734614" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1685734614" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1685734614" rel="stylesheet" media="print">
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1685734614"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -555,8 +555,8 @@
       window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
     </script>
     
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1685655897" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.min.js?1685655897" defer></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1685734614" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.min.js?1685734614" defer></script>
 
   </head>
   <body class="mobile-support embed disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/dictionaries/binary-search/embed.html">
@@ -582,21 +582,21 @@ An alternative to a linked list would be an array. A couple of other
 alternatives are the non-generic
 
 
-<a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.arraylist?view=netframework-4.7.2" target="_blank" rel="noopener"><strong>System.Collections.ArrayList</strong></a>
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.arraylist?view=net-6.0" target="_blank" rel="noopener"><strong>System.Collections.ArrayList</strong></a>
 or the generic
 
 
-<a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=netframework-4.7.2" target="_blank" rel="noopener"><strong>System.Collections.Generic.List&lt;T&gt;</strong></a>.
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=net-6.0" target="_blank" rel="noopener"><strong>System.Collections.Generic.List&lt;T&gt;</strong></a>.
 These classes are similar to singly-dimensioned arrays, but they can
 grow as needed. In this respect, they are like a
 
 
-<a href="https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=netframework-4.7.2" target="_blank" rel="noopener"><strong>StringBuilder</strong></a>,
-but instead of storing <strong>char</strong>s, an <strong>ArrayList</strong> stores <strong>object</strong>s
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=net-6.0" target="_blank" rel="noopener"><strong>StringBuilder</strong></a>,
+but instead of storing <strong>char</strong>s, an <strong>ArrayList</strong> stores <strong>object?</strong>s
 and a <strong>List&lt;T&gt;</strong> stores instances of the type parameter <strong>T</strong>.
 Elements can be retrieved from instances of these classes using
 indexing, just like retrieving an element from an array.</p>
-<p>Assuming we restrict the keys to be sub-types of
+<p>Assuming we restrict the keys to be non-nullable sub-types of
 <strong>IComparable&lt;TKey&gt;</strong>, where <strong>TKey</strong> is the key type, we can store
 the keys in order in any of these data structures. We can then search
 for a key in the same way as we described for a linked list. However,
@@ -609,7 +609,7 @@ is the number of keys in the dictionary. This means that as
 <span class="math align-center">$ n $</span> grows,
 the time required for the search is at worst proportional to 
 <span class="math align-center">$ n $</span>.</p>
-<p>We can improve this performance dramatically for an arrays or array-like
+<p>We can improve this performance dramatically for an array or array-like
 structure such as an <strong>ArrayList</strong> or a <strong>List&lt;T&gt;</strong> using a technique
 called <em>binary search</em> (there isn&rsquo;t much we can do to improve the
 performance of searching a linked list, as its structure restricts us to
@@ -697,9 +697,9 @@ comparisons, where
     
     
     
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1685655897" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1685734614" defer></script>
     
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1685655897" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1685734614" defer></script>
     <script>
       function useMathJax( config ){
         if( !Object.assign ){
@@ -728,10 +728,10 @@ comparisons, where
       }
       useMathJax( JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="https://ksu-cs-textbooks.github.io/cis300/js/mathjax/tex-mml-chtml.js?1685655897"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1685655897" defer></script>
+    <script id="MathJax-script" async src="https://ksu-cs-textbooks.github.io/cis300/js/mathjax/tex-mml-chtml.js?1685734614"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1685734614" defer></script>
     
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/embed-iframe.js?1685655897 defer"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/embed-iframe.js?1685734614 defer"></script>
     <script src="https://cdn.jsdelivr.net/npm/iframe-resizer@4.3.2/js/iframeResizer.contentWindow.min.js"></script>
     
   </body>
