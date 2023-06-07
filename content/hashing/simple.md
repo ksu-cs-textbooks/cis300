@@ -23,7 +23,7 @@ focus on the second step, converting the **int** hash code returned by
 the key's **GetHashCode** method to a table location.
 
 One common technique, which is used in the .NET implementation of the
-[**Dictionary\<TKey, TValue\>**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2?view=netframework-4.7.2)
+[**Dictionary\<TKey, TValue\>**](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2?view=net-6.0)
 class, is called the *division method*. This technique consists of the
 following:
 
@@ -77,6 +77,12 @@ the sign bit of an **int** `i` as follows:
 i = i & 0x7fffffff;
 ```
 
+or:
+
+```c#
+i &= 0x7fffffff;
+```
+
 Now let's consider how we would look up a key. First, we need to obtain
 the key's hash code by calling its **GetHashCode** method. From the hash
 code, we use the division method to compute the table location where it
@@ -90,7 +96,7 @@ add a new cell containing the given key and value to the beginning of
 the list we searched.
 
 Note that looking up a key or adding a key and a value as described
-above can be implemented using either methods or indexers (the .NET
-Framework uses both). See the section,
+above can be implemented using either methods or indexers (.NET
+uses both). See the section,
 ["Indexers"](/appendix/syntax/indexers) for details on
 how to implement an indexer.

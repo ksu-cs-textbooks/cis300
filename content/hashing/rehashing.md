@@ -43,7 +43,7 @@ list as `k`. Thus, we can expect, on average, to examine no more than
 {{< math >}}$ 1 +  (n - 1) / m ${{< /math >}} keys when looking for a key
 that is present.
 
-Notice that both of the values derived above decrease as *m* increases.
+Notice that both of the values derived above decrease as {{< math >}}$ m ${{< /math >}} increases.
 Specifically, if {{< math >}}$ m \geq n ${{< /math >}}, the expected number of examined
 keys on a failed lookup is no more than {{< math >}}$ 1 ${{< /math >}}, and the expected number of
 examined keys on a successful lookup is less than {{< math >}}$ 2 ${{< /math >}}. We can therefore
@@ -133,13 +133,18 @@ We then need to move all keys and values from the old table to the new
 one. As we do this, we will need to re-compute the hash function for each
 key, as the hash function has now changed. We therefore need two nested
 loops. The outer loop iterates through the locations in the old table,
-and the inner loop iterates as long as the linked list at the current
-table location is non-empty. On each iteration of the inner loop:
+and the inner loop iterates through the linked list at that location. On each iteration of the inner loop:
 
-  - Use a local variable to save a reference to the first cell in the
+  1. Use a local variable to save another reference to the current cell in the
     linked list at the current table location.
-  - Remove this cell from this linked list.
-  - Using the hash function, compute the new array location of the key
-    in this cell.
-  - Insert this cell into the beginning of the linked list at the new
+  2. Advance to the next cell in the list.
+  3. Using the hash function, compute the new array location of the key
+    in the cell that was saved in step 1.
+  4. Insert this cell into the beginning of the linked list at the new
     array location in the new table.
+
+{{% notice warning %}}
+
+It is important to do step 2 above prior to step 4, as inserting a cell into a new list will lose the reference to the next cell in the old list.
+
+{{% /notice %}}

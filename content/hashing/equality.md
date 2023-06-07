@@ -160,18 +160,18 @@ user-defined type.
 
 <span id="operator-overloading"></span> Let's start with the `==`
 operator. This is one of several operators that may be defined within
-class and structure definitions. If we are defining a class or structure
+class and structure definitions. If we are defining a class
 called **SomeType**, we can include a definition of the `==` operator as
 follows:
 
 ```c#
-public static bool operator ==(SomeType x, SomeType y)
+public static bool operator ==(SomeType? x, SomeType? y)
 {
     // Definition of the behavior of ==
 }
 ```
 
-Note the resemblance to the definition of a **static** method. Even
+If **SomeType** is a structure, the definition is similar, but we wouldn't define the parameters to be nullable. Note the resemblance to the definition of a **static** method. Even
 though we define it using the syntax for a method definition, we still
 use it as we typically use the `==` operator; e.g.,
 
@@ -182,7 +182,7 @@ if (a == b)
 }
 ```
 
-If `a` and `b` are both of type **SomeType**, the above definition will
+If **SomeType** is a class and  `a` and `b` are both of either type **SomeType** or type **SomeType?**, the above definition will
 be called using `a` as the parameter `x` and `b` as the parameter `y`.
 
 Within the operator definition, if it is within a class definition, the
@@ -200,7 +200,7 @@ need to use one of the **static** methods, **Equals** or
 **ReferenceEquals**:
 
 ```c#
-public static bool operator ==(SomeType x, SomeType y)
+public static bool operator ==(SomeType? x, SomeType? y)
 {
     if (Equals(x, null))
     {
@@ -223,14 +223,16 @@ that we will override below.
 
 Whenever we define the `==` operator, C# requires that we also define the
 `!=` operator. In virtually all cases, what we want this operator to do
-is to return the negation of what the `==` operator does:
+is to return the negation of what the `==` operator does; thus, if **SomeType** is a class, we define:
 
 ```c#
-public static bool operator !=(SomeType x, SomeType y)
+public static bool operator !=(SomeType? x, SomeType? y)
 {
     return !(x == y);
 }
 ```
+
+If **SomeType** is a structure, we use the same definition, without making the parameters nullable.
 
 We now turn to the (non-**static**) **Equals** method. This is defined
 in the **object** class to be a **virtual** method, meaning that
@@ -243,7 +245,7 @@ or structure.
 We override this method as follows:
 
 ```c#
-public override bool Equals(object obj)
+public override bool Equals(object? obj)
 {
     // Definition of the behavior of Equals
 }
@@ -251,17 +253,27 @@ public override bool Equals(object obj)
 
 For the body of the method, we first need to take care of the fact that
 the parameter is of type **object**; hence, it may not even have the
-same type as what we want to compare it to. If this is the case, we can
-immediately return **false**. Otherwise, in order to ensure consistency
+same type as what we want to compare it to. If this is the case, we need to return **false**. Otherwise, in order to ensure consistency
 between this method and the `==` operator, we can do the actual comparison
-using the `==` operator:
+using the `==` operator. If we are defining a class **SomeType**, we can accomplish all of this as follows:
 
 ```c#
-public override bool Equals(object obj)
+public override bool Equals(object? obj)
 {
-    if (obj is SomeType)
+    return obj as SomeType == this;
+}
+```
+
+The `as` keyword casts `obj` to **SomeType** if possible; however, if `obj` cannot be cast to **SomeType**, the `as` expression evaluates to **null** (or in general, the [default value](/stacks-queues/stack-impl#default-value) for **SomeType**). Because **this** cannot be **null**, **false** will always be returned if `obj` cannot be cast to **SomeType**.
+
+If **SomeType** is a structure, the above won't work because `this` may be the default value for **SomeType**. In this case, we need somewhat more complicated code:
+
+```c#
+public override bool Equals(object? obj)
+{
+    if (obj is SomeType x)
     {
-        return this == (SomeType)obj;
+        return this == x;
     }
     else
     {
@@ -270,11 +282,11 @@ public override bool Equals(object obj)
 }
 ```
 
+This code uses the `is` keyword, which is similar to `as` in that it tries to cast `obj` to **SomeType**. However, if the cast is allowed, it places the result in the **SomeType** variable `x` and evaluates to **true**; otherwise, it assigns to `x` the default value of **SomeType** and evaluates to **false**.
+
 The above definitions give a template for defining the `==` and `!=`
-operators and the non-**static Equals** method for most classes that we
-would want to compare for equality. For structures, we can remove the
-code that handles **null** parameters from the `==` definition. In either
-case, all we then need to do to complete the definitions is to replace
+operators and the non-**static Equals** method for most types that we
+would want to compare for equality. All we need to do to complete the definitions is to replace
 the name **SomeType**, wherever it occurs, with the name of the type we
 are defining, and to fill in the hole left in the definition of the `==`
 operator. It is here where we actually define how the comparison is to
@@ -294,7 +306,7 @@ and `y` of the board position class should be considered equal if
 
   - Their arrays giving the number of stones on each pile have the same
     length; and
-  - For each index`i` into the arrays giving the number of stones on
+  - For each index `i` into the arrays giving the number of stones on
     each pile, the elements at location `i` of these arrays have the
     same value, and the elements at location `i` of the arrays giving
     the limit for each pile have the same value.

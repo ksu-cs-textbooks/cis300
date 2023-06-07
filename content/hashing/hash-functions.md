@@ -11,7 +11,7 @@ Whenever equality is redefined for a type, the hash code computation for
 that type needs to be redefined in a consistent way. This is done by
 [overriding](/strings/stringbuilder-impl/#overriding) that
 type's
-[**GetHashCode**](https://docs.microsoft.com/en-us/dotnet/api/system.object.gethashcode?view=netframework-4.7.2)
+[**GetHashCode**](https://learn.microsoft.com/en-us/dotnet/api/system.object.gethashcode?view=net-6.0#system-object-gethashcode)
 method. In order for hashing to be implemented correctly and
 efficiently, this method should satisfy the following goals:
 

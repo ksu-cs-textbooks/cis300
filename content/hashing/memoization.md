@@ -78,7 +78,7 @@ Thus, the tree defined by (2/2; 2/2) is as follows:
 
 ![The tree defined by a Nim position.](nim-tree.jpg)
 
-The winning plays have been marked with a 'W' in the above tree. As in
+The winning plays have each been marked with a 'W' in the above tree. As in
 ["Tries in Word Games"](/trees/tries/word-games),
 this tree is not a data structure, but simply a mental guide to building
 a search algorithm. Specifically, we can find a winning play (or

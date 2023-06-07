@@ -7,14 +7,14 @@ pre = "<b>7. </b>"
 
 ## Hash Tables
 
-Throughout our discussion of dictionaries over the last three chapters,
+Throughout our discussion of dictionary implementations over the last two chapters,
 we have taken advantage of the fact that the keys were sorted when
 looking up specific keys. In this chapter, we examine a rather
 surprising result --- that we can achieve better performance if we don't
 have to keep the keys in any particular order (i.e., so that we can
 process them in that order). The technique uses a data structure known
-as a *hash table*, which is the underlying data structure in the .NET
-Framework's **Dictionary\<TKey,TValue\>** class.
+as a *hash table*, which is the underlying data structure in .NET's
+**Dictionary\<TKey, TValue\>** class.
 
 A hash table is typically organized as an array of linked lists. The
 individual cells in the linked lists each store a key and a value.
@@ -52,7 +52,7 @@ function is divided into two parts. The first part of the hash function
 is implemented within the key type itself, where code can access the
 implementation details of the key. Specifically, every type in C# has a
 **public**
-[**GetHashCode**](https://docs.microsoft.com/en-us/dotnet/api/system.object.gethashcode?view=netframework-4.7.2#System_Object_GetHashCode)
+[**GetHashCode**](https://learn.microsoft.com/en-us/dotnet/api/system.object.gethashcode?view=net-6.0#system-object-gethashcode)
 method, which takes no parameters and returns an **int**. Any new type
 that redefines how its elements are compared for equality should
 *override* this method so as to ensure that it returns the same value
