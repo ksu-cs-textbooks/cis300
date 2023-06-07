@@ -527,18 +527,18 @@
     <meta name="author" content="Rod Howell and Josh Weese">
     <title>Implementing a Dictionary with a Linked List :: Data Structures in C#</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1685734612" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1685734612" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1685734612" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1685734612" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1685734612" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1685734612" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1685734612" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1685734612" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1685734612" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1685734612" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1685734612" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1685734612" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1685734612" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1685734612" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1685734612" rel="stylesheet" media="print">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1685734612"></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686149325" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686149325" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686149325" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686149325" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686149325" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686149325" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1686149325" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1686149325" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686149325" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686149325" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1686149325" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1686149325" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1686149325" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1686149325" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1686149325" rel="stylesheet" media="print">
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1686149325"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -555,8 +555,8 @@
       window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
     </script>
     
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1685734612" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.min.js?1685734612" defer></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1686149325" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.min.js?1686149325" defer></script>
 
   </head>
   <body class="mobile-support html disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/dictionaries/linked-list-impl/">
@@ -682,8 +682,7 @@ can be of any type. For some types of keys, &ldquo;increasing order&rdquo; and
 that can be passed as type parameters to generic types. Specifically, we
 can restrict the type <strong>TKey</strong> by writing the <strong>class</strong> statement as
 follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Dictionary</span>&lt;TKey, TValue&gt; <span style="color:#66d9ef">where</span> TKey : notnull, IComparable&lt;TKey&gt;
-</span></span><span style="display:flex;"><span>    
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Dictionary</span>&lt;TKey, TValue&gt; <span style="color:#66d9ef">where</span> TKey : notnull, IComparable&lt;TKey&gt;   
 </span></span></code></pre></div><p>The <strong>where</strong> clause in this statement constrains <strong>TKey</strong> in two ways:</p>
 <ul>
 <li>
@@ -749,6 +748,15 @@ header cell by initializing the linked list to contain a new cell containing the
 
 <a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/stack-impl#default-value">default</a> key-value pair,
 rather than to <strong>null</strong>. Note that because the linked list will always contain at least the header cell, the reference to it should <em>not</em> be nullable.</p>
+
+  
+  
+<div class="box notices cstyle warning">
+    <div class="box-label"><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div>
+    <div class="box-content">
+<p>Setting the data in the header cell to the default key-value pair means that if the key type and/or the value type is a reference type, then it will be <strong>null</strong> in this pair, even if the type isn&rsquo;t nullable. There is no way to avoid this, as the only key and value objects that we know of are the default values, which may be <strong>null</strong>. However, it doesn&rsquo;t make sense to use <strong>KeyValuePair&lt;TKey?, TValue?&gt;</strong> as the type of the data items within the linked list just because of the header cell, whose data we don&rsquo;t intend to use. Furthermore, the compiler won&rsquo;t generate a warning when <strong>KeyValuePair&lt;TKey, TValue&gt;</strong> is used. We should therefore use this latter type, and be sure not to use the data stored in the header cell. We should also include a warning of possible null values in a comment when we initialize the header cell.</p>
+    </div>
+</div>
 <p>A method to find the last cell containing a key less than a given key is
 now straightforward. We initialize a variable to the first cell (i.e.,
 the header cell), and set up a loop that iterates as long as the <em>next</em>
@@ -778,7 +786,7 @@ of improving this performance using various data structures.</p>
 <div class="git-footer">
 <p>Last modified by: 
             <i class='fas fa-user'></i> Rod Howell
-            <i class='fas fa-calendar'></i> <a href="https://gitlab.cs.ksu.edu/cis300/cis300-book/-/commit/82b49dc44407dc20da5b3346d3cc9ddb1a0b642d">Jun 2, 2023</a>
+            <i class='fas fa-calendar'></i> <a href="https://gitlab.cs.ksu.edu/cis300/cis300-book/-/commit/3e0469bee25761d3b32ffe45d587c629a8118d82">Jun 7, 2023</a>
 </p>
 </div>
 
@@ -800,12 +808,12 @@ of improving this performance using various data structures.</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/auto-complete.js?1685734612" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr.min.js?1685734612" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr.stemmer.support.min.js?1685734612" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr.multi.min.js?1685734612" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr.en.min.js?1685734612" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/search.js?1685734612" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis300/js/auto-complete.js?1686149325" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr.min.js?1686149325" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr.stemmer.support.min.js?1686149325" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr.multi.min.js?1686149325" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr.en.min.js?1686149325" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis300/js/search.js?1686149325" defer></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics collapsible-menu">
@@ -960,9 +968,9 @@ of improving this performance using various data structures.</p>
         </div>
       </div>
     </aside>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1685734612" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1685734612" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1685734612" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1685734612" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1686149325" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1686149325" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1686149325" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1686149325" defer></script>
   </body>
 </html>
