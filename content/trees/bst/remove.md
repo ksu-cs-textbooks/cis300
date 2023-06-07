@@ -60,10 +60,10 @@ root, we only have two cases:
   - The left child is nonempty. In this case, there is a key smaller
     than the key at the root; furthermore, it must be in the left child.
     We therefore use a recursive call on the left child to obtain the
-    result of removing element with the smallest key from that child. We
+    result of removing the element with the smallest key from that child. We
     can pass as the **out** parameter to this recursive call the **out**
     parameter that we were given - the recursive call will assign to it
-    the element removed. We then need to construct a new node whose data
+    the element removed. Because our nodes are immutable, we then need to construct a new node whose data
     and right child are the same as in the given tree, but whose left
     child is the tree returned by the recursive call. We return this
     node.
@@ -76,7 +76,7 @@ three sub-cases:
     present, so we set the **out** parameter to **false** and return an
     empty tree.
   - The key we are looking for is at the root. In this case, we can set
-    the **out** parameter to **true** but in order to remove the
+    the **out** parameter to **true**, but in order to remove the
     element, we have three sub-cases:
       - The left child is empty. We can then return the right child (the
         result of removing the root).

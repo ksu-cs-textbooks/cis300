@@ -71,13 +71,13 @@ using recursion. The algorithm breaks into four cases:
 It is important to handle the case of an empty tree first, as the other
 cases don't make sense if the tree is empty. In fact, if we are using
 **null** to represent an empty binary search tree (as is fairly common),
-we will get a **NullReferenceException** if we try to access the key
-at the root.
+we will get a compiler warning if we don't do this, and ultimately a **NullReferenceException** if we try to access the key
+at an empty root.
 {{% /notice %}}
 
 If we need to compare
 elements using a
-[**CompareTo**](https://docs.microsoft.com/en-us/dotnet/api/system.icomparable-1.compareto?view=netframework-4.7.2)
+[**CompareTo**](https://learn.microsoft.com/en-us/dotnet/api/system.icomparable-1.compareto?view=net-6.0#system-icomparable-1-compareto(-0))
 method, it would be more efficient to structure the code so that this
 method is only called once; e.g.,
 
@@ -142,7 +142,7 @@ Note that the above algorithm only adds the given data item when it
 reaches an empty tree. Not only is this the most straightforward way to
 add items, but it also tends to keep paths in the tree short, as each
 insertion is only lengthening one path. [This
-page](http://cs.ksu.edu/~rhowell/viewer/index.html) contains an
+page](https://github.com/RodHowell-Algorithms/Tree-Viewer) contains an
 application that will 
 show the result of adding a key at a time to a binary search tree. 
 

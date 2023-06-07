@@ -9,9 +9,9 @@ pre = "<b>6.5.2. </b>"
 
 One efficient way to complete the merge algorithm outlined in [the
 previous section](/trees/priority-queues/heaps) revolves
-around the concept of the *null path length* of a tree, which is defined
-to be {{< math >}}$ 0 ${{< /math >}} for empty trees, or one more than the minimum of the null path
-lengths of the children for nonempty trees. Another way to understand
+around the concept of the *null path length* of a tree. For any tree <i>t</i>, null path length of <i>t</i> is defined
+to be {{< math >}}$ 0 ${{< /math >}} if <i>t</i> is empty, or one more than the minimum of the null path
+lengths of its children if <i>t</i> is nonempty. Another way to understand
 this concept is that it gives the minimum number of steps needed to get
 from the root to an empty subtree. For an empty tree, there is no root,
 so we somewhat arbitrarily define the null path length to be <span style="white-space:nowrap">{{< math >}}$ 0 ${{< /math >}}.</span> For
@@ -64,32 +64,32 @@ the implementation we described for [AVL tree
 nodes](/trees/avl), but without the
 rotations. We need three **public** properties using the default
 implementation with **get** accessors: the data (of type **T**) and the
-two children (of type **LeftistTree\<T\>**). We also need a **private**
+two children (of type **LeftistTree\<T\>?**). We also need a **private**
 field to store the null path length (of type **int**). We can define a
 **static** method to obtain the null path length of a given
-**LeftistTree\<T\>**. This method is essentially the same as the
+**LeftistTree\<T\>?**. This method is essentially the same as the
 **Height** method for an AVL tree, except that if the given tree is
 **null**, we return 0. A constructor takes as its parameters a data
-element of type **T** and two children of type **LeftistTree\<T\>**. It
+element of type **T** and two children of type **LeftistTree\<T\>?**. It
 can initialize its data with the first parameter. To initialize its
 children, it first needs to determine their null path lengths using the
-**static** method above. It then assigns the two **LeftistTree\<T\>**
+**static** method above. It then assigns the two **LeftistTree\<T\>?**
 parameters to its child fields so that the right child's null path
 length is no more than the left child's. Finally, it can initialize its
 own null path length by adding 1 to its right child's null path length.
 
 <span id="where"></span> Let's now consider how we can implement
 **MinPriorityQueue\<TPriority, TValue\>**. The first thing we need to
-consider is the type, **TPriority**. This needs to be a type that can be
+consider is the type, **TPriority**. This needs to be a non-nullable type that can be
 ordered (usually it will be a numeric type like **int**). We can
-restrict **TPriority** to be a subtype of **IComparable\<TPriority\>**
+restrict **TPriority** to be a non-nullable subtype of **IComparable\<TPriority\>**
 by using a **where** clause, as we did for dictionaries (see
 "[Implementing a Dictionary with a Linked
 List](/dictionaries/linked-list-impl)").
 
 We then need a **private** field in which to store a leftist tree. We
 can store both the priority and the data element in a node if we use a
-**LeftistTree\<KeyValuePair\<TPriority, TValue\>\>**; thus, the keys are
+**LeftistTree\<KeyValuePair\<TPriority, TValue\>\>?**; thus, the keys are
 the priorities and the values are the data elements. We also need a
 **public int** property to get of the number of elements in the
 min-priority queue. This property can use the default implementation
@@ -100,9 +100,9 @@ priority and to remove an element with minimum priority, we need the
 following method:
 
 ```c#
-private static LeftistTree<KeyValuePair<TPriority, TValue>>
-    Merge(LeftistTree<KeyValuePair<TPriority, TValue>> h1, 
-        LeftistTree<KeyValuePair<TPriority, TValue>> h2)
+private static LeftistTree<KeyValuePair<TPriority, TValue>>?
+    Merge(LeftistTree<KeyValuePair<TPriority, TValue>>? h1, 
+        LeftistTree<KeyValuePair<TPriority, TValue>>? h2)
 {
     . . .
 }
@@ -113,7 +113,7 @@ either of the parameters is **null**. In each such case, we return the
 other parameter. In the third case, when neither parameter is **null**,
 we first need to compare the priorities in the data stored in the root
 nodes of the parameters. A priority is stored in the
-[**Key**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.keyvaluepair-2.key?view=netframework-4.7.2)
+[**Key**](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.keyvaluepair-2.key?view=net-6.0#system-collections-generic-keyvaluepair-2-key)
 property of the **KeyValuePair**, and we have constrained this type so
 that it has a **CompareTo** method that will compare one instance with
 another. Once we have determined which root has a smaller priority, we

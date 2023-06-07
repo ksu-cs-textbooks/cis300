@@ -36,7 +36,7 @@ more points. For example, the above game board contains the words,
 
 Suppose we want to build a program that plays Boggle against a human
 opponent. The program would need to look for words on a given board. The
-dictionary of words can of course be stored in a trie. In what follows,
+dictionary of valid words can of course be stored in a trie. In what follows,
 we will show how the structure of a trie can be particularly helpful in
 guiding this search so that words are found more quickly.
 
@@ -170,7 +170,7 @@ is never **null**. The algorithm then proceeds as follows:
 
 We would then apply the above algorithm to each cell on the board. For
 each cell, we would use a **bool\[ , \]** whose entries are all
-**false**, an empty **StringBuilder**, and the entire trie. Note that we
+**false**, an empty **StringBuilder**, and the entire trie of valid words. Note that we
 have designed the preorder traversal so that it leaves each of these
 parameters unchanged; hence, we only need to initialize them once. The
 resulting search will find all of the words on the board quickly.

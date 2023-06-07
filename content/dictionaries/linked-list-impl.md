@@ -64,8 +64,7 @@ can restrict the type **TKey** by writing the **class** statement as
 follows:
 
 ```C#
-public class Dictionary<TKey, TValue> where TKey : notnull, IComparable<TKey>
-    
+public class Dictionary<TKey, TValue> where TKey : notnull, IComparable<TKey>   
 ```
 
 The **where** clause in this statement constrains **TKey** in two ways:
@@ -124,6 +123,12 @@ we will never actually examine its key), then there will always be at
 least one key less than any given key. We can obtain this
 header cell by initializing the linked list to contain a new cell containing the [default](/stacks-queues/stack-impl#default-value) key-value pair,
 rather than to **null**. Note that because the linked list will always contain at least the header cell, the reference to it should *not* be nullable.
+
+{{% notice warning %}}
+
+Setting the data in the header cell to the default key-value pair means that if the key type and/or the value type is a reference type, then it will be **null** in this pair, even if the type isn't nullable. There is no way to avoid this, as the only key and value objects that we know of are the default values, which may be **null**. However, it doesn't make sense to use **KeyValuePair\<TKey?, TValue?\>** as the type of the data items within the linked list just because of the header cell, whose data we don't intend to use. Furthermore, the compiler won't generate a warning when **KeyValuePair\<TKey, TValue\>** is used. We should therefore use this latter type, and be sure not to use the data stored in the header cell. We should also include a warning of possible null values in a comment when we initialize the header cell.
+
+{{% /notice %}}
 
 A method to find the last cell containing a key less than a given key is
 now straightforward. We initialize a variable to the first cell (i.e.,

@@ -60,8 +60,8 @@ We call this restricted form of a binary search tree an *AVL tree*
 ("AVL" stands for the names of the inventors, Adelson-Velskii and
 Landis).
 
-[This page](http://people.cis.ksu.edu/~rhowell/viewer/minAVL.html)
-contains a Java applet/application that displays an AVL tree of a given
+[This repository](https://github.com/RodHowell-Algorithms/Min-AVL-Trees)
+contains a Java application that displays an AVL tree of a given
 height using as few nodes as possible. For example, the following screen
 capture shows an AVL tree of height {{< math >}}$ 7 ${{< /math >}} having a minimum number of nodes:
 
@@ -86,9 +86,9 @@ AVL tree can be maintained without a great deal of overhead.
 The first thing we should consider is how we can efficiently determine
 the height of a binary tree. We don't want to have to explore the entire
 tree to find the longest path from the root --- this would be way too
-expensive. Instead, we store the height of a tree as a **private** field
-in its root. If our nodes are mutable, we would also need to provide a
-**public** property to give read/write access to this field. However,
+expensive. Instead, we store the height of a tree 
+in its root. If our nodes are mutable, we should use a
+**public** property with both **get** and **set** accessors for this purpose. However,
 such a setup places the burden of maintaining the heights on the user of
 the binary tree node class. Using immutable nodes allows a much cleaner
 (albeit slightly less efficient) solution. In what follows, we will show
@@ -99,7 +99,7 @@ code will be able to form AVL trees as if they were ordinary binary
 search trees.
 
 In order to allow convenient and efficient access to the height, even
-for empty trees, we can provide a **static** method to take a binary
+for empty trees, we can store the height of a tree in a **private** field in its root, and provide a **static** method to take a nullable binary
 tree node as its only parameter and return its height. Making this
 method **static** will allow us to handle empty (i.e., **null**) trees.
 If the tree is empty, this method will return <span style="white-space:nowrap">{{< math >}}$ -1 ${{< /math >}};</span> otherwise, it will
@@ -117,7 +117,7 @@ focus on how we maintain the balance property. Whenever an insertion or
 deletion would cause the balance property to be violated for a
 particular node, we perform a *rotation* at that node. Suppose, for
 example, that we have inserted an element into a node's left child, and
-that this operation causes the height of the new left child to be two
+that this operation causes the height of the new left child to be {{< math >}}$ 2 ${{< /math >}}
 greater than the height of the right child (note that this same scenario
 could have occurred if we had removed an element from the right child).
 We can then rotate the tree using a *single rotate right*:
@@ -136,7 +136,7 @@ height {{< math >}}$ 2 ${{< /math >}} greater than the right child, we know that
 cannot be empty; hence, we can safely depict it as a node with two
 children. The labels are chosen to indicate the order of the elements ---
 e.g., as "a" {{< math >}}$ \lt ${{< /math >}} "b", every key in tree *a* is less than the key in
-node *b*. The tree on the right shows that tree that would be built by
+node *b*. The tree on the right shows the tree that would be built by
 performing this rotation. Note that the rotation preserves the order of
 the keys.
 
@@ -158,17 +158,16 @@ Then the following code can be used to perform a single rotate right:
 /// <param name="right">The right child of the root of the original tree.</param>
 /// <returns>The result of performing a single rotate right on the tree described
 /// by the parameters.</returns>
-private static BinaryTreeNode<T> SingleRotateRight(T root, 
-    BinaryTreeNode<T> left, BinaryTreeNode<T> right)
+private static BinaryTreeNode<T> SingleRotateRight(T root,
+    BinaryTreeNode<T> left, BinaryTreeNode<T>? right)
 {
-    BinaryTreeNode<T> newRight = 
-        new BinaryTreeNode<T>(root, left.RightChild, right);
+    BinaryTreeNode<T> newRight = new(root, left.RightChild, right);
     return new BinaryTreeNode<T>(left.Data, left.LeftChild, newRight);
 }
 ```
 Relating this code to the tree on the left in the picture above, the
 parameter `root` refers to *d*, the parameter `left` refers to the tree
-rooted at *b*, and the parameter `right` refers to the tree *e*. The
+rooted at node *b*, and the parameter `right` refers to the (possibly empty) tree *e*. The
 code first constructs the right child of the tree on the right and
 places it in the variable `newRight`. It then constructs the entire tree
 on the right and returns it.
@@ -188,7 +187,7 @@ the tree *e* has height <span style="white-space:nowrap">{{< math >}}$ h ${{< /m
 <span style="white-space:nowrap">{{< math >}}$ h + 2 ${{< /math >}}.</span> By the definition of the height of a tree, either *a*
 or *c* (or both) must have height <span style="white-space:nowrap">{{< math >}}$ h + 1 ${{< /math >}}.</span> Assuming that every
 tree we've built so far is an AVL tree, the children of *b* must differ
-in height by at most <span style="white-space:nowrap">{{< math >}}$ 2 ${{< /math >}};</span> hence, *a* and *c* must both have a height of at
+in height by at most <span style="white-space:nowrap">{{< math >}}$ 1 ${{< /math >}};</span> hence, *a* and *c* must both have a height of at
 least {{< math >}}$ h ${{< /math >}} and at most <span style="white-space:nowrap">{{< math >}}$ h + 1 ${{< /math >}}.</span>
 
 Given these heights, let's examine the tree on the right. We have
@@ -276,8 +275,9 @@ method to get the height of a tree is **Height**, and that the names of
 the methods to do the remaining rotations are **SingleRotateLeft**,
 **DoubleRotateRight**, and **DoubleRotateLeft**, respectively. Further
 suppose that the parameter lists for each of these last three methods
-are the same as for **SingleRotateRight** above. The following method
+are the same as for **SingleRotateRight** above, except that for the left rotations, `left` is nullable, not `right`. The following method
 can then be used to build AVL trees:
+
 ```C#
 /// <summary>
 /// Constructs an AVL Tree from the given data element and trees. The heights of 
@@ -290,8 +290,8 @@ can then be used to build AVL trees:
 /// <param name="right">An AVL Tree containing elements greater than data.
 /// </param>
 /// <returns>The AVL Tree constructed.</returns>
-public static BinaryTreeNode<T> GetAvlTree(T data, BinaryTreeNode<T> left,
-    BinaryTreeNode<T> right)
+public static BinaryTreeNode<T> GetAvlTree(T data, BinaryTreeNode<T>? left,
+    BinaryTreeNode<T>? right)
 {
     int diff = Height(left) - Height(right);
     if (Math.Abs(diff) > 2)
@@ -300,23 +300,31 @@ public static BinaryTreeNode<T> GetAvlTree(T data, BinaryTreeNode<T> left,
     }
     else if (diff == 2)
     {
-        if (Height(left.LeftChild) > Height(right))
+        // If the heights differ by 2, left's height is at least 1; hence, it isn't null.
+        if (Height(left!.LeftChild) > Height(right))
         {
             return SingleRotateRight(data, left, right);
         }
         else
         {
+            // If the heights differ by 2, but left.LeftChild's height is no more than
+            // right's height, then left.RightChild's height must be greater than right's
+            // height; hence, left.RightChild isn't null.
             return DoubleRotateRight(data, left, right);
         }
     }
     else if (diff == -2)
     {
-        if (Height(right.RightChild) > Height(left))
+        // If the heights differ by -2, right's height is at least 1; hence, it isn't null.
+        if (Height(right!.RightChild) > Height(left))
         {
             return SingleRotateLeft(data, left, right);
         }
         else
         {
+            // If the heights differ by -1, but right.RightChild's height is no more than 
+            // left's height, then right.LeftChild's height must be greater than right's 
+            // height; hence right.LeftChild isn't null.
             return DoubleRotateLeft(data, left, right);
         }
     }

@@ -28,8 +28,8 @@ this type **BinaryTreeNode\<T\>**, where **T** will be the type of data
 we will store in it. We need three **public** properties:
 
   - a **Data** property of type **T**;
-  - a **LeftChild** property of type **BinaryTreeNode\<T\>**; and
-  - a **RightChild** property of type **BinaryTreeNode\<T\>**.
+  - a **LeftChild** property of type **BinaryTreeNode\<T\>?**; and
+  - a **RightChild** property of type **BinaryTreeNode\<T\>?**.
 
 We can define both **get** and **set** accessors using the default
 implementation for each of these properties. However, it is sometimes

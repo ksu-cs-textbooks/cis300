@@ -47,24 +47,25 @@ children are the game trees formed from each board position reachable
 from the root position by a single move. Also, in the sections that
 follow, we will consider various data structures that form trees.
 
-The .NET Framework provides access to the folders in a file system tree
+.NET provides access to the folders in a file system tree
 via the
-[**DirectoryInfo**](https://docs.microsoft.com/en-us/dotnet/api/system.io.directoryinfo?view=netframework-4.7.2)
+[**DirectoryInfo**](https://learn.microsoft.com/en-us/dotnet/api/system.io.directoryinfo?view=net-6.0)
 class, found in the **System.IO** namespace. This class has a
-[constructor](https://docs.microsoft.com/en-us/dotnet/api/system.io.directoryinfo.-ctor?view=netframework-4.7.2)
+[constructor](https://learn.microsoft.com/en-us/dotnet/api/system.io.directoryinfo.-ctor?view=net-6.0#system-io-directoryinfo-ctor(system-string))
 that takes as its only parameter a **string** giving the path to a
 folder (i.e., a directory) and constructs a **DirectoryInfo** describing
 that folder. We can obtain such a **string** from the user using a
-[**FolderBrowserDialog**](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.folderbrowserdialog?view=netframework-4.7.2).
+[**FolderBrowserDialog**](https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.folderbrowserdialog?view=windowsdesktop-6.0).
 This class is similar to a [file
 dialog](/io/dialogs/file-dialogs) and can be added
 to a form in the Design window in the same way. If `uxFolderBrowser` is
 a **FolderBrowserDialog**, we can use it to obtain a **DirectoryInfo**
 for a user-selected folder as follows:
+
 ```C#
 if (uxFolderBrowser.ShowDialog() == DialogResult.OK)
 {
-    DirectoryInfo folder = new DirectoryInfo(uxFolderBrowser.SelectedPath);
+    DirectoryInfo folder = new(uxFolderBrowser.SelectedPath);
     
 	// Process the folder
 }
@@ -72,15 +73,15 @@ if (uxFolderBrowser.ShowDialog() == DialogResult.OK)
 Various properties of a **DirectoryInfo** give information about the
 folder; for example:
 
-  - [**Name**](https://docs.microsoft.com/en-us/dotnet/api/system.io.directoryinfo.name?view=netframework-4.7.2)
+  - [**Name**](https://learn.microsoft.com/en-us/dotnet/api/system.io.directoryinfo.name?view=net-6.0#system-io-directoryinfo-name)
     gets the name of the folder as a **string**.
-  - [**FullName**](https://docs.microsoft.com/en-us/dotnet/api/system.io.directoryinfo.fullname?view=netframework-4.7.2)
+  - [**FullName**](https://learn.microsoft.com/en-us/dotnet/api/system.io.filesysteminfo.fullname?view=net-6.0#system-io-filesysteminfo-fullname)
     gets the full path of the folder as a **string**.
-  - [**Parent**](https://docs.microsoft.com/en-us/dotnet/api/system.io.directoryinfo.parent?view=netframework-4.7.2)
-    gets the parent folder as a **DirectoryInfo**.
+  - [**Parent**](https://learn.microsoft.com/en-us/dotnet/api/system.io.directoryinfo.parent?view=net-6.0#system-io-directoryinfo-parent)
+    gets the parent folder as a **DirectoryInfo?**. If the current folder is the root of its file system, this property is **null**.
 
 In addition, its
-[**GetDirectories**](https://docs.microsoft.com/en-us/dotnet/api/system.io.directoryinfo.getdirectories?view=netframework-4.7.2#System_IO_DirectoryInfo_GetDirectories)
+[**GetDirectories**](https://learn.microsoft.com/en-us/dotnet/api/system.io.directoryinfo.getdirectories?view=net-6.0#system-io-directoryinfo-getdirectories)
 method takes no parameters and returns a **DirectoryInfo\[ \]** whose
 elements describe the contained folders (i.e., the elements of the array
 are the children of the folder). For example, if `d` refers to a
@@ -89,7 +90,8 @@ figures above, then **d.GetDirectories()** would return a 3-element
 array whose elements describe the folders **bin**, **obj**, and
 **Properties**. The following method illustrates how we can write the
 names of the folders contained within a given folder to a
-[**StreamWriter**](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=netframework-4.7.2):
+[**StreamWriter**](https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=net-6.0):
+
 ```C#
 /// <summary>
 /// Writes the names of the directories contained in the given directory 
@@ -368,7 +370,7 @@ to at that point, but the values shown in that array will be its current
 values.
 {{% /notice %}}
 
-Once consequence of method calls using a call stack with limited space
+One consequence of method calls using a call stack with limited space
 available is that moderately deep recursion can fill up the call stack.
 If this happens, a **StackOverflowException** will be thrown. Thus,
 infinite recursion will always throw this exception, as will recursion

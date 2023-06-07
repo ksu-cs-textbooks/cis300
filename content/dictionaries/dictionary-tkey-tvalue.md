@@ -40,6 +40,12 @@ with the keys). Keys must always be non-**null** --- any attempt to use a
     value](/stacks-queues/stack-impl/#default-value) for its
     type.
 
+{{% notice note %}}
+
+The type of the `value` parameter for **TryGetValue** is actually **TValue**, not **TValue?**. Another kind of annotation is used to indicate that this **out** parameter may be **null** only when the method returns **false**. Because such annotations are beyond the scope of CIS 300, we will treat this parameter as if it were simply defined as being nullable.
+
+{{% /notice %}}
+
 The above methods can be used for building and updating a
 **Dictionary**, as well as for looking up values by their keys. It is
 also possible to do updates and lookups using indexing. Specifically, a
@@ -47,6 +53,7 @@ key may be used as an index in a **Dictionary**, as if the
 **Dictionary** were an array. For example, suppose that `dictionary` is
 a **Dictionary\<TKey, TValue\>**, `k` is a **TKey**, and `v` is a
 **TValue**. We can then do the following:
+
 ```C#
 dictionary[k] = v;
 ```

@@ -93,21 +93,21 @@ contain the following **private** fields:
   - A **bool** storing whether the empty string is contained in the trie
     rooted at this node (or equivalently, whether this node ends a word
     in the entire trie).
-  - A 26-element array of tries storing the children, where element 0
+  - A 26-element array of nullable tries storing the children, where element 0
     stores the child labeled 'a', element 1 stores the child labeled
     'b', etc. If there is no child with some label, the corresponding
     array element is **null**.
 
-Note that in this implementation, no **char**s or **string**s are
+For maintainability, we should use **private** constants to store the above array's size (i.e., 26) and the first letter of the alphabet (i.e., 'a'). Note that in this implementation, other than this last constant, no **char**s or **string**s are
 actually stored. We can see if a node has a child labeled by a given
-**char** by finding the difference between that **char** and 'a', and
+**char** by finding the difference between that **char** and and the first letter of the alphabet, and
 using that difference as the array index. For example, suppose the array
-field is named `_children`, and suppose `label` is a **char** variable
+field is named `_children`, the constant giving the first letter of the alphabet is `_alphabetStart`, and `label` is a **char** variable
 containing a lower-case letter. Because **char** is technically a
 numeric type, we can perform arithmetic with **char**s; thus, we can
 obtain the child labeled by `label` by retrieving
-`_children[label - 'a']`. More specifically, if `label`
-contains 'd', then the difference, `label - 'a'` will be 3; hence,
+`_children[label - _alphabetStart]`. More specifically, if `_alphabetStart` is 'a' and `label`
+contains 'd', then the difference, `label - _alphabetStart`, will be 3; hence,
 the child with label 'd' will be stored at index 3. We have therefore
 achieved our goal of providing quick access to a child with a given
 label.
@@ -133,14 +133,15 @@ access its **private** fields directly by their names.
 {{% /notice %}}
 
 The method
-consists of four cases:
+consists of five cases:
 
+  - `s` is **null**. Note that even though `s` is not defined to be nullable, because the method is **public**, user code could still pass a **null** value. In this case, we should throw an **ArgumentNullException**, provides more information than does a **NullReferenceException**.
   - `s` is the empty **string**. In this case the **bool** stored in
     this node indicates whether it is a word in this trie; hence, we can
     simply return this **bool**.
   - The first character of `s` is not a lower-case English letter (i.e.,
-    it is less than 'a' or greater than 'z'). Then `s` can't be stored
-    in this trie. In this case, we can return **false**.
+    it is less than 'a' or greater than 'z'). The constants defined for this class should be used in making this determination. In this case, `s` can't be stored
+    in this trie; hence, we can return **false**.
   - The child labeled with the first character of `s` (obtained as
     described above) is missing (i.e., is **null**). Then `s` isn't
     stored in this trie. Again, we return **false**.
@@ -167,8 +168,9 @@ public void Add(string s)
 
 }
 ```
-This time there are three cases:
+This time there are four cases:
 
+  - `s` is **null**. This case should be handled as in the **Contains** method above.
   - `s` is the empty **string**. Then we can record this word by setting
     the **bool** in this node to **true**.
   - The first character of `s` is not a lower-case English letter. Then
@@ -177,9 +179,8 @@ This time there are three cases:
   - The first character is a lower-case English letter. In this case, we
     need to add the substring following the first character of `s` to
     the child labeled with the first letter. We do this as follows:
-      - If the child labeled with the first letter of the word is
-        missing (i.e., **null**), we construct a new trie node and place
+      - We first need to make sure that the child labeled with the first letter of `s` is non-**null**. Thus, if this child is **null**, we construct a new trie node and place
         it in the array location for this child.
-      - Now that we have a child labeled with the first letter, we can
-        add the substring following the first letter to this child by
+      - We can now
+        add the substring following the first letter of `s` to this child by
         making a recursive call.

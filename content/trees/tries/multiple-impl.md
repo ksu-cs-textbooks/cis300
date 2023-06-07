@@ -62,7 +62,7 @@ has this functionality, and to define various sub-types that have
 different implementations, but still have this functionality.
 
 A simple example of an interface is
-[**IComparable\<T\>**](https://docs.microsoft.com/en-us/dotnet/api/system.icomparable-1?view=netframework-4.7.2).
+[**IComparable\<T\>**](https://learn.microsoft.com/en-us/dotnet/api/system.icomparable-1?view=net-6.0).
 Recall from the section, ["Implementing a Dictionary with a Linked
 List"](/dictionaries/linked-list-impl),
 that we can constrain the keys in a dictionary implementation to be of a
@@ -70,25 +70,25 @@ type that can be ordered by using a **where** clause on the **class**
 statement, as follows:
 
 ```C# 
-public class Dictionary<TKey, TValue> where TKey : IComparable<TKey>
+public class Dictionary<TKey, TValue> where TKey : notnull, IComparable<TKey>
 ```
 
 The [source code for the **IComparable\<T\>**
-interface](https://referencesource.microsoft.com/#mscorlib/system/icomparable.cs,3911354c40e0c30e)
+interface](https://source.dot.net/#System.Private.CoreLib/src/libraries/System.Private.CoreLib/src/System/IComparable.cs,3911354c40e0c30e)
 has been posted by Microsoft®. The essential part of this definition
 is:
 
 ```C# 
 public interface IComparable<in T>
 {
-    int CompareTo(T other);
+    int CompareTo(T? other);
 }
 ```
 
 (Don't worry about the **in** keyword with the type parameter in the
 first line.) This definition defines the type **IComparable\<T\>** as
 having a method **CompareTo** that takes a parameter of the generic type
-**T** and returns an **int**. Note that there is no **public** or
+**T?** and returns an **int**. Note that there is no **public** or
 **private** access modifier on the method definition. This is because
 access modifiers are disallowed within interfaces --- all definitions are
 implicitly **public**. Note also that there is no actual definition of
@@ -108,7 +108,7 @@ Now suppose that we want to define a class **Fraction** and use it as a
 key in our dictionary implementation. We would begin the class
 definition within Visual Studio® as follows:
 
-![Beginning an interface](interface-example1.jpg)
+<img src="interface-example1.jpg" alt="Beginning an implementation of an interface." style="zoom:67%;" />
 
 At the end of the first line of the **class** definition, `:
 IComparable<Fraction>` indicates that the class being defined is a
@@ -121,7 +121,7 @@ the mouse over the word, `IComparable<Fraction>`, a drop-down menu
 appears. By selecting "Implement interface" from this menu, all of the
 required members of the interface are provided for us:
 
-![Interface members are auto-filled](interface-example2.jpg)
+<img src="interface-example2.jpg" alt="Interface members are auto-filled." style="zoom:67%;" />
 
 {{% notice note %}}
 
@@ -135,12 +135,6 @@ with the proper code for the **CompareTo** method and fill in any other
 class members that we need; for example:
 
 ``` c#
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Ksu.Cis300.Fractions
 {
     /// <summary>
@@ -179,9 +173,13 @@ namespace Ksu.Cis300.Fractions
         /// <param name="other">The fraction to compare to.</param>
         /// <returns>A negative value if this fraction is less
         /// than other, 0 if they are equal, or a positive value if this
-        /// fraction is greater than other.</returns>
-        public int CompareTo(Fraction other)
+        /// fraction is greater than other or if other is null.</returns>
+        public int CompareTo(Fraction? other)
         {
+            if (other == null)
+            {
+                return 1;
+            }
             long prod1 = (long)Numerator * other.Denominator;
             long prod2 = (long)other.Numerator * Denominator;
             return prod1.CompareTo(prod2);
@@ -190,7 +188,6 @@ namespace Ksu.Cis300.Fractions
         // Other class members
     }
 }
-    
 ```
 
 {{% notice note %}}
@@ -203,9 +200,9 @@ structure, not the **Fraction** class.
 
 As we suggested above, interfaces can also include properties. For
 example,
-[**ICollection\<T\>**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.icollection-1?view=netframework-4.7.2)
+[**ICollection\<T\>**](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.icollection-1?view=net-6.0)
 is a generic interface implemented by both arrays and the class
-<span style="white-space:nowrap">[**List\<T\>**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=netframework-4.7.2).</span>
+<span style="white-space:nowrap">[**List\<T\>**](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=net-6.0).</span>
 This interface contains the following member (among others):
 
 ```c#
@@ -224,7 +221,7 @@ int k = a.Count;  // This gives a syntax error.
 <span id="explicit-impl"></span> In fact, an array does contain a
 **Count** property, but this property is available only when the array
 is treated as an **ICollection\<T\>** (or an
-<span style="white-space:nowrap">[**IList\<T\>**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ilist-1?view=netframework-4.7.2),</span>
+<span style="white-space:nowrap">[**IList\<T\>**](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.ilist-1?view=net-6.0),</span>
 which is an interface that is a subtype of **ICollection\<T\>**, and is
 also implemented by arrays). For example, we can write:
 
@@ -304,7 +301,7 @@ the type of an object - instead, we'll need to construct a new instance
 of the appropriate implementation. Hence, the **Add** method will need
 to return the root of the resulting trie. Because this node may have any
 of the three implementations, the return type of this method should be
-**ITrie**. The **ITrie** interface is therefore as follows:
+**ITrie**. Also, because we will need the constants from our previous implementation in each of the implementations of **ITrie**, the code will be more maintainable if we include them once within this interface definition. Note that this will have the effect of making them **public**. The **ITrie** interface is therefore as follows:
 
 ```c#
 /// <summary>
@@ -312,6 +309,16 @@ of the three implementations, the return type of this method should be
 /// </summary>
 public interface ITrie
 {
+    /// <summary>
+    /// The first character of the alphabet we use.
+    /// </summary>
+    const char AlphabetStart = 'a';
+
+    /// <summary>
+    /// The number of characters in the alphabet.
+    /// </summary>
+    const int AlphabetSize = 26;
+
     /// <summary>
     /// Determines whether this trie contains the given string.
     /// </summary>
@@ -373,6 +380,7 @@ Furthermore, because the empty **string** can always be added to a
 should never be passed the empty **string**. The constructor can then
 operate as follows:
 
+  - If the given **string** is **null**, throw an **ArgumentNullException**.
   - If the given **string** is empty or begins with a character that is
     not a lower-case English letter, throw an exception.
   - Initialize the **bool** field with the given **bool**.
@@ -394,14 +402,14 @@ use its own **Add** method to add the given **string**, as there will
 always be room to add a **string** to this implementation; hence, it can
 ignore the value returned by the **Add** method. Furthermore, because
 the **Add** method does error checking on the given **string**, the only
-error checking this constructor needs to do is on the given **char**, to
-verify that it is a lower-case English letter.
+error checking this constructor needs to do is to check that neither the given **string** nor the given **ITrie** is **null**, and to
+verify that the given **char** is a lower-case English letter.
 
-The **Contains** method for **TrieWithManyChildren** can be exactly the
+Aside from replacing the constants with those defined in the **ITrie** interface, the **Contains** method for **TrieWithManyChildren** can be exactly the
 same as for the implementation in [the previous
 section](/trees/tries/intro). For the other
 two classes, the structure of the method is similar. Specifically, the
-empty **string** needs to be handled first and in exactly the same way,
+empty **string** needs to be handled first (after checking that the **string** isn't **null**) and in exactly the same way,
 as the empty **string** is represented in the same way in all three
 implementations. Nonempty **string**s, however, are represented
 differently, and hence need to be handled differently. This is easy for
@@ -415,30 +423,32 @@ as this **string** is not in this trie.
 
 The **Add** method for **TrieWithManyChildren** needs some modification
 from the description given in [the previous
-section](/trees/tries/intro). First, the
+section](/trees/tries/intro). The most significant change is that this
 method must return the resulting trie, which will always be **this**, as
 this implementation never needs to be replaced by another to accommodate
-a new **string**. The only other change that needs to be made is where a
-new child is constructed - this new child should be a
-**TrieWithNoChildren**.
+a new **string**. Also, the names of the constants need to be replaced by the constants defined in the **ITrie** interface. Finally, where a
+new child is constructed, it should be a
+**TrieWithNoChildren**, but any other occurrences of the type **Trie** should be replaced with **ITrie**.
 
-The **Add** method for **TrieWithNoChildren** will need to handle the
+The **Add** method for **TrieWithNoChildren** will need to handle a **null** or
 empty **string** in the same way as the above **Add** method. However,
 this implementation cannot store a nonempty **string**. In this case, it
 will need to construct and return a new **TrieWithOneChild** containing
 the **string** to be added and the **bool** stored in this node.
 
-The **Add** method for **TrieWithOneChild** will need three cases:
+The **Add** method for **TrieWithOneChild** will need five cases:
 
+  - A **null string**: This case can be handled in the same way as for the other two classes.
   - The empty **string**: This case can be handled in the same way as
     for the other two classes.
+  - A nonempty **string** whose first character is not a lower-case letter: An exception should be thrown.
   - A nonempty **string** whose first character matches the child's
     label: The remainder of the **string** can be added to the child
     using the child's **Add** method. Because this method may return a
     different node, we need to replace the child with the value this
     method returns. We can then return **this**, as we didn't need more
     room for the given **string**.
-  - A nonempty **string** whose first character does not match the
+  - A nonempty **string** whose first character is a lower-case letter but does not match the
     child's label. In this case, we need to return a new
     **TrieWithManyChildren** containing the given **string** and all of
     the information already being stored.

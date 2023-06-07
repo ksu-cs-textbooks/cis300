@@ -67,14 +67,14 @@ the preorder traversal, one for each class:
     will need to append the child's label to the **StringBuilder**.
     Following the recursive call, we will need to remove the character
     that we added by reducing its
-    [**Length**](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.length?view=netframework-4.7.2)
+    [**Length**](https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.length?view=net-6.0#system-text-stringbuilder-length)
     property by 1.
   - We handle a **TrieWithManyChildren** in a similar way as a
-    **TrieWithOneChild** , only we will need to iterate through the
+    **TrieWithOneChild**, only we will need to iterate through the
     array of children and process each non-**null** child with a
     recursive call. Note that for each of these children, its label will
     need to be appended to the **StringBuilder** prior to the recursive
     call and removed immediately after. We can obtain the label of a
-    child by adding 'a' to its array index and
+    child by adding the first letter of the alphabet to its array index and
     [casting](/stacks-queues/stacks/#cast) the result to a
     **char**.
