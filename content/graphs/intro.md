@@ -17,7 +17,7 @@ The fact that edges are 2-element sets means that the nodes that
 comprise an edge must be distinct. Furthermore, within a set, there is
 no notion of a "first" element or a "second" element --- there are just
 two elements. Thus, an edge expresses some symmetric relationship
-between two nodes; i.e., if {{< math >}}$ \\{u, v\\} ${{< /math >}} is an edge then node {{< math >}}$ u ${{< /math >}} is
+between two nodes; i.e., if {{< math >}}$ \{u, v\} ${{< /math >}} is an edge then node {{< math >}}$ u ${{< /math >}} is
 *adjacent* to node <span style="white-space:nowrap">{{< math >}}$ v ${{< /math >}},</span> and node {{< math >}}$ v ${{< /math >}} is adjacent to node <span style="white-space:nowrap">{{< math >}}$ u ${{< /math >}}.</span> We also
 might associate some data, such as a label or a length, with an edge.
 
@@ -52,11 +52,10 @@ associated with the edges:
 
 [This DLL](Ksu.Cis300.Graphs.dll) contains the definition of a namespace
 **Ksu.Cis300.Graphs** containing a class
-**DirectedGraph\<TNode, TEdgeData\>** and a structure
-**Edge\<TNode, TEdgeData\>**. The class
+**DirectedGraph\<TNode, TEdgeData\>** and a **readonly** structure
+**Edge\<TNode, TEdgeData\>**. It requires a [DLL for **Ksu.Cis300.LinkedListLibrary**](Ksu.Cis300.LinkedListLibrary.dll) within the same directory. The class
 **DirectedGraph\<TNode, TEdgeData\>** implements a directed
-graph whose nodes are of type **TNode**, which must be a type suitable
-for hashing. The edges each store a data item of type **TEdgeData**,
+graph whose nodes are of type **TNode**, which must be non-nullable. The edges each store a data item of type **TEdgeData**,
 which may be any type. These edges can be represented using instances of
 the **Edge\<TNode, TEdgeData\>** structure. We also can use the
 **DirectedGraph\<TNode, TEdgeData\>** class to represent undirected
@@ -76,9 +75,6 @@ The **Edge\<TNode, TEdgeData\>** structure contains the following
   - **TEdgeData Data**: This property gets the data associated with the
     edge.
 
-Note that because no **public** members change the structure, it is
-immutable.
-
 The **DirectedGraph\<TNode, TEdgeData\>** class contains the
 following **public** members:
 
@@ -95,7 +91,7 @@ following **public** members:
     same node, or if there is already an edge from `source` to `dest`,
     it throws an **ArgumentException**. If either `source` or `dest` is
     **null**, it throws an **ArgumentNullException**.
-  - **bool TryGetEdge(TNode source, TNode dest, out TEdgeData value)**:
+  - **bool TryGetEdge(TNode source, TNode dest, out TEdgeData? value)**:
     This method tries to get the value associated with the edge from
     `source` to `dest`. If this edge exists, it sets `value` to the
     value associated with this edge and returns **true**; otherwise, it
@@ -136,7 +132,7 @@ to add a node that may have no incoming or outgoing edges.
 For many graph algorithms, we need to process all of the edges in some
 way. Often the order in which we process them is important, but not in
 all cases. If we simply need to process all of the edges in some order
-we can use **foreach** loops with the last two properties listed above
+we can use **foreach** loops with the last two members listed above
 to accomplish this:
 
   - For each node in the graph:

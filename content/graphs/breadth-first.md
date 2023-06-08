@@ -33,7 +33,7 @@ of the edge just removed.
 We claim that this behavior causes the priorities in the min-priority
 queue to differ by no more than {{< math >}}$ 1 ${{< /math >}}. To see this, we will show that we can
 never reach a point where we change the maximum difference in priorities
-from no more than {{< math >}}$ 1 ${{< /math >}} to more than <span style="white-space:nowrap">{{< math >}}$ 1 ${{< /math >}}.</span> First observe that when the outgoing
+from at most {{< math >}}$ 1 ${{< /math >}} to more than <span style="white-space:nowrap">{{< math >}}$ 1 ${{< /math >}}.</span> First observe that when the outgoing
 edges from *u* are added, the priorities all differ by
 <span style="white-space:nowrap">{{< math >}}$ 0 \leq 1 ${{< /math >}}.</span> Removing an edge can't increase the
 difference in the priorities stored. Suppose the edge we remove has
@@ -53,8 +53,7 @@ edge with priority <span style="white-space:nowrap">{{< math >}}$ p ${{< /math >
 queue.
 
 As a result of this behavior, we can replace the min-priority queue with
-an ordinary [FIFO queue](/stacks-queues/queues/), and
-for unweighted edges, the behavior of the algorithm will be the same.
+an ordinary [FIFO queue](/stacks-queues/queues/), ignoring any priorities. For a graph with unweighted edges, the behavior of the algorithm will be the same.
 Because accessing a FIFO queue is more efficient than accessing a
 min-priority queue, the resulting algorithm, known as *breadth-first
 search*, is also more efficient.

@@ -23,8 +23,8 @@ example, the shortest path from *a* to *h* in the graph below is
 
 The biggest challenge in finding an algorithm for this problem is that
 the number of paths in a graph can be huge, even for relatively small
-graphs. For example, a directed graph with 15 nodes might contain over
-10 billion paths from a node *u* to a node *v*. Clearly, an algorithm
+graphs. For example, a directed graph with 15 nodes might contain almost
+17 billion paths from a node *u* to a node *v*. Clearly, an algorithm
 that simply checks all paths would be impractical for solving a problem
 such as finding the shortest route between two given locations in North America.
 In what follows, we will present a much more efficient algorithm due to

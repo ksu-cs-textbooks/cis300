@@ -71,7 +71,7 @@ search can be expensive.
 As we mentioned above, our implementation of
 **DirectedGraph\<TNode, TEdgeData\>** borrows from both of these
 traditional techniques. We start by modifying the adjacency lists
-technique to use a **Dictionary\<TNode, LinkedListCell\<TNode\>\>**
+technique to use a **Dictionary\<TNode, LinkedListCell\<TNode\>?\>**
 instead of an array of linked lists. Thus, we can accommodate a generic
 node type while maintaining efficient access to the adjacency lists.
 While a dictionary lookup is not quite as efficient as an array lookup,
@@ -109,31 +109,31 @@ implemented using a single call to one of the members of one of these
 dictionaries:
 
   - **void AddNode(TNode node)**: We can implement this method using the
-    [**Add**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.add?view=netframework-4.7.2)
+    [**Add**](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.add?view=net-6.0#system-collections-generic-dictionary-2-add(-0-1))
     method of `_adjacencyLists`. We associate an empty linked list with
     this node.
   - **void AddEdge(TNode source, TNode dest, TEdgeData value)**: See
     below.
-  - **bool TryGetEdge(TNode source, TNode dest, out TEdgeData value)**:
+  - **bool TryGetEdge(TNode source, TNode dest, out TEdgeData? value)**:
     We can implement this method using the
-    [**TryGetValue**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.trygetvalue?view=netframework-4.7.2)
+    [**TryGetValue**](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.trygetvalue?view=net-6.0#system-collections-generic-dictionary-2-trygetvalue(-0-1@))
     method of `_edges`.
   - **int NodeCount**: Because `_adjacencyLists` contains all of the
     nodes as keys, we can implement this property using this
     dictionary's
-    [**Count**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.count?view=netframework-4.7.2)
+    [**Count**](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.count?view=net-6.0#system-collections-generic-dictionary-2-count)
     property.
   - **int EdgeCount**: We can implement this property using the
     **Count** property of `_edges`.
   - **bool ContainsNode(TNode node)**: We can implement this method
     using the
-    [**ContainsKey**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.containskey?view=netframework-4.7.2)
+    [**ContainsKey**](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.containskey?view=net-6.0#system-collections-generic-dictionary-2-containskey(-0))
     method of `_adjacencyLists`.
   - **bool ContainsEdge(TNode source, TNode dest)**: We can implement
     this method using the **ContainsKey** method of `_edges`.
   - **IEnumerable\<TNode\> Nodes**: We can implement this property using
     the
-    [**Keys**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.keys?view=netframework-4.7.2)
+    [**Keys**](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.keys?view=net-6.0#system-collections-generic-dictionary-2-keys)
     property of `_adjacencyLists`.
   - **IEnumerable\<Edge\<TNode, TEdgeData\>\> OutgoingEdges(TNode
     source)**: See below.
@@ -151,7 +151,7 @@ the edge already exists in the graph, it will throw an
 In order to avoid changing the graph if the parameters are bad, we
 should do the error checking first. However, there is no need to check
 whether the edge already exists, provided we update `_edges` using its
-[**Add**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.add?view=netframework-4.7.2)
+[**Add**](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.add?view=net-6.0#system-collections-generic-dictionary-2-add(-0-1))
 method, and that we do this before making any other changes to the
 graph. Because a dictionary's **Add** method will throw an
 **ArgumentException** if the given key is already in the dictionary, it
@@ -163,12 +163,12 @@ After we have updated `_edges`, we need to update `_adjacencyLists`. To
 do this, we first need to obtain the linked list associated with the key
 `source` in `_adjacencyLists`; however, because `source` may not exist
 as a key in this dictionary, we should use the
-[**TryGetValue**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.trygetvalue?view=netframework-4.7.2)
+[**TryGetValue**](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.trygetvalue?view=net-6.0#system-collections-generic-dictionary-2-trygetvalue(-0-1@))
 method to do this lookup (note that if `source` is not a key in this
 dictionary, the **out** parameter will be set to **null**, which we can
-interpret as an empty list). We then construct a new linked list cell,
-in which we place `dest`. We then insert this cell at the beginning of
-the linked list we retrieved, and set this linked list as the new value
+interpret as an empty list). We then construct a new linked list cell
+containing `dest` as its data and insert it at the beginning of
+the linked list we retrieved. We then set this linked list as the new value
 associated with `source` in `_adjacencyLists`. Finally, if
 `_adjacencyLists` doesn't already contain `dest` as a key, we need to
 add it with **null** as its associated value.
