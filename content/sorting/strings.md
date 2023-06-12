@@ -53,7 +53,7 @@ characters) of each string. We need to be careful, however, because some
 of the strings may not have a character at location `k`. We will
 therefore use an **int** to store the value of the character at location
 `k` of a string, letting {{< math >}}$ -1 ${{< /math >}} denote the absence of a character at that
-location.
+location. We can also let {{< math >}}$ -2 ${{< /math >}} denote a **null** element, so that these elements are placed before all non-**null** elements in the sorted result.
 
 The algorithm then proceeds a lot like those described in "[Split
 Sorts](/sorting/split)". If the number of
@@ -67,7 +67,7 @@ After these three groups are formed, the first and third group are
 sorted recursively using the same value for `k`. Furthermore, the second
 group may not be completely sorted yet --- all we know is that all strings
 in this group agree on the first `k + 1` characters. Thus, unless
-`p` is {{< math >}}$ -1 ${{< /math >}} (indicating that that these strings all have length `k`, and
+`p` is negative (indicating that either these strings are all **null** or they all have length `k`, and
 are therefore all equal), we need to recursively sort this group as
 well. However, because we know that the strings in this group all agree
 on the first `k + 1` characters, we pass `k + 1` as the last

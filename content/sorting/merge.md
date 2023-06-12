@@ -66,8 +66,7 @@ remaining items in one of the two sorted parts). Once all items have
 been merged into the temporary array, we copy all items back to the
 original array to complete the merge.
 
-We won't do a running time analysis here, but merge sort runs in $O(n
-\lg n)$ time in the worst case. Furthermore, unlike [heap
+We won't do a running time analysis here, but merge sort runs in {{< math >}}$ O(n \lg n) ${{< /math >}} time in the worst case. Furthermore, unlike [heap
 sort](/sorting/select/#heap-sort), it is stable.
 Because it tends to perform better in practice than [tree
 sort](/sorting/insert/#tree-sort), it is a better

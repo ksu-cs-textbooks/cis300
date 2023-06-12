@@ -84,7 +84,7 @@ reason, insertion sort is the algorithm of choice when we expect the
 data to be nearly sorted --- a scenario that occurs frequently in
 practice. This fact is exploited by an efficient hybrid algorithm that
 combines insertion sort with two other sorting algorithms - see "[Hybrid
-Sorts](/sorting/hybrid)" for more
+Sorting Algorithms](/sorting/hybrid)" for more
 details.
 
 Before we consider another insert sort, there is one other advantage to
@@ -125,8 +125,8 @@ portion are inserted into it.
 
 Because insertions into an AVL tree containing {{< math >}}$ k ${{< /math >}} elements can be done
 in {{< math >}}$ O(\lg k) ${{< /math >}} time in the worst case, and because an inorder traversal
-can be done in {{< math >}}$ O(k) ${{< /math >}} time, it follows that tree sort runs in $O(n
-\lg n){{< math >}}$  time in the worst case, where  ${{< /math >}}n$ is the number of elements in
+can be done in {{< math >}}$ O(k) ${{< /math >}} time, it follows that tree sort runs in {{<math>}}$O(n
+\lg n)${{< /math >}}  time in the worst case, where  {{< math >}}$ n ${{< /math >}} is the number of elements in
 the array. However, because maintaining an AVL tree requires more
 overhead than maintaining a binary heap, heap sort tends to give better
 performance in practice. For this reason, tree sort is rarely used.

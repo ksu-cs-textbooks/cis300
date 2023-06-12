@@ -7,7 +7,7 @@ pre = "<b>9. </b>"
 
 ## Sorting
 
-We conclude this text with a look at a common activity in computing, namely, sorting data. While the .NET Framework provides several methods for sorting data, it is instructive to examine the implementation details of different techniques. While there is one sorting algorithm
+We conclude this text with a look at a common activity in computing, namely, sorting data. While .NET provides several methods for sorting data, it is instructive to examine the implementation details of different techniques. While there is one sorting algorithm
 that is used more commonly than the others, none is best for all
 situations. An understanding of which algorithms perform better in
 different situations can help us to make better choices and thereby

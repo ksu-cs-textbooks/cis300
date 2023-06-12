@@ -54,7 +54,7 @@ performance occurs no matter how the data items are initially arranged.
 
 As we will see in what follows, {{< math >}}$ O(n^2) ${{< /math >}} performance is not
 very good if we want to sort a moderately large data set. For example,
-sorting {{< math >}}$ 10,000 ${{< /math >}} elements will require about {{< math >}}$ 5 ${{< /math >}} billion iterations of the
+sorting {{< math >}}$ 100,000 ${{< /math >}} elements will require about {{< math >}}$ 5 ${{< /math >}} billion iterations of the
 inner loop. On the positive side, the only time data items are moved is
 when a swap is made at the end of the outer loop; hence, this number is
 proportional to {{< math >}}$ n ${{< /math >}}. This could be advantageous if we are sorting large
@@ -143,13 +143,11 @@ some arrays of size <span style="white-space:nowrap">{{< math >}}$ n ${{< /math 
 <span style="white-space:nowrap">{{< math >}}$ n \lg n ${{< /math >}},</span> we cannot hope to do any better than
 {{< math >}}$ O(n \lg n) ${{< /math >}} in the worst case. While this performance is a
 significant improvement over selection sort and bubble sort, we will see
-in [a later section](/sorting/split) that
-there is an algorithm (quick sort) that does even better in practice.
+in later that
+there is are algorithms that do even better in practice.
 Furthermore, heap sort is not stable.
 
-On the other hand, we will also see that in spite of the fact that quick
-sort usually outperforms heap sort, there are rare cases that cause it
-to perform badly. In order to avoid this bad behavior, a hybrid
-algorithm using both quick sort and heap sort has been developed. We
+On the other hand, we will also see that heap sort is an important component of an efficient hybrid
+algorithm. This algorithm is one of the best general-purpose sorting algorithms; in fact, it is used by .NET's [**Array.Sort**](https://learn.microsoft.com/en-us/dotnet/api/system.array.sort?view=net-6.0#system-array-sort(system-array)) method. We
 will examine this approach in "[Hybrid
 Sorts](/sorting/hybrid)".
