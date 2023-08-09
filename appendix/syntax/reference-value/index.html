@@ -189,26 +189,6 @@
 	
 	
 		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
 		
 
 	
@@ -239,6 +219,11 @@
 	
 	
 		
+		
+
+	
+	
+		
 
 	
 	
@@ -254,6 +239,15 @@
 	
 		
 		
+
+	
+	
+		
+		
+		
+
+	
+	
 		
 
 	
@@ -263,6 +257,12 @@
 
 	
 	
+		
+		
+
+	
+	
+		
 		
 		
 		
@@ -516,33 +516,33 @@
 		
 		
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.2.0+tip">
+    <meta name="generator" content="Relearn 5.18.0">
     <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
     <meta name="description" content="K-State CIS 300: Data Structures">
     <meta name="author" content="Rod Howell and Josh Weese">
     <title>Reference Types and Value Types :: Data Structures in C#</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587337" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587337" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587337" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587337" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587337" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587337" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1686587337" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1686587337" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587337" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587337" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1686587337" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1686587337" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1686587337" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1686587337" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1686587337" rel="stylesheet" media="print">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1686587337"></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596177" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596177" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1691596177" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596177" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596177" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1691596177" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596177" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596177" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1691596177" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1691596177" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1691596177" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1691596177" rel="stylesheet" media="print">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1691596177" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1691596177"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1691596177"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
-      var index_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
+      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
       var root_url="https://ksu-cs-textbooks.github.io/cis300/";
       var baseUri=root_url.replace(/\/$/, '');
       // translations
@@ -550,29 +550,30 @@
       window.T_Copied_to_clipboard = 'Copied to clipboard!';
       window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
       window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
       // some further base stuff
       var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
       window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
     </script>
     
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1686587337" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.min.js?1686587337" defer></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1691596177" rel="stylesheet">
 
   </head>
-  <body class="mobile-support html disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/reference-value/">
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/reference-value/index.html">
     <div id="body" class="default-animation">
       <div id="sidebar-overlay"></div>
       <div id="toc-overlay"></div>
       <nav id="topbar" class="highlightable">
         <div>
           <div class="navigation">
-             <a class="nav nav-next" href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/enumerations/" title="Enumerations (&#129106;)"><i class="fas fa-chevron-right fa-fw"></i></a>
+            <a class="nav nav-next topbar-link" href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/enumerations/index.html" title="Enumerations (&#129106;)"><i class="fas fa-chevron-right fa-fw"></i></a>
           </div>
           <div class="navigation">
-             <a class="nav nav-prev" href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/" title="C# Syntax (&#129104;)"><i class="fas fa-chevron-left fa-fw"></i></a>
+            <a class="nav nav-prev topbar-link" href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/index.html" title="C# Syntax (&#129104;)"><i class="fas fa-chevron-left fa-fw"></i></a>
           </div>
           <div id="top-print-link">
-            <a class="print-link" title='Print whole chapter (CTRL+ALT+p)' href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/reference-value/index.print.html">
+            <a class="print-link topbar-link" title='Print whole chapter (CTRL+ALT+p)' href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/reference-value/index.print.html">
               <i class="fas fa-print fa-fw"></i>
             </a>
           </div>
@@ -587,26 +588,24 @@
             </a>
           </div>
           <div id="top-github-link">
-            <a class="github-link" title='Edit (CTRL+ALT+e)' href="https://gitlab.cs.ksu.edu/-/ide/project/cis300/cis300-book/edit/master/-/content/appendix/syntax/reference-value.md" target="blank">
+            <a class="github-link topbar-link" title='Edit (CTRL+ALT+w)' href="https://gitlab.cs.ksu.edu/-/ide/project/cis300/cis300-book/edit/master/-/content/appendix/syntax/reference-value.md" target="_blank">
               <i class="fas fa-pen fa-fw"></i>
             </a>
           </div>
           <div id="breadcrumbs">
             <span id="sidebar-toggle-span">
-              <a href="#" id="sidebar-toggle" title='Menu (CTRL+ALT+m)'><i class="fas fa-bars fa-fw"></i></a>
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
             </span>
             <span id="toc-menu" title='Table of Contents (CTRL+ALT+t)'><i class="fas fa-list-alt fa-fw"></i></span>
             <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
-              <meta itemprop="itemListOrder" content="Descending" />
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="4" /><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis300/"><span itemprop="name">Data Structures in C#</span></a> > </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="3" /><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis300/appendix/"><span itemprop="name">Appendices</span></a> > </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="2" /><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/"><span itemprop="name">C# Syntax</span></a> > </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="1" /><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/reference-value/" aria-disabled="true"><span itemprop="name">Reference Types and Value Types</span></a></li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis300/index.html"><span itemprop="name">Data Structures in C#</span></a><meta itemprop="position" content="1"> &gt; </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis300/appendix/index.html"><span itemprop="name">Appendices</span></a><meta itemprop="position" content="2"> &gt; </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/index.html"><span itemprop="name">C# Syntax</span></a><meta itemprop="position" content="3"> &gt; </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Reference Types and Value Types</span><meta itemprop="position" content="4"></li>
             </ol>
           </div>
           <div class="default-animation progress">
-            <div class="wrapper">
-<nav id="TableOfContents">
+            <div class="toc-wrapper"><nav id="TableOfContents">
   <ul>
     <li><a href="#reference-types-and-value-types">Reference Types and Value Types</a></li>
   </ul>
@@ -617,44 +616,40 @@
       </nav>
       <main id="body-inner" class="highlightable default" tabindex="-1">
         <div class="flex-block-wrapper">
-          <div id="head-tags">
-          </div>
           <article class="default">
-<div hidden><h1>Reference Types and Value Types</h1></div>
+            <header class="headline">
+            </header>
+<div hidden><h1 id="reference-types-and-value-types">Reference Types and Value Types</h1></div>
+
 <h2 id="reference-types-and-value-types">Reference Types and Value Types</h2>
-<p>Data types in C# come in two distinct flavors: <em>value types</em> and <em>reference types</em>. In order to understand the distinction, it helps to consider how space is allocated in C#. Whenever a method is called, the space needed to execute that method is allocated from a data structure known as the <em>call stack</em>. The space for a method includes its local variables, including its parameters (except for 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/out-ref"><strong>out</strong> or <strong>ref</strong> parameters</a>). The organization of the call stack is shown in the following figure:</p>
-<p><img src="../img/call-stack.jpg" alt="A picture of the call stack should appear here"></p>
-<p>When the currently-running method makes a method call, space for that method is taken from the beginning of the unused stack space. When the currently-running method returns, its space is returned to the unused space. Thus, the call stack works like 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/stack-impl">the array-based implementation of a stack</a>, and this storage allocation is quite efficient.</p>
-<p>What is stored in the space allocated for a variable depends on whether the variable is for a value type or a reference type. For a value type, the value of the variable is stored directly in the space allocated for it. There are two kinds of value types: 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/structs">structures</a> and 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/enumerations">enumerations</a>. Examples of structures include numeric types such as <strong>int</strong>, <strong>double</strong>, and <strong>char</strong>. An example of an enumeration is 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.dialogresult?view=windowsdesktop-6.0" target="_blank" rel="noopener"><strong>DialogResult</strong></a> (see 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/io/dialogs/message-boxes">&quot;<strong>MessageBox</strong>es&quot;</a> and 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/io/dialogs/file-dialogs">&ldquo;File Dialogs&rdquo;</a>).</p>
+<p>Data types in C# come in two distinct flavors: <em>value types</em> and <em>reference types</em>. In order to understand the distinction, it helps to consider how space is allocated in C#. Whenever a method is called, the space needed to execute that method is allocated from a data structure known as the <em>call stack</em>. The space for a method includes its local variables, including its parameters (except for <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/out-ref"><strong>out</strong> or <strong>ref</strong> parameters</a>
+). The organization of the call stack is shown in the following figure:</p>
+<p>
+<a href="#image-6e2f45137a77f061d7589ff860175146" class="lightbox-link">
+<img src="../img/call-stack.jpg" alt="A picture of the call stack should appear here" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-6e2f45137a77f061d7589ff860175146">
+<img src="../img/call-stack.jpg" alt="A picture of the call stack should appear here" class="lightbox-image" loading="lazy">
+</a></p>
+<p>When the currently-running method makes a method call, space for that method is taken from the beginning of the unused stack space. When the currently-running method returns, its space is returned to the unused space. Thus, the call stack works like <a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/stack-impl">the array-based implementation of a stack</a>
+, and this storage allocation is quite efficient.</p>
+<p>What is stored in the space allocated for a variable depends on whether the variable is for a value type or a reference type. For a value type, the value of the variable is stored directly in the space allocated for it. There are two kinds of value types: <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/structs">structures</a>
+ and <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/enumerations">enumerations</a>
+. Examples of structures include numeric types such as <strong>int</strong>, <strong>double</strong>, and <strong>char</strong>. An example of an enumeration is <a href="https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.dialogresult?view=windowsdesktop-6.0" target="_blank"><strong>DialogResult</strong></a>
+ (see <a href="https://ksu-cs-textbooks.github.io/cis300/io/dialogs/message-boxes">&quot;<strong>MessageBox</strong>es&quot;</a>
+ and <a href="https://ksu-cs-textbooks.github.io/cis300/io/dialogs/file-dialogs">&ldquo;File Dialogs&rdquo;</a>
+).</p>
 <p>Because value types are stored directly in variables, whenever a value is assigned to a variable of a value type, the entire value must be written to the variable. For performance reasons, value types therefore should be fairly small.</p>
-<p>For reference types, the values are not stored directly into the space allocated for the variable. Instead, the variable stores a <em>reference</em>, which is like an address where the value of the variable can actually be found. When a reference type is constructed with a <strong>new</strong> expression, space for that instance is allocated from a large data structure called the <em>heap</em> (which is unrelated to a 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/heaps">heap used to implement a priority queue</a>). Essentially, the heap is a large pool of available memory from which space of different sizes may be allocated at any time. We will not go into detail about how the heap is implemented, but suffice it to say that it is more complicated and less efficient than the stack. When space for a reference type is allocated from the heap, a reference to that space is stored in the variable. Larger data types are more efficiently implemented as reference types because an assignment to a variable of a reference type only needs to write a reference, not the entire data value.</p>
-<p>There are three kinds of reference types: classes, 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/multiple-impl">interfaces</a>, 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/record" target="_blank" rel="noopener">records</a>, and 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/reference-types#the-delegate-type" target="_blank" rel="noopener">delegates</a>. Records and delegates are beyond the scope of this course.</p>
+<p>For reference types, the values are not stored directly into the space allocated for the variable. Instead, the variable stores a <em>reference</em>, which is like an address where the value of the variable can actually be found. When a reference type is constructed with a <strong>new</strong> expression, space for that instance is allocated from a large data structure called the <em>heap</em> (which is unrelated to a <a href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/heaps">heap used to implement a priority queue</a>
+). Essentially, the heap is a large pool of available memory from which space of different sizes may be allocated at any time. We will not go into detail about how the heap is implemented, but suffice it to say that it is more complicated and less efficient than the stack. When space for a reference type is allocated from the heap, a reference to that space is stored in the variable. Larger data types are more efficiently implemented as reference types because an assignment to a variable of a reference type only needs to write a reference, not the entire data value.</p>
+<p>There are three kinds of reference types: classes, <a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/multiple-impl">interfaces</a>
+, <a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/record" target="_blank">records</a>
+, and <a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/reference-types#the-delegate-type" target="_blank">delegates</a>
+. Records and delegates are beyond the scope of this course.</p>
 <p>Variables of a reference type do not need to refer to any data value. In this case, they store a value of <strong>null</strong> (variables of a value type cannot store <strong>null</strong>). Any attempt to access a method, property, or other member of a <strong>null</strong> or to apply an index to it will result in a <strong>NullReferenceException</strong>.</p>
 <p>The fields of classes or structures are stored in a similar way, depending on whether the field is a value type or a reference type. If it is a value type, the value is stored directly in the field, regardless of whether that field belongs to an object allocated from the stack or the heap. If it is a reference type, it stores either <strong>null</strong> or a reference to an object allocated from the heap.</p>
 <p>The difference between value types and reference types can be illustrated with the following code example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span>[] DoSomething(<span style="color:#66d9ef">int</span> i, <span style="color:#66d9ef">int</span> j)
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span>[] DoSomething(<span style="color:#66d9ef">int</span> i, <span style="color:#66d9ef">int</span> j)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    Point a = <span style="color:#66d9ef">new</span>(i, j);
 </span></span><span style="display:flex;"><span>    Point b = a;
@@ -663,76 +658,61 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span>[] d = c;
 </span></span><span style="display:flex;"><span>    c[<span style="color:#ae81ff">0</span>] = b.X;
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> d;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Suppose this method is called as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span>[] values = DoSomething(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>);
-</span></span></code></pre></div><p>The method contains six local variables: <code>i</code>, <code>j</code>, <code>a</code>, <code>b</code>, <code>c</code>, and <code>d</code>. <strong>int</strong> is a structure, and hence a value type. 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.drawing.point?view=net-6.0" target="_blank" rel="noopener"><strong>Point</strong></a> is a structure (and hence a value type) containing <strong>public int</strong> properties <strong>X</strong> and <strong>Y</strong>, each of which can be read or modified. <strong>int[ ]</strong>, however, is a reference type. Space for all six of these variables is allocated from the stack, and the space for the two <strong>Point</strong>s includes space to store two <strong>int</strong> fields for each. The values 1 and 2 passed for <code>i</code> and <code>j</code>, respectively, are stored directly in these variables.</p>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Suppose this method is called as follows:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span>[] values = DoSomething(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>);</span></span></code></pre></div><p>The method contains six local variables: <code>i</code>, <code>j</code>, <code>a</code>, <code>b</code>, <code>c</code>, and <code>d</code>. <strong>int</strong> is a structure, and hence a value type. <a href="https://learn.microsoft.com/en-us/dotnet/api/system.drawing.point?view=net-6.0" target="_blank"><strong>Point</strong></a>
+ is a structure (and hence a value type) containing <strong>public int</strong> properties <strong>X</strong> and <strong>Y</strong>, each of which can be read or modified. <strong>int[ ]</strong>, however, is a reference type. Space for all six of these variables is allocated from the stack, and the space for the two <strong>Point</strong>s includes space to store two <strong>int</strong> fields for each. The values 1 and 2 passed for <code>i</code> and <code>j</code>, respectively, are stored directly in these variables.</p>
 <p>The constructor in the first line of the method above sets the <strong>X</strong> property of <code>a</code> to 1 and the <strong>Y</strong> property of <code>a</code> to 2. The next statement simply copies the value of <code>a</code> - i.e., the point (1, 2) - to <code>b</code>. Thus, when the <strong>X</strong> property of <code>a</code> is then changed to 3, <code>b</code> is unchanged - it still contains the point (1, 2).</p>
 <p>On the other hand, consider what happens when something similar is done with array variables. When <code>c</code> is constructed, it is assigned a new array allocated from the heap and containing 10 locations. These 10 locations are automatically initialized to 0. However, because an array is a reference type, the variable <code>c</code> contains a reference to the actual array object, not the array itself. Thus, when <code>c</code> is copied to <code>d</code>, the array itself is not copied - the reference to the array is copied. Consequently, <code>d</code> and <code>c</code> now refer to the same array object, not two different arrays that look the same. Hence, after we assign <code>c[0]</code> a value of 1, <code>d[0]</code> will also contain a value of 1 because <code>c</code> and <code>d</code> refer to the same array object. (If we want <code>c</code> and <code>d</code> to refer to different array objects, we need to construct a new array for each variable and make sure each location of each array contains the value we want.) The array returned therefore resides on the heap, and contains 1 at index 0, and 0 at each of its other nine locations. The six local variables are returned to unused stack space; however, because the array was allocated from the heap, the calling code may continue to use it.</p>
 <p><span id="nullable-types"></span>It is sometimes convenient to be able to store a <strong>null</strong> in a variable of a value type. For example, we may want to indicate that an <strong>int</strong> variable contains no meaningful value. In some cases, we can reserve a specific <strong>int</strong> value for this purpose, but in other cases, there may be no <strong>int</strong> value that does not have some other meaning within the context. In such cases, we can use the <code>?</code> operator to define a <em>nullable</em> version of a value type; e.g.,</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">int?</span> i = <span style="color:#66d9ef">null</span>;
-</span></span></code></pre></div><p>We can do this with any value type. Nullable value types such as <strong>int?</strong> are the only value types that can store <strong>null</strong>.</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">int?</span> i = <span style="color:#66d9ef">null</span>;</span></span></code></pre></div><p>We can do this with any value type. Nullable value types such as <strong>int?</strong> are the only value types that can store <strong>null</strong>.</p>
 <p>Beginning with C# version 8.0, similar annotations using the <code>?</code> operator are allowed for reference types. In contrast to its use with value types, this operator has no effect on the code execution when it is used with a reference type. Instead, such annotations are used to help programmers to avoid <strong>NullReferenceException</strong>s. For example, the type <strong>string</strong> is used for variables that should never be <strong>null</strong>, but <strong>string?</strong> is used for variables that might be <strong>null</strong>. Assigning <strong>null</strong> to a <strong>string</strong> variable will not throw an exception (though it might lead to a <strong>NullReferenceException</strong> later); however, starting with .NET 6, the compiler will generate a warning whenever it cannot determine that a value assigned to a non-nullable variable is not <strong>null</strong>. One way to avoid this warning is to use the nullable version of the type; e.g.,</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">string?</span> s = <span style="color:#66d9ef">null</span>;
-</span></span></code></pre></div><p>The compiler uses a technique called <em>static analysis</em> to try to determine whether a value assigned to a variable of a non-nullable reference type is non-<strong>null</strong>. This technique is limited, resulting in many cases in which the value assigned cannot be <strong>null</strong>, but the compiler gives a warning anyway. (This technique is especially limited in its ability to analyze arrays.) In such cases, the <strong>null</strong>-forgiving operator <code>!</code> can be used to remove the warning. Whenever you use this operator, the CIS 300 style requirements specify that you must include a comment explaining why the value assigned cannot be <strong>null</strong> (see 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/comments/">&ldquo;Comments&rdquo;</a>).</p>
-<p>For example, a 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamreader?view=net-6.0" target="_blank" rel="noopener"><strong>StreamReader</strong></a>&rsquo;s 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamreader.readline?view=net-6.0" target="_blank" rel="noopener"><strong>ReadLine</strong></a> method returns <strong>null</strong> when there are no more lines left in the stream, but otherwise returns a non-<strong>null</strong> <strong>string</strong> (see 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/io/advanced-text-file/">&ldquo;Advanced Text File I/O&rdquo;</a>). We can use the <strong>StreamReader</strong>&rsquo;s 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamreader.endofstream?view=net-6.0" target="_blank" rel="noopener"><strong>EndOfStream</strong></a> property to determine whether all lines have been read; for example, if <code>input</code> is a <strong>StreamReader</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">while</span> (!input.EndOfStream)
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">string?</span> s = <span style="color:#66d9ef">null</span>;</span></span></code></pre></div><p>The compiler uses a technique called <em>static analysis</em> to try to determine whether a value assigned to a variable of a non-nullable reference type is non-<strong>null</strong>. This technique is limited, resulting in many cases in which the value assigned cannot be <strong>null</strong>, but the compiler gives a warning anyway. (This technique is especially limited in its ability to analyze arrays.) In such cases, the <strong>null</strong>-forgiving operator <code>!</code> can be used to remove the warning. Whenever you use this operator, the CIS 300 style requirements specify that you must include a comment explaining why the value assigned cannot be <strong>null</strong> (see <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/comments/">&ldquo;Comments&rdquo;</a>
+).</p>
+<p>For example, a <a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamreader?view=net-6.0" target="_blank"><strong>StreamReader</strong></a>
+&rsquo;s <a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamreader.readline?view=net-6.0" target="_blank"><strong>ReadLine</strong></a>
+ method returns <strong>null</strong> when there are no more lines left in the stream, but otherwise returns a non-<strong>null</strong> <strong>string</strong> (see <a href="https://ksu-cs-textbooks.github.io/cis300/io/advanced-text-file/">&ldquo;Advanced Text File I/O&rdquo;</a>
+). We can use the <strong>StreamReader</strong>&rsquo;s <a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamreader.endofstream?view=net-6.0" target="_blank"><strong>EndOfStream</strong></a>
+ property to determine whether all lines have been read; for example, if <code>input</code> is a <strong>StreamReader</strong>:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">while</span> (!input.EndOfStream)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">string</span> line = input.ReadLine();
 </span></span><span style="display:flex;"><span>    
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Process the line</span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>However, because <strong>ReadLine</strong> has a return type of <strong>string?</strong> and the type of <code>line</code> is <strong>string</strong>, the compiler generates a warning - even though <strong>ReadLine</strong> will never return <strong>null</strong> in this context. We can eliminate the warning as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">while</span> (!input.EndOfStream)
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>However, because <strong>ReadLine</strong> has a return type of <strong>string?</strong> and the type of <code>line</code> is <strong>string</strong>, the compiler generates a warning - even though <strong>ReadLine</strong> will never return <strong>null</strong> in this context. We can eliminate the warning as follows:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">while</span> (!input.EndOfStream)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Because input is not at the end of the stream, ReadLine won&#39;t return null.</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">string</span> line = input.ReadLine()!;
 </span></span><span style="display:flex;"><span>    
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Process the line</span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Because classes are reference types, it is possible for the definition of a class <strong>C</strong> to contain one or more fields of type <strong>C</strong> or, more typically, type <strong>C?</strong>; for example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">C</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Because classes are reference types, it is possible for the definition of a class <strong>C</strong> to contain one or more fields of type <strong>C</strong> or, more typically, type <strong>C?</strong>; for example:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">C</span>
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> C? _nextC;
 </span></span><span style="display:flex;"><span>    . . .
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Such circularity would be impossible for a value type because there would not be room for anything else if we tried to include a value of type <strong>C?</strong> within a value of type <strong>C</strong>. However, because <strong>C</strong> is a class, and hence a reference type, <code>_nextC</code> simply contains either <strong>null</strong> or a reference to some object of type <strong>C</strong>. When the runtime system constructs an instance of type <strong>C</strong>, it just needs to make it large enough to hold a reference, along with any other fields defined within <strong>C</strong>. Such recursive definitions are a powerful way to link together many instances of a type. See &ldquo;
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/linked-lists">Linked Lists</a>&rdquo; and &ldquo;
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/trees">Trees</a>&rdquo; for more information.</p>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Such circularity would be impossible for a value type because there would not be room for anything else if we tried to include a value of type <strong>C?</strong> within a value of type <strong>C</strong>. However, because <strong>C</strong> is a class, and hence a reference type, <code>_nextC</code> simply contains either <strong>null</strong> or a reference to some object of type <strong>C</strong>. When the runtime system constructs an instance of type <strong>C</strong>, it just needs to make it large enough to hold a reference, along with any other fields defined within <strong>C</strong>. Such recursive definitions are a powerful way to link together many instances of a type. See &ldquo;<a href="https://ksu-cs-textbooks.github.io/cis300/linked-lists">Linked Lists</a>
+&rdquo; and &ldquo;<a href="https://ksu-cs-textbooks.github.io/cis300/trees">Trees</a>
+&rdquo; for more information.</p>
 <p>Because all types in C# are subtypes of <strong>object</strong>, which is a reference type, every value type is a subtype of at least one reference type (however, value types cannot themselves have subtypes). It is therefore possible to assign an instance of a value type to a variable of a reference type; for example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">object</span> x = <span style="color:#ae81ff">3</span>;
-</span></span></code></pre></div><p>When this is done, a <em>boxed</em> version of the value type is constructed,
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">object</span> x = <span style="color:#ae81ff">3</span>;</span></span></code></pre></div><p>When this is done, a <em>boxed</em> version of the value type is constructed,
 and the value copied to it. The boxed version of the value type is
 just like the original value type, except that it is allocated from
 the heap and accessed by reference, not by value. A reference to this boxed version is then assigned to the variable of the reference type. Note that multiple variables of the reference type may refer to the same boxed instance of the value type.
 Note also that boxing may also occur when passing parameters. For example, suppose we have a method:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">object</span> F(<span style="color:#66d9ef">object</span> x)
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">object</span> F(<span style="color:#66d9ef">object</span> x)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>If we call <strong>F</strong> with a parameter of 3, then 3 will need to be copied to a boxed <strong>int</strong>, and a reference to this boxed <strong>int</strong> will be assigned to <code>x</code> within <strong>F</strong>.</p>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>If we call <strong>F</strong> with a parameter of 3, then 3 will need to be copied to a boxed <strong>int</strong>, and a reference to this boxed <strong>int</strong> will be assigned to <code>x</code> within <strong>F</strong>.</p>
 
             <footer class="footline">
+
             </footer>
           </article>
         </div>
       </main>
     
 <div class="git-footer">
+<p class="theme-version-footer">5.18.0</p>
 <p>Last modified by: 
             <i class='fas fa-user'></i> Rod Howell
             <i class='fas fa-calendar'></i> <a href="https://gitlab.cs.ksu.edu/cis300/cis300-book/-/commit/c7dde30da4d1fe7f91e9918103f963a49990203b">Jun 1, 2023</a>
@@ -750,148 +730,160 @@ Note also that boxing may also occur when passing parameters. For example, suppo
 
         </div>
         <div class="searchbox default-animation">
-          <label for="search-by"><i class="fas fa-search"></i></label>
-          <input data-search-input id="search-by" type="search" placeholder="Search...">
-          <span data-search-clear=""><i class="fas fa-times"></i></span>
+          <i class="fas fa-search" title="Search (CTRL+ALT+f)"></i>
+          <label class="a11y-only" for="search-by">Search</label>
+          <input data-search-input id="search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+          <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
         </div>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/auto-complete.js?1686587337" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr.min.js?1686587337" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr.stemmer.support.min.js?1686587337" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr.multi.min.js?1686587337" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr.en.min.js?1686587337" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/search.js?1686587337" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis300/js/auto-complete.js?1691596177" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr/lunr.min.js?1691596177" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr/lunr.stemmer.support.min.js?1691596177" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr/lunr.multi.min.js?1691596177" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr/lunr.en.min.js?1691596177" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis300/js/search.js?1691596177" defer></script>
       </div>
       <div id="content-wrapper" class="highlightable">
-        <ul class="topics collapsible-menu">
-          <li data-nav-id="/io/" title="Input/Output" class="dd-item"><input type="checkbox" id="section-cbd3b3207f24308a668546abfa69f213" class="toggle"/><label for="section-cbd3b3207f24308a668546abfa69f213" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/io/"><b>1. </b>Input/Output</a><ul>
-          <li data-nav-id="/io/dialogs/" title="Dialogs" class="dd-item"><input type="checkbox" id="section-61b1770a0bd16f4917e33b67edd271d2" class="toggle"/><label for="section-61b1770a0bd16f4917e33b67edd271d2" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/io/dialogs/"><b>1.1. </b>Dialogs</a><ul>
-          <li data-nav-id="/io/dialogs/message-boxes/" title="MessageBoxes" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/io/dialogs/message-boxes/"><b>1.1.1. </b>MessageBoxes</a></li>
-          <li data-nav-id="/io/dialogs/file-dialogs/" title="File Dialogs" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/io/dialogs/file-dialogs/"><b>1.1.2. </b>File Dialogs</a></li>
-          <li data-nav-id="/io/dialogs/custom/" title="Custom Dialogs" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/io/dialogs/custom/"><b>1.1.3. </b>Custom Dialogs</a></li></ul></li>
-          <li data-nav-id="/io/simple-text-file/" title="Simple Text File I/O" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/io/simple-text-file/"><b>1.2. </b>Simple Text File I/O</a></li>
-          <li data-nav-id="/io/exceptions/" title="Exception Handling" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/io/exceptions/"><b>1.3. </b>Exception Handling</a></li>
-          <li data-nav-id="/io/advanced-text-file/" title="Advanced Text File I/O" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/io/advanced-text-file/"><b>1.4. </b>Advanced Text File I/O</a></li>
-          <li data-nav-id="/io/other-file-io/" title="Other File I/O" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/io/other-file-io/"><b>1.5. </b>Other File I/O</a></li></ul></li>
-          <li data-nav-id="/strings/" title="strings and StringBuilders" class="dd-item"><input type="checkbox" id="section-9355ad26afa67cd4239c81429ad6e8ca" class="toggle"/><label for="section-9355ad26afa67cd4239c81429ad6e8ca" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/strings/"><b>2. </b>strings and StringBuilders</a><ul>
-          <li data-nav-id="/strings/strings/" title="strings" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/strings/strings/"><b>2.1. </b>strings</a></li>
-          <li data-nav-id="/strings/stringbuilders/" title="StringBuilders" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilders/"><b>2.2. </b>StringBuilders</a></li>
-          <li data-nav-id="/strings/stringbuilder-impl/" title="Implementation of StringBuilders" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilder-impl/"><b>2.3. </b>Implementation of StringBuilders</a></li></ul></li>
-          <li data-nav-id="/stacks-queues/" title="Stacks and Queues" class="dd-item"><input type="checkbox" id="section-deefdc256b7889ce66393d7269597a4b" class="toggle"/><label for="section-deefdc256b7889ce66393d7269597a4b" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/"><b>3. </b>Stacks and Queues</a><ul>
-          <li data-nav-id="/stacks-queues/stacks/" title="Introduction to Stacks" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/stacks/"><b>3.1. </b>Introduction to Stacks</a></li>
-          <li data-nav-id="/stacks-queues/undo/" title="Implementing Undo and Redo for a TextBox" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/undo/"><b>3.2. </b>Implementing Undo and Redo for a TextBox</a></li>
-          <li data-nav-id="/stacks-queues/paren/" title="Parenthesis Matching" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/paren/"><b>3.3. </b>Parenthesis Matching</a></li>
-          <li data-nav-id="/stacks-queues/stack-impl/" title="Implementing a Stack" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/stack-impl/"><b>3.4. </b>Implementing a Stack</a></li>
-          <li data-nav-id="/stacks-queues/queues/" title="Introduction to Queues" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queues/"><b>3.5. </b>Introduction to Queues</a></li>
-          <li data-nav-id="/stacks-queues/queue-impl/" title="Implementing a Queue" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queue-impl/"><b>3.6. </b>Implementing a Queue</a></li></ul></li>
-          <li data-nav-id="/linked-lists/" title="Linked Lists" class="dd-item"><input type="checkbox" id="section-a51df6d53eeee393764eb46edb53958a" class="toggle"/><label for="section-a51df6d53eeee393764eb46edb53958a" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/"><b>4. </b>Linked Lists</a><ul>
-          <li data-nav-id="/linked-lists/intro/" title="Introduction to Linked Lists" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/intro/"><b>4.1. </b>Introduction to Linked Lists</a></li>
-          <li data-nav-id="/linked-lists/stacks-queues/" title="Implementing Stacks and Queues with Linked Lists" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/stacks-queues/"><b>4.2. </b>Implementing Stacks and Queues with Linked Lists</a></li>
-          <li data-nav-id="/linked-lists/sieve-eratosthenes/" title="Finding Prime Numbers" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/sieve-eratosthenes/"><b>4.3. </b>Finding Prime Numbers</a></li></ul></li>
-          <li data-nav-id="/dictionaries/" title="Dictionaries" class="dd-item"><input type="checkbox" id="section-9011afb8a0159b09a13a971ca89bced8" class="toggle"/><label for="section-9011afb8a0159b09a13a971ca89bced8" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/"><b>5. </b>Dictionaries</a><ul>
-          <li data-nav-id="/dictionaries/dictionary-tkey-tvalue/" title="The Dictionary&lt;TKey, TValue&gt; Class" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/dictionary-tkey-tvalue/"><b>5.1. </b>The Dictionary&lt;TKey, TValue&gt; Class</a></li>
-          <li data-nav-id="/dictionaries/linked-list-impl/" title="Implementing a Dictionary with a Linked List" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/linked-list-impl/"><b>5.2. </b>Implementing a Dictionary with a Linked List</a></li>
-          <li data-nav-id="/dictionaries/binary-search/" title="Implementing a Dictionary with an Array-Like Structure" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/binary-search/"><b>5.3. </b>Implementing a Dictionary with an Array-Like Structure</a></li></ul></li>
-          <li data-nav-id="/trees/" title="Trees" class="dd-item"><input type="checkbox" id="section-5e8305205d74771c71a9ea85594a7914" class="toggle"/><label for="section-5e8305205d74771c71a9ea85594a7914" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/trees/"><b>6. </b>Trees</a><ul>
-          <li data-nav-id="/trees/intro/" title="Introduction to Trees" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/intro/"><b>6.1. </b>Introduction to Trees</a></li>
-          <li data-nav-id="/trees/bst/" title="Binary Search Trees" class="dd-item"><input type="checkbox" id="section-8d42cd93516505610f8b32c65bbeebda" class="toggle"/><label for="section-8d42cd93516505610f8b32c65bbeebda" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/"><b>6.2. </b>Binary Search Trees</a><ul>
-          <li data-nav-id="/trees/bst/binary-trees/" title="Binary Trees" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/binary-trees/"><b>6.2.1. </b>Binary Trees</a></li>
-          <li data-nav-id="/trees/bst/intro/" title="Introduction to Binary Search Trees" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/intro/"><b>6.2.2. </b>Introduction to Binary Search Trees</a></li>
-          <li data-nav-id="/trees/bst/remove/" title="Removing from a Binary Search Tree" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/remove/"><b>6.2.3. </b>Removing from a Binary Search Tree</a></li>
-          <li data-nav-id="/trees/bst/inorder/" title="Inorder Traversal" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/inorder/"><b>6.2.4. </b>Inorder Traversal</a></li></ul></li>
-          <li data-nav-id="/trees/avl/" title="AVL Trees" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/avl/"><b>6.3. </b>AVL Trees</a></li>
-          <li data-nav-id="/trees/tries/" title="Tries" class="dd-item"><input type="checkbox" id="section-5f1f75af2aa97dd0bdbedb3b3e5adc65" class="toggle"/><label for="section-5f1f75af2aa97dd0bdbedb3b3e5adc65" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/"><b>6.4. </b>Tries</a><ul>
-          <li data-nav-id="/trees/tries/intro/" title="Introduction to Tries" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro/"><b>6.4.1. </b>Introduction to Tries</a></li>
-          <li data-nav-id="/trees/tries/multiple-impl/" title="Multiple Implementations of Children" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/multiple-impl/"><b>6.4.2. </b>Multiple Implementations of Children</a></li>
-          <li data-nav-id="/trees/tries/traversing/" title="Traversing a Trie" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/traversing/"><b>6.4.3. </b>Traversing a Trie</a></li>
-          <li data-nav-id="/trees/tries/word-games/" title="Tries in Word Games" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/word-games/"><b>6.4.4. </b>Tries in Word Games</a></li></ul></li>
-          <li data-nav-id="/trees/priority-queues/" title="Priority Queues" class="dd-item"><input type="checkbox" id="section-0e087c42aa39c815f492e3767eaf2ef7" class="toggle"/><label for="section-0e087c42aa39c815f492e3767eaf2ef7" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/"><b>6.5. </b>Priority Queues</a><ul>
-          <li data-nav-id="/trees/priority-queues/heaps/" title="Heaps" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/heaps/"><b>6.5.1. </b>Heaps</a></li>
-          <li data-nav-id="/trees/priority-queues/leftist-heaps/" title="Leftist Heaps" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/leftist-heaps/"><b>6.5.2. </b>Leftist Heaps</a></li>
-          <li data-nav-id="/trees/priority-queues/huffman-trees/" title="Huffman Trees" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/huffman-trees/"><b>6.5.3. </b>Huffman Trees</a></li></ul></li></ul></li>
-          <li data-nav-id="/hashing/" title="Hash Tables" class="dd-item"><input type="checkbox" id="section-cd22fc50afca8a60e214c94b94daa169" class="toggle"/><label for="section-cd22fc50afca8a60e214c94b94daa169" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/hashing/"><b>7. </b>Hash Tables</a><ul>
-          <li data-nav-id="/hashing/simple/" title="A Simple Hash Table Implementation" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/hashing/simple/"><b>7.1. </b>A Simple Hash Table Implementation</a></li>
-          <li data-nav-id="/hashing/rehashing/" title="Rehashing" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/hashing/rehashing/"><b>7.2. </b>Rehashing</a></li>
-          <li data-nav-id="/hashing/memoization/" title="Memoization" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/hashing/memoization/"><b>7.3. </b>Memoization</a></li>
-          <li data-nav-id="/hashing/equality/" title="Equality in C#" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/hashing/equality/"><b>7.4. </b>Equality in C#</a></li>
-          <li data-nav-id="/hashing/hash-functions/" title="Hash Codes" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/hashing/hash-functions/"><b>7.5. </b>Hash Codes</a></li></ul></li>
-          <li data-nav-id="/graphs/" title="Graphs" class="dd-item"><input type="checkbox" id="section-fefd7704561bcadc124f3f3c72c54ab3" class="toggle"/><label for="section-fefd7704561bcadc124f3f3c72c54ab3" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/graphs/"><b>8. </b>Graphs</a><ul>
-          <li data-nav-id="/graphs/intro/" title="Introduction to Graphs" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/graphs/intro/"><b>8.1. </b>Introduction to Graphs</a></li>
-          <li data-nav-id="/graphs/dijkstra/" title="Shortest Paths" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/graphs/dijkstra/"><b>8.2. </b>Shortest Paths</a></li>
-          <li data-nav-id="/graphs/breadth-first/" title="Unweighted Shortest Paths" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/graphs/breadth-first/"><b>8.3. </b>Unweighted Shortest Paths</a></li>
-          <li data-nav-id="/graphs/impl/" title="Implementing a Graph" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/graphs/impl/"><b>8.4. </b>Implementing a Graph</a></li></ul></li>
-          <li data-nav-id="/sorting/" title="Sorting" class="dd-item"><input type="checkbox" id="section-fd2166a393af1c48d2ffe636e6f952d8" class="toggle"/><label for="section-fd2166a393af1c48d2ffe636e6f952d8" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/sorting/"><b>9. </b>Sorting</a><ul>
-          <li data-nav-id="/sorting/select/" title="Select Sorts" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/sorting/select/"><b>9.1. </b>Select Sorts</a></li>
-          <li data-nav-id="/sorting/insert/" title="Insert Sorts" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/sorting/insert/"><b>9.2. </b>Insert Sorts</a></li>
-          <li data-nav-id="/sorting/merge/" title="Merge Sorts" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/sorting/merge/"><b>9.3. </b>Merge Sorts</a></li>
-          <li data-nav-id="/sorting/split/" title="Split Sorts" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/sorting/split/"><b>9.4. </b>Split Sorts</a></li>
-          <li data-nav-id="/sorting/hybrid/" title="Hybrid Sorting Algorithms" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/sorting/hybrid/"><b>9.5. </b>Hybrid Sorting Algorithms</a></li>
-          <li data-nav-id="/sorting/strings/" title="Sorting Strings" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/sorting/strings/"><b>9.6. </b>Sorting Strings</a></li></ul></li>
-          <li data-nav-id="/appendix/" title="Appendices" class="dd-item parent"><input type="checkbox" id="section-8a7f152ea576b5a4047f92c2cc1cabad" class="toggle" checked/><label for="section-8a7f152ea576b5a4047f92c2cc1cabad" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/"><b>A. </b>Appendices</a><ul>
-          <li data-nav-id="/appendix/syntax/" title="C# Syntax" class="dd-item parent"><input type="checkbox" id="section-6a5a5cc3bca4007f0866907612ee033f" class="toggle" checked/><label for="section-6a5a5cc3bca4007f0866907612ee033f" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/"><b>A1. </b>C# Syntax</a><ul>
-          <li data-nav-id="/appendix/syntax/reference-value/" title="Reference Types and Value Types" class="dd-item active"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/reference-value/"><b>A1.1. </b>Reference Types and Value Types</a></li>
-          <li data-nav-id="/appendix/syntax/enumerations/" title="Enumerations" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/enumerations/"><b>A1.2. </b>Enumerations</a></li>
-          <li data-nav-id="/appendix/syntax/structs/" title="Structures" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/structs/"><b>A1.3. </b>Structures</a></li>
-          <li data-nav-id="/appendix/syntax/decimals/" title="The decimal Type" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/decimals/"><b>A1.4. </b>The decimal Type</a></li>
-          <li data-nav-id="/appendix/syntax/const/" title="Read-Only and Constant Fields" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/const/"><b>A1.5. </b>Read-Only and Constant Fields</a></li>
-          <li data-nav-id="/appendix/syntax/properties/" title="Properties" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/properties/"><b>A1.6. </b>Properties</a></li>
-          <li data-nav-id="/appendix/syntax/indexers/" title="Indexers" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/indexers/"><b>A1.7. </b>Indexers</a></li>
-          <li data-nav-id="/appendix/syntax/static-this/" title="The Keywords static and this" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/static-this/"><b>A1.8. </b>The Keywords static and this</a></li>
-          <li data-nav-id="/appendix/syntax/out-ref/" title="out and ref Parameters" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/out-ref/"><b>A1.9. </b>out and ref Parameters</a></li>
-          <li data-nav-id="/appendix/syntax/foreach/" title="The foreach Statement" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/foreach/"><b>A1.10. </b>The foreach Statement</a></li>
-          <li data-nav-id="/appendix/syntax/enumerators/" title="Enumerators" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/enumerators/"><b>A1.11. </b>Enumerators</a></li>
-          <li data-nav-id="/appendix/syntax/switch/" title="The switch Statement" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/switch/"><b>A1.12. </b>The switch Statement</a></li>
-          <li data-nav-id="/appendix/syntax/remainder/" title="The Remainder Operator" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/remainder/"><b>A1.13. </b>The Remainder Operator</a></li></ul></li>
-          <li data-nav-id="/appendix/vs/" title="Visual Studio" class="dd-item"><input type="checkbox" id="section-805451f3a5b538fc2959767d013f4e16" class="toggle"/><label for="section-805451f3a5b538fc2959767d013f4e16" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/"><b>A2. </b>Visual Studio</a><ul>
-          <li data-nav-id="/appendix/vs/installing-vs/" title="Installing Visual Studio" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/installing-vs/"><b>A2.1 </b>Installing Visual Studio</a></li>
-          <li data-nav-id="/appendix/vs/repos/" title="Git Repositories" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/repos/"><b>A2.2. </b>Git Repositories</a></li>
-          <li data-nav-id="/appendix/vs/solutions/" title="Visual Studio Solutions" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/solutions/"><b>A2.3. </b>Visual Studio Solutions</a></li>
-          <li data-nav-id="/appendix/vs/design-window/" title="The Design Window" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/design-window/"><b>A2.4. </b>The Design Window</a></li>
-          <li data-nav-id="/appendix/vs/code-window/" title="The Code Window" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/code-window/"><b>A2.5. </b>The Code Window</a></li>
-          <li data-nav-id="/appendix/vs/debugger/" title="The Debugger" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/debugger/"><b>A2.6. </b>The Debugger</a></li>
-          <li data-nav-id="/appendix/vs/submitting/" title="Submitting Assignments" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/submitting/"><b>A2.7. </b>Submitting Assignments</a></li>
-          <li data-nav-id="/appendix/vs/nunit/" title="Unit Testing" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/nunit/"><b>A2.8. </b>Unit Testing</a></li>
-          <li data-nav-id="/appendix/vs/multiple/" title="Using Multiple Machines" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/multiple/"><b>A2.9. </b>Using Multiple Machines</a></li>
-          <li data-nav-id="/appendix/vs/checkpointing/" title="Checkpointing" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/checkpointing/"><b>A2.10. </b>Checkpointing</a></li></ul></li>
-          <li data-nav-id="/appendix/style/" title="Programming Style Requirements" class="dd-item"><input type="checkbox" id="section-3c7d664b64b84c9f89fc48179979363e" class="toggle"/><label for="section-3c7d664b64b84c9f89fc48179979363e" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/"><b>A3. </b>Programming Style Requirements</a><ul>
-          <li data-nav-id="/appendix/style/formatting/" title="General Formatting" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/formatting/"><b>A3.1. </b>General Formatting</a></li>
-          <li data-nav-id="/appendix/style/access-modifiers/" title="Access Modifiers" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/access-modifiers/"><b>A3.2. </b>Access Modifiers</a></li>
-          <li data-nav-id="/appendix/style/naming/" title="Naming Conventions" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/naming/"><b>A3.3. </b>Naming Conventions</a></li>
-          <li data-nav-id="/appendix/style/comments/" title="Comments" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/comments/"><b>A3.4. </b>Comments</a></li>
-          <li data-nav-id="/appendix/style/prohibited/" title="Prohibited Features" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/prohibited/"><b>A3.5 </b>Prohibited Features</a></li></ul></li></ul></li>
+        <ul class="topics enlarge morespace collapsible-menu">
+          <li data-nav-id="/io/index.html" class=""><input type="checkbox" id="section-cbd3b3207f24308a668546abfa69f213" aria-controls="subsections-cbd3b3207f24308a668546abfa69f213"><label for="section-cbd3b3207f24308a668546abfa69f213"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Input/Output</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/io/index.html"><b>1. </b>Input/Output</a><ul id="subsections-cbd3b3207f24308a668546abfa69f213" class="morespace collapsible-menu">
+          <li data-nav-id="/io/dialogs/index.html" class=""><input type="checkbox" id="section-61b1770a0bd16f4917e33b67edd271d2" aria-controls="subsections-61b1770a0bd16f4917e33b67edd271d2"><label for="section-61b1770a0bd16f4917e33b67edd271d2"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Dialogs</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/io/dialogs/index.html"><b>1.1. </b>Dialogs</a><ul id="subsections-61b1770a0bd16f4917e33b67edd271d2" class="morespace collapsible-menu">
+          <li data-nav-id="/io/dialogs/message-boxes/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/io/dialogs/message-boxes/index.html"><b>1.1.1. </b>MessageBoxes</a></li>
+          <li data-nav-id="/io/dialogs/file-dialogs/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/io/dialogs/file-dialogs/index.html"><b>1.1.2. </b>File Dialogs</a></li>
+          <li data-nav-id="/io/dialogs/custom/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/io/dialogs/custom/index.html"><b>1.1.3. </b>Custom Dialogs</a></li></ul></li>
+          <li data-nav-id="/io/simple-text-file/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/io/simple-text-file/index.html"><b>1.2. </b>Simple Text File I/O</a></li>
+          <li data-nav-id="/io/exceptions/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/io/exceptions/index.html"><b>1.3. </b>Exception Handling</a></li>
+          <li data-nav-id="/io/advanced-text-file/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/io/advanced-text-file/index.html"><b>1.4. </b>Advanced Text File I/O</a></li>
+          <li data-nav-id="/io/other-file-io/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/io/other-file-io/index.html"><b>1.5. </b>Other File I/O</a></li></ul></li>
+          <li data-nav-id="/strings/index.html" class=""><input type="checkbox" id="section-9355ad26afa67cd4239c81429ad6e8ca" aria-controls="subsections-9355ad26afa67cd4239c81429ad6e8ca"><label for="section-9355ad26afa67cd4239c81429ad6e8ca"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu strings and StringBuilders</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/strings/index.html"><b>2. </b>strings and StringBuilders</a><ul id="subsections-9355ad26afa67cd4239c81429ad6e8ca" class="morespace collapsible-menu">
+          <li data-nav-id="/strings/strings/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/strings/strings/index.html"><b>2.1. </b>strings</a></li>
+          <li data-nav-id="/strings/stringbuilders/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilders/index.html"><b>2.2. </b>StringBuilders</a></li>
+          <li data-nav-id="/strings/stringbuilder-impl/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilder-impl/index.html"><b>2.3. </b>Implementation of StringBuilders</a></li></ul></li>
+          <li data-nav-id="/stacks-queues/index.html" class=""><input type="checkbox" id="section-deefdc256b7889ce66393d7269597a4b" aria-controls="subsections-deefdc256b7889ce66393d7269597a4b"><label for="section-deefdc256b7889ce66393d7269597a4b"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Stacks and Queues</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/index.html"><b>3. </b>Stacks and Queues</a><ul id="subsections-deefdc256b7889ce66393d7269597a4b" class="morespace collapsible-menu">
+          <li data-nav-id="/stacks-queues/stacks/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/stacks/index.html"><b>3.1. </b>Introduction to Stacks</a></li>
+          <li data-nav-id="/stacks-queues/undo/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/undo/index.html"><b>3.2. </b>Implementing Undo and Redo for a TextBox</a></li>
+          <li data-nav-id="/stacks-queues/paren/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/paren/index.html"><b>3.3. </b>Parenthesis Matching</a></li>
+          <li data-nav-id="/stacks-queues/stack-impl/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/stack-impl/index.html"><b>3.4. </b>Implementing a Stack</a></li>
+          <li data-nav-id="/stacks-queues/queues/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queues/index.html"><b>3.5. </b>Introduction to Queues</a></li>
+          <li data-nav-id="/stacks-queues/queue-impl/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queue-impl/index.html"><b>3.6. </b>Implementing a Queue</a></li></ul></li>
+          <li data-nav-id="/linked-lists/index.html" class=""><input type="checkbox" id="section-a51df6d53eeee393764eb46edb53958a" aria-controls="subsections-a51df6d53eeee393764eb46edb53958a"><label for="section-a51df6d53eeee393764eb46edb53958a"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Linked Lists</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/index.html"><b>4. </b>Linked Lists</a><ul id="subsections-a51df6d53eeee393764eb46edb53958a" class="morespace collapsible-menu">
+          <li data-nav-id="/linked-lists/intro/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/intro/index.html"><b>4.1. </b>Introduction to Linked Lists</a></li>
+          <li data-nav-id="/linked-lists/stacks-queues/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/stacks-queues/index.html"><b>4.2. </b>Implementing Stacks and Queues with Linked Lists</a></li>
+          <li data-nav-id="/linked-lists/sieve-eratosthenes/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/sieve-eratosthenes/index.html"><b>4.3. </b>Finding Prime Numbers</a></li></ul></li>
+          <li data-nav-id="/dictionaries/index.html" class=""><input type="checkbox" id="section-9011afb8a0159b09a13a971ca89bced8" aria-controls="subsections-9011afb8a0159b09a13a971ca89bced8"><label for="section-9011afb8a0159b09a13a971ca89bced8"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Dictionaries</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/index.html"><b>5. </b>Dictionaries</a><ul id="subsections-9011afb8a0159b09a13a971ca89bced8" class="morespace collapsible-menu">
+          <li data-nav-id="/dictionaries/dictionary-tkey-tvalue/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/dictionary-tkey-tvalue/index.html"><b>5.1. </b>The Dictionary&lt;TKey, TValue&gt; Class</a></li>
+          <li data-nav-id="/dictionaries/linked-list-impl/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/linked-list-impl/index.html"><b>5.2. </b>Implementing a Dictionary with a Linked List</a></li>
+          <li data-nav-id="/dictionaries/binary-search/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/binary-search/index.html"><b>5.3. </b>Implementing a Dictionary with an Array-Like Structure</a></li></ul></li>
+          <li data-nav-id="/trees/index.html" class=""><input type="checkbox" id="section-5e8305205d74771c71a9ea85594a7914" aria-controls="subsections-5e8305205d74771c71a9ea85594a7914"><label for="section-5e8305205d74771c71a9ea85594a7914"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Trees</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/trees/index.html"><b>6. </b>Trees</a><ul id="subsections-5e8305205d74771c71a9ea85594a7914" class="morespace collapsible-menu">
+          <li data-nav-id="/trees/intro/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/trees/intro/index.html"><b>6.1. </b>Introduction to Trees</a></li>
+          <li data-nav-id="/trees/bst/index.html" class=""><input type="checkbox" id="section-8d42cd93516505610f8b32c65bbeebda" aria-controls="subsections-8d42cd93516505610f8b32c65bbeebda"><label for="section-8d42cd93516505610f8b32c65bbeebda"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Binary Search Trees</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/index.html"><b>6.2. </b>Binary Search Trees</a><ul id="subsections-8d42cd93516505610f8b32c65bbeebda" class="morespace collapsible-menu">
+          <li data-nav-id="/trees/bst/binary-trees/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/binary-trees/index.html"><b>6.2.1. </b>Binary Trees</a></li>
+          <li data-nav-id="/trees/bst/intro/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/intro/index.html"><b>6.2.2. </b>Introduction to Binary Search Trees</a></li>
+          <li data-nav-id="/trees/bst/remove/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/remove/index.html"><b>6.2.3. </b>Removing from a Binary Search Tree</a></li>
+          <li data-nav-id="/trees/bst/inorder/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/inorder/index.html"><b>6.2.4. </b>Inorder Traversal</a></li></ul></li>
+          <li data-nav-id="/trees/avl/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/trees/avl/index.html"><b>6.3. </b>AVL Trees</a></li>
+          <li data-nav-id="/trees/tries/index.html" class=""><input type="checkbox" id="section-5f1f75af2aa97dd0bdbedb3b3e5adc65" aria-controls="subsections-5f1f75af2aa97dd0bdbedb3b3e5adc65"><label for="section-5f1f75af2aa97dd0bdbedb3b3e5adc65"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Tries</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/index.html"><b>6.4. </b>Tries</a><ul id="subsections-5f1f75af2aa97dd0bdbedb3b3e5adc65" class="morespace collapsible-menu">
+          <li data-nav-id="/trees/tries/intro/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro/index.html"><b>6.4.1. </b>Introduction to Tries</a></li>
+          <li data-nav-id="/trees/tries/multiple-impl/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/multiple-impl/index.html"><b>6.4.2. </b>Multiple Implementations of Children</a></li>
+          <li data-nav-id="/trees/tries/traversing/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/traversing/index.html"><b>6.4.3. </b>Traversing a Trie</a></li>
+          <li data-nav-id="/trees/tries/word-games/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/word-games/index.html"><b>6.4.4. </b>Tries in Word Games</a></li></ul></li>
+          <li data-nav-id="/trees/priority-queues/index.html" class=""><input type="checkbox" id="section-0e087c42aa39c815f492e3767eaf2ef7" aria-controls="subsections-0e087c42aa39c815f492e3767eaf2ef7"><label for="section-0e087c42aa39c815f492e3767eaf2ef7"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Priority Queues</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/index.html"><b>6.5. </b>Priority Queues</a><ul id="subsections-0e087c42aa39c815f492e3767eaf2ef7" class="morespace collapsible-menu">
+          <li data-nav-id="/trees/priority-queues/heaps/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/heaps/index.html"><b>6.5.1. </b>Heaps</a></li>
+          <li data-nav-id="/trees/priority-queues/leftist-heaps/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/leftist-heaps/index.html"><b>6.5.2. </b>Leftist Heaps</a></li>
+          <li data-nav-id="/trees/priority-queues/huffman-trees/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/huffman-trees/index.html"><b>6.5.3. </b>Huffman Trees</a></li></ul></li></ul></li>
+          <li data-nav-id="/hashing/index.html" class=""><input type="checkbox" id="section-cd22fc50afca8a60e214c94b94daa169" aria-controls="subsections-cd22fc50afca8a60e214c94b94daa169"><label for="section-cd22fc50afca8a60e214c94b94daa169"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Hash Tables</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/hashing/index.html"><b>7. </b>Hash Tables</a><ul id="subsections-cd22fc50afca8a60e214c94b94daa169" class="morespace collapsible-menu">
+          <li data-nav-id="/hashing/simple/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/hashing/simple/index.html"><b>7.1. </b>A Simple Hash Table Implementation</a></li>
+          <li data-nav-id="/hashing/rehashing/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/hashing/rehashing/index.html"><b>7.2. </b>Rehashing</a></li>
+          <li data-nav-id="/hashing/memoization/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/hashing/memoization/index.html"><b>7.3. </b>Memoization</a></li>
+          <li data-nav-id="/hashing/equality/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/hashing/equality/index.html"><b>7.4. </b>Equality in C#</a></li>
+          <li data-nav-id="/hashing/hash-functions/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/hashing/hash-functions/index.html"><b>7.5. </b>Hash Codes</a></li></ul></li>
+          <li data-nav-id="/graphs/index.html" class=""><input type="checkbox" id="section-fefd7704561bcadc124f3f3c72c54ab3" aria-controls="subsections-fefd7704561bcadc124f3f3c72c54ab3"><label for="section-fefd7704561bcadc124f3f3c72c54ab3"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Graphs</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/graphs/index.html"><b>8. </b>Graphs</a><ul id="subsections-fefd7704561bcadc124f3f3c72c54ab3" class="morespace collapsible-menu">
+          <li data-nav-id="/graphs/intro/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/graphs/intro/index.html"><b>8.1. </b>Introduction to Graphs</a></li>
+          <li data-nav-id="/graphs/dijkstra/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/graphs/dijkstra/index.html"><b>8.2. </b>Shortest Paths</a></li>
+          <li data-nav-id="/graphs/breadth-first/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/graphs/breadth-first/index.html"><b>8.3. </b>Unweighted Shortest Paths</a></li>
+          <li data-nav-id="/graphs/impl/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/graphs/impl/index.html"><b>8.4. </b>Implementing a Graph</a></li></ul></li>
+          <li data-nav-id="/sorting/index.html" class=""><input type="checkbox" id="section-fd2166a393af1c48d2ffe636e6f952d8" aria-controls="subsections-fd2166a393af1c48d2ffe636e6f952d8"><label for="section-fd2166a393af1c48d2ffe636e6f952d8"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Sorting</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/sorting/index.html"><b>9. </b>Sorting</a><ul id="subsections-fd2166a393af1c48d2ffe636e6f952d8" class="morespace collapsible-menu">
+          <li data-nav-id="/sorting/select/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/sorting/select/index.html"><b>9.1. </b>Select Sorts</a></li>
+          <li data-nav-id="/sorting/insert/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/sorting/insert/index.html"><b>9.2. </b>Insert Sorts</a></li>
+          <li data-nav-id="/sorting/merge/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/sorting/merge/index.html"><b>9.3. </b>Merge Sorts</a></li>
+          <li data-nav-id="/sorting/split/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/sorting/split/index.html"><b>9.4. </b>Split Sorts</a></li>
+          <li data-nav-id="/sorting/hybrid/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/sorting/hybrid/index.html"><b>9.5. </b>Hybrid Sorting Algorithms</a></li>
+          <li data-nav-id="/sorting/strings/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/sorting/strings/index.html"><b>9.6. </b>Sorting Strings</a></li></ul></li>
+          <li data-nav-id="/appendix/index.html" class="parent "><input type="checkbox" id="section-8a7f152ea576b5a4047f92c2cc1cabad" aria-controls="subsections-8a7f152ea576b5a4047f92c2cc1cabad" checked><label for="section-8a7f152ea576b5a4047f92c2cc1cabad"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Appendices</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/appendix/index.html"><b>A. </b>Appendices</a><ul id="subsections-8a7f152ea576b5a4047f92c2cc1cabad" class="morespace collapsible-menu">
+          <li data-nav-id="/appendix/syntax/index.html" class="parent "><input type="checkbox" id="section-6a5a5cc3bca4007f0866907612ee033f" aria-controls="subsections-6a5a5cc3bca4007f0866907612ee033f" checked><label for="section-6a5a5cc3bca4007f0866907612ee033f"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu C# Syntax</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/index.html"><b>A1. </b>C# Syntax</a><ul id="subsections-6a5a5cc3bca4007f0866907612ee033f" class="morespace collapsible-menu">
+          <li data-nav-id="/appendix/syntax/reference-value/index.html" class="active"><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/reference-value/index.html"><b>A1.1. </b>Reference Types and Value Types</a></li>
+          <li data-nav-id="/appendix/syntax/enumerations/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/enumerations/index.html"><b>A1.2. </b>Enumerations</a></li>
+          <li data-nav-id="/appendix/syntax/structs/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/structs/index.html"><b>A1.3. </b>Structures</a></li>
+          <li data-nav-id="/appendix/syntax/decimals/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/decimals/index.html"><b>A1.4. </b>The decimal Type</a></li>
+          <li data-nav-id="/appendix/syntax/const/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/const/index.html"><b>A1.5. </b>Read-Only and Constant Fields</a></li>
+          <li data-nav-id="/appendix/syntax/properties/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/properties/index.html"><b>A1.6. </b>Properties</a></li>
+          <li data-nav-id="/appendix/syntax/indexers/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/indexers/index.html"><b>A1.7. </b>Indexers</a></li>
+          <li data-nav-id="/appendix/syntax/static-this/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/static-this/index.html"><b>A1.8. </b>The Keywords static and this</a></li>
+          <li data-nav-id="/appendix/syntax/out-ref/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/out-ref/index.html"><b>A1.9. </b>out and ref Parameters</a></li>
+          <li data-nav-id="/appendix/syntax/foreach/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/foreach/index.html"><b>A1.10. </b>The foreach Statement</a></li>
+          <li data-nav-id="/appendix/syntax/enumerators/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/enumerators/index.html"><b>A1.11. </b>Enumerators</a></li>
+          <li data-nav-id="/appendix/syntax/switch/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/switch/index.html"><b>A1.12. </b>The switch Statement</a></li>
+          <li data-nav-id="/appendix/syntax/remainder/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/remainder/index.html"><b>A1.13. </b>The Remainder Operator</a></li></ul></li>
+          <li data-nav-id="/appendix/vs/index.html" class=""><input type="checkbox" id="section-805451f3a5b538fc2959767d013f4e16" aria-controls="subsections-805451f3a5b538fc2959767d013f4e16"><label for="section-805451f3a5b538fc2959767d013f4e16"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Visual Studio</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/index.html"><b>A2. </b>Visual Studio</a><ul id="subsections-805451f3a5b538fc2959767d013f4e16" class="morespace collapsible-menu">
+          <li data-nav-id="/appendix/vs/installing-vs/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/installing-vs/index.html"><b>A2.1 </b>Installing Visual Studio</a></li>
+          <li data-nav-id="/appendix/vs/repos/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/repos/index.html"><b>A2.2. </b>Git Repositories</a></li>
+          <li data-nav-id="/appendix/vs/solutions/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/solutions/index.html"><b>A2.3. </b>Visual Studio Solutions</a></li>
+          <li data-nav-id="/appendix/vs/design-window/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/design-window/index.html"><b>A2.4. </b>The Design Window</a></li>
+          <li data-nav-id="/appendix/vs/code-window/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/code-window/index.html"><b>A2.5. </b>The Code Window</a></li>
+          <li data-nav-id="/appendix/vs/debugger/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/debugger/index.html"><b>A2.6. </b>The Debugger</a></li>
+          <li data-nav-id="/appendix/vs/submitting/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/submitting/index.html"><b>A2.7. </b>Submitting Assignments</a></li>
+          <li data-nav-id="/appendix/vs/nunit/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/nunit/index.html"><b>A2.8. </b>Unit Testing</a></li>
+          <li data-nav-id="/appendix/vs/multiple/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/multiple/index.html"><b>A2.9. </b>Using Multiple Machines</a></li>
+          <li data-nav-id="/appendix/vs/checkpointing/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/checkpointing/index.html"><b>A2.10. </b>Checkpointing</a></li></ul></li>
+          <li data-nav-id="/appendix/style/index.html" class=""><input type="checkbox" id="section-3c7d664b64b84c9f89fc48179979363e" aria-controls="subsections-3c7d664b64b84c9f89fc48179979363e"><label for="section-3c7d664b64b84c9f89fc48179979363e"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Programming Style Requirements</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/index.html"><b>A3. </b>Programming Style Requirements</a><ul id="subsections-3c7d664b64b84c9f89fc48179979363e" class="morespace collapsible-menu">
+          <li data-nav-id="/appendix/style/formatting/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/formatting/index.html"><b>A3.1. </b>General Formatting</a></li>
+          <li data-nav-id="/appendix/style/access-modifiers/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/access-modifiers/index.html"><b>A3.2. </b>Access Modifiers</a></li>
+          <li data-nav-id="/appendix/style/naming/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/naming/index.html"><b>A3.3. </b>Naming Conventions</a></li>
+          <li data-nav-id="/appendix/style/comments/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/comments/index.html"><b>A3.4. </b>Comments</a></li>
+          <li data-nav-id="/appendix/style/prohibited/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/prohibited/index.html"><b>A3.5 </b>Prohibited Features</a></li></ul></li></ul></li>
         </ul>
-        <div class="footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"></div>
-        <hr class="default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"/>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"></div>
+        <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter">
         <div id="prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVariantSwitch">
           <ul>
             <li id="select-language-container" class="footerLangSwitch">
-              <a class="padding select-container">
+              <div class="padding menu-control">
                 <i class="fas fa-language fa-fw"></i>
                 <span>&nbsp;</span>
-                <div class="select-style">
+                <div class="control-style">
+                  <label class="a11y-only" for="select-language">Language</label>
                   <select id="select-language" onchange="location = baseUri + this.value;">
                   </select>
                 </div>
-                <div class="select-clear"></div>
-              </a>
+                <div class="clear"></div>
+              </div>
             </li>
             <li id="select-variant-container" class="footerVariantSwitch showVariantSwitch">
-              <a class="padding select-container">
+              <div class="padding menu-control">
                 <i class="fas fa-paint-brush fa-fw"></i>
                 <span>&nbsp;</span>
-                <div class="select-style">
+                <div class="control-style">
+                  <label class="a11y-only" for="select-variant">Theme</label>
                   <select id="select-variant" onchange="window.variants && variants.changeVariant( this.value );">
                     <option id="light-theme" value="light-theme" selected>Light Theme</option>
                     <option id="dark-theme" value="dark-theme">Dark Theme</option>
                   </select>
                 </div>
-                <div class="select-clear"></div>
-              </a>
+                <div class="clear"></div>
+              </div>
               <script>window.variants && variants.markSelectedVariant();</script>
             </li>
-            <li class="footerVisitedLinks"><a class="padding" onclick="clearHistory();"><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+            <li class="footerVisitedLinks">
+              <div class="padding menu-control">
+                <i class="fas fa-history fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button onclick="clearHistory();">Clear History</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
           </ul>
         </div>
         <div id="footer" class="footerFooter showFooter"><style>
@@ -917,9 +909,8 @@ Note also that boxing may also occur when passing parameters. For example, suppo
         </div>
       </div>
     </aside>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1686587337" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1686587337" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1686587337" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1686587337" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1691596177" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1691596177" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1691596177" defer></script>
   </body>
 </html>

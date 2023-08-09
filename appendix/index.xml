@@ -189,26 +189,6 @@
 	
 	
 		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
 		
 
 	
@@ -239,6 +219,11 @@
 	
 	
 		
+		
+
+	
+	
+		
 
 	
 	
@@ -254,6 +239,15 @@
 	
 		
 		
+
+	
+	
+		
+		
+		
+
+	
+	
 		
 
 	
@@ -263,6 +257,12 @@
 
 	
 	
+		
+		
+
+	
+	
+		
 		
 		
 		
@@ -519,15 +519,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Appendices on Data Structures in C#</title>
-    <link>https://ksu-cs-textbooks.github.io/cis300/appendix/</link>
+    <link>https://ksu-cs-textbooks.github.io/cis300/appendix/index.html</link>
     <description>Recent content in Appendices on Data Structures in C#</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://ksu-cs-textbooks.github.io/cis300/appendix/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Programming Style Requirements</title>
-      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/style/</link>
+      <title>C# Syntax</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/style/</guid>
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/index.html</guid>
+      <description>C# Syntax This chapter discusses various C# features that are either unavailable in Java or are unlikely to have been covered in an introductory Java programming class. No attempt has been made to be exhaustive. Instead, we focus mainly on those features that are likely to be needed in CIS 300. In addition, the following topics are covered in the main text, rather than in this appendix:
+Generic Types Interfaces Overriding virtual Methods Operator Overloading The using Statement Equality Type Casting For more information on C#, see the C# Reference manual and the C# Programming Guide .</description>
+    </item>
+    <item>
+      <title>Visual Studio</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/vs/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/vs/index.html</guid>
+      <description>Visual Studio This chapter will guide you through the use of Visual Studio 2022 and GitHub to obtain start code for your assignments, build, test, and debug graphical applications and class libraries, and submit assignment solutions. No attempt is meant to be exhaustive, as many of the features of Visual Studio are beyond the scope of CIS 300.
+Note This guide is based on Visual Studio Community 2022, version 17.6.1, released May 22, 2023.</description>
+    </item>
+    <item>
+      <title>Programming Style Requirements</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/style/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/style/index.html</guid>
       <description>Programming Style Requirements Software companies typically have programming style requirements to which their programmers must adhere. Many of these requirements have become industry standards. These requirements help to make the developed code more readable, portable, and maintainable. This appendix contains a short set (much shorter than what is typically found in industry) of programming style requirements for CIS 300. These requirements are consistent with Microsoft&amp;rsquo;s Naming Guidelines and de facto industry accepted practices.</description>
     </item>
   </channel>

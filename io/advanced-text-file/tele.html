@@ -189,26 +189,6 @@
 	
 	
 		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
 		
 
 	
@@ -239,6 +219,11 @@
 	
 	
 		
+		
+
+	
+	
+		
 
 	
 	
@@ -254,6 +239,15 @@
 	
 		
 		
+
+	
+	
+		
+		
+		
+
+	
+	
 		
 
 	
@@ -263,6 +257,12 @@
 
 	
 	
+		
+		
+
+	
+	
+		
 		
 		
 		
@@ -516,33 +516,33 @@
 		
 		
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.2.0+tip">
+    <meta name="generator" content="Relearn 5.18.0">
     <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
     <meta name="description" content="K-State CIS 300: Data Structures">
     <meta name="author" content="Rod Howell and Josh Weese">
     <title>Advanced Text File I/O :: Data Structures in C#</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587343" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587343" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587343" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1686587343" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1686587343" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587343" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1686587343" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1686587343" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1686587343" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1686587343" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1686587343" rel="stylesheet" media="print">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1686587343"></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596180" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596180" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596180" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1691596180" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1691596180" rel="stylesheet" media="print">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1691596180" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1691596180"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1691596180"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
-      var index_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
+      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
       var root_url="https://ksu-cs-textbooks.github.io/cis300/";
       var baseUri=root_url.replace(/\/$/, '');
       // translations
@@ -550,16 +550,17 @@
       window.T_Copied_to_clipboard = 'Copied to clipboard!';
       window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
       window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
       // some further base stuff
       var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
       window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
     </script>
     
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1686587343" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.min.js?1686587343" defer></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1691596180" rel="stylesheet">
 
   </head>
-  <body class="mobile-support tele disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/io/advanced-text-file/">
+  <body class="mobile-support tele disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/io/advanced-text-file/index.html">
     
     <div id="tele" class="tele mirror">
     
@@ -569,10 +570,11 @@
       
       <main id="body-inner" class="highlightable default" tabindex="-1">
         <div class="flex-block-wrapper">
-          <div id="head-tags">
-          </div>
           <article class="default">
-<div hidden><h1>Advanced Text File I/O</h1></div>
+            <header class="headline">
+            </header>
+<div hidden><h1 id="advanced-text-file-io">Advanced Text File I/O</h1></div>
+
 <h2 id="advanced-text-file-io">Advanced Text File I/O</h2>
 <p>Though the <strong>File.ReadAllText</strong> and <strong>File.WriteAllText</strong> methods
 provide simple mechanisms for reading and writing text files, they are
@@ -587,48 +589,41 @@ flexible ways, .NET provides <em>streams</em>. These streams are
 classes that provide uniform access to a wide variety of sequences of
 input or output data, such as files, network connections, other
 processes, or even blocks of memory. The
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamreader?view=net-6.0" target="_blank"><strong>StreamReader</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamreader?view=net-6.0" target="_blank" rel="noopener"><strong>StreamReader</strong></a>
 and
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=net-6.0" target="_blank"><strong>StreamWriter</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=net-6.0" target="_blank" rel="noopener"><strong>StreamWriter</strong></a>
 classes (in the
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io?view=net-6.0" target="_blank"><strong>System.IO</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io?view=net-6.0" target="_blank" rel="noopener"><strong>System.IO</strong></a>
 namespace) provide read and write, respectively, access to text streams,
 including text files.</p>
 <p>Some of the more useful <strong>public</strong> members of the <strong>StreamReader</strong> class
 are:</p>
 <ul>
 <li>A
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamreader.-ctor?view=net-6.0#system-io-streamreader-ctor%28system-string%29" target="_blank">constructor</a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamreader.-ctor?view=net-6.0#system-io-streamreader-ctor%28system-string%29" target="_blank" rel="noopener">constructor</a>
 that takes a <strong>string</strong> giving a file name as its only parameter and
 constructs a <strong>StreamReader</strong> to read from that file.</li>
 <li>A
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamreader.read?view=net-6.0#system-io-streamreader-read" target="_blank"><strong>Read</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamreader.read?view=net-6.0#system-io-streamreader-read" target="_blank" rel="noopener"><strong>Read</strong></a>
 method that takes no parameters. It reads the next character from
 the stream and returns it as an <strong>int</strong>. If it cannot read a
 character because it is already at the end of the stream, it returns
 -1 (it returns an <strong>int</strong> because -1 is outside the range of
 <strong>char</strong> values).</li>
 <li>A
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamreader.readline?view=net-6.0#system-io-streamreader-readline" target="_blank"><strong>ReadLine</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamreader.readline?view=net-6.0#system-io-streamreader-readline" target="_blank" rel="noopener"><strong>ReadLine</strong></a>
 method that takes no parameters. It reads the next line from the
 stream and returns it as a <strong>string?</strong>. If it cannot read a line
 because it is already at the end of the stream, it returns <strong>null</strong>.</li>
 <li>An
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamreader.endofstream?view=net-6.0#system-io-streamreader-endofstream" target="_blank"><strong>EndOfStream</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamreader.endofstream?view=net-6.0#system-io-streamreader-endofstream" target="_blank" rel="noopener"><strong>EndOfStream</strong></a>
 property that gets a <strong>bool</strong> indicating whether the end of the
 stream has been reached.</li>
 </ul>
@@ -637,41 +632,35 @@ or a line at a time until we reach the end of the file. The
 <strong>StreamWriter</strong> class has similar <strong>public</strong> members:</p>
 <ul>
 <li>A
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter.-ctor?view=net-6.0#system-io-streamwriter-ctor%28system-string%29" target="_blank">constructor</a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter.-ctor?view=net-6.0#system-io-streamwriter-ctor%28system-string%29" target="_blank" rel="noopener">constructor</a>
 that takes a <strong>string</strong> giving a file name as its only parameter and
 constructs a <strong>StreamWriter</strong> to write to this file. If the file
 already exists, it is replaced by what is written by the
 <strong>StreamWriter</strong>; otherwise, a new file is created.</li>
-<li>A 
+<li>A <a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter.write?view=net-6.0#system-io-streamwriter-write%28system-char%29" target="_blank"><strong>Write</strong></a>
 
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter.write?view=net-6.0#system-io-streamwriter-write%28system-char%29" target="_blank" rel="noopener"><strong>Write</strong></a>
 method that takes a <strong>char</strong> as its only parameter. It writes this
 <strong>char</strong> to the end of the stream.</li>
 <li>Another
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter.write?view=net-6.0#system-io-streamwriter-write%28system-string%29" target="_blank"><strong>Write</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter.write?view=net-6.0#system-io-streamwriter-write%28system-string%29" target="_blank" rel="noopener"><strong>Write</strong></a>
 method that takes a <strong>string?</strong> as its only parameter. It writes this
 <strong>string?</strong> to the end of the stream. If the given <strong>string?</strong> is <strong>null</strong>, nothing is written.</li>
 <li>A
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeline?view=net-6.0#system-io-textwriter-writeline" target="_blank"><strong>WriteLine</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeline?view=net-6.0#system-io-textwriter-writeline" target="_blank" rel="noopener"><strong>WriteLine</strong></a>
 method that takes no parameters. It writes a line terminator to the
 end of the stream (i.e., it ends the current line of text).</li>
 <li>Another
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeline?view=net-6.0#system-io-textwriter-writeline%28system-char%29" target="_blank"><strong>WriteLine</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeline?view=net-6.0#system-io-textwriter-writeline%28system-char%29" target="_blank" rel="noopener"><strong>WriteLine</strong></a>
 method that takes a <strong>char</strong> as its only parameter. It writes this
 <strong>char</strong> to the end of the stream, then terminates the current line
 of text.</li>
 <li>Yet another
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter.writeline?view=net-6.0#system-io-streamwriter-writeline%28system-string%29" target="_blank"><strong>WriteLine</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter.writeline?view=net-6.0#system-io-streamwriter-writeline%28system-string%29" target="_blank" rel="noopener"><strong>WriteLine</strong></a>
 method that takes a <strong>string?</strong> as its only parameter. It writes this
 <strong>string?</strong> to the end of the stream, then terminates the current
 line of text. If the <strong>string?</strong> is <strong>null</strong>, only the line terminator is written.</li>
@@ -699,9 +688,8 @@ internal array, then written as a single block when the array is full.
 When the program is finished writing, it needs to make sure that this
 array is <em>flushed</em> to the underlying file.</p>
 <p>Both the <strong>StreamReader</strong> and <strong>StreamWriter</strong> classes have
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.idisposable.dispose?view=net-6.0#system-idisposable-dispose" target="_blank"><strong>Dispose</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.idisposable.dispose?view=net-6.0#system-idisposable-dispose" target="_blank" rel="noopener"><strong>Dispose</strong></a>
 methods to release them properly; however, because I/O typically
 requires exception handling, it can be tricky to ensure that this method
 is always called when the I/O is finished. Specifically, the
@@ -711,26 +699,23 @@ the stream. In such a case, the <strong>catch</strong>-block cannot call the str
 <p><span id="using"></span> To handle this difficulty, C# provides a
 <strong>using</strong> statement. A <strong>using</strong> statement is different from a <strong>using</strong>
 directive, such as</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.IO;
-</span></span></code></pre></div><p>A <strong>using</strong> statement occurs within a method definition, not at the top
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.IO;</span></span></code></pre></div><p>A <strong>using</strong> statement occurs within a method definition, not at the top
 of a code file. Its recommended form is as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> ( <span style="color:#75715e">/* declaration and initialization of disposable variable(s) */</span> )
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> ( <span style="color:#75715e">/* declaration and initialization of disposable variable(s) */</span> )
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">/* Code that uses the disposable variables(s) */</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Thus, if we want to read and process a text file whose name is given by
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Thus, if we want to read and process a text file whose name is given by
 the <strong>string</strong> variable <code>fileName</code>, we could use the following code
 structure:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> (StreamReader input = <span style="color:#66d9ef">new</span> StreamReader(fileName))
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> (StreamReader input = <span style="color:#66d9ef">new</span> StreamReader(fileName))
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">/* Code that reads and process the file accessed by the
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * StreamReader input */</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>This declares the variable <code>input</code> to be of type <strong>StreamReader</strong> and
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>This declares the variable <code>input</code> to be of type <strong>StreamReader</strong> and
 initializes it to a new <strong>StreamReader</strong> to read the given file. This
 variable is only visible with the braces; furthermore, it is read-only &mdash;
 its value cannot be changed to refer to a different <strong>StreamReader</strong>.
@@ -738,17 +723,15 @@ The <strong>using</strong> statement then ensures that whenever control exits th
 code within the braces, <code>input</code>&rsquo;s <strong>Dispose</strong> method is called.</p>
 <p>More than one variable of the same type may be declared and initialized
 within the parentheses of a <strong>using</strong> statement; for example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> (StreamReader input1 = <span style="color:#66d9ef">new</span> StreamReader(fileName1),
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> (StreamReader input1 = <span style="color:#66d9ef">new</span> StreamReader(fileName1),
 </span></span><span style="display:flex;"><span>    input2 = <span style="color:#66d9ef">new</span> StreamReader(fileName2))
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">/* Code that reads from input1 and input2 */</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>The type of variable(s) declared must be a subtype of
-
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.idisposable?view=net-6.0" target="_blank" rel="noopener"><strong>IDisposable</strong></a>.
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>The type of variable(s) declared must be a subtype of
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.idisposable?view=net-6.0" target="_blank"><strong>IDisposable</strong></a>
+.
 This ensures that the variables each have a <strong>Dispose</strong> method.</p>
 <p>As a complete example of the use of a <strong>StreamReader</strong> and a
 <strong>StreamWriter</strong>, together with a <strong>using</strong> statement for each, suppose
@@ -757,7 +740,7 @@ giving the name of an input file and the name of an output file. The
 method is to reproduce the input file as the output file, but with each
 line prefixed by a line number and a tab. We will start numbering lines
 with 1. The following method accomplishes this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// Copies the file at inFileName to outFileName with each line</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// prefixed by its line number followed by a tab.</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
@@ -782,8 +765,7 @@ with 1. The following method accomplishes this:</p>
 </span></span><span style="display:flex;"><span>            }
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>As noted above, a <strong>StreamReader</strong>&rsquo;s <strong>ReadLine</strong> method has a return type of <strong>string?</strong> because it will return <strong>null</strong> if the end of the stream has already been reached. Furthermore, the compiler is unable to determine that the loop condition will prevent the call to <strong>ReadLine</strong> from returning <strong>null</strong>. Thus, in order to suppress the compiler warning when the returned <strong>string?</strong> is assigned to a <strong>string</strong>, we include a <code>!</code> following the call to <strong>ReadLine</strong>, and document the reason with a comment above this line.</p>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>As noted above, a <strong>StreamReader</strong>&rsquo;s <strong>ReadLine</strong> method has a return type of <strong>string?</strong> because it will return <strong>null</strong> if the end of the stream has already been reached. Furthermore, the compiler is unable to determine that the loop condition will prevent the call to <strong>ReadLine</strong> from returning <strong>null</strong>. Thus, in order to suppress the compiler warning when the returned <strong>string?</strong> is assigned to a <strong>string</strong>, we include a <code>!</code> following the call to <strong>ReadLine</strong>, and document the reason with a comment above this line.</p>
 <p>We can call the above method within a <strong>try</strong>-block to handle any
 exceptions that may be thrown during the I/O. The <strong>catch</strong>-block will
 not have access to either <code>input</code> or <code>output</code>, but it doesn&rsquo;t need it.
@@ -792,23 +774,23 @@ will ensure that the <strong>Dispose</strong> methods of both the <strong>Stream
 and the <strong>StreamWriter</strong> are called.</p>
 
             <footer class="footline">
+
             </footer>
           </article>
         </div>
       </main>
     </div>
     
-  </div>
+    </div>
     
     
     
     
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1686587343" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1686587343" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1686587343" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1686587343" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1691596180" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1691596180" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1691596180" defer></script>
     
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/tele-scroll.js?1686587343 defer"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/tele-scroll.js?1691596180 defer"></script>
     
   </body>
 </html>

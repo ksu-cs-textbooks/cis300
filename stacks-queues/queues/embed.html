@@ -189,26 +189,6 @@
 	
 	
 		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
 		
 
 	
@@ -239,6 +219,11 @@
 	
 	
 		
+		
+
+	
+	
+		
 
 	
 	
@@ -254,6 +239,15 @@
 	
 		
 		
+
+	
+	
+		
+		
+		
+
+	
+	
 		
 
 	
@@ -263,6 +257,12 @@
 
 	
 	
+		
+		
+
+	
+	
+		
 		
 		
 		
@@ -516,33 +516,33 @@
 		
 		
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.2.0+tip">
+    <meta name="generator" content="Relearn 5.18.0">
     <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
     <meta name="description" content="K-State CIS 300: Data Structures">
     <meta name="author" content="Rod Howell and Josh Weese">
     <title>Introduction to Queues :: Data Structures in C#</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587339" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587339" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587339" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587339" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587339" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587339" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1686587339" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1686587339" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587339" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587339" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1686587339" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1686587339" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1686587339" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1686587339" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1686587339" rel="stylesheet" media="print">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1686587339"></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596179" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596179" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596179" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596179" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596179" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596179" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1691596179" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1691596179" rel="stylesheet" media="print">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1691596179" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1691596179"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1691596179"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
-      var index_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
+      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
       var root_url="https://ksu-cs-textbooks.github.io/cis300/";
       var baseUri=root_url.replace(/\/$/, '');
       // translations
@@ -550,24 +550,23 @@
       window.T_Copied_to_clipboard = 'Copied to clipboard!';
       window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
       window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
       // some further base stuff
       var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
       window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
     </script>
     
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1686587339" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.min.js?1686587339" defer></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1691596179" rel="stylesheet">
 
   </head>
   <body class="mobile-support embed disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queues/embed.html">
-    <div id="body" class="default-animation" data-iframe-height="yes">
+    <div id="body" class="default-animation">
       
       
       
-      <main id="body-inner" class="highlightable default" tabindex="-1" data-iframe-height="yes" style="padding-bottom: 0px">
-        <div class="flex-block-wrapper" data-iframe-height="yes">
-          <div id="head-tags">
-          </div>
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
           <article class="default">
     
     
@@ -601,47 +600,40 @@ the <em>back</em>, and the next person who is served is the person at the
 Likewise, new data items are added to the back of a queue, and data
 items are retrieved from the front.</p>
 <p>.NET provides both a non-generic queue of <strong>object?</strong>s
-(
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.queue?view=net-6.0" target="_blank" rel="noopener"><strong>System.Collections.Queue</strong></a>)
+(<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.queue?view=net-6.0" target="_blank"><strong>System.Collections.Queue</strong></a>
+)
 and a generic queue
-(
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1?view=net-6.0" target="_blank" rel="noopener"><strong>System.Collections.Generic.Queue&lt;T&gt;</strong></a>).
+(<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1?view=net-6.0" target="_blank"><strong>System.Collections.Generic.Queue&lt;T&gt;</strong></a>
+).
 For simplicity, we will focus on the generic version. The non-generic
 version is the same, except that wherever the type parameter <strong>T</strong> is
 used in the generic version, <strong>object?</strong> is used in the non-generic
 version.</p>
 <p>Like <strong>Stack&lt;T&gt;</strong>, <strong>Queue&lt;T&gt;</strong> has a <strong>public</strong>
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1.-ctor?view=net-6.0#system-collections-generic-queue-1-ctor" target="_blank">constructor</a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1.-ctor?view=net-6.0#system-collections-generic-queue-1-ctor" target="_blank" rel="noopener">constructor</a>
 that takes no parameters and constructs an empty queue, along with a
 <strong>public</strong>
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1.count?view=net-6.0#system-collections-generic-queue-1-count" target="_blank"><strong>Count</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1.count?view=net-6.0#system-collections-generic-queue-1-count" target="_blank" rel="noopener"><strong>Count</strong></a>
 property that gets the number of elements in the queue (as an <strong>int</strong>).
 It also has the following <strong>public</strong> methods:</p>
 <ul>
 <li>An
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1.enqueue?view=net-6.0#system-collections-generic-queue-1-enqueue%28-0%29" target="_blank"><strong>Enqueue</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1.enqueue?view=net-6.0#system-collections-generic-queue-1-enqueue%28-0%29" target="_blank" rel="noopener"><strong>Enqueue</strong></a>
 method that takes a single parameter of type <strong>T</strong> and places it at
 the back of the queue.</li>
 <li>A
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1.peek?view=net-6.0#system-collections-generic-queue-1-peek" target="_blank"><strong>Peek</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1.peek?view=net-6.0#system-collections-generic-queue-1-peek" target="_blank" rel="noopener"><strong>Peek</strong></a>
 method that takes no parameters and returns the element (of type
 <strong>T</strong>) at the front of the queue without changing the queue&rsquo;s
 contents. If the queue is empty, this method throws an
 <strong>InvalidOperationException</strong>.</li>
 <li>A
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1.dequeue?view=net-6.0#system-collections-generic-queue-1-dequeue" target="_blank"><strong>Dequeue</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1.dequeue?view=net-6.0#system-collections-generic-queue-1-dequeue" target="_blank" rel="noopener"><strong>Dequeue</strong></a>
 method, which takes no parameters and removes and returns the
 element at the front of the queue. If the queue is empty, this
 method throws an <strong>InvalidOperationException</strong>.</li>
@@ -650,9 +642,8 @@ method throws an <strong>InvalidOperationException</strong>.</li>
 need to determine what type to make the elements. We will need to store
 the purchase price of each share we buy in the queue. An appropriate
 type for storing monetary amounts is the
-
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/decimals"><strong>decimal</strong></a> type.
+<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/decimals"><strong>decimal</strong></a>
+ type.
 Therefore, we will use an initially empty <strong>Queue&lt;decimal&gt;</strong>. Each
 time we buy shares, we enqueue the purchase price of each share onto the
 queue. When we sell shares, we need to compute the sum of the capital
@@ -662,6 +653,7 @@ subtract that purchase price from the selling price. Using the queue in
 this way ensures that we sell the shares in FIFO order.</p>
 
             <footer class="footline">
+
             </footer>
           </article>
         </div>
@@ -670,13 +662,8 @@ this way ensures that we sell the shares in FIFO order.</p>
     
     
     
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1686587339" defer></script>
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1686587339" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1686587339" defer></script>
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/embed-iframe.js?1686587339 defer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/iframe-resizer@4.3.2/js/iframeResizer.contentWindow.min.js"></script>
-    
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1691596180" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1691596180" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1691596180" defer></script>
   </body>
 </html>

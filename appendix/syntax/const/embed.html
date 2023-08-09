@@ -189,26 +189,6 @@
 	
 	
 		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
 		
 
 	
@@ -239,6 +219,11 @@
 	
 	
 		
+		
+
+	
+	
+		
 
 	
 	
@@ -254,6 +239,15 @@
 	
 		
 		
+
+	
+	
+		
+		
+		
+
+	
+	
 		
 
 	
@@ -263,6 +257,12 @@
 
 	
 	
+		
+		
+
+	
+	
+		
 		
 		
 		
@@ -516,33 +516,33 @@
 		
 		
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.2.0+tip">
+    <meta name="generator" content="Relearn 5.18.0">
     <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
     <meta name="description" content="K-State CIS 300: Data Structures">
     <meta name="author" content="Rod Howell and Josh Weese">
     <title>Read-Only and Constant Fields :: Data Structures in C#</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587338" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587338" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587338" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587338" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587338" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587338" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1686587338" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1686587338" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587338" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587338" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1686587338" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1686587338" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1686587338" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1686587338" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1686587338" rel="stylesheet" media="print">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1686587338"></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596179" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596179" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596179" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596179" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596179" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596179" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1691596179" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1691596179" rel="stylesheet" media="print">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1691596179" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1691596179"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1691596179"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
-      var index_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
+      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
       var root_url="https://ksu-cs-textbooks.github.io/cis300/";
       var baseUri=root_url.replace(/\/$/, '');
       // translations
@@ -550,33 +550,31 @@
       window.T_Copied_to_clipboard = 'Copied to clipboard!';
       window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
       window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
       // some further base stuff
       var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
       window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
     </script>
     
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1686587338" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.min.js?1686587338" defer></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1691596179" rel="stylesheet">
 
   </head>
   <body class="mobile-support embed disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/const/embed.html">
-    <div id="body" class="default-animation" data-iframe-height="yes">
+    <div id="body" class="default-animation">
       
       
       
-      <main id="body-inner" class="highlightable default" tabindex="-1" data-iframe-height="yes" style="padding-bottom: 0px">
-        <div class="flex-block-wrapper" data-iframe-height="yes">
-          <div id="head-tags">
-          </div>
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
           <article class="default">
     
     
     
 <h2 id="read-only-and-constant-fields">Read-Only and Constant Fields</h2>
-<p>Field declarations may contain one of the the keywords <strong>readonly</strong> or  <strong>const</strong> to indicate that these fields will always contain the same values. Such declarations are useful for defining a value that is to be used throughout a class or 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/structs">structure</a> definition, or throughout an entire program. For example, we might define:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ConstantsExample</span>
+<p>Field declarations may contain one of the the keywords <strong>readonly</strong> or  <strong>const</strong> to indicate that these fields will always contain the same values. Such declarations are useful for defining a value that is to be used throughout a class or <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/structs">structure</a>
+ definition, or throughout an entire program. For example, we might define:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ConstantsExample</span>
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">readonly</span> <span style="color:#66d9ef">int</span> VerticalPadding = <span style="color:#ae81ff">12</span>;
 </span></span><span style="display:flex;"><span>
@@ -584,22 +582,18 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    . . .
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Subsequently throughout the above class, the identifier <code>_humanPlayer</code> will refer to the string, &ldquo;X&rdquo;. Because <code>VerticalPadding</code> is <strong>public</strong>, the <code>VerticalPadding</code> field of any instance of this <strong>ConstantsExample</strong> will contain the value 12 throughout the program. Such definitions are useful for various reasons, but perhaps the most important is that they make the program more maintainable. For example, <code>VerticalPadding</code> may represent some distance within a graphical layout. At some point in the lifetime of the software, it may be decided that this distance should be changed to 10 in order to give a more compact layout. Because we are using a <strong>readonly</strong> field rather than a literal 12 everywhere this distance is needed, we can make this change by simply changing the 12 in the above definition to 10.</p>
-<p>When defining a <strong>const</strong> field, an initializer is required. The value assigned by the initializer must be a value that can be computed at compile time. For this reason, a constant field of a 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/reference-value">reference type</a> can only be a <strong>string</strong> or <strong>null</strong>. The assigned value may be an expression, and this expression may contain other <strong>const</strong> fields, provided these definitions don&rsquo;t mutually depend on each other. Thus, for example, we could add the following to the above definition:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">string</span> _paddedHumanPlayer = <span style="color:#e6db74">&#34; &#34;</span> + _humanPlayer + <span style="color:#e6db74">&#34; &#34;</span>;
-</span></span></code></pre></div><p><strong>const</strong> fields may not be declared as 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/static-this"><strong>static</strong></a>, as they are already implicitly <strong>static</strong>.</p>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Subsequently throughout the above class, the identifier <code>_humanPlayer</code> will refer to the string, &ldquo;X&rdquo;. Because <code>VerticalPadding</code> is <strong>public</strong>, the <code>VerticalPadding</code> field of any instance of this <strong>ConstantsExample</strong> will contain the value 12 throughout the program. Such definitions are useful for various reasons, but perhaps the most important is that they make the program more maintainable. For example, <code>VerticalPadding</code> may represent some distance within a graphical layout. At some point in the lifetime of the software, it may be decided that this distance should be changed to 10 in order to give a more compact layout. Because we are using a <strong>readonly</strong> field rather than a literal 12 everywhere this distance is needed, we can make this change by simply changing the 12 in the above definition to 10.</p>
+<p>When defining a <strong>const</strong> field, an initializer is required. The value assigned by the initializer must be a value that can be computed at compile time. For this reason, a constant field of a <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/reference-value">reference type</a>
+ can only be a <strong>string</strong> or <strong>null</strong>. The assigned value may be an expression, and this expression may contain other <strong>const</strong> fields, provided these definitions don&rsquo;t mutually depend on each other. Thus, for example, we could add the following to the above definition:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">string</span> _paddedHumanPlayer = <span style="color:#e6db74">&#34; &#34;</span> + _humanPlayer + <span style="color:#e6db74">&#34; &#34;</span>;</span></span></code></pre></div><p><strong>const</strong> fields may not be declared as <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/static-this"><strong>static</strong></a>
+, as they are already implicitly <strong>static</strong>.</p>
 <p>A <strong>readonly</strong> field differs from a <strong>const</strong> field mainly in that it is initialized at runtime, whereas a <strong>const</strong> field is initialized at compile time. This difference has several ramifications. First, a <strong>readonly</strong> field may be initialized in a constructor as an alternative to using an initializer. Second, a <strong>readonly</strong> field may be either <strong>static</strong> or non-<strong>static</strong>. These differences imply that in different instances of the same class or structure, a <strong>readonly</strong> field may have different values.</p>
 <p>One final difference between a <strong>readonly</strong> field and a <strong>const</strong> field is that a <strong>readonly</strong> field may be of any type and contain any value. Care must be taken, however, when defining a <strong>readonly</strong> reference type. For example, suppose we define the following:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">readonly</span> <span style="color:#66d9ef">string</span>[] _names = { <span style="color:#e6db74">&#34;Peter&#34;</span>, <span style="color:#e6db74">&#34;Paul&#34;</span>, <span style="color:#e6db74">&#34;Mary&#34;</span> };
-</span></span></code></pre></div><p>Defining <code>_names</code> to be <strong>readonly</strong> guarantees that this field will always refer to the same array after its containing instance is constructed. However, it does <em>not</em> guarantee that the three array locations will always contain the same values. For this reason, the use of <strong>readonly</strong> for <strong>public</strong> fields of mutable reference types is discouraged.</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">readonly</span> <span style="color:#66d9ef">string</span>[] _names = { <span style="color:#e6db74">&#34;Peter&#34;</span>, <span style="color:#e6db74">&#34;Paul&#34;</span>, <span style="color:#e6db74">&#34;Mary&#34;</span> };</span></span></code></pre></div><p>Defining <code>_names</code> to be <strong>readonly</strong> guarantees that this field will always refer to the same array after its containing instance is constructed. However, it does <em>not</em> guarantee that the three array locations will always contain the same values. For this reason, the use of <strong>readonly</strong> for <strong>public</strong> fields of mutable reference types is discouraged.</p>
 <p><strong>readonly</strong> is preferred over <strong>const</strong> for a <strong>public</strong> field whose value may change later in the software lifecycle. If the value of a <strong>public const</strong> field is changed by a code revision, any code using that field will need to be recompiled to incorporate that change.</p>
 
             <footer class="footline">
+
             </footer>
           </article>
         </div>
@@ -608,13 +602,8 @@
     
     
     
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1686587338" defer></script>
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1686587338" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1686587338" defer></script>
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/embed-iframe.js?1686587338 defer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/iframe-resizer@4.3.2/js/iframeResizer.contentWindow.min.js"></script>
-    
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1691596179" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1691596179" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1691596179" defer></script>
   </body>
 </html>

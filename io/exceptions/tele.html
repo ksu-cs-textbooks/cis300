@@ -189,26 +189,6 @@
 	
 	
 		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
 		
 
 	
@@ -239,6 +219,11 @@
 	
 	
 		
+		
+
+	
+	
+		
 
 	
 	
@@ -254,6 +239,15 @@
 	
 		
 		
+
+	
+	
+		
+		
+		
+
+	
+	
 		
 
 	
@@ -263,6 +257,12 @@
 
 	
 	
+		
+		
+
+	
+	
+		
 		
 		
 		
@@ -516,33 +516,33 @@
 		
 		
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.2.0+tip">
+    <meta name="generator" content="Relearn 5.18.0">
     <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
     <meta name="description" content="K-State CIS 300: Data Structures">
     <meta name="author" content="Rod Howell and Josh Weese">
     <title>Exception Handling :: Data Structures in C#</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587343" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587343" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587343" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1686587343" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1686587343" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587343" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1686587343" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1686587343" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1686587343" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1686587343" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1686587343" rel="stylesheet" media="print">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1686587343"></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596180" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596180" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596180" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1691596180" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1691596180" rel="stylesheet" media="print">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1691596180" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1691596180"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1691596180"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
-      var index_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
+      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
       var root_url="https://ksu-cs-textbooks.github.io/cis300/";
       var baseUri=root_url.replace(/\/$/, '');
       // translations
@@ -550,16 +550,17 @@
       window.T_Copied_to_clipboard = 'Copied to clipboard!';
       window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
       window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
       // some further base stuff
       var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
       window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
     </script>
     
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1686587343" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.min.js?1686587343" defer></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1691596180" rel="stylesheet">
 
   </head>
-  <body class="mobile-support tele disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/io/exceptions/">
+  <body class="mobile-support tele disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/io/exceptions/index.html">
     
     <div id="tele" class="tele mirror">
     
@@ -569,15 +570,15 @@
       
       <main id="body-inner" class="highlightable default" tabindex="-1">
         <div class="flex-block-wrapper">
-          <div id="head-tags">
-          </div>
           <article class="default">
-<div hidden><h1>Exception Handling</h1></div>
-<h2 id="exception-handling">Exception Handling</h2>
-<p>As was mentioned in 
+            <header class="headline">
+            </header>
+<div hidden><h1 id="exception-handling">Exception Handling</h1></div>
 
-<a href="https://ksu-cs-textbooks.github.io/cis300/io/simple-text-file">the previous
-section</a>, various
+<h2 id="exception-handling">Exception Handling</h2>
+<p>As was mentioned in <a href="https://ksu-cs-textbooks.github.io/cis300/io/simple-text-file">the previous
+section</a>
+, various
 problems can occur when doing file I/O. Some of these problems include:</p>
 <ul>
 <li>Trying to write to a read-only file.</li>
@@ -593,18 +594,18 @@ without terminating the program.</p>
   
   
 <div class="box notices cstyle tip">
-    <div class="box-label"><i class="fa-fw fas fa-lightbulb"></i> Tip</div>
-    <div class="box-content">
-<p>
+  <div class="box-label"><i class="fa-fw fas fa-lightbulb"></i> Tip</div>
+  <div class="box-content">
 
-<a href="https://ksu-cs-textbooks.github.io/cis300/io/dialogs/file-dialogs">File dialogs</a>
+<p><a href="https://ksu-cs-textbooks.github.io/cis300/io/dialogs/file-dialogs">File dialogs</a>
+
 can be quite helpful in avoiding some of these exceptions, as they
 can reject improper selections by the user.</p>
-    </div>
+</div>
 </div>
 <p>The mechanism used to handle exceptions is the <strong>try</strong>-<strong>catch</strong>
 construct. In its simplest form, it looks like:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">try</span>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">try</span>
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Block of code that might throw an exception</span>
@@ -615,8 +616,7 @@ construct. In its simplest form, it looks like:</p>
 </span></span><span style="display:flex;"><span>    
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Code to handle the exception</span>
 </span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>If we are concerned about exceptions thrown while doing I/O, we would
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>If we are concerned about exceptions thrown while doing I/O, we would
 include the I/O and anything dependent on it within the <strong>try</strong>-block.
 If at any point within this block an exception is thrown, control
 immediately jumps to the <strong>catch</strong>-block. Here, we would place code to
@@ -624,7 +624,7 @@ handle the exception - for example, displaying a message to the user.</p>
 <p>Suppose, for example, that we want to count the number of upper-case
 letters in a file whose name is in the <strong>string</strong> referenced by
 <code>fileName</code>. We could use the following code:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">try</span>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">try</span>
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">string</span> contents = File.ReadAllText(fileName);
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> count = <span style="color:#ae81ff">0</span>;
@@ -640,30 +640,27 @@ letters in a file whose name is in the <strong>string</strong> referenced by
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">catch</span>
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    MessageBox.Show(<span style="color:#e6db74">&#34;An exception occurred.&#34;</span>);
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
   
   
 <div class="box notices cstyle note">
-    <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
-    <div class="box-content">
-<p>See the section, &ldquo;
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
+  <div class="box-content">
 
-<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/foreach">The <strong>foreach</strong>
-Statement</a>&rdquo; for an
+<p>See the section, &ldquo;<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/foreach">The <strong>foreach</strong>
+Statement</a>
+&rdquo; for an
 explanation of <strong>foreach</strong> loops. The
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.char.isupper?view=net-6.0#system-char-isupper%28system-char%29" target="_blank"><strong>char.IsUpper</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.char.isupper?view=net-6.0#system-char-isupper%28system-char%29" target="_blank" rel="noopener"><strong>char.IsUpper</strong></a>
 method returns a <strong>bool</strong> indicating whether the given <strong>char</strong> is an
 upper-case letter in some alphabet.</p>
-    </div>
+</div>
 </div>
 <p>We should always include within the <strong>try</strong>-block all of the code that
 depends on what we want to read. Consider what would happen, for
 example, if we tried to move the statement,</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>MessageBox.Show(<span style="color:#e6db74">&#34;The file contains &#34;</span> + count + <span style="color:#e6db74">&#34; upper-case letters.&#34;</span>);
-</span></span></code></pre></div><p>outside the <strong>try</strong>-<strong>catch</strong>. First, we would have a syntax error
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>MessageBox.Show(<span style="color:#e6db74">&#34;The file contains &#34;</span> + count + <span style="color:#e6db74">&#34; upper-case letters.&#34;</span>);</span></span></code></pre></div><p>outside the <strong>try</strong>-<strong>catch</strong>. First, we would have a syntax error
 because the variable <code>count</code> is declared within the <strong>try</strong>-block, and
 hence cannot be used outside of it. We could fix this error by declaring
 and initializing <code>count</code> prior to the <strong>try</strong> statement. The resulting
@@ -681,8 +678,7 @@ helpful to the user. It gives no indication of what the problem is. In
 order to be able to provide more information to the user, we need more
 information regarding the nature of the exception. The way we do this is
 to use some additional code on the <strong>catch</strong> statement:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">catch</span> (Exception ex)
-</span></span></code></pre></div><p>The word <strong>Exception</strong> above is a type. Every exception in C# is a
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">catch</span> (Exception ex)</span></span></code></pre></div><p>The word <strong>Exception</strong> above is a type. Every exception in C# is a
 subtype of the <strong>Exception</strong> class. In this form of the <strong>catch</strong>
 statement, we can include any subtype of <strong>Exception</strong>, including
 <strong>Exception</strong> itself, as the first word within the parentheses. The
@@ -698,16 +694,14 @@ like a parameter list, giving us access to the exception that was
 thrown. Having the exception available to examine, we can now give more
 meaningful feedback to the user. One rather crude way of doing this is
 to use the exception&rsquo;s
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.object.tostring?view=net-6.0#system-object-tostring" target="_blank"><strong>ToString</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.object.tostring?view=net-6.0#system-object-tostring" target="_blank" rel="noopener"><strong>ToString</strong></a>
 method to convert it to a <strong>string</strong>
 representation, which can then be displayed to the user; for example,</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">catch</span> (Exception ex)
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">catch</span> (Exception ex)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    MessageBox.Show(ex.ToString());
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Replacing the <strong>catch</strong>-block in the earler example with this
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Replacing the <strong>catch</strong>-block in the earler example with this
 <strong>catch</strong>-block might result in the following message:</p>
 <img src="exception-in-messagebox.png" alt="A MessageBox displaying an exception." style="zoom:67%;" />
 <p>While this message is not something we would want to show to an end
@@ -717,25 +711,25 @@ exception thrown and the line that threw the exception.</p>
   
   
 <div class="box notices cstyle tip">
-    <div class="box-label"><i class="fa-fw fas fa-lightbulb"></i> Tip</div>
-    <div class="box-content">
+  <div class="box-label"><i class="fa-fw fas fa-lightbulb"></i> Tip</div>
+  <div class="box-content">
+
 <p>Every object in C# has a
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.object.tostring?view=net-6.0#system-object-tostring" target="_blank"><strong>ToString</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.object.tostring?view=net-6.0#system-object-tostring" target="_blank" rel="noopener"><strong>ToString</strong></a>
 method. Hence, we can convert an instance of any type to <strong>string</strong> by
 using its <strong>ToString</strong> method. This method will always return a
 <strong>string</strong>, but depending on the original type, this <strong>string</strong> may or
 may not be useful. For example, because there is no particularly meaningful way to
 convert a <strong>Form</strong> to a <strong>string</strong>, its <strong>ToString</strong> method is not
 especially useful.</p>
-    </div>
+</div>
 </div>
 <p>A single <strong>try</strong>-block can have more than one <strong>catch</strong>-block. In such a
 case, whenever an exception occurs within the <strong>try</strong>-block, control is
 transferred to the first <strong>catch</strong>-block that can catch that particular
 exception. For example, we can set up the following construct:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">try</span>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">try</span>
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Code that may throw an exception</span>
@@ -758,44 +752,43 @@ exception. For example, we can set up the following construct:</p>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Code to handle any other exception</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>If we don&rsquo;t need access to the exception itself in order to handle it,
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>If we don&rsquo;t need access to the exception itself in order to handle it,
 but only need to know what kind of exception it is, we can leave off the
 variable name in the <strong>catch</strong> statement. For example, if we are trying
 to read from a file whose name is referenced by the <strong>string</strong>
 <code>fileName</code>, we might handle a <strong>FileNotFoundException</strong> as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">catch</span> (FileNotFoundException)
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">catch</span> (FileNotFoundException)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    MessageBox.Show(<span style="color:#e6db74">&#34;Could not find the file &#34;</span> + fileName);
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
   
   
 <div class="box notices cstyle warning">
-    <div class="box-label"><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div>
-    <div class="box-content">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div>
+  <div class="box-content">
+
 <p>Don&rsquo;t use exception handling (i.e., <code>try</code>-<code>catch</code>) to handle cases that are expected to occur under normal conditions. In such cases, use an <code>if</code>-statement instead. Not only is this better style, but it is also more efficient.</p>
-    </div>
+</div>
 </div>
 
             <footer class="footline">
+
             </footer>
           </article>
         </div>
       </main>
     </div>
     
-  </div>
+    </div>
     
     
     
     
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1686587343" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1686587343" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1686587343" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1686587343" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1691596180" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1691596180" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1691596180" defer></script>
     
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/tele-scroll.js?1686587343 defer"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/tele-scroll.js?1691596180 defer"></script>
     
   </body>
 </html>

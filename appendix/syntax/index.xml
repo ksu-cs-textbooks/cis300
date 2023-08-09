@@ -189,26 +189,6 @@
 	
 	
 		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
 		
 
 	
@@ -239,6 +219,11 @@
 	
 	
 		
+		
+
+	
+	
+		
 
 	
 	
@@ -254,6 +239,15 @@
 	
 		
 		
+
+	
+	
+		
+		
+		
+
+	
+	
 		
 
 	
@@ -263,6 +257,12 @@
 
 	
 	
+		
+		
+
+	
+	
+		
 		
 		
 		
@@ -519,9 +519,110 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>C# Syntax on Data Structures in C#</title>
-    <link>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/</link>
+    <link>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/index.html</link>
     <description>Recent content in C# Syntax on Data Structures in C#</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reference Types and Value Types</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/reference-value/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/reference-value/index.html</guid>
+      <description>Reference Types and Value Types Data types in C# come in two distinct flavors: value types and reference types. In order to understand the distinction, it helps to consider how space is allocated in C#. Whenever a method is called, the space needed to execute that method is allocated from a data structure known as the call stack. The space for a method includes its local variables, including its parameters (except for out or ref parameters ).</description>
+    </item>
+    <item>
+      <title>Enumerations</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/enumerations/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/enumerations/index.html</guid>
+      <description>Enumerations An enumeration is a value type containing a set of named constants. An example of an enumeration is DialogResult (see &amp;quot;MessageBoxes&amp;quot; and &amp;ldquo;File Dialogs&amp;rdquo; ). The DialogResult type contains the following members:
+DialogResult.Abort DialogResult.Cancel DialogResult.Ignore DialogResult.No DialogResult.None DialogResult.OK DialogResult.Retry DialogResult.Yes Each of the above members has a different constant value. In many cases, we are not interested in the specific value of a given member. Instead, we are often only interested in whether two expressions of this type have the same value.</description>
+    </item>
+    <item>
+      <title>Structures</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/structs/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/structs/index.html</guid>
+      <description>Structures A structure is similar to a class, except that it is a value type , whereas a class is a reference type . A structure definition looks a lot like a class definition; for example, the following defines a structure for storing information associated with a name:
+/// &amp;lt;summary&amp;gt; /// Stores a frequency and a rank. /// &amp;lt;/summary&amp;gt; public readonly struct FrequencyAndRank { /// &amp;lt;summary&amp;gt; /// Gets the Frequency. /// &amp;lt;/summary&amp;gt; public float Frequency { get; } /// &amp;lt;summary&amp;gt; /// Gets the Rank.</description>
+    </item>
+    <item>
+      <title>The decimal Type</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/decimals/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/decimals/index.html</guid>
+      <description>The decimal Type A decimal is a structure representing a floating-point decimal number. The main difference between a decimal and a float or a double is that a decimal can store any value that can be written using no more than 28 decimal digits, a decimal point, and optionally a &amp;lsquo;-&amp;rsquo;, without rounding. For example, the value 0.1 cannot be stored exactly in either a float or a double because its binary representation is infinite (0.</description>
+    </item>
+    <item>
+      <title>Read-Only and Constant Fields</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/const/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/const/index.html</guid>
+      <description>Read-Only and Constant Fields Field declarations may contain one of the the keywords readonly or const to indicate that these fields will always contain the same values. Such declarations are useful for defining a value that is to be used throughout a class or structure definition, or throughout an entire program. For example, we might define:
+public class ConstantsExample { public readonly int VerticalPadding = 12; private const string _humanPlayer = &amp;#34;X&amp;#34;; .</description>
+    </item>
+    <item>
+      <title>Properties</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/properties/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/properties/index.html</guid>
+      <description>Properties A property is used syntactically like a field of a class or structure, but provides greater flexibility in implementation. For example, the string class contains a public property called Length . This property is accessed in code much as if it were a public int field; i.e., if s is a string variable, we can access its Length property with the expression s.Length, which evaluates to an int. If Length were a public int field, we would access it in just the same way.</description>
+    </item>
+    <item>
+      <title>Indexers</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/indexers/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/indexers/index.html</guid>
+      <description>Indexers Recall that the System.Collections.Generic.Dictionary&amp;lt;TKey, TValue&amp;gt; class (see &amp;ldquo;The Dictionary&amp;lt;TKey, TValue&amp;gt; Class&amp;rdquo; ) allows keys to be used as indices for the purpose of adding new keys and values, changing the value associated with a key, and retrieving the value associated with a key in the table. In this section, we will discuss how to implement this functionality.
+An indexer in C# is defined using the following syntax:
+public TValue this[TKey k] { get { // Code to retrieve the value with key k } set { // Code to associate the given value with key k } }Note the resemblance of the above code to the definition of a property.</description>
+    </item>
+    <item>
+      <title>The Keywords static and this</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/static-this/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/static-this/index.html</guid>
+      <description>The Keywords static and this Object-oriented programming languages such as C# are centered on the concept of an object. Class and structure definitions give instructions for constructing individual objects of various types, normally by using the new keyword. When an object is constructed, it has its own fields in which values may be stored. Specifically, if type T has an int field called _length, then each object of type T will have have such a field, and each of these fields may store a different int.</description>
+    </item>
+    <item>
+      <title>out and ref Parameters</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/out-ref/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/out-ref/index.html</guid>
+      <description>out and ref Parameters Normally, when a method is called, the call-by-value mechanism is used. Suppose, for example, we have a method:
+private void DoSomething(int k) { }We can call this method with a statement like:
+DoSomething(n);provided n is an initialized variable consistent with the int type. For example, suppose n is an int variable containing a value of 28. The call-by-value mechanism works by copying the value of n (i.</description>
+    </item>
+    <item>
+      <title>The foreach Statement</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/foreach/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/foreach/index.html</guid>
+      <description>The foreach Statement C# provides a foreach statement that is often useful for iterating through the elements of certain data structures. A foreach can be used when all of the following conditions hold:
+The data structure is a subtype of either IEnumerable or IEnumerable&amp;lt;T&amp;gt; for some type T. You do not need to know the locations in the data structure of the individual elements. You do not need to modify the data structure with this loop.</description>
+    </item>
+    <item>
+      <title>Enumerators</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/enumerators/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/enumerators/index.html</guid>
+      <description>Enumerators As we saw in the previous section , in order for a data structure to support a foreach loop, it must be a subtype of either IEnumerable or IEnumerable&amp;lt;T&amp;gt; , where T is the type of the elements in the data structure. Thus, because Dictionary&amp;lt;TKey, TValue&amp;gt; is a subtype of IEnumerable&amp;lt;KeyValuePair&amp;lt;TKey, TValue&amp;gt;&amp;gt;, we can use a foreach loop to iterate through the key-value pairs that it stores. Likewise, because its Keys and Values properties get objects that are subtypes of IEnumerable&amp;lt;TKey&amp;gt; and IEnumerable&amp;lt;TValue&amp;gt;, respectively, foreach loops may be used to iterate through these objects as well, in order to process all the keys or all the values stored in the dictionary.</description>
+    </item>
+    <item>
+      <title>The switch Statement</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/switch/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/switch/index.html</guid>
+      <description>The switch Statement The switch statement provides an alternative to the if statement for certain contexts. It is used when different cases must be handled based on the value of an expression that can have only a few possible results.
+For example, suppose we want to display a MessageBox containing &amp;ldquo;Abort&amp;rdquo;, &amp;ldquo;Retry&amp;rdquo;, and &amp;ldquo;Ignore&amp;rdquo; buttons. The user can respond in only three ways, and we need different code in each case.</description>
+    </item>
+    <item>
+      <title>The Remainder Operator</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/remainder/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/remainder/index.html</guid>
+      <description>The Remainder Operator The remainder operator % computes the remainder that results when one number is divided by another. Specifically, suppose m and n are of some numeric type, where n ≠ 0. We can then define a quotient q and a remainder r as the unique values such that:
+qn + r = m; q is an integer; |qn| ≤ |m|; and |r| &amp;lt; |n|. Then m % n gives r, and we can compute q by:</description>
+    </item>
   </channel>
 </rss>

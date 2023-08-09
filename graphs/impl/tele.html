@@ -189,26 +189,6 @@
 	
 	
 		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
 		
 
 	
@@ -239,6 +219,11 @@
 	
 	
 		
+		
+
+	
+	
+		
 
 	
 	
@@ -254,6 +239,15 @@
 	
 		
 		
+
+	
+	
+		
+		
+		
+
+	
+	
 		
 
 	
@@ -263,6 +257,12 @@
 
 	
 	
+		
+		
+
+	
+	
+		
 		
 		
 		
@@ -516,33 +516,33 @@
 		
 		
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.2.0+tip">
+    <meta name="generator" content="Relearn 5.18.0">
     <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
     <meta name="description" content="K-State CIS 300: Data Structures">
     <meta name="author" content="Rod Howell and Josh Weese">
     <title>Implementing a Graph :: Data Structures in C#</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587343" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587343" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587343" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1686587343" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1686587343" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587343" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1686587343" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1686587343" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1686587343" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1686587343" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1686587343" rel="stylesheet" media="print">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1686587343"></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596180" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596180" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596180" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1691596180" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1691596180" rel="stylesheet" media="print">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1691596180" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1691596180"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1691596180"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
-      var index_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
+      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
       var root_url="https://ksu-cs-textbooks.github.io/cis300/";
       var baseUri=root_url.replace(/\/$/, '');
       // translations
@@ -550,16 +550,17 @@
       window.T_Copied_to_clipboard = 'Copied to clipboard!';
       window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
       window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
       // some further base stuff
       var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
       window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
     </script>
     
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1686587343" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.min.js?1686587343" defer></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1691596180" rel="stylesheet">
 
   </head>
-  <body class="mobile-support tele disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/graphs/impl/">
+  <body class="mobile-support tele disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/graphs/impl/index.html">
     
     <div id="tele" class="tele mirror">
     
@@ -569,18 +570,18 @@
       
       <main id="body-inner" class="highlightable default" tabindex="-1">
         <div class="flex-block-wrapper">
-          <div id="head-tags">
-          </div>
           <article class="default">
-<div hidden><h1>Implementing a Graph</h1></div>
+            <header class="headline">
+            </header>
+<div hidden><h1 id="implementing-a-graph">Implementing a Graph</h1></div>
+
 <h2 id="implementing-a-graph">Implementing a Graph</h2>
 <p>Traditionally, there are two main techniques for implementing a graph.
 Each of these techniques has advantages and disadvantages, depending on
 the characteristics of the graph. In this section, we describe the
 implementation of the <strong>DirectedGraph&lt;TNode, TEdgeData&gt;</strong> class
-from 
-
-<a href="Ksu.Cis300.Graphs.dll"><strong>Ksu.Cis300.Graphs.dll</strong></a>. This
+from <a href="Ksu.Cis300.Graphs.dll"><strong>Ksu.Cis300.Graphs.dll</strong></a>
+. This
 implementation borrows from both traditional techniques to obtain an
 implementation that provides good performance for any graph. In what
 follows, we will first describe the two traditional techniques and
@@ -676,58 +677,51 @@ implementation needs. We will refer to them as <code>_adjacencyLists</code> and
 <code>_edges</code>, respectively. Because we can initialize both fields to new
 dictionaries, there is no need to define a constructor. Furthermore,
 given these two dictionaries, most of the <strong>public</strong> methods and
-properties (see 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/graphs/intro">&ldquo;Introduction to
-Graphs&rdquo;</a>) can be
+properties (see <a href="https://ksu-cs-textbooks.github.io/cis300/graphs/intro">&ldquo;Introduction to
+Graphs&rdquo;</a>
+) can be
 implemented using a single call to one of the members of one of these
 dictionaries:</p>
 <ul>
 <li><strong>void AddNode(TNode node)</strong>: We can implement this method using the
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.add?view=net-6.0#system-collections-generic-dictionary-2-add%28-0-1%29" target="_blank"><strong>Add</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.add?view=net-6.0#system-collections-generic-dictionary-2-add%28-0-1%29" target="_blank" rel="noopener"><strong>Add</strong></a>
 method of <code>_adjacencyLists</code>. We associate an empty linked list with
 this node.</li>
 <li><strong>void AddEdge(TNode source, TNode dest, TEdgeData value)</strong>: See
 below.</li>
 <li><strong>bool TryGetEdge(TNode source, TNode dest, out TEdgeData? value)</strong>:
 We can implement this method using the
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.trygetvalue?view=net-6.0#system-collections-generic-dictionary-2-trygetvalue%28-0-1@%29" target="_blank"><strong>TryGetValue</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.trygetvalue?view=net-6.0#system-collections-generic-dictionary-2-trygetvalue%28-0-1@%29" target="_blank" rel="noopener"><strong>TryGetValue</strong></a>
 method of <code>_edges</code>.</li>
 <li><strong>int NodeCount</strong>: Because <code>_adjacencyLists</code> contains all of the
 nodes as keys, we can implement this property using this
 dictionary&rsquo;s
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.count?view=net-6.0#system-collections-generic-dictionary-2-count" target="_blank"><strong>Count</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.count?view=net-6.0#system-collections-generic-dictionary-2-count" target="_blank" rel="noopener"><strong>Count</strong></a>
 property.</li>
 <li><strong>int EdgeCount</strong>: We can implement this property using the
 <strong>Count</strong> property of <code>_edges</code>.</li>
 <li><strong>bool ContainsNode(TNode node)</strong>: We can implement this method
 using the
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.containskey?view=net-6.0#system-collections-generic-dictionary-2-containskey%28-0%29" target="_blank"><strong>ContainsKey</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.containskey?view=net-6.0#system-collections-generic-dictionary-2-containskey%28-0%29" target="_blank" rel="noopener"><strong>ContainsKey</strong></a>
 method of <code>_adjacencyLists</code>.</li>
 <li><strong>bool ContainsEdge(TNode source, TNode dest)</strong>: We can implement
 this method using the <strong>ContainsKey</strong> method of <code>_edges</code>.</li>
 <li><strong>IEnumerable&lt;TNode&gt; Nodes</strong>: We can implement this property using
 the
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.keys?view=net-6.0#system-collections-generic-dictionary-2-keys" target="_blank"><strong>Keys</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.keys?view=net-6.0#system-collections-generic-dictionary-2-keys" target="_blank" rel="noopener"><strong>Keys</strong></a>
 property of <code>_adjacencyLists</code>.</li>
 <li><strong>IEnumerable&lt;Edge&lt;TNode, TEdgeData&gt;&gt; OutgoingEdges(TNode
 source)</strong>: See below.</li>
 </ul>
 <p>Let&rsquo;s now consider the implementation of the <strong>AddEdge</strong> method. Recall
-from 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/graphs/intro">&ldquo;Introduction to
-Graphs&rdquo;</a> that this method
+from <a href="https://ksu-cs-textbooks.github.io/cis300/graphs/intro">&ldquo;Introduction to
+Graphs&rdquo;</a>
+ that this method
 adds an edge from <code>source</code> to <code>dest</code> with data item <code>value</code>. If either
 <code>source</code> or <code>dest</code> is not already in the graph, it will be added. If
 either <code>source</code> or <code>dest</code> is <strong>null</strong>, it will throw an
@@ -737,9 +731,8 @@ the edge already exists in the graph, it will throw an
 <p>In order to avoid changing the graph if the parameters are bad, we
 should do the error checking first. However, there is no need to check
 whether the edge already exists, provided we update <code>_edges</code> using its
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.add?view=net-6.0#system-collections-generic-dictionary-2-add%28-0-1%29" target="_blank"><strong>Add</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.add?view=net-6.0#system-collections-generic-dictionary-2-add%28-0-1%29" target="_blank" rel="noopener"><strong>Add</strong></a>
 method, and that we do this before making any other changes to the
 graph. Because a dictionary&rsquo;s <strong>Add</strong> method will throw an
 <strong>ArgumentException</strong> if the given key is already in the dictionary, it
@@ -750,9 +743,8 @@ will be the <code>value</code>.</p>
 do this, we first need to obtain the linked list associated with the key
 <code>source</code> in <code>_adjacencyLists</code>; however, because <code>source</code> may not exist
 as a key in this dictionary, we should use the
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.trygetvalue?view=net-6.0#system-collections-generic-dictionary-2-trygetvalue%28-0-1@%29" target="_blank"><strong>TryGetValue</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.trygetvalue?view=net-6.0#system-collections-generic-dictionary-2-trygetvalue%28-0-1@%29" target="_blank" rel="noopener"><strong>TryGetValue</strong></a>
 method to do this lookup (note that if <code>source</code> is not a key in this
 dictionary, the <strong>out</strong> parameter will be set to <strong>null</strong>, which we can
 interpret as an empty list). We then construct a new linked list cell
@@ -766,29 +758,28 @@ method returns an <strong>IEnumerable&lt;Edge&lt;TNode, TEdgeData&gt;&gt;</stro
 needs to iterate through the cells of the linked list associated with
 the given node in <code>_adjacencyLists</code>. For each of these cells, it will
 need to <strong>yield return</strong> (see
-&ldquo;
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/enumerators">Enumerators</a>&rdquo;)
+&ldquo;<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/enumerators">Enumerators</a>
+&rdquo;)
 an <strong>Edge&lt;TNode, TEdgeData&gt;</strong> describing the edge represented by
 that cell. The source node for this edge will be the node given to this
 method. The destination node will be the node stored in the cell. The
 edge data can be obtained from the dictionary <code>_edges</code>.</p>
 
             <footer class="footline">
+
             </footer>
           </article>
         </div>
       </main>
     </div>
     
-  </div>
+    </div>
     
     
     
     
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1686587343" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1686587343" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1686587343" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1691596180" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1691596180" defer></script>
     <script>
       function useMathJax( config ){
         if( !Object.assign ){
@@ -817,10 +808,10 @@ edge data can be obtained from the dictionary <code>_edges</code>.</p>
       }
       useMathJax( JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="https://ksu-cs-textbooks.github.io/cis300/js/mathjax/tex-mml-chtml.js?1686587343"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1686587343" defer></script>
+    <script id="MathJax-script" async src="https://ksu-cs-textbooks.github.io/cis300/js/mathjax/tex-mml-chtml.js?1691596180"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1691596180" defer></script>
     
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/tele-scroll.js?1686587343 defer"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/tele-scroll.js?1691596180 defer"></script>
     
   </body>
 </html>

@@ -189,26 +189,6 @@
 	
 	
 		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
 		
 
 	
@@ -239,6 +219,11 @@
 	
 	
 		
+		
+
+	
+	
+		
 
 	
 	
@@ -254,6 +239,15 @@
 	
 		
 		
+
+	
+	
+		
+		
+		
+
+	
+	
 		
 
 	
@@ -263,6 +257,12 @@
 
 	
 	
+		
+		
+
+	
+	
+		
 		
 		
 		
@@ -516,33 +516,33 @@
 		
 		
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.2.0+tip">
+    <meta name="generator" content="Relearn 5.18.0">
     <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
     <meta name="description" content="K-State CIS 300: Data Structures">
     <meta name="author" content="Rod Howell and Josh Weese">
     <title>Using Multiple Machines :: Data Structures in C#</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587338" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587338" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587338" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587338" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587338" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587338" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1686587338" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1686587338" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587338" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587338" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1686587338" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1686587338" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1686587338" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1686587338" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1686587338" rel="stylesheet" media="print">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1686587338"></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596179" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596179" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596179" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596179" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596179" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596179" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1691596179" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1691596179" rel="stylesheet" media="print">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1691596179" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1691596179"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1691596179"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
-      var index_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
+      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
       var root_url="https://ksu-cs-textbooks.github.io/cis300/";
       var baseUri=root_url.replace(/\/$/, '');
       // translations
@@ -550,44 +550,40 @@
       window.T_Copied_to_clipboard = 'Copied to clipboard!';
       window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
       window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
       // some further base stuff
       var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
       window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
     </script>
     
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1686587338" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.min.js?1686587338" defer></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1691596179" rel="stylesheet">
 
   </head>
   <body class="mobile-support embed disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/multiple/embed.html">
-    <div id="body" class="default-animation" data-iframe-height="yes">
+    <div id="body" class="default-animation">
       
       
       
-      <main id="body-inner" class="highlightable default" tabindex="-1" data-iframe-height="yes" style="padding-bottom: 0px">
-        <div class="flex-block-wrapper" data-iframe-height="yes">
-          <div id="head-tags">
-          </div>
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
           <article class="default">
     
     
     
 <h2 id="using-multiple-machines">Using Multiple Machines</h2>
-<p>Source control provides one way to access your code from multiple machines. Before you decide to do this, however, you should consider whether this is the best approach. For example, if you have a 
-
-<a href="https://selfserv.cs.ksu.edu/" target="_blank" rel="noopener">CS Account</a>, you have a network file system (the U: drive on CS Windows systems) that you can use whenever you have internet access. From off campus, you need to tunnel into campus using a Virtual Private Network, or VPN (see 
-
-<a href="http://www.k-state.edu/its/security/vpn/" target="_blank" rel="noopener">the KSU Information Technology Services page on Virtual Private Networking</a> for instructions). Once on campus, you can mount this file system as a network drive by following the instructions on the CS support page, &ldquo;
-
-<a href="https://support.cs.ksu.edu/CISDocs/wiki/Disk_Usage" target="_blank" rel="noopener">DiskUsage</a>&rdquo;.</p>
-<p>As an alternative to the U: drive or some cloud service, you can use your GitHub repositories to store a master copy of each assignment, and clone local copies as needed on the different machines you use. Once you have code in a GitHub repository, you can clone that repository to a local machine as described in &ldquo;
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/repos">Git Repositories</a>&rdquo;. When you are finished working on that machine, commit all changes and push them to GitHub. If at some later point you need to resume working on a machine whose Git repository is out of date, you can update it by clicking the down-arrow icon in the Visual Studio &ldquo;Git Changes&rdquo; tab.</p>
+<p>Source control provides one way to access your code from multiple machines. Before you decide to do this, however, you should consider whether this is the best approach. For example, if you have a <a href="https://selfserv.cs.ksu.edu/" target="_blank">CS Account</a>
+, you have a network file system (the U: drive on CS Windows systems) that you can use whenever you have internet access. From off campus, you need to tunnel into campus using a Virtual Private Network, or VPN (see <a href="http://www.k-state.edu/its/security/vpn/" target="_blank">the KSU Information Technology Services page on Virtual Private Networking</a>
+ for instructions). Once on campus, you can mount this file system as a network drive by following the instructions on the CS support page, &ldquo;<a href="https://support.cs.ksu.edu/CISDocs/wiki/Disk_Usage" target="_blank">DiskUsage</a>
+&rdquo;.</p>
+<p>As an alternative to the U: drive or some cloud service, you can use your GitHub repositories to store a master copy of each assignment, and clone local copies as needed on the different machines you use. Once you have code in a GitHub repository, you can clone that repository to a local machine as described in &ldquo;<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/repos">Git Repositories</a>
+&rdquo;. When you are finished working on that machine, commit all changes and push them to GitHub. If at some later point you need to resume working on a machine whose Git repository is out of date, you can update it by clicking the down-arrow icon in the Visual Studio &ldquo;Git Changes&rdquo; tab.</p>
 <p>If you are careful about pushing all changes to GitHub and updating each local copy whenever you begin working on it, everything should go smoothly. Problems can occur, however, if you have made changes to a local version that is out of date, then either try to update it by pulling the GitHub copy, or try to push these changes to GitHub. In such cases, the following message will be shown:</p>
 <img src="conflict-message.png" alt="An error message should appear here." style="zoom:67%;" />
 <p>At this point, you should click the &ldquo;Pull then Push&rdquo; button in the above message. This usually won&rsquo;t fix the problem, as indicated by an error message at the top of the &ldquo;Git Changes&rdquo; tab. In order to resolve the conflicts in the two versions, look in the &ldquo;Unmerged Changes&rdquo; section of the &ldquo;Git Changes&rdquo; tab. This will list the files that are different in the two versions.  To resolve the conflicts in a file, right-click on it, and select &ldquo;Merge&hellip;&rdquo;. Visual Studio will then show the two versions of the file side by side with the conflicts highlighted. If you want the version you are currently trying to push, simply click the &ldquo;Take Current&rdquo; button at the top. Otherwise, you can select individual portions from the two versions - the result will be shown below the two versions. When you are satisfied with the result, click the &ldquo;Accept Merge&rdquo; button. Once you have merged all conflicting files, you will then need to commit and push again.</p>
 
             <footer class="footline">
+
             </footer>
           </article>
         </div>
@@ -596,13 +592,8 @@
     
     
     
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1686587338" defer></script>
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1686587338" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1686587338" defer></script>
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/embed-iframe.js?1686587338 defer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/iframe-resizer@4.3.2/js/iframeResizer.contentWindow.min.js"></script>
-    
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1691596179" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1691596179" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1691596179" defer></script>
   </body>
 </html>

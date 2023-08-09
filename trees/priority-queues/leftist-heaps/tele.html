@@ -189,26 +189,6 @@
 	
 	
 		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
 		
 
 	
@@ -239,6 +219,11 @@
 	
 	
 		
+		
+
+	
+	
+		
 
 	
 	
@@ -254,6 +239,15 @@
 	
 		
 		
+
+	
+	
+		
+		
+		
+
+	
+	
 		
 
 	
@@ -263,6 +257,12 @@
 
 	
 	
+		
+		
+
+	
+	
+		
 		
 		
 		
@@ -516,33 +516,33 @@
 		
 		
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.2.0+tip">
+    <meta name="generator" content="Relearn 5.18.0">
     <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
     <meta name="description" content="K-State CIS 300: Data Structures">
     <meta name="author" content="Rod Howell and Josh Weese">
     <title>Leftist Heaps :: Data Structures in C#</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587343" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587343" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587343" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1686587343" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1686587343" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587343" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1686587343" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1686587343" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1686587343" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1686587343" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1686587343" rel="stylesheet" media="print">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1686587343"></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596180" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596180" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596180" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1691596180" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1691596180" rel="stylesheet" media="print">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1691596180" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1691596180"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1691596180"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
-      var index_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
+      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
       var root_url="https://ksu-cs-textbooks.github.io/cis300/";
       var baseUri=root_url.replace(/\/$/, '');
       // translations
@@ -550,16 +550,17 @@
       window.T_Copied_to_clipboard = 'Copied to clipboard!';
       window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
       window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
       // some further base stuff
       var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
       window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
     </script>
     
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1686587343" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.min.js?1686587343" defer></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1691596180" rel="stylesheet">
 
   </head>
-  <body class="mobile-support tele disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/leftist-heaps/">
+  <body class="mobile-support tele disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/leftist-heaps/index.html">
     
     <div id="tele" class="tele mirror">
     
@@ -569,15 +570,15 @@
       
       <main id="body-inner" class="highlightable default" tabindex="-1">
         <div class="flex-block-wrapper">
-          <div id="head-tags">
-          </div>
           <article class="default">
-<div hidden><h1>Leftist Heaps</h1></div>
-<h2 id="leftist-heaps">Leftist Heaps</h2>
-<p>One efficient way to complete the merge algorithm outlined in 
+            <header class="headline">
+            </header>
+<div hidden><h1 id="leftist-heaps">Leftist Heaps</h1></div>
 
-<a href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/heaps">the
-previous section</a> revolves
+<h2 id="leftist-heaps">Leftist Heaps</h2>
+<p>One efficient way to complete the merge algorithm outlined in <a href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/heaps">the
+previous section</a>
+ revolves
 around the concept of the <em>null path length</em> of a tree. For any tree <i>t</i>, null path length of <i>t</i> is defined
 to be 
 <span class="math align-center">$ 0 $</span> if <i>t</i> is empty, or one more than the minimum of the null path
@@ -595,10 +596,9 @@ shown that any binary tree with
 <span class="math align-center">$ n $</span> nodes has a null path length that is
 no more than <span style="white-space:nowrap">
 <span class="math align-center">$ \lg(n + 1) $</span>.</span> Furthermore, recall that in the merging
-strategy outlined in 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/heaps">the previous
-section</a>, there is some
+strategy outlined in <a href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/heaps">the previous
+section</a>
+, there is some
 flexibility in choosing which child of a node will be used in the
 recursive call. Because the strategy reaches a base case when one of the
 min-heaps is empty, the algorithm will terminate the most quickly if we
@@ -614,10 +614,9 @@ than the null path length of the left child. For such a structure,
 completing the merge algorithm is simple:</p>
 <ul>
 <li>For the recursive call, we merge the right child of <em>s</em> with <em>b</em>,
-where <em>s</em> and <em>b</em> are as defined in 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/heaps">the previous
-section</a>.</li>
+where <em>s</em> and <em>b</em> are as defined in <a href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/heaps">the previous
+section</a>
+.</li>
 <li>When combining the root and left child of <em>s</em> with the result of the
 recursive call, we arrange the children so that the result is a
 leftist heap.</li>
@@ -627,20 +626,18 @@ and <strong>MinPriorityQueue&lt;TPriority, TValue&gt;</strong>. For the
 <strong>LeftistTree&lt;T&gt;</strong> class, we will only be concerned with the shape of
 the tree &mdash; namely, that the null path length of the right child is never
 more than the null path length of the left child. We will adopt a
-strategy similar to what we did with 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/trees/avl">AVL
-trees</a>. Specifically a
+strategy similar to what we did with <a href="https://ksu-cs-textbooks.github.io/cis300/trees/avl">AVL
+trees</a>
+. Specifically a
 <strong>LeftistTree&lt;T&gt;</strong> will be immutable so that we can always be sure
 that it is shaped properly. It will then be a straightforward matter to
 implement a <strong>MinPriorityQueue&lt;TPriority, TValue&gt;</strong>, where
 <strong>TPriority</strong> is the type of the priorities, and <strong>TValue</strong> is the type
 of the values.</p>
 <p>The implementation of <strong>LeftistTree&lt;T&gt;</strong> ends up being very similar to
-the implementation we described for 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/trees/avl">AVL tree
-nodes</a>, but without the
+the implementation we described for <a href="https://ksu-cs-textbooks.github.io/cis300/trees/avl">AVL tree
+nodes</a>
+, but without the
 rotations. We need three <strong>public</strong> properties using the default
 implementation with <strong>get</strong> accessors: the data (of type <strong>T</strong>) and the
 two children (of type <strong>LeftistTree&lt;T&gt;?</strong>). We also need a <strong>private</strong>
@@ -662,10 +659,9 @@ consider is the type, <strong>TPriority</strong>. This needs to be a non-nullabl
 ordered (usually it will be a numeric type like <strong>int</strong>). We can
 restrict <strong>TPriority</strong> to be a non-nullable subtype of <strong>IComparable&lt;TPriority&gt;</strong>
 by using a <strong>where</strong> clause, as we did for dictionaries (see
-&ldquo;
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/linked-list-impl">Implementing a Dictionary with a Linked
-List</a>&rdquo;).</p>
+&ldquo;<a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/linked-list-impl">Implementing a Dictionary with a Linked
+List</a>
+&rdquo;).</p>
 <p>We then need a <strong>private</strong> field in which to store a leftist tree. We
 can store both the priority and the data element in a node if we use a
 <strong>LeftistTree&lt;KeyValuePair&lt;TPriority, TValue&gt;&gt;?</strong>; thus, the keys are
@@ -676,20 +672,18 @@ with <strong>get</strong> and <strong>private set</strong> accessors.</p>
 <p>In order to implement <strong>public</strong> methods to add an element with a
 priority and to remove an element with minimum priority, we need the
 following method:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> LeftistTree&lt;KeyValuePair&lt;TPriority, TValue&gt;&gt;?
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> LeftistTree&lt;KeyValuePair&lt;TPriority, TValue&gt;&gt;?
 </span></span><span style="display:flex;"><span>    Merge(LeftistTree&lt;KeyValuePair&lt;TPriority, TValue&gt;&gt;? h1, 
 </span></span><span style="display:flex;"><span>        LeftistTree&lt;KeyValuePair&lt;TPriority, TValue&gt;&gt;? h2)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    . . .
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>This method consist of three cases. The first two cases occur when
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>This method consist of three cases. The first two cases occur when
 either of the parameters is <strong>null</strong>. In each such case, we return the
 other parameter. In the third case, when neither parameter is <strong>null</strong>,
 we first need to compare the priorities in the data stored in the root
 nodes of the parameters. A priority is stored in the
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.keyvaluepair-2.key?view=net-6.0#system-collections-generic-keyvaluepair-2-key" target="_blank"><strong>Key</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.keyvaluepair-2.key?view=net-6.0#system-collections-generic-keyvaluepair-2-key" target="_blank" rel="noopener"><strong>Key</strong></a>
 property of the <strong>KeyValuePair</strong>, and we have constrained this type so
 that it has a <strong>CompareTo</strong> method that will compare one instance with
 another. Once we have determined which root has a smaller priority, we
@@ -704,20 +698,20 @@ priority.</p>
 straightforward.</p>
 
             <footer class="footline">
+
             </footer>
           </article>
         </div>
       </main>
     </div>
     
-  </div>
+    </div>
     
     
     
     
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1686587343" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1686587343" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1686587343" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1691596180" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1691596180" defer></script>
     <script>
       function useMathJax( config ){
         if( !Object.assign ){
@@ -746,10 +740,10 @@ straightforward.</p>
       }
       useMathJax( JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="https://ksu-cs-textbooks.github.io/cis300/js/mathjax/tex-mml-chtml.js?1686587343"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1686587343" defer></script>
+    <script id="MathJax-script" async src="https://ksu-cs-textbooks.github.io/cis300/js/mathjax/tex-mml-chtml.js?1691596180"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1691596180" defer></script>
     
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/tele-scroll.js?1686587343 defer"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/tele-scroll.js?1691596180 defer"></script>
     
   </body>
 </html>

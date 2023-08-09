@@ -189,26 +189,6 @@
 	
 	
 		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
 		
 
 	
@@ -239,6 +219,11 @@
 	
 	
 		
+		
+
+	
+	
+		
 
 	
 	
@@ -254,6 +239,15 @@
 	
 		
 		
+
+	
+	
+		
+		
+		
+
+	
+	
 		
 
 	
@@ -263,6 +257,12 @@
 
 	
 	
+		
+		
+
+	
+	
+		
 		
 		
 		
@@ -516,33 +516,33 @@
 		
 		
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.2.0+tip">
+    <meta name="generator" content="Relearn 5.18.0">
     <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
     <meta name="description" content="K-State CIS 300: Data Structures">
     <meta name="author" content="Rod Howell and Josh Weese">
     <title>The Debugger :: Data Structures in C#</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587338" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587338" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587338" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587338" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587338" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587338" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1686587338" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1686587338" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587338" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587338" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1686587338" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1686587338" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1686587338" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1686587338" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1686587338" rel="stylesheet" media="print">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1686587338"></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596179" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596179" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596179" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596179" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596179" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596179" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1691596179" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1691596179" rel="stylesheet" media="print">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1691596179" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1691596179"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1691596179"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
-      var index_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
+      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
       var root_url="https://ksu-cs-textbooks.github.io/cis300/";
       var baseUri=root_url.replace(/\/$/, '');
       // translations
@@ -550,24 +550,23 @@
       window.T_Copied_to_clipboard = 'Copied to clipboard!';
       window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
       window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
       // some further base stuff
       var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
       window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
     </script>
     
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1686587338" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.min.js?1686587338" defer></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1691596179" rel="stylesheet">
 
   </head>
   <body class="mobile-support embed disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/debugger/embed.html">
-    <div id="body" class="default-animation" data-iframe-height="yes">
+    <div id="body" class="default-animation">
       
       
       
-      <main id="body-inner" class="highlightable default" tabindex="-1" data-iframe-height="yes" style="padding-bottom: 0px">
-        <div class="flex-block-wrapper" data-iframe-height="yes">
-          <div id="head-tags">
-          </div>
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
           <article class="default">
     
     
@@ -584,16 +583,26 @@ here." style="zoom:67%;" /></p>
 </ul>
 <p>If everything works correctly, the application is complete. Rarely, however, does everything work correctly the first time. Through the remainder of this section, we will discuss some of the ways the debugger can be used to find and fix errors.</p>
 <p>One of the problems that can occur is that the compiler can fail to produce executable code because the source code contains syntax errors. When this happens, the following dialog is displayed:</p>
-<p><img src="syntax-error-dialog.jpg" alt="A picture of a dialog should appear here."></p>
+<p>
+<a href="#image-5bf828bb9723b75c32bb7cdee5e71565" class="lightbox-link">
+<img src="syntax-error-dialog.jpg" alt="A picture of a dialog should appear here." style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-5bf828bb9723b75c32bb7cdee5e71565">
+<img src="syntax-error-dialog.jpg" alt="A picture of a dialog should appear here." class="lightbox-image" loading="lazy">
+</a></p>
 <p>Usually the best thing to do at this point is to click the &ldquo;No&rdquo; button. This will stop the debugger and display the error list. This error list can be displayed at any time by clicking the error list button at the bottom of the Visual Studio window:</p>
 <img src="error-list.png" alt="The error list button." style="zoom:50%;" />
 <p>Double-clicking on a syntax error within the error list will highlight the error in the code window. Normally, fixing the error will cause the corresponding entry in the error list to disappear; however, there are times when the entry won&rsquo;t disappear until the debugger is started again (i.e., by clicking the &ldquo;Start Debugging&rdquo; button).</p>
-<p>Once the syntax errors are removed, the debugger will be able to generate executable code and run it. However, more problems can occur at this point. One common problem is that an exception is thrown. For example, the GitHub repository created by 
-
-<a href="https://classroom.github.com/a/a9s4MdIv" target="_blank" rel="noopener">this invitation link</a> (see &ldquo;
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/repos">Git Repositories</a>&rdquo;) contains a Visual Studio solution for a program to convert decimal numbers to base-16. Don&rsquo;t worry about understanding the code, although the numerous comments may help you to do that. Instead, note that an exception is thrown when we try to convert 256:</p>
-<p><img src="exception.png" alt="A picture of a window should appear here."></p>
+<p>Once the syntax errors are removed, the debugger will be able to generate executable code and run it. However, more problems can occur at this point. One common problem is that an exception is thrown. For example, the GitHub repository created by <a href="https://classroom.github.com/a/a9s4MdIv" target="_blank">this invitation link</a>
+ (see &ldquo;<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/repos">Git Repositories</a>
+&rdquo;) contains a Visual Studio solution for a program to convert decimal numbers to base-16. Don&rsquo;t worry about understanding the code, although the numerous comments may help you to do that. Instead, note that an exception is thrown when we try to convert 256:</p>
+<p>
+<a href="#image-1c3341ec248cc6429d41bbba2daefde4" class="lightbox-link">
+<img src="exception.png" alt="A picture of a window should appear here." style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-1c3341ec248cc6429d41bbba2daefde4">
+<img src="exception.png" alt="A picture of a window should appear here." class="lightbox-image" loading="lazy">
+</a></p>
 <p>This message gives us quite a bit of information already. First, it tells us which line threw the exception - the line highlighted in green. The arrow in the left margin tells us the same thing, but more generally, when the debugger is running, it indicates the line that is currently being executed or that is ready to be executed. The popup window indicates what kind of exception was thrown: an <strong>ArgumentOutOfRangeException</strong>. It also provides the additional information that a length was less than zero when it should not have been.</p>
 <p>Having this information, we can now use the debugger to investigate further the cause of the exception. First, in order to see the code more clearly, we might want to close the popup window (we can always get it back by clicking the red circle containing the white &lsquo;X&rsquo;). We can now examine the values of any of the variables at the time the exception was thrown by hovering the mouse over them. For example, if we hover over <code>lowOrder</code>, a popup appears indicating that it has a value of &ldquo;0&rdquo;. If we move the mouse to hover over its <strong>Length</strong> property, we can see that it has a value of 1. Hovering over <code>power</code> shows that it has a value of 2. Thus, we can see that the exception was thrown because we gave the <strong>Substring</strong> method a length of 1 - 2 = -1. This can be confirmed by hovering the mouse over the &ldquo;-&rdquo; in the expression - the popup indicates that the value of the expression is, in fact, -1.</p>
 <p>Actually fixing the error requires a little more understanding of the code. In this case, however, the comment immediately above the line in question helps us out. It tells us that the low-order part of the hex string we are building may need to be padded with 0s - this padding is what we are constructing. Furthermore, it tells us that the number of hex digits we need is the value of <code>power</code>. In order to get this many digits, we need to subtract the number of hex digits we already have in <code>lowOrder</code> from <code>power</code>; i.e., we need to reverse the order of the subtraction.</p>
@@ -602,21 +611,31 @@ To stop the debugger, notice the buttons that are available at the top of the Vi
 <img src="debugger-buttons.png" alt="Buttons used within the debugger." style="zoom:50%;" />
 <p>As you might guess, the &ldquo;Stop&rdquo; button stops the debugger. In what follows, we will discuss each of the other buttons indicated in the above figure, as well as other features of the debugger.</p>
 <p><a name="breakpoints"></a>When debugging code, it is often useful to be able to pause execution at a particular place in order to be able to examine the values of variables as we did above. To accomplish this, we can set a <em>breakpoint</em> by clicking in the left margin of the code window at the line where we would like execution to pause. This places a large red dot in the margin where we clicked and colors the line red:</p>
-<p><img src="breakpoint.png" alt="A picture of part of a code window should appear here."></p>
+<p>
+<a href="#image-2d3744e0eb55c2cb6fc015345cf5ee77" class="lightbox-link">
+<img src="breakpoint.png" alt="A picture of part of a code window should appear here." style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-2d3744e0eb55c2cb6fc015345cf5ee77">
+<img src="breakpoint.png" alt="A picture of part of a code window should appear here." class="lightbox-image" loading="lazy">
+</a></p>
 <p>Whenever execution reaches a breakpoint, execution stops prior to executing that line. At this point, we can examine the values of variables as we described above. When we are ready to continue execution of the program, we click the &ldquo;Continue&rdquo; button. A breakpoint can be deleted by clicking on the red dot, or all breakpoints may be deleted by selecting &ldquo;Delete All Breakpoints&rdquo; from the &ldquo;Debug&rdquo; menu. A breakpoint may be disabled, but not deleted, by hovering over the large red dot and selecting &ldquo;Disable&rdquo; from the resulting popup. All breakpoints may be disabled by selecting &ldquo;Disable All Breakpoints&rdquo; from the &ldquo;Debug&rdquo; menu.</p>
 <p>Sometimes we only want the execution to pause at a breakpoint when a certain condition is met. Such a situation might occur if we have a bug that only surfaces after the code containing it has already executed many times. Rather than letting the program stop and clicking &ldquo;Continue&rdquo; until we reach the point we are interested in, we can instead specify a condition on the breakpoint. To do this, right-click on the breakpoint in the left margin, and select &ldquo;Conditions&hellip;&rdquo; from the resulting popup menu. This causes a large box to be inserted into to the code below this line:</p>
-<p><img src="breakpoint-condition.png" alt="A picture of a Visual Studio window should appear here."></p>
+<p>
+<a href="#image-c72a217dc55782a6ac268a970673d78e" class="lightbox-link">
+<img src="breakpoint-condition.png" alt="A picture of a Visual Studio window should appear here." style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-c72a217dc55782a6ac268a970673d78e">
+<img src="breakpoint-condition.png" alt="A picture of a Visual Studio window should appear here." class="lightbox-image" loading="lazy">
+</a></p>
 <p>In this box, we can type an expression using variables visible at that program location. We can also choose whether we want execution to pause when that expression is true or whenever that expression has changed.</p>
 <p>For example, we could add to the above breakpoint the condition:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>power == <span style="color:#ae81ff">8</span>
-</span></span></code></pre></div><p>Then when we run the debugger, execution will only pause at this breakpoint when <code>power</code> reaches a value of 8. Note that this line is executed at the top of each iteration of the loop; hence, the breakpoint condition is checked on each iteration.</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>power == <span style="color:#ae81ff">8</span></span></span></code></pre></div><p>Then when we run the debugger, execution will only pause at this breakpoint when <code>power</code> reaches a value of 8. Note that this line is executed at the top of each iteration of the loop; hence, the breakpoint condition is checked on each iteration.</p>
 <p>While hovering the mouse over variable names is a useful way to
 discover their current values, there are other mechanisms for doing
 this as well. For example, while the debugger is paused, you can go to
 the &ldquo;Debug&rdquo; menu and select &ldquo;Windows -&gt; Locals&rdquo;. This will open a window displaying all of the local variables for the current method, property, or constructor, together with their current values. If the debugger is paused within a constructor or a non-<strong>static</strong> method or property, this window also contains <strong>this</strong>, which refers to the object that contains the constructor, method, or property. From <strong>this</strong>, you can access the non-<strong>static</strong> fields of this object.</p>
 <p>Another mechanism for examining values of variables is through the &ldquo;Immediate&rdquo; window, which can also be accessed from the &ldquo;Debug&rdquo; menu via its &ldquo;Windows&rdquo; sub-menu. Within the Immediate window, you may type an expression involving the variables that are currently visible, press &ldquo;Enter&rdquo;, and it will display the value of that expression. This can be particularly useful when you have a large data structure, and you need to know a particular element in that structure. For example, suppose <code>array</code> is a large <strong>int[ ]</strong>, and suppose <code>i</code> is an <strong>int</strong>. Using the &ldquo;Locals&rdquo; window, it might be rather tedious to find the value of <code>array[i]</code>. Using the Immediate window, however, you can just type in</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>array[i]
-</span></span></code></pre></div><p>and it will display its value.</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>array[i]</span></span></code></pre></div><p>and it will display its value.</p>
 <p>When debugging, it is often useful to be able to step through the
 execution of a piece of code so that you can see exactly what it is
 doing. Three buttons are available for this purpose: &ldquo;Step Into&rdquo;,
@@ -629,6 +648,7 @@ expressions. You can open a Watch window from the &ldquo;Debug&rdquo; menu under
 &ldquo;Windows -&gt; Watch&rdquo; &mdash; the four choices here are four different Watch windows that you may use (perhaps for debugging different parts of your program). A Watch window combines some of the advantages of the Locals window and the Immediate window. If you type in a value or expression, it will appear in the &ldquo;Name&rdquo; column, and if it can be evaluated in the current context, its value will be displayed in the &ldquo;Value&rdquo; column. Furthermore the value will be updated as the debugger executes code. You may list several values or expressions in the same Watch window, and their values will all be tracked. To delete an entry from a Watch window, right-click on it and select &ldquo;Delete Watch&rdquo;.</p>
 
             <footer class="footline">
+
             </footer>
           </article>
         </div>
@@ -637,13 +657,8 @@ expressions. You can open a Watch window from the &ldquo;Debug&rdquo; menu under
     
     
     
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1686587338" defer></script>
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1686587338" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1686587338" defer></script>
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/embed-iframe.js?1686587338 defer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/iframe-resizer@4.3.2/js/iframeResizer.contentWindow.min.js"></script>
-    
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1691596179" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1691596179" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1691596179" defer></script>
   </body>
 </html>

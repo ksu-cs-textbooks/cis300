@@ -189,26 +189,6 @@
 	
 	
 		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
 		
 
 	
@@ -239,6 +219,11 @@
 	
 	
 		
+		
+
+	
+	
+		
 
 	
 	
@@ -254,6 +239,15 @@
 	
 		
 		
+
+	
+	
+		
+		
+		
+
+	
+	
 		
 
 	
@@ -263,6 +257,12 @@
 
 	
 	
+		
+		
+
+	
+	
+		
 		
 		
 		
@@ -516,33 +516,33 @@
 		
 		
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.2.0+tip">
+    <meta name="generator" content="Relearn 5.18.0">
     <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
     <meta name="description" content="K-State CIS 300: Data Structures">
     <meta name="author" content="Rod Howell and Josh Weese">
     <title>The foreach Statement :: Data Structures in C#</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587338" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587338" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587338" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587338" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587338" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587338" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1686587338" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1686587338" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587338" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587338" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1686587338" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1686587338" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1686587338" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1686587338" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1686587338" rel="stylesheet" media="print">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1686587338"></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596179" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596179" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596179" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596179" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596179" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596179" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1691596179" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1691596179" rel="stylesheet" media="print">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1691596179" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1691596179"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1691596179"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
-      var index_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
+      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
       var root_url="https://ksu-cs-textbooks.github.io/cis300/";
       var baseUri=root_url.replace(/\/$/, '');
       // translations
@@ -550,24 +550,23 @@
       window.T_Copied_to_clipboard = 'Copied to clipboard!';
       window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
       window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
       // some further base stuff
       var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
       window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
     </script>
     
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1686587338" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.min.js?1686587338" defer></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1691596179" rel="stylesheet">
 
   </head>
   <body class="mobile-support embed disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/foreach/embed.html">
-    <div id="body" class="default-animation" data-iframe-height="yes">
+    <div id="body" class="default-animation">
       
       
       
-      <main id="body-inner" class="highlightable default" tabindex="-1" data-iframe-height="yes" style="padding-bottom: 0px">
-        <div class="flex-block-wrapper" data-iframe-height="yes">
-          <div id="head-tags">
-          </div>
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
           <article class="default">
     
     
@@ -575,11 +574,9 @@
 <h2 id="the-foreach-statement">The <strong>foreach</strong> Statement</h2>
 <p>C# provides a <strong>foreach</strong> statement that is often useful for iterating through the elements of certain data structures. A <strong>foreach</strong> can be used when all of the following conditions hold:</p>
 <ol>
-<li>The data structure is a subtype of either 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.ienumerable?view=net-6.0" target="_blank" rel="noopener"><strong>IEnumerable</strong></a> or 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.ienumerable-1?view=net-6.0" target="_blank" rel="noopener"><strong>IEnumerable&lt;T&gt;</strong></a> for some type <strong>T</strong>.</li>
+<li>The data structure is a subtype of either <a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.ienumerable?view=net-6.0" target="_blank"><strong>IEnumerable</strong></a>
+ or <a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.ienumerable-1?view=net-6.0" target="_blank"><strong>IEnumerable&lt;T&gt;</strong></a>
+ for some type <strong>T</strong>.</li>
 <li>You do not need to know the locations in the data structure of the individual elements.</li>
 <li>You do not need to modify the data structure with this loop.</li>
 </ol>
@@ -587,38 +584,36 @@
   
   
 <div class="box notices cstyle warning">
-    <div class="box-label"><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div>
-    <div class="box-content">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div>
+  <div class="box-content">
+
 <p>Many of the data structures provided to you in CIS 300, as well as
 many that you are to write yourself for this class, are not subtypes
 of either of the types mentioned in 1 above. Consequently, we cannot
 use a <strong>foreach</strong> loop to iterate through any of these data
 structures. However, most of the data structures provided in the .NET
 Framework, as well as all arrays, are subtypes of one of these types.</p>
-    </div>
+</div>
 </div>
 <p>For example, the <strong>string</strong> class is a subtype of both <strong>IEnumerable</strong>
 and <strong>IEnumerable&lt;Char&gt;</strong>. To see that this is the case, look in
-
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.string?view=net-6.0" target="_blank" rel="noopener">the documentation for the <strong>string</strong>
-class</a>. In
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.string?view=net-6.0" target="_blank">the documentation for the <strong>string</strong>
+class</a>
+. In
 the &ldquo;Implements&rdquo; section, we see all of the
-
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/multiple-impl">interfaces</a> implemented by <strong>string</strong>.
+<a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/multiple-impl">interfaces</a>
+ implemented by <strong>string</strong>.
 Because <strong>string</strong> implements both of these interfaces, it is a
 subtype of each.  We can therefore iterate through the elements (i.e., the characters) of a <strong>string</strong> using a <strong>foreach</strong> statement, provided we don&rsquo;t need to know the location of each character in the <strong>string</strong> (because a <strong>string</strong> is immutable, we can&rsquo;t change its contents).</p>
 <p>Suppose, for example, that we want to find out how many times the letter &lsquo;i&rsquo; occurs in a <strong>string</strong> <code>s</code>. Because we don&rsquo;t need to know the locations of these occurrences, we can iterate through the characters with a <strong>foreach</strong> loop, as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> count = <span style="color:#ae81ff">0</span>;
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> count = <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">foreach</span> (<span style="color:#66d9ef">char</span> c <span style="color:#66d9ef">in</span> s)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (c == <span style="color:#e6db74">&#39;i&#39;</span>)
 </span></span><span style="display:flex;"><span>    {
 </span></span><span style="display:flex;"><span>        count++;
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>The <strong>foreach</strong> statement requires three pieces of information:</p>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>The <strong>foreach</strong> statement requires three pieces of information:</p>
 <ul>
 <li>The type of the elements in the data structure (<strong>char</strong> in the above example).</li>
 <li>The name of a new variable (<code>c</code> in the above example). The type of this variable will be the type of the elements in the data structure (i.e., <strong>char</strong> in the above example). It will take on the values of the elements as the loop iterates.</li>
@@ -633,28 +628,25 @@ however, that if the data structure is not a subtype of
 <strong>IEnumerable&lt;T&gt;</strong>, but you know that the elements are some specific
 subtype of <strong>object</strong>, you can use that type for the loop variable -
 the type will not be checked until the code is executed. For example,
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.listbox?view=windowsdesktop-6.0" target="_blank"><strong>ListBox</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.listbox?view=windowsdesktop-6.0" target="_blank" rel="noopener"><strong>ListBox</strong></a>
 is a class that implements a GUI control displaying a list of
 elements. The elements in the <strong>ListBox</strong> are accessed via its
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.listbox.items?view=windowsdesktop-6.0#system-windows-forms-listbox-items" target="_blank"><strong>Items</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.listbox.items?view=windowsdesktop-6.0#system-windows-forms-listbox-items" target="_blank" rel="noopener"><strong>Items</strong></a>
 property, which gets a data structure of type
-
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.listbox.objectcollection?view=windowsdesktop-6.0" target="_blank" rel="noopener"><strong>ListBox.ObjectCollection</strong></a>. Any
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.listbox.objectcollection?view=windowsdesktop-6.0" target="_blank"><strong>ListBox.ObjectCollection</strong></a>
+. Any
 <strong>object</strong> can be added to this data structure, but we often just add <strong>string</strong>s. <strong>ListBox.ObjectCollection</strong> is a subtype of <strong>IEnumerable</strong>; however, it is permissible to set up a <strong>foreach</strong> loop as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">foreach</span> (<span style="color:#66d9ef">string</span> s <span style="color:#66d9ef">in</span> uxList.Items)
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">foreach</span> (<span style="color:#66d9ef">string</span> s <span style="color:#66d9ef">in</span> uxList.Items)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>where <code>uxList</code> is a <strong>ListBox</strong> variable. As long as all of the elements in <strong>uxList.Items</strong> are <strong>string</strong>s, no exception will be thrown.</p>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>where <code>uxList</code> is a <strong>ListBox</strong> variable. As long as all of the elements in <strong>uxList.Items</strong> are <strong>string</strong>s, no exception will be thrown.</p>
 <p>While the <strong>foreach</strong> statement provides a clean way to iterate through a data structure, it is important to keep in mind its limitations. First, it can&rsquo;t even be used on data structures that aren&rsquo;t subtypes of <strong>IEnumerable</strong> or <strong>IEnumerable&lt;T&gt;</strong>. Second, there are many cases, especially when iterating through arrays, where the processing we need to do on the elements depends on the locations of the elements. For example, consider the problem of determining whether two arrays contain the same elements in the same order. For each element of one array, we need to know if the element <em>at the same location</em> in the other array is the same. Because the locations are important, a <strong>foreach</strong> loop isn&rsquo;t appropriate - we should use a <strong>for</strong> loop instead. Finally, a <strong>foreach</strong> should never be used to modify a data structure, as this causes unpredictable results.</p>
 <p>Even when a <strong>foreach</strong> would work, it is not always the best choice. For example, in order to determine whether a data structure contains a given element, we could iterate through the structure with a <strong>foreach</strong> loop and compare each element to the given element. While this would work, most data structures provide methods for determining whether they contain a given element. These methods are often far more efficient than using a <strong>foreach</strong> loop.</p>
 
             <footer class="footline">
+
             </footer>
           </article>
         </div>
@@ -663,13 +655,8 @@ property, which gets a data structure of type
     
     
     
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1686587338" defer></script>
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1686587338" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1686587338" defer></script>
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/embed-iframe.js?1686587338 defer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/iframe-resizer@4.3.2/js/iframeResizer.contentWindow.min.js"></script>
-    
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1691596179" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1691596179" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1691596179" defer></script>
   </body>
 </html>

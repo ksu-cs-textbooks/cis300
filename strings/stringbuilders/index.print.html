@@ -189,26 +189,6 @@
 	
 	
 		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
 		
 
 	
@@ -239,6 +219,11 @@
 	
 	
 		
+		
+
+	
+	
+		
 
 	
 	
@@ -254,6 +239,15 @@
 	
 		
 		
+
+	
+	
+		
+		
+		
+
+	
+	
 		
 
 	
@@ -263,6 +257,12 @@
 
 	
 	
+		
+		
+
+	
+	
+		
 		
 		
 		
@@ -516,34 +516,34 @@
 		
 		
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.2.0+tip">
+    <meta name="generator" content="Relearn 5.18.0">
     <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
     <meta name="description" content="K-State CIS 300: Data Structures">
     <meta name="author" content="Rod Howell and Josh Weese">
     <title>StringBuilders :: Data Structures in C#</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587341" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587341" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587341" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587341" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587341" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587341" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1686587341" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1686587341" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587341" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587341" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1686587341" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1686587341" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1686587341" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1686587341" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1686587341" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/format-print.css?1686587341" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1686587341"></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596180" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596180" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596180" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1691596180" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1691596180" rel="stylesheet" media="print">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/format-print.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1691596180" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1691596180"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1691596180"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
-      var index_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
+      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
       var root_url="https://ksu-cs-textbooks.github.io/cis300/";
       var baseUri=root_url.replace(/\/$/, '');
       // translations
@@ -551,32 +551,22 @@
       window.T_Copied_to_clipboard = 'Copied to clipboard!';
       window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
       window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
       // some further base stuff
       var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
       window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
     </script>
     
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1686587341" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.min.js?1686587341" defer></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1691596180" rel="stylesheet">
 
   </head>
-  <body class="mobile-support print disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilders/">
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilders/index.html">
     <div id="body" class="default-animation">
       <div id="sidebar-overlay"></div>
       <div id="toc-overlay"></div>
       <nav id="topbar" class="highlightable">
         <div>
-          <div class="navigation">
-             <a class="nav nav-next" href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilder-impl/" title="Implementation of StringBuilders (&#129106;)"><i class="fas fa-chevron-right fa-fw"></i></a>
-          </div>
-          <div class="navigation">
-             <a class="nav nav-prev" href="https://ksu-cs-textbooks.github.io/cis300/strings/strings/" title="strings (&#129104;)"><i class="fas fa-chevron-left fa-fw"></i></a>
-          </div>
-          <div id="top-print-link">
-            <a class="print-link" title='Print whole chapter (CTRL+ALT+p)' href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilders/index.print.html">
-              <i class="fas fa-print fa-fw"></i>
-            </a>
-          </div>
           <div id="top-tele-link">
             <a class="print-link" title='Teleprompter View' href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilders/tele.html">
               <i class="fas fa-tv fa-fw"></i>
@@ -587,128 +577,76 @@
               <i class="fas fa-expand-arrows-alt fa-fw"></i>
             </a>
           </div>
-          <div id="top-github-link">
-            <a class="github-link" title='Edit (CTRL+ALT+e)' href="https://gitlab.cs.ksu.edu/-/ide/project/cis300/cis300-book/edit/master/-/content/strings/stringbuilders.md" target="blank">
-              <i class="fas fa-pen fa-fw"></i>
-            </a>
-          </div>
           <div id="breadcrumbs">
             <span id="sidebar-toggle-span">
-              <a href="#" id="sidebar-toggle" title='Menu (CTRL+ALT+m)'><i class="fas fa-bars fa-fw"></i></a>
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
             </span>
-            <span id="toc-menu" title='Table of Contents (CTRL+ALT+t)'><i class="fas fa-list-alt fa-fw"></i></span>
             <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
-              <meta itemprop="itemListOrder" content="Descending" />
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="3" /><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis300/"><span itemprop="name">Data Structures in C#</span></a> > </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="2" /><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis300/strings/"><span itemprop="name">strings and StringBuilders</span></a> > </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="1" /><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilders/" aria-disabled="true"><span itemprop="name">StringBuilders</span></a></li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis300/index.html"><span itemprop="name">Data Structures in C#</span></a><meta itemprop="position" content="1"> &gt; </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis300/strings/index.html"><span itemprop="name">strings and StringBuilders</span></a><meta itemprop="position" content="2"> &gt; </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">StringBuilders</span><meta itemprop="position" content="3"></li>
             </ol>
-          </div>
-          <div class="default-animation progress">
-            <div class="wrapper">
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#stringbuilders"><strong>StringBuilder</strong>s</a></li>
-  </ul>
-</nav>
-            </div>
           </div>
         </div>
       </nav>
       <main id="body-inner" class="highlightable default" tabindex="-1">
         <div class="flex-block-wrapper">
-          <div id="head-tags">
-          </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
           <article class="default">
-<div hidden><h1>StringBuilders</h1></div>
-<h2 id="stringbuilders"><strong>StringBuilder</strong>s</h2>
-<p>In 
+            <header class="headline">
+            </header>
+<div hidden><h1 id="stringbuilders">StringBuilders</h1></div>
 
-<a href="https://ksu-cs-textbooks.github.io/cis300/strings/strings">the previous
-section</a>, we saw that
+<h2 id="stringbuilders"><strong>StringBuilder</strong>s</h2>
+<p>In <a href="https://ksu-cs-textbooks.github.io/cis300/strings/strings">the previous
+section</a>
+, we saw that
 building large <strong>string</strong>s from small pieces by concatenating them
 together is very inefficient. This inefficiency is due to the fact that
 <strong>string</strong>s are immutable. In order to overcome the inefficiency of
 concatenation, we need an alternative data structure that we can modify.
 The
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=net-6.0" target="_blank"><strong>StringBuilder</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=net-6.0" target="_blank" rel="noopener"><strong>StringBuilder</strong></a>
 class fills this need.</p>
 <p>Like <strong>string</strong>s, <strong>StringBuilder</strong>s implement sequences of characters,
 but the contents of <strong>StringBuilder</strong>s can be changed. The
-<strong>StringBuilder</strong> class has six constructors. The 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.-ctor?view=net-6.0#system-text-stringbuilder-ctor" target="_blank" rel="noopener">simplest
+<strong>StringBuilder</strong> class has six constructors. The <a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.-ctor?view=net-6.0#system-text-stringbuilder-ctor" target="_blank">simplest
 <strong>StringBuilder</strong>
 constructor</a>
+
 takes no parameters and constructs an empty <strong>StringBuilder</strong> &mdash; i.e., a
 <strong>StringBuilder</strong> containing no characters:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>StringBuilder sb = <span style="color:#66d9ef">new</span>();
-</span></span></code></pre></div><p>We can then modify a <strong>StringBuilder</strong> in various ways. First, we may
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>StringBuilder sb = <span style="color:#66d9ef">new</span>();</span></span></code></pre></div><p>We can then modify a <strong>StringBuilder</strong> in various ways. First, we may
 append a <strong>char</strong> to the end using its
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.append?view=net-6.0#system-text-stringbuilder-append%28system-char%29" target="_blank"><strong>Append</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.append?view=net-6.0#system-text-stringbuilder-append%28system-char%29" target="_blank" rel="noopener"><strong>Append</strong></a>
 method. This method not only changes the contents of the
 <strong>StringBuilder</strong>, but it also returns a reference to it. Thus if we
 have <strong>char</strong> variables, <code>a</code>, <code>b</code>, and <code>c</code>, and a <strong>StringBuilder</strong>
 variable <code>sb</code>, we can write code such as:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>sb.Append(a).Append(b).Append(c);
-</span></span></code></pre></div><p>The first call to <strong>Append</strong> appends the contents of <code>a</code> to <code>sb</code>, and
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>sb.Append(a).Append(b).Append(c);</span></span></code></pre></div><p>The first call to <strong>Append</strong> appends the contents of <code>a</code> to <code>sb</code>, and
 returns <code>sb</code>. Thus, the second call to <strong>Append</strong> also applies to <code>sb</code> -
 it appends the contents of <code>b</code>. Likewise, the third call appends the
 contents of <code>c</code>.</p>
 <p>Because this method changes a <strong>StringBuilder</strong>, rather than
 constructing a new one, its implementation is very efficient - in most
 cases, only the appended character needs to be copied (see
-&ldquo;
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilder-impl">Implementation of
-<strong>StringBuilder</strong>s</a>&rdquo;
+&ldquo;<a href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilder-impl">Implementation of
+<strong>StringBuilder</strong>s</a>
+&rdquo;
 for details). This class has other <strong>Append</strong> methods as well, including
-one that 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.append?view=net-6.0#system-text-stringbuilder-append%28system-string%29" target="_blank" rel="noopener">appends the contents of a given
-<strong>string</strong></a>.
+one that <a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.append?view=net-6.0#system-text-stringbuilder-append%28system-string%29" target="_blank">appends the contents of a given
+<strong>string</strong></a>
+.
 This method likewise only needs to copy the appended characters.</p>
 <p>Let us now return to the problem of converting all lower-case letters in
 a <strong>string</strong> to upper-case, converting all upper-case letters to
 lower-case, and leaving all other characters unchanged. We can use a
 <strong>StringBuilder</strong> as an intermediate data structure to do this much more
-efficiently than the code presented in 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/strings/strings">the previous
-section</a>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>StringBuilder sb = <span style="color:#66d9ef">new</span>();
+efficiently than the code presented in <a href="https://ksu-cs-textbooks.github.io/cis300/strings/strings">the previous
+section</a>
+:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>StringBuilder sb = <span style="color:#66d9ef">new</span>();
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i = <span style="color:#ae81ff">0</span>; i &lt; text.Length; i++)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> c = text[i];
@@ -725,44 +663,37 @@ section</a>:</p>
 </span></span><span style="display:flex;"><span>        sb.Append(c);
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">string</span> result = sb.ToString();
-</span></span></code></pre></div><p>On most iterations, the above loop only copies one character. In
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">string</span> result = sb.ToString();</span></span></code></pre></div><p>On most iterations, the above loop only copies one character. In
 addition, the call to the <strong>StringBuilder</strong>&rsquo;s <strong>ToString</strong> method copies
 each character in the result. If <code>text</code> is 100,000 characters long, this
 is a total of 200,000 character copies. Using the <strong>StringBuilder</strong>
-implementation described in 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilder-impl">the next
-section</a>, there
+implementation described in <a href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilder-impl">the next
+section</a>
+, there
 are some iterations that copy more than one character, but even if we
 account for this, it turns out that fewer than 400,000 characters are
 copied, as opposed to over five billion character copies when
-<strong>string</strong>s are used directly (see 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/strings/strings">the previous
-section</a>). The .NET
+<strong>string</strong>s are used directly (see <a href="https://ksu-cs-textbooks.github.io/cis300/strings/strings">the previous
+section</a>
+). The .NET
 <strong>StringBuilder</strong> implementation performs even
 better. In either case, the above code runs in <em>O</em>(<em>n</em>) time, where <em>n</em>
 is the length of <code>text</code>; i.e., as <em>n</em> gets large, the running time is at
 worst proportional to <em>n</em>. Thus, its performance degrades much less
 rapidly than the <em>O</em>(<em>n</em><sup>2</sup>) code that uses <strong>string</strong>s
 directly.</p>
-<p>A program that runs the above code and the code given in 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/strings/strings">the previous
-section</a> on user-provided
-text files can be obtained by creating a Git repository (see 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/repos">&ldquo;Git
-Repositories&rdquo;</a>) using
-
-
-<a href="https://classroom.github.com/a/PO7WgRNh" target="_blank" rel="noopener">this URL</a>. A noticeable
+<p>A program that runs the above code and the code given in <a href="https://ksu-cs-textbooks.github.io/cis300/strings/strings">the previous
+section</a>
+ on user-provided
+text files can be obtained by creating a Git repository (see <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/repos">&ldquo;Git
+Repositories&rdquo;</a>
+) using
+<a href="https://classroom.github.com/a/PO7WgRNh" target="_blank">this URL</a>
+. A noticeable
 performance difference can be seen on text files larger than 100K - for
-example, the full text of 
-
-<a href="http://www.gutenberg.org/cache/epub/12/pg12.txt" target="_blank" rel="noopener">Lewis Carroll&rsquo;s <em>Through the Looking
-Glass</em></a>.</p>
+example, the full text of <a href="http://www.gutenberg.org/cache/epub/12/pg12.txt" target="_blank">Lewis Carroll&rsquo;s <em>Through the Looking
+Glass</em></a>
+.</p>
 <p><strong>StringBuilder</strong>s have some features in common with <strong>string</strong>s. For
 example, we access individual characters in a <strong>StringBuilder</strong> by
 indexing; i.e., if <code>sb</code> is a <strong>StringBuilder</strong> variable, then <code>sb[0]</code>
@@ -770,17 +701,14 @@ accesses its first character, <code>sb[1]</code> accesses its second character,
 etc. The main difference here is that with a <strong>StringBuilder</strong>, we may
 use indexing to change characters; e.g., we may do the following,
 provided <code>sb</code> contains at least 3 characters:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>sb[<span style="color:#ae81ff">2</span>] = <span style="color:#e6db74">&#39;x&#39;</span>;
-</span></span></code></pre></div><p>A <strong>StringBuilder</strong> also has a
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>sb[<span style="color:#ae81ff">2</span>] = <span style="color:#e6db74">&#39;x&#39;</span>;</span></span></code></pre></div><p>A <strong>StringBuilder</strong> also has a
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.length?view=net-6.0#system-text-stringbuilder-length" target="_blank"><strong>Length</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.length?view=net-6.0#system-text-stringbuilder-length" target="_blank" rel="noopener"><strong>Length</strong></a>
 property, which gets the number of characters contained. However, we may
 also set this property to any nonnegative value, provided there is
 enough memory available to provide this length. For example, we may
 write:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>sb.Length = <span style="color:#ae81ff">10</span>;
-</span></span></code></pre></div><p>If the new length is shorter than the old, characters are removed from
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>sb.Length = <span style="color:#ae81ff">10</span>;</span></span></code></pre></div><p>If the new length is shorter than the old, characters are removed from
 the end of the <strong>StringBuilder</strong>. If the new length is longer that the
 old, <strong>char</strong>s containing the Unicode NULL value (0 in decimal) are
 appended.</p>
@@ -788,202 +716,37 @@ appended.</p>
   
   
 <div class="box notices cstyle warning">
-    <div class="box-label"><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div>
-    <div class="box-content">
-<p>The Unicode NULL value is different from a <strong>null</strong>
-reference. Because <strong>char</strong> is a 
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div>
+  <div class="box-content">
 
-<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/reference-value">value
-type</a>, a <strong>char</strong>
+<p>The Unicode NULL value is different from a <strong>null</strong>
+reference. Because <strong>char</strong> is a <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/reference-value">value
+type</a>
+, a <strong>char</strong>
 cannot store a <strong>null</strong> reference.</p>
-    </div>
+</div>
 </div>
 <p><strong>StringBuilder</strong>s have many other methods to allow various kinds of
-manipulation - see 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=net-6.0" target="_blank" rel="noopener">the documentation for the <strong>StringBuilder</strong>
+manipulation - see <a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=net-6.0" target="_blank">the documentation for the <strong>StringBuilder</strong>
 class</a>
-for details. There is also a 
 
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.-ctor?view=net-6.0#system-text-stringbuilder-ctor%28system-string%29" target="_blank" rel="noopener"><strong>StringBuilder</strong>
+for details. There is also a <a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.-ctor?view=net-6.0#system-text-stringbuilder-ctor%28system-string%29" target="_blank"><strong>StringBuilder</strong>
 constructor</a>
+
 that takes a <strong>string</strong> as its only parameter and constructs a
 <strong>StringBuilder</strong> containing the contents of that <strong>string</strong>.</p>
 
             <footer class="footline">
+
             </footer>
           </article>
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
         </div>
       </main>
     
 <div class="git-footer">
+<p class="theme-version-footer">5.18.0</p>
 <p>Last modified by: 
             <i class='fas fa-user'></i> Rod Howell
             <i class='fas fa-calendar'></i> <a href="https://gitlab.cs.ksu.edu/cis300/cis300-book/-/commit/4453de351fe700d9a927dd9cbec5947f1915cb62">May 31, 2023</a>
@@ -992,185 +755,8 @@ that takes a <strong>string</strong> as its only parameter and constructs a
 
     
     </div>
-    <aside id="sidebar" class="default-animation">
-      <div id="header-wrapper" class="default-animation">
-        <div id="header" class="default-animation">
-<a id="logo" href="https://ksu-cs-textbooks.github.io/cis300/">
-  CIS 300 - Data Structures
-</a>
-
-        </div>
-        <div class="searchbox default-animation">
-          <label for="search-by"><i class="fas fa-search"></i></label>
-          <input data-search-input id="search-by" type="search" placeholder="Search...">
-          <span data-search-clear=""><i class="fas fa-times"></i></span>
-        </div>
-        <script>
-          var contentLangs=['en'];
-        </script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/auto-complete.js?1686587341" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr.min.js?1686587341" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr.stemmer.support.min.js?1686587341" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr.multi.min.js?1686587341" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr.en.min.js?1686587341" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/search.js?1686587341" defer></script>
-      </div>
-      <div id="content-wrapper" class="highlightable">
-        <ul class="topics collapsible-menu">
-          <li data-nav-id="/io/" title="Input/Output" class="dd-item"><input type="checkbox" id="section-cbd3b3207f24308a668546abfa69f213" class="toggle"/><label for="section-cbd3b3207f24308a668546abfa69f213" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/io/"><b>1. </b>Input/Output</a><ul>
-          <li data-nav-id="/io/dialogs/" title="Dialogs" class="dd-item"><input type="checkbox" id="section-61b1770a0bd16f4917e33b67edd271d2" class="toggle"/><label for="section-61b1770a0bd16f4917e33b67edd271d2" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/io/dialogs/"><b>1.1. </b>Dialogs</a><ul>
-          <li data-nav-id="/io/dialogs/message-boxes/" title="MessageBoxes" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/io/dialogs/message-boxes/"><b>1.1.1. </b>MessageBoxes</a></li>
-          <li data-nav-id="/io/dialogs/file-dialogs/" title="File Dialogs" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/io/dialogs/file-dialogs/"><b>1.1.2. </b>File Dialogs</a></li>
-          <li data-nav-id="/io/dialogs/custom/" title="Custom Dialogs" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/io/dialogs/custom/"><b>1.1.3. </b>Custom Dialogs</a></li></ul></li>
-          <li data-nav-id="/io/simple-text-file/" title="Simple Text File I/O" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/io/simple-text-file/"><b>1.2. </b>Simple Text File I/O</a></li>
-          <li data-nav-id="/io/exceptions/" title="Exception Handling" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/io/exceptions/"><b>1.3. </b>Exception Handling</a></li>
-          <li data-nav-id="/io/advanced-text-file/" title="Advanced Text File I/O" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/io/advanced-text-file/"><b>1.4. </b>Advanced Text File I/O</a></li>
-          <li data-nav-id="/io/other-file-io/" title="Other File I/O" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/io/other-file-io/"><b>1.5. </b>Other File I/O</a></li></ul></li>
-          <li data-nav-id="/strings/" title="strings and StringBuilders" class="dd-item parent"><input type="checkbox" id="section-9355ad26afa67cd4239c81429ad6e8ca" class="toggle" checked/><label for="section-9355ad26afa67cd4239c81429ad6e8ca" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/strings/"><b>2. </b>strings and StringBuilders</a><ul>
-          <li data-nav-id="/strings/strings/" title="strings" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/strings/strings/"><b>2.1. </b>strings</a></li>
-          <li data-nav-id="/strings/stringbuilders/" title="StringBuilders" class="dd-item active"><a href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilders/"><b>2.2. </b>StringBuilders</a></li>
-          <li data-nav-id="/strings/stringbuilder-impl/" title="Implementation of StringBuilders" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilder-impl/"><b>2.3. </b>Implementation of StringBuilders</a></li></ul></li>
-          <li data-nav-id="/stacks-queues/" title="Stacks and Queues" class="dd-item"><input type="checkbox" id="section-deefdc256b7889ce66393d7269597a4b" class="toggle"/><label for="section-deefdc256b7889ce66393d7269597a4b" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/"><b>3. </b>Stacks and Queues</a><ul>
-          <li data-nav-id="/stacks-queues/stacks/" title="Introduction to Stacks" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/stacks/"><b>3.1. </b>Introduction to Stacks</a></li>
-          <li data-nav-id="/stacks-queues/undo/" title="Implementing Undo and Redo for a TextBox" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/undo/"><b>3.2. </b>Implementing Undo and Redo for a TextBox</a></li>
-          <li data-nav-id="/stacks-queues/paren/" title="Parenthesis Matching" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/paren/"><b>3.3. </b>Parenthesis Matching</a></li>
-          <li data-nav-id="/stacks-queues/stack-impl/" title="Implementing a Stack" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/stack-impl/"><b>3.4. </b>Implementing a Stack</a></li>
-          <li data-nav-id="/stacks-queues/queues/" title="Introduction to Queues" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queues/"><b>3.5. </b>Introduction to Queues</a></li>
-          <li data-nav-id="/stacks-queues/queue-impl/" title="Implementing a Queue" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queue-impl/"><b>3.6. </b>Implementing a Queue</a></li></ul></li>
-          <li data-nav-id="/linked-lists/" title="Linked Lists" class="dd-item"><input type="checkbox" id="section-a51df6d53eeee393764eb46edb53958a" class="toggle"/><label for="section-a51df6d53eeee393764eb46edb53958a" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/"><b>4. </b>Linked Lists</a><ul>
-          <li data-nav-id="/linked-lists/intro/" title="Introduction to Linked Lists" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/intro/"><b>4.1. </b>Introduction to Linked Lists</a></li>
-          <li data-nav-id="/linked-lists/stacks-queues/" title="Implementing Stacks and Queues with Linked Lists" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/stacks-queues/"><b>4.2. </b>Implementing Stacks and Queues with Linked Lists</a></li>
-          <li data-nav-id="/linked-lists/sieve-eratosthenes/" title="Finding Prime Numbers" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/sieve-eratosthenes/"><b>4.3. </b>Finding Prime Numbers</a></li></ul></li>
-          <li data-nav-id="/dictionaries/" title="Dictionaries" class="dd-item"><input type="checkbox" id="section-9011afb8a0159b09a13a971ca89bced8" class="toggle"/><label for="section-9011afb8a0159b09a13a971ca89bced8" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/"><b>5. </b>Dictionaries</a><ul>
-          <li data-nav-id="/dictionaries/dictionary-tkey-tvalue/" title="The Dictionary&lt;TKey, TValue&gt; Class" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/dictionary-tkey-tvalue/"><b>5.1. </b>The Dictionary&lt;TKey, TValue&gt; Class</a></li>
-          <li data-nav-id="/dictionaries/linked-list-impl/" title="Implementing a Dictionary with a Linked List" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/linked-list-impl/"><b>5.2. </b>Implementing a Dictionary with a Linked List</a></li>
-          <li data-nav-id="/dictionaries/binary-search/" title="Implementing a Dictionary with an Array-Like Structure" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/binary-search/"><b>5.3. </b>Implementing a Dictionary with an Array-Like Structure</a></li></ul></li>
-          <li data-nav-id="/trees/" title="Trees" class="dd-item"><input type="checkbox" id="section-5e8305205d74771c71a9ea85594a7914" class="toggle"/><label for="section-5e8305205d74771c71a9ea85594a7914" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/trees/"><b>6. </b>Trees</a><ul>
-          <li data-nav-id="/trees/intro/" title="Introduction to Trees" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/intro/"><b>6.1. </b>Introduction to Trees</a></li>
-          <li data-nav-id="/trees/bst/" title="Binary Search Trees" class="dd-item"><input type="checkbox" id="section-8d42cd93516505610f8b32c65bbeebda" class="toggle"/><label for="section-8d42cd93516505610f8b32c65bbeebda" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/"><b>6.2. </b>Binary Search Trees</a><ul>
-          <li data-nav-id="/trees/bst/binary-trees/" title="Binary Trees" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/binary-trees/"><b>6.2.1. </b>Binary Trees</a></li>
-          <li data-nav-id="/trees/bst/intro/" title="Introduction to Binary Search Trees" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/intro/"><b>6.2.2. </b>Introduction to Binary Search Trees</a></li>
-          <li data-nav-id="/trees/bst/remove/" title="Removing from a Binary Search Tree" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/remove/"><b>6.2.3. </b>Removing from a Binary Search Tree</a></li>
-          <li data-nav-id="/trees/bst/inorder/" title="Inorder Traversal" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/inorder/"><b>6.2.4. </b>Inorder Traversal</a></li></ul></li>
-          <li data-nav-id="/trees/avl/" title="AVL Trees" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/avl/"><b>6.3. </b>AVL Trees</a></li>
-          <li data-nav-id="/trees/tries/" title="Tries" class="dd-item"><input type="checkbox" id="section-5f1f75af2aa97dd0bdbedb3b3e5adc65" class="toggle"/><label for="section-5f1f75af2aa97dd0bdbedb3b3e5adc65" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/"><b>6.4. </b>Tries</a><ul>
-          <li data-nav-id="/trees/tries/intro/" title="Introduction to Tries" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro/"><b>6.4.1. </b>Introduction to Tries</a></li>
-          <li data-nav-id="/trees/tries/multiple-impl/" title="Multiple Implementations of Children" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/multiple-impl/"><b>6.4.2. </b>Multiple Implementations of Children</a></li>
-          <li data-nav-id="/trees/tries/traversing/" title="Traversing a Trie" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/traversing/"><b>6.4.3. </b>Traversing a Trie</a></li>
-          <li data-nav-id="/trees/tries/word-games/" title="Tries in Word Games" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/word-games/"><b>6.4.4. </b>Tries in Word Games</a></li></ul></li>
-          <li data-nav-id="/trees/priority-queues/" title="Priority Queues" class="dd-item"><input type="checkbox" id="section-0e087c42aa39c815f492e3767eaf2ef7" class="toggle"/><label for="section-0e087c42aa39c815f492e3767eaf2ef7" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/"><b>6.5. </b>Priority Queues</a><ul>
-          <li data-nav-id="/trees/priority-queues/heaps/" title="Heaps" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/heaps/"><b>6.5.1. </b>Heaps</a></li>
-          <li data-nav-id="/trees/priority-queues/leftist-heaps/" title="Leftist Heaps" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/leftist-heaps/"><b>6.5.2. </b>Leftist Heaps</a></li>
-          <li data-nav-id="/trees/priority-queues/huffman-trees/" title="Huffman Trees" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/huffman-trees/"><b>6.5.3. </b>Huffman Trees</a></li></ul></li></ul></li>
-          <li data-nav-id="/hashing/" title="Hash Tables" class="dd-item"><input type="checkbox" id="section-cd22fc50afca8a60e214c94b94daa169" class="toggle"/><label for="section-cd22fc50afca8a60e214c94b94daa169" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/hashing/"><b>7. </b>Hash Tables</a><ul>
-          <li data-nav-id="/hashing/simple/" title="A Simple Hash Table Implementation" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/hashing/simple/"><b>7.1. </b>A Simple Hash Table Implementation</a></li>
-          <li data-nav-id="/hashing/rehashing/" title="Rehashing" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/hashing/rehashing/"><b>7.2. </b>Rehashing</a></li>
-          <li data-nav-id="/hashing/memoization/" title="Memoization" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/hashing/memoization/"><b>7.3. </b>Memoization</a></li>
-          <li data-nav-id="/hashing/equality/" title="Equality in C#" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/hashing/equality/"><b>7.4. </b>Equality in C#</a></li>
-          <li data-nav-id="/hashing/hash-functions/" title="Hash Codes" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/hashing/hash-functions/"><b>7.5. </b>Hash Codes</a></li></ul></li>
-          <li data-nav-id="/graphs/" title="Graphs" class="dd-item"><input type="checkbox" id="section-fefd7704561bcadc124f3f3c72c54ab3" class="toggle"/><label for="section-fefd7704561bcadc124f3f3c72c54ab3" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/graphs/"><b>8. </b>Graphs</a><ul>
-          <li data-nav-id="/graphs/intro/" title="Introduction to Graphs" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/graphs/intro/"><b>8.1. </b>Introduction to Graphs</a></li>
-          <li data-nav-id="/graphs/dijkstra/" title="Shortest Paths" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/graphs/dijkstra/"><b>8.2. </b>Shortest Paths</a></li>
-          <li data-nav-id="/graphs/breadth-first/" title="Unweighted Shortest Paths" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/graphs/breadth-first/"><b>8.3. </b>Unweighted Shortest Paths</a></li>
-          <li data-nav-id="/graphs/impl/" title="Implementing a Graph" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/graphs/impl/"><b>8.4. </b>Implementing a Graph</a></li></ul></li>
-          <li data-nav-id="/sorting/" title="Sorting" class="dd-item"><input type="checkbox" id="section-fd2166a393af1c48d2ffe636e6f952d8" class="toggle"/><label for="section-fd2166a393af1c48d2ffe636e6f952d8" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/sorting/"><b>9. </b>Sorting</a><ul>
-          <li data-nav-id="/sorting/select/" title="Select Sorts" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/sorting/select/"><b>9.1. </b>Select Sorts</a></li>
-          <li data-nav-id="/sorting/insert/" title="Insert Sorts" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/sorting/insert/"><b>9.2. </b>Insert Sorts</a></li>
-          <li data-nav-id="/sorting/merge/" title="Merge Sorts" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/sorting/merge/"><b>9.3. </b>Merge Sorts</a></li>
-          <li data-nav-id="/sorting/split/" title="Split Sorts" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/sorting/split/"><b>9.4. </b>Split Sorts</a></li>
-          <li data-nav-id="/sorting/hybrid/" title="Hybrid Sorting Algorithms" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/sorting/hybrid/"><b>9.5. </b>Hybrid Sorting Algorithms</a></li>
-          <li data-nav-id="/sorting/strings/" title="Sorting Strings" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/sorting/strings/"><b>9.6. </b>Sorting Strings</a></li></ul></li>
-          <li data-nav-id="/appendix/" title="Appendices" class="dd-item"><input type="checkbox" id="section-8a7f152ea576b5a4047f92c2cc1cabad" class="toggle"/><label for="section-8a7f152ea576b5a4047f92c2cc1cabad" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/"><b>A. </b>Appendices</a><ul>
-          <li data-nav-id="/appendix/syntax/" title="C# Syntax" class="dd-item"><input type="checkbox" id="section-6a5a5cc3bca4007f0866907612ee033f" class="toggle"/><label for="section-6a5a5cc3bca4007f0866907612ee033f" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/"><b>A1. </b>C# Syntax</a><ul>
-          <li data-nav-id="/appendix/syntax/reference-value/" title="Reference Types and Value Types" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/reference-value/"><b>A1.1. </b>Reference Types and Value Types</a></li>
-          <li data-nav-id="/appendix/syntax/enumerations/" title="Enumerations" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/enumerations/"><b>A1.2. </b>Enumerations</a></li>
-          <li data-nav-id="/appendix/syntax/structs/" title="Structures" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/structs/"><b>A1.3. </b>Structures</a></li>
-          <li data-nav-id="/appendix/syntax/decimals/" title="The decimal Type" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/decimals/"><b>A1.4. </b>The decimal Type</a></li>
-          <li data-nav-id="/appendix/syntax/const/" title="Read-Only and Constant Fields" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/const/"><b>A1.5. </b>Read-Only and Constant Fields</a></li>
-          <li data-nav-id="/appendix/syntax/properties/" title="Properties" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/properties/"><b>A1.6. </b>Properties</a></li>
-          <li data-nav-id="/appendix/syntax/indexers/" title="Indexers" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/indexers/"><b>A1.7. </b>Indexers</a></li>
-          <li data-nav-id="/appendix/syntax/static-this/" title="The Keywords static and this" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/static-this/"><b>A1.8. </b>The Keywords static and this</a></li>
-          <li data-nav-id="/appendix/syntax/out-ref/" title="out and ref Parameters" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/out-ref/"><b>A1.9. </b>out and ref Parameters</a></li>
-          <li data-nav-id="/appendix/syntax/foreach/" title="The foreach Statement" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/foreach/"><b>A1.10. </b>The foreach Statement</a></li>
-          <li data-nav-id="/appendix/syntax/enumerators/" title="Enumerators" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/enumerators/"><b>A1.11. </b>Enumerators</a></li>
-          <li data-nav-id="/appendix/syntax/switch/" title="The switch Statement" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/switch/"><b>A1.12. </b>The switch Statement</a></li>
-          <li data-nav-id="/appendix/syntax/remainder/" title="The Remainder Operator" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/remainder/"><b>A1.13. </b>The Remainder Operator</a></li></ul></li>
-          <li data-nav-id="/appendix/vs/" title="Visual Studio" class="dd-item"><input type="checkbox" id="section-805451f3a5b538fc2959767d013f4e16" class="toggle"/><label for="section-805451f3a5b538fc2959767d013f4e16" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/"><b>A2. </b>Visual Studio</a><ul>
-          <li data-nav-id="/appendix/vs/installing-vs/" title="Installing Visual Studio" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/installing-vs/"><b>A2.1 </b>Installing Visual Studio</a></li>
-          <li data-nav-id="/appendix/vs/repos/" title="Git Repositories" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/repos/"><b>A2.2. </b>Git Repositories</a></li>
-          <li data-nav-id="/appendix/vs/solutions/" title="Visual Studio Solutions" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/solutions/"><b>A2.3. </b>Visual Studio Solutions</a></li>
-          <li data-nav-id="/appendix/vs/design-window/" title="The Design Window" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/design-window/"><b>A2.4. </b>The Design Window</a></li>
-          <li data-nav-id="/appendix/vs/code-window/" title="The Code Window" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/code-window/"><b>A2.5. </b>The Code Window</a></li>
-          <li data-nav-id="/appendix/vs/debugger/" title="The Debugger" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/debugger/"><b>A2.6. </b>The Debugger</a></li>
-          <li data-nav-id="/appendix/vs/submitting/" title="Submitting Assignments" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/submitting/"><b>A2.7. </b>Submitting Assignments</a></li>
-          <li data-nav-id="/appendix/vs/nunit/" title="Unit Testing" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/nunit/"><b>A2.8. </b>Unit Testing</a></li>
-          <li data-nav-id="/appendix/vs/multiple/" title="Using Multiple Machines" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/multiple/"><b>A2.9. </b>Using Multiple Machines</a></li>
-          <li data-nav-id="/appendix/vs/checkpointing/" title="Checkpointing" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/checkpointing/"><b>A2.10. </b>Checkpointing</a></li></ul></li>
-          <li data-nav-id="/appendix/style/" title="Programming Style Requirements" class="dd-item"><input type="checkbox" id="section-3c7d664b64b84c9f89fc48179979363e" class="toggle"/><label for="section-3c7d664b64b84c9f89fc48179979363e" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/"><b>A3. </b>Programming Style Requirements</a><ul>
-          <li data-nav-id="/appendix/style/formatting/" title="General Formatting" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/formatting/"><b>A3.1. </b>General Formatting</a></li>
-          <li data-nav-id="/appendix/style/access-modifiers/" title="Access Modifiers" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/access-modifiers/"><b>A3.2. </b>Access Modifiers</a></li>
-          <li data-nav-id="/appendix/style/naming/" title="Naming Conventions" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/naming/"><b>A3.3. </b>Naming Conventions</a></li>
-          <li data-nav-id="/appendix/style/comments/" title="Comments" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/comments/"><b>A3.4. </b>Comments</a></li>
-          <li data-nav-id="/appendix/style/prohibited/" title="Prohibited Features" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/prohibited/"><b>A3.5 </b>Prohibited Features</a></li></ul></li></ul></li>
-        </ul>
-        <div class="footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"></div>
-        <hr class="default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"/>
-        <div id="prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVariantSwitch">
-          <ul>
-            <li id="select-language-container" class="footerLangSwitch">
-              <a class="padding select-container">
-                <i class="fas fa-language fa-fw"></i>
-                <span>&nbsp;</span>
-                <div class="select-style">
-                  <select id="select-language" onchange="location = baseUri + this.value;">
-                  </select>
-                </div>
-                <div class="select-clear"></div>
-              </a>
-            </li>
-            <li id="select-variant-container" class="footerVariantSwitch showVariantSwitch">
-              <a class="padding select-container">
-                <i class="fas fa-paint-brush fa-fw"></i>
-                <span>&nbsp;</span>
-                <div class="select-style">
-                  <select id="select-variant" onchange="window.variants && variants.changeVariant( this.value );">
-                    <option id="light-theme" value="light-theme" selected>Light Theme</option>
-                    <option id="dark-theme" value="dark-theme">Dark Theme</option>
-                  </select>
-                </div>
-                <div class="select-clear"></div>
-              </a>
-              <script>window.variants && variants.markSelectedVariant();</script>
-            </li>
-            <li class="footerVisitedLinks"><a class="padding" onclick="clearHistory();"><i class="fas fa-history fa-fw"></i> Clear History</a></li>
-          </ul>
-        </div>
-        <div id="footer" class="footerFooter showFooter"><style>
-  #footer {
-    font-size: 13px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 2rem 1rem;
-    min-width: 230px;
-    max-width: 300px;
-  }
-  #footer p {
-    margin: 0;
-  }
-  </style>
-
-<p>Built using <a href="http://gohugo.io/">Hugo</a> and <a href="https://github.com/ksu-cs-textbooks/hugo-theme-relearn">Hugo Relearn Theme</a> with assistance from Josh Weese and Russ Feldhausen.</p>
-<br/>
-<p>Microsoft and Visual Studio are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries. </p>
-<br/>
-<p><strong><i>© Copyright 2014-2023, <a href="http://people.cs.ksu.edu/~rhowell/" target="_">Rod Howell</a>. All rights reserved.</i></strong></p>
-
-        </div>
-      </div>
-    </aside>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1686587341" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1686587341" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1686587341" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1686587341" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1691596180" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1691596180" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1691596180" defer></script>
   </body>
 </html>

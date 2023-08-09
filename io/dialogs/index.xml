@@ -189,26 +189,6 @@
 	
 	
 		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
 		
 
 	
@@ -239,6 +219,11 @@
 	
 	
 		
+		
+
+	
+	
+		
 
 	
 	
@@ -254,6 +239,15 @@
 	
 		
 		
+
+	
+	
+		
+		
+		
+
+	
+	
 		
 
 	
@@ -263,6 +257,12 @@
 
 	
 	
+		
+		
+
+	
+	
+		
 		
 		
 		
@@ -519,9 +519,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Dialogs on Data Structures in C#</title>
-    <link>https://ksu-cs-textbooks.github.io/cis300/io/dialogs/</link>
+    <link>https://ksu-cs-textbooks.github.io/cis300/io/dialogs/index.html</link>
     <description>Recent content in Dialogs on Data Structures in C#</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://ksu-cs-textbooks.github.io/cis300/io/dialogs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MessageBoxes</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/io/dialogs/message-boxes/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis300/io/dialogs/message-boxes/index.html</guid>
+      <description>Message Boxes The MessageBox class (found in the System.Windows.Forms namespace) provides a simple mechanism for displaying a message and obtaining one of a few simple responses from the user. The most common usage of a MessageBox is to call one of its various Show methods, each of which is static . The simplest Show method takes a string as its only parameter. The method then displays this string in a modal dialog containing an &amp;ldquo;OK&amp;rdquo; button.</description>
+    </item>
+    <item>
+      <title>File Dialogs</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/io/dialogs/file-dialogs/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis300/io/dialogs/file-dialogs/index.html</guid>
+      <description>File Dialogs The System.Windows.Forms namespace contains two other classes that implement modal dialogs for obtaining file names from the user. These classes are OpenFileDialog , which is designed to obtain the name of a file to read, and SaveFileDialog , which is designed to obtain the name of a file to write. Because we often need to obtain the name of a file prior to doing file I/O, it is appropriate to consider these classes now.</description>
+    </item>
+    <item>
+      <title>Custom Dialogs</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/io/dialogs/custom/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis300/io/dialogs/custom/index.html</guid>
+      <description>Custom Dialogs While the dialogs provided by the .NET Framework are useful in a variety of applications, there are times when we need to be able to design our own special-purpose dialog to obtain specific information from the user. This section outlines how Visual Studio® can be used to build such a dialog.
+Let&amp;rsquo;s begin by considering a simple example. Suppose we are building an application that needs a dialog to obtain from the user the following pieces of information:</description>
+    </item>
   </channel>
 </rss>

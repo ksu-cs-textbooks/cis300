@@ -189,26 +189,6 @@
 	
 	
 		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
 		
 
 	
@@ -239,6 +219,11 @@
 	
 	
 		
+		
+
+	
+	
+		
 
 	
 	
@@ -254,6 +239,15 @@
 	
 		
 		
+
+	
+	
+		
+		
+		
+
+	
+	
 		
 
 	
@@ -263,6 +257,12 @@
 
 	
 	
+		
+		
+
+	
+	
+		
 		
 		
 		
@@ -516,33 +516,33 @@
 		
 		
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.2.0+tip">
+    <meta name="generator" content="Relearn 5.18.0">
     <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
     <meta name="description" content="K-State CIS 300: Data Structures">
     <meta name="author" content="Rod Howell and Josh Weese">
     <title>Unit Testing :: Data Structures in C#</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587338" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587338" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587338" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587338" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587338" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587338" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1686587338" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1686587338" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587338" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587338" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1686587338" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1686587338" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1686587338" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1686587338" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1686587338" rel="stylesheet" media="print">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1686587338"></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596179" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596179" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596179" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596179" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596179" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596179" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1691596179" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1691596179" rel="stylesheet" media="print">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1691596179" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1691596179"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1691596179"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
-      var index_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
+      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
       var root_url="https://ksu-cs-textbooks.github.io/cis300/";
       var baseUri=root_url.replace(/\/$/, '');
       // translations
@@ -550,58 +550,72 @@
       window.T_Copied_to_clipboard = 'Copied to clipboard!';
       window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
       window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
       // some further base stuff
       var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
       window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
     </script>
     
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1686587338" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.min.js?1686587338" defer></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1691596179" rel="stylesheet">
 
   </head>
   <body class="mobile-support embed disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/nunit/embed.html">
-    <div id="body" class="default-animation" data-iframe-height="yes">
+    <div id="body" class="default-animation">
       
       
       
-      <main id="body-inner" class="highlightable default" tabindex="-1" data-iframe-height="yes" style="padding-bottom: 0px">
-        <div class="flex-block-wrapper" data-iframe-height="yes">
-          <div id="head-tags">
-          </div>
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
           <article class="default">
     
     
     
 <h2 id="unit-testing">Unit Testing</h2>
-<p>Some of the lab assignments in CIS 300 use a technique called <em>unit testing</em> for testing the correctness of your code. Unit testing is an automated technique for testing individual <strong>public</strong> methods and properties using a pre-defined set of test cases. We will be using an open-source unit-testing framework called 
-
-<a href="http://nunit.org/" target="_blank" rel="noopener">NUnit</a>.</p>
+<p>Some of the lab assignments in CIS 300 use a technique called <em>unit testing</em> for testing the correctness of your code. Unit testing is an automated technique for testing individual <strong>public</strong> methods and properties using a pre-defined set of test cases. We will be using an open-source unit-testing framework called <a href="http://nunit.org/" target="_blank">NUnit</a>
+.</p>
 <p>An NUnit test suite is a separate project contained within the same solution as the project it is to test. The GitHub repositories for lab assignments that utilize unit testing will initially contain these projects, whose names will typically end with &ldquo;.Tests&rdquo;. You should not modify these test projects.</p>
 <p>A test project will contain one or more classes having the attribute, <strong>[TestFixture]</strong>. These classes will contain the specific tests, each of which is a method with the attribute, <strong>[Test]</strong>. The name of the method will briefly describe the test, and a more detailed explanation will be provided in comments.</p>
 <p>To run the tests, first go to the
 &ldquo;Test&rdquo; menu and select &ldquo;Test Explorer&rdquo;. This will open the Test
 Explorer, which should resemble the following:</p>
-<p><img src="test-explorer.png" alt="A picture of the Test Explorer should appearhere."></p>
+<p>
+<a href="#image-0994537157b8bc277513aabdada93512" class="lightbox-link">
+<img src="test-explorer.png" alt="A picture of the Test Explorer should appear
+here." style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-0994537157b8bc277513aabdada93512">
+<img src="test-explorer.png" alt="A picture of the Test Explorer should appear
+here." class="lightbox-image" loading="lazy">
+</a></p>
 
   
   
 <div class="box notices cstyle note">
-    <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
-    <div class="box-content">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
+  <div class="box-content">
+
 <p>Depending on whether the test project has been successfully compiled, the tests in the large panel may or may not be shown.</p>
-    </div>
+</div>
 </div>
 <p>Then click the &ldquo;Run All Tests in View&rdquo; button in the upper-left corner of the Test Explorer. The Test Explorer should then show the results of all the tests:</p>
-<p><img src="test-explorer-results.png" alt="A picture of the Test Explorer should appear here."></p>
+<p>
+<a href="#image-cc7d74657d58d14c36773debb6960fb8" class="lightbox-link">
+<img src="test-explorer-results.png" alt="A picture of the Test Explorer should appear here." style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-cc7d74657d58d14c36773debb6960fb8">
+<img src="test-explorer-results.png" alt="A picture of the Test Explorer should appear here." class="lightbox-image" loading="lazy">
+</a></p>
 
   
   
 <div class="box notices cstyle note">
-    <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
-    <div class="box-content">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
+  <div class="box-content">
+
 <p>To see all of the output, you will need to open all of the elements either by
 clicking on the small triangles to the left of each element or by clicking the icon containing the &lsquo;+&rsquo; symbol.</p>
-    </div>
+</div>
 </div>
 <p>The above output shows that there were two tests in the test suite. The names of the tests are simply the names of the methods comprising the tests. The output further shows that one of the tests, <strong>LengthIsCorrect</strong>, failed, whereas the other test, <strong>FirstElementIs2</strong>, passed.</p>
 <p>The goal, of course, is to get all the tests to pass. When a test
@@ -616,20 +630,20 @@ cases, the exception will be displayed. A stack trace will also be
 displayed, so that you can tell what line of code threw the
 exception. Finally, you can run the debugger on the test itself by
 right-clicking on the test and selecting &ldquo;Debug&rdquo;. This will allow you
-to debug your code using the techniques describe in the section, 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/debugger">&ldquo;The
-Debugger&rdquo;</a>.</p>
+to debug your code using the techniques describe in the section, <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/debugger">&ldquo;The
+Debugger&rdquo;</a>
+.</p>
 
   
   
 <div class="box notices cstyle tip">
-    <div class="box-label"><i class="fa-fw fas fa-lightbulb"></i> Tip</div>
-    <div class="box-content">
+  <div class="box-label"><i class="fa-fw fas fa-lightbulb"></i> Tip</div>
+  <div class="box-content">
+
 <p>You can dock the Team Explorer into the main Visual Studio window by
 clicking on the small triangle in the far upper-right corner of the
 window and selecting either &ldquo;Dock&rdquo; or &ldquo;Dock as Tabbed Document&rdquo;.</p>
-    </div>
+</div>
 </div>
 <p>One potential error deserves special mention. Sometimes code will
 throw an exception that cannot be caught by a <strong>try-catch</strong> block. By
@@ -642,7 +656,13 @@ completed. To see why the tests were not completed, you can open the
 &ldquo;Tests&rdquo;. This will indicate what error stopped the tests; for example,
 the following indicates that a <strong>StackOverflowException</strong> has
 occurred:</p>
-<p><img src="StackOverflowException.png" alt="A picture of an output window should appear here."></p>
+<p>
+<a href="#image-e96476dc529886c10d7715e6afa3ac2f" class="lightbox-link">
+<img src="StackOverflowException.png" alt="A picture of an output window should appear here." style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-e96476dc529886c10d7715e6afa3ac2f">
+<img src="StackOverflowException.png" alt="A picture of an output window should appear here." class="lightbox-image" loading="lazy">
+</a></p>
 <p>Unfortunately, when this error occurs, it&rsquo;s more difficult to determine which test caused the exception. You can run the debugger on each test individually to see if it throws a <strong>StackOverflowException</strong>. In many cases, however, it is easier to examine each recursive call to make sure the call is made on a smaller problem instance.</p>
 <p>When you believe you have fixed any errors in your code, you will
 usually want to run all the tests again, as fixing one error can
@@ -664,6 +684,7 @@ up to date. Be sure you always finish by running all the tests to make sure they
 </ol>
 
             <footer class="footline">
+
             </footer>
           </article>
         </div>
@@ -672,13 +693,8 @@ up to date. Be sure you always finish by running all the tests to make sure they
     
     
     
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1686587338" defer></script>
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1686587338" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1686587338" defer></script>
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/embed-iframe.js?1686587338 defer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/iframe-resizer@4.3.2/js/iframeResizer.contentWindow.min.js"></script>
-    
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1691596179" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1691596179" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1691596179" defer></script>
   </body>
 </html>

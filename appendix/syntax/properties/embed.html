@@ -189,26 +189,6 @@
 	
 	
 		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
 		
 
 	
@@ -239,6 +219,11 @@
 	
 	
 		
+		
+
+	
+	
+		
 
 	
 	
@@ -254,6 +239,15 @@
 	
 		
 		
+
+	
+	
+		
+		
+		
+
+	
+	
 		
 
 	
@@ -263,6 +257,12 @@
 
 	
 	
+		
+		
+
+	
+	
+		
 		
 		
 		
@@ -516,33 +516,33 @@
 		
 		
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.2.0+tip">
+    <meta name="generator" content="Relearn 5.18.0">
     <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
     <meta name="description" content="K-State CIS 300: Data Structures">
     <meta name="author" content="Rod Howell and Josh Weese">
     <title>Properties :: Data Structures in C#</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587338" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587338" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587338" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587338" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587338" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587338" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1686587338" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1686587338" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587338" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587338" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1686587338" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1686587338" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1686587338" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1686587338" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1686587338" rel="stylesheet" media="print">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1686587338"></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596179" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596179" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596179" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596179" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596179" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596179" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1691596179" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1691596179" rel="stylesheet" media="print">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1691596179" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1691596179"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1691596179"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
-      var index_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
+      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
       var root_url="https://ksu-cs-textbooks.github.io/cis300/";
       var baseUri=root_url.replace(/\/$/, '');
       // translations
@@ -550,24 +550,23 @@
       window.T_Copied_to_clipboard = 'Copied to clipboard!';
       window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
       window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
       // some further base stuff
       var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
       window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
     </script>
     
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1686587338" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.min.js?1686587338" defer></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1691596179" rel="stylesheet">
 
   </head>
   <body class="mobile-support embed disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/properties/embed.html">
-    <div id="body" class="default-animation" data-iframe-height="yes">
+    <div id="body" class="default-animation">
       
       
       
-      <main id="body-inner" class="highlightable default" tabindex="-1" data-iframe-height="yes" style="padding-bottom: 0px">
-        <div class="flex-block-wrapper" data-iframe-height="yes">
-          <div id="head-tags">
-          </div>
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
           <article class="default">
     
     
@@ -576,52 +575,43 @@
 <p>A property is used syntactically like a field of a class or structure,
 but provides greater flexibility in implementation. For example, the
 <strong>string</strong> class contains a <strong>public</strong> property called
-
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.string.length?view=net-6.0" target="_blank" rel="noopener"><strong>Length</strong></a>. This
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.string.length?view=net-6.0" target="_blank"><strong>Length</strong></a>
+. This
 property is accessed in code much as if it were a <strong>public int</strong>
 field; i.e., if <code>s</code> is a <strong>string</strong> variable, we can access its
 <strong>Length</strong> property with the expression <code>s.Length</code>,
 which evaluates to an <strong>int</strong>. If <strong>Length</strong> were a <strong>public int</strong> field, we would access it in just the same way. However, it turns out that we cannot assign a value to this property, as we can to a <strong>public</strong> field; i.e., the statement,</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>s.Length = <span style="color:#ae81ff">0</span>;
-</span></span></code></pre></div><p>is not allowed. The reason for this limitation is that properties can be defined to restrict whether they can be read from or written to. The <strong>Length</strong> property is defined so that it can be read from, but not written to. This flexibility is one of the two main differences between a field and a property. The other main difference has to do with maintainability and is therefore easier to understand once we see how to define a property.</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>s.Length = <span style="color:#ae81ff">0</span>;</span></span></code></pre></div><p>is not allowed. The reason for this limitation is that properties can be defined to restrict whether they can be read from or written to. The <strong>Length</strong> property is defined so that it can be read from, but not written to. This flexibility is one of the two main differences between a field and a property. The other main difference has to do with maintainability and is therefore easier to understand once we see how to define a property.</p>
 <p>Suppose we wish to provide full read/write access to a <strong>double</strong> value. Rather than defining a <strong>public double</strong> field, we can define a simple <strong>double</strong> property as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">double</span> X { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
-</span></span></code></pre></div><p>This property then functions just like a <strong>public</strong> field - the <strong>get</strong> keyword allows code to read from the property, and the <strong>set</strong> keyword allows code to write to the property. A property definition requires at least one of these keywords, but one of them may be omitted to define a read-only property (if <strong>set</strong> is omitted) or a write-only property (if <strong>get</strong> is omitted). For example, the following defines <strong>X</strong> to be a read-only property:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">double</span> X { <span style="color:#66d9ef">get</span>; }
-</span></span></code></pre></div><p>Although this property is read-only, the constructor for the class or structure containing this definition is allowed to initialize it. Sometimes, however we want certain methods of the containing class or structure to be able to modify the property&rsquo;s value without allowing user code to do so. To accomplish this, We can define <strong>X</strong> in this way:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">double</span> X { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">set</span>; }
-</span></span></code></pre></div><p>The above examples are the simplest ways to define properties. They all rely on the <em>default implementation</em> of the property. Unlike a field, the name of the property is not actually a variable; instead, there is a <em>hidden</em> variable that is automatically defined. The only way this hidden variable can be accessed is through the property.</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">double</span> X { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }</span></span></code></pre></div><p>This property then functions just like a <strong>public</strong> field - the <strong>get</strong> keyword allows code to read from the property, and the <strong>set</strong> keyword allows code to write to the property. A property definition requires at least one of these keywords, but one of them may be omitted to define a read-only property (if <strong>set</strong> is omitted) or a write-only property (if <strong>get</strong> is omitted). For example, the following defines <strong>X</strong> to be a read-only property:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">double</span> X { <span style="color:#66d9ef">get</span>; }</span></span></code></pre></div><p>Although this property is read-only, the constructor for the class or structure containing this definition is allowed to initialize it. Sometimes, however we want certain methods of the containing class or structure to be able to modify the property&rsquo;s value without allowing user code to do so. To accomplish this, We can define <strong>X</strong> in this way:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">double</span> X { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">set</span>; }</span></span></code></pre></div><p>The above examples are the simplest ways to define properties. They all rely on the <em>default implementation</em> of the property. Unlike a field, the name of the property is not actually a variable; instead, there is a <em>hidden</em> variable that is automatically defined. The only way this hidden variable can be accessed is through the property.</p>
 
   
   
 <div class="box notices cstyle warning">
-    <div class="box-label"><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div>
-    <div class="box-content">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div>
+  <div class="box-content">
+
 <p>Don&rsquo;t define a <strong>private</strong> property using the default implementation. Use a <strong>private</strong> field instead.</p>
-    </div>
+</div>
 </div>
 <p>The distinction between a property and its hidden variable may seem artificial at first. However, the real flexibility of a property is revealed by the fact that we can define our own implementation, rather than relying on the default implementation. For example, suppose a certain data structure stores a <strong>StringBuilder</strong> called <code>_word</code>, and we want to provide read-only access to its length. We can facilitate this by defining the following property:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> WordLength
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> WordLength
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">get</span> =&gt; _word.Length;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>In fact, we can abbreviate this definition as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> WordLength =&gt; _word.Length;
-</span></span></code></pre></div><p>In this case, the <strong>get</strong> keyword is implied. In either case, the code to the right of the &ldquo;=&gt;&rdquo; must be an expression whose type is the same as the property&rsquo;s type. Note that when we provide such an expression, there is no longer a hidden variable, as we have provided explicit code indicating how the value of the property is to be computed.</p>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>In fact, we can abbreviate this definition as follows:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> WordLength =&gt; _word.Length;</span></span></code></pre></div><p>In this case, the <strong>get</strong> keyword is implied. In either case, the code to the right of the &ldquo;=&gt;&rdquo; must be an expression whose type is the same as the property&rsquo;s type. Note that when we provide such an expression, there is no longer a hidden variable, as we have provided explicit code indicating how the value of the property is to be computed.</p>
 <p>We can also provide an explicit implementation for the <strong>set</strong> accessor. Suppose, for example, that we want to allow the user read/write access to the length of <code>_word</code>. In order to be able to provide write access, we must be able to acquire the value that the user wishes to assign to the length. C# provides a keyword <strong>value</strong> for this purpose - its type is the same as the type of the property, and it stores the value that user code assigns to the property. Hence, we can define the property as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> WordLength
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> WordLength
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">get</span> =&gt; _word.Length;
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">set</span> =&gt; _word.Length = <span style="color:#66d9ef">value</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>It is this flexibility in defining the implementation of a property that makes <strong>public</strong> properties more maintainable than <strong>public</strong> fields. Returning to the example at the beginning of this section, suppose we had simply defined <strong>X</strong> as a <strong>public double</strong> field. As we pointed out above, such a field could be used by user code in the same way as the first definition of the property <strong>X</strong>. However, a field is part of the implementation of a class or structure. By making it <strong>public</strong>, we have exposed part of the implementation to user code. This means that if we later change this part of the implementation, we will potentially break user code that relies on it. If, instead, we were to use a property, we can then change the implementation by modifying the <strong>get</strong> and/or <strong>set</strong> accessors. As long as we don&rsquo;t remove either accessor (or make it <strong>private</strong>), such a change is invisible to user code. Due to this maintainability, good programmers will never use <strong>public</strong> fields (unless they are 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/const">constants</a>); instead, they will use <strong>public</strong> properties.</p>
-<p>In some cases, we need more than a single to expression to define a <strong>get</strong> or <strong>set</strong> accessor. For example, suppose a data structure stores an <strong>int[ ]</strong> <code>_elements</code>, and we wish to provide read-only access to this array. In order to ensure read-only access, we don&rsquo;t want to give user code a reference to the array, as the code would then be able to modify its contents. We therefore wish to make a copy of the array, and return that array to the user code (though a better solution might be to define an 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/indexers">indexer</a>). We can accomplish this as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span>[ ] Elements
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>It is this flexibility in defining the implementation of a property that makes <strong>public</strong> properties more maintainable than <strong>public</strong> fields. Returning to the example at the beginning of this section, suppose we had simply defined <strong>X</strong> as a <strong>public double</strong> field. As we pointed out above, such a field could be used by user code in the same way as the first definition of the property <strong>X</strong>. However, a field is part of the implementation of a class or structure. By making it <strong>public</strong>, we have exposed part of the implementation to user code. This means that if we later change this part of the implementation, we will potentially break user code that relies on it. If, instead, we were to use a property, we can then change the implementation by modifying the <strong>get</strong> and/or <strong>set</strong> accessors. As long as we don&rsquo;t remove either accessor (or make it <strong>private</strong>), such a change is invisible to user code. Due to this maintainability, good programmers will never use <strong>public</strong> fields (unless they are <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/const">constants</a>
+); instead, they will use <strong>public</strong> properties.</p>
+<p>In some cases, we need more than a single to expression to define a <strong>get</strong> or <strong>set</strong> accessor. For example, suppose a data structure stores an <strong>int[ ]</strong> <code>_elements</code>, and we wish to provide read-only access to this array. In order to ensure read-only access, we don&rsquo;t want to give user code a reference to the array, as the code would then be able to modify its contents. We therefore wish to make a copy of the array, and return that array to the user code (though a better solution might be to define an <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/indexers">indexer</a>
+). We can accomplish this as follows:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span>[ ] Elements
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">get</span>
 </span></span><span style="display:flex;"><span>    {
@@ -629,11 +619,11 @@ which evaluates to an <strong>int</strong>. If <strong>Length</strong> were a <s
 </span></span><span style="display:flex;"><span>        _elements.CopyTo(temp, <span style="color:#ae81ff">0</span>);
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> temp;
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Thus, arbitrary code may be included within the <strong>get</strong> accessor, provided it returns a value of the appropriate type; however, it is good programming practice to avoid changing the fields of a class or structure within the <strong>get</strong> accessor of one of its properties. In a similar way, arbitrary code may be used to implement a <strong>set</strong> accessor. As we can see from this most general way of defining properties, they are really more like methods than fields.</p>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Thus, arbitrary code may be included within the <strong>get</strong> accessor, provided it returns a value of the appropriate type; however, it is good programming practice to avoid changing the fields of a class or structure within the <strong>get</strong> accessor of one of its properties. In a similar way, arbitrary code may be used to implement a <strong>set</strong> accessor. As we can see from this most general way of defining properties, they are really more like methods than fields.</p>
 <p>Given how similar accessors are to methods, we might also wonder why we don&rsquo;t just use methods instead of properties. In fact, we can do just that - properties don&rsquo;t give any functional advantage over methods, and in fact, some object-oriented languages don&rsquo;t have properties. The advantage is stylistic. Methods are meant to perform actions, whereas properties are meant to represent entities. Thus, we could define methods <strong>GetX</strong> and <strong>SetX</strong> to provide access to the <strong>private</strong> field <code>_x</code>; however, it is stylistically cleaner to define a property called <strong>X</strong>.</p>
 
             <footer class="footline">
+
             </footer>
           </article>
         </div>
@@ -642,13 +632,8 @@ which evaluates to an <strong>int</strong>. If <strong>Length</strong> were a <s
     
     
     
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1686587338" defer></script>
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1686587338" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1686587338" defer></script>
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/embed-iframe.js?1686587338 defer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/iframe-resizer@4.3.2/js/iframeResizer.contentWindow.min.js"></script>
-    
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1691596179" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1691596179" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1691596179" defer></script>
   </body>
 </html>

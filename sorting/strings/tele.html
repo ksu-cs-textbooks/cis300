@@ -189,26 +189,6 @@
 	
 	
 		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
 		
 
 	
@@ -239,6 +219,11 @@
 	
 	
 		
+		
+
+	
+	
+		
 
 	
 	
@@ -254,6 +239,15 @@
 	
 		
 		
+
+	
+	
+		
+		
+		
+
+	
+	
 		
 
 	
@@ -263,6 +257,12 @@
 
 	
 	
+		
+		
+
+	
+	
+		
 		
 		
 		
@@ -516,33 +516,33 @@
 		
 		
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.2.0+tip">
+    <meta name="generator" content="Relearn 5.18.0">
     <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
     <meta name="description" content="K-State CIS 300: Data Structures">
     <meta name="author" content="Rod Howell and Josh Weese">
     <title>Sorting Strings :: Data Structures in C#</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587343" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587343" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587343" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1686587343" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1686587343" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587343" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1686587343" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1686587343" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1686587343" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1686587343" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1686587343" rel="stylesheet" media="print">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1686587343"></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596180" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596180" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596180" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1691596180" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1691596180" rel="stylesheet" media="print">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1691596180" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1691596180"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1691596180"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
-      var index_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
+      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
       var root_url="https://ksu-cs-textbooks.github.io/cis300/";
       var baseUri=root_url.replace(/\/$/, '');
       // translations
@@ -550,16 +550,17 @@
       window.T_Copied_to_clipboard = 'Copied to clipboard!';
       window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
       window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
       // some further base stuff
       var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
       window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
     </script>
     
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1686587343" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.min.js?1686587343" defer></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1691596180" rel="stylesheet">
 
   </head>
-  <body class="mobile-support tele disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/sorting/strings/">
+  <body class="mobile-support tele disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/sorting/strings/index.html">
     
     <div id="tele" class="tele mirror">
     
@@ -569,10 +570,11 @@
       
       <main id="body-inner" class="highlightable default" tabindex="-1">
         <div class="flex-block-wrapper">
-          <div id="head-tags">
-          </div>
           <article class="default">
-<div hidden><h1>Sorting Strings</h1></div>
+            <header class="headline">
+            </header>
+<div hidden><h1 id="sorting-strings">Sorting Strings</h1></div>
+
 <h2 id="sorting-strings">Sorting Strings</h2>
 <p>We conclude our discussion of sorting with a look at a sorting algorithm
 designed specifically for sorting multi-keyed data. In such data there
@@ -595,9 +597,8 @@ sort</em>. In this section, we will describe multi-key quick sort as it
 applies specifically to sorting strings; however, it can be applied to
 other multi-keyed data as well.</p>
 <p>One problem with sorting strings using a version of quick sort described
-in &ldquo;
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/sorting/split">Split Sorts</a>&rdquo; is
+in &ldquo;<a href="https://ksu-cs-textbooks.github.io/cis300/sorting/split">Split Sorts</a>
+&rdquo; is
 that string comparisons can be expensive. Specifically, they must
 compare the strings a character at a time until they reach either a
 mismatch or the end of a string. Thus, comparing strings that have a
@@ -621,10 +622,9 @@ therefore use an <strong>int</strong> to store the value of the character at loc
 <span class="math align-center">$ -1 $</span> denote the absence of a character at that
 location. We can also let 
 <span class="math align-center">$ -2 $</span> denote a <strong>null</strong> element, so that these elements are placed before all non-<strong>null</strong> elements in the sorted result.</p>
-<p>The algorithm then proceeds a lot like those described in &ldquo;
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/sorting/split">Split
-Sorts</a>&rdquo;. If the number of
+<p>The algorithm then proceeds a lot like those described in &ldquo;<a href="https://ksu-cs-textbooks.github.io/cis300/sorting/split">Split
+Sorts</a>
+&rdquo;. If the number of
 elements being sorted is greater than <span style="white-space:nowrap">
 <span class="math align-center">$ 1 $</span>,</span> a pivot element <code>p</code> is found.
 Note that <code>p</code> is not a <strong>string</strong>, but an <strong>int</strong> representing a
@@ -641,10 +641,9 @@ well. However, because we know that the strings in this group all agree
 on the first <code>k + 1</code> characters, we pass <code>k + 1</code> as the last
 parameter.</p>
 <p>One aspect of this algorithm that we need to address is whether the
-recursion is valid. Recall that 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/trees/intro/#recursion">when we introduced
-recursion</a>, we stated that
+recursion is valid. Recall that <a href="https://ksu-cs-textbooks.github.io/cis300/trees/intro/#recursion">when we introduced
+recursion</a>
+, we stated that
 in order to guarantee termination, all recursive calls must be on
 smaller problem instances, where the size of a problem instance is given
 by a nonnegative integer. In the algorithm described above, we might
@@ -682,17 +681,14 @@ the beginning of the second part; and</li>
 second part.</li>
 </ul>
 <p>The next iteration will then sort the second part.</p>
-<p>This algorithm can be combined with 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/sorting/insert">insertion
-sort</a> and 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/sorting/select/#heap-sort">heap
-sort</a>, as was done for
-introsort in 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/sorting/hybrid">the previous
-section</a>. However, we
+<p>This algorithm can be combined with <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/insert">insertion
+sort</a>
+ and <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/select/#heap-sort">heap
+sort</a>
+, as was done for
+introsort in <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/hybrid">the previous
+section</a>
+. However, we
 should also modify insertion sort and heap sort to use the information
 we already have about equal prefixes when we are comparing elements.
 Specifically, rather than comparing entire strings, we should begin
@@ -703,20 +699,20 @@ cutoffs for running insertion sort and/or heap sort may need to be
 adjusted.</p>
 
             <footer class="footline">
+
             </footer>
           </article>
         </div>
       </main>
     </div>
     
-  </div>
+    </div>
     
     
     
     
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1686587343" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1686587343" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1686587343" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1691596180" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1691596180" defer></script>
     <script>
       function useMathJax( config ){
         if( !Object.assign ){
@@ -745,10 +741,10 @@ adjusted.</p>
       }
       useMathJax( JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="https://ksu-cs-textbooks.github.io/cis300/js/mathjax/tex-mml-chtml.js?1686587343"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1686587343" defer></script>
+    <script id="MathJax-script" async src="https://ksu-cs-textbooks.github.io/cis300/js/mathjax/tex-mml-chtml.js?1691596180"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1691596180" defer></script>
     
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/tele-scroll.js?1686587343 defer"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/tele-scroll.js?1691596180 defer"></script>
     
   </body>
 </html>

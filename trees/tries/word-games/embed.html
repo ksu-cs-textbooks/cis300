@@ -189,26 +189,6 @@
 	
 	
 		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
 		
 
 	
@@ -239,6 +219,11 @@
 	
 	
 		
+		
+
+	
+	
+		
 
 	
 	
@@ -254,6 +239,15 @@
 	
 		
 		
+
+	
+	
+		
+		
+		
+
+	
+	
 		
 
 	
@@ -263,6 +257,12 @@
 
 	
 	
+		
+		
+
+	
+	
+		
 		
 		
 		
@@ -516,33 +516,33 @@
 		
 		
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.2.0+tip">
+    <meta name="generator" content="Relearn 5.18.0">
     <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
     <meta name="description" content="K-State CIS 300: Data Structures">
     <meta name="author" content="Rod Howell and Josh Weese">
     <title>Tries in Word Games :: Data Structures in C#</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587339" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587339" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587339" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587339" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587339" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587339" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1686587339" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1686587339" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587339" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587339" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1686587339" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1686587339" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1686587339" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1686587339" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1686587339" rel="stylesheet" media="print">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1686587339"></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596179" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596179" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596179" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596179" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596179" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596179" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1691596179" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1691596179" rel="stylesheet" media="print">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1691596179" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1691596179"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1691596179"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
-      var index_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
+      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
       var root_url="https://ksu-cs-textbooks.github.io/cis300/";
       var baseUri=root_url.replace(/\/$/, '');
       // translations
@@ -550,24 +550,23 @@
       window.T_Copied_to_clipboard = 'Copied to clipboard!';
       window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
       window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
       // some further base stuff
       var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
       window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
     </script>
     
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1686587339" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.min.js?1686587339" defer></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1691596179" rel="stylesheet">
 
   </head>
   <body class="mobile-support embed disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/trees/tries/word-games/embed.html">
-    <div id="body" class="default-animation" data-iframe-height="yes">
+    <div id="body" class="default-animation">
       
       
       
-      <main id="body-inner" class="highlightable default" tabindex="-1" data-iframe-height="yes" style="padding-bottom: 0px">
-        <div class="flex-block-wrapper" data-iframe-height="yes">
-          <div id="head-tags">
-          </div>
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
           <article class="default">
     
     
@@ -586,7 +585,13 @@ cover such that the dice can be placed in the cover and the tray placed
 upside-down on top of the cover. The whole thing can then be shaken,
 then inverted so that each die ends up in a different grid cell, forming
 a random game board such as:</p>
-<p><img src="boggle.jpg" alt="A Boggle game board"></p>
+<p>
+<a href="#image-0d2bdbe81ccaa6ecc50036e3e531fd99" class="lightbox-link">
+<img src="boggle.jpg" alt="A Boggle game board" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-0d2bdbe81ccaa6ecc50036e3e531fd99">
+<img src="boggle.jpg" alt="A Boggle game board" class="lightbox-image" loading="lazy">
+</a></p>
 <p>Players are then given a certain amount of time during which they
 compete to try to form as many unique words as they can from these
 letters. The letters of a word must be adjacent either horizontally,
@@ -594,7 +599,13 @@ vertically, or diagonally, and no die may be used more than once in a
 single word. There is a minimum word length, and longer words are worth
 more points. For example, the above game board contains the words,
 &ldquo;WITCH&rdquo;, &ldquo;ITCH&rdquo;, &ldquo;PELLET&rdquo;, &ldquo;TELL&rdquo;, and &ldquo;DATA&rdquo;, among many others.</p>
-<p><img src="boggle2.jpg" alt="Words on a Boggle game board"></p>
+<p>
+<a href="#image-29042a074c91ff1af7d42cf58ae75c52" class="lightbox-link">
+<img src="boggle2.jpg" alt="Words on a Boggle game board" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-29042a074c91ff1af7d42cf58ae75c52">
+<img src="boggle2.jpg" alt="Words on a Boggle game board" class="lightbox-image" loading="lazy">
+</a></p>
 <p>Suppose we want to build a program that plays Boggle against a human
 opponent. The program would need to look for words on a given board. The
 dictionary of valid words can of course be stored in a trie. In what follows,
@@ -609,15 +620,20 @@ the upper-left corner of the above board, its children would be the
 three adjacent dice containing &ldquo;I&rdquo;, &ldquo;C&rdquo;, and &ldquo;A&rdquo;. The children of &ldquo;I&rdquo;,
 then, would not include &ldquo;H&rdquo; because it is already on the path to &ldquo;I&rdquo;.
 Part of this tree would look like this:</p>
-<p><img src="boggle-tree.jpg" alt="A part of a tree representing a Boggle search space"></p>
+<p>
+<a href="#image-53661c2833661e7ac5179c91ca0502f2" class="lightbox-link">
+<img src="boggle-tree.jpg" alt="A part of a tree representing a Boggle search space" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-53661c2833661e7ac5179c91ca0502f2">
+<img src="boggle-tree.jpg" alt="A part of a tree representing a Boggle search space" class="lightbox-image" loading="lazy">
+</a></p>
 <p>Note that this tree is not a data structure - it need not be explicitly
 stored anywhere. Rather, it is a mathematical object that helps us to
 design an algorithm for finding all of the words. Each word on the board
 is simply a path in this tree starting from the root. We can therefore
-traverse this tree in much the same way as we outlined in 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/traversing">the previous
-section</a> for tries.
+traverse this tree in much the same way as we outlined in <a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/traversing">the previous
+section</a>
+ for tries.
 For each node in the tree, we can look up the path leading to that node,
 and output it if it is a word in the dictionary.</p>
 <p>In order to be able to implement such a traversal, we need to be able to
@@ -665,7 +681,13 @@ will only find words that begin near the top of the board.)</p>
 similarity between the trees we have been discussing and a trie
 containing the word list. Consider, for example, a portion of the child
 labeled &lsquo;h&rsquo; in a trie representing a large set of words:</p>
-<p><img src="trie-portion.jpg" alt="A portion of a trie."></p>
+<p>
+<a href="#image-7ef05c174abfc0c7d62de43fec00808f" class="lightbox-link">
+<img src="trie-portion.jpg" alt="A portion of a trie." style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-7ef05c174abfc0c7d62de43fec00808f">
+<img src="trie-portion.jpg" alt="A portion of a trie." class="lightbox-image" loading="lazy">
+</a></p>
 <p>We have omitted some of the children because they are irrelevant to the
 search we are performing (e.g., there is no die containing &ldquo;E&rdquo; adjacent
 to &ldquo;H&rdquo; on the above game board). Also, we are assuming a minimum word
@@ -728,6 +750,7 @@ parameters unchanged; hence, we only need to initialize them once. The
 resulting search will find all of the words on the board quickly.</p>
 
             <footer class="footline">
+
             </footer>
           </article>
         </div>
@@ -736,13 +759,8 @@ resulting search will find all of the words on the board quickly.</p>
     
     
     
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1686587339" defer></script>
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1686587339" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1686587339" defer></script>
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/embed-iframe.js?1686587339 defer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/iframe-resizer@4.3.2/js/iframeResizer.contentWindow.min.js"></script>
-    
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1691596180" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1691596180" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1691596180" defer></script>
   </body>
 </html>

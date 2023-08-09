@@ -189,26 +189,6 @@
 	
 	
 		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
 		
 
 	
@@ -239,6 +219,11 @@
 	
 	
 		
+		
+
+	
+	
+		
 
 	
 	
@@ -254,6 +239,15 @@
 	
 		
 		
+
+	
+	
+		
+		
+		
+
+	
+	
 		
 
 	
@@ -263,6 +257,12 @@
 
 	
 	
+		
+		
+
+	
+	
+		
 		
 		
 		
@@ -516,33 +516,33 @@
 		
 		
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.2.0+tip">
+    <meta name="generator" content="Relearn 5.18.0">
     <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
     <meta name="description" content="K-State CIS 300: Data Structures">
     <meta name="author" content="Rod Howell and Josh Weese">
     <title>Comments :: Data Structures in C#</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587338" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587338" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587338" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587338" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587338" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587338" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1686587338" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1686587338" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587338" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587338" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1686587338" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1686587338" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1686587338" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1686587338" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1686587338" rel="stylesheet" media="print">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1686587338"></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596179" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596179" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596179" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596179" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596179" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596179" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1691596179" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1691596179" rel="stylesheet" media="print">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1691596179" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1691596179"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1691596179"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
-      var index_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
+      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
       var root_url="https://ksu-cs-textbooks.github.io/cis300/";
       var baseUri=root_url.replace(/\/$/, '');
       // translations
@@ -550,24 +550,23 @@
       window.T_Copied_to_clipboard = 'Copied to clipboard!';
       window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
       window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
       // some further base stuff
       var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
       window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
     </script>
     
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1686587338" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.min.js?1686587338" defer></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1691596179" rel="stylesheet">
 
   </head>
   <body class="mobile-support embed disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/appendix/style/comments/embed.html">
-    <div id="body" class="default-animation" data-iframe-height="yes">
+    <div id="body" class="default-animation">
       
       
       
-      <main id="body-inner" class="highlightable default" tabindex="-1" data-iframe-height="yes" style="padding-bottom: 0px">
-        <div class="flex-block-wrapper" data-iframe-height="yes">
-          <div id="head-tags">
-          </div>
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
           <article class="default">
     
     
@@ -577,10 +576,9 @@
 certain comments as documentation. Visual Studio® automatically
 generates some source code files that you will not need to modify &mdash; you don&rsquo;t need to add comments to those files.</p>
 <p>At the top of each file in which you provide code, add a comment of the following form:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/* filename.cs
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/* filename.cs
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Author: Name 
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
-</span></span></code></pre></div><p>where <code>filename.cs</code> is the name of the file, and <code>Name</code> is the name of
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span></span></span></code></pre></div><p>where <code>filename.cs</code> is the name of the file, and <code>Name</code> is the name of
 the primary author. The primary author will either be you or, for
 files provided for you, the name of the original author of that
 file. Whenever you use someone else&rsquo;s code, it is important that you
@@ -588,30 +586,24 @@ give them credit for it. (To fail to do this is plagiarism.) Thus, if
 one of your source files was originally written by Rod Howell, leave
 his name as the author. If you have modified a file originally written
 by someone else, below the <code>Author</code> line, insert a line of the following form:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/*
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/*
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Modified by: Your Name
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
-</span></span></code></pre></div><p>Prior to each class, 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/structs">structure</a>, 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/enumerations">enumeration</a>, field, 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/properties">property</a>, and method, place a comment documenting its use. This comment should be delimited by <code>///</code> on each line. When you type <code>///</code> immediately above a class, structure, enumeration, field, property, or method, the IDE will automatically insert additional text to form a comment stub such as:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span></span></span></code></pre></div><p>Prior to each class, <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/structs">structure</a>
+, <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/enumerations">enumeration</a>
+, field, <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/properties">property</a>
+, and method, place a comment documenting its use. This comment should be delimited by <code>///</code> on each line. When you type <code>///</code> immediately above a class, structure, enumeration, field, property, or method, the IDE will automatically insert additional text to form a comment stub such as:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// </span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
-</span></span></code></pre></div><p><code>&lt;summary&gt;</code> and <code>&lt;/summary&gt;</code> are <em>XML tags</em>, which are understood by
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span></span></span></code></pre></div><p><code>&lt;summary&gt;</code> and <code>&lt;/summary&gt;</code> are <em>XML tags</em>, which are understood by
 the IDE. Between these tags, you should insert a summary of the
 program component you are documenting, including any requirements that
 must be satisfied by the calling code in order for the method to work
 properly. For example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// Indicates whether this structure is empty.</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">bool</span> _isEmpty;
-</span></span></code></pre></div><p>If the program component being documented is a method with at least one parameter and/or a non-<strong>void</strong> return type, additional XML tags will be generated by the IDE. For each parameter, <code>&lt;param&gt;</code> and <code>&lt;/param&gt;</code> tags will be generated. You should insert a description of the use of that parameter between these tags. If the method has a non-<strong>void</strong> return type, <code>&lt;returns&gt;</code> and <code>&lt;/returns&gt;</code> tags are generated. You should insert an explanation of the value being returned between these tags. For example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">bool</span> _isEmpty;</span></span></code></pre></div><p>If the program component being documented is a method with at least one parameter and/or a non-<strong>void</strong> return type, additional XML tags will be generated by the IDE. For each parameter, <code>&lt;param&gt;</code> and <code>&lt;/param&gt;</code> tags will be generated. You should insert a description of the use of that parameter between these tags. If the method has a non-<strong>void</strong> return type, <code>&lt;returns&gt;</code> and <code>&lt;/returns&gt;</code> tags are generated. You should insert an explanation of the value being returned between these tags. For example:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// Computes the number of times a given string x</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// occurs within a given string y.</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
@@ -621,26 +613,26 @@ properly. For example:</p>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> Occurrences(<span style="color:#66d9ef">string</span> x, <span style="color:#66d9ef">string</span> y)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
   
   
 <div class="box notices cstyle note">
-    <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
-    <div class="box-content">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
+  <div class="box-content">
+
 <p>You do not need to fill in <code>&lt;exception&gt;</code> tags - you may remove any that are generated automatically.</p>
-    </div>
+</div>
 </div>
 <p>Visual Studio often generates warnings when it cannot verify that the value being assigned to a non-nullable variable is not <strong>null</strong>. In cases where you can determine that the value will not be <strong>null</strong>, you are allowed to remove the warning by inserting <code>!</code> after the value. In such cases, prior to this line, insert a comment explaining why this value is not <strong>null</strong>. For example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">string</span> line;
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">string</span> line;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> (!input.EndOfStream)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Because input isn&#39;t at the end of the stream, ReadLine won&#39;t return null.</span>
 </span></span><span style="display:flex;"><span>    line = input.ReadLine()!;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Comments should also be used within methods to explain anything that is not obvious from the code itself.</p>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Comments should also be used within methods to explain anything that is not obvious from the code itself.</p>
 
             <footer class="footline">
+
             </footer>
           </article>
         </div>
@@ -649,13 +641,8 @@ properly. For example:</p>
     
     
     
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1686587338" defer></script>
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1686587338" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1686587338" defer></script>
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/embed-iframe.js?1686587338 defer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/iframe-resizer@4.3.2/js/iframeResizer.contentWindow.min.js"></script>
-    
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1691596179" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1691596179" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1691596179" defer></script>
   </body>
 </html>

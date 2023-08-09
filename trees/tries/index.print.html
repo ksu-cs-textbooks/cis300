@@ -189,26 +189,6 @@
 	
 	
 		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
 		
 
 	
@@ -239,6 +219,11 @@
 	
 	
 		
+		
+
+	
+	
+		
 
 	
 	
@@ -254,6 +239,15 @@
 	
 		
 		
+
+	
+	
+		
+		
+		
+
+	
+	
 		
 
 	
@@ -263,6 +257,12 @@
 
 	
 	
+		
+		
+
+	
+	
+		
 		
 		
 		
@@ -516,34 +516,34 @@
 		
 		
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.2.0+tip">
+    <meta name="generator" content="Relearn 5.18.0">
     <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
     <meta name="description" content="K-State CIS 300: Data Structures">
     <meta name="author" content="Rod Howell and Josh Weese">
     <title>Tries :: Data Structures in C#</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587342" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587342" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587342" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587342" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587342" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587342" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1686587342" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1686587342" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587342" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587342" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1686587342" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1686587342" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1686587342" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1686587342" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1686587342" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/format-print.css?1686587342" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1686587342"></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596180" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596180" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596180" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1691596180" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1691596180" rel="stylesheet" media="print">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/format-print.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1691596180" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1691596180"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1691596180"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
-      var index_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
+      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
       var root_url="https://ksu-cs-textbooks.github.io/cis300/";
       var baseUri=root_url.replace(/\/$/, '');
       // translations
@@ -551,32 +551,22 @@
       window.T_Copied_to_clipboard = 'Copied to clipboard!';
       window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
       window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
       // some further base stuff
       var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
       window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
     </script>
     
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1686587342" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.min.js?1686587342" defer></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1691596180" rel="stylesheet">
 
   </head>
-  <body class="mobile-support print disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/trees/tries/">
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/trees/tries/index.html">
     <div id="body" class="default-animation">
       <div id="sidebar-overlay"></div>
       <div id="toc-overlay"></div>
       <nav id="topbar" class="highlightable">
         <div>
-          <div class="navigation">
-             <a class="nav nav-next" href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro/" title="Introduction to Tries (&#129106;)"><i class="fas fa-chevron-right fa-fw"></i></a>
-          </div>
-          <div class="navigation">
-             <a class="nav nav-prev" href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/inorder/" title="Inorder Traversal (&#129104;)"><i class="fas fa-chevron-left fa-fw"></i></a>
-          </div>
-          <div id="top-print-link">
-            <a class="print-link" title='Print whole chapter (CTRL+ALT+p)' href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/index.print.html">
-              <i class="fas fa-print fa-fw"></i>
-            </a>
-          </div>
           <div id="top-tele-link">
             <a class="print-link" title='Teleprompter View' href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/tele.html">
               <i class="fas fa-tv fa-fw"></i>
@@ -587,133 +577,44 @@
               <i class="fas fa-expand-arrows-alt fa-fw"></i>
             </a>
           </div>
-          <div id="top-github-link">
-            <a class="github-link" title='Edit (CTRL+ALT+e)' href="https://gitlab.cs.ksu.edu/-/ide/project/cis300/cis300-book/edit/master/-/content/trees/tries/_index.md" target="blank">
-              <i class="fas fa-pen fa-fw"></i>
-            </a>
-          </div>
           <div id="breadcrumbs">
             <span id="sidebar-toggle-span">
-              <a href="#" id="sidebar-toggle" title='Menu (CTRL+ALT+m)'><i class="fas fa-bars fa-fw"></i></a>
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
             </span>
-            <span id="toc-menu" title='Table of Contents (CTRL+ALT+t)'><i class="fas fa-list-alt fa-fw"></i></span>
             <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
-              <meta itemprop="itemListOrder" content="Descending" />
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="3" /><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis300/"><span itemprop="name">Data Structures in C#</span></a> > </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="2" /><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis300/trees/"><span itemprop="name">Trees</span></a> > </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="1" /><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/" aria-disabled="true"><span itemprop="name">Tries</span></a></li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis300/index.html"><span itemprop="name">Data Structures in C#</span></a><meta itemprop="position" content="1"> &gt; </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis300/trees/index.html"><span itemprop="name">Trees</span></a><meta itemprop="position" content="2"> &gt; </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Tries</span><meta itemprop="position" content="3"></li>
             </ol>
-          </div>
-          <div class="default-animation progress">
-            <div class="wrapper">
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#tries">Tries</a></li>
-  </ul>
-</nav>
-            </div>
           </div>
         </div>
       </nav>
       <main id="body-inner" class="highlightable default" tabindex="-1">
         <div class="flex-block-wrapper">
-          <div id="head-tags">
-          </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
           <article class="default">
-<div hidden><h1>Tries</h1></div>
-<h2 id="tries">Tries</h2>
-<p>
+            <header class="headline">
+            </header>
+<div hidden><h1 id="tries">Tries</h1></div>
 
-<a href="https://ksu-cs-textbooks.github.io/cis300/trees/avl">AVL trees</a> give us an efficient mechanism for storage and  retrieval, particularly if we need to be able to process the elements in order of their keys.  However, there are special cases where we can achieve better performance.  One of these special cases occurs when we need to store a list of words, as we might need in a word game, for example.  For such applications, a <em>trie</em> provides for even more efficient storage and retrieval.</p>
+<h2 id="tries">Tries</h2>
+<p><a href="https://ksu-cs-textbooks.github.io/cis300/trees/avl">AVL trees</a>
+ give us an efficient mechanism for storage and  retrieval, particularly if we need to be able to process the elements in order of their keys.  However, there are special cases where we can achieve better performance.  One of these special cases occurs when we need to store a list of words, as we might need in a word game, for example.  For such applications, a <em>trie</em> provides for even more efficient storage and retrieval.</p>
 <p>In this section, we first define a trie and give a rather straightforward implementation.  We then show how to improve performance by implementing different nodes in different ways. We then examine the use of a preorder traversal to traverse a trie.  We conclude by discussing an example of using a trie in a word game.</p>
 
             <footer class="footline">
+
             </footer>
           </article>
 
           <section>
+            <h1 class="a11y-only">Subsections of Tries</h1>
     
     
           <article class="default">
-<div hidden><h1>Introduction to Tries</h1></div>
+            <header class="headline">
+            </header>
+<div hidden><h1 id="introduction-to-tries">Introduction to Tries</h1></div>
+
 <h2 id="introduction-to-tries">Introduction to Tries</h2>
 <p>A <em>trie</em> is a nonempty tree storing a set of words in the following way:</p>
 <ul>
@@ -738,7 +639,13 @@ to avoid confusion, it is pronounced like &ldquo;try&rdquo; instead of like &ldq
 </ul>
 <p>A trie storing these words (where we denote a value of <strong>true</strong> for the
 boolean with a <code>*</code>) is as follows:</p>
-<p><img src="trie-example.jpg" alt="A trie"></p>
+<p>
+<a href="#image-30dc391a51cae9e420151ef3d0528acf" class="lightbox-link">
+<img src="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro/trie-example.jpg" alt="A trie" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-30dc391a51cae9e420151ef3d0528acf">
+<img src="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro/trie-example.jpg" alt="A trie" class="lightbox-image" loading="lazy">
+</a></p>
 <p>Thus, for example, if we follow the path from the root through the
 labels &lsquo;c&rsquo;, &lsquo;a&rsquo;, and &lsquo;r&rsquo;, we reach a node with a <strong>true</strong> boolean value
 (shown by the <code>*</code> in the above picture); hence, &ldquo;car&rdquo; is in this set of
@@ -771,10 +678,9 @@ indicates whether the empty string is stored in the trie rooted at this
 node. This definition may be somewhat preferable to the one given above,
 as it does not depend on any context, but instead focuses entirely on
 the trie rooted at that particular node.</p>
-<p>One of the main advantages of a trie over an 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/trees/avl">AVL
-tree</a> is the speed with
+<p>One of the main advantages of a trie over an <a href="https://ksu-cs-textbooks.github.io/cis300/trees/avl">AVL
+tree</a>
+ is the speed with
 which we can look up words. Assuming we can quickly find the child with
 a given label, the time we need to look up a word is proportional to the
 length of the word, no matter how many words are in the trie. Note that
@@ -788,10 +694,9 @@ Consequently, we can expect a significant performance improvement by
 using a trie if our set of words is large.</p>
 <p>Let&rsquo;s now consider how we can implement a trie. There are various ways
 that this can be done, but we&rsquo;ll consider a fairly straightforward
-approach in this section (we&rsquo;ll improve the implementation in 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/multiple-impl">the next
-section</a>). We
+approach in this section (we&rsquo;ll improve the implementation in <a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/multiple-impl">the next
+section</a>
+). We
 will assume that the words we are storing are comprised of only the 26
 lower-case English letters. In this implementation, a single node will
 contain the following <strong>private</strong> fields:</p>
@@ -819,26 +724,25 @@ achieved our goal of providing quick access to a child with a given
 label.</p>
 <p>Let&rsquo;s now consider how to implement a lookup. We can define a <strong>public</strong>
 method for this purpose within the class implementing a trie node:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">bool</span> Contains(<span style="color:#66d9ef">string</span> s)
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">bool</span> Contains(<span style="color:#66d9ef">string</span> s)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    
 </span></span><span style="display:flex;"><span>    . . .
 </span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
   
   
 <div class="box notices cstyle note">
-    <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
-    <div class="box-content">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
+  <div class="box-content">
+
 <p>This method does not need a trie node as a parameter because
 the method will belong to a trie node. Thus, the method will be able to
 access the node as
-
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/static-this"><strong>this</strong></a>, and may
+<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/static-this"><strong>this</strong></a>
+, and may
 access its <strong>private</strong> fields directly by their names.</p>
-    </div>
+</div>
 </div>
 <p>The method
 consists of five cases:</p>
@@ -868,13 +772,12 @@ with a new one (we would need to construct a new node for each letter of
 each word we added). We therefore should provide a <strong>public</strong> method
 within the trie node class for the purpose of adding a word to the trie
 rooted at this node:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Add(<span style="color:#66d9ef">string</span> s)
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Add(<span style="color:#66d9ef">string</span> s)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    
 </span></span><span style="display:flex;"><span>    . . .
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>This time there are four cases:</p>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>This time there are four cases:</p>
 <ul>
 <li><code>s</code> is <strong>null</strong>. This case should be handled as in the <strong>Contains</strong> method above.</li>
 <li><code>s</code> is the empty <strong>string</strong>. Then we can record this word by setting
@@ -896,18 +799,21 @@ making a recursive call.</li>
 </ul>
 
             <footer class="footline">
+
             </footer>
           </article>
 
     
     
           <article class="default">
-<div hidden><h1>Multiple Implementations of Children</h1></div>
-<h2 id="multiple-implementations-of-children">Multiple Implementations of Children</h2>
-<p>The trie implementation given in 
+            <header class="headline">
+            </header>
+<div hidden><h1 id="multiple-implementations-of-children">Multiple Implementations of Children</h1></div>
 
-<a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro">the previous
-section</a> offers very
+<h2 id="multiple-implementations-of-children">Multiple Implementations of Children</h2>
+<p>The trie implementation given in <a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro">the previous
+section</a>
+ offers very
 efficient lookups - a word of length 
 <span class="math align-center">$ m $</span> can be looked up in 
 <span class="math align-center">$ O(m) $</span>
@@ -935,10 +841,9 @@ to have a <strong>char</strong> giving the child&rsquo;s label. We also need the
 the empty <strong>string</strong>.</li>
 </ul>
 <p>For all other nodes, we can use an implementation similar to the one
-outlined in 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro">the previous
-section</a>. We will still
+outlined in <a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro">the previous
+section</a>
+. We will still
 waste some space with the nodes having more than one child but fewer
 than 26; however, the amount of space wasted will now be much less.
 Furthermore, in each of these three implementations, we can quickly
@@ -961,28 +866,23 @@ contain a given <strong>string</strong>. An interface allows us to define a type
 has this functionality, and to define various sub-types that have
 different implementations, but still have this functionality.</p>
 <p>A simple example of an interface is
-
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.icomparable-1?view=net-6.0" target="_blank" rel="noopener"><strong>IComparable&lt;T&gt;</strong></a>.
-Recall from the section, 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/linked-list-impl">&ldquo;Implementing a Dictionary with a Linked
-List&rdquo;</a>,
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.icomparable-1?view=net-6.0" target="_blank"><strong>IComparable&lt;T&gt;</strong></a>
+.
+Recall from the section, <a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/linked-list-impl">&ldquo;Implementing a Dictionary with a Linked
+List&rdquo;</a>
+,
 that we can constrain the keys in a dictionary implementation to be of a
 type that can be ordered by using a <strong>where</strong> clause on the <strong>class</strong>
 statement, as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Dictionary</span>&lt;TKey, TValue&gt; <span style="color:#66d9ef">where</span> TKey : notnull, IComparable&lt;TKey&gt;
-</span></span></code></pre></div><p>The 
-
-<a href="https://source.dot.net/#System.Private.CoreLib/src/libraries/System.Private.CoreLib/src/System/IComparable.cs,3911354c40e0c30e" target="_blank" rel="noopener">source code for the <strong>IComparable&lt;T&gt;</strong>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Dictionary</span>&lt;TKey, TValue&gt; <span style="color:#66d9ef">where</span> TKey : notnull, IComparable&lt;TKey&gt;</span></span></code></pre></div><p>The <a href="https://source.dot.net/#System.Private.CoreLib/src/libraries/System.Private.CoreLib/src/System/IComparable.cs,3911354c40e0c30e" target="_blank">source code for the <strong>IComparable&lt;T&gt;</strong>
 interface</a>
+
 has been posted by Microsoft®. The essential part of this definition
 is:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">IComparable</span>&lt;<span style="color:#66d9ef">in</span> T&gt;
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">IComparable</span>&lt;<span style="color:#66d9ef">in</span> T&gt;
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> CompareTo(T? other);
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>(Don&rsquo;t worry about the <strong>in</strong> keyword with the type parameter in the
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>(Don&rsquo;t worry about the <strong>in</strong> keyword with the type parameter in the
 first line.) This definition defines the type <strong>IComparable&lt;T&gt;</strong> as
 having a method <strong>CompareTo</strong> that takes a parameter of the generic type
 <strong>T?</strong> and returns an <strong>int</strong>. Note that there is no <strong>public</strong> or
@@ -1003,33 +903,33 @@ instance of type <strong>TKey</strong>.</p>
 <p>Now suppose that we want to define a class <strong>Fraction</strong> and use it as a
 key in our dictionary implementation. We would begin the class
 definition within Visual Studio® as follows:</p>
-<img src="interface-example1.jpg" alt="Beginning an implementation of an interface." style="zoom:67%;" />
+<img src="https://ksu-cs-textbooks.github.io/cis300/trees/tries/multiple-impl/interface-example1.jpg" alt="Beginning an implementation of an interface." style="zoom:67%;" />
 <p>At the end of the first line of the <strong>class</strong> definition, <code>: IComparable&lt;Fraction&gt;</code> indicates that the class being defined is a
 subtype of <strong>IComparable&lt;Fraction&gt;</strong>. In general, we can list one or
 more interface names after the colon, separating these names with
 commas. Each name that we list requires that all of the methods,
-properties, and 
+properties, and <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/indexers">indexers</a>
 
-<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/indexers">indexers</a>
 from that interface must be fully defined within this class. If we hover
 the mouse over the word, <code>IComparable&lt;Fraction&gt;</code>, a drop-down menu
 appears. By selecting &ldquo;Implement interface&rdquo; from this menu, all of the
 required members of the interface are provided for us:</p>
-<img src="interface-example2.jpg" alt="Interface members are auto-filled." style="zoom:67%;" />
+<img src="https://ksu-cs-textbooks.github.io/cis300/trees/tries/multiple-impl/interface-example2.jpg" alt="Interface members are auto-filled." style="zoom:67%;" />
 
   
   
 <div class="box notices cstyle note">
-    <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
-    <div class="box-content">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
+  <div class="box-content">
+
 <p>In order to implement a method specified in an interface, we
 must define it as <strong>public</strong>.</p>
-    </div>
+</div>
 </div>
 <p>We now just need to replace the <strong>throw</strong>
 with the proper code for the <strong>CompareTo</strong> method and fill in any other
 class members that we need; for example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">namespace</span> Ksu.Cis300.Fractions
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">namespace</span> Ksu.Cis300.Fractions
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;summary&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// An immutable fraction whose instances can be ordered.</span>
@@ -1081,51 +981,44 @@ class members that we need; for example:</p>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Other class members</span>
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
   
   
 <div class="box notices cstyle note">
-    <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
-    <div class="box-content">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
+  <div class="box-content">
+
 <p>The <strong>CompareTo</strong> method above is <em>not</em> recursive. The
 <strong>CompareTo</strong> method that it calls is a member of the <strong>long</strong>
 structure, not the <strong>Fraction</strong> class.</p>
-    </div>
+</div>
 </div>
 <p>As we suggested above, interfaces can also include properties. For
 example,
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.icollection-1?view=net-6.0" target="_blank"><strong>ICollection&lt;T&gt;</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.icollection-1?view=net-6.0" target="_blank" rel="noopener"><strong>ICollection&lt;T&gt;</strong></a>
 is a generic interface implemented by both arrays and the class
-<span style="white-space:nowrap">
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=net-6.0" target="_blank" rel="noopener"><strong>List&lt;T&gt;</strong></a>.</span>
+<span style="white-space:nowrap"><a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=net-6.0" target="_blank"><strong>List&lt;T&gt;</strong></a>
+.</span>
 This interface contains the following member (among others):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> Count { <span style="color:#66d9ef">get</span>; }
-</span></span></code></pre></div><p>This member specifies that every subclass must contain a property called
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> Count { <span style="color:#66d9ef">get</span>; }</span></span></code></pre></div><p>This member specifies that every subclass must contain a property called
 <strong>Count</strong> with a getter. At first, it would appear that an array does
 not have such a property, as we cannot write something like:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">int</span>[] a = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span>[<span style="color:#ae81ff">10</span>];
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> k = a.Count;  <span style="color:#75715e">// This gives a syntax error.</span>
-</span></span></code></pre></div><p><span id="explicit-impl"></span> In fact, an array does contain a
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">int</span>[] a = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span>[<span style="color:#ae81ff">10</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> k = a.Count;  <span style="color:#75715e">// This gives a syntax error.</span></span></span></code></pre></div><p><span id="explicit-impl"></span> In fact, an array does contain a
 <strong>Count</strong> property, but this property is available only when the array
 is treated as an <strong>ICollection&lt;T&gt;</strong> (or an
-<span style="white-space:nowrap">
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.ilist-1?view=net-6.0" target="_blank" rel="noopener"><strong>IList&lt;T&gt;</strong></a>,</span>
+<span style="white-space:nowrap"><a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.ilist-1?view=net-6.0" target="_blank"><strong>IList&lt;T&gt;</strong></a>
+,</span>
 which is an interface that is a subtype of <strong>ICollection&lt;T&gt;</strong>, and is
 also implemented by arrays). For example, we can write:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">int</span>[] a = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span>[<span style="color:#ae81ff">10</span>];
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">int</span>[] a = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span>[<span style="color:#ae81ff">10</span>];
 </span></span><span style="display:flex;"><span>ICollection&lt;<span style="color:#66d9ef">int</span>&gt; col = a;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> k = col.Count;
-</span></span></code></pre></div><p>or</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">int</span>[] a = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span>[<span style="color:#ae81ff">10</span>];
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> k = ((ICollection&lt;<span style="color:#66d9ef">int</span>&gt;)a).Count;
-</span></span></code></pre></div><p>This behavior occurs because an array <em>explicitly implements</em> the
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> k = col.Count;</span></span></code></pre></div><p>or</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">int</span>[] a = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span>[<span style="color:#ae81ff">10</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> k = ((ICollection&lt;<span style="color:#66d9ef">int</span>&gt;)a).Count;</span></span></code></pre></div><p>This behavior occurs because an array <em>explicitly implements</em> the
 <strong>Count</strong> property. We can do this as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExplicitImplementationExample</span>&lt;T&gt; : ICollection&lt;T&gt;
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExplicitImplementationExample</span>&lt;T&gt; : ICollection&lt;T&gt;
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> ICollection&lt;T&gt;.Count
 </span></span><span style="display:flex;"><span>    {
@@ -1136,8 +1029,7 @@ also implemented by arrays). For example, we can write:</p>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Other class members</span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Thus, if we create an instance of
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Thus, if we create an instance of
 <strong>ExplicitImplementationExample&lt;T&gt;</strong>, we cannot access its <strong>Count</strong>
 property unless we either store it in a variable of type
 <strong>ICollection&lt;T&gt;</strong> or cast it to this type. Note that whereas the
@@ -1145,12 +1037,11 @@ property unless we either store it in a variable of type
 member, neither the <strong>public</strong> nor the <strong>private</strong> access modifier is
 allowed when <em>explicitly</em> implementing an interface member.</p>
 <p>We can also include
-
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/indexers">indexers</a> within
+<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/indexers">indexers</a>
+ within
 interfaces. For example, the <strong>IList&lt;T&gt;</strong> interface is defined as
 follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">IList</span>&lt;T&gt; : ICollection&lt;T&gt;
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">IList</span>&lt;T&gt; : ICollection&lt;T&gt;
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    T <span style="color:#66d9ef">this</span>[<span style="color:#66d9ef">int</span> index] { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
 </span></span><span style="display:flex;"><span>
@@ -1159,8 +1050,7 @@ follows:</p>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> Insert(<span style="color:#66d9ef">int</span> index, T item);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> RemoveAt(<span style="color:#66d9ef">int</span> index);
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>The <code>: ICollection&lt;T&gt;</code> at the end of the first line specifies that
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>The <code>: ICollection&lt;T&gt;</code> at the end of the first line specifies that
 <strong>IList&lt;T&gt;</strong> is a subtype of <strong>ICollection&lt;T&gt;</strong>; thus, the interface
 includes all members of <strong>ICollection&lt;T&gt;</strong>, plus the ones listed. The
 first member listed above specifies an indexer with a get accessor and a
@@ -1168,11 +1058,10 @@ set accessor.</p>
 <p>Now that we have seen a little of what interfaces are all about, let&rsquo;s
 see how we can use them to provide three different implementations of
 trie nodes. We first need to define an interface, which we will call
-<strong>ITrie</strong>, specifying the two <strong>public</strong> members of 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro">our previous
+<strong>ITrie</strong>, specifying the two <strong>public</strong> members of <a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro">our previous
 implementation of a trie
-node</a>. We do, however,
+node</a>
+. We do, however,
 need to make one change to the way the <strong>Add</strong> method is called. This
 change is needed because when we add a <strong>string</strong> to a trie, we may need
 to change the implementation of the root node. We can&rsquo;t simply change
@@ -1181,7 +1070,7 @@ of the appropriate implementation. Hence, the <strong>Add</strong> method will n
 to return the root of the resulting trie. Because this node may have any
 of the three implementations, the return type of this method should be
 <strong>ITrie</strong>. Also, because we will need the constants from our previous implementation in each of the implementations of <strong>ITrie</strong>, the code will be more maintainable if we include them once within this interface definition. Note that this will have the effect of making them <strong>public</strong>. The <strong>ITrie</strong> interface is therefore as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// An interface for a trie.</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">ITrie</span>
@@ -1209,17 +1098,15 @@ of the three implementations, the return type of this method should be
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;param name=&#34;s&#34;&gt;The string to add.&lt;/param&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;returns&gt;The resulting trie.&lt;/returns&gt;</span>
 </span></span><span style="display:flex;"><span>    ITrie Add(<span style="color:#66d9ef">string</span> s);
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>We will then need to define three classes, each of which implements the
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>We will then need to define three classes, each of which implements the
 above interface. We will use the following names for these classes:</p>
 <ul>
 <li><strong>TrieWithNoChildren</strong> will be used for nodes with no children.</li>
 <li><strong>TrieWithOneChild</strong> will be used for nodes with exactly one child.</li>
 <li><strong>TrieWithManyChildren</strong> will be used for all other nodes; this will
-be the class described in 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro">the previous
-section</a> with a few
+be the class described in <a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro">the previous
+section</a>
+ with a few
 modifications.</li>
 </ul>
 <p>These three classes will be similar because they each will implement the
@@ -1230,10 +1117,9 @@ different, as will other aspects of the implementations. For example,
 the <strong>TrieWithNoChildren</strong> and <strong>TrieWithOneChild</strong> classes need
 <strong>private</strong> fields as described at the beginning of this section,
 whereas the <strong>TrieWithManyChildren</strong> classes needs the same <strong>private</strong>
-fields as outlined in 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro">the previous
-section</a>. In each case,
+fields as outlined in <a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro">the previous
+section</a>
+. In each case,
 whenever we need to refer to a trie, we will use the type <strong>ITrie</strong>.</p>
 <p>The <strong>Add</strong> methods for both <strong>TrieWithNoChildren</strong> and
 <strong>TrieWithOneChild</strong> will need to be able to construct instances of
@@ -1273,10 +1159,9 @@ indicating whether the empty <strong>string</strong> is to be stored, a <strong>
 giving the label of a child, and an <strong>ITrie</strong> giving a child (these last
 three parameters will come from the original <strong>TrieWithOneChild</strong>). It
 can use the last three parameters to initialize its <strong>bool</strong> field and
-one of its children (computing the child&rsquo;s index as in 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro">the previous
-section</a>). It can then
+one of its children (computing the child&rsquo;s index as in <a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro">the previous
+section</a>
+). It can then
 use its own <strong>Add</strong> method to add the given <strong>string</strong>, as there will
 always be room to add a <strong>string</strong> to this implementation; hence, it can
 ignore the value returned by the <strong>Add</strong> method. Furthermore, because
@@ -1284,10 +1169,9 @@ the <strong>Add</strong> method does error checking on the given <strong>string<
 error checking this constructor needs to do is to check that neither the given <strong>string</strong> nor the given <strong>ITrie</strong> is <strong>null</strong>, and to
 verify that the given <strong>char</strong> is a lower-case English letter.</p>
 <p>Aside from replacing the constants with those defined in the <strong>ITrie</strong> interface, the <strong>Contains</strong> method for <strong>TrieWithManyChildren</strong> can be exactly the
-same as for the implementation in 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro">the previous
-section</a>. For the other
+same as for the implementation in <a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro">the previous
+section</a>
+. For the other
 two classes, the structure of the method is similar. Specifically, the
 empty <strong>string</strong> needs to be handled first (after checking that the <strong>string</strong> isn&rsquo;t <strong>null</strong>) and in exactly the same way,
 as the empty <strong>string</strong> is represented in the same way in all three
@@ -1301,10 +1185,9 @@ label. If so, we can recursively look for the remainder of the
 <strong>string</strong> in that child. Otherwise, we should simply return <strong>false</strong>,
 as this <strong>string</strong> is not in this trie.</p>
 <p>The <strong>Add</strong> method for <strong>TrieWithManyChildren</strong> needs some modification
-from the description given in 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro">the previous
-section</a>. The most significant change is that this
+from the description given in <a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro">the previous
+section</a>
+. The most significant change is that this
 method must return the resulting trie, which will always be <strong>this</strong>, as
 this implementation never needs to be replaced by another to accommodate
 a new <strong>string</strong>. Also, the names of the constants need to be replaced by the constants defined in the <strong>ITrie</strong> interface. Finally, where a
@@ -1337,22 +1220,25 @@ whenever possible. The only exception to this rule occurs when we are
 constructing a new trie, as we cannot construct an instance of an
 interface. Here, we want to construct the simplest implementation &mdash; a
 <strong>TrieWithNoChildren</strong>. Otherwise, the only difference in usage as
-compared to the implementation of 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro">the previous
-section</a> is that the
+compared to the implementation of <a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro">the previous
+section</a>
+ is that the
 <strong>Add</strong> method now returns the resulting trie, whose root may be a
 different object; hence, we will need to be sure to replace the current
 trie with whatever the <strong>Add</strong> method returns.</p>
 
             <footer class="footline">
+
             </footer>
           </article>
 
     
     
           <article class="default">
-<div hidden><h1>Traversing a Trie</h1></div>
+            <header class="headline">
+            </header>
+<div hidden><h1 id="traversing-a-trie">Traversing a Trie</h1></div>
+
 <h2 id="traversing-a-trie">Traversing a Trie</h2>
 <p>As with other kinds of trees, there are occasions where we need to
 process all the elements stored in a trie in order. Here, the elements
@@ -1364,10 +1250,9 @@ therefore associate this string with this node. Note that this string is
 a prefix of any string associated with any node in any of this node&rsquo;s
 children; hence, it is alphabetically less than any string found in any
 of the children. Thus, in order to process each of the strings in
-alphabetic order, we need to do a 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro">preorder
-traversal</a>, which
+alphabetic order, we need to do a <a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro">preorder
+traversal</a>
+, which
 processes the root before recursively processing the children.</p>
 <p>In order to process the string associated with a node, we need to be
 able to retrieve this string. Because we will have followed the path
@@ -1376,9 +1261,8 @@ we can build this string on the way to the node and pass it as a
 parameter to the preorder traversal of the trie rooted at this node.
 Because we will be building this string a character at a time, to do
 this efficiently we should use a
-
-
 <a href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilders"><strong>StringBuilder</strong></a>
+
 instead of a <strong>string</strong>. Thus, the preorder traversal method for a trie
 will take a <strong>StringBuilder</strong> parameter describing the path to that
 trie, in addition to any other parameters needed to process the strings
@@ -1402,10 +1286,9 @@ needs to be done for each string in our specific application.</p>
 <p>Once we have processed the root, we need to recursively process each of
 the children in alphabetic order of their labels. How we accomplish this
 depends on how we are implementing the trie - we will assume the
-implementation of 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/multiple-impl">the previous
-section</a>. Because
+implementation of <a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/multiple-impl">the previous
+section</a>
+. Because
 this implementation uses three different classes depending on how many
 children a node has, we will need to write three different versions of
 the preorder traversal, one for each class:</p>
@@ -1416,9 +1299,8 @@ single recursive call on this child. Before we make this call, we
 will need to append the child&rsquo;s label to the <strong>StringBuilder</strong>.
 Following the recursive call, we will need to remove the character
 that we added by reducing its
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.length?view=net-6.0#system-text-stringbuilder-length" target="_blank"><strong>Length</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.length?view=net-6.0#system-text-stringbuilder-length" target="_blank" rel="noopener"><strong>Length</strong></a>
 property by 1.</li>
 <li>We handle a <strong>TrieWithManyChildren</strong> in a similar way as a
 <strong>TrieWithOneChild</strong>, only we will need to iterate through the
@@ -1427,20 +1309,23 @@ recursive call. Note that for each of these children, its label will
 need to be appended to the <strong>StringBuilder</strong> prior to the recursive
 call and removed immediately after. We can obtain the label of a
 child by adding the first letter of the alphabet to its array index and
-
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/stacks/#cast">casting</a> the result to a
+<a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/stacks/#cast">casting</a>
+ the result to a
 <strong>char</strong>.</li>
 </ul>
 
             <footer class="footline">
+
             </footer>
           </article>
 
     
     
           <article class="default">
-<div hidden><h1>Tries in Word Games</h1></div>
+            <header class="headline">
+            </header>
+<div hidden><h1 id="tries-in-word-games">Tries in Word Games</h1></div>
+
 <h2 id="tries-in-word-games">Tries in Word Games</h2>
 <p>One application of tries is for implementing word games such as
 Boggle® or Scrabble®. This section discusses how a trie can be
@@ -1455,7 +1340,13 @@ cover such that the dice can be placed in the cover and the tray placed
 upside-down on top of the cover. The whole thing can then be shaken,
 then inverted so that each die ends up in a different grid cell, forming
 a random game board such as:</p>
-<p><img src="boggle.jpg" alt="A Boggle game board"></p>
+<p>
+<a href="#image-0d2bdbe81ccaa6ecc50036e3e531fd99" class="lightbox-link">
+<img src="https://ksu-cs-textbooks.github.io/cis300/trees/tries/word-games/boggle.jpg" alt="A Boggle game board" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-0d2bdbe81ccaa6ecc50036e3e531fd99">
+<img src="https://ksu-cs-textbooks.github.io/cis300/trees/tries/word-games/boggle.jpg" alt="A Boggle game board" class="lightbox-image" loading="lazy">
+</a></p>
 <p>Players are then given a certain amount of time during which they
 compete to try to form as many unique words as they can from these
 letters. The letters of a word must be adjacent either horizontally,
@@ -1463,7 +1354,13 @@ vertically, or diagonally, and no die may be used more than once in a
 single word. There is a minimum word length, and longer words are worth
 more points. For example, the above game board contains the words,
 &ldquo;WITCH&rdquo;, &ldquo;ITCH&rdquo;, &ldquo;PELLET&rdquo;, &ldquo;TELL&rdquo;, and &ldquo;DATA&rdquo;, among many others.</p>
-<p><img src="boggle2.jpg" alt="Words on a Boggle game board"></p>
+<p>
+<a href="#image-29042a074c91ff1af7d42cf58ae75c52" class="lightbox-link">
+<img src="https://ksu-cs-textbooks.github.io/cis300/trees/tries/word-games/boggle2.jpg" alt="Words on a Boggle game board" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-29042a074c91ff1af7d42cf58ae75c52">
+<img src="https://ksu-cs-textbooks.github.io/cis300/trees/tries/word-games/boggle2.jpg" alt="Words on a Boggle game board" class="lightbox-image" loading="lazy">
+</a></p>
 <p>Suppose we want to build a program that plays Boggle against a human
 opponent. The program would need to look for words on a given board. The
 dictionary of valid words can of course be stored in a trie. In what follows,
@@ -1478,15 +1375,20 @@ the upper-left corner of the above board, its children would be the
 three adjacent dice containing &ldquo;I&rdquo;, &ldquo;C&rdquo;, and &ldquo;A&rdquo;. The children of &ldquo;I&rdquo;,
 then, would not include &ldquo;H&rdquo; because it is already on the path to &ldquo;I&rdquo;.
 Part of this tree would look like this:</p>
-<p><img src="boggle-tree.jpg" alt="A part of a tree representing a Boggle search space"></p>
+<p>
+<a href="#image-53661c2833661e7ac5179c91ca0502f2" class="lightbox-link">
+<img src="https://ksu-cs-textbooks.github.io/cis300/trees/tries/word-games/boggle-tree.jpg" alt="A part of a tree representing a Boggle search space" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-53661c2833661e7ac5179c91ca0502f2">
+<img src="https://ksu-cs-textbooks.github.io/cis300/trees/tries/word-games/boggle-tree.jpg" alt="A part of a tree representing a Boggle search space" class="lightbox-image" loading="lazy">
+</a></p>
 <p>Note that this tree is not a data structure - it need not be explicitly
 stored anywhere. Rather, it is a mathematical object that helps us to
 design an algorithm for finding all of the words. Each word on the board
 is simply a path in this tree starting from the root. We can therefore
-traverse this tree in much the same way as we outlined in 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/traversing">the previous
-section</a> for tries.
+traverse this tree in much the same way as we outlined in <a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/traversing">the previous
+section</a>
+ for tries.
 For each node in the tree, we can look up the path leading to that node,
 and output it if it is a word in the dictionary.</p>
 <p>In order to be able to implement such a traversal, we need to be able to
@@ -1534,7 +1436,13 @@ will only find words that begin near the top of the board.)</p>
 similarity between the trees we have been discussing and a trie
 containing the word list. Consider, for example, a portion of the child
 labeled &lsquo;h&rsquo; in a trie representing a large set of words:</p>
-<p><img src="trie-portion.jpg" alt="A portion of a trie."></p>
+<p>
+<a href="#image-7ef05c174abfc0c7d62de43fec00808f" class="lightbox-link">
+<img src="https://ksu-cs-textbooks.github.io/cis300/trees/tries/word-games/trie-portion.jpg" alt="A portion of a trie." style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-7ef05c174abfc0c7d62de43fec00808f">
+<img src="https://ksu-cs-textbooks.github.io/cis300/trees/tries/word-games/trie-portion.jpg" alt="A portion of a trie." class="lightbox-image" loading="lazy">
+</a></p>
 <p>We have omitted some of the children because they are irrelevant to the
 search we are performing (e.g., there is no die containing &ldquo;E&rdquo; adjacent
 to &ldquo;H&rdquo; on the above game board). Also, we are assuming a minimum word
@@ -1597,122 +1505,17 @@ parameters unchanged; hence, we only need to initialize them once. The
 resulting search will find all of the words on the board quickly.</p>
 
             <footer class="footline">
+
             </footer>
           </article>
 
           </section>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
         </div>
       </main>
     
 <div class="git-footer">
+<p class="theme-version-footer">5.18.0</p>
 <p>Last modified by: 
             <i class='fas fa-user'></i> Russell Feldhausen
             <i class='fas fa-calendar'></i> <a href="https://gitlab.cs.ksu.edu/cis300/cis300-book/-/commit/922f538e5bb242ebedcf7260f2a5ef759abe56f5">May 22, 2023</a>
@@ -1721,185 +1524,8 @@ resulting search will find all of the words on the board quickly.</p>
 
     
     </div>
-    <aside id="sidebar" class="default-animation">
-      <div id="header-wrapper" class="default-animation">
-        <div id="header" class="default-animation">
-<a id="logo" href="https://ksu-cs-textbooks.github.io/cis300/">
-  CIS 300 - Data Structures
-</a>
-
-        </div>
-        <div class="searchbox default-animation">
-          <label for="search-by"><i class="fas fa-search"></i></label>
-          <input data-search-input id="search-by" type="search" placeholder="Search...">
-          <span data-search-clear=""><i class="fas fa-times"></i></span>
-        </div>
-        <script>
-          var contentLangs=['en'];
-        </script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/auto-complete.js?1686587342" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr.min.js?1686587342" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr.stemmer.support.min.js?1686587342" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr.multi.min.js?1686587342" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr.en.min.js?1686587342" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/search.js?1686587342" defer></script>
-      </div>
-      <div id="content-wrapper" class="highlightable">
-        <ul class="topics collapsible-menu">
-          <li data-nav-id="/io/" title="Input/Output" class="dd-item"><input type="checkbox" id="section-cbd3b3207f24308a668546abfa69f213" class="toggle"/><label for="section-cbd3b3207f24308a668546abfa69f213" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/io/"><b>1. </b>Input/Output</a><ul>
-          <li data-nav-id="/io/dialogs/" title="Dialogs" class="dd-item"><input type="checkbox" id="section-61b1770a0bd16f4917e33b67edd271d2" class="toggle"/><label for="section-61b1770a0bd16f4917e33b67edd271d2" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/io/dialogs/"><b>1.1. </b>Dialogs</a><ul>
-          <li data-nav-id="/io/dialogs/message-boxes/" title="MessageBoxes" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/io/dialogs/message-boxes/"><b>1.1.1. </b>MessageBoxes</a></li>
-          <li data-nav-id="/io/dialogs/file-dialogs/" title="File Dialogs" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/io/dialogs/file-dialogs/"><b>1.1.2. </b>File Dialogs</a></li>
-          <li data-nav-id="/io/dialogs/custom/" title="Custom Dialogs" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/io/dialogs/custom/"><b>1.1.3. </b>Custom Dialogs</a></li></ul></li>
-          <li data-nav-id="/io/simple-text-file/" title="Simple Text File I/O" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/io/simple-text-file/"><b>1.2. </b>Simple Text File I/O</a></li>
-          <li data-nav-id="/io/exceptions/" title="Exception Handling" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/io/exceptions/"><b>1.3. </b>Exception Handling</a></li>
-          <li data-nav-id="/io/advanced-text-file/" title="Advanced Text File I/O" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/io/advanced-text-file/"><b>1.4. </b>Advanced Text File I/O</a></li>
-          <li data-nav-id="/io/other-file-io/" title="Other File I/O" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/io/other-file-io/"><b>1.5. </b>Other File I/O</a></li></ul></li>
-          <li data-nav-id="/strings/" title="strings and StringBuilders" class="dd-item"><input type="checkbox" id="section-9355ad26afa67cd4239c81429ad6e8ca" class="toggle"/><label for="section-9355ad26afa67cd4239c81429ad6e8ca" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/strings/"><b>2. </b>strings and StringBuilders</a><ul>
-          <li data-nav-id="/strings/strings/" title="strings" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/strings/strings/"><b>2.1. </b>strings</a></li>
-          <li data-nav-id="/strings/stringbuilders/" title="StringBuilders" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilders/"><b>2.2. </b>StringBuilders</a></li>
-          <li data-nav-id="/strings/stringbuilder-impl/" title="Implementation of StringBuilders" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilder-impl/"><b>2.3. </b>Implementation of StringBuilders</a></li></ul></li>
-          <li data-nav-id="/stacks-queues/" title="Stacks and Queues" class="dd-item"><input type="checkbox" id="section-deefdc256b7889ce66393d7269597a4b" class="toggle"/><label for="section-deefdc256b7889ce66393d7269597a4b" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/"><b>3. </b>Stacks and Queues</a><ul>
-          <li data-nav-id="/stacks-queues/stacks/" title="Introduction to Stacks" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/stacks/"><b>3.1. </b>Introduction to Stacks</a></li>
-          <li data-nav-id="/stacks-queues/undo/" title="Implementing Undo and Redo for a TextBox" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/undo/"><b>3.2. </b>Implementing Undo and Redo for a TextBox</a></li>
-          <li data-nav-id="/stacks-queues/paren/" title="Parenthesis Matching" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/paren/"><b>3.3. </b>Parenthesis Matching</a></li>
-          <li data-nav-id="/stacks-queues/stack-impl/" title="Implementing a Stack" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/stack-impl/"><b>3.4. </b>Implementing a Stack</a></li>
-          <li data-nav-id="/stacks-queues/queues/" title="Introduction to Queues" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queues/"><b>3.5. </b>Introduction to Queues</a></li>
-          <li data-nav-id="/stacks-queues/queue-impl/" title="Implementing a Queue" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queue-impl/"><b>3.6. </b>Implementing a Queue</a></li></ul></li>
-          <li data-nav-id="/linked-lists/" title="Linked Lists" class="dd-item"><input type="checkbox" id="section-a51df6d53eeee393764eb46edb53958a" class="toggle"/><label for="section-a51df6d53eeee393764eb46edb53958a" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/"><b>4. </b>Linked Lists</a><ul>
-          <li data-nav-id="/linked-lists/intro/" title="Introduction to Linked Lists" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/intro/"><b>4.1. </b>Introduction to Linked Lists</a></li>
-          <li data-nav-id="/linked-lists/stacks-queues/" title="Implementing Stacks and Queues with Linked Lists" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/stacks-queues/"><b>4.2. </b>Implementing Stacks and Queues with Linked Lists</a></li>
-          <li data-nav-id="/linked-lists/sieve-eratosthenes/" title="Finding Prime Numbers" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/sieve-eratosthenes/"><b>4.3. </b>Finding Prime Numbers</a></li></ul></li>
-          <li data-nav-id="/dictionaries/" title="Dictionaries" class="dd-item"><input type="checkbox" id="section-9011afb8a0159b09a13a971ca89bced8" class="toggle"/><label for="section-9011afb8a0159b09a13a971ca89bced8" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/"><b>5. </b>Dictionaries</a><ul>
-          <li data-nav-id="/dictionaries/dictionary-tkey-tvalue/" title="The Dictionary&lt;TKey, TValue&gt; Class" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/dictionary-tkey-tvalue/"><b>5.1. </b>The Dictionary&lt;TKey, TValue&gt; Class</a></li>
-          <li data-nav-id="/dictionaries/linked-list-impl/" title="Implementing a Dictionary with a Linked List" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/linked-list-impl/"><b>5.2. </b>Implementing a Dictionary with a Linked List</a></li>
-          <li data-nav-id="/dictionaries/binary-search/" title="Implementing a Dictionary with an Array-Like Structure" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/binary-search/"><b>5.3. </b>Implementing a Dictionary with an Array-Like Structure</a></li></ul></li>
-          <li data-nav-id="/trees/" title="Trees" class="dd-item parent"><input type="checkbox" id="section-5e8305205d74771c71a9ea85594a7914" class="toggle" checked/><label for="section-5e8305205d74771c71a9ea85594a7914" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/trees/"><b>6. </b>Trees</a><ul>
-          <li data-nav-id="/trees/intro/" title="Introduction to Trees" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/intro/"><b>6.1. </b>Introduction to Trees</a></li>
-          <li data-nav-id="/trees/bst/" title="Binary Search Trees" class="dd-item"><input type="checkbox" id="section-8d42cd93516505610f8b32c65bbeebda" class="toggle"/><label for="section-8d42cd93516505610f8b32c65bbeebda" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/"><b>6.2. </b>Binary Search Trees</a><ul>
-          <li data-nav-id="/trees/bst/binary-trees/" title="Binary Trees" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/binary-trees/"><b>6.2.1. </b>Binary Trees</a></li>
-          <li data-nav-id="/trees/bst/intro/" title="Introduction to Binary Search Trees" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/intro/"><b>6.2.2. </b>Introduction to Binary Search Trees</a></li>
-          <li data-nav-id="/trees/bst/remove/" title="Removing from a Binary Search Tree" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/remove/"><b>6.2.3. </b>Removing from a Binary Search Tree</a></li>
-          <li data-nav-id="/trees/bst/inorder/" title="Inorder Traversal" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/inorder/"><b>6.2.4. </b>Inorder Traversal</a></li></ul></li>
-          <li data-nav-id="/trees/avl/" title="AVL Trees" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/avl/"><b>6.3. </b>AVL Trees</a></li>
-          <li data-nav-id="/trees/tries/" title="Tries" class="dd-item active parent"><input type="checkbox" id="section-5f1f75af2aa97dd0bdbedb3b3e5adc65" class="toggle" checked/><label for="section-5f1f75af2aa97dd0bdbedb3b3e5adc65" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/"><b>6.4. </b>Tries</a><ul>
-          <li data-nav-id="/trees/tries/intro/" title="Introduction to Tries" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro/"><b>6.4.1. </b>Introduction to Tries</a></li>
-          <li data-nav-id="/trees/tries/multiple-impl/" title="Multiple Implementations of Children" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/multiple-impl/"><b>6.4.2. </b>Multiple Implementations of Children</a></li>
-          <li data-nav-id="/trees/tries/traversing/" title="Traversing a Trie" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/traversing/"><b>6.4.3. </b>Traversing a Trie</a></li>
-          <li data-nav-id="/trees/tries/word-games/" title="Tries in Word Games" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/word-games/"><b>6.4.4. </b>Tries in Word Games</a></li></ul></li>
-          <li data-nav-id="/trees/priority-queues/" title="Priority Queues" class="dd-item"><input type="checkbox" id="section-0e087c42aa39c815f492e3767eaf2ef7" class="toggle"/><label for="section-0e087c42aa39c815f492e3767eaf2ef7" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/"><b>6.5. </b>Priority Queues</a><ul>
-          <li data-nav-id="/trees/priority-queues/heaps/" title="Heaps" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/heaps/"><b>6.5.1. </b>Heaps</a></li>
-          <li data-nav-id="/trees/priority-queues/leftist-heaps/" title="Leftist Heaps" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/leftist-heaps/"><b>6.5.2. </b>Leftist Heaps</a></li>
-          <li data-nav-id="/trees/priority-queues/huffman-trees/" title="Huffman Trees" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/huffman-trees/"><b>6.5.3. </b>Huffman Trees</a></li></ul></li></ul></li>
-          <li data-nav-id="/hashing/" title="Hash Tables" class="dd-item"><input type="checkbox" id="section-cd22fc50afca8a60e214c94b94daa169" class="toggle"/><label for="section-cd22fc50afca8a60e214c94b94daa169" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/hashing/"><b>7. </b>Hash Tables</a><ul>
-          <li data-nav-id="/hashing/simple/" title="A Simple Hash Table Implementation" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/hashing/simple/"><b>7.1. </b>A Simple Hash Table Implementation</a></li>
-          <li data-nav-id="/hashing/rehashing/" title="Rehashing" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/hashing/rehashing/"><b>7.2. </b>Rehashing</a></li>
-          <li data-nav-id="/hashing/memoization/" title="Memoization" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/hashing/memoization/"><b>7.3. </b>Memoization</a></li>
-          <li data-nav-id="/hashing/equality/" title="Equality in C#" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/hashing/equality/"><b>7.4. </b>Equality in C#</a></li>
-          <li data-nav-id="/hashing/hash-functions/" title="Hash Codes" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/hashing/hash-functions/"><b>7.5. </b>Hash Codes</a></li></ul></li>
-          <li data-nav-id="/graphs/" title="Graphs" class="dd-item"><input type="checkbox" id="section-fefd7704561bcadc124f3f3c72c54ab3" class="toggle"/><label for="section-fefd7704561bcadc124f3f3c72c54ab3" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/graphs/"><b>8. </b>Graphs</a><ul>
-          <li data-nav-id="/graphs/intro/" title="Introduction to Graphs" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/graphs/intro/"><b>8.1. </b>Introduction to Graphs</a></li>
-          <li data-nav-id="/graphs/dijkstra/" title="Shortest Paths" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/graphs/dijkstra/"><b>8.2. </b>Shortest Paths</a></li>
-          <li data-nav-id="/graphs/breadth-first/" title="Unweighted Shortest Paths" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/graphs/breadth-first/"><b>8.3. </b>Unweighted Shortest Paths</a></li>
-          <li data-nav-id="/graphs/impl/" title="Implementing a Graph" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/graphs/impl/"><b>8.4. </b>Implementing a Graph</a></li></ul></li>
-          <li data-nav-id="/sorting/" title="Sorting" class="dd-item"><input type="checkbox" id="section-fd2166a393af1c48d2ffe636e6f952d8" class="toggle"/><label for="section-fd2166a393af1c48d2ffe636e6f952d8" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/sorting/"><b>9. </b>Sorting</a><ul>
-          <li data-nav-id="/sorting/select/" title="Select Sorts" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/sorting/select/"><b>9.1. </b>Select Sorts</a></li>
-          <li data-nav-id="/sorting/insert/" title="Insert Sorts" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/sorting/insert/"><b>9.2. </b>Insert Sorts</a></li>
-          <li data-nav-id="/sorting/merge/" title="Merge Sorts" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/sorting/merge/"><b>9.3. </b>Merge Sorts</a></li>
-          <li data-nav-id="/sorting/split/" title="Split Sorts" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/sorting/split/"><b>9.4. </b>Split Sorts</a></li>
-          <li data-nav-id="/sorting/hybrid/" title="Hybrid Sorting Algorithms" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/sorting/hybrid/"><b>9.5. </b>Hybrid Sorting Algorithms</a></li>
-          <li data-nav-id="/sorting/strings/" title="Sorting Strings" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/sorting/strings/"><b>9.6. </b>Sorting Strings</a></li></ul></li>
-          <li data-nav-id="/appendix/" title="Appendices" class="dd-item"><input type="checkbox" id="section-8a7f152ea576b5a4047f92c2cc1cabad" class="toggle"/><label for="section-8a7f152ea576b5a4047f92c2cc1cabad" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/"><b>A. </b>Appendices</a><ul>
-          <li data-nav-id="/appendix/syntax/" title="C# Syntax" class="dd-item"><input type="checkbox" id="section-6a5a5cc3bca4007f0866907612ee033f" class="toggle"/><label for="section-6a5a5cc3bca4007f0866907612ee033f" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/"><b>A1. </b>C# Syntax</a><ul>
-          <li data-nav-id="/appendix/syntax/reference-value/" title="Reference Types and Value Types" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/reference-value/"><b>A1.1. </b>Reference Types and Value Types</a></li>
-          <li data-nav-id="/appendix/syntax/enumerations/" title="Enumerations" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/enumerations/"><b>A1.2. </b>Enumerations</a></li>
-          <li data-nav-id="/appendix/syntax/structs/" title="Structures" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/structs/"><b>A1.3. </b>Structures</a></li>
-          <li data-nav-id="/appendix/syntax/decimals/" title="The decimal Type" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/decimals/"><b>A1.4. </b>The decimal Type</a></li>
-          <li data-nav-id="/appendix/syntax/const/" title="Read-Only and Constant Fields" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/const/"><b>A1.5. </b>Read-Only and Constant Fields</a></li>
-          <li data-nav-id="/appendix/syntax/properties/" title="Properties" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/properties/"><b>A1.6. </b>Properties</a></li>
-          <li data-nav-id="/appendix/syntax/indexers/" title="Indexers" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/indexers/"><b>A1.7. </b>Indexers</a></li>
-          <li data-nav-id="/appendix/syntax/static-this/" title="The Keywords static and this" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/static-this/"><b>A1.8. </b>The Keywords static and this</a></li>
-          <li data-nav-id="/appendix/syntax/out-ref/" title="out and ref Parameters" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/out-ref/"><b>A1.9. </b>out and ref Parameters</a></li>
-          <li data-nav-id="/appendix/syntax/foreach/" title="The foreach Statement" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/foreach/"><b>A1.10. </b>The foreach Statement</a></li>
-          <li data-nav-id="/appendix/syntax/enumerators/" title="Enumerators" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/enumerators/"><b>A1.11. </b>Enumerators</a></li>
-          <li data-nav-id="/appendix/syntax/switch/" title="The switch Statement" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/switch/"><b>A1.12. </b>The switch Statement</a></li>
-          <li data-nav-id="/appendix/syntax/remainder/" title="The Remainder Operator" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/remainder/"><b>A1.13. </b>The Remainder Operator</a></li></ul></li>
-          <li data-nav-id="/appendix/vs/" title="Visual Studio" class="dd-item"><input type="checkbox" id="section-805451f3a5b538fc2959767d013f4e16" class="toggle"/><label for="section-805451f3a5b538fc2959767d013f4e16" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/"><b>A2. </b>Visual Studio</a><ul>
-          <li data-nav-id="/appendix/vs/installing-vs/" title="Installing Visual Studio" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/installing-vs/"><b>A2.1 </b>Installing Visual Studio</a></li>
-          <li data-nav-id="/appendix/vs/repos/" title="Git Repositories" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/repos/"><b>A2.2. </b>Git Repositories</a></li>
-          <li data-nav-id="/appendix/vs/solutions/" title="Visual Studio Solutions" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/solutions/"><b>A2.3. </b>Visual Studio Solutions</a></li>
-          <li data-nav-id="/appendix/vs/design-window/" title="The Design Window" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/design-window/"><b>A2.4. </b>The Design Window</a></li>
-          <li data-nav-id="/appendix/vs/code-window/" title="The Code Window" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/code-window/"><b>A2.5. </b>The Code Window</a></li>
-          <li data-nav-id="/appendix/vs/debugger/" title="The Debugger" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/debugger/"><b>A2.6. </b>The Debugger</a></li>
-          <li data-nav-id="/appendix/vs/submitting/" title="Submitting Assignments" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/submitting/"><b>A2.7. </b>Submitting Assignments</a></li>
-          <li data-nav-id="/appendix/vs/nunit/" title="Unit Testing" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/nunit/"><b>A2.8. </b>Unit Testing</a></li>
-          <li data-nav-id="/appendix/vs/multiple/" title="Using Multiple Machines" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/multiple/"><b>A2.9. </b>Using Multiple Machines</a></li>
-          <li data-nav-id="/appendix/vs/checkpointing/" title="Checkpointing" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/checkpointing/"><b>A2.10. </b>Checkpointing</a></li></ul></li>
-          <li data-nav-id="/appendix/style/" title="Programming Style Requirements" class="dd-item"><input type="checkbox" id="section-3c7d664b64b84c9f89fc48179979363e" class="toggle"/><label for="section-3c7d664b64b84c9f89fc48179979363e" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/"><b>A3. </b>Programming Style Requirements</a><ul>
-          <li data-nav-id="/appendix/style/formatting/" title="General Formatting" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/formatting/"><b>A3.1. </b>General Formatting</a></li>
-          <li data-nav-id="/appendix/style/access-modifiers/" title="Access Modifiers" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/access-modifiers/"><b>A3.2. </b>Access Modifiers</a></li>
-          <li data-nav-id="/appendix/style/naming/" title="Naming Conventions" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/naming/"><b>A3.3. </b>Naming Conventions</a></li>
-          <li data-nav-id="/appendix/style/comments/" title="Comments" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/comments/"><b>A3.4. </b>Comments</a></li>
-          <li data-nav-id="/appendix/style/prohibited/" title="Prohibited Features" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/prohibited/"><b>A3.5 </b>Prohibited Features</a></li></ul></li></ul></li>
-        </ul>
-        <div class="footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"></div>
-        <hr class="default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"/>
-        <div id="prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVariantSwitch">
-          <ul>
-            <li id="select-language-container" class="footerLangSwitch">
-              <a class="padding select-container">
-                <i class="fas fa-language fa-fw"></i>
-                <span>&nbsp;</span>
-                <div class="select-style">
-                  <select id="select-language" onchange="location = baseUri + this.value;">
-                  </select>
-                </div>
-                <div class="select-clear"></div>
-              </a>
-            </li>
-            <li id="select-variant-container" class="footerVariantSwitch showVariantSwitch">
-              <a class="padding select-container">
-                <i class="fas fa-paint-brush fa-fw"></i>
-                <span>&nbsp;</span>
-                <div class="select-style">
-                  <select id="select-variant" onchange="window.variants && variants.changeVariant( this.value );">
-                    <option id="light-theme" value="light-theme" selected>Light Theme</option>
-                    <option id="dark-theme" value="dark-theme">Dark Theme</option>
-                  </select>
-                </div>
-                <div class="select-clear"></div>
-              </a>
-              <script>window.variants && variants.markSelectedVariant();</script>
-            </li>
-            <li class="footerVisitedLinks"><a class="padding" onclick="clearHistory();"><i class="fas fa-history fa-fw"></i> Clear History</a></li>
-          </ul>
-        </div>
-        <div id="footer" class="footerFooter showFooter"><style>
-  #footer {
-    font-size: 13px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 2rem 1rem;
-    min-width: 230px;
-    max-width: 300px;
-  }
-  #footer p {
-    margin: 0;
-  }
-  </style>
-
-<p>Built using <a href="http://gohugo.io/">Hugo</a> and <a href="https://github.com/ksu-cs-textbooks/hugo-theme-relearn">Hugo Relearn Theme</a> with assistance from Josh Weese and Russ Feldhausen.</p>
-<br/>
-<p>Microsoft and Visual Studio are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries. </p>
-<br/>
-<p><strong><i>© Copyright 2014-2023, <a href="http://people.cs.ksu.edu/~rhowell/" target="_">Rod Howell</a>. All rights reserved.</i></strong></p>
-
-        </div>
-      </div>
-    </aside>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1686587342" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1686587342" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1686587342" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1691596180" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1691596180" defer></script>
     <script>
       function useMathJax( config ){
         if( !Object.assign ){
@@ -1928,7 +1554,7 @@ resulting search will find all of the words on the board quickly.</p>
       }
       useMathJax( JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="https://ksu-cs-textbooks.github.io/cis300/js/mathjax/tex-mml-chtml.js?1686587342"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1686587342" defer></script>
+    <script id="MathJax-script" async src="https://ksu-cs-textbooks.github.io/cis300/js/mathjax/tex-mml-chtml.js?1691596180"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1691596180" defer></script>
   </body>
 </html>

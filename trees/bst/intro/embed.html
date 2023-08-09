@@ -189,26 +189,6 @@
 	
 	
 		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
 		
 
 	
@@ -239,6 +219,11 @@
 	
 	
 		
+		
+
+	
+	
+		
 
 	
 	
@@ -254,6 +239,15 @@
 	
 		
 		
+
+	
+	
+		
+		
+		
+
+	
+	
 		
 
 	
@@ -263,6 +257,12 @@
 
 	
 	
+		
+		
+
+	
+	
+		
 		
 		
 		
@@ -516,33 +516,33 @@
 		
 		
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.2.0+tip">
+    <meta name="generator" content="Relearn 5.18.0">
     <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
     <meta name="description" content="K-State CIS 300: Data Structures">
     <meta name="author" content="Rod Howell and Josh Weese">
     <title>Introduction to Binary Search Trees :: Data Structures in C#</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587339" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587339" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587339" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587339" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587339" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587339" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1686587339" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1686587339" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587339" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587339" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1686587339" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1686587339" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1686587339" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1686587339" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1686587339" rel="stylesheet" media="print">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1686587339"></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596179" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596179" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596179" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596179" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596179" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596179" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1691596179" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1691596179" rel="stylesheet" media="print">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1691596179" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1691596179"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1691596179"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
-      var index_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
+      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
       var root_url="https://ksu-cs-textbooks.github.io/cis300/";
       var baseUri=root_url.replace(/\/$/, '');
       // translations
@@ -550,49 +550,44 @@
       window.T_Copied_to_clipboard = 'Copied to clipboard!';
       window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
       window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
       // some further base stuff
       var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
       window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
     </script>
     
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1686587339" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.min.js?1686587339" defer></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1691596179" rel="stylesheet">
 
   </head>
   <body class="mobile-support embed disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/trees/bst/intro/embed.html">
-    <div id="body" class="default-animation" data-iframe-height="yes">
+    <div id="body" class="default-animation">
       
       
       
-      <main id="body-inner" class="highlightable default" tabindex="-1" data-iframe-height="yes" style="padding-bottom: 0px">
-        <div class="flex-block-wrapper" data-iframe-height="yes">
-          <div id="head-tags">
-          </div>
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
           <article class="default">
     
     
     
 <h2 id="introduction-to-binary-search-trees">Introduction to Binary Search Trees</h2>
-<p>In this section and 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/remove">the
-next</a>,
+<p>In this section and <a href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/remove">the
+next</a>
+,
 we will present a binary search tree as a data structure that can be
 used to implement a
-
-
 <a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries">dictionary</a>
+
 whose key type can be ordered. This implementation will provide
 efficient lookups, insertions, and deletions in most cases; however,
-there will be cases in which the performance is bad. In 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/trees/avl">a later
-section</a>,
+there will be cases in which the performance is bad. In <a href="https://ksu-cs-textbooks.github.io/cis300/trees/avl">a later
+section</a>
+,
 we will show how to extend this good performance to all cases.</p>
-<p>A <em>binary search tree</em> is a 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/binary-trees">binary
-tree</a> containing
+<p>A <em>binary search tree</em> is a <a href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/binary-trees">binary
+tree</a>
+ containing
 key-value pairs whose keys can be ordered. Furthermore, the data items
 are arranged such that the key in each node is:</p>
 <ul>
@@ -602,7 +597,13 @@ are arranged such that the key in each node is:</p>
 <p>Note that this implies that all keys must be unique. For example, the
 following is a binary search tree storing integer keys (only the keys
 are shown):</p>
-<p><img src="binary-search-tree-ex.jpg" alt="A binary search tree"></p>
+<p>
+<a href="#image-3b0eea54c1b708e11054c47dc443593c" class="lightbox-link">
+<img src="binary-search-tree-ex.jpg" alt="A binary search tree" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-3b0eea54c1b708e11054c47dc443593c">
+<img src="binary-search-tree-ex.jpg" alt="A binary search tree" class="lightbox-image" loading="lazy">
+</a></p>
 <p>The hierarchical nature of this structure allows us to do something like
 a binary search to find a key. Suppose, for example, that we are looking
 for 41 in the above tree. We first compare 41 with the key in the root.
@@ -617,9 +618,8 @@ the middle element in the tree &mdash; in fact, it could be the first or the
 last. In many applications, however, when we build a binary search tree
 as we will describe below, the root of the tree tends to be roughly the
 middle element. When this is the case, looking up a key is very
-efficient. 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/trees/avl">Later</a>, we will
+efficient. <a href="https://ksu-cs-textbooks.github.io/cis300/trees/avl">Later</a>
+, we will
 show how we can build and maintain a binary search tree so that this is
 always the case.</p>
 <p>It isn&rsquo;t hard to implement the search strategy outlined above using a
@@ -642,20 +642,20 @@ then look in the right child using a recursive call.</li>
   
   
 <div class="box notices cstyle warning">
-    <div class="box-label"><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div>
-    <div class="box-content">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div>
+  <div class="box-content">
+
 <p>It is important to handle the case of an empty tree first, as the other
 cases don&rsquo;t make sense if the tree is empty. In fact, if we are using
 <strong>null</strong> to represent an empty binary search tree (as is fairly common),
 we will get a compiler warning if we don&rsquo;t do this, and ultimately a <strong>NullReferenceException</strong> if we try to access the key
 at an empty root.</p>
-    </div>
+</div>
 </div>
 <p>If we need to compare
 elements using a
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.icomparable-1.compareto?view=net-6.0#system-icomparable-1-compareto%28-0%29" target="_blank"><strong>CompareTo</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.icomparable-1.compareto?view=net-6.0#system-icomparable-1-compareto%28-0%29" target="_blank" rel="noopener"><strong>CompareTo</strong></a>
 method, it would be more efficient to structure the code so that this
 method is only called once; e.g.,</p>
 <ul>
@@ -719,25 +719,25 @@ return this new node.</li>
 <p>Note that the above algorithm only adds the given data item when it
 reaches an empty tree. Not only is this the most straightforward way to
 add items, but it also tends to keep paths in the tree short, as each
-insertion is only lengthening one path. 
-
-<a href="https://github.com/RodHowell-Algorithms/Tree-Viewer" target="_blank" rel="noopener">This
-page</a> contains an
+insertion is only lengthening one path. <a href="https://github.com/RodHowell-Algorithms/Tree-Viewer" target="_blank">This
+page</a>
+ contains an
 application that will
 show the result of adding a key at a time to a binary search tree.</p>
 
   
   
 <div class="box notices cstyle warning">
-    <div class="box-label"><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div>
-    <div class="box-content">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div>
+  <div class="box-content">
+
 <p>The
 keys in this application are treated as strings; hence, you can use
 numbers if you want, but they will be compared as strings (e.g.,
 &ldquo;10&rdquo; &lt; &ldquo;5&rdquo; because &lsquo;1&rsquo; &lt; &lsquo;5&rsquo;). For this reason, it is
 usually better to use either letters, words, or integers that all have
 the same number of digits.</p>
-    </div>
+</div>
 </div>
 <p>The above algorithm can be implemented in the same way if mutable binary
 tree nodes are used; however, we can improve its performance a bit by
@@ -750,6 +750,7 @@ this reason, it is still necessary to return the resulting tree, and we
 need to make sure that the <strong>Add</strong> method always uses the returned tree.</p>
 
             <footer class="footline">
+
             </footer>
           </article>
         </div>
@@ -758,13 +759,8 @@ need to make sure that the <strong>Add</strong> method always uses the returned 
     
     
     
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1686587339" defer></script>
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1686587339" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1686587339" defer></script>
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/embed-iframe.js?1686587339 defer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/iframe-resizer@4.3.2/js/iframeResizer.contentWindow.min.js"></script>
-    
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1691596180" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1691596180" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1691596180" defer></script>
   </body>
 </html>

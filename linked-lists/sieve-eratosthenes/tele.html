@@ -189,26 +189,6 @@
 	
 	
 		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
 		
 
 	
@@ -239,6 +219,11 @@
 	
 	
 		
+		
+
+	
+	
+		
 
 	
 	
@@ -254,6 +239,15 @@
 	
 		
 		
+
+	
+	
+		
+		
+		
+
+	
+	
 		
 
 	
@@ -263,6 +257,12 @@
 
 	
 	
+		
+		
+
+	
+	
+		
 		
 		
 		
@@ -516,33 +516,33 @@
 		
 		
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.2.0+tip">
+    <meta name="generator" content="Relearn 5.18.0">
     <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
     <meta name="description" content="K-State CIS 300: Data Structures">
     <meta name="author" content="Rod Howell and Josh Weese">
     <title>Finding Prime Numbers :: Data Structures in C#</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587343" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587343" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587343" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1686587343" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1686587343" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587343" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1686587343" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1686587343" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1686587343" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1686587343" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1686587343" rel="stylesheet" media="print">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1686587343"></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596180" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596180" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596180" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1691596180" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1691596180" rel="stylesheet" media="print">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1691596180" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1691596180"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1691596180"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
-      var index_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
+      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
       var root_url="https://ksu-cs-textbooks.github.io/cis300/";
       var baseUri=root_url.replace(/\/$/, '');
       // translations
@@ -550,16 +550,17 @@
       window.T_Copied_to_clipboard = 'Copied to clipboard!';
       window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
       window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
       // some further base stuff
       var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
       window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
     </script>
     
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1686587343" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.min.js?1686587343" defer></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1691596180" rel="stylesheet">
 
   </head>
-  <body class="mobile-support tele disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/linked-lists/sieve-eratosthenes/">
+  <body class="mobile-support tele disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/linked-lists/sieve-eratosthenes/index.html">
     
     <div id="tele" class="tele mirror">
     
@@ -569,10 +570,11 @@
       
       <main id="body-inner" class="highlightable default" tabindex="-1">
         <div class="flex-block-wrapper">
-          <div id="head-tags">
-          </div>
           <article class="default">
-<div hidden><h1>Finding Prime Numbers</h1></div>
+            <header class="headline">
+            </header>
+<div hidden><h1 id="finding-prime-numbers">Finding Prime Numbers</h1></div>
+
 <h2 id="finding-prime-numbers">Finding Prime Numbers</h2>
 <p>An integer greater than 
 <span class="math align-center">$ 1 $</span> is said to be <em>prime</em> if it is not divisible
@@ -731,17 +733,36 @@ to the front of the list a cell containing the loop index.</p>
 <p>In order to be able to implement Step 2, we will need to know how to
 remove a cell from a linked list. Suppose, for example, that we want to
 remove the cell referring to &ldquo;the&rdquo; from the following linked list:</p>
-<p><img src="linked-list-remove1.jpg" alt="A linked list from which we want to remove x"></p>
+<p>
+<a href="#image-beae4cca1c21f3e399a06f4cdbe5e863" class="lightbox-link">
+<img src="linked-list-remove1.jpg" alt="A linked list from which we want to remove x" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-beae4cca1c21f3e399a06f4cdbe5e863">
+<img src="linked-list-remove1.jpg" alt="A linked list from which we want to remove x" class="lightbox-image" loading="lazy">
+</a></p>
 <p>To remove it, we need the cell that precedes it to be followed by the
 cell that follows it:</p>
-<p><img src="linked-list-remove2.jpg" alt="What we need to change in order to remove thecell"></p>
+<p>
+<a href="#image-2bf24d0b1939c638758d37587c08c1dc" class="lightbox-link">
+<img src="linked-list-remove2.jpg" alt="What we need to change in order to remove the
+cell" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-2bf24d0b1939c638758d37587c08c1dc">
+<img src="linked-list-remove2.jpg" alt="What we need to change in order to remove the
+cell" class="lightbox-image" loading="lazy">
+</a></p>
 <p>In order to change that reference, we need a reference to the cell that
 precedes the cell we want to remove:</p>
-<p><img src="linked-list-remove3.jpg" alt="The additional reference we need"></p>
+<p>
+<a href="#image-5afa10941a254c7b32341f773f045edc" class="lightbox-link">
+<img src="linked-list-remove3.jpg" alt="The additional reference we need" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-5afa10941a254c7b32341f773f045edc">
+<img src="linked-list-remove3.jpg" alt="The additional reference we need" class="lightbox-image" loading="lazy">
+</a></p>
 <p>We can then remove the cell following the cell referenced by <code>q</code> as
 follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>q.Next = q.Next.Next;
-</span></span></code></pre></div><p>Now that we know how to remove a cell from a linked list, let&rsquo;s consider
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>q.Next = q.Next.Next;</span></span></code></pre></div><p>Now that we know how to remove a cell from a linked list, let&rsquo;s consider
 Step 2 of the algorithm. For one value of <span style="white-space:nowrap">
 <span class="math align-center">$ k $</span>,</span> we need to remove all
 subsequent values that are divisible by <span style="white-space:nowrap">
@@ -751,15 +772,20 @@ list, we need to start this process with the cell containing <span style="white-
 example, consider the second iteration from the example above &mdash; i.e.,
 when <span style="white-space:nowrap">
 <span class="math align-center">$ k = 3 $</span>:</span></p>
-<p><img src="sieve-example1.jpg" alt="The beginning of an iteration with k = 3"></p>
+<p>
+<a href="#image-1f400a44168d4c1c96afea92064c0c0f" class="lightbox-link">
+<img src="sieve-example1.jpg" alt="The beginning of an iteration with k = 3" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-1f400a44168d4c1c96afea92064c0c0f">
+<img src="sieve-example1.jpg" alt="The beginning of an iteration with k = 3" class="lightbox-image" loading="lazy">
+</a></p>
 <p>We need to iterate <code>p</code> through the linked list, checking the <em>next</em> cell
 on each iteration to see whether its contents are divisible by <span style="white-space:nowrap">
 <span class="math align-center">$ k $</span>.</span> We
 can check for divisibility by 
-<span class="math align-center">$ k $</span> using the 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/remainder">remainder
-operator</a> &mdash; i.e., 
+<span class="math align-center">$ k $</span> using the <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/remainder">remainder
+operator</a>
+ &mdash; i.e., 
 <span class="math align-center">$ k $</span> divides
 
 <span class="math align-center">$ m $</span> if 
@@ -779,7 +805,13 @@ the next cell (containing <span style="white-space:nowrap">
 the cell containing 
 <span class="math align-center">$ 9 $</span> as shown above. This gives us the following linked
 list:</p>
-<p><img src="sieve-example2.jpg" alt="After 9 has been removed"></p>
+<p>
+<a href="#image-472faf7670c6fb0e23d3895bf01edca2" class="lightbox-link">
+<img src="sieve-example2.jpg" alt="After 9 has been removed" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-472faf7670c6fb0e23d3895bf01edca2">
+<img src="sieve-example2.jpg" alt="After 9 has been removed" class="lightbox-image" loading="lazy">
+</a></p>
 <p>Note that we have not yet advanced <code>p</code>, and indeed we don&rsquo;t want to, as
 
 <span class="math align-center">$ 11 $</span> is the next value we want to check. Thus, on each iteration, if 
@@ -799,29 +831,30 @@ each iteration, we want to advance to the next cell.</p>
   
   
 <div class="box notices cstyle warning">
-    <div class="box-label"><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div>
-    <div class="box-content">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div>
+  <div class="box-content">
+
 <p>Make sure when iterating through a linked list that you keep a
 reference to the beginning of the list. Otherwise, you will lose all
 of your list.</p>
-    </div>
+</div>
 </div>
 
             <footer class="footline">
+
             </footer>
           </article>
         </div>
       </main>
     </div>
     
-  </div>
+    </div>
     
     
     
     
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1686587343" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1686587343" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1686587343" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1691596180" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1691596180" defer></script>
     <script>
       function useMathJax( config ){
         if( !Object.assign ){
@@ -850,10 +883,10 @@ of your list.</p>
       }
       useMathJax( JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="https://ksu-cs-textbooks.github.io/cis300/js/mathjax/tex-mml-chtml.js?1686587343"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1686587343" defer></script>
+    <script id="MathJax-script" async src="https://ksu-cs-textbooks.github.io/cis300/js/mathjax/tex-mml-chtml.js?1691596180"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1691596180" defer></script>
     
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/tele-scroll.js?1686587343 defer"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/tele-scroll.js?1691596180 defer"></script>
     
   </body>
 </html>

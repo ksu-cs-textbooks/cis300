@@ -189,26 +189,6 @@
 	
 	
 		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
 		
 
 	
@@ -239,6 +219,11 @@
 	
 	
 		
+		
+
+	
+	
+		
 
 	
 	
@@ -254,6 +239,15 @@
 	
 		
 		
+
+	
+	
+		
+		
+		
+
+	
+	
 		
 
 	
@@ -263,6 +257,12 @@
 
 	
 	
+		
+		
+
+	
+	
+		
 		
 		
 		
@@ -516,33 +516,33 @@
 		
 		
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.2.0+tip">
+    <meta name="generator" content="Relearn 5.18.0">
     <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
     <meta name="description" content="K-State CIS 300: Data Structures">
     <meta name="author" content="Rod Howell and Josh Weese">
     <title>Indexers :: Data Structures in C#</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587343" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587343" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587343" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1686587343" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1686587343" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587343" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1686587343" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1686587343" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1686587343" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1686587343" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1686587343" rel="stylesheet" media="print">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1686587343"></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596180" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596180" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596180" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1691596180" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1691596180" rel="stylesheet" media="print">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1691596180" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1691596180"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1691596180"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
-      var index_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
+      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
       var root_url="https://ksu-cs-textbooks.github.io/cis300/";
       var baseUri=root_url.replace(/\/$/, '');
       // translations
@@ -550,16 +550,17 @@
       window.T_Copied_to_clipboard = 'Copied to clipboard!';
       window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
       window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
       // some further base stuff
       var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
       window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
     </script>
     
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1686587343" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.min.js?1686587343" defer></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1691596180" rel="stylesheet">
 
   </head>
-  <body class="mobile-support tele disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/indexers/">
+  <body class="mobile-support tele disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/indexers/index.html">
     
     <div id="tele" class="tele mirror">
     
@@ -569,16 +570,16 @@
       
       <main id="body-inner" class="highlightable default" tabindex="-1">
         <div class="flex-block-wrapper">
-          <div id="head-tags">
-          </div>
           <article class="default">
-<div hidden><h1>Indexers</h1></div>
-<h2 id="indexers">Indexers</h2>
-<p>Recall that the <code>System.Collections.Generic.Dictionary&lt;TKey, TValue&gt;</code> class (see 
+            <header class="headline">
+            </header>
+<div hidden><h1 id="indexers">Indexers</h1></div>
 
-<a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/dictionary-tkey-tvalue">&ldquo;The <strong>Dictionary&lt;TKey, TValue&gt;</strong> Class&rdquo;</a>) allows keys to be used as indices for the purpose of adding new keys and values, changing the value associated with a key, and retrieving the value associated with a key in the table. In this section, we will discuss how to implement this functionality.</p>
+<h2 id="indexers">Indexers</h2>
+<p>Recall that the <code>System.Collections.Generic.Dictionary&lt;TKey, TValue&gt;</code> class (see <a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/dictionary-tkey-tvalue">&ldquo;The <strong>Dictionary&lt;TKey, TValue&gt;</strong> Class&rdquo;</a>
+) allows keys to be used as indices for the purpose of adding new keys and values, changing the value associated with a key, and retrieving the value associated with a key in the table. In this section, we will discuss how to implement this functionality.</p>
 <p>An indexer in C# is defined using the following syntax:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> TValue <span style="color:#66d9ef">this</span>[TKey k]
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> TValue <span style="color:#66d9ef">this</span>[TKey k]
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">get</span>
 </span></span><span style="display:flex;"><span>    {
@@ -588,38 +589,35 @@
 </span></span><span style="display:flex;"><span>    {
 </span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Code to associate the given value with key k</span>
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Note the resemblance of the above code to the definition of a property. The biggest differences are:</p>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Note the resemblance of the above code to the definition of a property. The biggest differences are:</p>
 <ul>
 <li>In place of a property name, an indexer uses the keyword <code>this</code>.</li>
 <li>The keyword <code>this</code> is followed by a nonempty parameter list enclosed in square brackets.</li>
 </ul>
 <p>Thus, an indexer is like a property with parameters. The parameters are the indices themselves; i.e., if <code>d</code> is a <strong>Dictionary&lt;TKey, TValue&gt;</strong> and <code>key</code> is a <strong>TKey</strong>, <code>d[key]</code> invokes the indexer with parameter <code>key</code>. In general, either the <strong>get</strong> accessor or the <strong>set</strong> accessor may be omitted, but at least one of them must be included. As in a property definition, the <strong>set</strong> accessor can use the keyword <strong>value</strong> for the value being assigned - in this case, the value to be associated with the given key. The <strong>value</strong> keyword and the return type of the <strong>get</strong> accessor will both be of type <strong>TValue</strong>, the type given prior to the keyword <strong>this</strong> in the above code.</p>
-<p>We want to implement the indexer to behave in the same way as the indexer for <strong>System.Collections.Generic.Dictionary&lt;TKey, TValue&gt;</strong>. Thus, the <strong>get</strong> accessor is similar to the <strong>TryGetValue</strong> method, as outlined in 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/hashing/simple">&ldquo;A Simple Hash Table Implementation&rdquo;</a>, with a few important differences. First, the <strong>get</strong> accessor has no <strong>out</strong> parameter. Instead, it returns the value that <strong>TryGetValue</strong> assigns to its <strong>out</strong> parameter when the key is found. When the key is not found, because it can&rsquo;t return a <strong>bool</strong> to indicate this, it instead throws a <strong>KeyNotFoundException</strong>.</p>
-<p>Likewise, the <strong>set</strong> accessor is similar to the <strong>Add</strong> method, as outlined in 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/hashing/simple">&ldquo;A Simple Hash Table Implementation&rdquo;</a>. However, whereas the <strong>Add</strong> method has a <strong>TValue</strong> parameter through which to pass the value to be associated with the given key, the <strong>set</strong> accessor gets this value from the <strong>value</strong> keyword. Furthermore, we don&rsquo;t want the <strong>set</strong> accessor to throw an exception if the key is found. Instead, we want it to replace the <strong>Data</strong> of the cell containing this key with a new <strong>KeyValuePair</strong> containing the key with the new value.</p>
+<p>We want to implement the indexer to behave in the same way as the indexer for <strong>System.Collections.Generic.Dictionary&lt;TKey, TValue&gt;</strong>. Thus, the <strong>get</strong> accessor is similar to the <strong>TryGetValue</strong> method, as outlined in <a href="https://ksu-cs-textbooks.github.io/cis300/hashing/simple">&ldquo;A Simple Hash Table Implementation&rdquo;</a>
+, with a few important differences. First, the <strong>get</strong> accessor has no <strong>out</strong> parameter. Instead, it returns the value that <strong>TryGetValue</strong> assigns to its <strong>out</strong> parameter when the key is found. When the key is not found, because it can&rsquo;t return a <strong>bool</strong> to indicate this, it instead throws a <strong>KeyNotFoundException</strong>.</p>
+<p>Likewise, the <strong>set</strong> accessor is similar to the <strong>Add</strong> method, as outlined in <a href="https://ksu-cs-textbooks.github.io/cis300/hashing/simple">&ldquo;A Simple Hash Table Implementation&rdquo;</a>
+. However, whereas the <strong>Add</strong> method has a <strong>TValue</strong> parameter through which to pass the value to be associated with the given key, the <strong>set</strong> accessor gets this value from the <strong>value</strong> keyword. Furthermore, we don&rsquo;t want the <strong>set</strong> accessor to throw an exception if the key is found. Instead, we want it to replace the <strong>Data</strong> of the cell containing this key with a new <strong>KeyValuePair</strong> containing the key with the new value.</p>
 
             <footer class="footline">
+
             </footer>
           </article>
         </div>
       </main>
     </div>
     
-  </div>
+    </div>
     
     
     
     
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1686587343" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1686587343" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1686587343" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1686587343" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1691596180" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1691596180" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1691596180" defer></script>
     
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/tele-scroll.js?1686587343 defer"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/tele-scroll.js?1691596180 defer"></script>
     
   </body>
 </html>

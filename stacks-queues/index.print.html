@@ -189,26 +189,6 @@
 	
 	
 		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
 		
 
 	
@@ -239,6 +219,11 @@
 	
 	
 		
+		
+
+	
+	
+		
 
 	
 	
@@ -254,6 +239,15 @@
 	
 		
 		
+
+	
+	
+		
+		
+		
+
+	
+	
 		
 
 	
@@ -263,6 +257,12 @@
 
 	
 	
+		
+		
+
+	
+	
+		
 		
 		
 		
@@ -516,34 +516,34 @@
 		
 		
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.2.0+tip">
+    <meta name="generator" content="Relearn 5.18.0">
     <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
     <meta name="description" content="K-State CIS 300: Data Structures">
     <meta name="author" content="Rod Howell and Josh Weese">
     <title>Stacks and Queues :: Data Structures in C#</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587342" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1686587342" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587342" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/featherlight.min.css?1686587342" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587342" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1686587342" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1686587342" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1686587342" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587342" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1686587342" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1686587342" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1686587342" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1686587342" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1686587342" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1686587342" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/format-print.css?1686587342" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1686587342"></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596180" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596180" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596180" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1691596180" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1691596180" rel="stylesheet" media="print">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/format-print.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1691596180" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1691596180"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1691596180"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
-      var index_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
+      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
       var root_url="https://ksu-cs-textbooks.github.io/cis300/";
       var baseUri=root_url.replace(/\/$/, '');
       // translations
@@ -551,32 +551,22 @@
       window.T_Copied_to_clipboard = 'Copied to clipboard!';
       window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
       window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
       // some further base stuff
       var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
       window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
     </script>
     
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1686587342" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/jquery.min.js?1686587342" defer></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1691596180" rel="stylesheet">
 
   </head>
-  <body class="mobile-support print disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/">
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/index.html">
     <div id="body" class="default-animation">
       <div id="sidebar-overlay"></div>
       <div id="toc-overlay"></div>
       <nav id="topbar" class="highlightable">
         <div>
-          <div class="navigation">
-             <a class="nav nav-next" href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/stacks/" title="Introduction to Stacks (&#129106;)"><i class="fas fa-chevron-right fa-fw"></i></a>
-          </div>
-          <div class="navigation">
-             <a class="nav nav-prev" href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilder-impl/" title="Implementation of StringBuilders (&#129104;)"><i class="fas fa-chevron-left fa-fw"></i></a>
-          </div>
-          <div id="top-print-link">
-            <a class="print-link" title='Print whole chapter (CTRL+ALT+p)' href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/index.print.html">
-              <i class="fas fa-print fa-fw"></i>
-            </a>
-          </div>
           <div id="top-tele-link">
             <a class="print-link" title='Teleprompter View' href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/tele.html">
               <i class="fas fa-tv fa-fw"></i>
@@ -587,71 +577,24 @@
               <i class="fas fa-expand-arrows-alt fa-fw"></i>
             </a>
           </div>
-          <div id="top-github-link">
-            <a class="github-link" title='Edit (CTRL+ALT+e)' href="https://gitlab.cs.ksu.edu/-/ide/project/cis300/cis300-book/edit/master/-/content/stacks-queues/_index.md" target="blank">
-              <i class="fas fa-pen fa-fw"></i>
-            </a>
-          </div>
           <div id="breadcrumbs">
             <span id="sidebar-toggle-span">
-              <a href="#" id="sidebar-toggle" title='Menu (CTRL+ALT+m)'><i class="fas fa-bars fa-fw"></i></a>
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
             </span>
-            <span id="toc-menu" title='Table of Contents (CTRL+ALT+t)'><i class="fas fa-list-alt fa-fw"></i></span>
             <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
-              <meta itemprop="itemListOrder" content="Descending" />
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="2" /><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis300/"><span itemprop="name">Data Structures in C#</span></a> > </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="1" /><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/" aria-disabled="true"><span itemprop="name">Stacks and Queues</span></a></li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis300/index.html"><span itemprop="name">Data Structures in C#</span></a><meta itemprop="position" content="1"> &gt; </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Stacks and Queues</span><meta itemprop="position" content="2"></li>
             </ol>
-          </div>
-          <div class="default-animation progress">
-            <div class="wrapper">
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#stacks-and-queues">Stacks and Queues</a></li>
-  </ul>
-</nav>
-            </div>
           </div>
         </div>
       </nav>
       <main id="body-inner" class="highlightable default" tabindex="-1">
         <div class="flex-block-wrapper">
-          <div id="head-tags">
-          </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
           <article class="default">
-<div hidden><h1>Stacks and Queues</h1></div>
+            <header class="headline">
+            </header>
+<div hidden><h1 id="stacks-and-queues">Stacks and Queues</h1></div>
+
 <h2 id="stacks-and-queues">Stacks and Queues</h2>
 <p>Often in solving problems, we need to access data items in a particular
 order. Consider, for example, the action of an &ldquo;Undo&rdquo; operation in a
@@ -667,14 +610,19 @@ applications might need to access data items in <em>first-in-first-out</em>, or
 support these kinds of access.</p>
 
             <footer class="footline">
+
             </footer>
           </article>
 
           <section>
+            <h1 class="a11y-only">Subsections of Stacks and Queues</h1>
     
     
           <article class="default">
-<div hidden><h1>Introduction to Stacks</h1></div>
+            <header class="headline">
+            </header>
+<div hidden><h1 id="introduction-to-stacks">Introduction to Stacks</h1></div>
+
 <h2 id="introduction-to-stacks">Introduction to Stacks</h2>
 <p>A <em>stack</em> provides last-in-first-out (LIFO) access to data items. We
 usually think of a stack as arranging data items vertically, like a
@@ -684,49 +632,41 @@ the top, and if we want to remove an item, we <em>pop</em> it from the top.
 Because we only access the top of the stack, the item that we pop is
 always the remaining item that we had pushed the most recently.</p>
 <p>.NET provides two kinds of stacks. One is the
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.stack?view=net-6.0" target="_blank"><strong>Stack</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.stack?view=net-6.0" target="_blank" rel="noopener"><strong>Stack</strong></a>
 class found in the
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections?view=net-6.0" target="_blank"><strong>System.Collections</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections?view=net-6.0" target="_blank" rel="noopener"><strong>System.Collections</strong></a>
 namespace. Because this namespace isn&rsquo;t typically included in the list of namespaces searched by the compiler, but the namespace containing the other <strong>Stack</strong> definition (discussed a bit later below) is included, we need to refer to it in code as <strong>System.Collections.Stack</strong>. This class provides a stack of <strong>object?</strong>s. Because every
 type in C# is a subtype of <strong>object</strong>, we can push any data items we
-want onto a <strong>Stack</strong>. Because <strong>object?</strong> is a 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/reference-value#nullable-types">nullable</a> type, we can even push <strong>null</strong>. The most commonly-used <strong>public</strong> members of this
+want onto a <strong>Stack</strong>. Because <strong>object?</strong> is a <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/reference-value#nullable-types">nullable</a>
+ type, we can even push <strong>null</strong>. The most commonly-used <strong>public</strong> members of this
 class are:</p>
 <ul>
 <li>A
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.stack.-ctor?view=net-6.0#system-collections-stack-ctor" target="_blank">constructor</a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.stack.-ctor?view=net-6.0#system-collections-stack-ctor" target="_blank" rel="noopener">constructor</a>
 that takes no parameters and constructs an empty stack.</li>
 <li>A
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.stack.count?view=net-6.0#system-collections-stack-count" target="_blank"><strong>Count</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.stack.count?view=net-6.0#system-collections-stack-count" target="_blank" rel="noopener"><strong>Count</strong></a>
 property, which gets the number of elements on the <strong>Stack</strong> as an
 <strong>int</strong>.</li>
 <li>A
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.stack.push?view=net-6.0#system-collections-stack-push%28system-object%29" target="_blank"><strong>Push</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.stack.push?view=net-6.0#system-collections-stack-push%28system-object%29" target="_blank" rel="noopener"><strong>Push</strong></a>
 method, which takes a single parameter of type <strong>object?</strong>, and
 pushes it onto the top of the <strong>Stack</strong>.</li>
 <li>A
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.stack.peek?view=net-6.0#system-collections-stack-peek" target="_blank"><strong>Peek</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.stack.peek?view=net-6.0#system-collections-stack-peek" target="_blank" rel="noopener"><strong>Peek</strong></a>
 method, which takes no parameters and returns the element at the top
 of the <strong>Stack</strong> (as an <strong>object?</strong>) without changing the <strong>Stack</strong>&rsquo;s
 contents. If the <strong>Stack</strong> is empty, this method throws an
 <strong>InvalidOperationException</strong>.</li>
 <li>A
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.stack.pop?view=net-6.0#system-collections-stack-pop" target="_blank"><strong>Pop</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.stack.pop?view=net-6.0#system-collections-stack-pop" target="_blank" rel="noopener"><strong>Pop</strong></a>
 method, which takes no parameters, and removes and returns the
 element at the top of the <strong>Stack</strong> (as an <strong>object?</strong>). If the
 <strong>Stack</strong> is empty, this method throws an
@@ -738,10 +678,9 @@ as its parameter, we can push any data elements we want, including <strong>null<
 determine the type of these elements when we retrieve them; i.e., both
 the <strong>Peek</strong> and <strong>Pop</strong> methods return <strong>object?</strong>s. Thus, for example,
 the following code will not compile:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>System.Collections.Stack s = <span style="color:#66d9ef">new</span>();
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>System.Collections.Stack s = <span style="color:#66d9ef">new</span>();
 </span></span><span style="display:flex;"><span>s.Push(<span style="color:#ae81ff">7</span>);
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> n = s.Pop() + <span style="color:#ae81ff">1</span>;
-</span></span></code></pre></div><p>The problem is that the <strong>Pop</strong> method returns an <strong>object?</strong>, and we
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> n = s.Pop() + <span style="color:#ae81ff">1</span>;</span></span></code></pre></div><p>The problem is that the <strong>Pop</strong> method returns an <strong>object?</strong>, and we
 can&rsquo;t add an <strong>int</strong> to an <strong>object?</strong>. Although it&rsquo;s pretty easy to see
 from this code that <strong>Pop</strong> will return 7, in many cases it&rsquo;s impossible
 to know at compile time the exact type of the element returned (for
@@ -752,57 +691,54 @@ figure out the type any more precisely.</p>
 <p><span id="cast"></span> If you want to use the value returned by <strong>Pop</strong>
 or <strong>Peek</strong> as something other than an <strong>object?</strong>, you need to tell the
 compiler what its type actually is. You do this with a <em>cast</em>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> n = (<span style="color:#66d9ef">int</span>)s.Pop() + <span style="color:#ae81ff">1</span>;
-</span></span></code></pre></div><p>This tells the compiler to assume that the value returned by <strong>Pop</strong> is
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> n = (<span style="color:#66d9ef">int</span>)s.Pop() + <span style="color:#ae81ff">1</span>;</span></span></code></pre></div><p>This tells the compiler to assume that the value returned by <strong>Pop</strong> is
 an <strong>int</strong>. The type is still checked, but now it is checked at run
 time, rather than at compile time. If the runtime environment detects
 that the value is not, in fact, an <strong>int</strong>, it will throw an
 <strong>InvalidCastException</strong>.</p>
 <p>While the above line of code will now compile, it generates a warning because <strong>Pop</strong> might return <strong>null</strong>, which cannot be cast to <strong>int</strong>. In order to avoid this warning, once we have determined that the call won&rsquo;t return a <strong>null</strong> value, we need to use the <code>!</code> operator:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">// The element on the top of the stack is the int 7</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> n = (<span style="color:#66d9ef">int</span>)s.Pop()! + <span style="color:#ae81ff">1</span>;
-</span></span></code></pre></div><p>Note that we include a comment explaining why <strong>Pop</strong> won&rsquo;t return <strong>null</strong> here.</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">// The element on the top of the stack is the int 7</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> n = (<span style="color:#66d9ef">int</span>)s.Pop()! + <span style="color:#ae81ff">1</span>;</span></span></code></pre></div><p>Note that we include a comment explaining why <strong>Pop</strong> won&rsquo;t return <strong>null</strong> here.</p>
 <p><span id="generic"></span> Often when we need a stack, the data items
 that we wish to store are all of the same type. In such a case, it is
 rather awkward to include a cast whenever we retrieve an item from the
 stack. In order to avoid this casting, .NET provides a
 <em>generic</em> stack,
-
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.stack-1?view=net-6.0" target="_blank" rel="noopener"><strong>Stack&lt;T&gt;</strong></a>,
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.stack-1?view=net-6.0" target="_blank"><strong>Stack&lt;T&gt;</strong></a>
+,
 found in the
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic?view=net-6.0" target="_blank"><strong>System.Collections.Generic</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic?view=net-6.0" target="_blank" rel="noopener"><strong>System.Collections.Generic</strong></a>
 namespace. The <strong>T</strong> within angle brackets is a <em>type parameter</em> - we
 may replace it with any type we want. This type tells what type of
 elements may be placed in this stack. For example, if we want a stack
 that will only contain <strong>int</strong>s, we can write:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>Stack&lt;<span style="color:#66d9ef">int</span>&gt; s = <span style="color:#66d9ef">new</span>();
-</span></span></code></pre></div><p>This class has members similar to those listed above for the non-generic
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>Stack&lt;<span style="color:#66d9ef">int</span>&gt; s = <span style="color:#66d9ef">new</span>();</span></span></code></pre></div><p>This class has members similar to those listed above for the non-generic
 <strong>Stack</strong> class, except that the <strong>Push</strong> method takes a parameter of
 type <strong>T</strong> (i.e., whatever type we placed within the angle brackets in
 the type declaration and constructor call), and the <strong>Peek</strong> and <strong>Pop</strong>
 methods each return a value of type <strong>T</strong>. As a result, the following is
 now legal code:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>Stack&lt;<span style="color:#66d9ef">int</span>&gt; s = <span style="color:#66d9ef">new</span>();
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>Stack&lt;<span style="color:#66d9ef">int</span>&gt; s = <span style="color:#66d9ef">new</span>();
 </span></span><span style="display:flex;"><span>s.Push(<span style="color:#ae81ff">7</span>);
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> n = s.Pop() + <span style="color:#ae81ff">1</span>;
-</span></span></code></pre></div><p>We will show how you can define your own generic types in &ldquo;
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/stack-impl">Implementing
-a Stack</a>&rdquo;. First, however,
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> n = s.Pop() + <span style="color:#ae81ff">1</span>;</span></span></code></pre></div><p>We will show how you can define your own generic types in &ldquo;<a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/stack-impl">Implementing
+a Stack</a>
+&rdquo;. First, however,
 we want to work through two example applications of stacks. We will do
 that in the next two sections.</p>
 
             <footer class="footline">
+
             </footer>
           </article>
 
     
     
           <article class="default">
-<div hidden><h1>Implementing Undo and Redo for a TextBox</h1></div>
+            <header class="headline">
+            </header>
+<div hidden><h1 id="implementing-undo-and-redo-for-a-textbox">Implementing Undo and Redo for a TextBox</h1></div>
+
 <h2 id="implementing-undo-and-redo-for-a-textbox">Implementing Undo and Redo for a <strong>TextBox</strong></h2>
 <p>A <strong>TextBox</strong> has a rather crude Undo/Redo feature. By right-clicking on
 a <strong>TextBox</strong>, a popup menu containing an Undo entry is presented. This
@@ -829,7 +765,7 @@ Likewise, the Undo history would store the entire contents of the
 <strong>TextBox</strong> prior to each Undo. Because the contents of the <strong>TextBox</strong>
 form a <strong>string</strong>, we need two <strong>private</strong> fields, each referring to a
 stack of <strong>string</strong>s:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// The history of the contents of the TextBox.</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> Stack&lt;<span style="color:#66d9ef">string</span>&gt; _editingHistory = <span style="color:#66d9ef">new</span>();
@@ -837,15 +773,13 @@ stack of <strong>string</strong>s:</p>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// The history of TextBox contents that have been undone and can be redone.</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> Stack&lt;<span style="color:#66d9ef">string</span>&gt; _undoHistory = <span style="color:#66d9ef">new</span>();
-</span></span></code></pre></div><p>Before we can proceed to implementing the Undo and Redo operations, we
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> Stack&lt;<span style="color:#66d9ef">string</span>&gt; _undoHistory = <span style="color:#66d9ef">new</span>();</span></span></code></pre></div><p>Before we can proceed to implementing the Undo and Redo operations, we
 need to do a bit more initialization. Note that by the way we have
 defined <code>_editingHistory</code>, this stack needs to contain the initial
 contents of the <strong>TextBox</strong>. Therefore, assuming the <strong>TextBox</strong> field
 is named <code>uxEditBuffer</code>, we need to add the following line to the end of
 the constructor of our user interface:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>_editingHistory.Push(uxEditBuffer.Text);
-</span></span></code></pre></div><p>In order to support Undo and Redo, we need to be able to record the
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>_editingHistory.Push(uxEditBuffer.Text);</span></span></code></pre></div><p>In order to support Undo and Redo, we need to be able to record the
 content of <code>uxEditBuffer</code> each time it is modified. We can do this via an
 event handler for the <strong>TextChanged</strong> event on the <strong>TextBox</strong>. Because
 this event is the default event for a <strong>TextBox</strong>, we can add such an
@@ -862,15 +796,14 @@ considered an edit, or a subsequent Undo would just undo the Undo; i.e.,
 it would perform a Redo rather than an Undo.</p>
 <p>Fortunately, there is an easy way to distinguish between an edit made by
 the user and a change made by the program code. A <strong>TextBox</strong> has a
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.textboxbase.modified?view=windowsdesktop-6.0#system-windows-forms-textboxbase-modified" target="_blank"><strong>Modified</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.textboxbase.modified?view=windowsdesktop-6.0#system-windows-forms-textboxbase-modified" target="_blank" rel="noopener"><strong>Modified</strong></a>
 property, which is set to <strong>true</strong> when the user modifies the
 <strong>TextBox</strong> contents, and is set to <strong>false</strong> when the program modifies
 the contents. Thus, we only want to record the <strong>TextBox</strong> contents when
 this property is <strong>true</strong>. Assuming the <strong>TextBox</strong> is named
 <code>uxEditBuffer</code>, we can then set up the event handler as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// Handles a TextChanged event on the edit buffer.</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;param name=&#34;sender&#34;&gt;The object signaling the event.&lt;/param&gt;</span>
@@ -881,8 +814,7 @@ this property is <strong>true</strong>. Assuming the <strong>TextBox</strong> is
 </span></span><span style="display:flex;"><span>    {
 </span></span><span style="display:flex;"><span>        RecordEdit();
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Now let&rsquo;s consider how to write the <code>RecordEdit</code> method. Suppose there
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Now let&rsquo;s consider how to write the <code>RecordEdit</code> method. Suppose there
 are two GUI controls (e.g., menu items or buttons) called <code>uxUndo</code> and
 <code>uxRedo</code>, which invoke the Undo and Redo operations, respectively. These
 controls should be enabled only when there are operations to undo or
@@ -893,14 +825,13 @@ modifies the contents of the <strong>TextBox</strong>, we need to do the followi
 <li>Enable <code>uxUndo</code>, as there is now an edit that can be undone.</li>
 <li>Clear the contents of <code>_undoHistory</code>, as the last change to the
 <strong>TextBox</strong> contents was not an Undo. (A <strong>Stack&lt;T&gt;</strong> has a
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.stack-1.clear?view=net-6.0#system-collections-generic-stack-1-clear" target="_blank"><strong>Clear</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.stack-1.clear?view=net-6.0#system-collections-generic-stack-1-clear" target="_blank" rel="noopener"><strong>Clear</strong></a>
 method for this purpose.)</li>
 <li>Disable <code>uxRedo</code>.</li>
 </ul>
 <p>We therefore have the following method:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// Records an edit made by the user.</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> RecordEdit()
@@ -909,8 +840,7 @@ method for this purpose.)</li>
 </span></span><span style="display:flex;"><span>    uxUndo.Enabled = <span style="color:#66d9ef">true</span>;
 </span></span><span style="display:flex;"><span>    _undoHistory.Clear();
 </span></span><span style="display:flex;"><span>    uxRedo.Enabled = <span style="color:#66d9ef">false</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Now that we have a mechanism for recording the user&rsquo;s edits, we can
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Now that we have a mechanism for recording the user&rsquo;s edits, we can
 implement the Undo operation. The contents of the <strong>TextBox</strong> following
 the last edit (i.e, the current contents of the <strong>TextBox</strong>) should
 always be at the top of <code>_editingHistory</code>. An Undo should change the
@@ -925,7 +855,7 @@ this stack - the <strong>string</strong> that we placed in the <strong>TextBox</
 an edit to undo if there is at least one more element on this stack -
 i.e., if its <strong>Count</strong> is greater than 1. We therefore have the
 following event handler for a Click event on <code>uxUndo</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// Handles a Click event on Undo.</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;param name=&#34;sender&#34;&gt;The object signaling the event.&lt;/param&gt;</span>
@@ -936,15 +866,14 @@ following event handler for a Click event on <code>uxUndo</code>:</p>
 </span></span><span style="display:flex;"><span>    uxRedo.Enabled = <span style="color:#66d9ef">true</span>;
 </span></span><span style="display:flex;"><span>    uxEditBuffer.Text = _editingHistory.Peek();
 </span></span><span style="display:flex;"><span>    uxUndo.Enabled = _editingHistory.Count &gt; <span style="color:#ae81ff">1</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>The implementation of Redo is similar, but now we need to transfer a
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>The implementation of Redo is similar, but now we need to transfer a
 <strong>string</strong> between the stacks in the opposite direction - we move the
 top <strong>string</strong> from <code>_undoHistory</code> to <code>_editingHistory</code>. Then <code>uxRedo</code>
 should be enabled if any more <strong>string</strong>s remain in <code>_undoHistory</code>. The
 <strong>string</strong> we removed from <code>_undoHistory</code> should be placed in the
 <strong>TextBox</strong>. Finally, <code>uxUndo</code> should be enabled. We therefore have the
 following event handler for a Click event on <code>uxRedo</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// Handles a Click event on Redo.</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;param name=&#34;sender&#34;&gt;The object signaling the event.&lt;/param&gt;</span>
@@ -955,8 +884,7 @@ following event handler for a Click event on <code>uxRedo</code>:</p>
 </span></span><span style="display:flex;"><span>    uxRedo.Enabled = _undoHistory.Count &gt; <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>    uxEditBuffer.Text = _editingHistory.Peek();
 </span></span><span style="display:flex;"><span>    uxUndo.Enabled = <span style="color:#66d9ef">true</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>This solution will work, except that an Undo or Redo always brings the
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>This solution will work, except that an Undo or Redo always brings the
 text caret to the beginning of the <strong>TextBox</strong> contents. Furthermore, if
 the <strong>TextBox</strong> contains a long <strong>string</strong>, each edit causes a long
 <strong>string</strong> to be placed onto <code>_editingHistory</code>. This can quickly eat up
@@ -982,9 +910,8 @@ is to use non-generic stacks and to push three items onto a stack for
 each edit. If we do this, we need to realize that when we pop elements
 from the stack, they will come out in reverse order from the way they
 were pushed onto it. Alternatively, we can define a class or a
-
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/structs">structure</a> to represent an
+<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/structs">structure</a>
+ to represent an
 edit using the three values above as <strong>private</strong> fields. We can then use
 generic stacks storing instances of this type.</p>
 <p>Whichever way we choose to represent the edits, we need to be able to
@@ -1005,7 +932,7 @@ compare the lengths of the current <strong>TextBox</strong> contents and its pre
 contents. If the current content is longer, then the edit was an
 insertion; otherwise, the edit was a deletion. We therefore have the
 following method for this purpose:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// Returns whether text was deleted from the given string in order to</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// obtain the contents of the given TextBox.</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
@@ -1016,11 +943,9 @@ following method for this purpose:</p>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">bool</span> IsDeletion(TextBox editor, <span style="color:#66d9ef">string</span> lastContent)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> editor.TextLength &lt; lastContent.Length;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Note that the above code uses the <strong>TextBox</strong>&rsquo;s
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Note that the above code uses the <strong>TextBox</strong>&rsquo;s
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.textboxbase.textlength?view=windowsdesktop-6.0#system-windows-forms-textboxbase-textlength" target="_blank"><strong>TextLength</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.textboxbase.textlength?view=windowsdesktop-6.0#system-windows-forms-textboxbase-textlength" target="_blank" rel="noopener"><strong>TextLength</strong></a>
 property. This is more efficient than finding the length of its <strong>Text</strong>
 property because evaluating the <strong>Text</strong> property requires all the
 characters to be copied to a new <strong>string</strong>.</p>
@@ -1029,23 +954,19 @@ itself, it is useful to compute the length of the edit string. This
 length is simply the absolute value of the difference in the lengths of
 the <strong>string</strong> currently in the <strong>TextBox</strong> and the last <strong>string</strong> we
 saw there. The
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.math?view=net-6.0" target="_blank"><strong>Math</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.math?view=net-6.0" target="_blank" rel="noopener"><strong>Math</strong></a>
 class (in the
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system?view=net-6.0" target="_blank"><strong>System</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system?view=net-6.0" target="_blank" rel="noopener"><strong>System</strong></a>
 namespace) contains a
-
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/static-this"><strong>static</strong></a> method
-
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.math.abs?view=net-6.0#system-math-abs%28system-int32%29" target="_blank" rel="noopener"><strong>Abs</strong></a>,
+<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/static-this"><strong>static</strong></a>
+ method
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.math.abs?view=net-6.0#system-math-abs%28system-int32%29" target="_blank"><strong>Abs</strong></a>
+,
 which computes the absolute value of an <strong>int</strong>. We therefore have the
 following method:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// Gets the length of the text inserted or deleted.</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;param name=&#34;editor&#34;&gt;The TextBox containing the result of the edit.&lt;/param&gt;</span>
@@ -1055,15 +976,13 @@ following method:</p>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> GetEditLength(TextBox editor, <span style="color:#66d9ef">string</span> lastContent)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> Math.Abs(editor.TextLength - lastContent.Length);
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Now that we can determine whether an edit is a deletion or an insertion,
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Now that we can determine whether an edit is a deletion or an insertion,
 and we can find the length of the edit string, it isn&rsquo;t hard to find the
 beginning of the edit. First, suppose the edit is a deletion. The point
 at which the deletion occurred is the point at which the text caret now
 resides. We can find this point using the <strong>TextBox</strong>&rsquo;s
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.textboxbase.selectionstart?view=windowsdesktop-6.0#system-windows-forms-textboxbase-selectionstart" target="_blank"><strong>SelectionStart</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.textboxbase.selectionstart?view=windowsdesktop-6.0#system-windows-forms-textboxbase-selectionstart" target="_blank" rel="noopener"><strong>SelectionStart</strong></a>
 property. When there is no current selection - and there never will be
 immediately following an edit - this property gives the location of the
 text caret in the <strong>TextBox</strong>. Now consider the case in which the edit
@@ -1071,7 +990,7 @@ was an insertion. When text is inserted into a <strong>TextBox</strong>, the tex
 caret ends up at the <em>end</em> of the inserted text. We need to find its
 beginning. We can do this by subtracting the length of the edit string
 from the text caret position. We therefore have the following method:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// Gets the location of the beginning of the edit.</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;param name=&#34;editor&#34;&gt;The TextBox containing the result of the edit.&lt;/param&gt;</span>
@@ -1088,21 +1007,19 @@ from the text caret position. We therefore have the following method:</p>
 </span></span><span style="display:flex;"><span>    {
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> editor.SelectionStart - len;
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>The last piece of information we need is the <strong>string</strong> that was deleted
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>The last piece of information we need is the <strong>string</strong> that was deleted
 or inserted. If the edit was a deletion, this <strong>string</strong> can be found in
 the previous <strong>TextBox</strong> contents. Its beginning is the point at which
 the edit occurred. We can therefore extract the deleted <strong>string</strong> from
 the previous contents using its
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.string.substring?view=net-6.0#system-string-substring%28system-int32-system-int32%29" target="_blank"><strong>Substring</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.string.substring?view=net-6.0#system-string-substring%28system-int32-system-int32%29" target="_blank" rel="noopener"><strong>Substring</strong></a>
 method. We pass this method the beginning index of the substring and its
 length, and it returns the substring, which is the deleted <strong>string</strong>.
 On the other hand, if the edit was an insertion, we can find the
 inserted <strong>string</strong> in the current <strong>TextBox</strong> contents by using its
 <strong>Substring</strong> in a similar way. We therefore have the following method:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// Gets the edit string.</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;param name=&#34;content&#34;&gt;The current content of the TextBox.&lt;/param&gt;</span>
@@ -1122,8 +1039,7 @@ inserted <strong>string</strong> in the current <strong>TextBox</strong> content
 </span></span><span style="display:flex;"><span>    {
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> content.Substring(editLocation, len);
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Using the methods above, we can modify the <strong>RecordEdit</strong> method to
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Using the methods above, we can modify the <strong>RecordEdit</strong> method to
 obtain the three values listed above to describe an edit. Once we have
 placed these three values onto the stack of editing history, we also
 need to update the <strong>string</strong> giving the previous <strong>TextBox</strong> contents.
@@ -1134,15 +1050,13 @@ delete text in the <strong>TextBox</strong>. A <strong>string</strong> has two m
 to accomplish this:</p>
 <ul>
 <li>The
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.string.remove?view=net-6.0#system-string-remove%28system-int32-system-int32%29" target="_blank"><strong>Remove</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.string.remove?view=net-6.0#system-string-remove%28system-int32-system-int32%29" target="_blank" rel="noopener"><strong>Remove</strong></a>
 method takes as its parameters the beginning index and length of the
 portion to remove, and returns the result.</li>
 <li>The
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.string.insert?view=net-6.0#system-string-insert%28system-int32-system-string%29" target="_blank"><strong>Insert</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.string.insert?view=net-6.0#system-string-insert%28system-int32-system-string%29" target="_blank" rel="noopener"><strong>Insert</strong></a>
 method takes as its parameters the index at which the <strong>string</strong>
 should be inserted, and the <strong>string</strong> to insert. It returns the
 result.</li>
@@ -1155,7 +1069,7 @@ to add the length of the edit string if we are inserting text. The
 following method therefore performs a given edit, updating the
 <strong>string</strong> containing the last contents of the <strong>TextBox</strong> as well (we
 assume this <strong>string</strong> is called <code>_lastText</code>):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// Performs the given edit on the contents of the given TextBox.</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;param name=&#34;editor&#34;&gt;The TextBox to edit.&lt;/param&gt;</span>
@@ -1176,8 +1090,7 @@ assume this <strong>string</strong> is called <code>_lastText</code>):</p>
 </span></span><span style="display:flex;"><span>        editor.Text = _lastText;
 </span></span><span style="display:flex;"><span>        editor.SelectionStart = loc + text.Length;
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>We can now implement event handlers for Undo and Redo. We can obtain the
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>We can now implement event handlers for Undo and Redo. We can obtain the
 description of the edit from the stack of editing history for an Undo,
 or from the stack of undo history for a Redo. This description gives us
 the type of edit (i.e., either insertion or deletion), the beginning
@@ -1186,13 +1099,17 @@ implement a Redo, we simply do this edit, but to implement an Undo, we
 must do the opposite.</p>
 
             <footer class="footline">
+
             </footer>
           </article>
 
     
     
           <article class="default">
-<div hidden><h1>Parenthesis Matching</h1></div>
+            <header class="headline">
+            </header>
+<div hidden><h1 id="parenthesis-matching">Parenthesis Matching</h1></div>
+
 <h2 id="parenthesis-matching">Parenthesis Matching</h2>
 <p>The problem of finding matching parentheses must be solved in many
 computing applications. For example, consider a C# compiler. Matching
@@ -1317,23 +1234,26 @@ opening parenthesis that was never matched. We would have again
 determined that the <strong>string</strong> is not matched.</p>
 
             <footer class="footline">
+
             </footer>
           </article>
 
     
     
           <article class="default">
-<div hidden><h1>Implementing a Stack</h1></div>
+            <header class="headline">
+            </header>
+<div hidden><h1 id="implementing-a-stack">Implementing a Stack</h1></div>
+
 <h2 id="implementing-a-stack">Implementing a Stack</h2>
 <p>This section gives an overview of perhaps the most common way to
 implement a stack. For example, the implementations of both
 <strong>System.Collections.Stack</strong> and
 <strong>System.Collections.Generic.Stack&lt;T&gt;</strong> use this technique. This
 implementation uses an array to store the elements of the stack, and is
-quite similar to the 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilder-impl"><strong>StringBuilder</strong>
-implementation</a> we
+quite similar to the <a href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilder-impl"><strong>StringBuilder</strong>
+implementation</a>
+ we
 described in the last chapter. We have discussed two kinds of stacks in
 this chapter - stacks of <strong>object?</strong>s and generic stacks. We will focus
 on implementing a generic stack in this section, as it is easy to modify
@@ -1341,11 +1261,10 @@ such an implementation to be non-generic.</p>
 <p><span id="generic"></span> We first need to consider how to define a
 generic class. In the simplest case, we simply add a type parameter to
 the <strong>class</strong> statement, as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Stack</span>&lt;T&gt;
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Stack</span>&lt;T&gt;
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    . . .
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Within this <strong>class</strong> definition, <strong>T</strong> is treated like any other type,
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Within this <strong>class</strong> definition, <strong>T</strong> is treated like any other type,
 except that the compiler knows nothing about it. We can declare fields,
 parameters, and local variables to be of type <strong>T</strong>. Even though the
 compiler knows nothing about <strong>T</strong>, it will still do type checking - you
@@ -1358,10 +1277,9 @@ data structure. To do this, we would list the type parameters, separated
 by commas, between the <code>&lt;</code> and <code>&gt;</code> symbols of the generic <strong>class</strong>
 definition. Each of the type parameters is then treated as a type within
 the <strong>class</strong> definition. We will show how the types passed as type
-parameters can be restricted in 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/linked-list-impl/#where">a later
-section</a>.</p>
+parameters can be restricted in <a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/linked-list-impl/#where">a later
+section</a>
+.</p>
 <p>For the class <strong>Stack&lt;T&gt;</strong>, only one type parameter is needed. The
 type parameter <strong>T</strong> denotes the type of the values that are stored in
 the stack. Therefore, the array in which we will store the elements will
@@ -1370,17 +1288,16 @@ be of type <strong>T?[ ]</strong>. The <code>?</code> is needed because if a re
   
   
 <div class="box notices cstyle note">
-    <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
-    <div class="box-content">
-<p>In the section, 
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
+  <div class="box-content">
 
-<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/reference-value/#nullable-types">&ldquo;Reference Types and Value Types&rdquo;</a>, we explained how the <code>?</code> operator behaves differently depending on whether the underlying type is a reference type or a value type. Because a type parameter might represent either a reference type or a value type, we need to address how this operator behaves for a type parameter. Similar to its behavior for a reference type, when this operator is used with a type parameter, the code produced is unchanged. Instead, it is simply an annotation indicating that <strong>null</strong> values may be present. Note that this can happen only if the underlying type happens to be a reference type.</p>
-    </div>
+<p>In the section, <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/reference-value/#nullable-types">&ldquo;Reference Types and Value Types&rdquo;</a>
+, we explained how the <code>?</code> operator behaves differently depending on whether the underlying type is a reference type or a value type. Because a type parameter might represent either a reference type or a value type, we need to address how this operator behaves for a type parameter. Similar to its behavior for a reference type, when this operator is used with a type parameter, the code produced is unchanged. Instead, it is simply an annotation indicating that <strong>null</strong> values may be present. Note that this can happen only if the underlying type happens to be a reference type.</p>
 </div>
-<p>As in the 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilder-impl"><strong>StringBuilder</strong>
-implementation</a>,
+</div>
+<p>As in the <a href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilder-impl"><strong>StringBuilder</strong>
+implementation</a>
+,
 we will need a <strong>private</strong> field for this array. This field can be
 initialized in a manner similar to the <strong>StringBuilder</strong> implementation;
 hence, we don&rsquo;t need to write a constructor.</p>
@@ -1388,22 +1305,26 @@ hence, we don&rsquo;t need to write a constructor.</p>
 number of elements in the stack (as an <strong>int</strong>). We can define this
 property to use the default implementation with a <strong>private</strong> set
 accessor, as outlined in the section,
-&ldquo;
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/properties">Properties</a>&rdquo;.</p>
+&ldquo;<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/properties">Properties</a>
+&rdquo;.</p>
 <p>Before we can delve any further into the implementation, we need to
 decide how we are going to arrange the elements in the array. Because
 all of our accesses will be to the top of the stack, it makes sense to
 keep the bottom element of the stack at location 0, and as we go up the
 stack, keep each successive element in the next location:</p>
-<p><img src="stack-impl.jpg" alt="The arrangement of stack elements in the array."></p>
+<p>
+<a href="#image-c6cff8904ee47350368299899e6ad965" class="lightbox-link">
+<img src="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/stack-impl/stack-impl.jpg" alt="The arrangement of stack elements in the array." style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-c6cff8904ee47350368299899e6ad965">
+<img src="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/stack-impl/stack-impl.jpg" alt="The arrangement of stack elements in the array." class="lightbox-image" loading="lazy">
+</a></p>
 <p>This arrangement makes sense because unless all of the array locations
 are being used, there is room to push a new element on top of the stack
 without having to move any pre-existing elements out of its way.</p>
-<p>Note the similarity of this arrangement to the 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilder-impl">implementation of a
-<strong>StringBuilder</strong></a>.
+<p>Note the similarity of this arrangement to the <a href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilder-impl">implementation of a
+<strong>StringBuilder</strong></a>
+.
 Given this similarity, we can implement the <strong>Push</strong> method in a similar
 way to how we implemented the <strong>Append</strong> method for a <strong>StringBuilder</strong>.
 Instead of taking a <strong>char</strong> parameter, the <strong>Push</strong> method takes a
@@ -1416,18 +1337,18 @@ parameters and returns a <strong>T</strong>. This method needs to begin with som
 error checking: if there are no elements in the stack, it needs to throw
 an <strong>InvalidOperationException</strong>. We can do this by constructing such an
 exception and throwing it with the <strong>throw</strong> keyword:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> InvalidOperationException();
-</span></span></code></pre></div><p>If there are elements in the stack, we need to return the one at the
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> InvalidOperationException();</span></span></code></pre></div><p>If there are elements in the stack, we need to return the one at the
 top. Note from the figure above that the top element is at the location
 preceding the location indexed by <strong>Count</strong>. However, note that this element is of type <strong>T?</strong>, whereas the return type of <strong>Peek</strong> is <strong>T</strong>. Thus, returning this element will generate a warning unless we use the <code>!</code> operator. This operator is safe to use here because the location we are returning stores an element that was passed to <strong>Push</strong> as type <strong>T</strong>.</p>
 
   
   
 <div class="box notices cstyle note">
-    <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
-    <div class="box-content">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
+  <div class="box-content">
+
 <p>Note that because <strong>T</strong> can represent any type, it is possible that it represents a nullable type; for example, it is permissible to define a <strong>Stack&lt;string?&gt;</strong>. Therefore, it is possible that the element being returned is <strong>null</strong>. However, we don&rsquo;t need to concern ourselves with this case, as it will be handled by the calling code. The point is that we are returning something of type <strong>T</strong>, even if <strong>T</strong> represents a non-nullable reference type.</p>
-    </div>
+</div>
 </div>
 <p>The other <strong>public</strong> method to retrieve an element is the <strong>Pop</strong>
 method. This method also takes no parameters and returns a <strong>T</strong>. Part
@@ -1448,10 +1369,9 @@ popped - it still stores that value. This fact does not impact
 correctness, however, because after we update the number of elements, we
 are no longer considering that location to be storing a stack element -
 its contents are irrelevant. Nevertheless, there is a performance issue here.
-If <strong>T</strong> is a 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/reference-value">reference
-type</a>, then the
+If <strong>T</strong> is a <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/reference-value">reference
+type</a>
+, then the
 reference stored in this location may refer to a large data structure
 that is no longer needed by the program. Because this array location
 still stores a reference to it, the garbage collector cannot tell that
@@ -1471,14 +1391,15 @@ after we are no longer using it.</p>
   
   
 <div class="box notices cstyle tip">
-    <div class="box-label"><i class="fa-fw fas fa-lightbulb"></i> Tip</div>
-    <div class="box-content">
+  <div class="box-label"><i class="fa-fw fas fa-lightbulb"></i> Tip</div>
+  <div class="box-content">
+
 <p>Often the parameter to <strong>default</strong> (including the parentheses) can be
 omitted because the compiler
 can detect what type is needed. This is the case in the current
 context. If using <strong>default</strong> without the
 parameter gives a syntax error, supply the parameter.</p>
-    </div>
+</div>
 </div>
 <p>Finally, we can implement a <strong>public Clear</strong> method. This method takes
 no parameters and returns nothing. One way to implement it would be to
@@ -1493,23 +1414,26 @@ default element of the appropriate type). Because we are no longer using
 the old array, the garbage collector can reclaim it, along with any
 otherwise unused data it might refer to.</p>
 <p>Due to the similarities between this implementation and the
-
-
 <a href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilder-impl"><strong>StringBuilder</strong>
-implementation</a>,
+implementation</a>
+,
 the two data structures have similar performance characteristics. In
 fact, it is possible to show that any sequence of <em>n</em> operations on an
 initially empty <strong>Stack&lt;T&gt;</strong> is done in <em>O</em>(<em>n</em>) time - i.e., in time
 proportional to <em>n</em>.</p>
 
             <footer class="footline">
+
             </footer>
           </article>
 
     
     
           <article class="default">
-<div hidden><h1>Introduction to Queues</h1></div>
+            <header class="headline">
+            </header>
+<div hidden><h1 id="introduction-to-queues">Introduction to Queues</h1></div>
+
 <h2 id="introduction-to-queues">Introduction to Queues</h2>
 <p>Stacks provide LIFO access to data, but sometimes we need
 first-in-first-out, or <em>FIFO</em>, access.
@@ -1539,47 +1463,40 @@ the <em>back</em>, and the next person who is served is the person at the
 Likewise, new data items are added to the back of a queue, and data
 items are retrieved from the front.</p>
 <p>.NET provides both a non-generic queue of <strong>object?</strong>s
-(
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.queue?view=net-6.0" target="_blank" rel="noopener"><strong>System.Collections.Queue</strong></a>)
+(<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.queue?view=net-6.0" target="_blank"><strong>System.Collections.Queue</strong></a>
+)
 and a generic queue
-(
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1?view=net-6.0" target="_blank" rel="noopener"><strong>System.Collections.Generic.Queue&lt;T&gt;</strong></a>).
+(<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1?view=net-6.0" target="_blank"><strong>System.Collections.Generic.Queue&lt;T&gt;</strong></a>
+).
 For simplicity, we will focus on the generic version. The non-generic
 version is the same, except that wherever the type parameter <strong>T</strong> is
 used in the generic version, <strong>object?</strong> is used in the non-generic
 version.</p>
 <p>Like <strong>Stack&lt;T&gt;</strong>, <strong>Queue&lt;T&gt;</strong> has a <strong>public</strong>
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1.-ctor?view=net-6.0#system-collections-generic-queue-1-ctor" target="_blank">constructor</a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1.-ctor?view=net-6.0#system-collections-generic-queue-1-ctor" target="_blank" rel="noopener">constructor</a>
 that takes no parameters and constructs an empty queue, along with a
 <strong>public</strong>
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1.count?view=net-6.0#system-collections-generic-queue-1-count" target="_blank"><strong>Count</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1.count?view=net-6.0#system-collections-generic-queue-1-count" target="_blank" rel="noopener"><strong>Count</strong></a>
 property that gets the number of elements in the queue (as an <strong>int</strong>).
 It also has the following <strong>public</strong> methods:</p>
 <ul>
 <li>An
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1.enqueue?view=net-6.0#system-collections-generic-queue-1-enqueue%28-0%29" target="_blank"><strong>Enqueue</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1.enqueue?view=net-6.0#system-collections-generic-queue-1-enqueue%28-0%29" target="_blank" rel="noopener"><strong>Enqueue</strong></a>
 method that takes a single parameter of type <strong>T</strong> and places it at
 the back of the queue.</li>
 <li>A
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1.peek?view=net-6.0#system-collections-generic-queue-1-peek" target="_blank"><strong>Peek</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1.peek?view=net-6.0#system-collections-generic-queue-1-peek" target="_blank" rel="noopener"><strong>Peek</strong></a>
 method that takes no parameters and returns the element (of type
 <strong>T</strong>) at the front of the queue without changing the queue&rsquo;s
 contents. If the queue is empty, this method throws an
 <strong>InvalidOperationException</strong>.</li>
 <li>A
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1.dequeue?view=net-6.0#system-collections-generic-queue-1-dequeue" target="_blank"><strong>Dequeue</strong></a>
 
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1.dequeue?view=net-6.0#system-collections-generic-queue-1-dequeue" target="_blank" rel="noopener"><strong>Dequeue</strong></a>
 method, which takes no parameters and removes and returns the
 element at the front of the queue. If the queue is empty, this
 method throws an <strong>InvalidOperationException</strong>.</li>
@@ -1588,9 +1505,8 @@ method throws an <strong>InvalidOperationException</strong>.</li>
 need to determine what type to make the elements. We will need to store
 the purchase price of each share we buy in the queue. An appropriate
 type for storing monetary amounts is the
-
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/decimals"><strong>decimal</strong></a> type.
+<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/decimals"><strong>decimal</strong></a>
+ type.
 Therefore, we will use an initially empty <strong>Queue&lt;decimal&gt;</strong>. Each
 time we buy shares, we enqueue the purchase price of each share onto the
 queue. When we sell shares, we need to compute the sum of the capital
@@ -1600,25 +1516,36 @@ subtract that purchase price from the selling price. Using the queue in
 this way ensures that we sell the shares in FIFO order.</p>
 
             <footer class="footline">
+
             </footer>
           </article>
 
     
     
           <article class="default">
-<div hidden><h1>Implementing a Queue</h1></div>
+            <header class="headline">
+            </header>
+<div hidden><h1 id="implementing-a-queue">Implementing a Queue</h1></div>
+
 <h2 id="implementing-a-queue">Implementing a Queue</h2>
 <p>We will approach the implementation of a queue much like we did the
-
-
 <a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/stack-impl">implementation of a
-stack</a> - we will use part
+stack</a>
+ - we will use part
 of an array to store the elements, and create a larger array as needed.
 However, efficiently implementing a stack is easier because we only need
 to access one end of a stack, but we need to access both ends of a
 queue. Suppose, for example, that we were to use the initial part of the
 array, as we did for a stack; i.e.:</p>
-<p><img src="bad-queue-impl.jpg" alt="A queue implementation using the initial part of anarray"></p>
+<p>
+<a href="#image-83cd8486c0650b1e3a5e736f8bb062e1" class="lightbox-link">
+<img src="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queue-impl/bad-queue-impl.jpg" alt="A queue implementation using the initial part of an
+array" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-83cd8486c0650b1e3a5e736f8bb062e1">
+<img src="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queue-impl/bad-queue-impl.jpg" alt="A queue implementation using the initial part of an
+array" class="lightbox-image" loading="lazy">
+</a></p>
 <p>This implementation works well as long as we are only enqueuing elements
 &mdash; each element is placed at the back, much like pushing an element onto
 a stack. However, consider what happens when we dequeue an element. The
@@ -1627,7 +1554,13 @@ maintain the above picture, we would need to move all of the remaining
 elements one location to the left. This becomes less efficient as the
 number of elements in the queue increases.</p>
 <p>One alternative is to modify the picture somewhat:</p>
-<p><img src="nowrap-queue.jpg" alt="A more general queue implementation"></p>
+<p>
+<a href="#image-6d704efe408dcff56258496e8eb70438" class="lightbox-link">
+<img src="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queue-impl/nowrap-queue.jpg" alt="A more general queue implementation" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-6d704efe408dcff56258496e8eb70438">
+<img src="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queue-impl/nowrap-queue.jpg" alt="A more general queue implementation" class="lightbox-image" loading="lazy">
+</a></p>
 <p>We can maintain this picture more efficiently, as there is now no need
 to move the elements when we dequeue an element. It does mean that we
 need to keep track of a bit more information, namely, the location of
@@ -1643,7 +1576,13 @@ element is in the last array location, we place the next element at
 index 0. It is as if we are imagining the array as being circular, as
 the next location after the last is back at the beginning. The following
 picture gives two views of such a &ldquo;circular array&rdquo; implementation:</p>
-<p><img src="wrapped-queue.jpg" alt="A circular array implementation of a queue"></p>
+<p>
+<a href="#image-45ebc0597a14691e811aee5e5dccc45b" class="lightbox-link">
+<img src="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queue-impl/wrapped-queue.jpg" alt="A circular array implementation of a queue" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-45ebc0597a14691e811aee5e5dccc45b">
+<img src="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queue-impl/wrapped-queue.jpg" alt="A circular array implementation of a queue" class="lightbox-image" loading="lazy">
+</a></p>
 <p>With this implementation, we only need to construct a larger array if we
 completely fill the current array, and unless we need to do this, we
 don&rsquo;t need to move elements around. We need the following class members
@@ -1657,27 +1596,38 @@ of the queue (if the queue is empty, this can be any valid index).</li>
 <p>Let us now consider how we would implement <strong>Enqueue</strong>. We first need to
 determine whether the array is full by comparing the <strong>Count</strong> with the
 size of the array. If it is full, we need to construct a new array of
-twice the size, as we did for both the 
-
-<a href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilder-impl"><strong>StringBuilder</strong>
+twice the size, as we did for both the <a href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilder-impl"><strong>StringBuilder</strong>
 implementation</a>
-and the 
 
-<a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/stack-impl">stack
-implementation</a>. However,
+and the <a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/stack-impl">stack
+implementation</a>
+. However,
 we can&rsquo;t simply copy the entire array to the beginning of the new array,
 as we did for these other two implementations. To do so would leave a
 gap in the middle of the queue, as shown in the following illustration:</p>
-<p><img src="bad-circular-array-copy.jpg" alt="Why a simple copy will not work for a circulararray"></p>
+<p>
+<a href="#image-39b04d1546035d2e0f4a9977002f0ab7" class="lightbox-link">
+<img src="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queue-impl/bad-circular-array-copy.jpg" alt="Why a simple copy will not work for a circular
+array" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-39b04d1546035d2e0f4a9977002f0ab7">
+<img src="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queue-impl/bad-circular-array-copy.jpg" alt="Why a simple copy will not work for a circular
+array" class="lightbox-image" loading="lazy">
+</a></p>
 <p>While there are several ways of copying the elements correctly, it may
 be helpful to copy in such a way that the index of the front of the
 queue remains unchanged; i.e., we copy as follows:</p>
-<p><img src="circular-array-copy.jpg" alt="A correct copy for a circular array"></p>
+<p>
+<a href="#image-73deebf8969e5884eb75d1ecbb922c4e" class="lightbox-link">
+<img src="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queue-impl/circular-array-copy.jpg" alt="A correct copy for a circular array" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-73deebf8969e5884eb75d1ecbb922c4e">
+<img src="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queue-impl/circular-array-copy.jpg" alt="A correct copy for a circular array" class="lightbox-image" loading="lazy">
+</a></p>
 <p>In order to copy the elements like this, we can use the <strong>static</strong>
 method,
-
-
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.array.copy?view=net-6.0#system-array-copy%28system-array-system-int32-system-array-system-int32-system-int32%29" target="_blank" rel="noopener"><strong>Array.Copy</strong></a>.
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.array.copy?view=net-6.0#system-array-copy%28system-array-system-int32-system-array-system-int32-system-int32%29" target="_blank"><strong>Array.Copy</strong></a>
+.
 This method takes the following parameters:</p>
 <ul>
 <li>The array to copy from.</li>
@@ -1728,164 +1678,17 @@ sure that when we update the index of the front of the queue, we don&rsquo;t
 go outside of the array. If we do, we need to wrap it back around to 0.</p>
 
             <footer class="footline">
+
             </footer>
           </article>
 
           </section>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
         </div>
       </main>
     
 <div class="git-footer">
+<p class="theme-version-footer">5.18.0</p>
 <p>Last modified by: 
             <i class='fas fa-user'></i> Russell Feldhausen
             <i class='fas fa-calendar'></i> <a href="https://gitlab.cs.ksu.edu/cis300/cis300-book/-/commit/922f538e5bb242ebedcf7260f2a5ef759abe56f5">May 22, 2023</a>
@@ -1894,185 +1697,8 @@ go outside of the array. If we do, we need to wrap it back around to 0.</p>
 
     
     </div>
-    <aside id="sidebar" class="default-animation">
-      <div id="header-wrapper" class="default-animation">
-        <div id="header" class="default-animation">
-<a id="logo" href="https://ksu-cs-textbooks.github.io/cis300/">
-  CIS 300 - Data Structures
-</a>
-
-        </div>
-        <div class="searchbox default-animation">
-          <label for="search-by"><i class="fas fa-search"></i></label>
-          <input data-search-input id="search-by" type="search" placeholder="Search...">
-          <span data-search-clear=""><i class="fas fa-times"></i></span>
-        </div>
-        <script>
-          var contentLangs=['en'];
-        </script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/auto-complete.js?1686587342" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr.min.js?1686587342" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr.stemmer.support.min.js?1686587342" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr.multi.min.js?1686587342" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr.en.min.js?1686587342" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/search.js?1686587342" defer></script>
-      </div>
-      <div id="content-wrapper" class="highlightable">
-        <ul class="topics collapsible-menu">
-          <li data-nav-id="/io/" title="Input/Output" class="dd-item"><input type="checkbox" id="section-cbd3b3207f24308a668546abfa69f213" class="toggle"/><label for="section-cbd3b3207f24308a668546abfa69f213" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/io/"><b>1. </b>Input/Output</a><ul>
-          <li data-nav-id="/io/dialogs/" title="Dialogs" class="dd-item"><input type="checkbox" id="section-61b1770a0bd16f4917e33b67edd271d2" class="toggle"/><label for="section-61b1770a0bd16f4917e33b67edd271d2" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/io/dialogs/"><b>1.1. </b>Dialogs</a><ul>
-          <li data-nav-id="/io/dialogs/message-boxes/" title="MessageBoxes" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/io/dialogs/message-boxes/"><b>1.1.1. </b>MessageBoxes</a></li>
-          <li data-nav-id="/io/dialogs/file-dialogs/" title="File Dialogs" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/io/dialogs/file-dialogs/"><b>1.1.2. </b>File Dialogs</a></li>
-          <li data-nav-id="/io/dialogs/custom/" title="Custom Dialogs" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/io/dialogs/custom/"><b>1.1.3. </b>Custom Dialogs</a></li></ul></li>
-          <li data-nav-id="/io/simple-text-file/" title="Simple Text File I/O" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/io/simple-text-file/"><b>1.2. </b>Simple Text File I/O</a></li>
-          <li data-nav-id="/io/exceptions/" title="Exception Handling" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/io/exceptions/"><b>1.3. </b>Exception Handling</a></li>
-          <li data-nav-id="/io/advanced-text-file/" title="Advanced Text File I/O" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/io/advanced-text-file/"><b>1.4. </b>Advanced Text File I/O</a></li>
-          <li data-nav-id="/io/other-file-io/" title="Other File I/O" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/io/other-file-io/"><b>1.5. </b>Other File I/O</a></li></ul></li>
-          <li data-nav-id="/strings/" title="strings and StringBuilders" class="dd-item"><input type="checkbox" id="section-9355ad26afa67cd4239c81429ad6e8ca" class="toggle"/><label for="section-9355ad26afa67cd4239c81429ad6e8ca" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/strings/"><b>2. </b>strings and StringBuilders</a><ul>
-          <li data-nav-id="/strings/strings/" title="strings" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/strings/strings/"><b>2.1. </b>strings</a></li>
-          <li data-nav-id="/strings/stringbuilders/" title="StringBuilders" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilders/"><b>2.2. </b>StringBuilders</a></li>
-          <li data-nav-id="/strings/stringbuilder-impl/" title="Implementation of StringBuilders" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilder-impl/"><b>2.3. </b>Implementation of StringBuilders</a></li></ul></li>
-          <li data-nav-id="/stacks-queues/" title="Stacks and Queues" class="dd-item active parent"><input type="checkbox" id="section-deefdc256b7889ce66393d7269597a4b" class="toggle" checked/><label for="section-deefdc256b7889ce66393d7269597a4b" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/"><b>3. </b>Stacks and Queues</a><ul>
-          <li data-nav-id="/stacks-queues/stacks/" title="Introduction to Stacks" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/stacks/"><b>3.1. </b>Introduction to Stacks</a></li>
-          <li data-nav-id="/stacks-queues/undo/" title="Implementing Undo and Redo for a TextBox" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/undo/"><b>3.2. </b>Implementing Undo and Redo for a TextBox</a></li>
-          <li data-nav-id="/stacks-queues/paren/" title="Parenthesis Matching" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/paren/"><b>3.3. </b>Parenthesis Matching</a></li>
-          <li data-nav-id="/stacks-queues/stack-impl/" title="Implementing a Stack" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/stack-impl/"><b>3.4. </b>Implementing a Stack</a></li>
-          <li data-nav-id="/stacks-queues/queues/" title="Introduction to Queues" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queues/"><b>3.5. </b>Introduction to Queues</a></li>
-          <li data-nav-id="/stacks-queues/queue-impl/" title="Implementing a Queue" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queue-impl/"><b>3.6. </b>Implementing a Queue</a></li></ul></li>
-          <li data-nav-id="/linked-lists/" title="Linked Lists" class="dd-item"><input type="checkbox" id="section-a51df6d53eeee393764eb46edb53958a" class="toggle"/><label for="section-a51df6d53eeee393764eb46edb53958a" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/"><b>4. </b>Linked Lists</a><ul>
-          <li data-nav-id="/linked-lists/intro/" title="Introduction to Linked Lists" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/intro/"><b>4.1. </b>Introduction to Linked Lists</a></li>
-          <li data-nav-id="/linked-lists/stacks-queues/" title="Implementing Stacks and Queues with Linked Lists" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/stacks-queues/"><b>4.2. </b>Implementing Stacks and Queues with Linked Lists</a></li>
-          <li data-nav-id="/linked-lists/sieve-eratosthenes/" title="Finding Prime Numbers" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/sieve-eratosthenes/"><b>4.3. </b>Finding Prime Numbers</a></li></ul></li>
-          <li data-nav-id="/dictionaries/" title="Dictionaries" class="dd-item"><input type="checkbox" id="section-9011afb8a0159b09a13a971ca89bced8" class="toggle"/><label for="section-9011afb8a0159b09a13a971ca89bced8" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/"><b>5. </b>Dictionaries</a><ul>
-          <li data-nav-id="/dictionaries/dictionary-tkey-tvalue/" title="The Dictionary&lt;TKey, TValue&gt; Class" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/dictionary-tkey-tvalue/"><b>5.1. </b>The Dictionary&lt;TKey, TValue&gt; Class</a></li>
-          <li data-nav-id="/dictionaries/linked-list-impl/" title="Implementing a Dictionary with a Linked List" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/linked-list-impl/"><b>5.2. </b>Implementing a Dictionary with a Linked List</a></li>
-          <li data-nav-id="/dictionaries/binary-search/" title="Implementing a Dictionary with an Array-Like Structure" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/binary-search/"><b>5.3. </b>Implementing a Dictionary with an Array-Like Structure</a></li></ul></li>
-          <li data-nav-id="/trees/" title="Trees" class="dd-item"><input type="checkbox" id="section-5e8305205d74771c71a9ea85594a7914" class="toggle"/><label for="section-5e8305205d74771c71a9ea85594a7914" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/trees/"><b>6. </b>Trees</a><ul>
-          <li data-nav-id="/trees/intro/" title="Introduction to Trees" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/intro/"><b>6.1. </b>Introduction to Trees</a></li>
-          <li data-nav-id="/trees/bst/" title="Binary Search Trees" class="dd-item"><input type="checkbox" id="section-8d42cd93516505610f8b32c65bbeebda" class="toggle"/><label for="section-8d42cd93516505610f8b32c65bbeebda" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/"><b>6.2. </b>Binary Search Trees</a><ul>
-          <li data-nav-id="/trees/bst/binary-trees/" title="Binary Trees" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/binary-trees/"><b>6.2.1. </b>Binary Trees</a></li>
-          <li data-nav-id="/trees/bst/intro/" title="Introduction to Binary Search Trees" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/intro/"><b>6.2.2. </b>Introduction to Binary Search Trees</a></li>
-          <li data-nav-id="/trees/bst/remove/" title="Removing from a Binary Search Tree" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/remove/"><b>6.2.3. </b>Removing from a Binary Search Tree</a></li>
-          <li data-nav-id="/trees/bst/inorder/" title="Inorder Traversal" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/inorder/"><b>6.2.4. </b>Inorder Traversal</a></li></ul></li>
-          <li data-nav-id="/trees/avl/" title="AVL Trees" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/avl/"><b>6.3. </b>AVL Trees</a></li>
-          <li data-nav-id="/trees/tries/" title="Tries" class="dd-item"><input type="checkbox" id="section-5f1f75af2aa97dd0bdbedb3b3e5adc65" class="toggle"/><label for="section-5f1f75af2aa97dd0bdbedb3b3e5adc65" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/"><b>6.4. </b>Tries</a><ul>
-          <li data-nav-id="/trees/tries/intro/" title="Introduction to Tries" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro/"><b>6.4.1. </b>Introduction to Tries</a></li>
-          <li data-nav-id="/trees/tries/multiple-impl/" title="Multiple Implementations of Children" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/multiple-impl/"><b>6.4.2. </b>Multiple Implementations of Children</a></li>
-          <li data-nav-id="/trees/tries/traversing/" title="Traversing a Trie" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/traversing/"><b>6.4.3. </b>Traversing a Trie</a></li>
-          <li data-nav-id="/trees/tries/word-games/" title="Tries in Word Games" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/word-games/"><b>6.4.4. </b>Tries in Word Games</a></li></ul></li>
-          <li data-nav-id="/trees/priority-queues/" title="Priority Queues" class="dd-item"><input type="checkbox" id="section-0e087c42aa39c815f492e3767eaf2ef7" class="toggle"/><label for="section-0e087c42aa39c815f492e3767eaf2ef7" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/"><b>6.5. </b>Priority Queues</a><ul>
-          <li data-nav-id="/trees/priority-queues/heaps/" title="Heaps" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/heaps/"><b>6.5.1. </b>Heaps</a></li>
-          <li data-nav-id="/trees/priority-queues/leftist-heaps/" title="Leftist Heaps" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/leftist-heaps/"><b>6.5.2. </b>Leftist Heaps</a></li>
-          <li data-nav-id="/trees/priority-queues/huffman-trees/" title="Huffman Trees" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/huffman-trees/"><b>6.5.3. </b>Huffman Trees</a></li></ul></li></ul></li>
-          <li data-nav-id="/hashing/" title="Hash Tables" class="dd-item"><input type="checkbox" id="section-cd22fc50afca8a60e214c94b94daa169" class="toggle"/><label for="section-cd22fc50afca8a60e214c94b94daa169" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/hashing/"><b>7. </b>Hash Tables</a><ul>
-          <li data-nav-id="/hashing/simple/" title="A Simple Hash Table Implementation" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/hashing/simple/"><b>7.1. </b>A Simple Hash Table Implementation</a></li>
-          <li data-nav-id="/hashing/rehashing/" title="Rehashing" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/hashing/rehashing/"><b>7.2. </b>Rehashing</a></li>
-          <li data-nav-id="/hashing/memoization/" title="Memoization" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/hashing/memoization/"><b>7.3. </b>Memoization</a></li>
-          <li data-nav-id="/hashing/equality/" title="Equality in C#" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/hashing/equality/"><b>7.4. </b>Equality in C#</a></li>
-          <li data-nav-id="/hashing/hash-functions/" title="Hash Codes" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/hashing/hash-functions/"><b>7.5. </b>Hash Codes</a></li></ul></li>
-          <li data-nav-id="/graphs/" title="Graphs" class="dd-item"><input type="checkbox" id="section-fefd7704561bcadc124f3f3c72c54ab3" class="toggle"/><label for="section-fefd7704561bcadc124f3f3c72c54ab3" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/graphs/"><b>8. </b>Graphs</a><ul>
-          <li data-nav-id="/graphs/intro/" title="Introduction to Graphs" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/graphs/intro/"><b>8.1. </b>Introduction to Graphs</a></li>
-          <li data-nav-id="/graphs/dijkstra/" title="Shortest Paths" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/graphs/dijkstra/"><b>8.2. </b>Shortest Paths</a></li>
-          <li data-nav-id="/graphs/breadth-first/" title="Unweighted Shortest Paths" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/graphs/breadth-first/"><b>8.3. </b>Unweighted Shortest Paths</a></li>
-          <li data-nav-id="/graphs/impl/" title="Implementing a Graph" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/graphs/impl/"><b>8.4. </b>Implementing a Graph</a></li></ul></li>
-          <li data-nav-id="/sorting/" title="Sorting" class="dd-item"><input type="checkbox" id="section-fd2166a393af1c48d2ffe636e6f952d8" class="toggle"/><label for="section-fd2166a393af1c48d2ffe636e6f952d8" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/sorting/"><b>9. </b>Sorting</a><ul>
-          <li data-nav-id="/sorting/select/" title="Select Sorts" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/sorting/select/"><b>9.1. </b>Select Sorts</a></li>
-          <li data-nav-id="/sorting/insert/" title="Insert Sorts" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/sorting/insert/"><b>9.2. </b>Insert Sorts</a></li>
-          <li data-nav-id="/sorting/merge/" title="Merge Sorts" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/sorting/merge/"><b>9.3. </b>Merge Sorts</a></li>
-          <li data-nav-id="/sorting/split/" title="Split Sorts" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/sorting/split/"><b>9.4. </b>Split Sorts</a></li>
-          <li data-nav-id="/sorting/hybrid/" title="Hybrid Sorting Algorithms" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/sorting/hybrid/"><b>9.5. </b>Hybrid Sorting Algorithms</a></li>
-          <li data-nav-id="/sorting/strings/" title="Sorting Strings" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/sorting/strings/"><b>9.6. </b>Sorting Strings</a></li></ul></li>
-          <li data-nav-id="/appendix/" title="Appendices" class="dd-item"><input type="checkbox" id="section-8a7f152ea576b5a4047f92c2cc1cabad" class="toggle"/><label for="section-8a7f152ea576b5a4047f92c2cc1cabad" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/"><b>A. </b>Appendices</a><ul>
-          <li data-nav-id="/appendix/syntax/" title="C# Syntax" class="dd-item"><input type="checkbox" id="section-6a5a5cc3bca4007f0866907612ee033f" class="toggle"/><label for="section-6a5a5cc3bca4007f0866907612ee033f" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/"><b>A1. </b>C# Syntax</a><ul>
-          <li data-nav-id="/appendix/syntax/reference-value/" title="Reference Types and Value Types" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/reference-value/"><b>A1.1. </b>Reference Types and Value Types</a></li>
-          <li data-nav-id="/appendix/syntax/enumerations/" title="Enumerations" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/enumerations/"><b>A1.2. </b>Enumerations</a></li>
-          <li data-nav-id="/appendix/syntax/structs/" title="Structures" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/structs/"><b>A1.3. </b>Structures</a></li>
-          <li data-nav-id="/appendix/syntax/decimals/" title="The decimal Type" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/decimals/"><b>A1.4. </b>The decimal Type</a></li>
-          <li data-nav-id="/appendix/syntax/const/" title="Read-Only and Constant Fields" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/const/"><b>A1.5. </b>Read-Only and Constant Fields</a></li>
-          <li data-nav-id="/appendix/syntax/properties/" title="Properties" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/properties/"><b>A1.6. </b>Properties</a></li>
-          <li data-nav-id="/appendix/syntax/indexers/" title="Indexers" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/indexers/"><b>A1.7. </b>Indexers</a></li>
-          <li data-nav-id="/appendix/syntax/static-this/" title="The Keywords static and this" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/static-this/"><b>A1.8. </b>The Keywords static and this</a></li>
-          <li data-nav-id="/appendix/syntax/out-ref/" title="out and ref Parameters" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/out-ref/"><b>A1.9. </b>out and ref Parameters</a></li>
-          <li data-nav-id="/appendix/syntax/foreach/" title="The foreach Statement" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/foreach/"><b>A1.10. </b>The foreach Statement</a></li>
-          <li data-nav-id="/appendix/syntax/enumerators/" title="Enumerators" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/enumerators/"><b>A1.11. </b>Enumerators</a></li>
-          <li data-nav-id="/appendix/syntax/switch/" title="The switch Statement" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/switch/"><b>A1.12. </b>The switch Statement</a></li>
-          <li data-nav-id="/appendix/syntax/remainder/" title="The Remainder Operator" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/remainder/"><b>A1.13. </b>The Remainder Operator</a></li></ul></li>
-          <li data-nav-id="/appendix/vs/" title="Visual Studio" class="dd-item"><input type="checkbox" id="section-805451f3a5b538fc2959767d013f4e16" class="toggle"/><label for="section-805451f3a5b538fc2959767d013f4e16" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/"><b>A2. </b>Visual Studio</a><ul>
-          <li data-nav-id="/appendix/vs/installing-vs/" title="Installing Visual Studio" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/installing-vs/"><b>A2.1 </b>Installing Visual Studio</a></li>
-          <li data-nav-id="/appendix/vs/repos/" title="Git Repositories" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/repos/"><b>A2.2. </b>Git Repositories</a></li>
-          <li data-nav-id="/appendix/vs/solutions/" title="Visual Studio Solutions" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/solutions/"><b>A2.3. </b>Visual Studio Solutions</a></li>
-          <li data-nav-id="/appendix/vs/design-window/" title="The Design Window" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/design-window/"><b>A2.4. </b>The Design Window</a></li>
-          <li data-nav-id="/appendix/vs/code-window/" title="The Code Window" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/code-window/"><b>A2.5. </b>The Code Window</a></li>
-          <li data-nav-id="/appendix/vs/debugger/" title="The Debugger" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/debugger/"><b>A2.6. </b>The Debugger</a></li>
-          <li data-nav-id="/appendix/vs/submitting/" title="Submitting Assignments" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/submitting/"><b>A2.7. </b>Submitting Assignments</a></li>
-          <li data-nav-id="/appendix/vs/nunit/" title="Unit Testing" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/nunit/"><b>A2.8. </b>Unit Testing</a></li>
-          <li data-nav-id="/appendix/vs/multiple/" title="Using Multiple Machines" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/multiple/"><b>A2.9. </b>Using Multiple Machines</a></li>
-          <li data-nav-id="/appendix/vs/checkpointing/" title="Checkpointing" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/checkpointing/"><b>A2.10. </b>Checkpointing</a></li></ul></li>
-          <li data-nav-id="/appendix/style/" title="Programming Style Requirements" class="dd-item"><input type="checkbox" id="section-3c7d664b64b84c9f89fc48179979363e" class="toggle"/><label for="section-3c7d664b64b84c9f89fc48179979363e" ></label><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/"><b>A3. </b>Programming Style Requirements</a><ul>
-          <li data-nav-id="/appendix/style/formatting/" title="General Formatting" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/formatting/"><b>A3.1. </b>General Formatting</a></li>
-          <li data-nav-id="/appendix/style/access-modifiers/" title="Access Modifiers" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/access-modifiers/"><b>A3.2. </b>Access Modifiers</a></li>
-          <li data-nav-id="/appendix/style/naming/" title="Naming Conventions" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/naming/"><b>A3.3. </b>Naming Conventions</a></li>
-          <li data-nav-id="/appendix/style/comments/" title="Comments" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/comments/"><b>A3.4. </b>Comments</a></li>
-          <li data-nav-id="/appendix/style/prohibited/" title="Prohibited Features" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis300/appendix/style/prohibited/"><b>A3.5 </b>Prohibited Features</a></li></ul></li></ul></li>
-        </ul>
-        <div class="footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"></div>
-        <hr class="default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"/>
-        <div id="prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVariantSwitch">
-          <ul>
-            <li id="select-language-container" class="footerLangSwitch">
-              <a class="padding select-container">
-                <i class="fas fa-language fa-fw"></i>
-                <span>&nbsp;</span>
-                <div class="select-style">
-                  <select id="select-language" onchange="location = baseUri + this.value;">
-                  </select>
-                </div>
-                <div class="select-clear"></div>
-              </a>
-            </li>
-            <li id="select-variant-container" class="footerVariantSwitch showVariantSwitch">
-              <a class="padding select-container">
-                <i class="fas fa-paint-brush fa-fw"></i>
-                <span>&nbsp;</span>
-                <div class="select-style">
-                  <select id="select-variant" onchange="window.variants && variants.changeVariant( this.value );">
-                    <option id="light-theme" value="light-theme" selected>Light Theme</option>
-                    <option id="dark-theme" value="dark-theme">Dark Theme</option>
-                  </select>
-                </div>
-                <div class="select-clear"></div>
-              </a>
-              <script>window.variants && variants.markSelectedVariant();</script>
-            </li>
-            <li class="footerVisitedLinks"><a class="padding" onclick="clearHistory();"><i class="fas fa-history fa-fw"></i> Clear History</a></li>
-          </ul>
-        </div>
-        <div id="footer" class="footerFooter showFooter"><style>
-  #footer {
-    font-size: 13px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 2rem 1rem;
-    min-width: 230px;
-    max-width: 300px;
-  }
-  #footer p {
-    margin: 0;
-  }
-  </style>
-
-<p>Built using <a href="http://gohugo.io/">Hugo</a> and <a href="https://github.com/ksu-cs-textbooks/hugo-theme-relearn">Hugo Relearn Theme</a> with assistance from Josh Weese and Russ Feldhausen.</p>
-<br/>
-<p>Microsoft and Visual Studio are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries. </p>
-<br/>
-<p><strong><i>© Copyright 2014-2023, <a href="http://people.cs.ksu.edu/~rhowell/" target="_">Rod Howell</a>. All rights reserved.</i></strong></p>
-
-        </div>
-      </div>
-    </aside>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1686587342" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1686587342" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/featherlight.min.js?1686587342" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1686587342" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1691596180" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1691596180" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1691596180" defer></script>
   </body>
 </html>

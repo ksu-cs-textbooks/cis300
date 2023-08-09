@@ -189,26 +189,6 @@
 	
 	
 		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
 		
 
 	
@@ -239,6 +219,11 @@
 	
 	
 		
+		
+
+	
+	
+		
 
 	
 	
@@ -254,6 +239,15 @@
 	
 		
 		
+
+	
+	
+		
+		
+		
+
+	
+	
 		
 
 	
@@ -263,6 +257,12 @@
 
 	
 	
+		
+		
+
+	
+	
+		
 		
 		
 		
@@ -519,9 +519,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Graphs on Data Structures in C#</title>
-    <link>https://ksu-cs-textbooks.github.io/cis300/graphs/</link>
+    <link>https://ksu-cs-textbooks.github.io/cis300/graphs/index.html</link>
     <description>Recent content in Graphs on Data Structures in C#</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://ksu-cs-textbooks.github.io/cis300/graphs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction to Graphs</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/graphs/intro/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis300/graphs/intro/index.html</guid>
+      <description>Introduction to Graphs There are two kinds of graphs: undirected and directed. An undirected graph consists of:
+a finite set of nodes; and a finite set of edges, which are 2-element subsets of the nodes. The fact that edges are 2-element sets means that the nodes that comprise an edge must be distinct. Furthermore, within a set, there is no notion of a &amp;ldquo;first&amp;rdquo; element or a &amp;ldquo;second&amp;rdquo; element &amp;mdash; there are just two elements.</description>
+    </item>
+    <item>
+      <title>Shortest Paths</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/graphs/dijkstra/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis300/graphs/dijkstra/index.html</guid>
+      <description>Shortest Paths In this section, we will consider a common graph problem &amp;mdash; that of finding a shortest path from a node u to a node v in a directed graph. We will assume that each edge contains as its data a nonnegative number. This number may represent a physical distance or some other cost, but for simplicity, we will refer to this value as the length of the edge. We can then define the length of a path to be the sum of the lengths of all the edges along that path.</description>
+    </item>
+    <item>
+      <title>Unweighted Shortest Paths</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/graphs/breadth-first/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis300/graphs/breadth-first/index.html</guid>
+      <description>Unweighted Shortest Paths In some shortest path problems, all edges have the same length. For example, we may be trying to find the shortest path out of a maze. Each cell in the maze is a node, and an edge connects two nodes if we can move between them in a single step. In this problem, we simply want to minimize the number of edges in a path to an exit.</description>
+    </item>
+    <item>
+      <title>Implementing a Graph</title>
+      <link>https://ksu-cs-textbooks.github.io/cis300/graphs/impl/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis300/graphs/impl/index.html</guid>
+      <description>Implementing a Graph Traditionally, there are two main techniques for implementing a graph. Each of these techniques has advantages and disadvantages, depending on the characteristics of the graph. In this section, we describe the implementation of the DirectedGraph&amp;lt;TNode, TEdgeData&amp;gt; class from Ksu.Cis300.Graphs.dll . This implementation borrows from both traditional techniques to obtain an implementation that provides good performance for any graph. In what follows, we will first describe the two traditional techniques and discuss the strengths and weaknesses of each.</description>
+    </item>
   </channel>
 </rss>
