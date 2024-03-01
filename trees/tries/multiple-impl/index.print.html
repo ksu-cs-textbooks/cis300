@@ -527,19 +527,19 @@
     <meta name="author" content="Rod Howell and Josh Weese">
     <title>Multiple Implementations of Children :: Data Structures in C#</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596180" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1691596180" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596180" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1691596180" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596180" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1691596180" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1691596180" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1691596180" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1691596180" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/format-print.css?1691596180" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1691596180" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1691596180"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1691596180"></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1709320855" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1709320855" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1709320855" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1709320855" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1709320855" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1709320855" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1709320855" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1709320855" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1709320855" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1709320855" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1709320855" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1709320855" rel="stylesheet" media="print">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/format-print.css?1709320855" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1709320855" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1709320855"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1709320855"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
@@ -558,7 +558,7 @@
       window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
     </script>
     
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1691596180" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1709320855" rel="stylesheet">
 
   </head>
   <body class="mobile-support print disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/trees/tries/multiple-impl/index.html">
@@ -900,31 +900,27 @@ modifications.</li>
 <strong>ITrie</strong> interface. This implies that they will each need a
 <strong>Contains</strong> method and an <strong>Add</strong> method as specified by the interface
 definition. However, the code for each of these methods will be
-different, as will other aspects of the implementations. For example,
-the <strong>TrieWithNoChildren</strong> and <strong>TrieWithOneChild</strong> classes need
-<strong>private</strong> fields as described at the beginning of this section,
-whereas the <strong>TrieWithManyChildren</strong> classes needs the same <strong>private</strong>
-fields as outlined in <a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro">the previous
+different, as will other aspects of the implementations.</p>
+<p>Let&rsquo;s first discuss how the <strong>TrieWithManyChildren</strong> class will differ from the class described in <a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro">the previous
 section</a>
-. In each case,
-whenever we need to refer to a trie, we will use the type <strong>ITrie</strong>.</p>
-<p>The <strong>Add</strong> methods for both <strong>TrieWithNoChildren</strong> and
-<strong>TrieWithOneChild</strong> will need to be able to construct instances of
-<strong>TrieWithOneChild</strong> and <strong>TrieWithManyChildren</strong>, respectively, when
-they have no room for the <strong>string</strong> being added. The instances they
-will need to construct will need information regarding the <strong>string</strong>s
-already being stored, plus the <strong>string</strong> being added; hence, we will
-need to define constructors for both <strong>TrieWithOneChild</strong> and
-<strong>TrieWithManyChildren</strong>. Each of these constructors will need to take
-the <strong>string</strong> being added as one of its parameters. Because the
-instance being constructed also needs to retain all of the information
-stored in the implementation that calls it, additional parameters for
-each of these constructors will correspond to the <strong>private</strong> fields of
-the implementation that will need to call it.</p>
-<p>Thus, the parameters for the <strong>TrieWithOneChild</strong> constructor will be a
+. First, its class statement will need to be modified to make the class implement the <strong>ITrie</strong> interface. This change will introduce a syntax error because the <strong>Add</strong> method in the <strong>ITrie</strong> interface has a return type of <strong>ITrie</strong>, rather than <strong>void</strong>. The return type of this method in the <strong>TrieWithManyChildren</strong> class will therefore need to be changed, and at the end <strong>this</strong> will need to be returned. Because the constants have been moved to the <strong>ITrie</strong> interface, their definitions will need to be removed from this class definition, and each occurrence will need to be prefixed by &ldquo;<strong>ITrie.</strong>&rdquo;. Throughout the class definition, the type of any trie should be made <strong>ITrie</strong>, except where a new trie is constructed in the <strong>Add</strong> method. Here, a new <strong>TrieWithNoChildren</strong> should be constructed.</p>
+<p>Finally, a constructor needs to be defined for the <strong>TrieWithManyChildren</strong> class. This constructor will be used by the <strong>TrieWithOneChild</strong> class when it needs to add a new child. Because a <strong>TrieWithOneChild</strong> cannot have two children, a <strong>TrieWithManyChildren</strong> will need to be constructed instead. This constructor will need the following parameters:</p>
+<ul>
+<li>A <strong>string</strong> giving the string that the <strong>TrieWithOneChild</strong> class needs to add.</li>
+<li>A <strong>bool</strong> indicating whether the constructed node should contain the empty string.</li>
+<li>A <strong>char</strong> giving the label of the child stored by the <strong>TrieWithOneChild</strong>.</li>
+<li>An <strong>ITrie</strong> giving the one child of the <strong>TrieWithOneChild</strong>.</li>
+</ul>
+<p>After doing some error checking to make sure the given <strong>string</strong> and <strong>ITrie</strong> are not <strong>null</strong> and that the given <strong>char</strong> is in the proper range, it will need to store the given <strong>bool</strong> in its <strong>bool</strong> field and store the given <strong>ITrie</strong> at the proper location of its array of children. Then, using its own <strong>Add</strong> method, it can add the given <strong>string</strong>.</p>
+<p>Let&rsquo;s now consider the <strong>TrieWithOneChild</strong> class. It will need three <strong>private</strong> fields:</p>
+<ul>
+<li>A <strong>bool</strong> indicating whether this node contains the empty string.</li>
+<li>A <strong>char</strong> giving the label of the only child.</li>
+<li>An <strong>ITrie</strong> giving the only child.</li>
+</ul>
+<p>As with the <strong>TrieWithManyChildren</strong> class the <strong>TrieWithOneChild</strong> class needs a constructor to allow the <strong>TrieWithNoChildren</strong> class to be able to add a nonempty string. This constructor&rsquo;s parameters will be a
 <strong>string</strong> to be stored (i.e., the one being added) and a <strong>bool</strong>
-indicating whether the empty <strong>string</strong> is also to be stored (i.e.,
-because it was stored in the original <strong>TrieWithNoChildren</strong>).
+indicating whether the empty <strong>string</strong> is also to be stored.
 Furthermore, because the empty <strong>string</strong> can always be added to a
 <strong>TrieWithNoChildren</strong> without constructing a new node, this constructor
 should never be passed the empty <strong>string</strong>. The constructor can then
@@ -940,56 +936,20 @@ not a lower-case English letter, throw an exception.</li>
 <strong>TrieWithNoChildren</strong> and adding to it the substring of the given
 <strong>string</strong> following the first character.</li>
 </ul>
-<p>The parameters for the <strong>TrieWithManyChildren</strong> constructor will need to
-be a <strong>string</strong> to be stored (i.e., the one being added), a <strong>bool</strong>
-indicating whether the empty <strong>string</strong> is to be stored, a <strong>char</strong>
-giving the label of a child, and an <strong>ITrie</strong> giving a child (these last
-three parameters will come from the original <strong>TrieWithOneChild</strong>). It
-can use the last three parameters to initialize its <strong>bool</strong> field and
-one of its children (computing the child&rsquo;s index as in <a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro">the previous
-section</a>
-). It can then
-use its own <strong>Add</strong> method to add the given <strong>string</strong>, as there will
-always be room to add a <strong>string</strong> to this implementation; hence, it can
-ignore the value returned by the <strong>Add</strong> method. Furthermore, because
-the <strong>Add</strong> method does error checking on the given <strong>string</strong>, the only
-error checking this constructor needs to do is to check that neither the given <strong>string</strong> nor the given <strong>ITrie</strong> is <strong>null</strong>, and to
-verify that the given <strong>char</strong> is a lower-case English letter.</p>
-<p>Aside from replacing the constants with those defined in the <strong>ITrie</strong> interface, the <strong>Contains</strong> method for <strong>TrieWithManyChildren</strong> can be exactly the
-same as for the implementation in <a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro">the previous
-section</a>
-. For the other
-two classes, the structure of the method is similar. Specifically, the
+<p>The structure of the <strong>Contains</strong> method for the <strong>TrieWithOneChild</strong> class is similar to the <strong>TrieWithManyChildren</strong> class. Specifically, the
 empty <strong>string</strong> needs to be handled first (after checking that the <strong>string</strong> isn&rsquo;t <strong>null</strong>) and in exactly the same way,
 as the empty <strong>string</strong> is represented in the same way in all three
 implementations. Nonempty <strong>string</strong>s, however, are represented
-differently, and hence need to be handled differently. This is easy for
-the <strong>TrieWithNoChildren</strong> class, as this implementation can&rsquo;t store a
-nonempty <strong>string</strong>; hence, its <strong>Contains</strong> method should simply return
-<strong>false</strong> when the given <strong>string</strong> is nonempty. For <strong>TrieWithOneChild</strong>, we need to check to
+differently, and hence need to be handled differently. For <strong>TrieWithOneChild</strong>, we need to check to
 see if the first character of the given <strong>string</strong> matches the child&rsquo;s
 label. If so, we can recursively look for the remainder of the
 <strong>string</strong> in that child. Otherwise, we should simply return <strong>false</strong>,
 as this <strong>string</strong> is not in this trie.</p>
-<p>The <strong>Add</strong> method for <strong>TrieWithManyChildren</strong> needs some modification
-from the description given in <a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro">the previous
-section</a>
-. The most significant change is that this
-method must return the resulting trie, which will always be <strong>this</strong>, as
-this implementation never needs to be replaced by another to accommodate
-a new <strong>string</strong>. Also, the names of the constants need to be replaced by the constants defined in the <strong>ITrie</strong> interface. Finally, where a
-new child is constructed, it should be a
-<strong>TrieWithNoChildren</strong>, but any other occurrences of the type <strong>Trie</strong> should be replaced with <strong>ITrie</strong>.</p>
-<p>The <strong>Add</strong> method for <strong>TrieWithNoChildren</strong> will need to handle a <strong>null</strong> or
-empty <strong>string</strong> in the same way as the above <strong>Add</strong> method. However,
-this implementation cannot store a nonempty <strong>string</strong>. In this case, it
-will need to construct and return a new <strong>TrieWithOneChild</strong> containing
-the <strong>string</strong> to be added and the <strong>bool</strong> stored in this node.</p>
 <p>The <strong>Add</strong> method for <strong>TrieWithOneChild</strong> will need five cases:</p>
 <ul>
-<li>A <strong>null string</strong>: This case can be handled in the same way as for the other two classes.</li>
+<li>A <strong>null string</strong>: This case can be handled in the same way as for <strong>TrieWithManyChildren</strong>.</li>
 <li>The empty <strong>string</strong>: This case can be handled in the same way as
-for the other two classes.</li>
+for <strong>TrieWithManyChildren</strong>.</li>
 <li>A nonempty <strong>string</strong> whose first character is not a lower-case letter: An exception should be thrown.</li>
 <li>A nonempty <strong>string</strong> whose first character matches the child&rsquo;s
 label: The remainder of the <strong>string</strong> can be added to the child
@@ -1002,6 +962,12 @@ child&rsquo;s label. In this case, we need to return a new
 <strong>TrieWithManyChildren</strong> containing the given <strong>string</strong> and all of
 the information already being stored.</li>
 </ul>
+<p>The <strong>TrieWithNoChildren</strong> class is the simplest of the three, as we don&rsquo;t need to worry about any children. The only <strong>private</strong> field it needs is a <strong>bool</strong> to indicate whether it stores the empty string. Its <strong>Contains</strong> method needs to handle <strong>null</strong> or empty strings in the same way as for the other two classes, but because a <strong>TrieWithNoChildren</strong> cannot contain a nonempty string, this method can simply return <strong>false</strong> when it is given a nonempty string.</p>
+<p>The <strong>Add</strong> method for <strong>TrieWithNoChildren</strong> will need to handle a <strong>null</strong> or
+empty <strong>string</strong> in the same way as the the other two classes. However,
+this implementation cannot store a nonempty <strong>string</strong>. In this case, it
+will need to construct and return a new <strong>TrieWithOneChild</strong> containing
+the <strong>string</strong> to be added and the <strong>bool</strong> stored in this node.</p>
 <p>Code that uses such a trie will need to refer to it as an <strong>ITrie</strong>
 whenever possible. The only exception to this rule occurs when we are
 constructing a new trie, as we cannot construct an instance of an
@@ -1027,14 +993,14 @@ trie with whatever the <strong>Add</strong> method returns.</p>
 <p class="theme-version-footer">5.18.0</p>
 <p>Last modified by: 
             <i class='fas fa-user'></i> Rod Howell
-            <i class='fas fa-calendar'></i> <a href="https://gitlab.cs.ksu.edu/cis300/cis300-book/-/commit/3e0469bee25761d3b32ffe45d587c629a8118d82">Jun 7, 2023</a>
+            <i class='fas fa-calendar'></i> <a href="https://gitlab.cs.ksu.edu/cis300/cis300-book/-/commit/b2e42e81df6b407db1d72a067d269474ae15cd94">Mar 1, 2024</a>
 </p>
 </div>
 
     
     </div>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1691596180" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1691596180" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1709320855" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1709320855" defer></script>
     <script>
       function useMathJax( config ){
         if( !Object.assign ){
@@ -1063,7 +1029,7 @@ trie with whatever the <strong>Add</strong> method returns.</p>
       }
       useMathJax( JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="https://ksu-cs-textbooks.github.io/cis300/js/mathjax/tex-mml-chtml.js?1691596180"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1691596180" defer></script>
+    <script id="MathJax-script" async src="https://ksu-cs-textbooks.github.io/cis300/js/mathjax/tex-mml-chtml.js?1709320855"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1709320855" defer></script>
   </body>
 </html>

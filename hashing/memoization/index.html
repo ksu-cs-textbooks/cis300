@@ -527,18 +527,18 @@
     <meta name="author" content="Rod Howell and Josh Weese">
     <title>Memoization :: Data Structures in C#</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596177" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596177" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1691596177" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596177" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596177" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1691596177" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596177" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596177" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1691596177" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1691596177" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1691596177" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1691596177" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1691596177" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1691596177"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1691596177"></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1709320852" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1709320852" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1709320852" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1709320852" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1709320852" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1709320852" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1709320852" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1709320852" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1709320852" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1709320852" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1709320852" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1709320852" rel="stylesheet" media="print">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1709320852" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1709320852"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1709320852"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
@@ -557,7 +557,7 @@
       window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
     </script>
     
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1691596177" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1709320852" rel="stylesheet">
 
   </head>
   <body class="mobile-support html disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/hashing/memoization/index.html">
@@ -688,10 +688,10 @@ making legal plays.</li>
 </ul>
 <p>Thus, the tree defined by (2/2; 2/2) is as follows:</p>
 <p>
-<a href="#image-b4bcc458e7b49e2276d0596a5946f1f2" class="lightbox-link">
+<a href="#image-729fbb4eca6cf9bef3a7d5e4195df2a2" class="lightbox-link">
 <img src="nim-tree.jpg" alt="The tree defined by a Nim position." style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-b4bcc458e7b49e2276d0596a5946f1f2">
+<a href="javascript:history.back();" class="lightbox" id="image-729fbb4eca6cf9bef3a7d5e4195df2a2">
 <img src="nim-tree.jpg" alt="The tree defined by a Nim position." class="lightbox-image" loading="lazy">
 </a></p>
 <p>The winning plays have each been marked with a &lsquo;W&rsquo; in the above tree. As in
@@ -793,12 +793,12 @@ will examine these topics.</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/auto-complete.js?1691596178" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr/lunr.min.js?1691596178" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr/lunr.stemmer.support.min.js?1691596178" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr/lunr.multi.min.js?1691596178" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr/lunr.en.min.js?1691596178" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/search.js?1691596178" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis300/js/auto-complete.js?1709320853" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr/lunr.min.js?1709320853" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr/lunr.stemmer.support.min.js?1709320853" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr/lunr.multi.min.js?1709320853" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr/lunr.en.min.js?1709320853" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis300/js/search.js?1709320853" defer></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics enlarge morespace collapsible-menu">
@@ -964,8 +964,8 @@ will examine these topics.</p>
         </div>
       </div>
     </aside>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1691596178" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1691596178" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1691596178" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1709320853" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1709320853" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1709320853" defer></script>
   </body>
 </html>

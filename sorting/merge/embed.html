@@ -527,18 +527,18 @@
     <meta name="author" content="Rod Howell and Josh Weese">
     <title>Merge Sorts :: Data Structures in C#</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596179" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1691596179" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1691596179" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596179" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1691596179" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1691596179" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596179" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1691596179" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1691596179" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1691596179" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1691596179" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1691596179" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1691596179" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1691596179"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1691596179"></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1709320854" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1709320854" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1709320854" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1709320854" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1709320854" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1709320854" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1709320854" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1709320854" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1709320854" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1709320854" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1709320854" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1709320854" rel="stylesheet" media="print">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1709320854" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1709320854"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1709320854"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
@@ -557,7 +557,7 @@
       window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
     </script>
     
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1691596179" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1709320854" rel="stylesheet">
 
   </head>
   <body class="mobile-support embed disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/sorting/merge/embed.html">
@@ -576,10 +576,10 @@
 Thus, we should focus our attention on an array that is partitioned into
 two sorted parts, as shown in the following figure.</p>
 <p>
-<a href="#image-253f04811d3dff2452aa49e1d31faa26" class="lightbox-link">
+<a href="#image-79df45667ec268c7da9077afcd4ef76d" class="lightbox-link">
 <img src="merge-sorts.jpg" alt="The arrangement at a step of a merge sort." style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-253f04811d3dff2452aa49e1d31faa26">
+<a href="javascript:history.back();" class="lightbox" id="image-79df45667ec268c7da9077afcd4ef76d">
 <img src="merge-sorts.jpg" alt="The arrangement at a step of a merge sort." class="lightbox-image" loading="lazy">
 </a></p>
 <p>The different ways of implementing a merge sort depend both on how the
@@ -606,10 +606,10 @@ portion of the result, these elements will be the smallest ones. Because
 both of the parts we are merging are sorted, these smallest elements
 must come from initial portions of these two parts, as shown below.</p>
 <p>
-<a href="#image-4c8ab84d0a4196b89497d887e7f26628" class="lightbox-link">
+<a href="#image-d3c94dcd02102c33e345291c2db4adfe" class="lightbox-link">
 <img src="merging.jpg" alt="A snapshot of the merge." style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-4c8ab84d0a4196b89497d887e7f26628">
+<a href="javascript:history.back();" class="lightbox" id="image-d3c94dcd02102c33e345291c2db4adfe">
 <img src="merging.jpg" alt="A snapshot of the merge." class="lightbox-image" loading="lazy">
 </a></p>
 <p>Initially, the three shaded areas above are all empty. In order to
@@ -687,10 +687,10 @@ files will contain the same number of sorted sequences or the one that
 was written to first will contain one more sorted sequence than the
 other. The following figure illustrates these two files.</p>
 <p>
-<a href="#image-a3ae60014f4b50c085e9aba001e53923" class="lightbox-link">
+<a href="#image-9a51b08492c727b8253555417eafa824" class="lightbox-link">
 <img src="external-merge-sort.jpg" alt="Two files written by external merge sort" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-a3ae60014f4b50c085e9aba001e53923">
+<a href="javascript:history.back();" class="lightbox" id="image-9a51b08492c727b8253555417eafa824">
 <img src="external-merge-sort.jpg" alt="Two files written by external merge sort" class="lightbox-image" loading="lazy">
 </a></p>
 <p>The algorithm then enters the main loop. Initially the output file first
@@ -808,8 +808,8 @@ increase
     
     
     
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1691596180" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1691596180" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1709320855" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1709320855" defer></script>
     <script>
       function useMathJax( config ){
         if( !Object.assign ){
@@ -838,7 +838,7 @@ increase
       }
       useMathJax( JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="https://ksu-cs-textbooks.github.io/cis300/js/mathjax/tex-mml-chtml.js?1691596180"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1691596180" defer></script>
+    <script id="MathJax-script" async src="https://ksu-cs-textbooks.github.io/cis300/js/mathjax/tex-mml-chtml.js?1709320855"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1709320855" defer></script>
   </body>
 </html>
