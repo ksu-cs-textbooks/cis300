@@ -349,32 +349,29 @@ These three classes will be similar because they each will implement the
 **ITrie** interface. This implies that they will each need a
 **Contains** method and an **Add** method as specified by the interface
 definition. However, the code for each of these methods will be
-different, as will other aspects of the implementations. For example,
-the **TrieWithNoChildren** and **TrieWithOneChild** classes need
-**private** fields as described at the beginning of this section,
-whereas the **TrieWithManyChildren** classes needs the same **private**
-fields as outlined in [the previous
-section](/trees/tries/intro). In each case,
-whenever we need to refer to a trie, we will use the type **ITrie**.
+different, as will other aspects of the implementations. 
 
-The **Add** methods for both **TrieWithNoChildren** and
-**TrieWithOneChild** will need to be able to construct instances of
-**TrieWithOneChild** and **TrieWithManyChildren**, respectively, when
-they have no room for the **string** being added. The instances they
-will need to construct will need information regarding the **string**s
-already being stored, plus the **string** being added; hence, we will
-need to define constructors for both **TrieWithOneChild** and
-**TrieWithManyChildren**. Each of these constructors will need to take
-the **string** being added as one of its parameters. Because the
-instance being constructed also needs to retain all of the information
-stored in the implementation that calls it, additional parameters for
-each of these constructors will correspond to the **private** fields of
-the implementation that will need to call it.
+Let's first discuss how the **TrieWithManyChildren** class will differ from the class described in [the previous
+section](/trees/tries/intro). First, its class statement will need to be modified to make the class implement the **ITrie** interface. This change will introduce a syntax error because the **Add** method in the **ITrie** interface has a return type of **ITrie**, rather than **void**. The return type of this method in the **TrieWithManyChildren** class will therefore need to be changed, and at the end **this** will need to be returned. Because the constants have been moved to the **ITrie** interface, their definitions will need to be removed from this class definition, and each occurrence will need to be prefixed by "**ITrie.**". Throughout the class definition, the type of any trie should be made **ITrie**, except where a new trie is constructed in the **Add** method. Here, a new **TrieWithNoChildren** should be constructed.
 
-Thus, the parameters for the **TrieWithOneChild** constructor will be a
+Finally, a constructor needs to be defined for the **TrieWithManyChildren** class. This constructor will be used by the **TrieWithOneChild** class when it needs to add a new child. Because a **TrieWithOneChild** cannot have two children, a **TrieWithManyChildren** will need to be constructed instead. This constructor will need the following parameters:
+
+- A **string** giving the string that the **TrieWithOneChild** class needs to add.
+- A **bool** indicating whether the constructed node should contain the empty string.
+- A **char** giving the label of the child stored by the **TrieWithOneChild**.
+- An **ITrie** giving the one child of the **TrieWithOneChild**.
+
+After doing some error checking to make sure the given **string** and **ITrie** are not **null** and that the given **char** is in the proper range, it will need to store the given **bool** in its **bool** field and store the given **ITrie** at the proper location of its array of children. Then, using its own **Add** method, it can add the given **string**.
+
+Let's now consider the **TrieWithOneChild** class. It will need three **private** fields:
+
+- A **bool** indicating whether this node contains the empty string.
+- A **char** giving the label of the only child.
+- An **ITrie** giving the only child.
+
+As with the **TrieWithManyChildren** class the **TrieWithOneChild** class needs a constructor to allow the **TrieWithNoChildren** class to be able to add a nonempty string. This constructor's parameters will be a
 **string** to be stored (i.e., the one being added) and a **bool**
-indicating whether the empty **string** is also to be stored (i.e.,
-because it was stored in the original **TrieWithNoChildren**).
+indicating whether the empty **string** is also to be stored.
 Furthermore, because the empty **string** can always be added to a
 **TrieWithNoChildren** without constructing a new node, this constructor
 should never be passed the empty **string**. The constructor can then
@@ -390,57 +387,21 @@ operate as follows:
     **TrieWithNoChildren** and adding to it the substring of the given
     **string** following the first character.
 
-The parameters for the **TrieWithManyChildren** constructor will need to
-be a **string** to be stored (i.e., the one being added), a **bool**
-indicating whether the empty **string** is to be stored, a **char**
-giving the label of a child, and an **ITrie** giving a child (these last
-three parameters will come from the original **TrieWithOneChild**). It
-can use the last three parameters to initialize its **bool** field and
-one of its children (computing the child's index as in [the previous
-section](/trees/tries/intro)). It can then
-use its own **Add** method to add the given **string**, as there will
-always be room to add a **string** to this implementation; hence, it can
-ignore the value returned by the **Add** method. Furthermore, because
-the **Add** method does error checking on the given **string**, the only
-error checking this constructor needs to do is to check that neither the given **string** nor the given **ITrie** is **null**, and to
-verify that the given **char** is a lower-case English letter.
-
-Aside from replacing the constants with those defined in the **ITrie** interface, the **Contains** method for **TrieWithManyChildren** can be exactly the
-same as for the implementation in [the previous
-section](/trees/tries/intro). For the other
-two classes, the structure of the method is similar. Specifically, the
+The structure of the **Contains** method for the **TrieWithOneChild** class is similar to the **TrieWithManyChildren** class. Specifically, the
 empty **string** needs to be handled first (after checking that the **string** isn't **null**) and in exactly the same way,
 as the empty **string** is represented in the same way in all three
 implementations. Nonempty **string**s, however, are represented
-differently, and hence need to be handled differently. This is easy for
-the **TrieWithNoChildren** class, as this implementation can't store a
-nonempty **string**; hence, its **Contains** method should simply return
-**false** when the given **string** is nonempty. For **TrieWithOneChild**, we need to check to
+differently, and hence need to be handled differently. For **TrieWithOneChild**, we need to check to
 see if the first character of the given **string** matches the child's
 label. If so, we can recursively look for the remainder of the
 **string** in that child. Otherwise, we should simply return **false**,
 as this **string** is not in this trie.
 
-The **Add** method for **TrieWithManyChildren** needs some modification
-from the description given in [the previous
-section](/trees/tries/intro). The most significant change is that this
-method must return the resulting trie, which will always be **this**, as
-this implementation never needs to be replaced by another to accommodate
-a new **string**. Also, the names of the constants need to be replaced by the constants defined in the **ITrie** interface. Finally, where a
-new child is constructed, it should be a
-**TrieWithNoChildren**, but any other occurrences of the type **Trie** should be replaced with **ITrie**.
-
-The **Add** method for **TrieWithNoChildren** will need to handle a **null** or
-empty **string** in the same way as the above **Add** method. However,
-this implementation cannot store a nonempty **string**. In this case, it
-will need to construct and return a new **TrieWithOneChild** containing
-the **string** to be added and the **bool** stored in this node.
-
 The **Add** method for **TrieWithOneChild** will need five cases:
 
-  - A **null string**: This case can be handled in the same way as for the other two classes.
+  - A **null string**: This case can be handled in the same way as for **TrieWithManyChildren**.
   - The empty **string**: This case can be handled in the same way as
-    for the other two classes.
+    for **TrieWithManyChildren**.
   - A nonempty **string** whose first character is not a lower-case letter: An exception should be thrown.
   - A nonempty **string** whose first character matches the child's
     label: The remainder of the **string** can be added to the child
@@ -452,6 +413,14 @@ The **Add** method for **TrieWithOneChild** will need five cases:
     child's label. In this case, we need to return a new
     **TrieWithManyChildren** containing the given **string** and all of
     the information already being stored.
+
+The **TrieWithNoChildren** class is the simplest of the three, as we don't need to worry about any children. The only **private** field it needs is a **bool** to indicate whether it stores the empty string. Its **Contains** method needs to handle **null** or empty strings in the same way as for the other two classes, but because a **TrieWithNoChildren** cannot contain a nonempty string, this method can simply return **false** when it is given a nonempty string.
+
+The **Add** method for **TrieWithNoChildren** will need to handle a **null** or
+empty **string** in the same way as the the other two classes. However,
+this implementation cannot store a nonempty **string**. In this case, it
+will need to construct and return a new **TrieWithOneChild** containing
+the **string** to be added and the **bool** stored in this node.
 
 Code that uses such a trie will need to refer to it as an **ITrie**
 whenever possible. The only exception to this rule occurs when we are
