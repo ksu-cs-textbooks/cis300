@@ -527,18 +527,18 @@
     <meta name="author" content="Rod Howell and Josh Weese">
     <title>Introduction to Linked Lists :: Data Structures in C#</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1709320852" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1709320852" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1709320852" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1709320852" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1709320852" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1709320852" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1709320852" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1709320852" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1709320852" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1709320852" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1709320852" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1709320852" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1709320852" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1709320852"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1709320852"></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771758" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771758" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1710771758" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771758" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771758" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1710771758" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771758" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771758" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1710771758" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1710771758" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1710771758" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1710771758" rel="stylesheet" media="print">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1710771758" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1710771758"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1710771758"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
@@ -557,7 +557,7 @@
       window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
     </script>
     
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1709320852" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1710771758" rel="stylesheet">
 
   </head>
   <body class="mobile-support html disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/linked-lists/intro/index.html">
@@ -650,10 +650,10 @@ type</a>
 <p>Although the <strong>LinkedListCell&lt;T&gt;</strong> class is simple, we can use its
 <strong>Next</strong> property to chain together long sequences of its instances:</p>
 <p>
-<a href="#image-3cf1422930e2e1853f131b9e026ca1d6" class="lightbox-link">
+<a href="#image-29551f0a3212da1a675cd94ae9844510" class="lightbox-link">
 <img src="linked-list-example.jpg" alt="A linked list" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-3cf1422930e2e1853f131b9e026ca1d6">
+<a href="javascript:history.back();" class="lightbox" id="image-29551f0a3212da1a675cd94ae9844510">
 <img src="linked-list-example.jpg" alt="A linked list" class="lightbox-image" loading="lazy">
 </a></p>
 <p>In the above figure, <code>p</code> is a <strong>LinkedListCell&lt;string&gt;</strong> variable.
@@ -687,10 +687,10 @@ property, we will get a <strong>NullReferenceException</strong>).</li>
 this linked list. We use the <strong>LinkedListCell&lt;T&gt;</strong> constructor to initialize a new cell:</p>
 <div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>LinkedListCell&lt;<span style="color:#66d9ef">string</span>&gt; cell = <span style="color:#66d9ef">new</span>(<span style="color:#e6db74">&#34;Notice&#34;</span>, p);</span></span></code></pre></div><p>This yields the following:</p>
 <p>
-<a href="#image-adf718c7ab17eba888c770696d6e0576" class="lightbox-link">
+<a href="#image-3da52c1ae21ed70585f7409faa1afa3b" class="lightbox-link">
 <img src="linked-list-insert-2.jpg" alt="Linking in the cell" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-adf718c7ab17eba888c770696d6e0576">
+<a href="javascript:history.back();" class="lightbox" id="image-3da52c1ae21ed70585f7409faa1afa3b">
 <img src="linked-list-insert-2.jpg" alt="Linking in the cell" class="lightbox-image" loading="lazy">
 </a></p>
 <p>This is what we want, unless we want <code>p</code> to refer to the beginning of
@@ -699,20 +699,20 @@ to <code>p</code>:</p>
 <div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>p = cell;</span></span></code></pre></div><p>This yields the following (we are not showing <code>cell</code> because we are no
 longer interested in it, but it still refers to the same cell):</p>
 <p>
-<a href="#image-e14d79fd83e61badc55a0fea2a204770" class="lightbox-link">
+<a href="#image-bc5566265118bdcf89cc87260f11522e" class="lightbox-link">
 <img src="linked-list-insert-3.jpg" alt="Completing the insertion" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-e14d79fd83e61badc55a0fea2a204770">
+<a href="javascript:history.back();" class="lightbox" id="image-bc5566265118bdcf89cc87260f11522e">
 <img src="linked-list-insert-3.jpg" alt="Completing the insertion" class="lightbox-image" loading="lazy">
 </a></p>
 <p>We can also undo the above statement by copying into <code>p</code> the reference
 in the <strong>Next</strong> property of the cell to which <code>p</code> refers:</p>
 <div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>p = p.Next;</span></span></code></pre></div><p>(If this statement occurs in a context in which the compiler cannot determine that <code>p</code> is not <strong>null</strong>, an <code>!</code> will need to be inserted prior to <code>.Next</code>.) This yields the following:</p>
 <p>
-<a href="#image-f09fbbbe555396da0841accc983eb702" class="lightbox-link">
+<a href="#image-595a87dad5df35c0b9788c9a6458385e" class="lightbox-link">
 <img src="linked-list-remove-first.jpg" alt="Removing the first cell" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-f09fbbbe555396da0841accc983eb702">
+<a href="javascript:history.back();" class="lightbox" id="image-595a87dad5df35c0b9788c9a6458385e">
 <img src="linked-list-remove-first.jpg" alt="Removing the first cell" class="lightbox-image" loading="lazy">
 </a></p>
 <p>This has the effect of removing &ldquo;Notice:&rdquo; from the linked list to which
@@ -729,10 +729,10 @@ subsequent sections. For now let us simply observe that linked lists do
 not always continue until they reach a <strong>null</strong> - they can contain
 cycles, as follows:</p>
 <p>
-<a href="#image-da76dd3b16b856c95ceb15a7aef0b368" class="lightbox-link">
+<a href="#image-c24d425c8c200cb8e0b11f99fefd88f4" class="lightbox-link">
 <img src="linked-list-cycle.jpg" alt="A linked list with a cycle" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-da76dd3b16b856c95ceb15a7aef0b368">
+<a href="javascript:history.back();" class="lightbox" id="image-c24d425c8c200cb8e0b11f99fefd88f4">
 <img src="linked-list-cycle.jpg" alt="A linked list with a cycle" class="lightbox-image" loading="lazy">
 </a></p>
 <p>This is occasionally what we want, but more often, this is a programming
@@ -772,12 +772,12 @@ error that leads to an infinite loop.</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/auto-complete.js?1709320853" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr/lunr.min.js?1709320853" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr/lunr.stemmer.support.min.js?1709320853" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr/lunr.multi.min.js?1709320853" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr/lunr.en.min.js?1709320853" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis300/js/search.js?1709320853" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis300/js/auto-complete.js?1710771759" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr/lunr.min.js?1710771759" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr/lunr.stemmer.support.min.js?1710771759" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr/lunr.multi.min.js?1710771759" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis300/js/lunr/lunr.en.min.js?1710771759" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis300/js/search.js?1710771759" defer></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics enlarge morespace collapsible-menu">
@@ -943,8 +943,8 @@ error that leads to an infinite loop.</p>
         </div>
       </div>
     </aside>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1709320853" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1709320853" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1709320853" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1710771759" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1710771759" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1710771759" defer></script>
   </body>
 </html>

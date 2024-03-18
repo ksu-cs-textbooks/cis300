@@ -527,19 +527,19 @@
     <meta name="author" content="Rod Howell and Josh Weese">
     <title>Hash Tables :: Data Structures in C#</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1709320855" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1709320855" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1709320855" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1709320855" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1709320855" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1709320855" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1709320855" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1709320855" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1709320855" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1709320855" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1709320855" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1709320855" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/format-print.css?1709320855" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1709320855" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1709320855"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1709320855"></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1710771761" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1710771761" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1710771761" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1710771761" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1710771761" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1710771761" rel="stylesheet" media="print">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/format-print.css?1710771761" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1710771761" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1710771761"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1710771761"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
@@ -558,7 +558,7 @@
       window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
     </script>
     
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1709320855" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1710771761" rel="stylesheet">
 
   </head>
   <body class="mobile-support print disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/hashing/index.html">
@@ -616,10 +616,10 @@ The following picture illustrates the layout of a hash table in which
 the keys are <strong>string</strong>s and the values are <strong>int</strong>s, and the hash
 function is denoted by <em>h</em>:</p>
 <p>
-<a href="#image-145ff51679d30e6caa963bbc733f473c" class="lightbox-link">
+<a href="#image-6ce660d34373e6d0811a983c22af0162" class="lightbox-link">
 <img src="https://ksu-cs-textbooks.github.io/cis300/hashing/hash-table.jpg" alt="A hash table." style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-145ff51679d30e6caa963bbc733f473c">
+<a href="javascript:history.back();" class="lightbox" id="image-6ce660d34373e6d0811a983c22af0162">
 <img src="https://ksu-cs-textbooks.github.io/cis300/hashing/hash-table.jpg" alt="A hash table." class="lightbox-image" loading="lazy">
 </a></p>
 
@@ -1030,10 +1030,10 @@ making legal plays.</li>
 </ul>
 <p>Thus, the tree defined by (2/2; 2/2) is as follows:</p>
 <p>
-<a href="#image-729fbb4eca6cf9bef3a7d5e4195df2a2" class="lightbox-link">
+<a href="#image-abfa376a73d16b0fa91c065b4a6531dc" class="lightbox-link">
 <img src="https://ksu-cs-textbooks.github.io/cis300/hashing/memoization/nim-tree.jpg" alt="The tree defined by a Nim position." style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-729fbb4eca6cf9bef3a7d5e4195df2a2">
+<a href="javascript:history.back();" class="lightbox" id="image-abfa376a73d16b0fa91c065b4a6531dc">
 <img src="https://ksu-cs-textbooks.github.io/cis300/hashing/memoization/nim-tree.jpg" alt="The tree defined by a Nim position." class="lightbox-image" loading="lazy">
 </a></p>
 <p>The winning plays have each been marked with a &lsquo;W&rsquo; in the above tree. As in
@@ -1549,8 +1549,8 @@ value of the hash code field.</p>
 
     
     </div>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1709320855" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1709320855" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1710771761" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1710771761" defer></script>
     <script>
       function useMathJax( config ){
         if( !Object.assign ){
@@ -1579,7 +1579,7 @@ value of the hash code field.</p>
       }
       useMathJax( JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="https://ksu-cs-textbooks.github.io/cis300/js/mathjax/tex-mml-chtml.js?1709320855"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1709320855" defer></script>
+    <script id="MathJax-script" async src="https://ksu-cs-textbooks.github.io/cis300/js/mathjax/tex-mml-chtml.js?1710771761"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1710771761" defer></script>
   </body>
 </html>

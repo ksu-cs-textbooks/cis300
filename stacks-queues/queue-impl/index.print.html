@@ -527,19 +527,19 @@
     <meta name="author" content="Rod Howell and Josh Weese">
     <title>Implementing a Queue :: Data Structures in C#</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1709320855" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1709320855" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1709320855" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1709320855" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1709320855" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1709320855" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1709320855" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1709320855" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1709320855" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1709320855" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1709320855" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1709320855" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/format-print.css?1709320855" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1709320855" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1709320855"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1709320855"></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1710771761" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1710771761" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1710771761" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1710771761" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1710771761" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1710771761" rel="stylesheet" media="print">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/format-print.css?1710771761" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1710771761" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1710771761"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1710771761"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
@@ -558,7 +558,7 @@
       window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
     </script>
     
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1709320855" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1710771761" rel="stylesheet">
 
   </head>
   <body class="mobile-support print disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queue-impl/index.html">
@@ -607,11 +607,11 @@ to access one end of a stack, but we need to access both ends of a
 queue. Suppose, for example, that we were to use the initial part of the
 array, as we did for a stack; i.e.:</p>
 <p>
-<a href="#image-6c9420452e8086580d833d33466f4509" class="lightbox-link">
+<a href="#image-085349cf25cd9e48d9c836a834ca2386" class="lightbox-link">
 <img src="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queue-impl/bad-queue-impl.jpg" alt="A queue implementation using the initial part of an
 array" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-6c9420452e8086580d833d33466f4509">
+<a href="javascript:history.back();" class="lightbox" id="image-085349cf25cd9e48d9c836a834ca2386">
 <img src="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queue-impl/bad-queue-impl.jpg" alt="A queue implementation using the initial part of an
 array" class="lightbox-image" loading="lazy">
 </a></p>
@@ -624,10 +624,10 @@ elements one location to the left. This becomes less efficient as the
 number of elements in the queue increases.</p>
 <p>One alternative is to modify the picture somewhat:</p>
 <p>
-<a href="#image-f473460c9de0c54af9017b47e738161f" class="lightbox-link">
+<a href="#image-b74c5fa5f4fa69d647396d9ce9e78ff8" class="lightbox-link">
 <img src="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queue-impl/nowrap-queue.jpg" alt="A more general queue implementation" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-f473460c9de0c54af9017b47e738161f">
+<a href="javascript:history.back();" class="lightbox" id="image-b74c5fa5f4fa69d647396d9ce9e78ff8">
 <img src="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queue-impl/nowrap-queue.jpg" alt="A more general queue implementation" class="lightbox-image" loading="lazy">
 </a></p>
 <p>We can maintain this picture more efficiently, as there is now no need
@@ -646,10 +646,10 @@ index 0. It is as if we are imagining the array as being circular, as
 the next location after the last is back at the beginning. The following
 picture gives two views of such a &ldquo;circular array&rdquo; implementation:</p>
 <p>
-<a href="#image-8fb42db5abd723364b4361af0f96c8f1" class="lightbox-link">
+<a href="#image-c8d95634b2750cc676895be5a1bfe24d" class="lightbox-link">
 <img src="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queue-impl/wrapped-queue.jpg" alt="A circular array implementation of a queue" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-8fb42db5abd723364b4361af0f96c8f1">
+<a href="javascript:history.back();" class="lightbox" id="image-c8d95634b2750cc676895be5a1bfe24d">
 <img src="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queue-impl/wrapped-queue.jpg" alt="A circular array implementation of a queue" class="lightbox-image" loading="lazy">
 </a></p>
 <p>With this implementation, we only need to construct a larger array if we
@@ -675,11 +675,11 @@ we can&rsquo;t simply copy the entire array to the beginning of the new array,
 as we did for these other two implementations. To do so would leave a
 gap in the middle of the queue, as shown in the following illustration:</p>
 <p>
-<a href="#image-7df8c2a192ba23a99c2580ecad5dd135" class="lightbox-link">
+<a href="#image-5ec892dd9dbc98f8a403101cb409a247" class="lightbox-link">
 <img src="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queue-impl/bad-circular-array-copy.jpg" alt="Why a simple copy will not work for a circular
 array" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-7df8c2a192ba23a99c2580ecad5dd135">
+<a href="javascript:history.back();" class="lightbox" id="image-5ec892dd9dbc98f8a403101cb409a247">
 <img src="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queue-impl/bad-circular-array-copy.jpg" alt="Why a simple copy will not work for a circular
 array" class="lightbox-image" loading="lazy">
 </a></p>
@@ -687,10 +687,10 @@ array" class="lightbox-image" loading="lazy">
 be helpful to copy in such a way that the index of the front of the
 queue remains unchanged; i.e., we copy as follows:</p>
 <p>
-<a href="#image-0932b0fd0f6bfc620c6d53144ed84e5a" class="lightbox-link">
+<a href="#image-d18141e887a510e82e82cd3b9ad433d1" class="lightbox-link">
 <img src="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queue-impl/circular-array-copy.jpg" alt="A correct copy for a circular array" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-0932b0fd0f6bfc620c6d53144ed84e5a">
+<a href="javascript:history.back();" class="lightbox" id="image-d18141e887a510e82e82cd3b9ad433d1">
 <img src="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queue-impl/circular-array-copy.jpg" alt="A correct copy for a circular array" class="lightbox-image" loading="lazy">
 </a></p>
 <p>In order to copy the elements like this, we can use the <strong>static</strong>
@@ -765,8 +765,8 @@ go outside of the array. If we do, we need to wrap it back around to 0.</p>
 
     
     </div>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1709320855" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1709320855" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1709320855" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1710771761" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1710771761" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1710771761" defer></script>
   </body>
 </html>
