@@ -1,660 +1,32 @@
-
-
-
-
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.18.0">
-    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
-    <meta name="description" content="K-State CIS 300: Data Structures">
-    <meta name="author" content="Rod Howell and Josh Weese">
-    <title>Sorting :: Data Structures in C#</title>
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1710771761" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1710771761" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/format-print.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1710771761" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1710771761"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1710771761"></script>
-    <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
-      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
-      var root_url="https://ksu-cs-textbooks.github.io/cis300/";
-      var baseUri=root_url.replace(/\/$/, '');
-      // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
-      window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
-    </script>
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1710771761" rel="stylesheet">
-
-  </head>
-  <body class="mobile-support print disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/sorting/index.html">
-    <div id="body" class="default-animation">
-      <div id="sidebar-overlay"></div>
-      <div id="toc-overlay"></div>
-      <nav id="topbar" class="highlightable">
-        <div>
-          <div id="top-tele-link">
-            <a class="print-link" title='Teleprompter View' href="https://ksu-cs-textbooks.github.io/cis300/sorting/tele.html">
-              <i class="fas fa-tv fa-fw"></i>
-            </a>
-          </div>
-          <div id="top-embed-link">
-            <a class="print-link" title='Embeddable Version' href="https://ksu-cs-textbooks.github.io/cis300/sorting/embed.html">
-              <i class="fas fa-expand-arrows-alt fa-fw"></i>
-            </a>
-          </div>
-          <div id="breadcrumbs">
-            <span id="sidebar-toggle-span">
-              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
-            </span>
-            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis300/index.html"><span itemprop="name">Data Structures in C#</span></a><meta itemprop="position" content="1"> &gt; </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Sorting</span><meta itemprop="position" content="2"></li>
-            </ol>
-          </div>
-        </div>
-      </nav>
-      <main id="body-inner" class="highlightable default" tabindex="-1">
-        <div class="flex-block-wrapper">
-          <article class="default">
-            <header class="headline">
-            </header>
-<div hidden><h1 id="sorting">Sorting</h1></div>
-
-<h2 id="sorting">Sorting</h2>
-<p>We conclude this text with a look at a common activity in computing, namely, sorting data. While .NET provides several methods for sorting data, it is instructive to examine the implementation details of different techniques. While there is one sorting algorithm
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=robots content="noindex, nofollow, noarchive, noimageindex"><meta name=description content="Sorting We conclude this text with a look at a common activity in computing, namely, sorting data. While .NET provides several methods for sorting data, it is instructive to examine the implementation details of different techniques. While there is one sorting algorithm that is used more commonly than the others, none is best for all situations. An understanding of which algorithms perform better in different situations can help us to make better choices and thereby achieve better performance for the software we build."><meta name=author content="Rod Howell and Josh Weese"><meta name=twitter:card content="summary"><meta name=twitter:title content="Sorting :: Data Structures in C#"><meta name=twitter:description content="Sorting We conclude this text with a look at a common activity in computing, namely, sorting data. While .NET provides several methods for sorting data, it is instructive to examine the implementation details of different techniques. While there is one sorting algorithm that is used more commonly than the others, none is best for all situations. An understanding of which algorithms perform better in different situations can help us to make better choices and thereby achieve better performance for the software we build."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis300/sorting/"><meta property="og:site_name" content="Data Structures in C#"><meta property="og:title" content="Sorting :: Data Structures in C#"><meta property="og:description" content="Sorting We conclude this text with a look at a common activity in computing, namely, sorting data. While .NET provides several methods for sorting data, it is instructive to examine the implementation details of different techniques. While there is one sorting algorithm that is used more commonly than the others, none is best for all situations. An understanding of which algorithms perform better in different situations can help us to make better choices and thereby achieve better performance for the software we build."><meta property="og:locale" content="en-us"><meta property="og:type" content="website"><meta itemprop=name content="Sorting :: Data Structures in C#"><meta itemprop=description content="Sorting We conclude this text with a look at a common activity in computing, namely, sorting data. While .NET provides several methods for sorting data, it is instructive to examine the implementation details of different techniques. While there is one sorting algorithm that is used more commonly than the others, none is best for all situations. An understanding of which algorithms perform better in different situations can help us to make better choices and thereby achieve better performance for the software we build."><meta itemprop=dateModified content="2023-06-12T11:28:08-05:00"><meta itemprop=wordCount content="198"><title>Sorting :: Data Structures in C#</title>
+<link href=/cis300/css/fontawesome-all.min.css?1719513823 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fontawesome-all.min.css?1719513823 rel=stylesheet></noscript><link href=/cis300/css/nucleus.css?1719513823 rel=stylesheet><link href=/cis300/css/auto-complete.css?1719513823 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/auto-complete.css?1719513823 rel=stylesheet></noscript><link href=/cis300/css/perfect-scrollbar.min.css?1719513823 rel=stylesheet><link href=/cis300/css/fonts.css?1719513823 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fonts.css?1719513823 rel=stylesheet></noscript><link href=/cis300/css/theme.css?1719513823 rel=stylesheet><link href=/cis300/css/theme-auto.css?1719513823 rel=stylesheet id=R-variant-style><link href=/cis300/css/chroma-auto.css?1719513823 rel=stylesheet id=R-variant-chroma-style><link href=/cis300/css/variant.css?1719513823 rel=stylesheet><link href=/cis300/css/print.css?1719513823 rel=stylesheet media=print><link href=/cis300/css/format-print.css?1719513823 rel=stylesheet><script src=/cis300/js/variant.js?1719513823></script><script>window.relearn=window.relearn||{},window.relearn.relBasePath="..",window.relearn.relBaseUri="../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis300",window.index_js_url="/cis300/index.search.js",window.variants&&variants.init(["auto","light-theme","dark-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis300/css/custom.css?1719513823 rel=stylesheet></head><body class="mobile-support print disableInlineCopyToClipboard" data-url=/cis300/sorting/><div id=R-body class=default-animation><div id=R-body-overlay></div><nav id=R-topbar><div class=topbar-wrapper><div class=topbar-sidebar-divider></div><div class="topbar-area topbar-area-start" data-area=start><div class="topbar-button topbar-button-sidebar" data-content-empty=disable data-width-s=show data-width-m=hide data-width-l=hide><button class=topbar-control onclick=toggleNav() type=button title="Menu (CTRL+ALT+n)"><i class="fa-fw fas fa-bars"></i></button></div></div><ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype=http://schema.org/BreadcrumbList><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><span itemprop=name>Sorting</span><meta itemprop=position content="1"></li></ol><div class="topbar-area topbar-area-end" data-area=end><div class="topbar-button topbar-button-prev" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/cis300/graphs/impl/ title="Implementing a Graph (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></div><div class="topbar-button topbar-button-next" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/cis300/sorting/select/ title="Select Sorts (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></div></div></div></nav><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><div hidden><h1 id=sorting>Sorting</h1></div><h2 id=sorting>Sorting</h2><p>We conclude this text with a look at a common activity in computing, namely, sorting data. While .NET provides several methods for sorting data, it is instructive to examine the implementation details of different techniques. While there is one sorting algorithm
 that is used more commonly than the others, none is best for all
 situations. An understanding of which algorithms perform better in
 different situations can help us to make better choices and thereby
 achieve better performance for the software we build. Furthermore,
 because there are so many different approaches to sorting, studying the
 various techniques can help us to see how different approaches can be
-used for the same problem in order to obtain different algorithms.</p>
-<p>In this chapter, we will consider several sorting algorithms, but not
+used for the same problem in order to obtain different algorithms.</p><p>In this chapter, we will consider several sorting algorithms, but not
 nearly all of them. In the first four sections, we will focus on
 algorithms that can be applied to any data type that can sorted; thus,
 we will only consider algorithms that operate by comparing data elements
 to each other. Most of these algorithms can be divided into four general
 approaches. We consider each of these approaches separately. We then
-conclude with an algorithm designed specifically for sorting strings.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-          <section>
-            <h1 class="a11y-only">Subsections of Sorting</h1>
-    
-    
-          <article class="default">
-            <header class="headline">
-            </header>
-<div hidden><h1 id="select-sorts">Select Sorts</h1></div>
-
-<h2 id="select-sorts">Select Sorts</h2>
-<p>A select sort operates by repeatedly selecting the smallest data element
+conclude with an algorithm designed specifically for sorting strings.</p><footer class=footline></footer></article><section><h1 class=a11y-only>Subsections of Sorting</h1><article class=default><header class=headline></header><div hidden><h1 id=select-sorts>Select Sorts</h1></div><h2 id=select-sorts>Select Sorts</h2><p>A select sort operates by repeatedly selecting the smallest data element
 of an unsorted portion of the array and moving it to the end of a sorted
 portion. Thus, at each step, the data items will be arranged into two
-parts:</p>
-<ol>
-<li>A sorted part; and</li>
-<li>An unsorted part in which each element is at least as large as all
-elements in the sorted part.</li>
-</ol>
-<p>The following figure illustrates this arrangement.</p>
-<p>
-<a href="#image-69927aaba401d1c33f4839e702ffdd38" class="lightbox-link">
-<img src="https://ksu-cs-textbooks.github.io/cis300/sorting/select/select-sorts.jpg" alt="The arrangement at each step of a select sort." style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-69927aaba401d1c33f4839e702ffdd38">
-<img src="https://ksu-cs-textbooks.github.io/cis300/sorting/select/select-sorts.jpg" alt="The arrangement at each step of a select sort." class="lightbox-image" loading="lazy">
-</a></p>
-<p>Initially, the sorted part will be empty. At each step, the unsorted
+parts:</p><ol><li>A sorted part; and</li><li>An unsorted part in which each element is at least as large as all
+elements in the sorted part.</li></ol><p>The following figure illustrates this arrangement.</p><p><a href=#R-image-06f9e7b9a91cc53e9c3aea4e7630e017 class=lightbox-link><img alt="The arrangement at each step of a select sort." class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/sorting/select/select-sorts.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-06f9e7b9a91cc53e9c3aea4e7630e017><img alt="The arrangement at each step of a select sort." class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/sorting/select/select-sorts.jpg></a></p><p>Initially, the sorted part will be empty. At each step, the unsorted
 part is rearranged so that its smallest element comes first. As a
 result, the sorted part can now contain one more element, and the
-unsorted part one fewer element. After 
-<span class="math align-center">$ n - 1 $</span> steps, where 
+unsorted part one fewer element. After
+<span class="math align-center">$ n - 1 $</span> steps, where
 <span class="math align-center">$ n $</span> is
 the number of elements in the array, the sorted part will have all but
 one of the elements. Because the one element in the unsorted part must
 be at least as large as all elements in the sorted part, the entire
-array will be sorted at this point.</p>
-<p>The approach outlined above can be implemented in various ways. The main
+array will be sorted at this point.</p><p>The approach outlined above can be implemented in various ways. The main
 difference in these implementations is in how we rearrange the unsorted
 part to bring its smallest element to the beginning of that part. The
 most straightforward way to do this is to find the smallest element in
@@ -664,39 +36,35 @@ loops. The outer loop index keeps track of how many elements are in the
 sorted part. The unsorted part then begins at this index. The inner loop
 is responsible for finding the smallest element in the unsorted part.
 Once the inner loop has finished, the smallest element is swapped with
-the first element in the unsorted part.</p>
-<p>Note that the inner loop in selection sort iterates once for every
+the first element in the unsorted part.</p><p>Note that the inner loop in selection sort iterates once for every
 element in the unsorted part. On the first iteration of the outer loop,
-the unsorted part contains all 
+the unsorted part contains all
 <span class="math align-center">$ n $</span> elements. On each successive
 iteration, the unsorted part is one element smaller, until on the last
-iteration, it has only 
+iteration, it has only
 <span class="math align-center">$ 2 $</span> elements. If we add up all these values, we
 find that the inner loop iterates a total of exactly
-
 <span class="math align-center">$ (n - 1)(n + 2)/2 $</span> times. This value is
-proportional to 
-<span class="math align-center">$ n^2 $</span> as 
+proportional to
+<span class="math align-center">$ n^2 $</span> as
 <span class="math align-center">$ n $</span> increases; hence, the running
-time of the algorithm is in 
+time of the algorithm is in
 <span class="math align-center">$ O(n^2) $</span>. Furthermore, this
-performance occurs no matter how the data items are initially arranged.</p>
-<p>As we will see in what follows, 
+performance occurs no matter how the data items are initially arranged.</p><p>As we will see in what follows,
 <span class="math align-center">$ O(n^2) $</span> performance is not
 very good if we want to sort a moderately large data set. For example,
-sorting 
-<span class="math align-center">$ 100,000 $</span> elements will require about 
+sorting
+<span class="math align-center">$ 100,000 $</span> elements will require about
 <span class="math align-center">$ 5 $</span> billion iterations of the
 inner loop. On the positive side, the only time data items are moved is
 when a swap is made at the end of the outer loop; hence, this number is
-proportional to 
+proportional to
 <span class="math align-center">$ n $</span>. This could be advantageous if we are sorting large
 value types, as we would not need to write these large data elements
 very many times. However, for general performance reasons, large data
 types shouldn&rsquo;t be value types &mdash; they should be reference types to avoid
 unnecessary copying of the values. For this reason, selection sort isn&rsquo;t
-a particularly good sorting algorithm.</p>
-<p><span id="stable"></span> Performance issues aside, however, there is
+a particularly good sorting algorithm.</p><p><span id=stable></span> Performance issues aside, however, there is
 one positive aspect to selection sort. This aspect has to do with
 sorting by keys. Consider, for example, the rows of a spreadsheet. We
 often want to sort these rows by the values in a specific column. These
@@ -711,40 +79,33 @@ equal to remain sorted by their secondary key. Therefore, a sorting
 algorithm that always maintains the original order of equal keys is said
 to be <em>stable</em>. If we are careful how we implement the inner loop of
 selection sort so that we always select the first instance of the
-smallest key, then this algorithm is stable.</p>
-<p><span id="bubble-sort"></span> Another implementation of a select sort
+smallest key, then this algorithm is stable.</p><p><span id=bubble-sort></span> Another implementation of a select sort
 is <em>bubble sort</em>. It rearranges the unsorted part by swapping adjacent
 elements that are out of order. It starts with the last two elements
-(i.e., the elements at locations 
-<span class="math align-center">$ n - 1 $</span> and <span style="white-space:nowrap">
-<span class="math align-center">$ n - 2 $</span>)</span>, then
-the elements at locations 
-<span class="math align-center">$ n - 2 $</span> and <span style="white-space:nowrap">
-<span class="math align-center">$ n - 3 $</span>,</span> etc.
+(i.e., the elements at locations
+<span class="math align-center">$ n - 1 $</span> and <span style=white-space:nowrap><span class="math align-center">$ n - 2 $</span>)</span>, then
+the elements at locations
+<span class="math align-center">$ n - 2 $</span> and <span style=white-space:nowrap><span class="math align-center">$ n - 3 $</span>,</span> etc.
 Proceeding in this way, the smallest element in the unsorted part will
 end up at the beginning of the unsorted part. While the inner loop is
 doing this, it keeps track of whether it has made any swaps. If the loop
 completes without having made any swaps, then the array is sorted, and
-the algorithm therefore stops.</p>
-<p>Like selection sort, bubble sort is stable. In the worst case, however,
+the algorithm therefore stops.</p><p>Like selection sort, bubble sort is stable. In the worst case, however,
 the performance of bubble sort is even worse than that of selection
-sort. It is still in <span style="white-space:nowrap">
-<span class="math align-center">$ O(n^2) $</span>,</span> but in the worst case, its
+sort. It is still in <span style=white-space:nowrap><span class="math align-center">$ O(n^2) $</span>,</span> but in the worst case, its
 inner loop performs the same number of iterations, but does a lot more
 swaps. Bubble sort does outperform selection sort on some inputs, but
 describing when this will occur isn&rsquo;t easy. For example, in an array in
 which the largest element occurs in the first location, and the
 remaining locations are sorted, the performance ends up being about the
 same as selection sort &mdash; even though this array is nearly sorted. Like
-selection sort, it is best to avoid bubble sort.</p>
-<p><span id="heap-sort"></span> A select sort that significantly
+selection sort, it is best to avoid bubble sort.</p><p><span id=heap-sort></span> A select sort that significantly
 outperforms selection sort is known as <em>heap sort</em>. This algorithm is
 based on the idea that a priority queue can be used to sort data &mdash; we
 first place all items in a priority queue, using the values themselves
 as priorities (if we are sorting by keys, then we use the keys as
 priorities). We then repeatedly remove the element with largest
-priority, filling the array from back to front with these elements.</p>
-<p>We can optimize the above algorithm by using a priority queue
+priority, filling the array from back to front with these elements.</p><p>We can optimize the above algorithm by using a priority queue
 implementation called a <em>binary heap</em>, whose implementation details we
 will only sketch. The basic idea is that we can form a binary tree from
 the elements of an array by using their locations in the array. The
@@ -753,166 +114,106 @@ children are the next four elements, etc. Given an array location, we
 can then compute the locations of its parent and both of its children.
 The priorities are arranged so that the root of each subtree contains
 the maximum priority in that subtree. It is possible to arrange the
-elements of an array into a binary heap in 
+elements of an array into a binary heap in
 <span class="math align-center">$ O(n) $</span> time, and to remove
-an element with maximum priority in 
-<span class="math align-center">$ O(\lg n) $</span> time.</p>
-<p>Heap sort then works by pre-processing the array to arrange it into a
+an element with maximum priority in
+<span class="math align-center">$ O(\lg n) $</span> time.</p><p>Heap sort then works by pre-processing the array to arrange it into a
 binary heap. The binary heap then forms the unsorted part, and it is
 followed by the sorted part, whose elements are all no smaller than any
 element in the unsorted part. While this arrangement is slightly
 different from the arrangement for the first two select sorts, the idea
-is the same. To rearrange the unsorted part, it:</p>
-<ol>
-<li>Copies the first (i.e., highest-priority) element to a temporary
-variable.</li>
-<li>Removes the element with maximum priority (i.e., the first element).</li>
-<li>Places the copy of the first element into the space vacated by its
-removal at the beginning of the sorted part.</li>
-</ol>
-<p>Heap sort runs in 
+is the same. To rearrange the unsorted part, it:</p><ol><li>Copies the first (i.e., highest-priority) element to a temporary
+variable.</li><li>Removes the element with maximum priority (i.e., the first element).</li><li>Places the copy of the first element into the space vacated by its
+removal at the beginning of the sorted part.</li></ol><p>Heap sort runs in
 <span class="math align-center">$ O(n \lg n) $</span> time in the worst case.
 Information theory can be used to prove that any sorting algorithm that
-sorts by comparing elements must make at least 
+sorts by comparing elements must make at least
 <span class="math align-center">$ \lg(n!) $</span> comparisons on
-some arrays of size <span style="white-space:nowrap">
-<span class="math align-center">$ n $</span>.</span> Because 
+some arrays of size <span style=white-space:nowrap><span class="math align-center">$ n $</span>.</span> Because
 <span class="math align-center">$ \lg(n!) $</span> is proportional to
-<span style="white-space:nowrap">
-<span class="math align-center">$ n \lg n $</span>,</span> we cannot hope to do any better than
-
+<span style=white-space:nowrap><span class="math align-center">$ n \lg n $</span>,</span> we cannot hope to do any better than
 <span class="math align-center">$ O(n \lg n) $</span> in the worst case. While this performance is a
 significant improvement over selection sort and bubble sort, we will see
 in later that
 there is are algorithms that do even better in practice.
-Furthermore, heap sort is not stable.</p>
-<p>On the other hand, we will also see that heap sort is an important component of an efficient hybrid
-algorithm. This algorithm is one of the best general-purpose sorting algorithms; in fact, it is used by .NET&rsquo;s <a href="https://learn.microsoft.com/en-us/dotnet/api/system.array.sort?view=net-6.0#system-array-sort%28system-array%29" target="_blank"><strong>Array.Sort</strong></a>
- method. We
-will examine this approach in &ldquo;<a href="https://ksu-cs-textbooks.github.io/cis300/sorting/hybrid">Hybrid
-Sorts</a>
-&rdquo;.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-    
-    
-          <article class="default">
-            <header class="headline">
-            </header>
-<div hidden><h1 id="insert-sorts">Insert Sorts</h1></div>
-
-<h2 id="insert-sorts">Insert Sorts</h2>
-<p>An insert sort operates by repeatedly inserting an element into a sorted
+Furthermore, heap sort is not stable.</p><p>On the other hand, we will also see that heap sort is an important component of an efficient hybrid
+algorithm. This algorithm is one of the best general-purpose sorting algorithms; in fact, it is used by .NET&rsquo;s <a href="https://learn.microsoft.com/en-us/dotnet/api/system.array.sort?view=net-6.0#system-array-sort(system-array)" rel=external target=_blank><strong>Array.Sort</strong></a> method. We
+will examine this approach in &ldquo;<a href=/cis300/sorting/hybrid/>Hybrid
+Sorts</a>&rdquo;.</p><footer class=footline></footer></article><article class=default><header class=headline></header><div hidden><h1 id=insert-sorts>Insert Sorts</h1></div><h2 id=insert-sorts>Insert Sorts</h2><p>An insert sort operates by repeatedly inserting an element into a sorted
 portion of the array. Thus, as for select sorts, at each step the data
 items will be arranged into a sorted part, followed by an unsorted part;
 however, for insert sorts, there is no restriction on how elements in
 the unsorted part compare to elements in the sorted part. The following
-figure illustrates this arrangement.</p>
-<p>
-<a href="#image-5d053757a54c249e9c3a04fd6e3a2736" class="lightbox-link">
-<img src="https://ksu-cs-textbooks.github.io/cis300/sorting/insert/insert-sorts.jpg" alt="The arrangement at each step of an insert sort." style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-5d053757a54c249e9c3a04fd6e3a2736">
-<img src="https://ksu-cs-textbooks.github.io/cis300/sorting/insert/insert-sorts.jpg" alt="The arrangement at each step of an insert sort." class="lightbox-image" loading="lazy">
-</a></p>
-<p>Initially, the sorted part will contain the first element, as a single
+figure illustrates this arrangement.</p><p><a href=#R-image-0a32490696bedbaf91de536803a543a8 class=lightbox-link><img alt="The arrangement at each step of an insert sort." class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/sorting/insert/insert-sorts.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-0a32490696bedbaf91de536803a543a8><img alt="The arrangement at each step of an insert sort." class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/sorting/insert/insert-sorts.jpg></a></p><p>Initially, the sorted part will contain the first element, as a single
 element is always sorted. At each step, the first element in the
 unsorted part is inserted into its proper location in the sorted part.
 As a result, the sorted part now contains one more element, and the
-unsorted part one fewer element. After 
-<span class="math align-center">$ n - 1 $</span> steps, where 
+unsorted part one fewer element. After
+<span class="math align-center">$ n - 1 $</span> steps, where
 <span class="math align-center">$ n $</span> is
 the number of elements in the array, the sorted part will contain all
-the elements, and the algorithm will be done.</p>
-<p>Again, this approach can be implemented in various ways. The main
+the elements, and the algorithm will be done.</p><p>Again, this approach can be implemented in various ways. The main
 difference in these implementations is in how we insert an element. The
-most straightforward way is as follows:</p>
-<ol>
-<li>Copy the first element of the unsorted part to a temporary variable.</li>
-<li>Iterate from the location of the first element of the unsorted part
+most straightforward way is as follows:</p><ol><li>Copy the first element of the unsorted part to a temporary variable.</li><li>Iterate from the location of the first element of the unsorted part
 toward the front of the array as long as we are at an index greater
 than 0 and the element to the left of the current index is greater
-than the element in the temporary variable. On each iteration:
-<ul>
-<li>Copy the element to the left of the current index to the current
-index.</li>
-</ul>
-</li>
-<li>Place the value in the temporary variable into the location at which
-the above loop stopped.</li>
-</ol>
-<p>The algorithm that uses the above insertion technique is known as
+than the element in the temporary variable. On each iteration:<ul><li>Copy the element to the left of the current index to the current
+index.</li></ul></li><li>Place the value in the temporary variable into the location at which
+the above loop stopped.</li></ol><p>The algorithm that uses the above insertion technique is known as
 <em>insertion sort</em>. Like selection sort, it requires an outer loop to keep
 track of the number of elements in the sorted part. Each iteration of
 this outer loop performs the above insertion algorithm. It is not hard
 to see that this algorithm is
-<a href="https://ksu-cs-textbooks.github.io/cis300/sorting/select/#stable">stable</a>
-.</p>
-<p>The main advantage insertion sort has over <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/select">selection
-sort</a>
- is that the inner
+<a href=/cis300/sorting/select/#stable>stable</a>.</p><p>The main advantage insertion sort has over <a href=/cis300/sorting/select/>selection
+sort</a> is that the inner
 loop only iterates as long as necessary to find the insertion point. In
 the worst case, it will iterate over the entire sorted part. In this
 case, the number of iterations is the same as for selection sort; hence,
-the worst-case running time is in 
+the worst-case running time is in
 <span class="math align-center">$ O(n^2) $</span> &mdash; the same as
-selection sort and <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/select/#bubble-sort">bubble
-sort</a>
-. At the other
+selection sort and <a href=/cis300/sorting/select/#bubble-sort>bubble
+sort</a>. At the other
 extreme, however, if the array is already sorted, the inner loop won&rsquo;t
-need to iterate at all. In this case, the running time is in <span style="white-space:nowrap">
-<span class="math align-center">$ O(n) $</span>,</span>
+need to iterate at all. In this case, the running time is in <span style=white-space:nowrap><span class="math align-center">$ O(n) $</span>,</span>
 which is the same as the running time of bubble sort on an array that is
-already sorted.</p>
-<p>Unlike bubble sort, however, insertion sort has a clean characterization
+already sorted.</p><p>Unlike bubble sort, however, insertion sort has a clean characterization
 of its performance based on how sorted the array is. This
 characterization is based on the notion of an <em>inversion</em>, which is a
-pair of array locations 
+pair of array locations
 <span class="math align-center">$ i \lt j $</span> such that the value at location
-
-<span class="math align-center">$ i $</span> is greater than the value at location <span style="white-space:nowrap">
-<span class="math align-center">$ j $</span>;</span> i.e., these two values
+<span class="math align-center">$ i $</span> is greater than the value at location <span style=white-space:nowrap><span class="math align-center">$ j $</span>;</span> i.e., these two values
 are out of order with respect to each other. A sorted array has no
 inversions, whereas in an array of distinct elements in reverse order, every pair of
-locations is an inversion, for a total of 
+locations is an inversion, for a total of
 <span class="math align-center">$ n(n - 1)/2 $</span>
 inversions. In general, we can say that the fewer inversions an array
-has, the more sorted it is.</p>
-<p>The reason why inversions are important to understanding the performance
+has, the more sorted it is.</p><p>The reason why inversions are important to understanding the performance
 of insertion sort is that each iteration of the inner loop (i.e., step 2
 of the insertion algorithm above) removes exactly one inversion.
-Consequently, if an array initially has 
+Consequently, if an array initially has
 <span class="math align-center">$ k $</span> inversions, the inner loop
-will iterate a total of 
+will iterate a total of
 <span class="math align-center">$ k $</span> times. If we combine this with the
-
 <span class="math align-center">$ n - 1 $</span> iterations of the outer loop, we can conclude that
-the running time of insertion sort is in <span style="white-space:nowrap">
-<span class="math align-center">$ O(n + k) $</span>.</span> Thus, if
-the number of inversions is relatively small in comparison to 
+the running time of insertion sort is in <span style=white-space:nowrap><span class="math align-center">$ O(n + k) $</span>.</span> Thus, if
+the number of inversions is relatively small in comparison to
 <span class="math align-center">$ n $</span> (i.e.,
-the array is nearly sorted), insertion sort runs in 
+the array is nearly sorted), insertion sort runs in
 <span class="math align-center">$ O(n) $</span> time. (By
-contrast, 
+contrast,
 <span class="math align-center">$ n - 2 $</span> inversions can be enough to cause the inner loop
 of bubble sort to iterate its worst-case number of times.) For this
 reason, insertion sort is the algorithm of choice when we expect the
 data to be nearly sorted &mdash; a scenario that occurs frequently in
 practice. This fact is exploited by an efficient hybrid algorithm that
-combines insertion sort with two other sorting algorithms - see &ldquo;<a href="https://ksu-cs-textbooks.github.io/cis300/sorting/hybrid">Hybrid
-Sorting Algorithms</a>
-&rdquo; for more
-details.</p>
-<p>Before we consider another insert sort, there is one other advantage to
+combines insertion sort with two other sorting algorithms - see &ldquo;<a href=/cis300/sorting/hybrid/>Hybrid
+Sorting Algorithms</a>&rdquo; for more
+details.</p><p>Before we consider another insert sort, there is one other advantage to
 insertion sort that we need to consider. Because the algorithm is simple
 (like selection sort and bubble sort), it performs well on small arrays.
-More complex algorithms like <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/select/#heap-sort">heap
-sort</a>
-, while providing much
+More complex algorithms like <a href=/cis300/sorting/select/#heap-sort>heap
+sort</a>, while providing much
 better worst-case performance for larger arrays, don&rsquo;t tend to perform
 as well on small arrays. In many cases, the performance difference on
 small arrays isn&rsquo;t enough to matter, as pretty much any algorithm will
@@ -921,96 +222,58 @@ difference can become significant if we need to sort many small arrays
 (in a later section, we will see an application in which this scenario
 occurs). Because insertion sort tends to out-perform both selection sort
 and bubble sort, it is usually the best choice when sorting small
-arrays.</p>
-<p><span id="tree-sort"></span> Another way to implement an insert sort is
-to use a balanced binary search tree, such as an <a href="https://ksu-cs-textbooks.github.io/cis300/trees/avl">AVL
-tree</a>
-, to store the sorted
-part. In order to do this, we need to modify <a href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/intro">the definition of a binary
-search tree</a>
- to allow
+arrays.</p><p><span id=tree-sort></span> Another way to implement an insert sort is
+to use a balanced binary search tree, such as an <a href=/cis300/trees/avl/>AVL
+tree</a>, to store the sorted
+part. In order to do this, we need to modify <a href=/cis300/trees/bst/intro/>the definition of a binary
+search tree</a> to allow
 multiple instances of the same key. In order to achieve stability, if we
 are inserting a key that is equal to a key already in the tree, we would
 treat the new key as being greater than the pre-existing key - i.e., we
 would recursively insert it into the right child. Once all the data
 items are inserted, we would then copy them back into the array in
-sorted order using an <a href="https://ksu-cs-textbooks.github.io/cis300/trees/bst/inorder">inorder
-traversal</a>
-. We call
-this algorithm <em>tree sort</em>.</p>
-<p>This algorithm doesn&rsquo;t exactly match the above description of an insert
+sorted order using an <a href=/cis300/trees/bst/inorder/>inorder
+traversal</a>. We call
+this algorithm <em>tree sort</em>.</p><p>This algorithm doesn&rsquo;t exactly match the above description of an insert
 sort, but it is not hard to see that it follows the same general
 principles. While the sorted portion is not a part of the array, but
 instead is a separate data structure, it does hold an initial part of
 the array in sorted order, and successive elements from the unsorted
-portion are inserted into it.</p>
-<p>Because insertions into an AVL tree containing 
+portion are inserted into it.</p><p>Because insertions into an AVL tree containing
 <span class="math align-center">$ k $</span> elements can be done
-in 
+in
 <span class="math align-center">$ O(\lg k) $</span> time in the worst case, and because an inorder traversal
-can be done in 
-<span class="math align-center">$ O(k) $</span> time, it follows that tree sort runs in 
+can be done in
+<span class="math align-center">$ O(k) $</span> time, it follows that tree sort runs in
 <span class="math align-center">$O(n
-\lg n)$</span>  time in the worst case, where  
+\lg n)$</span> time in the worst case, where
 <span class="math align-center">$ n $</span> is the number of elements in
 the array. However, because maintaining an AVL tree requires more
 overhead than maintaining a binary heap, heap sort tends to give better
-performance in practice. For this reason, tree sort is rarely used.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-    
-    
-          <article class="default">
-            <header class="headline">
-            </header>
-<div hidden><h1 id="merge-sorts">Merge Sorts</h1></div>
-
-<h2 id="merge-sorts">Merge Sorts</h2>
-<p>A merge sort works by merging together two sorted parts of an array.
+performance in practice. For this reason, tree sort is rarely used.</p><footer class=footline></footer></article><article class=default><header class=headline></header><div hidden><h1 id=merge-sorts>Merge Sorts</h1></div><h2 id=merge-sorts>Merge Sorts</h2><p>A merge sort works by merging together two sorted parts of an array.
 Thus, we should focus our attention on an array that is partitioned into
-two sorted parts, as shown in the following figure.</p>
-<p>
-<a href="#image-80369b2cb992e045924a2e31a1aaaad9" class="lightbox-link">
-<img src="https://ksu-cs-textbooks.github.io/cis300/sorting/merge/merge-sorts.jpg" alt="The arrangement at a step of a merge sort." style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-80369b2cb992e045924a2e31a1aaaad9">
-<img src="https://ksu-cs-textbooks.github.io/cis300/sorting/merge/merge-sorts.jpg" alt="The arrangement at a step of a merge sort." class="lightbox-image" loading="lazy">
-</a></p>
-<p>The different ways of implementing a merge sort depend both on how the
+two sorted parts, as shown in the following figure.</p><p><a href=#R-image-bb08cf1183004c2fe43c0ca79461be6b class=lightbox-link><img alt="The arrangement at a step of a merge sort." class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/sorting/merge/merge-sorts.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-bb08cf1183004c2fe43c0ca79461be6b><img alt="The arrangement at a step of a merge sort." class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/sorting/merge/merge-sorts.jpg></a></p><p>The different ways of implementing a merge sort depend both on how the
 above arrangement is achieved, and also on how the two parts are merged
 together. The simplest implementation is an algorithm simply called
-<em>merge sort</em>.</p>
-<p>Merge sort uses recursion to arrange the array into two sorted parts. In
+<em>merge sort</em>.</p><p>Merge sort uses recursion to arrange the array into two sorted parts. In
 order to use recursion, we need to express our algorithm, not in terms
 of sorting an array, but instead in terms of sorting a part of an array.
 If the part we are sorting has more than one element, then we can split
 it into two smaller parts of roughly equal size (if it doesn&rsquo;t have more
 than one element, it is already sorted). Because both parts are smaller,
-we can recursively sort them to achieve the arrangement shown above.</p>
-<p>The more complicated step in merge sort is merging the two sorted parts
+we can recursively sort them to achieve the arrangement shown above.</p><p>The more complicated step in merge sort is merging the two sorted parts
 into one. While it is possible to do this without using another array
 (or other data structure), doing so is quite complicated. Merge sort
 takes a much simpler approach that uses a temporary array whose size is
 the sum of the sizes of the two sorted parts combined. It first
 accumulates the data items into the new array in sorted order, then
-copies them back into the original array.</p>
-<p>In order to understand how the merging works, let&rsquo;s consider a snapshot
+copies them back into the original array.</p><p>In order to understand how the merging works, let&rsquo;s consider a snapshot
 of an arbitrary step of the algorithm. If we&rsquo;ve accumulated an initial
 portion of the result, these elements will be the smallest ones. Because
 both of the parts we are merging are sorted, these smallest elements
-must come from initial portions of these two parts, as shown below.</p>
-<p>
-<a href="#image-c2a917bd316a60f1cbb40a18bd7d3c02" class="lightbox-link">
-<img src="https://ksu-cs-textbooks.github.io/cis300/sorting/merge/merging.jpg" alt="A snapshot of the merge." style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-c2a917bd316a60f1cbb40a18bd7d3c02">
-<img src="https://ksu-cs-textbooks.github.io/cis300/sorting/merge/merging.jpg" alt="A snapshot of the merge." class="lightbox-image" loading="lazy">
-</a></p>
-<p>Initially, the three shaded areas above are all empty. In order to
+must come from initial portions of these two parts, as shown below.</p><p><a href=#R-image-4a5eb6bf28f7e2f9939aaadb1e410b1a class=lightbox-link><img alt="A snapshot of the merge." class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/sorting/merge/merging.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-4a5eb6bf28f7e2f9939aaadb1e410b1a><img alt="A snapshot of the merge." class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/sorting/merge/merging.jpg></a></p><p>Initially, the three shaded areas above are all empty. In order to
 proceed, we need local variables to keep track of the first index in
 each of the three unshaded areas. We then iterate as long as <em>both</em> of
 the unshaded areas are nonempty. On each iteration, we want to place the
@@ -1021,8 +284,7 @@ one of the two unshaded parts of this array &mdash; whichever one is smaller
 (for stability, we use the first if they are equal). We copy that
 element to the beginning of the unshaded portion of the temporary array,
 then update the local variables to reflect that we have another merged
-item.</p>
-<p>The above loop will terminate as soon as we have merged all the data
+item.</p><p>The above loop will terminate as soon as we have merged all the data
 items from one of the two sorted parts; however, the other sorted part
 will still contain unmerged items. To finish merging to the temporary
 array, we just need to copy the remaining items to the temporary array.
@@ -1031,92 +293,54 @@ sorted part, then copying all remaining items from the second sorted
 part (one of these two copies will copy nothing because there will be no
 remaining items in one of the two sorted parts). Once all items have
 been merged into the temporary array, we copy all items back to the
-original array to complete the merge.</p>
-<p>We won&rsquo;t do a running time analysis here, but merge sort runs in 
-<span class="math align-center">$ O(n \lg n) $</span> time in the worst case. Furthermore, unlike <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/select/#heap-sort">heap
-sort</a>
-, it is stable.
-Because it tends to perform better in practice than <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/insert/#tree-sort">tree
-sort</a>
-, it is a better
+original array to complete the merge.</p><p>We won&rsquo;t do a running time analysis here, but merge sort runs in
+<span class="math align-center">$ O(n \lg n) $</span> time in the worst case. Furthermore, unlike <a href=/cis300/sorting/select/#heap-sort>heap
+sort</a>, it is stable.
+Because it tends to perform better in practice than <a href=/cis300/sorting/insert/#tree-sort>tree
+sort</a>, it is a better
 choice when we need a stable sorting algorithm. In fact, it is the basis
-(along with <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/insert">insertion
-sort</a>
-) of a stable
+(along with <a href=/cis300/sorting/insert/>insertion
+sort</a>) of a stable
 hybrid sorting algorithm that performs very well in practice. This
 algorithm, called <em>Tim sort</em>, is rather complicated; hence, we won&rsquo;t
 describe it here. If we don&rsquo;t need a stable sorting algorithm, though,
-there are other alternatives, as we shall see in the next two sections.</p>
-<p><span id="external"></span> Another scenario in which a merge sort is
+there are other alternatives, as we shall see in the next two sections.</p><p><span id=external></span> Another scenario in which a merge sort is
 appropriate occurs when we have a huge data set that will not fit into
 an array. In order to sort such a data set, we need to keep most of the
 data in files while keeping a relatively small amount within internal
 data structures at any given time. Because merging processes data items
 sequentially, it works well with files. There are several variations on
 how we might do this, but the basic algorithm is called <em>external merge
-sort</em>.</p>
-<p>External merge sort uses four temporary files in addition to an input
+sort</em>.</p><p>External merge sort uses four temporary files in addition to an input
 file and an output file. Each of these files will alternate between
 being used for input and being used for output. Furthermore, at any
 given time, one of the two files being used for input will be designated
 as the <em>first</em> input file, and the other will designated as the <em>second</em>
 input file. Similarly, at any given time, one of the two files being
 used for output will be designated as the <em>current</em> output file, and the
-other will be designated as the <em>alternate</em> output file.</p>
-<p>The algorithm begins with an initialization step that uses the given
+other will be designated as the <em>alternate</em> output file.</p><p>The algorithm begins with an initialization step that uses the given
 unsorted data file as its input, and two of the temporary files as its
 output. We will need two variables storing references to the current
 output file and the alternate output file, respectively. At this point
 we begin a loop that iterates until we reach the end of the input. Each
-iteration of this loop does the following:</p>
-<ol>
-<li>Fill a large array with data items from the input (if there aren&rsquo;t
-enough items to fill this array, we just use part of it).</li>
-<li>Sort this array using whatever sorting algorithm is appropriate.</li>
-<li>Write each element of the sorted array to the current output file.</li>
-<li>Write a special end marker to the output file.</li>
-<li>Swap the contents of the variables referring to the current output
-file and the alternate output file.</li>
-</ol>
-<p>After the above loop terminates, the two output files are closed. Thus,
+iteration of this loop does the following:</p><ol><li>Fill a large array with data items from the input (if there aren&rsquo;t
+enough items to fill this array, we just use part of it).</li><li>Sort this array using whatever sorting algorithm is appropriate.</li><li>Write each element of the sorted array to the current output file.</li><li>Write a special end marker to the output file.</li><li>Swap the contents of the variables referring to the current output
+file and the alternate output file.</li></ol><p>After the above loop terminates, the two output files are closed. Thus,
 the initialization writes several sorted sequences, each terminated by
 end markers, to the two output files. Furthermore, either the two output
 files will contain the same number of sorted sequences or the one that
 was written to first will contain one more sorted sequence than the
-other. The following figure illustrates these two files.</p>
-<p>
-<a href="#image-ee3d2d61d6db5fd5d5c5184a89955397" class="lightbox-link">
-<img src="https://ksu-cs-textbooks.github.io/cis300/sorting/merge/external-merge-sort.jpg" alt="Two files written by external merge sort" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-ee3d2d61d6db5fd5d5c5184a89955397">
-<img src="https://ksu-cs-textbooks.github.io/cis300/sorting/merge/external-merge-sort.jpg" alt="Two files written by external merge sort" class="lightbox-image" loading="lazy">
-</a></p>
-<p>The algorithm then enters the main loop. Initially the output file first
+other. The following figure illustrates these two files.</p><p><a href=#R-image-b21994c4278366369f809700da71ac94 class=lightbox-link><img alt="Two files written by external merge sort" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/sorting/merge/external-merge-sort.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-b21994c4278366369f809700da71ac94><img alt="Two files written by external merge sort" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/sorting/merge/external-merge-sort.jpg></a></p><p>The algorithm then enters the main loop. Initially the output file first
 written in the initialization is designated as the first input file, and
 the other file written in the initialization is designated as the second
 input file. The other two temporary files are arbitrarily designated as
 the current output file and the alternate output file. The loop then
 iterates as long as the second input file is nonempty. Each iteration
-does the following:</p>
-<ol>
-<li>While there is data remaining in the second input file: <ol type="a">
-<li />  Merge the next sorted sequence in the first input file with the
-    next sorted sequence in the second input file, writing the
-    result to the current output file (see below for details).
-<li />  Write an end marker to the current output file.
-<li />  Swap the current output file and the alternate output file.</ol>
-</li>
-<li>If there is data remaining in the first input file:<ol type="a">
-<li />  Copy the remaining data from the first input file to the current
-    output file
-<li />  Write an end marker to the current output file.
-<li />  Swap the current output file and the alternate output file.</ol>
-</li>
-<li>Close all four temporary files.</li>
-<li>Swap the first input file with the alternate output file.</li>
-<li>Swap the second input file with the current output file.</li>
-</ol>
-<p>Each iteration therefore combines pairs of sorted sequences from the two
+does the following:</p><ol><li>While there is data remaining in the second input file:<ol type=a><li>Merge the next sorted sequence in the first input file with the
+next sorted sequence in the second input file, writing the
+result to the current output file (see below for details).<li>Write an end marker to the current output file.<li>Swap the current output file and the alternate output file.</ol></li><li>If there is data remaining in the first input file:<ol type=a><li>Copy the remaining data from the first input file to the current
+output file<li>Write an end marker to the current output file.<li>Swap the current output file and the alternate output file.</ol></li><li>Close all four temporary files.</li><li>Swap the first input file with the alternate output file.</li><li>Swap the second input file with the current output file.</li></ol><p>Each iteration therefore combines pairs of sorted sequences from the two
 input files, thus reducing the number of sorted sequences by about half.
 Because it alternates between the two output files, as was done in the
 initialization, either the two output files will end up with the same
@@ -1124,143 +348,84 @@ number of sequences, or the last one written (which will be the
 alternate output file following step 2) will have one more than the
 other. The last two steps therefore ensure that to begin the next
 iteration, if the the number of sequences in the two input files is
-different, the first input file has the extra sequence.</p>
-<p>The loop described above finishes when the second input file is empty.
+different, the first input file has the extra sequence.</p><p>The loop described above finishes when the second input file is empty.
 Because the first input file will have no more than one more sorted
 sequence than the second input file, at the conclusion of the loop, it
 will contain a single sorted sequence followed by an end marker. The
 algorithm therefore concludes by copying the data from this file, minus
-the end marker, to the output file.</p>
-<p>Let&rsquo;s now consider more carefully the merge done in step 1a above. This
+the end marker, to the output file.</p><p>Let&rsquo;s now consider more carefully the merge done in step 1a above. This
 merge is done in essentially the same way that the merge is done in the
 original merge sort; however, we don&rsquo;t need to read in the entire sorted
 sequences to do it. Instead, all we need is the next item from each
 sequence. At each step, we write the smaller of the two, then read the
 next item from the appropriate input file. Because we only need these
 two data items at any time, this merge can handle arbitrarily long
-sequences.</p>
-<p>For an external sorting algorithm, the most important measure of
+sequences.</p><p>For an external sorting algorithm, the most important measure of
 performance is the number of file I/O operations it requires, as these
 operations are often much more expensive than any other (depending, of
-course, on the storage medium). Suppose the initial input file has 
+course, on the storage medium). Suppose the initial input file has
 <span class="math align-center">$ n $</span>
 data items, and suppose the array we use in the initialization step can
-hold 
+hold
 <span class="math align-center">$ m $</span> data items. Then the number of sorted sequences written by the
-initialization is  <span style="white-space:nowrap">
-<span class="math align-center">$ n/m $</span>,</span> with any fractional part rounded up. Each
+initialization is <span style=white-space:nowrap><span class="math align-center">$ n/m $</span>,</span> with any fractional part rounded up. Each
 iteration of the main loop then reduces the number of sorted sequences
 by half, with any fractional part again rounded up. The total number of
-iterations of the main loop is therefore  <span style="white-space:nowrap">
-<span class="math align-center">$ \lg (n/m) $</span>,</span> rounding
+iterations of the main loop is therefore <span style=white-space:nowrap><span class="math align-center">$ \lg (n/m) $</span>,</span> rounding
 upward again. Each iteration of this loop makes one pass through the
 entire data set. In addition, the initialization makes one pass, and the
 final copying makes one pass. The total number of passes through the
-data is therefore  <span style="white-space:nowrap">
-<span class="math align-center">$ \lg (n/m) + 2 $</span>.</span> For example, if we are
-sorting 
-<span class="math align-center">$ 10 $</span> billion data items using an array of size 
+data is therefore <span style=white-space:nowrap><span class="math align-center">$ \lg (n/m) + 2 $</span>.</span> For example, if we are
+sorting
+<span class="math align-center">$ 10 $</span> billion data items using an array of size
 <span class="math align-center">$ 1 $</span> million, we need
-
-<span class="math align-center">$ \lg 10,000 + 2 $</span> passes, rounded up; i.e., we need 
+<span class="math align-center">$ \lg 10,000 + 2 $</span> passes, rounded up; i.e., we need
 <span class="math align-center">$ 16 $</span> passes
-through the data.</p>
-<p>Various improvements can be made to reduce the number of passes through
+through the data.</p><p>Various improvements can be made to reduce the number of passes through
 the data. For example, we can avoid the final file copy if we use
 another mechanism for denoting the end of a sorted sequence. One
 alternative is to keep track of the length of each sequence in each file
-in a <strong>List&lt;long&gt;</strong>. If the temporary files are within the same
+in a <strong>List&lt;long></strong>. If the temporary files are within the same
 directory as the output file, we can finish the sort by simply renaming
-the first input file, rather than copying it.</p>
-<p>A more substantial improvement involves using more temporary files.
-<em>
-<span class="math align-center">$ k $</span>-way external merge sort</em> uses 
-<span class="math align-center">$ k $</span> input and 
+the first input file, rather than copying it.</p><p>A more substantial improvement involves using more temporary files.
+<em><span class="math align-center">$ k $</span>-way external merge sort</em> uses
+<span class="math align-center">$ k $</span> input and
 <span class="math align-center">$ k $</span> output files. Each
-merge then merges 
-<span class="math align-center">$ k $</span> sorted sequences into  <span style="white-space:nowrap">
-<span class="math align-center">$ 1 $</span>.</span> This reduces the number
-of iterations of the main loop to  <span style="white-space:nowrap">
-<span class="math align-center">$ \log_k (n/m) $</span>.</span> Using
+merge then merges
+<span class="math align-center">$ k $</span> sorted sequences into <span style=white-space:nowrap><span class="math align-center">$ 1 $</span>.</span> This reduces the number
+of iterations of the main loop to <span style=white-space:nowrap><span class="math align-center">$ \log_k (n/m) $</span>.</span> Using
 the fact that
-<span style="white-space:nowrap">
-<span class="math align-center">$ \log_{k^2} n = (\log_k n)/2 $</span>,</span>
-we can conclude that squaring 
+<span style=white-space:nowrap><span class="math align-center">$ \log_{k^2} n = (\log_k n)/2 $</span>,</span>
+we can conclude that squaring
 <span class="math align-center">$ k $</span> will reduce the number of passes
-through the data by about half. Thus, 
+through the data by about half. Thus,
 <span class="math align-center">$ 4 $</span>-way external merge sort will
-make about half as many passes through the data as 
+make about half as many passes through the data as
 <span class="math align-center">$ 2 $</span>-way external merge
 sort. The gain diminishes quickly after that, however, as we must
-increase 
-<span class="math align-center">$ k $</span> to 
-<span class="math align-center">$ 16 $</span> to cut the number of passes in half again.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-    
-    
-          <article class="default">
-            <header class="headline">
-            </header>
-<div hidden><h1 id="split-sorts">Split Sorts</h1></div>
-
-<h2 id="split-sorts">Split Sorts</h2>
-<p>A <em>split sort</em> operates by splitting the array into three parts:</p>
-<ul>
-<li>An unsorted part containing elements less than or equal to some
-<em>pivot element p</em>.</li>
-<li>A nonempty part containing elements equal to <em>p</em>.</li>
-<li>An unsorted part containing elements greater than or equal to <em>p</em>.</li>
-</ul>
-<p>This arrangement is illustrated in the following figure.</p>
-<p>
-<a href="#image-a4397dd2f7eaba9c28fbbf3ec94a0e70" class="lightbox-link">
-<img src="https://ksu-cs-textbooks.github.io/cis300/sorting/split/split-sorts.jpg" alt="The arrangement attained by a split sort." style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-a4397dd2f7eaba9c28fbbf3ec94a0e70">
-<img src="https://ksu-cs-textbooks.github.io/cis300/sorting/split/split-sorts.jpg" alt="The arrangement attained by a split sort." class="lightbox-image" loading="lazy">
-</a></p>
-<p>To complete the sort, it then sorts the two unsorted parts. Note that
+increase
+<span class="math align-center">$ k $</span> to
+<span class="math align-center">$ 16 $</span> to cut the number of passes in half again.</p><footer class=footline></footer></article><article class=default><header class=headline></header><div hidden><h1 id=split-sorts>Split Sorts</h1></div><h2 id=split-sorts>Split Sorts</h2><p>A <em>split sort</em> operates by splitting the array into three parts:</p><ul><li>An unsorted part containing elements less than or equal to some
+<em>pivot element p</em>.</li><li>A nonempty part containing elements equal to <em>p</em>.</li><li>An unsorted part containing elements greater than or equal to <em>p</em>.</li></ul><p>This arrangement is illustrated in the following figure.</p><p><a href=#R-image-6923b2c174dac1b45b174bcc462c36f4 class=lightbox-link><img alt="The arrangement attained by a split sort." class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/sorting/split/split-sorts.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-6923b2c174dac1b45b174bcc462c36f4><img alt="The arrangement attained by a split sort." class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/sorting/split/split-sorts.jpg></a></p><p>To complete the sort, it then sorts the two unsorted parts. Note that
 because the second part is nonempty, each of the two unsorted parts is
 smaller than the original data set; hence, the algorithm will always
-make progress.</p>
-<p>The various implementations of a split sort are collectively known as
+make progress.</p><p>The various implementations of a split sort are collectively known as
 <em>quick sort</em>. They differ in how many elements are placed in the middle
 part (only one element or all elements equal to the pivot), how the
 pivot is chosen, how the elements are partitioned into three parts, and
 how the two sub-problems are sorted. We will examine only two
-variations, which differ in how the pivot element is chosen.</p>
-<p>Let&rsquo;s start with how we do the partitioning. Let <em>p</em> denote the pivot
+variations, which differ in how the pivot element is chosen.</p><p>Let&rsquo;s start with how we do the partitioning. Let <em>p</em> denote the pivot
 element. Because most of the split sort implementations use recursion to
 complete the sort, we&rsquo;ll assume that we are sorting a portion of an
 array. At each stage of the partitioning, the array portion we are
-sorting will be arranged into the following four segments:</p>
-<ol>
-<li><strong>Segment L:</strong> Elements less than <em>p</em>.</li>
-<li><strong>Segment U:</strong> Elements we haven&rsquo;t yet examined (i.e., unknown
-elements).</li>
-<li><strong>Segment E:</strong> Elements equal to <em>p</em>.</li>
-<li><strong>Segment G:</strong> Elements greater than <em>p</em>.</li>
-</ol>
-<p>Initially, segments L, E, and G will be empty, and each iteration will
+sorting will be arranged into the following four segments:</p><ol><li><strong>Segment L:</strong> Elements less than <em>p</em>.</li><li><strong>Segment U:</strong> Elements we haven&rsquo;t yet examined (i.e., unknown
+elements).</li><li><strong>Segment E:</strong> Elements equal to <em>p</em>.</li><li><strong>Segment G:</strong> Elements greater than <em>p</em>.</li></ol><p>Initially, segments L, E, and G will be empty, and each iteration will
 reduce the size of segment U. The partitioning will be finished when
 segment U is empty. We will need three local variables to keep track of
 where one segment ends and another segment begins, as shown in the
-following figure:</p>
-<p>
-<a href="#image-b67614e83b5be8e3d2888d4d43102ea2" class="lightbox-link">
-<img src="https://ksu-cs-textbooks.github.io/cis300/sorting/split/quick-sort-partitioning.jpg" alt="The arrangement for partitioning in quick
-sort." style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-b67614e83b5be8e3d2888d4d43102ea2">
-<img src="https://ksu-cs-textbooks.github.io/cis300/sorting/split/quick-sort-partitioning.jpg" alt="The arrangement for partitioning in quick
-sort." class="lightbox-image" loading="lazy">
-</a></p>
-<p>We have worded the descriptions of the three local variables so that
+following figure:</p><p><a href=#R-image-af558b29945a15701d41860802f04ce8 class=lightbox-link><img alt="The arrangement for partitioning in quick\nsort." class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/sorting/split/quick-sort-partitioning.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-af558b29945a15701d41860802f04ce8><img alt="The arrangement for partitioning in quick\nsort." class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/sorting/split/quick-sort-partitioning.jpg></a></p><p>We have worded the descriptions of the three local variables so that
 they make sense even if some of the segments are empty. Thus, because
 all segments except U are initially empty, the location following
 segment L will initially be the first location in the array portion that
@@ -1270,39 +435,27 @@ segment U is nonempty &mdash; i.e., as long as the location following segment
 L is no greater than the location preceding segment E. Each iteration of
 this loop will compare the last element in segment U (i.e., the element
 at the location preceding segment E) with <em>p</em>. We will swap this element
-with another depending on how it compares with <em>p</em>:</p>
-<ul>
-<li>If it is less than <em>p</em>, we swap it with the element following
-segment L, and adjust the end of segment L to include it.</li>
-<li>If it is equal to <em>p</em>, we leave it where it is, and adjust the
-beginning of segment E to include it.</li>
-<li>If it is greater than <em>p</em>, we swap it with the element preceding
+with another depending on how it compares with <em>p</em>:</p><ul><li>If it is less than <em>p</em>, we swap it with the element following
+segment L, and adjust the end of segment L to include it.</li><li>If it is equal to <em>p</em>, we leave it where it is, and adjust the
+beginning of segment E to include it.</li><li>If it is greater than <em>p</em>, we swap it with the element preceding
 segment G, adjust the beginning of segment G to include it, and
 adjust the beginning of segment E to account for the fact that we
-are shifting this segment to the left by 1.</li>
-</ul>
-<p>Once this loop completes, the partitioning will be done. Furthermore, we
+are shifting this segment to the left by 1.</li></ul><p>Once this loop completes, the partitioning will be done. Furthermore, we
 can determine the two parts that need to be sorted from the final values
-of the local variables.</p>
-<p>The first split sort implementation we will consider is fairly
+of the local variables.</p><p>The first split sort implementation we will consider is fairly
 straightforward, given the above partitioning scheme. If we are sorting
 more than one element (otherwise, there is nothing to do), we will use
 as the pivot element the first element of the array portion to be
 sorted. After partitioning, we then sort the elements less than the
 pivot using a recursive call, and sort the elements greater than the
-pivot with another.</p>
-<p>Though we won&rsquo;t give an analysis here, the above algorithm runs in
-
-<span class="math align-center">$ O(n^2) $</span> time in the worst case, where 
+pivot with another.</p><p>Though we won&rsquo;t give an analysis here, the above algorithm runs in
+<span class="math align-center">$ O(n^2) $</span> time in the worst case, where
 <span class="math align-center">$ n $</span> is the number of
-elements being sorted. However, as we saw with <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/insert">insertion
-sort</a>
-, the worst-case
+elements being sorted. However, as we saw with <a href=/cis300/sorting/insert/>insertion
+sort</a>, the worst-case
 running time doesn&rsquo;t always tell the whole story. Specifically, the
 expected running time of quick sort (this implementation and others) on
-random arrays is in <span style="white-space:nowrap">
-<span class="math align-center">$ O(n \lg n) $</span>.</span></p>
-<p>However, we don&rsquo;t often need to sort random data. Let&rsquo;s therefore take a
+random arrays is in <span style=white-space:nowrap><span class="math align-center">$ O(n \lg n) $</span>.</span></p><p>However, we don&rsquo;t often need to sort random data. Let&rsquo;s therefore take a
 closer look at what makes the worst case bad. In some ways this
 algorithm is like merge sort &mdash; it does two recursive calls, and the
 additional work is proportional to the number of elements being sorted.
@@ -1314,152 +467,81 @@ element) compares to the other elements. The more elements that end up
 in one recursive call, the slower the algorithm becomes. Consequently,
 the worst case occurs when the array is already sorted, and is still bad
 if the array is nearly sorted. For this reason, this is a particularly
-bad implementation.</p>
-<p>Before we look at how we can improve the performance, we need to
+bad implementation.</p><p>Before we look at how we can improve the performance, we need to
 consider one other aspect of this implementation&rsquo;s performance. For a
 recursive method, the amount of data pushed on the runtime stack is
 proportional to the depth of the recursion. In the worst cases (i.e., on
-a sorted array), the recursion depth is <span style="white-space:nowrap">
-<span class="math align-center">$ n $</span>.</span> Thus, for large <span style="white-space:nowrap">
-<span class="math align-center">$ n $</span>,</span> if the
+a sorted array), the recursion depth is <span style=white-space:nowrap><span class="math align-center">$ n $</span>.</span> Thus, for large <span style=white-space:nowrap><span class="math align-center">$ n $</span>,</span> if the
 array is sorted or nearly sorted, a <strong>StackOverflowException</strong> is
-likely. <span id="median-of-3"></span></p>
-<p>The most important thing we can do to improve the performance, in terms
+likely. <span id=median-of-3></span></p><p>The most important thing we can do to improve the performance, in terms
 of both running time and stack usage, is to be more careful about how we
 choose the pivot element. We want to choose an element that partitions
 the data elements roughly in half. The median element (i.e., the element
 that belongs in the middle after the array is sorted) will therefore
 give us the optimal split. It is possible to design an
-
 <span class="math align-center">$ O(n \lg n) $</span> algorithm that uses the median as the
 pivot; however, the time it takes to find the median makes this
 algorithm slower than merge sort in practice. It works much better to
-find a quick approximation for the median.</p>
-<p>The main technique for obtaining such an approximation is to examine
+find a quick approximation for the median.</p><p>The main technique for obtaining such an approximation is to examine
 only a few of the elements. For example, we can use <em>median-of-three
 partitioning</em>, which uses as its pivot element the median of the first,
 middle, and last elements of the array portion we are sorting. An easy
 way to implement this strategy is to place these three elements in an
-array of size 3, then sort this array using <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/insert">insertion
-sort</a>
-. The element that
-ends up at location 1 is then the used as the pivot.</p>
-<p>We can improve on the above strategy by doing a case analysis of the
+array of size 3, then sort this array using <a href=/cis300/sorting/insert/>insertion
+sort</a>. The element that
+ends up at location 1 is then the used as the pivot.</p><p>We can improve on the above strategy by doing a case analysis of the
 three values. If we do this, we don&rsquo;t need a separate array &mdash; we just
-find the median of three values, <span style="white-space:nowrap">
-<span class="math align-center">$ a $</span>,</span> <span style="white-space:nowrap">
-<span class="math align-center">$ b $</span>,</span> and <span style="white-space:nowrap">
-<span class="math align-center">$ c $</span>,</span> as follows:</p>
-<ul>
-<li>If <span style="white-space:nowrap">
-<span class="math align-center">$ a \lt b $</span>:</span>
-<ul>
-<li>If <span style="white-space:nowrap">
-<span class="math align-center">$ b \lt c $</span>,</span> then 
-<span class="math align-center">$ b $</span> is the median.</li>
-<li>Otherwise, because 
-<span class="math align-center">$ b $</span> is the largest:
-<ul>
-<li>If <span style="white-space:nowrap">
-<span class="math align-center">$ a \lt c $</span>,</span> then 
-<span class="math align-center">$ c $</span> is the median.</li>
-<li>Otherwise, 
-<span class="math align-center">$ a $</span> is the median.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Otherwise, because <span style="white-space:nowrap">
-<span class="math align-center">$ b \leq a $</span>:</span>
-<ul>
-<li>If <span style="white-space:nowrap">
-<span class="math align-center">$ a \lt c $</span>,</span> then 
-<span class="math align-center">$ a $</span> is the median.</li>
-<li>Otherwise, because 
-<span class="math align-center">$ a $</span> is the largest:
-<ul>
-<li>If <span style="white-space:nowrap">
-<span class="math align-center">$ b \lt c $</span>,</span> then 
-<span class="math align-center">$ c $</span> is the median.</li>
-<li>Otherwise, 
-<span class="math align-center">$ b $</span> is the median.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>The above algorithm is quite efficient, using at most three comparisons
+find the median of three values, <span style=white-space:nowrap><span class="math align-center">$ a $</span>,</span> <span style=white-space:nowrap><span class="math align-center">$ b $</span>,</span> and <span style=white-space:nowrap><span class="math align-center">$ c $</span>,</span> as follows:</p><ul><li>If <span style=white-space:nowrap><span class="math align-center">$ a \lt b $</span>:</span><ul><li>If <span style=white-space:nowrap><span class="math align-center">$ b \lt c $</span>,</span> then
+<span class="math align-center">$ b $</span> is the median.</li><li>Otherwise, because
+<span class="math align-center">$ b $</span> is the largest:<ul><li>If <span style=white-space:nowrap><span class="math align-center">$ a \lt c $</span>,</span> then
+<span class="math align-center">$ c $</span> is the median.</li><li>Otherwise,
+<span class="math align-center">$ a $</span> is the median.</li></ul></li></ul></li><li>Otherwise, because <span style=white-space:nowrap><span class="math align-center">$ b \leq a $</span>:</span><ul><li>If <span style=white-space:nowrap><span class="math align-center">$ a \lt c $</span>,</span> then
+<span class="math align-center">$ a $</span> is the median.</li><li>Otherwise, because
+<span class="math align-center">$ a $</span> is the largest:<ul><li>If <span style=white-space:nowrap><span class="math align-center">$ b \lt c $</span>,</span> then
+<span class="math align-center">$ c $</span> is the median.</li><li>Otherwise,
+<span class="math align-center">$ b $</span> is the median.</li></ul></li></ul></li></ul><p>The above algorithm is quite efficient, using at most three comparisons
 and requiring no values to be copied other than the result if we
 implement it in-line, rather than as a separate method (normally an
 optimizing compiler can do this method inlining for us). It also
 improves the sorting algorithm by tending to make the bad cases less
-likely.</p>
-<p>This version of quick sort gives good performance most of the time,
-typically outperforming either <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/select/#heap-sort">heap
-sort</a>
- or <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/merge">merge
-sort</a>
-. However, it still
-has a worst-case running time in 
+likely.</p><p>This version of quick sort gives good performance most of the time,
+typically outperforming either <a href=/cis300/sorting/select/#heap-sort>heap
+sort</a> or <a href=/cis300/sorting/merge/>merge
+sort</a>. However, it still
+has a worst-case running time in
 <span class="math align-center">$ O(n^2) $</span> and a worst-case
-stack usage in <span style="white-space:nowrap">
-<span class="math align-center">$ O(n) $</span>.</span> Furthermore, it is unstable and does not
-perform as well as <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/insert">insertion
-sort</a>
- on small or nearly
-sorted data sets. In <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/hybrid">the next
-section</a>
-, we will show
+stack usage in <span style=white-space:nowrap><span class="math align-center">$ O(n) $</span>.</span> Furthermore, it is unstable and does not
+perform as well as <a href=/cis300/sorting/insert/>insertion
+sort</a> on small or nearly
+sorted data sets. In <a href=/cis300/sorting/hybrid/>the next
+section</a>, we will show
 how quick sort can be combined with some of the other sorting algorithms
 to address some of these issues, including the bad worst-case
-performance.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-    
-    
-          <article class="default">
-            <header class="headline">
-            </header>
-<div hidden><h1 id="hybrid-sorting-algorithms">Hybrid Sorting Algorithms</h1></div>
-
-<h2 id="hybrid-sorting-algorithms">Hybrid Sorting Algorithms</h2>
-<p>The best versions of <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/split">quick
-sort</a>
- are competitive
-with both <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/select/#heap-sort">heap sort</a>
- and
-<a href="https://ksu-cs-textbooks.github.io/cis300/sorting/merge">merge sort</a>
- on the vast
+performance.</p><footer class=footline></footer></article><article class=default><header class=headline></header><div hidden><h1 id=hybrid-sorting-algorithms>Hybrid Sorting Algorithms</h1></div><h2 id=hybrid-sorting-algorithms>Hybrid Sorting Algorithms</h2><p>The best versions of <a href=/cis300/sorting/split/>quick
+sort</a> are competitive
+with both <a href=/cis300/sorting/select/#heap-sort>heap sort</a> and
+<a href=/cis300/sorting/merge/>merge sort</a> on the vast
 majority of inputs. However, quick sort has a very bad worst case &mdash;
-
-<span class="math align-center">$ O(n^2) $</span> running time and 
+<span class="math align-center">$ O(n^2) $</span> running time and
 <span class="math align-center">$ O(n) $</span> stack usage. By
-comparison, both heap sort and merge sort have 
+comparison, both heap sort and merge sort have
 <span class="math align-center">$ O(n \lg n) $</span>
-worst-case running time, together with a stack usage of 
+worst-case running time, together with a stack usage of
 <span class="math align-center">$ O(1) $</span> for heap
-sort or 
-<span class="math align-center">$ O(\lg n) $</span> for merge sort. Furthermore, <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/insert">insertion
-sort</a>
- performs better
+sort or
+<span class="math align-center">$ O(\lg n) $</span> for merge sort. Furthermore, <a href=/cis300/sorting/insert/>insertion
+sort</a> performs better
 than any of these algorithms on small data sets. In this section, we
 look at ways to combine some of these algorithms to obtain a sorting
-algorithm that has the advantages of each of them.</p>
-<p>We will start with quick sort, which gives the best performance for most
+algorithm that has the advantages of each of them.</p><p>We will start with quick sort, which gives the best performance for most
 inputs. One way of improving its performance is to make use of the fact
-that <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/insert">insertion sort</a>
- is
+that <a href=/cis300/sorting/insert/>insertion sort</a> is
 more efficient for small data sets. Improving the performance on small
 portions can lead to significant performance improvements for large
 arrays because quick sort breaks large arrays into many small portions.
 Hence, when the portion we are sorting becomes small enough, rather than
-finding a pivot and splitting, we instead call insertion sort.</p>
-<p>An alternative to the above improvement is to use the fact that
-insertion sort runs in 
+finding a pivot and splitting, we instead call insertion sort.</p><p>An alternative to the above improvement is to use the fact that
+insertion sort runs in
 <span class="math align-center">$ O(n) $</span> time when the number of inversions is
 linear in the number of array elements. To accomplish this, we modify
 quick sort slightly so that instead of sorting the array, it brings each
@@ -1468,137 +550,93 @@ as a <em>partial sort</em>. After we have done the partial sort, we then sort
 the array using insertion sort. The modification we make to quick sort
 to obtain the partial sort is simply to change when we stop sorting. We
 only sort portions that are larger than some threshold &mdash; we leave other
-portions unsorted.</p>
-<p>Suppose, for example, that we choose a threshold of <span style="white-space:nowrap">
-<span class="math align-center">$ 10 $</span>.</span> Once the partial
+portions unsorted.</p><p>Suppose, for example, that we choose a threshold of <span style=white-space:nowrap><span class="math align-center">$ 10 $</span>.</span> Once the partial
 sort reaches an array portion with nine or fewer elements, we do nothing
 with it. Note, however, that these elements are all larger than the
 elements that precede this portion, and they are all smaller than the
 elements that follow this portion; hence, each element can form an
 inversion with at most eight other elements &mdash; the other elements in the
 same portion. Because each inversion contains two elements, this means
-that there can be no more than 
+that there can be no more than
 <span class="math align-center">$ 4n $</span> inversions in the entire array once
 the partial sort finishes. The subsequent call to insertion sort will
-therefore finish the sorting in linear time.</p>
-<p>Both of the above techniques yield performance improvements over quick
+therefore finish the sorting in linear time.</p><p>Both of the above techniques yield performance improvements over quick
 sort alone. In fact, for many years, such combinations of an optimized
 version of quick sort with insertion sort were so efficient for most
 inputs that they were the most commonly-used algorithms for
 general-purpose sorting. On modern hardware architectures, the first
-approach above tends to give the better performance.</p>
-<p>Nevertheless, neither of the above approaches can guarantee
-
+approach above tends to give the better performance.</p><p>Nevertheless, neither of the above approaches can guarantee
 <span class="math align-center">$ O(n \lg n) $</span> performance &mdash; in the worst case, they are all
-still in <span style="white-space:nowrap">
-<span class="math align-center">$ O(n^2) $</span>.</span> Furthermore, the bad cases still use
+still in <span style=white-space:nowrap><span class="math align-center">$ O(n^2) $</span>.</span> Furthermore, the bad cases still use
 linear stack space. To overcome these shortfalls, we can put a limit on
 the depth of recursion. Once this limit is reached, we can finish
-sorting this portion with an 
+sorting this portion with an
 <span class="math align-center">$ O(n \lg n) $</span> algorithm such as
-<a href="https://ksu-cs-textbooks.github.io/cis300/sorting/select/#heap-sort">heap sort</a>
-. The idea is to
+<a href=/cis300/sorting/select/#heap-sort>heap sort</a>. The idea is to
 pick a limit that is large enough that it is rarely reached, but still
 small enough that bad cases will cause the alternative sort to be
-invoked before too much time is spent. A limit of about <span style="white-space:nowrap">
-<span class="math align-center">$ 2 \lg n $</span>,</span>
-where 
+invoked before too much time is spent. A limit of about <span style=white-space:nowrap><span class="math align-center">$ 2 \lg n $</span>,</span>
+where
 <span class="math align-center">$ n $</span> is the size of the entire array, has been suggested. Because
-arrays in C# must have fewer than 
+arrays in C# must have fewer than
 <span class="math align-center">$ 2^{31} $</span> elements, this value
-is always less than <span style="white-space:nowrap">
-<span class="math align-center">$ 62 $</span>;</span> hence, it is also safe to use a constant for the
+is always less than <span style=white-space:nowrap><span class="math align-center">$ 62 $</span>;</span> hence, it is also safe to use a constant for the
 limit. The resulting algorithm has a worst-case running time in
-
-<span class="math align-center">$ O(n \lg n) $</span> and a worst-case stack usage of <span style="white-space:nowrap">
-<span class="math align-center">$ O(\lg n) $</span>.</span>
+<span class="math align-center">$ O(n \lg n) $</span> and a worst-case stack usage of <span style=white-space:nowrap><span class="math align-center">$ O(\lg n) $</span>.</span>
 This logarithmic bound on the stack usage is sufficient to avoid a
-<strong>StackOverflowException</strong>.</p>
-<p>The combination of <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/split/#median-of-3">quick sort using median-of-three
-partitioning</a>
- with
+<strong>StackOverflowException</strong>.</p><p>The combination of <a href=/cis300/sorting/split/#median-of-3>quick sort using median-of-three
+partitioning</a> with
 insertion sort for small portions and heap sort when the recursion depth
 limit is reached is known as <em>introsort</em> (short for <em>introspective
 sort</em>). Other improvements exist, but we will not discuss them here. The
 best versions of introsort are among the best sorting algorithms
 available, unless the array is nearly sorted. Of course, if the data
-won&rsquo;t fit in an array, we can&rsquo;t use introsort &mdash; we should use <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/merge/#external">external
+won&rsquo;t fit in an array, we can&rsquo;t use introsort &mdash; we should use <a href=/cis300/sorting/merge/#external>external
 merge sort</a>
-
 instead. Furthermore, like quick sort and heap sort, introsort is not
 stable. When a stable sort is not needed, however, and when none of the
 above special cases applies, introsort is one of the best choices
-available.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-    
-    
-          <article class="default">
-            <header class="headline">
-            </header>
-<div hidden><h1 id="sorting-strings">Sorting Strings</h1></div>
-
-<h2 id="sorting-strings">Sorting Strings</h2>
-<p>We conclude our discussion of sorting with a look at a sorting algorithm
+available.</p><footer class=footline></footer></article><article class=default><header class=headline></header><div hidden><h1 id=sorting-strings>Sorting Strings</h1></div><h2 id=sorting-strings>Sorting Strings</h2><p>We conclude our discussion of sorting with a look at a sorting algorithm
 designed specifically for sorting multi-keyed data. In such data there
 is a primary key, a secondary key, and so on. We want to sort the data
-so that element <em>a</em> precedes element <em>b</em> if:</p>
-<ul>
-<li>the primary key of <em>a</em> is less than the primary key of <em>b</em>;</li>
-<li>or their primary keys are equal, but the secondary key of <em>a</em> is
-less than the secondary key of <em>b</em>;</li>
-<li>etc.</li>
-</ul>
-<p>An example of multi-keyed data is strings. The first character of a
+so that element <em>a</em> precedes element <em>b</em> if:</p><ul><li>the primary key of <em>a</em> is less than the primary key of <em>b</em>;</li><li>or their primary keys are equal, but the secondary key of <em>a</em> is
+less than the secondary key of <em>b</em>;</li><li>etc.</li></ul><p>An example of multi-keyed data is strings. The first character of a
 string is its primary key, its second character is its secondary key,
 and so on. The only caveat is that the strings may not all have the same
 length; hence, they may not all have the same number of keys. We
 therefore stipulate that a string that does not have a particular key
-must precede all strings that have that key.</p>
-<p>One algorithm to sort multi-keyed data is known as <em>multi-key quick
+must precede all strings that have that key.</p><p>One algorithm to sort multi-keyed data is known as <em>multi-key quick
 sort</em>. In this section, we will describe multi-key quick sort as it
 applies specifically to sorting strings; however, it can be applied to
-other multi-keyed data as well.</p>
-<p>One problem with sorting strings using a version of quick sort described
-in &ldquo;<a href="https://ksu-cs-textbooks.github.io/cis300/sorting/split">Split Sorts</a>
-&rdquo; is
+other multi-keyed data as well.</p><p>One problem with sorting strings using a version of quick sort described
+in &ldquo;<a href=/cis300/sorting/split/>Split Sorts</a>&rdquo; is
 that string comparisons can be expensive. Specifically, they must
 compare the strings a character at a time until they reach either a
 mismatch or the end of a string. Thus, comparing strings that have a
 long prefix in common is expensive. Now observe that quick sort operates
 by splitting the array into smaller and smaller pieces whose elements
 belong near each other in the sorted result. It is therefore common to
-have some pieces whose elements all begin with the same long prefix.</p>
-<p>Multi-key quick sort improves the performance by trying to avoid
+have some pieces whose elements all begin with the same long prefix.</p><p>Multi-key quick sort improves the performance by trying to avoid
 comparing prefixes after they have already been found to be the same
 (though the suffixes may differ). In order to accomplish this, it uses
 an extra <strong>int</strong> parameter <code>k</code> such that all the strings being sorted
 match in their first <code>k</code> positions (and by implication, all strings have
 length at least <code>k</code>). We can safely use a value of 0 in the initial
-call, but this value can increase as recursive calls are made.</p>
-<p>Because all strings begin with the same prefix of length <code>k</code>, we can
+call, but this value can increase as recursive calls are made.</p><p>Because all strings begin with the same prefix of length <code>k</code>, we can
 focus on the character at location <code>k</code> (i.e., following the first <code>k</code>
 characters) of each string. We need to be careful, however, because some
 of the strings may not have a character at location <code>k</code>. We will
 therefore use an <strong>int</strong> to store the value of the character at location
-<code>k</code> of a string, letting 
+<code>k</code> of a string, letting
 <span class="math align-center">$ -1 $</span> denote the absence of a character at that
-location. We can also let 
-<span class="math align-center">$ -2 $</span> denote a <strong>null</strong> element, so that these elements are placed before all non-<strong>null</strong> elements in the sorted result.</p>
-<p>The algorithm then proceeds a lot like those described in &ldquo;<a href="https://ksu-cs-textbooks.github.io/cis300/sorting/split">Split
-Sorts</a>
-&rdquo;. If the number of
-elements being sorted is greater than <span style="white-space:nowrap">
-<span class="math align-center">$ 1 $</span>,</span> a pivot element <code>p</code> is found.
+location. We can also let
+<span class="math align-center">$ -2 $</span> denote a <strong>null</strong> element, so that these elements are placed before all non-<strong>null</strong> elements in the sorted result.</p><p>The algorithm then proceeds a lot like those described in &ldquo;<a href=/cis300/sorting/split/>Split
+Sorts</a>&rdquo;. If the number of
+elements being sorted is greater than <span style=white-space:nowrap><span class="math align-center">$ 1 $</span>,</span> a pivot element <code>p</code> is found.
 Note that <code>p</code> is not a <strong>string</strong>, but an <strong>int</strong> representing a
 character at location <code>k</code>, as described above. The elements are then
 partitioned into groups of strings whose character at location <code>k</code> is
-less than <code>p</code>, equal to <code>p</code>, or greater than <code>p</code>, respectively.</p>
-<p>After these three groups are formed, the first and third group are
+less than <code>p</code>, equal to <code>p</code>, or greater than <code>p</code>, respectively.</p><p>After these three groups are formed, the first and third group are
 sorted recursively using the same value for <code>k</code>. Furthermore, the second
 group may not be completely sorted yet &mdash; all we know is that all strings
 in this group agree on the first <code>k + 1</code> characters. Thus, unless
@@ -1606,18 +644,15 @@ in this group agree on the first <code>k + 1</code> characters. Thus, unless
 are therefore all equal), we need to recursively sort this group as
 well. However, because we know that the strings in this group all agree
 on the first <code>k + 1</code> characters, we pass <code>k + 1</code> as the last
-parameter.</p>
-<p>One aspect of this algorithm that we need to address is whether the
-recursion is valid. Recall that <a href="https://ksu-cs-textbooks.github.io/cis300/trees/intro/#recursion">when we introduced
-recursion</a>
-, we stated that
+parameter.</p><p>One aspect of this algorithm that we need to address is whether the
+recursion is valid. Recall that <a href=/cis300/trees/intro/#recursion>when we introduced
+recursion</a>, we stated that
 in order to guarantee termination, all recursive calls must be on
 smaller problem instances, where the size of a problem instance is given
 by a nonnegative integer. In the algorithm described above, we might
 reach a point at which all of the strings being sorted match in location
 <code>k</code>. In such a case, the second recursive call will contain all of the
-strings.</p>
-<p>By being careful how we define the size of the problem instance,
+strings.</p><p>By being careful how we define the size of the problem instance,
 however, we can show that this recursion is, in fact, valid.
 Specifically, we define the size of the problem instance to be the
 number of strings being sorted, plus the total number of characters
@@ -1625,12 +660,11 @@ beginning at location <code>k</code> in all strings being sorted. Because there 
 at least one string containing <code>p</code> at location <code>k</code>, the number of
 strings in both the first and the third recursive call must be smaller,
 while the total number of characters beginning at location <code>k</code> can be no
-larger. Because <code>k</code> increases by 
+larger. Because <code>k</code> increases by
 <span class="math align-center">$ 1 $</span> in the second recursive call, the
 total number of characters past this location must be smaller, while the
 number of strings can be no larger. Hence, the size decreases in all
-recursive calls.</p>
-<p>The fact that we are doing recursion on the length of strings, however,
+recursive calls.</p><p>The fact that we are doing recursion on the length of strings, however,
 can potentially cause the runtime stack to overflow when we are sorting
 very long strings. For this reason, it is best to convert the recursive
 call on the second group to a loop. We can do this by changing the
@@ -1638,24 +672,13 @@ call on the second group to a loop. We can do this by changing the
 <strong>while</strong>-loop that iterates as long as the portion being sorted is
 large enough to split. Then at the bottom of the loop, after doing
 recursive calls on the first and third parts, we check to see if <code>p</code> is
-
-<span class="math align-center">$ -1 $</span> &mdash; if so, we exit the loop. Otherwise, we do the following:</p>
-<ul>
-<li>increment <code>k</code>;</li>
-<li>change the index giving the start of the portion we are sorting to
-the beginning of the second part; and</li>
-<li>change the length of the portion we are sorting to the length of the
-second part.</li>
-</ul>
-<p>The next iteration will then sort the second part.</p>
-<p>This algorithm can be combined with <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/insert">insertion
-sort</a>
- and <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/select/#heap-sort">heap
-sort</a>
-, as was done for
-introsort in <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/hybrid">the previous
-section</a>
-. However, we
+<span class="math align-center">$ -1 $</span> &mdash; if so, we exit the loop. Otherwise, we do the following:</p><ul><li>increment <code>k</code>;</li><li>change the index giving the start of the portion we are sorting to
+the beginning of the second part; and</li><li>change the length of the portion we are sorting to the length of the
+second part.</li></ul><p>The next iteration will then sort the second part.</p><p>This algorithm can be combined with <a href=/cis300/sorting/insert/>insertion
+sort</a> and <a href=/cis300/sorting/select/#heap-sort>heap
+sort</a>, as was done for
+introsort in <a href=/cis300/sorting/hybrid/>the previous
+section</a>. However, we
 should also modify insertion sort and heap sort to use the information
 we already have about equal prefixes when we are comparing elements.
 Specifically, rather than comparing entire strings, we should begin
@@ -1663,59 +686,6 @@ comparing after the equal prefix. Because of the way multi-key quick
 sort does comparisons, the result tends to perform better than the
 single-key versions, assuming similar optimizations are made; however,
 cutoffs for running insertion sort and/or heap sort may need to be
-adjusted.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-          </section>
-
-        </div>
-      </main>
-    
-<div class="git-footer">
-<p class="theme-version-footer">5.18.0</p>
-<p>Last modified by: 
-            <i class='fas fa-user'></i> Rod Howell
-            <i class='fas fa-calendar'></i> <a href="https://gitlab.cs.ksu.edu/cis300/cis300-book/-/commit/1d8f98291eb0449a47e7d7b22398e581ccc1e2c5">Jun 12, 2023</a>
-</p>
-</div>
-
-    
-    </div>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1710771761" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1710771761" defer></script>
-    <script>
-      function useMathJax( config ){
-        if( !Object.assign ){
-          
-          return;
-        }
-        window.MathJax = Object.assign( window.MathJax || {}, {
-          loader: {
-            load: ['[tex]/mhchem']
-          },
-          startup: {
-            elements: [
-              '.math'
-            ]
-          },
-          tex: {
-            inlineMath: [
-              ['$', '$'], 
-              ['\\(', '\\)']
-            ]
-          },
-          options: {
-            enableMenu: false 
-          }
-        }, config );
-      }
-      useMathJax( JSON.parse("{}") );
-    </script>
-    <script id="MathJax-script" async src="https://ksu-cs-textbooks.github.io/cis300/js/mathjax/tex-mml-chtml.js?1710771761"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1710771761" defer></script>
-  </body>
-</html>
+adjusted.</p><footer class=footline></footer></article></section></div></main><div class=git-footer><p class=theme-version-footer>6.0.0</p><p>Last modified by:
+<i class='fas fa-user'></i> Rod Howell
+<i class='fas fa-calendar'></i> <a href=https://github.com/ksu-cs-textbooks/cis300/commit/1d8f98291eb0449a47e7d7b22398e581ccc1e2c5>Jun 12, 2023</a></p></div></div><script src=/cis300/js/clipboard.min.js?1719513823 defer></script><script src=/cis300/js/perfect-scrollbar.min.js?1719513823 defer></script><script>function useMathJax(e){window.MathJax=Object.assign(window.MathJax||{},{tex:{inlineMath:[["\\(","\\)"],["$","$"]],displayMath:[["\\[","\\]"],["$$","$$"]]},options:{enableMenu:!1}},e)}useMathJax(JSON.parse("{}"))</script><script id=MathJax-script async src=/cis300/js/mathjax/tex-mml-chtml.js?1719513823></script><script src=/cis300/js/theme.js?1719513823 defer></script></body></html>

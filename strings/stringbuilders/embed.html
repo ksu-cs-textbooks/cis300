@@ -1,728 +1,105 @@
-
-
-
-
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.18.0">
-    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
-    <meta name="description" content="K-State CIS 300: Data Structures">
-    <meta name="author" content="Rod Howell and Josh Weese">
-    <title>StringBuilders :: Data Structures in C#</title>
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771760" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771760" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1710771760" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771760" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771760" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1710771760" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771760" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771760" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1710771760" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1710771760" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1710771760" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1710771760" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1710771760" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1710771760"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1710771760"></script>
-    <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
-      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
-      var root_url="https://ksu-cs-textbooks.github.io/cis300/";
-      var baseUri=root_url.replace(/\/$/, '');
-      // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
-      window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
-    </script>
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1710771760" rel="stylesheet">
-
-  </head>
-  <body class="mobile-support embed disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilders/embed.html">
-    <div id="body" class="default-animation">
-      
-      
-      
-      <main id="body-inner" class="highlightable default" tabindex="-1">
-        <div class="flex-block-wrapper">
-          <article class="default">
-    
-    
-    
-<h2 id="stringbuilders"><strong>StringBuilder</strong>s</h2>
-<p>In <a href="https://ksu-cs-textbooks.github.io/cis300/strings/strings">the previous
-section</a>
-, we saw that
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=robots content="noindex, nofollow, noarchive, noimageindex"><meta name=description content="StringBuilders In the previous section, we saw that building large strings from small pieces by concatenating them together is very inefficient. This inefficiency is due to the fact that strings are immutable. In order to overcome the inefficiency of concatenation, we need an alternative data structure that we can modify. The StringBuilder class fills this need.
+Like strings, StringBuilders implement sequences of characters, but the contents of StringBuilders can be changed."><meta name=author content="Rod Howell and Josh Weese"><meta name=twitter:card content="summary"><meta name=twitter:title content="StringBuilders :: Data Structures in C#"><meta name=twitter:description content="StringBuilders In the previous section, we saw that building large strings from small pieces by concatenating them together is very inefficient. This inefficiency is due to the fact that strings are immutable. In order to overcome the inefficiency of concatenation, we need an alternative data structure that we can modify. The StringBuilder class fills this need.
+Like strings, StringBuilders implement sequences of characters, but the contents of StringBuilders can be changed."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis300/strings/stringbuilders/embed.html"><meta property="og:site_name" content="Data Structures in C#"><meta property="og:title" content="StringBuilders :: Data Structures in C#"><meta property="og:description" content="StringBuilders In the previous section, we saw that building large strings from small pieces by concatenating them together is very inefficient. This inefficiency is due to the fact that strings are immutable. In order to overcome the inefficiency of concatenation, we need an alternative data structure that we can modify. The StringBuilder class fills this need.
+Like strings, StringBuilders implement sequences of characters, but the contents of StringBuilders can be changed."><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="strings and StringBuilders"><meta property="article:modified_time" content="2023-05-31T10:25:43-05:00"><meta itemprop=name content="StringBuilders :: Data Structures in C#"><meta itemprop=description content="StringBuilders In the previous section, we saw that building large strings from small pieces by concatenating them together is very inefficient. This inefficiency is due to the fact that strings are immutable. In order to overcome the inefficiency of concatenation, we need an alternative data structure that we can modify. The StringBuilder class fills this need.
+Like strings, StringBuilders implement sequences of characters, but the contents of StringBuilders can be changed."><meta itemprop=dateModified content="2023-05-31T10:25:43-05:00"><meta itemprop=wordCount content="776"><title>StringBuilders :: Data Structures in C#</title>
+<link href=/cis300/css/fontawesome-all.min.css?1719513822 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fontawesome-all.min.css?1719513822 rel=stylesheet></noscript><link href=/cis300/css/nucleus.css?1719513822 rel=stylesheet><link href=/cis300/css/auto-complete.css?1719513822 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/auto-complete.css?1719513822 rel=stylesheet></noscript><link href=/cis300/css/perfect-scrollbar.min.css?1719513822 rel=stylesheet><link href=/cis300/css/fonts.css?1719513822 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fonts.css?1719513822 rel=stylesheet></noscript><link href=/cis300/css/theme.css?1719513822 rel=stylesheet><link href=/cis300/css/theme-light-theme.css?1719513822 rel=stylesheet id=R-variant-style><link href=/cis300/css/chroma-relearn-light.css?1719513822 rel=stylesheet id=R-variant-chroma-style><link href=/cis300/css/variant.css?1719513822 rel=stylesheet><link href=/cis300/css/print.css?1719513822 rel=stylesheet media=print><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis300",window.index_js_url="/cis300/index.search.js",window.variants&&variants.init(["light-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis300/css/custom.css?1719513822 rel=stylesheet></head><body class="mobile-support embed disableInlineCopyToClipboard" data-url=/cis300/strings/stringbuilders/embed.html><div id=R-body class=default-animation><div id=R-body-overlay></div><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><h2 id=stringbuilders><strong>StringBuilder</strong>s</h2><p>In <a href=/cis300/strings/strings/>the previous
+section</a>, we saw that
 building large <strong>string</strong>s from small pieces by concatenating them
 together is very inefficient. This inefficiency is due to the fact that
 <strong>string</strong>s are immutable. In order to overcome the inefficiency of
 concatenation, we need an alternative data structure that we can modify.
 The
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=net-6.0" target="_blank"><strong>StringBuilder</strong></a>
-
-class fills this need.</p>
-<p>Like <strong>string</strong>s, <strong>StringBuilder</strong>s implement sequences of characters,
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=net-6.0" rel=external target=_blank><strong>StringBuilder</strong></a>
+class fills this need.</p><p>Like <strong>string</strong>s, <strong>StringBuilder</strong>s implement sequences of characters,
 but the contents of <strong>StringBuilder</strong>s can be changed. The
-<strong>StringBuilder</strong> class has six constructors. The <a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.-ctor?view=net-6.0#system-text-stringbuilder-ctor" target="_blank">simplest
+<strong>StringBuilder</strong> class has six constructors. The <a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.-ctor?view=net-6.0#system-text-stringbuilder-ctor" rel=external target=_blank>simplest
 <strong>StringBuilder</strong>
 constructor</a>
-
 takes no parameters and constructs an empty <strong>StringBuilder</strong> &mdash; i.e., a
-<strong>StringBuilder</strong> containing no characters:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>StringBuilder sb = <span style="color:#66d9ef">new</span>();</span></span></code></pre></div><p>We can then modify a <strong>StringBuilder</strong> in various ways. First, we may
+<strong>StringBuilder</strong> containing no characters:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=n>StringBuilder</span> <span class=n>sb</span> <span class=p>=</span> <span class=k>new</span><span class=p>();</span></span></span></code></pre></div><p>We can then modify a <strong>StringBuilder</strong> in various ways. First, we may
 append a <strong>char</strong> to the end using its
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.append?view=net-6.0#system-text-stringbuilder-append%28system-char%29" target="_blank"><strong>Append</strong></a>
-
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.append?view=net-6.0#system-text-stringbuilder-append(system-char)" rel=external target=_blank><strong>Append</strong></a>
 method. This method not only changes the contents of the
 <strong>StringBuilder</strong>, but it also returns a reference to it. Thus if we
 have <strong>char</strong> variables, <code>a</code>, <code>b</code>, and <code>c</code>, and a <strong>StringBuilder</strong>
-variable <code>sb</code>, we can write code such as:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>sb.Append(a).Append(b).Append(c);</span></span></code></pre></div><p>The first call to <strong>Append</strong> appends the contents of <code>a</code> to <code>sb</code>, and
+variable <code>sb</code>, we can write code such as:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=n>sb</span><span class=p>.</span><span class=n>Append</span><span class=p>(</span><span class=n>a</span><span class=p>).</span><span class=n>Append</span><span class=p>(</span><span class=n>b</span><span class=p>).</span><span class=n>Append</span><span class=p>(</span><span class=n>c</span><span class=p>);</span></span></span></code></pre></div><p>The first call to <strong>Append</strong> appends the contents of <code>a</code> to <code>sb</code>, and
 returns <code>sb</code>. Thus, the second call to <strong>Append</strong> also applies to <code>sb</code> -
 it appends the contents of <code>b</code>. Likewise, the third call appends the
-contents of <code>c</code>.</p>
-<p>Because this method changes a <strong>StringBuilder</strong>, rather than
+contents of <code>c</code>.</p><p>Because this method changes a <strong>StringBuilder</strong>, rather than
 constructing a new one, its implementation is very efficient - in most
 cases, only the appended character needs to be copied (see
-&ldquo;<a href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilder-impl">Implementation of
-<strong>StringBuilder</strong>s</a>
-&rdquo;
+&ldquo;<a href=/cis300/strings/stringbuilder-impl/>Implementation of
+<strong>StringBuilder</strong>s</a>&rdquo;
 for details). This class has other <strong>Append</strong> methods as well, including
-one that <a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.append?view=net-6.0#system-text-stringbuilder-append%28system-string%29" target="_blank">appends the contents of a given
-<strong>string</strong></a>
-.
-This method likewise only needs to copy the appended characters.</p>
-<p>Let us now return to the problem of converting all lower-case letters in
+one that <a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.append?view=net-6.0#system-text-stringbuilder-append(system-string)" rel=external target=_blank>appends the contents of a given
+<strong>string</strong></a>.
+This method likewise only needs to copy the appended characters.</p><p>Let us now return to the problem of converting all lower-case letters in
 a <strong>string</strong> to upper-case, converting all upper-case letters to
 lower-case, and leaving all other characters unchanged. We can use a
 <strong>StringBuilder</strong> as an intermediate data structure to do this much more
-efficiently than the code presented in <a href="https://ksu-cs-textbooks.github.io/cis300/strings/strings">the previous
-section</a>
-:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>StringBuilder sb = <span style="color:#66d9ef">new</span>();
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i = <span style="color:#ae81ff">0</span>; i &lt; text.Length; i++)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> c = text[i];
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">char</span>.IsLower(c))
-</span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        sb.Append(<span style="color:#66d9ef">char</span>.ToUpper(c));
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">char</span>.IsUpper(c))
-</span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        sb.Append(<span style="color:#66d9ef">char</span>.ToLower(c));
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        sb.Append(c);
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">string</span> result = sb.ToString();</span></span></code></pre></div><p>On most iterations, the above loop only copies one character. In
+efficiently than the code presented in <a href=/cis300/strings/strings/>the previous
+section</a>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=n>StringBuilder</span> <span class=n>sb</span> <span class=p>=</span> <span class=k>new</span><span class=p>();</span>
+</span></span><span class=line><span class=cl><span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=p>=</span> <span class=m>0</span><span class=p>;</span> <span class=n>i</span> <span class=p>&lt;</span> <span class=n>text</span><span class=p>.</span><span class=n>Length</span><span class=p>;</span> <span class=n>i</span><span class=p>++)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kt>char</span> <span class=n>c</span> <span class=p>=</span> <span class=n>text</span><span class=p>[</span><span class=n>i</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=kt>char</span><span class=p>.</span><span class=n>IsLower</span><span class=p>(</span><span class=n>c</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>sb</span><span class=p>.</span><span class=n>Append</span><span class=p>(</span><span class=kt>char</span><span class=p>.</span><span class=n>ToUpper</span><span class=p>(</span><span class=n>c</span><span class=p>));</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=k>else</span> <span class=k>if</span> <span class=p>(</span><span class=kt>char</span><span class=p>.</span><span class=n>IsUpper</span><span class=p>(</span><span class=n>c</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>sb</span><span class=p>.</span><span class=n>Append</span><span class=p>(</span><span class=kt>char</span><span class=p>.</span><span class=n>ToLower</span><span class=p>(</span><span class=n>c</span><span class=p>));</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=k>else</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>sb</span><span class=p>.</span><span class=n>Append</span><span class=p>(</span><span class=n>c</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=kt>string</span> <span class=n>result</span> <span class=p>=</span> <span class=n>sb</span><span class=p>.</span><span class=n>ToString</span><span class=p>();</span></span></span></code></pre></div><p>On most iterations, the above loop only copies one character. In
 addition, the call to the <strong>StringBuilder</strong>&rsquo;s <strong>ToString</strong> method copies
 each character in the result. If <code>text</code> is 100,000 characters long, this
 is a total of 200,000 character copies. Using the <strong>StringBuilder</strong>
-implementation described in <a href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilder-impl">the next
-section</a>
-, there
+implementation described in <a href=/cis300/strings/stringbuilder-impl/>the next
+section</a>, there
 are some iterations that copy more than one character, but even if we
 account for this, it turns out that fewer than 400,000 characters are
 copied, as opposed to over five billion character copies when
-<strong>string</strong>s are used directly (see <a href="https://ksu-cs-textbooks.github.io/cis300/strings/strings">the previous
-section</a>
-). The .NET
+<strong>string</strong>s are used directly (see <a href=/cis300/strings/strings/>the previous
+section</a>). The .NET
 <strong>StringBuilder</strong> implementation performs even
 better. In either case, the above code runs in <em>O</em>(<em>n</em>) time, where <em>n</em>
 is the length of <code>text</code>; i.e., as <em>n</em> gets large, the running time is at
 worst proportional to <em>n</em>. Thus, its performance degrades much less
 rapidly than the <em>O</em>(<em>n</em><sup>2</sup>) code that uses <strong>string</strong>s
-directly.</p>
-<p>A program that runs the above code and the code given in <a href="https://ksu-cs-textbooks.github.io/cis300/strings/strings">the previous
-section</a>
- on user-provided
-text files can be obtained by creating a Git repository (see <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/repos">&ldquo;Git
-Repositories&rdquo;</a>
-) using
-<a href="https://classroom.github.com/a/PO7WgRNh" target="_blank">this URL</a>
-. A noticeable
+directly.</p><p>A program that runs the above code and the code given in <a href=/cis300/strings/strings/>the previous
+section</a> on user-provided
+text files can be obtained by creating a Git repository (see <a href=/cis300/appendix/vs/repos/>&ldquo;Git
+Repositories&rdquo;</a>) using
+<a href=https://classroom.github.com/a/PO7WgRNh rel=external target=_blank>this URL</a>. A noticeable
 performance difference can be seen on text files larger than 100K - for
-example, the full text of <a href="http://www.gutenberg.org/cache/epub/12/pg12.txt" target="_blank">Lewis Carroll&rsquo;s <em>Through the Looking
-Glass</em></a>
-.</p>
-<p><strong>StringBuilder</strong>s have some features in common with <strong>string</strong>s. For
+example, the full text of <a href=http://www.gutenberg.org/cache/epub/12/pg12.txt rel=external target=_blank>Lewis Carroll&rsquo;s <em>Through the Looking
+Glass</em></a>.</p><p><strong>StringBuilder</strong>s have some features in common with <strong>string</strong>s. For
 example, we access individual characters in a <strong>StringBuilder</strong> by
 indexing; i.e., if <code>sb</code> is a <strong>StringBuilder</strong> variable, then <code>sb[0]</code>
 accesses its first character, <code>sb[1]</code> accesses its second character,
 etc. The main difference here is that with a <strong>StringBuilder</strong>, we may
 use indexing to change characters; e.g., we may do the following,
-provided <code>sb</code> contains at least 3 characters:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>sb[<span style="color:#ae81ff">2</span>] = <span style="color:#e6db74">&#39;x&#39;</span>;</span></span></code></pre></div><p>A <strong>StringBuilder</strong> also has a
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.length?view=net-6.0#system-text-stringbuilder-length" target="_blank"><strong>Length</strong></a>
-
+provided <code>sb</code> contains at least 3 characters:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=n>sb</span><span class=p>[</span><span class=m>2</span><span class=p>]</span> <span class=p>=</span> <span class=sc>&#39;x&#39;</span><span class=p>;</span></span></span></code></pre></div><p>A <strong>StringBuilder</strong> also has a
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.length?view=net-6.0#system-text-stringbuilder-length" rel=external target=_blank><strong>Length</strong></a>
 property, which gets the number of characters contained. However, we may
 also set this property to any nonnegative value, provided there is
 enough memory available to provide this length. For example, we may
-write:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>sb.Length = <span style="color:#ae81ff">10</span>;</span></span></code></pre></div><p>If the new length is shorter than the old, characters are removed from
+write:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=n>sb</span><span class=p>.</span><span class=n>Length</span> <span class=p>=</span> <span class=m>10</span><span class=p>;</span></span></span></code></pre></div><p>If the new length is shorter than the old, characters are removed from
 the end of the <strong>StringBuilder</strong>. If the new length is longer that the
 old, <strong>char</strong>s containing the Unicode NULL value (0 in decimal) are
-appended.</p>
-
-  
-  
-<div class="box notices cstyle warning">
-  <div class="box-label"><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div>
-  <div class="box-content">
-
-<p>The Unicode NULL value is different from a <strong>null</strong>
-reference. Because <strong>char</strong> is a <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/reference-value">value
-type</a>
-, a <strong>char</strong>
-cannot store a <strong>null</strong> reference.</p>
-</div>
-</div>
-<p><strong>StringBuilder</strong>s have many other methods to allow various kinds of
-manipulation - see <a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=net-6.0" target="_blank">the documentation for the <strong>StringBuilder</strong>
+appended.</p><div class="box notices cstyle warning"><div class=box-label><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div><div class=box-content><p>The Unicode NULL value is different from a <strong>null</strong>
+reference. Because <strong>char</strong> is a <a href=/cis300/appendix/syntax/reference-value/>value
+type</a>, a <strong>char</strong>
+cannot store a <strong>null</strong> reference.</p></div></div><p><strong>StringBuilder</strong>s have many other methods to allow various kinds of
+manipulation - see <a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=net-6.0" rel=external target=_blank>the documentation for the <strong>StringBuilder</strong>
 class</a>
-
-for details. There is also a <a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.-ctor?view=net-6.0#system-text-stringbuilder-ctor%28system-string%29" target="_blank"><strong>StringBuilder</strong>
+for details. There is also a <a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.-ctor?view=net-6.0#system-text-stringbuilder-ctor(system-string)" rel=external target=_blank><strong>StringBuilder</strong>
 constructor</a>
-
 that takes a <strong>string</strong> as its only parameter and constructs a
-<strong>StringBuilder</strong> containing the contents of that <strong>string</strong>.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-        </div>
-      </main>
-    </div>
-    
-    
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1710771761" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1710771761" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1710771761" defer></script>
-  </body>
-</html>
+<strong>StringBuilder</strong> containing the contents of that <strong>string</strong>.</p><footer class=footline></footer></article></div></main></div><script src=/cis300/js/clipboard.min.js?1719513822 defer></script><script src=/cis300/js/perfect-scrollbar.min.js?1719513822 defer></script><script src=/cis300/js/theme.js?1719513822 defer></script><script src=/cis300/js/embed-iframe.js?1719513822 defer></script></body></html>

@@ -1,617 +1,32 @@
-
-
-
-
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.18.0">
-    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
-    <meta name="description" content="K-State CIS 300: Data Structures">
-    <meta name="author" content="Rod Howell and Josh Weese">
-    <title>Tries in Word Games :: Data Structures in C#</title>
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771760" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771760" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1710771760" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771760" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771760" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1710771760" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771760" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771760" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1710771760" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1710771760" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1710771760" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1710771760" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1710771760" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1710771760"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1710771760"></script>
-    <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
-      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
-      var root_url="https://ksu-cs-textbooks.github.io/cis300/";
-      var baseUri=root_url.replace(/\/$/, '');
-      // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
-      window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
-    </script>
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1710771760" rel="stylesheet">
-
-  </head>
-  <body class="mobile-support embed disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/trees/tries/word-games/embed.html">
-    <div id="body" class="default-animation">
-      
-      
-      
-      <main id="body-inner" class="highlightable default" tabindex="-1">
-        <div class="flex-block-wrapper">
-          <article class="default">
-    
-    
-    
-<h2 id="tries-in-word-games">Tries in Word Games</h2>
-<p>One application of tries is for implementing word games such as
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=robots content="noindex, nofollow, noarchive, noimageindex"><meta name=description content="Tries in Word Games One application of tries is for implementing word games such as Boggle® or Scrabble®. This section discusses how a trie can be used to reduce dramatically the amount of time spent searching for words in such games. We will focus specifically on Boggle, but the same principles apply to other word games as well.
+A Boggle game consists of either 16 or 25 dice with letters on their faces, along with a tray containing a 4 x 4 or 5 x 5 grid for holding these dice."><meta name=author content="Rod Howell and Josh Weese"><meta name=twitter:card content="summary"><meta name=twitter:title content="Tries in Word Games :: Data Structures in C#"><meta name=twitter:description content="Tries in Word Games One application of tries is for implementing word games such as Boggle® or Scrabble®. This section discusses how a trie can be used to reduce dramatically the amount of time spent searching for words in such games. We will focus specifically on Boggle, but the same principles apply to other word games as well.
+A Boggle game consists of either 16 or 25 dice with letters on their faces, along with a tray containing a 4 x 4 or 5 x 5 grid for holding these dice."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis300/trees/tries/word-games/embed.html"><meta property="og:site_name" content="Data Structures in C#"><meta property="og:title" content="Tries in Word Games :: Data Structures in C#"><meta property="og:description" content="Tries in Word Games One application of tries is for implementing word games such as Boggle® or Scrabble®. This section discusses how a trie can be used to reduce dramatically the amount of time spent searching for words in such games. We will focus specifically on Boggle, but the same principles apply to other word games as well.
+A Boggle game consists of either 16 or 25 dice with letters on their faces, along with a tray containing a 4 x 4 or 5 x 5 grid for holding these dice."><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="Trees"><meta property="article:modified_time" content="2023-06-07T09:47:27-05:00"><meta itemprop=name content="Tries in Word Games :: Data Structures in C#"><meta itemprop=description content="Tries in Word Games One application of tries is for implementing word games such as Boggle® or Scrabble®. This section discusses how a trie can be used to reduce dramatically the amount of time spent searching for words in such games. We will focus specifically on Boggle, but the same principles apply to other word games as well.
+A Boggle game consists of either 16 or 25 dice with letters on their faces, along with a tray containing a 4 x 4 or 5 x 5 grid for holding these dice."><meta itemprop=dateModified content="2023-06-07T09:47:27-05:00"><meta itemprop=wordCount content="1594"><title>Tries in Word Games :: Data Structures in C#</title>
+<link href=/cis300/css/fontawesome-all.min.css?1719513822 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fontawesome-all.min.css?1719513822 rel=stylesheet></noscript><link href=/cis300/css/nucleus.css?1719513822 rel=stylesheet><link href=/cis300/css/auto-complete.css?1719513822 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/auto-complete.css?1719513822 rel=stylesheet></noscript><link href=/cis300/css/perfect-scrollbar.min.css?1719513822 rel=stylesheet><link href=/cis300/css/fonts.css?1719513822 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fonts.css?1719513822 rel=stylesheet></noscript><link href=/cis300/css/theme.css?1719513822 rel=stylesheet><link href=/cis300/css/theme-light-theme.css?1719513822 rel=stylesheet id=R-variant-style><link href=/cis300/css/chroma-relearn-light.css?1719513822 rel=stylesheet id=R-variant-chroma-style><link href=/cis300/css/variant.css?1719513822 rel=stylesheet><link href=/cis300/css/print.css?1719513822 rel=stylesheet media=print><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../../..",window.relearn.relBaseUri="../../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis300",window.index_js_url="/cis300/index.search.js",window.variants&&variants.init(["light-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis300/css/custom.css?1719513822 rel=stylesheet></head><body class="mobile-support embed disableInlineCopyToClipboard" data-url=/cis300/trees/tries/word-games/embed.html><div id=R-body class=default-animation><div id=R-body-overlay></div><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><h2 id=tries-in-word-games>Tries in Word Games</h2><p>One application of tries is for implementing word games such as
 Boggle® or Scrabble®. This section discusses how a trie can be
 used to reduce dramatically the amount of time spent searching for words
 in such games. We will focus specifically on Boggle, but the same
-principles apply to other word games as well.</p>
-<p>A Boggle game consists of either 16 or 25 dice with letters on their
+principles apply to other word games as well.</p><p>A Boggle game consists of either 16 or 25 dice with letters on their
 faces, along with a tray containing a 4 x 4 or 5 x 5 grid
 for holding these dice. The face of each die contains a single letter,
 except that one face of one die contains &ldquo;Qu&rdquo;. The tray has a large
 cover such that the dice can be placed in the cover and the tray placed
 upside-down on top of the cover. The whole thing can then be shaken,
 then inverted so that each die ends up in a different grid cell, forming
-a random game board such as:</p>
-<p>
-<a href="#image-e0283ccd7c4f2ddb54b0168082fb8b3d" class="lightbox-link">
-<img src="boggle.jpg" alt="A Boggle game board" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-e0283ccd7c4f2ddb54b0168082fb8b3d">
-<img src="boggle.jpg" alt="A Boggle game board" class="lightbox-image" loading="lazy">
-</a></p>
-<p>Players are then given a certain amount of time during which they
+a random game board such as:</p><p><a href=#R-image-ed0ee62a6fc7bee92ca8125977cea65a class=lightbox-link><img alt="A Boggle game board" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/trees/tries/word-games/boggle.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-ed0ee62a6fc7bee92ca8125977cea65a><img alt="A Boggle game board" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/trees/tries/word-games/boggle.jpg></a></p><p>Players are then given a certain amount of time during which they
 compete to try to form as many unique words as they can from these
 letters. The letters of a word must be adjacent either horizontally,
 vertically, or diagonally, and no die may be used more than once in a
 single word. There is a minimum word length, and longer words are worth
 more points. For example, the above game board contains the words,
-&ldquo;WITCH&rdquo;, &ldquo;ITCH&rdquo;, &ldquo;PELLET&rdquo;, &ldquo;TELL&rdquo;, and &ldquo;DATA&rdquo;, among many others.</p>
-<p>
-<a href="#image-2442572b3cd82f864334e650a87290e9" class="lightbox-link">
-<img src="boggle2.jpg" alt="Words on a Boggle game board" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-2442572b3cd82f864334e650a87290e9">
-<img src="boggle2.jpg" alt="Words on a Boggle game board" class="lightbox-image" loading="lazy">
-</a></p>
-<p>Suppose we want to build a program that plays Boggle against a human
+&ldquo;WITCH&rdquo;, &ldquo;ITCH&rdquo;, &ldquo;PELLET&rdquo;, &ldquo;TELL&rdquo;, and &ldquo;DATA&rdquo;, among many others.</p><p><a href=#R-image-9a3a590b1cb997a80e9e71a91c2f176b class=lightbox-link><img alt="Words on a Boggle game board" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/trees/tries/word-games/boggle2.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-9a3a590b1cb997a80e9e71a91c2f176b><img alt="Words on a Boggle game board" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/trees/tries/word-games/boggle2.jpg></a></p><p>Suppose we want to build a program that plays Boggle against a human
 opponent. The program would need to look for words on a given board. The
 dictionary of valid words can of course be stored in a trie. In what follows,
 we will show how the structure of a trie can be particularly helpful in
-guiding this search so that words are found more quickly.</p>
-<p>We can think of a search from a given starting point as a traversal of a
+guiding this search so that words are found more quickly.</p><p>We can think of a search from a given starting point as a traversal of a
 tree. The root of the tree is the starting point, and its children are
 searches starting from adjacent dice. We must be careful, however, to
 include in such a tree only those adjacent dice that do not already
@@ -619,43 +34,26 @@ occur on the path to the given die. For example, if we start a search at
 the upper-left corner of the above board, its children would be the
 three adjacent dice containing &ldquo;I&rdquo;, &ldquo;C&rdquo;, and &ldquo;A&rdquo;. The children of &ldquo;I&rdquo;,
 then, would not include &ldquo;H&rdquo; because it is already on the path to &ldquo;I&rdquo;.
-Part of this tree would look like this:</p>
-<p>
-<a href="#image-b5204930df8bc09bdb66983af446592c" class="lightbox-link">
-<img src="boggle-tree.jpg" alt="A part of a tree representing a Boggle search space" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-b5204930df8bc09bdb66983af446592c">
-<img src="boggle-tree.jpg" alt="A part of a tree representing a Boggle search space" class="lightbox-image" loading="lazy">
-</a></p>
-<p>Note that this tree is not a data structure - it need not be explicitly
+Part of this tree would look like this:</p><p><a href=#R-image-328c697fad74efc35bf4c81dc3210f48 class=lightbox-link><img alt="A part of a tree representing a Boggle search space" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/trees/tries/word-games/boggle-tree.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-328c697fad74efc35bf4c81dc3210f48><img alt="A part of a tree representing a Boggle search space" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/trees/tries/word-games/boggle-tree.jpg></a></p><p>Note that this tree is not a data structure - it need not be explicitly
 stored anywhere. Rather, it is a mathematical object that helps us to
 design an algorithm for finding all of the words. Each word on the board
 is simply a path in this tree starting from the root. We can therefore
-traverse this tree in much the same way as we outlined in <a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/traversing">the previous
-section</a>
- for tries.
+traverse this tree in much the same way as we outlined in <a href=/cis300/trees/tries/traversing/>the previous
+section</a> for tries.
 For each node in the tree, we can look up the path leading to that node,
-and output it if it is a word in the dictionary.</p>
-<p>In order to be able to implement such a traversal, we need to be able to
+and output it if it is a word in the dictionary.</p><p>In order to be able to implement such a traversal, we need to be able to
 find the children of a node. These children are the adjacent cells that
 are not used in the path to the node. An efficient way to keep track of
 the cells used in this path is with a <strong>bool[ , ]</strong> of the same
 size as the Boggle board - a value of <strong>true</strong> in this array will
 indicate that the corresponding cell on the board has been used in the
 current path. The children of a node are then the adjacent cells whose
-entries in this array are <strong>false</strong>.</p>
-<p>A preorder traversal of this tree will therefore need the following
+entries in this array are <strong>false</strong>.</p><p>A preorder traversal of this tree will therefore need the following
 parameters (and possibly others, depending on how we want to output the
-words found):</p>
-<ul>
-<li>The row index of the current cell.</li>
-<li>The column index of the current cell.</li>
-<li>The <strong>bool[ , ]</strong> described above. The current cell will
-have a <strong>false</strong> entry in this array.</li>
-<li>A <strong>StringBuilder</strong> giving the letters on the path up to, but not
-including, the current cell.</li>
-</ul>
-<p>The preorder traversal will first need to update the cells used by
+words found):</p><ul><li>The row index of the current cell.</li><li>The column index of the current cell.</li><li>The <strong>bool[ , ]</strong> described above. The current cell will
+have a <strong>false</strong> entry in this array.</li><li>A <strong>StringBuilder</strong> giving the letters on the path up to, but not
+including, the current cell.</li></ul><p>The preorder traversal will first need to update the cells used by
 setting the location corresponding to the current cell to <strong>true</strong>.
 Likewise, it will need to update the <strong>StringBuilder</strong> by appending the
 contents of the current cell. Then it will need to process the root by
@@ -666,40 +64,28 @@ each adjacent cell whose entry in the <strong>bool[ , ]</strong> is
 children have been processed, it will need to return the
 <strong>bool[ , ]</strong> and the <strong>StringBuilder</strong> to their
 earlier states by setting the array entry back to <strong>false</strong> and removing
-the character(s) appended earlier.</p>
-<p>Once such a method is written, we can call it once for each cell on the
+the character(s) appended earlier.</p><p>Once such a method is written, we can call it once for each cell on the
 board. For each of these calls, all entries in the <strong>bool[ , ]</strong>
-should be false, and the <strong>StringBuilder</strong> should be empty.</p>
-<p>While the algorithm described above will find all the words on a Boggle
+should be false, and the <strong>StringBuilder</strong> should be empty.</p><p>While the algorithm described above will find all the words on a Boggle
 board, a 5 x 5 board will require quite a while for the algorithm
 to process. While this might be acceptable if we are implementing a game
 that humans can compete with, from an algorithmic standpoint, we would
 like to improve the performance. (In fact, there are probably better
 ways to make a program with which humans can compete, as this search
-will only find words that begin near the top of the board.)</p>
-<p>We can begin to see how to improve the performance if we observe the
+will only find words that begin near the top of the board.)</p><p>We can begin to see how to improve the performance if we observe the
 similarity between the trees we have been discussing and a trie
 containing the word list. Consider, for example, a portion of the child
-labeled &lsquo;h&rsquo; in a trie representing a large set of words:</p>
-<p>
-<a href="#image-f973f5e87c121e430170b438b6874f91" class="lightbox-link">
-<img src="trie-portion.jpg" alt="A portion of a trie." style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-f973f5e87c121e430170b438b6874f91">
-<img src="trie-portion.jpg" alt="A portion of a trie." class="lightbox-image" loading="lazy">
-</a></p>
-<p>We have omitted some of the children because they are irrelevant to the
+labeled &lsquo;h&rsquo; in a trie representing a large set of words:</p><p><a href=#R-image-f04506a42761a2c1178a4fd3932de85e class=lightbox-link><img alt="A portion of a trie." class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/trees/tries/word-games/trie-portion.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-f04506a42761a2c1178a4fd3932de85e><img alt="A portion of a trie." class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/trees/tries/word-games/trie-portion.jpg></a></p><p>We have omitted some of the children because they are irrelevant to the
 search we are performing (e.g., there is no die containing &ldquo;E&rdquo; adjacent
 to &ldquo;H&rdquo; on the above game board). Also, we are assuming a minimum word
 length of 4; hence, &ldquo;ha&rdquo;, &ldquo;hi&rdquo;, and &ldquo;hit&rdquo; are not shown as words in this
-trie.</p>
-<p>Notice the similarity between the trie portion shown above and the tree
+trie.</p><p>Notice the similarity between the trie portion shown above and the tree
 shown earlier. The root of the tree has children representing dice
 containing &ldquo;I&rdquo; and &ldquo;A&rdquo;, and the former node has children representing
 dice containing &ldquo;T&rdquo;, &ldquo;C&rdquo;, and &ldquo;A&rdquo;; likewise, though they are listed in a
 different order, the trie has children labeled &lsquo;i&rsquo; and &lsquo;a&rsquo;, and the
-former node has children labeled &rsquo;t&rsquo;, &lsquo;c&rsquo;, and &lsquo;a&rsquo;.</p>
-<p>What is more important to our discussion, however, is that the trie does
+former node has children labeled &rsquo;t&rsquo;, &lsquo;c&rsquo;, and &lsquo;a&rsquo;.</p><p>What is more important to our discussion, however, is that the trie does
 not have a child labeled &lsquo;c&rsquo;, as there is no English word beginning with
 &ldquo;hc&rdquo;. Similarly, the child labeled &lsquo;i&rsquo; does not have a child labeled
 &lsquo;i&rsquo;, as there is no English word beginning with &ldquo;hii&rdquo;. If there are no
@@ -707,60 +93,28 @@ words in the word list beginning with these prefixes, there is no need
 to search the subtrees rooted at the corresponding nodes when doing the
 preorder traversal. Using the trie to prune the search in this way ends
 up avoiding many subtrees that don&rsquo;t lead to any words. As a result,
-only a small fraction of the original tree is searched.</p>
-<p>In order to take advantage of the trie in this way, we need a method in
+only a small fraction of the original tree is searched.</p><p>In order to take advantage of the trie in this way, we need a method in
 the trie implementation to return the child having a given label, or
 <strong>null</strong> if there is no such child. Alternatively, we might provide a
 method that takes a <strong>string</strong> and returns the trie that this <strong>string</strong>
 leads to, or <strong>null</strong> if there is no such trie (this method would make
 it easier to handle the die containing &ldquo;Qu&rdquo;). Either way, we can then
 traverse the trie as we are doing the preorder traversal described
-above, and avoid searching a subtree whenever the trie becomes null.</p>
-<p>This revised preorder traversal needs an extra parameter - a trie giving
+above, and avoid searching a subtree whenever the trie becomes null.</p><p>This revised preorder traversal needs an extra parameter - a trie giving
 all completions of words beginning with the prefix given by the
 <strong>StringBuilder</strong> parameter. We will need to ensure that this parameter
-is never <strong>null</strong>. The algorithm then proceeds as follows:</p>
-<ul>
-<li>From the given trie, get the subtrie containing the completions of
-words beginning with the contents of the current cell.</li>
-<li>If this subtrie is not <strong>null</strong>:
-<ul>
-<li>Set the location in the <strong>bool[ , ]</strong> corresponding to
-the current cell to <strong>true</strong>.</li>
-<li>Append the contents of the current cell to the
-<strong>StringBuilder</strong>.</li>
-<li>If the subtrie obtained above contains the empty <strong>string</strong>,
-output the contents of the <strong>StringBuilder</strong> as a word found.</li>
-<li>Recursively traverse each adjacent cell whose corresponding
+is never <strong>null</strong>. The algorithm then proceeds as follows:</p><ul><li>From the given trie, get the subtrie containing the completions of
+words beginning with the contents of the current cell.</li><li>If this subtrie is not <strong>null</strong>:<ul><li>Set the location in the <strong>bool[ , ]</strong> corresponding to
+the current cell to <strong>true</strong>.</li><li>Append the contents of the current cell to the
+<strong>StringBuilder</strong>.</li><li>If the subtrie obtained above contains the empty <strong>string</strong>,
+output the contents of the <strong>StringBuilder</strong> as a word found.</li><li>Recursively traverse each adjacent cell whose corresponding
 entry in the <strong>bool[ , ]</strong> is <strong>false</strong>. The recursive
-calls should use the subtrie obtained above.</li>
-<li>Set the location in the <strong>bool[ , ]</strong> corresponding to
-the current cell to <strong>false</strong>.</li>
-<li>Remove the contents of the current cell from the end of the
+calls should use the subtrie obtained above.</li><li>Set the location in the <strong>bool[ , ]</strong> corresponding to
+the current cell to <strong>false</strong>.</li><li>Remove the contents of the current cell from the end of the
 <strong>StringBuilder</strong> (i.e., decrease its <strong>Length</strong> by the
-appropriate amount).</li>
-</ul>
-</li>
-</ul>
-<p>We would then apply the above algorithm to each cell on the board. For
+appropriate amount).</li></ul></li></ul><p>We would then apply the above algorithm to each cell on the board. For
 each cell, we would use a <strong>bool[ , ]</strong> whose entries are all
 <strong>false</strong>, an empty <strong>StringBuilder</strong>, and the entire trie of valid words. Note that we
 have designed the preorder traversal so that it leaves each of these
 parameters unchanged; hence, we only need to initialize them once. The
-resulting search will find all of the words on the board quickly.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-        </div>
-      </main>
-    </div>
-    
-    
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1710771761" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1710771761" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1710771761" defer></script>
-  </body>
-</html>
+resulting search will find all of the words on the board quickly.</p><footer class=footline></footer></article></div></main></div><script src=/cis300/js/clipboard.min.js?1719513822 defer></script><script src=/cis300/js/perfect-scrollbar.min.js?1719513822 defer></script><script src=/cis300/js/theme.js?1719513822 defer></script><script src=/cis300/js/embed-iframe.js?1719513822 defer></script></body></html>

@@ -1,735 +1,98 @@
-
-
-
-
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.18.0">
-    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
-    <meta name="description" content="K-State CIS 300: Data Structures">
-    <meta name="author" content="Rod Howell and Josh Weese">
-    <title>Hash Codes :: Data Structures in C#</title>
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1710771761" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1710771761" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/format-print.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1710771761" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1710771761"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1710771761"></script>
-    <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
-      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
-      var root_url="https://ksu-cs-textbooks.github.io/cis300/";
-      var baseUri=root_url.replace(/\/$/, '');
-      // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
-      window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
-    </script>
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1710771761" rel="stylesheet">
-
-  </head>
-  <body class="mobile-support print disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/hashing/hash-functions/index.html">
-    <div id="body" class="default-animation">
-      <div id="sidebar-overlay"></div>
-      <div id="toc-overlay"></div>
-      <nav id="topbar" class="highlightable">
-        <div>
-          <div id="top-tele-link">
-            <a class="print-link" title='Teleprompter View' href="https://ksu-cs-textbooks.github.io/cis300/hashing/hash-functions/tele.html">
-              <i class="fas fa-tv fa-fw"></i>
-            </a>
-          </div>
-          <div id="top-embed-link">
-            <a class="print-link" title='Embeddable Version' href="https://ksu-cs-textbooks.github.io/cis300/hashing/hash-functions/embed.html">
-              <i class="fas fa-expand-arrows-alt fa-fw"></i>
-            </a>
-          </div>
-          <div id="breadcrumbs">
-            <span id="sidebar-toggle-span">
-              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
-            </span>
-            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis300/index.html"><span itemprop="name">Data Structures in C#</span></a><meta itemprop="position" content="1"> &gt; </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis300/hashing/index.html"><span itemprop="name">Hash Tables</span></a><meta itemprop="position" content="2"> &gt; </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Hash Codes</span><meta itemprop="position" content="3"></li>
-            </ol>
-          </div>
-        </div>
-      </nav>
-      <main id="body-inner" class="highlightable default" tabindex="-1">
-        <div class="flex-block-wrapper">
-          <article class="default">
-            <header class="headline">
-            </header>
-<div hidden><h1 id="hash-codes">Hash Codes</h1></div>
-
-<h2 id="hash-codes">Hash Codes</h2>
-<p>Whenever equality is redefined for a type, the hash code computation for
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=robots content="noindex, nofollow, noarchive, noimageindex"><meta name=description content="Hash Codes Whenever equality is redefined for a type, the hash code computation for that type needs to be redefined in a consistent way. This is done by overriding that type’s GetHashCode method. In order for hashing to be implemented correctly and efficiently, this method should satisfy the following goals:
+Equal keys must have the same hash code. This is necessary in order for the Dictionary<TKey, TValue> class to be able to find a given key that it has stored."><meta name=author content="Rod Howell and Josh Weese"><meta name=twitter:card content="summary"><meta name=twitter:title content="Hash Codes :: Data Structures in C#"><meta name=twitter:description content="Hash Codes Whenever equality is redefined for a type, the hash code computation for that type needs to be redefined in a consistent way. This is done by overriding that type’s GetHashCode method. In order for hashing to be implemented correctly and efficiently, this method should satisfy the following goals:
+Equal keys must have the same hash code. This is necessary in order for the Dictionary<TKey, TValue> class to be able to find a given key that it has stored."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis300/hashing/hash-functions/"><meta property="og:site_name" content="Data Structures in C#"><meta property="og:title" content="Hash Codes :: Data Structures in C#"><meta property="og:description" content="Hash Codes Whenever equality is redefined for a type, the hash code computation for that type needs to be redefined in a consistent way. This is done by overriding that type’s GetHashCode method. In order for hashing to be implemented correctly and efficiently, this method should satisfy the following goals:
+Equal keys must have the same hash code. This is necessary in order for the Dictionary<TKey, TValue> class to be able to find a given key that it has stored."><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="Hash Tables"><meta property="article:modified_time" content="2023-06-07T11:36:57-05:00"><meta itemprop=name content="Hash Codes :: Data Structures in C#"><meta itemprop=description content="Hash Codes Whenever equality is redefined for a type, the hash code computation for that type needs to be redefined in a consistent way. This is done by overriding that type’s GetHashCode method. In order for hashing to be implemented correctly and efficiently, this method should satisfy the following goals:
+Equal keys must have the same hash code. This is necessary in order for the Dictionary<TKey, TValue> class to be able to find a given key that it has stored."><meta itemprop=dateModified content="2023-06-07T11:36:57-05:00"><meta itemprop=wordCount content="1219"><title>Hash Codes :: Data Structures in C#</title>
+<link href=/cis300/css/fontawesome-all.min.css?1719513823 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fontawesome-all.min.css?1719513823 rel=stylesheet></noscript><link href=/cis300/css/nucleus.css?1719513823 rel=stylesheet><link href=/cis300/css/auto-complete.css?1719513823 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/auto-complete.css?1719513823 rel=stylesheet></noscript><link href=/cis300/css/perfect-scrollbar.min.css?1719513823 rel=stylesheet><link href=/cis300/css/fonts.css?1719513823 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fonts.css?1719513823 rel=stylesheet></noscript><link href=/cis300/css/theme.css?1719513823 rel=stylesheet><link href=/cis300/css/theme-auto.css?1719513823 rel=stylesheet id=R-variant-style><link href=/cis300/css/chroma-auto.css?1719513823 rel=stylesheet id=R-variant-chroma-style><link href=/cis300/css/variant.css?1719513823 rel=stylesheet><link href=/cis300/css/print.css?1719513823 rel=stylesheet media=print><link href=/cis300/css/format-print.css?1719513823 rel=stylesheet><script src=/cis300/js/variant.js?1719513823></script><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis300",window.index_js_url="/cis300/index.search.js",window.variants&&variants.init(["auto","light-theme","dark-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis300/css/custom.css?1719513823 rel=stylesheet></head><body class="mobile-support print disableInlineCopyToClipboard" data-url=/cis300/hashing/hash-functions/><div id=R-body class=default-animation><div id=R-body-overlay></div><nav id=R-topbar><div class=topbar-wrapper><div class=topbar-sidebar-divider></div><div class="topbar-area topbar-area-start" data-area=start><div class="topbar-button topbar-button-sidebar" data-content-empty=disable data-width-s=show data-width-m=hide data-width-l=hide><button class=topbar-control onclick=toggleNav() type=button title="Menu (CTRL+ALT+n)"><i class="fa-fw fas fa-bars"></i></button></div></div><ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype=http://schema.org/BreadcrumbList><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><a itemprop=item href=/cis300/hashing/><span itemprop=name>Hash Tables</span></a><meta itemprop=position content="1">&nbsp;>&nbsp;</li><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><span itemprop=name>Hash Codes</span><meta itemprop=position content="2"></li></ol><div class="topbar-area topbar-area-end" data-area=end><div class="topbar-button topbar-button-prev" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/cis300/hashing/equality/ title="Equality in C# (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></div><div class="topbar-button topbar-button-next" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/cis300/graphs/ title="Graphs (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></div></div></div></nav><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><div hidden><h1 id=hash-codes>Hash Codes</h1></div><h2 id=hash-codes>Hash Codes</h2><p>Whenever equality is redefined for a type, the hash code computation for
 that type needs to be redefined in a consistent way. This is done by
-<a href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilder-impl/#overriding">overriding</a>
- that
+<a href=/cis300/strings/stringbuilder-impl/#overriding>overriding</a> that
 type&rsquo;s
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.object.gethashcode?view=net-6.0#system-object-gethashcode" target="_blank"><strong>GetHashCode</strong></a>
-
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.object.gethashcode?view=net-6.0#system-object-gethashcode" rel=external target=_blank><strong>GetHashCode</strong></a>
 method. In order for hashing to be implemented correctly and
-efficiently, this method should satisfy the following goals:</p>
-<ul>
-<li>Equal keys must have the same hash code. This is necessary in order
-for the <strong>Dictionary&lt;TKey, TValue&gt;</strong> class to be able to find a
+efficiently, this method should satisfy the following goals:</p><ul><li>Equal keys must have the same hash code. This is necessary in order
+for the <strong>Dictionary&lt;TKey, TValue></strong> class to be able to find a
 given key that it has stored. On the other hand, because the number
 of possible keys is usually larger than the number of possible hash
-codes, unequal keys are also allowed to have the same hash code.</li>
-<li>The computation should be done quickly.</li>
-<li>Hash codes should be uniformly distributed even if the keys are not.</li>
-</ul>
-<p>The last goal above may seem rather daunting, particularly in light of
+codes, unequal keys are also allowed to have the same hash code.</li><li>The computation should be done quickly.</li><li>Hash codes should be uniformly distributed even if the keys are not.</li></ul><p>The last goal above may seem rather daunting, particularly in light of
 our desire for a quick computation. In fact, it is impossible to
 guarantee in general &mdash; provided there are more than
-
 <span class="math align-center">$ 2^{32}(k - 1) $</span> possible keys from which to choose, no
 matter how the hash code computation is implemented, we can always find
-at least 
+at least
 <span class="math align-center">$ k $</span> keys with the same hash code. However, this is a problem
 that has been studied a great deal, and several techniques have been
 developed that are effective in practice. We will caution, however, that
 not every technique that looks like it should be effective actually is
 in practice. It is best to use techniques that have been demonstrated to
 be effective in a wide variety of applications. We will examine one of
-these techniques in what follows.</p>
-<p>A guiding principle in developing hashing techniques is to use all
+these techniques in what follows.</p><p>A guiding principle in developing hashing techniques is to use all
 information available in the key. By using all the information, we will
 be sure to use the information that distinguishes this key from other
 keys. This information includes not just the values of the individual
 parts of the the key, but also the order in which they occur, provided
 this order is significant in distinguishing unequal keys. For example,
 the strings, &ldquo;being&rdquo; and &ldquo;begin&rdquo; contain the same letters, but are
-different because the letters occur in a different order.</p>
-<p>One specific technique initializes the hash code to 0, then processes
+different because the letters occur in a different order.</p><p>One specific technique initializes the hash code to 0, then processes
 the key one component at a time. These components may be bytes,
 characters, or other parts no larger than 32 bits each. For example, for
 the Nim board positions discussed in
-<a href="https://ksu-cs-textbooks.github.io/cis300/hashing/memoization">&ldquo;Memoization&rdquo;</a>
-, the
+<a href=/cis300/hashing/memoization/>&ldquo;Memoization&rdquo;</a>, the
 components would be the number of stones on each pile, the limit for
 each pile, and the total number of piles (to distinguish between a board
 ending with empty piles and a board with fewer piles). For each
-component, it does the following:</p>
-<ul>
-<li>Multiply the hash code by some fixed odd integer.</li>
-<li>Add the current component to the hash code.</li>
-</ul>
-<p>Due to the repeated
+component, it does the following:</p><ul><li>Multiply the hash code by some fixed odd integer.</li><li>Add the current component to the hash code.</li></ul><p>Due to the repeated
 multiplications, the above computation will often overflow an <strong>int</strong>.
-This is not a problem &mdash; the remaining bits are sufficient for the hash code.</p>
-<p>In order to understand this computation a little better, let&rsquo;s first
+This is not a problem &mdash; the remaining bits are sufficient for the hash code.</p><p>In order to understand this computation a little better, let&rsquo;s first
 ignore the effect of this overflow. We&rsquo;ll denote the fixed odd integer
-by 
+by
 <span class="math align-center">$ x $</span>, and the components of the key as
-<span style="white-space:nowrap">
-<span class="math align-center">$ k_1, \dots, k_n $</span>.</span> Then
-this is the result of the computation:</p>
-
-<span class="math align-left">
-$$(\dots ((0x + k_1)x + k_2) \dots)x + k_n = k_1 x^{n-1} + k_2 x^{n-2} + \dots + k_n.$$
-</span>
-<p>Because the above is a polynomial, this hashing scheme is called
+<span style=white-space:nowrap><span class="math align-center">$ k_1, \dots, k_n $</span>.</span> Then
+this is the result of the computation:</p><span class="math align-left">$$(\dots ((0x + k_1)x + k_2) \dots)x + k_n = k_1 x^{n-1} + k_2 x^{n-2} + \dots + k_n.$$</span><p>Because the above is a polynomial, this hashing scheme is called
 <em>polynomial hashing</em>. While the computation itself is efficient,
 performing just a couple of arithmetic operations on each component, the
 result is to multiply each component by a unique value (
 <span class="math align-center">$ x^i $</span>
-for some <span style="white-space:nowrap">
-<span class="math align-center">$ i $</span>)</span> depending on its position within the key.</p>
-<p>Now let&rsquo;s consider the effect of overflow on the above polynomial. What
+for some <span style=white-space:nowrap><span class="math align-center">$ i $</span>)</span> depending on its position within the key.</p><p>Now let&rsquo;s consider the effect of overflow on the above polynomial. What
 this does is to keep only the low-order 32 bits of the value of the
 polynomial. Looking at it another way, we end up multiplying
-
-<span class="math align-center">$ k_i $</span> by only the low-order 32 bits of <span style="white-space:nowrap">
-<span class="math align-center">$ x^{n-i} $</span>.</span>
-This helps to explain why 
+<span class="math align-center">$ k_i $</span> by only the low-order 32 bits of <span style=white-space:nowrap><span class="math align-center">$ x^{n-i} $</span>.</span>
+This helps to explain why
 <span class="math align-center">$ x $</span> is an odd number &mdash; raising an even number
-to the <span style="white-space:nowrap">
-<span class="math align-center">$ i $</span>th</span> power forms a number ending in 
+to the <span style=white-space:nowrap><span class="math align-center">$ i $</span>th</span> power forms a number ending in
 <span class="math align-center">$ i $</span> 0s in binary. Thus, if
 there are more than 32 components in the key, all but the last 32 will
-be multiplied by <span style="white-space:nowrap">
-<span class="math align-center">$ 0 $</span>,</span> and hence, ignored.</p>
-<p>There are other potential problems with using certain odd numbers for
-
-<span class="math align-center">$ x $</span>. For example, we wouldn&rsquo;t want to use <span style="white-space:nowrap">
-<span class="math align-center">$ 1 $</span>,</span> because that would result
+be multiplied by <span style=white-space:nowrap><span class="math align-center">$ 0 $</span>,</span> and hence, ignored.</p><p>There are other potential problems with using certain odd numbers for
+<span class="math align-center">$ x $</span>. For example, we wouldn&rsquo;t want to use <span style=white-space:nowrap><span class="math align-center">$ 1 $</span>,</span> because that would result
 in simply adding all the components together, and we would lose any
-information regarding their positions within the key. Using 
+information regarding their positions within the key. Using
 <span class="math align-center">$ -1 $</span> would be
 almost as bad, as we would multiply all components in odd positions by
-
-<span class="math align-center">$ -1 $</span> and all components in even positions by <span style="white-space:nowrap">
-<span class="math align-center">$ 1 $</span>.</span> The effect of overflow can
+<span class="math align-center">$ -1 $</span> and all components in even positions by <span style=white-space:nowrap><span class="math align-center">$ 1 $</span>.</span> The effect of overflow can
 cause similar behavior; for example, if we place
-
 <span class="math align-center">$ 2^{31} - 1 $</span> in an <strong>int</strong> variable and square it,
-the overflow causes the result to be <span style="white-space:nowrap">1.</span> Successive powers will then
-alternate between 
-<span class="math align-center">$ 2^{31} - 1 $</span> and <span style="white-space:nowrap">
-<span class="math align-center">$ 1 $</span>.</span></p>
-<p>It turns out that this cyclic behavior occurs no matter what odd number
-we use for <span style="white-space:nowrap">
-<span class="math align-center">$ x $</span>.</span> However, in most cases the cycle is long enough that
+the overflow causes the result to be <span style=white-space:nowrap>1.</span> Successive powers will then
+alternate between
+<span class="math align-center">$ 2^{31} - 1 $</span> and <span style=white-space:nowrap><span class="math align-center">$ 1 $</span>.</span></p><p>It turns out that this cyclic behavior occurs no matter what odd number
+we use for <span style=white-space:nowrap><span class="math align-center">$ x $</span>.</span> However, in most cases the cycle is long enough that
 keys of a reasonable size will have each component multiplied by a
 unique value. The only odd numbers that result in short cycles are those
-that are adjacent to a multiple of a large power of 
-<span class="math align-center">$ 2 $</span> (note that 
+that are adjacent to a multiple of a large power of
+<span class="math align-center">$ 2 $</span> (note that
 <span class="math align-center">$ 0 $</span> is a
-multiple of any integer).</p>
-<p>The other potential problem occurs when we are hashing fairly short
-keys. In such cases, if 
+multiple of any integer).</p><p>The other potential problem occurs when we are hashing fairly short
+keys. In such cases, if
 <span class="math align-center">$ x $</span> is also small enough, the values computed
 will all be much smaller than the maximum possible integer value
-<span style="white-space:nowrap">
-<span class="math align-center">$ (2^{31} - 1) $</span>.</span> As a result, we will not have a uniform
-distribution of values. We therefore want to avoid making 
-<span class="math align-center">$ x $</span> too small.</p>
-<p>Putting all this together, choosing 
-<span class="math align-center">$ x $</span> to be an odd number between 
+<span style=white-space:nowrap><span class="math align-center">$ (2^{31} - 1) $</span>.</span> As a result, we will not have a uniform
+distribution of values. We therefore want to avoid making
+<span class="math align-center">$ x $</span> too small.</p><p>Putting all this together, choosing
+<span class="math align-center">$ x $</span> to be an odd number between
 <span class="math align-center">$ 30 $</span>
-and 
+and
 <span class="math align-center">$ 40 $</span> works pretty well. These values are large enough so that seven key
 components will usually overflow an <strong>int</strong>. Furthermore, they all have
-a cycle length greater than 
-<span class="math align-center">$ 100 $</span> million.</p>
-<p>We should always save the hash code in a <strong>private</strong> field after we
+a cycle length greater than
+<span class="math align-center">$ 100 $</span> million.</p><p>We should always save the hash code in a <strong>private</strong> field after we
 compute it so that subsequent requests for the same hash code don&rsquo;t
 result in repeating the computation. This can be done in either of two
 ways. One way is to compute it in an <em>eager</em> fashion by doing it in the
@@ -742,58 +105,6 @@ used to indicate whether the hash code has been computed yet or not.
 With this approach, the <strong>GetHashCode</strong> method first checks this field
 to see if the hash code has been computed. If not, it computes the hash
 code and saves it in its field. In either case, it then returns the
-value of the hash code field.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-
-        </div>
-      </main>
-    
-<div class="git-footer">
-<p class="theme-version-footer">5.18.0</p>
-<p>Last modified by: 
-            <i class='fas fa-user'></i> Rod Howell
-            <i class='fas fa-calendar'></i> <a href="https://gitlab.cs.ksu.edu/cis300/cis300-book/-/commit/c19b3d00cdc683e9f16310b307b79262f7cb7b39">Jun 7, 2023</a>
-</p>
-</div>
-
-    
-    </div>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1710771761" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1710771761" defer></script>
-    <script>
-      function useMathJax( config ){
-        if( !Object.assign ){
-          
-          return;
-        }
-        window.MathJax = Object.assign( window.MathJax || {}, {
-          loader: {
-            load: ['[tex]/mhchem']
-          },
-          startup: {
-            elements: [
-              '.math'
-            ]
-          },
-          tex: {
-            inlineMath: [
-              ['$', '$'], 
-              ['\\(', '\\)']
-            ]
-          },
-          options: {
-            enableMenu: false 
-          }
-        }, config );
-      }
-      useMathJax( JSON.parse("{}") );
-    </script>
-    <script id="MathJax-script" async src="https://ksu-cs-textbooks.github.io/cis300/js/mathjax/tex-mml-chtml.js?1710771761"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1710771761" defer></script>
-  </body>
-</html>
+value of the hash code field.</p><footer class=footline></footer></article></div></main><div class=git-footer><p class=theme-version-footer>6.0.0</p><p>Last modified by:
+<i class='fas fa-user'></i> Rod Howell
+<i class='fas fa-calendar'></i> <a href=https://github.com/ksu-cs-textbooks/cis300/commit/c19b3d00cdc683e9f16310b307b79262f7cb7b39>Jun 7, 2023</a></p></div></div><script src=/cis300/js/clipboard.min.js?1719513823 defer></script><script src=/cis300/js/perfect-scrollbar.min.js?1719513823 defer></script><script>function useMathJax(e){window.MathJax=Object.assign(window.MathJax||{},{tex:{inlineMath:[["\\(","\\)"],["$","$"]],displayMath:[["\\[","\\]"],["$$","$$"]]},options:{enableMenu:!1}},e)}useMathJax(JSON.parse("{}"))</script><script id=MathJax-script async src=/cis300/js/mathjax/tex-mml-chtml.js?1719513823></script><script src=/cis300/js/theme.js?1719513823 defer></script></body></html>

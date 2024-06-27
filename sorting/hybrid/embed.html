@@ -1,610 +1,29 @@
-
-
-
-
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.18.0">
-    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
-    <meta name="description" content="K-State CIS 300: Data Structures">
-    <meta name="author" content="Rod Howell and Josh Weese">
-    <title>Hybrid Sorting Algorithms :: Data Structures in C#</title>
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771760" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771760" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1710771760" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771760" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771760" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1710771760" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771760" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771760" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1710771760" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1710771760" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1710771760" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1710771760" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1710771760" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1710771760"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1710771760"></script>
-    <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
-      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
-      var root_url="https://ksu-cs-textbooks.github.io/cis300/";
-      var baseUri=root_url.replace(/\/$/, '');
-      // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
-      window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
-    </script>
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1710771760" rel="stylesheet">
-
-  </head>
-  <body class="mobile-support embed disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/sorting/hybrid/embed.html">
-    <div id="body" class="default-animation">
-      
-      
-      
-      <main id="body-inner" class="highlightable default" tabindex="-1">
-        <div class="flex-block-wrapper">
-          <article class="default">
-    
-    
-    
-<h2 id="hybrid-sorting-algorithms">Hybrid Sorting Algorithms</h2>
-<p>The best versions of <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/split">quick
-sort</a>
- are competitive
-with both <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/select/#heap-sort">heap sort</a>
- and
-<a href="https://ksu-cs-textbooks.github.io/cis300/sorting/merge">merge sort</a>
- on the vast
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=robots content="noindex, nofollow, noarchive, noimageindex"><meta name=description content="Hybrid Sorting Algorithms The best versions of quick sort are competitive with both heap sort and merge sort on the vast majority of inputs. However, quick sort has a very bad worst case — $ O(n^2) $ running time and $ O(n) $ stack usage. By comparison, both heap sort and merge sort have $ O(n \lg n) $ worst-case running time, together with a stack usage of $ O(1) $ for heap sort or $ O(\lg n) $ for merge sort."><meta name=author content="Rod Howell and Josh Weese"><meta name=twitter:card content="summary"><meta name=twitter:title content="Hybrid Sorting Algorithms :: Data Structures in C#"><meta name=twitter:description content="Hybrid Sorting Algorithms The best versions of quick sort are competitive with both heap sort and merge sort on the vast majority of inputs. However, quick sort has a very bad worst case — $ O(n^2) $ running time and $ O(n) $ stack usage. By comparison, both heap sort and merge sort have $ O(n \lg n) $ worst-case running time, together with a stack usage of $ O(1) $ for heap sort or $ O(\lg n) $ for merge sort."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis300/sorting/hybrid/embed.html"><meta property="og:site_name" content="Data Structures in C#"><meta property="og:title" content="Hybrid Sorting Algorithms :: Data Structures in C#"><meta property="og:description" content="Hybrid Sorting Algorithms The best versions of quick sort are competitive with both heap sort and merge sort on the vast majority of inputs. However, quick sort has a very bad worst case — $ O(n^2) $ running time and $ O(n) $ stack usage. By comparison, both heap sort and merge sort have $ O(n \lg n) $ worst-case running time, together with a stack usage of $ O(1) $ for heap sort or $ O(\lg n) $ for merge sort."><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="Sorting"><meta property="article:modified_time" content="2023-05-22T14:36:43-05:00"><meta itemprop=name content="Hybrid Sorting Algorithms :: Data Structures in C#"><meta itemprop=description content="Hybrid Sorting Algorithms The best versions of quick sort are competitive with both heap sort and merge sort on the vast majority of inputs. However, quick sort has a very bad worst case — $ O(n^2) $ running time and $ O(n) $ stack usage. By comparison, both heap sort and merge sort have $ O(n \lg n) $ worst-case running time, together with a stack usage of $ O(1) $ for heap sort or $ O(\lg n) $ for merge sort."><meta itemprop=dateModified content="2023-05-22T14:36:43-05:00"><meta itemprop=wordCount content="824"><title>Hybrid Sorting Algorithms :: Data Structures in C#</title>
+<link href=/cis300/css/fontawesome-all.min.css?1719513822 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fontawesome-all.min.css?1719513822 rel=stylesheet></noscript><link href=/cis300/css/nucleus.css?1719513822 rel=stylesheet><link href=/cis300/css/auto-complete.css?1719513822 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/auto-complete.css?1719513822 rel=stylesheet></noscript><link href=/cis300/css/perfect-scrollbar.min.css?1719513822 rel=stylesheet><link href=/cis300/css/fonts.css?1719513822 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fonts.css?1719513822 rel=stylesheet></noscript><link href=/cis300/css/theme.css?1719513822 rel=stylesheet><link href=/cis300/css/theme-light-theme.css?1719513822 rel=stylesheet id=R-variant-style><link href=/cis300/css/chroma-relearn-light.css?1719513822 rel=stylesheet id=R-variant-chroma-style><link href=/cis300/css/variant.css?1719513822 rel=stylesheet><link href=/cis300/css/print.css?1719513822 rel=stylesheet media=print><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis300",window.index_js_url="/cis300/index.search.js",window.variants&&variants.init(["light-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis300/css/custom.css?1719513822 rel=stylesheet></head><body class="mobile-support embed disableInlineCopyToClipboard" data-url=/cis300/sorting/hybrid/embed.html><div id=R-body class=default-animation><div id=R-body-overlay></div><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><h2 id=hybrid-sorting-algorithms>Hybrid Sorting Algorithms</h2><p>The best versions of <a href=/cis300/sorting/split/>quick
+sort</a> are competitive
+with both <a href=/cis300/sorting/select/#heap-sort>heap sort</a> and
+<a href=/cis300/sorting/merge/>merge sort</a> on the vast
 majority of inputs. However, quick sort has a very bad worst case &mdash;
-
-<span class="math align-center">$ O(n^2) $</span> running time and 
+<span class="math align-center">$ O(n^2) $</span> running time and
 <span class="math align-center">$ O(n) $</span> stack usage. By
-comparison, both heap sort and merge sort have 
+comparison, both heap sort and merge sort have
 <span class="math align-center">$ O(n \lg n) $</span>
-worst-case running time, together with a stack usage of 
+worst-case running time, together with a stack usage of
 <span class="math align-center">$ O(1) $</span> for heap
-sort or 
-<span class="math align-center">$ O(\lg n) $</span> for merge sort. Furthermore, <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/insert">insertion
-sort</a>
- performs better
+sort or
+<span class="math align-center">$ O(\lg n) $</span> for merge sort. Furthermore, <a href=/cis300/sorting/insert/>insertion
+sort</a> performs better
 than any of these algorithms on small data sets. In this section, we
 look at ways to combine some of these algorithms to obtain a sorting
-algorithm that has the advantages of each of them.</p>
-<p>We will start with quick sort, which gives the best performance for most
+algorithm that has the advantages of each of them.</p><p>We will start with quick sort, which gives the best performance for most
 inputs. One way of improving its performance is to make use of the fact
-that <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/insert">insertion sort</a>
- is
+that <a href=/cis300/sorting/insert/>insertion sort</a> is
 more efficient for small data sets. Improving the performance on small
 portions can lead to significant performance improvements for large
 arrays because quick sort breaks large arrays into many small portions.
 Hence, when the portion we are sorting becomes small enough, rather than
-finding a pivot and splitting, we instead call insertion sort.</p>
-<p>An alternative to the above improvement is to use the fact that
-insertion sort runs in 
+finding a pivot and splitting, we instead call insertion sort.</p><p>An alternative to the above improvement is to use the fact that
+insertion sort runs in
 <span class="math align-center">$ O(n) $</span> time when the number of inversions is
 linear in the number of array elements. To accomplish this, we modify
 quick sort slightly so that instead of sorting the array, it brings each
@@ -613,109 +32,50 @@ as a <em>partial sort</em>. After we have done the partial sort, we then sort
 the array using insertion sort. The modification we make to quick sort
 to obtain the partial sort is simply to change when we stop sorting. We
 only sort portions that are larger than some threshold &mdash; we leave other
-portions unsorted.</p>
-<p>Suppose, for example, that we choose a threshold of <span style="white-space:nowrap">
-<span class="math align-center">$ 10 $</span>.</span> Once the partial
+portions unsorted.</p><p>Suppose, for example, that we choose a threshold of <span style=white-space:nowrap><span class="math align-center">$ 10 $</span>.</span> Once the partial
 sort reaches an array portion with nine or fewer elements, we do nothing
 with it. Note, however, that these elements are all larger than the
 elements that precede this portion, and they are all smaller than the
 elements that follow this portion; hence, each element can form an
 inversion with at most eight other elements &mdash; the other elements in the
 same portion. Because each inversion contains two elements, this means
-that there can be no more than 
+that there can be no more than
 <span class="math align-center">$ 4n $</span> inversions in the entire array once
 the partial sort finishes. The subsequent call to insertion sort will
-therefore finish the sorting in linear time.</p>
-<p>Both of the above techniques yield performance improvements over quick
+therefore finish the sorting in linear time.</p><p>Both of the above techniques yield performance improvements over quick
 sort alone. In fact, for many years, such combinations of an optimized
 version of quick sort with insertion sort were so efficient for most
 inputs that they were the most commonly-used algorithms for
 general-purpose sorting. On modern hardware architectures, the first
-approach above tends to give the better performance.</p>
-<p>Nevertheless, neither of the above approaches can guarantee
-
+approach above tends to give the better performance.</p><p>Nevertheless, neither of the above approaches can guarantee
 <span class="math align-center">$ O(n \lg n) $</span> performance &mdash; in the worst case, they are all
-still in <span style="white-space:nowrap">
-<span class="math align-center">$ O(n^2) $</span>.</span> Furthermore, the bad cases still use
+still in <span style=white-space:nowrap><span class="math align-center">$ O(n^2) $</span>.</span> Furthermore, the bad cases still use
 linear stack space. To overcome these shortfalls, we can put a limit on
 the depth of recursion. Once this limit is reached, we can finish
-sorting this portion with an 
+sorting this portion with an
 <span class="math align-center">$ O(n \lg n) $</span> algorithm such as
-<a href="https://ksu-cs-textbooks.github.io/cis300/sorting/select/#heap-sort">heap sort</a>
-. The idea is to
+<a href=/cis300/sorting/select/#heap-sort>heap sort</a>. The idea is to
 pick a limit that is large enough that it is rarely reached, but still
 small enough that bad cases will cause the alternative sort to be
-invoked before too much time is spent. A limit of about <span style="white-space:nowrap">
-<span class="math align-center">$ 2 \lg n $</span>,</span>
-where 
+invoked before too much time is spent. A limit of about <span style=white-space:nowrap><span class="math align-center">$ 2 \lg n $</span>,</span>
+where
 <span class="math align-center">$ n $</span> is the size of the entire array, has been suggested. Because
-arrays in C# must have fewer than 
+arrays in C# must have fewer than
 <span class="math align-center">$ 2^{31} $</span> elements, this value
-is always less than <span style="white-space:nowrap">
-<span class="math align-center">$ 62 $</span>;</span> hence, it is also safe to use a constant for the
+is always less than <span style=white-space:nowrap><span class="math align-center">$ 62 $</span>;</span> hence, it is also safe to use a constant for the
 limit. The resulting algorithm has a worst-case running time in
-
-<span class="math align-center">$ O(n \lg n) $</span> and a worst-case stack usage of <span style="white-space:nowrap">
-<span class="math align-center">$ O(\lg n) $</span>.</span>
+<span class="math align-center">$ O(n \lg n) $</span> and a worst-case stack usage of <span style=white-space:nowrap><span class="math align-center">$ O(\lg n) $</span>.</span>
 This logarithmic bound on the stack usage is sufficient to avoid a
-<strong>StackOverflowException</strong>.</p>
-<p>The combination of <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/split/#median-of-3">quick sort using median-of-three
-partitioning</a>
- with
+<strong>StackOverflowException</strong>.</p><p>The combination of <a href=/cis300/sorting/split/#median-of-3>quick sort using median-of-three
+partitioning</a> with
 insertion sort for small portions and heap sort when the recursion depth
 limit is reached is known as <em>introsort</em> (short for <em>introspective
 sort</em>). Other improvements exist, but we will not discuss them here. The
 best versions of introsort are among the best sorting algorithms
 available, unless the array is nearly sorted. Of course, if the data
-won&rsquo;t fit in an array, we can&rsquo;t use introsort &mdash; we should use <a href="https://ksu-cs-textbooks.github.io/cis300/sorting/merge/#external">external
+won&rsquo;t fit in an array, we can&rsquo;t use introsort &mdash; we should use <a href=/cis300/sorting/merge/#external>external
 merge sort</a>
-
 instead. Furthermore, like quick sort and heap sort, introsort is not
 stable. When a stable sort is not needed, however, and when none of the
 above special cases applies, introsort is one of the best choices
-available.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-        </div>
-      </main>
-    </div>
-    
-    
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1710771761" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1710771761" defer></script>
-    <script>
-      function useMathJax( config ){
-        if( !Object.assign ){
-          
-          return;
-        }
-        window.MathJax = Object.assign( window.MathJax || {}, {
-          loader: {
-            load: ['[tex]/mhchem']
-          },
-          startup: {
-            elements: [
-              '.math'
-            ]
-          },
-          tex: {
-            inlineMath: [
-              ['$', '$'], 
-              ['\\(', '\\)']
-            ]
-          },
-          options: {
-            enableMenu: false 
-          }
-        }, config );
-      }
-      useMathJax( JSON.parse("{}") );
-    </script>
-    <script id="MathJax-script" async src="https://ksu-cs-textbooks.github.io/cis300/js/mathjax/tex-mml-chtml.js?1710771761"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1710771761" defer></script>
-  </body>
-</html>
+available.</p><footer class=footline></footer></article></div></main></div><script src=/cis300/js/clipboard.min.js?1719513822 defer></script><script src=/cis300/js/perfect-scrollbar.min.js?1719513822 defer></script><script>function useMathJax(e){window.MathJax=Object.assign(window.MathJax||{},{tex:{inlineMath:[["\\(","\\)"],["$","$"]],displayMath:[["\\[","\\]"],["$$","$$"]]},options:{enableMenu:!1}},e)}useMathJax(JSON.parse("{}"))</script><script id=MathJax-script async src=/cis300/js/mathjax/tex-mml-chtml.js?1719513822></script><script src=/cis300/js/theme.js?1719513822 defer></script><script src=/cis300/js/embed-iframe.js?1719513822 defer></script></body></html>

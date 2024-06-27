@@ -1,677 +1,68 @@
-
-
-
-
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.18.0">
-    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
-    <meta name="description" content="K-State CIS 300: Data Structures">
-    <meta name="author" content="Rod Howell and Josh Weese">
-    <title>Advanced Text File I/O :: Data Structures in C#</title>
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1710771761" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1710771761" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1710771761" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1710771761"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1710771761"></script>
-    <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
-      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
-      var root_url="https://ksu-cs-textbooks.github.io/cis300/";
-      var baseUri=root_url.replace(/\/$/, '');
-      // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
-      window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
-    </script>
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1710771761" rel="stylesheet">
-
-  </head>
-  <body class="mobile-support tele disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/io/advanced-text-file/index.html">
-    
-    <div id="tele" class="tele mirror">
-    
-    <div id="body" class="default-animation">
-      
-      
-      
-      <main id="body-inner" class="highlightable default" tabindex="-1">
-        <div class="flex-block-wrapper">
-          <article class="default">
-            <header class="headline">
-            </header>
-<div hidden><h1 id="advanced-text-file-io">Advanced Text File I/O</h1></div>
-
-<h2 id="advanced-text-file-io">Advanced Text File I/O</h2>
-<p>Though the <strong>File.ReadAllText</strong> and <strong>File.WriteAllText</strong> methods
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=robots content="noindex, nofollow, noarchive, noimageindex"><meta name=description content="Advanced Text File I/O Though the File.ReadAllText and File.WriteAllText methods provide simple mechanisms for reading and writing text files, they are not always the best choices. For one reason, files can be very large — too large to fit into memory, or possibly even larger than the maximum length of a string in C# (2,147,483,647 characters). Even when it is possible to store the entire contents of a file as a string, it may not be desirable, as the high memory usage may degrade the overall performance of the system."><meta name=author content="Rod Howell and Josh Weese"><meta name=twitter:card content="summary"><meta name=twitter:title content="Advanced Text File I/O :: Data Structures in C#"><meta name=twitter:description content="Advanced Text File I/O Though the File.ReadAllText and File.WriteAllText methods provide simple mechanisms for reading and writing text files, they are not always the best choices. For one reason, files can be very large — too large to fit into memory, or possibly even larger than the maximum length of a string in C# (2,147,483,647 characters). Even when it is possible to store the entire contents of a file as a string, it may not be desirable, as the high memory usage may degrade the overall performance of the system."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis300/io/advanced-text-file/"><meta property="og:site_name" content="Data Structures in C#"><meta property="og:title" content="Advanced Text File I/O :: Data Structures in C#"><meta property="og:description" content="Advanced Text File I/O Though the File.ReadAllText and File.WriteAllText methods provide simple mechanisms for reading and writing text files, they are not always the best choices. For one reason, files can be very large — too large to fit into memory, or possibly even larger than the maximum length of a string in C# (2,147,483,647 characters). Even when it is possible to store the entire contents of a file as a string, it may not be desirable, as the high memory usage may degrade the overall performance of the system."><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="Input/Output"><meta property="article:modified_time" content="2023-05-30T14:31:54-05:00"><meta itemprop=name content="Advanced Text File I/O :: Data Structures in C#"><meta itemprop=description content="Advanced Text File I/O Though the File.ReadAllText and File.WriteAllText methods provide simple mechanisms for reading and writing text files, they are not always the best choices. For one reason, files can be very large — too large to fit into memory, or possibly even larger than the maximum length of a string in C# (2,147,483,647 characters). Even when it is possible to store the entire contents of a file as a string, it may not be desirable, as the high memory usage may degrade the overall performance of the system."><meta itemprop=dateModified content="2023-05-30T14:31:54-05:00"><meta itemprop=wordCount content="1424"><title>Advanced Text File I/O :: Data Structures in C#</title>
+<link href=/cis300/css/fontawesome-all.min.css?1719513824 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fontawesome-all.min.css?1719513824 rel=stylesheet></noscript><link href=/cis300/css/nucleus.css?1719513824 rel=stylesheet><link href=/cis300/css/auto-complete.css?1719513824 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/auto-complete.css?1719513824 rel=stylesheet></noscript><link href=/cis300/css/perfect-scrollbar.min.css?1719513824 rel=stylesheet><link href=/cis300/css/fonts.css?1719513824 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fonts.css?1719513824 rel=stylesheet></noscript><link href=/cis300/css/theme.css?1719513824 rel=stylesheet><link href=/cis300/css/theme-auto.css?1719513824 rel=stylesheet id=R-variant-style><link href=/cis300/css/chroma-auto.css?1719513824 rel=stylesheet id=R-variant-chroma-style><link href=/cis300/css/variant.css?1719513824 rel=stylesheet><link href=/cis300/css/print.css?1719513824 rel=stylesheet media=print><script src=/cis300/js/variant.js?1719513824></script><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis300",window.index_js_url="/cis300/index.search.js",window.variants&&variants.init(["auto","light-theme","dark-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis300/css/custom.css?1719513824 rel=stylesheet></head><body class="mobile-support tele disableInlineCopyToClipboard" data-url=/cis300/io/advanced-text-file/><div id=tele class="tele mirror"><div id=R-body class=default-animation><div id=R-body-overlay></div><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><div hidden><h1 id=advanced-text-file-io>Advanced Text File I/O</h1></div><h2 id=advanced-text-file-io>Advanced Text File I/O</h2><p>Though the <strong>File.ReadAllText</strong> and <strong>File.WriteAllText</strong> methods
 provide simple mechanisms for reading and writing text files, they are
 not always the best choices. For one reason, files can be very large &mdash;
 too large to fit into memory, or possibly even larger than the maximum
 length of a <strong>string</strong> in C# (2,147,483,647 characters). Even when it
 is possible to store the entire contents of a file as a <strong>string</strong>, it
 may not be desirable, as the high memory usage may degrade the overall
-performance of the system.</p>
-<p>For the purpose of handling a sequence of input or output data in more
+performance of the system.</p><p>For the purpose of handling a sequence of input or output data in more
 flexible ways, .NET provides <em>streams</em>. These streams are
 classes that provide uniform access to a wide variety of sequences of
 input or output data, such as files, network connections, other
 processes, or even blocks of memory. The
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamreader?view=net-6.0" target="_blank"><strong>StreamReader</strong></a>
-
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamreader?view=net-6.0" rel=external target=_blank><strong>StreamReader</strong></a>
 and
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=net-6.0" target="_blank"><strong>StreamWriter</strong></a>
-
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=net-6.0" rel=external target=_blank><strong>StreamWriter</strong></a>
 classes (in the
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io?view=net-6.0" target="_blank"><strong>System.IO</strong></a>
-
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io?view=net-6.0" rel=external target=_blank><strong>System.IO</strong></a>
 namespace) provide read and write, respectively, access to text streams,
-including text files.</p>
-<p>Some of the more useful <strong>public</strong> members of the <strong>StreamReader</strong> class
-are:</p>
-<ul>
-<li>A
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamreader.-ctor?view=net-6.0#system-io-streamreader-ctor%28system-string%29" target="_blank">constructor</a>
-
+including text files.</p><p>Some of the more useful <strong>public</strong> members of the <strong>StreamReader</strong> class
+are:</p><ul><li>A
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamreader.-ctor?view=net-6.0#system-io-streamreader-ctor(system-string)" rel=external target=_blank>constructor</a>
 that takes a <strong>string</strong> giving a file name as its only parameter and
-constructs a <strong>StreamReader</strong> to read from that file.</li>
-<li>A
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamreader.read?view=net-6.0#system-io-streamreader-read" target="_blank"><strong>Read</strong></a>
-
+constructs a <strong>StreamReader</strong> to read from that file.</li><li>A
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamreader.read?view=net-6.0#system-io-streamreader-read" rel=external target=_blank><strong>Read</strong></a>
 method that takes no parameters. It reads the next character from
 the stream and returns it as an <strong>int</strong>. If it cannot read a
 character because it is already at the end of the stream, it returns
 -1 (it returns an <strong>int</strong> because -1 is outside the range of
-<strong>char</strong> values).</li>
-<li>A
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamreader.readline?view=net-6.0#system-io-streamreader-readline" target="_blank"><strong>ReadLine</strong></a>
-
+<strong>char</strong> values).</li><li>A
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamreader.readline?view=net-6.0#system-io-streamreader-readline" rel=external target=_blank><strong>ReadLine</strong></a>
 method that takes no parameters. It reads the next line from the
 stream and returns it as a <strong>string?</strong>. If it cannot read a line
-because it is already at the end of the stream, it returns <strong>null</strong>.</li>
-<li>An
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamreader.endofstream?view=net-6.0#system-io-streamreader-endofstream" target="_blank"><strong>EndOfStream</strong></a>
-
+because it is already at the end of the stream, it returns <strong>null</strong>.</li><li>An
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamreader.endofstream?view=net-6.0#system-io-streamreader-endofstream" rel=external target=_blank><strong>EndOfStream</strong></a>
 property that gets a <strong>bool</strong> indicating whether the end of the
-stream has been reached.</li>
-</ul>
-<p>With these members, we can read a text file either a character at a time
+stream has been reached.</li></ul><p>With these members, we can read a text file either a character at a time
 or a line at a time until we reach the end of the file. The
-<strong>StreamWriter</strong> class has similar <strong>public</strong> members:</p>
-<ul>
-<li>A
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter.-ctor?view=net-6.0#system-io-streamwriter-ctor%28system-string%29" target="_blank">constructor</a>
-
+<strong>StreamWriter</strong> class has similar <strong>public</strong> members:</p><ul><li>A
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter.-ctor?view=net-6.0#system-io-streamwriter-ctor(system-string)" rel=external target=_blank>constructor</a>
 that takes a <strong>string</strong> giving a file name as its only parameter and
 constructs a <strong>StreamWriter</strong> to write to this file. If the file
 already exists, it is replaced by what is written by the
-<strong>StreamWriter</strong>; otherwise, a new file is created.</li>
-<li>A <a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter.write?view=net-6.0#system-io-streamwriter-write%28system-char%29" target="_blank"><strong>Write</strong></a>
-
+<strong>StreamWriter</strong>; otherwise, a new file is created.</li><li>A <a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter.write?view=net-6.0#system-io-streamwriter-write(system-char)" rel=external target=_blank><strong>Write</strong></a>
 method that takes a <strong>char</strong> as its only parameter. It writes this
-<strong>char</strong> to the end of the stream.</li>
-<li>Another
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter.write?view=net-6.0#system-io-streamwriter-write%28system-string%29" target="_blank"><strong>Write</strong></a>
-
+<strong>char</strong> to the end of the stream.</li><li>Another
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter.write?view=net-6.0#system-io-streamwriter-write(system-string)" rel=external target=_blank><strong>Write</strong></a>
 method that takes a <strong>string?</strong> as its only parameter. It writes this
-<strong>string?</strong> to the end of the stream. If the given <strong>string?</strong> is <strong>null</strong>, nothing is written.</li>
-<li>A
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeline?view=net-6.0#system-io-textwriter-writeline" target="_blank"><strong>WriteLine</strong></a>
-
+<strong>string?</strong> to the end of the stream. If the given <strong>string?</strong> is <strong>null</strong>, nothing is written.</li><li>A
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeline?view=net-6.0#system-io-textwriter-writeline" rel=external target=_blank><strong>WriteLine</strong></a>
 method that takes no parameters. It writes a line terminator to the
-end of the stream (i.e., it ends the current line of text).</li>
-<li>Another
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeline?view=net-6.0#system-io-textwriter-writeline%28system-char%29" target="_blank"><strong>WriteLine</strong></a>
-
+end of the stream (i.e., it ends the current line of text).</li><li>Another
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeline?view=net-6.0#system-io-textwriter-writeline(system-char)" rel=external target=_blank><strong>WriteLine</strong></a>
 method that takes a <strong>char</strong> as its only parameter. It writes this
 <strong>char</strong> to the end of the stream, then terminates the current line
-of text.</li>
-<li>Yet another
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter.writeline?view=net-6.0#system-io-streamwriter-writeline%28system-string%29" target="_blank"><strong>WriteLine</strong></a>
-
+of text.</li><li>Yet another
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter.writeline?view=net-6.0#system-io-streamwriter-writeline(system-string)" rel=external target=_blank><strong>WriteLine</strong></a>
 method that takes a <strong>string?</strong> as its only parameter. It writes this
 <strong>string?</strong> to the end of the stream, then terminates the current
-line of text. If the <strong>string?</strong> is <strong>null</strong>, only the line terminator is written.</li>
-</ul>
-<p>Thus, with a <strong>StreamWriter</strong>, we can build a text file a character at a
+line of text. If the <strong>string?</strong> is <strong>null</strong>, only the line terminator is written.</li></ul><p>Thus, with a <strong>StreamWriter</strong>, we can build a text file a character at a
 time, a line at a time, or an arbitrary <strong>string</strong> at a time. In fact, a
 number of other <strong>Write</strong> and <strong>WriteLine</strong> methods exist, providing the
 ability to write various other types, such as <strong>int</strong> or <strong>double</strong>. In
 each case, the given value is first converted to a <strong>string</strong>, then
-written to the stream.</p>
-<p>Streams are different from other classes, such as <strong>string</strong>s or arrays,
+written to the stream.</p><p>Streams are different from other classes, such as <strong>string</strong>s or arrays,
 in that they are <em>unmanaged</em> resources. When a managed resource, such as
 a <strong>string</strong> or an array, is no longer being used by the program, the
 garbage collector will reclaim the space that it occupies so that it can
@@ -686,111 +77,77 @@ because output streams are typically <em>buffered</em> for efficiency &mdash; wh
 bytes are written to the stream, they are first accumulated in an
 internal array, then written as a single block when the array is full.
 When the program is finished writing, it needs to make sure that this
-array is <em>flushed</em> to the underlying file.</p>
-<p>Both the <strong>StreamReader</strong> and <strong>StreamWriter</strong> classes have
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.idisposable.dispose?view=net-6.0#system-idisposable-dispose" target="_blank"><strong>Dispose</strong></a>
-
+array is <em>flushed</em> to the underlying file.</p><p>Both the <strong>StreamReader</strong> and <strong>StreamWriter</strong> classes have
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.idisposable.dispose?view=net-6.0#system-idisposable-dispose" rel=external target=_blank><strong>Dispose</strong></a>
 methods to release them properly; however, because I/O typically
 requires exception handling, it can be tricky to ensure that this method
 is always called when the I/O is finished. Specifically, the
 <strong>try-catch</strong> may be located in a method that does not have access to
 the stream. In such a case, the <strong>catch</strong>-block cannot call the stream&rsquo;s
-<strong>Dispose</strong> method.</p>
-<p><span id="using"></span> To handle this difficulty, C# provides a
+<strong>Dispose</strong> method.</p><p><span id=using></span> To handle this difficulty, C# provides a
 <strong>using</strong> statement. A <strong>using</strong> statement is different from a <strong>using</strong>
-directive, such as</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.IO;</span></span></code></pre></div><p>A <strong>using</strong> statement occurs within a method definition, not at the top
-of a code file. Its recommended form is as follows:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> ( <span style="color:#75715e">/* declaration and initialization of disposable variable(s) */</span> )
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/* Code that uses the disposable variables(s) */</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Thus, if we want to read and process a text file whose name is given by
+directive, such as</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=k>using</span> <span class=nn>System.IO</span><span class=p>;</span></span></span></code></pre></div><p>A <strong>using</strong> statement occurs within a method definition, not at the top
+of a code file. Its recommended form is as follows:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=k>using</span> <span class=p>(</span> <span class=cm>/* declaration and initialization of disposable variable(s) */</span> <span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=cm>/* Code that uses the disposable variables(s) */</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>Thus, if we want to read and process a text file whose name is given by
 the <strong>string</strong> variable <code>fileName</code>, we could use the following code
-structure:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> (StreamReader input = <span style="color:#66d9ef">new</span> StreamReader(fileName))
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/* Code that reads and process the file accessed by the
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * StreamReader input */</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>This declares the variable <code>input</code> to be of type <strong>StreamReader</strong> and
+structure:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=k>using</span> <span class=p>(</span><span class=n>StreamReader</span> <span class=n>input</span> <span class=p>=</span> <span class=k>new</span> <span class=n>StreamReader</span><span class=p>(</span><span class=n>fileName</span><span class=p>))</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=cm>/* Code that reads and process the file accessed by the
+</span></span></span><span class=line><span class=cl><span class=cm>     * StreamReader input */</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>This declares the variable <code>input</code> to be of type <strong>StreamReader</strong> and
 initializes it to a new <strong>StreamReader</strong> to read the given file. This
 variable is only visible with the braces; furthermore, it is read-only &mdash;
 its value cannot be changed to refer to a different <strong>StreamReader</strong>.
 The <strong>using</strong> statement then ensures that whenever control exits the
-code within the braces, <code>input</code>&rsquo;s <strong>Dispose</strong> method is called.</p>
-<p>More than one variable of the same type may be declared and initialized
-within the parentheses of a <strong>using</strong> statement; for example:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> (StreamReader input1 = <span style="color:#66d9ef">new</span> StreamReader(fileName1),
-</span></span><span style="display:flex;"><span>    input2 = <span style="color:#66d9ef">new</span> StreamReader(fileName2))
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/* Code that reads from input1 and input2 */</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>The type of variable(s) declared must be a subtype of
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.idisposable?view=net-6.0" target="_blank"><strong>IDisposable</strong></a>
-.
-This ensures that the variables each have a <strong>Dispose</strong> method.</p>
-<p>As a complete example of the use of a <strong>StreamReader</strong> and a
+code within the braces, <code>input</code>&rsquo;s <strong>Dispose</strong> method is called.</p><p>More than one variable of the same type may be declared and initialized
+within the parentheses of a <strong>using</strong> statement; for example:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=k>using</span> <span class=p>(</span><span class=n>StreamReader</span> <span class=n>input1</span> <span class=p>=</span> <span class=k>new</span> <span class=n>StreamReader</span><span class=p>(</span><span class=n>fileName1</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>    <span class=n>input2</span> <span class=p>=</span> <span class=k>new</span> <span class=n>StreamReader</span><span class=p>(</span><span class=n>fileName2</span><span class=p>))</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=cm>/* Code that reads from input1 and input2 */</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>The type of variable(s) declared must be a subtype of
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.idisposable?view=net-6.0" rel=external target=_blank><strong>IDisposable</strong></a>.
+This ensures that the variables each have a <strong>Dispose</strong> method.</p><p>As a complete example of the use of a <strong>StreamReader</strong> and a
 <strong>StreamWriter</strong>, together with a <strong>using</strong> statement for each, suppose
 we want to write a method that takes as its parameters two <strong>string</strong>s
 giving the name of an input file and the name of an output file. The
 method is to reproduce the input file as the output file, but with each
 line prefixed by a line number and a tab. We will start numbering lines
-with 1. The following method accomplishes this:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// Copies the file at inFileName to outFileName with each line</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// prefixed by its line number followed by a tab.</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;param name=&#34;inFileName&#34;&gt;The path name of the input file.&lt;/param&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;param name=&#34;outFileName&#34;&gt;The path name of the output file.&lt;/param&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> AddLineNumbers(<span style="color:#66d9ef">string</span> inFileName, <span style="color:#66d9ef">string</span> outFileName)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">using</span> (StreamReader input = <span style="color:#66d9ef">new</span> StreamReader(inFileName))
-</span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">using</span> (StreamWriter output = <span style="color:#66d9ef">new</span> StreamWriter(outFileName))
-</span></span><span style="display:flex;"><span>        {
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> count = <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">while</span> (!input.EndOfStream)
-</span></span><span style="display:flex;"><span>            {
-</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// Because input is not at the end of the stream, its ReadLine</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// method won&#39;t return null.</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">string</span> line = input.ReadLine()!;
-</span></span><span style="display:flex;"><span>                count++;
-</span></span><span style="display:flex;"><span>                output.Write(count);
-</span></span><span style="display:flex;"><span>                output.Write(<span style="color:#e6db74">&#39;\t&#39;</span>);   <span style="color:#75715e">// The tab character</span>
-</span></span><span style="display:flex;"><span>                output.WriteLine(line);
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>As noted above, a <strong>StreamReader</strong>&rsquo;s <strong>ReadLine</strong> method has a return type of <strong>string?</strong> because it will return <strong>null</strong> if the end of the stream has already been reached. Furthermore, the compiler is unable to determine that the loop condition will prevent the call to <strong>ReadLine</strong> from returning <strong>null</strong>. Thus, in order to suppress the compiler warning when the returned <strong>string?</strong> is assigned to a <strong>string</strong>, we include a <code>!</code> following the call to <strong>ReadLine</strong>, and document the reason with a comment above this line.</p>
-<p>We can call the above method within a <strong>try</strong>-block to handle any
+with 1. The following method accomplishes this:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=cs>/// &lt;summary&gt;</span>
+</span></span><span class=line><span class=cl><span class=cs>/// Copies the file at inFileName to outFileName with each line</span>
+</span></span><span class=line><span class=cl><span class=cs>/// prefixed by its line number followed by a tab.</span>
+</span></span><span class=line><span class=cl><span class=cs>/// &lt;/summary&gt;</span>
+</span></span><span class=line><span class=cl><span class=cs>/// &lt;param name=&#34;inFileName&#34;&gt;The path name of the input file.&lt;/param&gt;</span>
+</span></span><span class=line><span class=cl><span class=cs>/// &lt;param name=&#34;outFileName&#34;&gt;The path name of the output file.&lt;/param&gt;</span>
+</span></span><span class=line><span class=cl><span class=kd>private</span> <span class=k>void</span> <span class=n>AddLineNumbers</span><span class=p>(</span><span class=kt>string</span> <span class=n>inFileName</span><span class=p>,</span> <span class=kt>string</span> <span class=n>outFileName</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>using</span> <span class=p>(</span><span class=n>StreamReader</span> <span class=n>input</span> <span class=p>=</span> <span class=k>new</span> <span class=n>StreamReader</span><span class=p>(</span><span class=n>inFileName</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>using</span> <span class=p>(</span><span class=n>StreamWriter</span> <span class=n>output</span> <span class=p>=</span> <span class=k>new</span> <span class=n>StreamWriter</span><span class=p>(</span><span class=n>outFileName</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>        <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=kt>int</span> <span class=n>count</span> <span class=p>=</span> <span class=m>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>while</span> <span class=p>(!</span><span class=n>input</span><span class=p>.</span><span class=n>EndOfStream</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=c1>// Because input is not at the end of the stream, its ReadLine</span>
+</span></span><span class=line><span class=cl>                <span class=c1>// method won&#39;t return null.</span>
+</span></span><span class=line><span class=cl>                <span class=kt>string</span> <span class=n>line</span> <span class=p>=</span> <span class=n>input</span><span class=p>.</span><span class=n>ReadLine</span><span class=p>()!;</span>
+</span></span><span class=line><span class=cl>                <span class=n>count</span><span class=p>++;</span>
+</span></span><span class=line><span class=cl>                <span class=n>output</span><span class=p>.</span><span class=n>Write</span><span class=p>(</span><span class=n>count</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>                <span class=n>output</span><span class=p>.</span><span class=n>Write</span><span class=p>(</span><span class=sc>&#39;\t&#39;</span><span class=p>);</span>   <span class=c1>// The tab character</span>
+</span></span><span class=line><span class=cl>                <span class=n>output</span><span class=p>.</span><span class=n>WriteLine</span><span class=p>(</span><span class=n>line</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>            <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>As noted above, a <strong>StreamReader</strong>&rsquo;s <strong>ReadLine</strong> method has a return type of <strong>string?</strong> because it will return <strong>null</strong> if the end of the stream has already been reached. Furthermore, the compiler is unable to determine that the loop condition will prevent the call to <strong>ReadLine</strong> from returning <strong>null</strong>. Thus, in order to suppress the compiler warning when the returned <strong>string?</strong> is assigned to a <strong>string</strong>, we include a <code>!</code> following the call to <strong>ReadLine</strong>, and document the reason with a comment above this line.</p><p>We can call the above method within a <strong>try</strong>-block to handle any
 exceptions that may be thrown during the I/O. The <strong>catch</strong>-block will
 not have access to either <code>input</code> or <code>output</code>, but it doesn&rsquo;t need it.
 If an exception is thrown during the I/O, the two <strong>using</strong> statements
 will ensure that the <strong>Dispose</strong> methods of both the <strong>StreamReader</strong>
-and the <strong>StreamWriter</strong> are called.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-        </div>
-      </main>
-    </div>
-    
-    </div>
-    
-    
-    
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1710771761" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1710771761" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1710771761" defer></script>
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/tele-scroll.js?1710771761 defer"></script>
-    
-  </body>
-</html>
+and the <strong>StreamWriter</strong> are called.</p><footer class=footline></footer></article></div></main></div></div><script src=/cis300/js/clipboard.min.js?1719513824 defer></script><script src=/cis300/js/perfect-scrollbar.min.js?1719513824 defer></script><script src=/cis300/js/theme.js?1719513824 defer></script><script src=/cis300/js/tele-scroll.js?1719513824 defer></script></body></html>

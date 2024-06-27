@@ -1,596 +1,16 @@
-
-
-
-
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.18.0">
-    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
-    <meta name="description" content="K-State CIS 300: Data Structures">
-    <meta name="author" content="Rod Howell and Josh Weese">
-    <title>Memoization :: Data Structures in C#</title>
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771760" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771760" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1710771760" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771760" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771760" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1710771760" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771760" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771760" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1710771760" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1710771760" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1710771760" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1710771760" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1710771760" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1710771760"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1710771760"></script>
-    <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
-      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
-      var root_url="https://ksu-cs-textbooks.github.io/cis300/";
-      var baseUri=root_url.replace(/\/$/, '');
-      // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
-      window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
-    </script>
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1710771760" rel="stylesheet">
-
-  </head>
-  <body class="mobile-support embed disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/hashing/memoization/embed.html">
-    <div id="body" class="default-animation">
-      
-      
-      
-      <main id="body-inner" class="highlightable default" tabindex="-1">
-        <div class="flex-block-wrapper">
-          <article class="default">
-    
-    
-    
-<h2 id="memoization">Memoization</h2>
-<p>We we will now present an example of a common technique involving
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=robots content="noindex, nofollow, noarchive, noimageindex"><meta name=description content="Memoization We we will now present an example of a common technique involving dictionaries. Consider the following variation of the 2-player game, Nim. The board consists of a number of stones arranged into several piles. Associated with each nonempty pile is a limit, which is a positive integer no greater than the number of stones on that pile (the limit for an empty pile is always 0). Players alternate taking stones according to the following rules:"><meta name=author content="Rod Howell and Josh Weese"><meta name=twitter:card content="summary"><meta name=twitter:title content="Memoization :: Data Structures in C#"><meta name=twitter:description content="Memoization We we will now present an example of a common technique involving dictionaries. Consider the following variation of the 2-player game, Nim. The board consists of a number of stones arranged into several piles. Associated with each nonempty pile is a limit, which is a positive integer no greater than the number of stones on that pile (the limit for an empty pile is always 0). Players alternate taking stones according to the following rules:"><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis300/hashing/memoization/embed.html"><meta property="og:site_name" content="Data Structures in C#"><meta property="og:title" content="Memoization :: Data Structures in C#"><meta property="og:description" content="Memoization We we will now present an example of a common technique involving dictionaries. Consider the following variation of the 2-player game, Nim. The board consists of a number of stones arranged into several piles. Associated with each nonempty pile is a limit, which is a positive integer no greater than the number of stones on that pile (the limit for an empty pile is always 0). Players alternate taking stones according to the following rules:"><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="Hash Tables"><meta property="article:modified_time" content="2023-06-07T11:36:57-05:00"><meta itemprop=name content="Memoization :: Data Structures in C#"><meta itemprop=description content="Memoization We we will now present an example of a common technique involving dictionaries. Consider the following variation of the 2-player game, Nim. The board consists of a number of stones arranged into several piles. Associated with each nonempty pile is a limit, which is a positive integer no greater than the number of stones on that pile (the limit for an empty pile is always 0). Players alternate taking stones according to the following rules:"><meta itemprop=dateModified content="2023-06-07T11:36:57-05:00"><meta itemprop=wordCount content="1317"><title>Memoization :: Data Structures in C#</title>
+<link href=/cis300/css/fontawesome-all.min.css?1719513821 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fontawesome-all.min.css?1719513821 rel=stylesheet></noscript><link href=/cis300/css/nucleus.css?1719513821 rel=stylesheet><link href=/cis300/css/auto-complete.css?1719513821 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/auto-complete.css?1719513821 rel=stylesheet></noscript><link href=/cis300/css/perfect-scrollbar.min.css?1719513821 rel=stylesheet><link href=/cis300/css/fonts.css?1719513821 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fonts.css?1719513821 rel=stylesheet></noscript><link href=/cis300/css/theme.css?1719513821 rel=stylesheet><link href=/cis300/css/theme-light-theme.css?1719513821 rel=stylesheet id=R-variant-style><link href=/cis300/css/chroma-relearn-light.css?1719513821 rel=stylesheet id=R-variant-chroma-style><link href=/cis300/css/variant.css?1719513821 rel=stylesheet><link href=/cis300/css/print.css?1719513821 rel=stylesheet media=print><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis300",window.index_js_url="/cis300/index.search.js",window.variants&&variants.init(["light-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis300/css/custom.css?1719513821 rel=stylesheet></head><body class="mobile-support embed disableInlineCopyToClipboard" data-url=/cis300/hashing/memoization/embed.html><div id=R-body class=default-animation><div id=R-body-overlay></div><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><h2 id=memoization>Memoization</h2><p>We we will now present an example of a common technique involving
 dictionaries. Consider the following variation of the 2-player game,
 Nim. The board consists of a number of stones arranged into several
 piles. Associated with each nonempty pile is a <em>limit</em>, which is a
 positive integer no greater than the number of stones on that pile (the
 limit for an empty pile is always 0). Players alternate taking stones
-according to the following rules:</p>
-<ul>
-<li>On each turn, the player must take some number of stones from a
-single pile.</li>
-<li>The number of stones taken must be at least 1, but no more than the
-current limit for that pile.</li>
-<li>Taking <em>n</em> stones from a pile changes the limit for that pile to
+according to the following rules:</p><ul><li>On each turn, the player must take some number of stones from a
+single pile.</li><li>The number of stones taken must be at least 1, but no more than the
+current limit for that pile.</li><li>Taking <em>n</em> stones from a pile changes the limit for that pile to
 2<em>n</em>. (If this limit is more than the number of stones remaining on
-that pile, the new limit is the number of stones remaining.)</li>
-</ul>
-<p>The player taking the last stone wins. Note that by the rules of the
-game, there will always be a winner &mdash; a draw is impossible.</p>
-<p>For example, suppose we start a game with three piles, each containing
+that pile, the new limit is the number of stones remaining.)</li></ul><p>The player taking the last stone wins. Note that by the rules of the
+game, there will always be a winner &mdash; a draw is impossible.</p><p>For example, suppose we start a game with three piles, each containing
 10 stones with a limit of 9. We will denote this board position as
 (10/9; 10/9; 10/9). If Player 1 removes two stones from Pile 1, the
 resulting position is (8/4; 10/9; 10/9). Note that because 2 stones were
@@ -599,8 +19,7 @@ now removes 4 stones from Pile 2, the resulting position is (8/4; 6/6;
 10/9). Note that because 4 stones were removed, the new limit for Pile 2
 would become 2 x 4 = 8; however, because only 6 stones
 remain, the new limit is 6. Play then continues until a player wins by
-taking all remaining stones.</p>
-<p>Let us define a <em>winning play</em> as any play giving a position from which
+taking all remaining stones.</p><p>Let us define a <em>winning play</em> as any play giving a position from which
 there is no winning play. Thus, if we make a winning play, there are two
 possible cases. In the first case, there are no winning plays from the
 resulting position because there are no legal plays. This means we just
@@ -614,58 +33,26 @@ us to continue to make winning plays until we eventually win the game.
 If no winning play exists, we just have to make some play and hope that
 our opponent blunders by making a play that is not a winning play. If
 that happens, a winning play will be available, and our strategy leads
-us to a win.</p>
-<p>Consider the following examples:</p>
-<ul>
-<li><strong>Example 1</strong>: (1/1; 0/0). Taking one stone from Pile 1 is a winning
+us to a win.</p><p>Consider the following examples:</p><ul><li><strong>Example 1</strong>: (1/1; 0/0). Taking one stone from Pile 1 is a winning
 play because there is no legal play from the resulting position;
-hence, there can be no winning play from it.</li>
-<li><strong>Example 2</strong>: (1/1; 1/1). There is no winning play from this
+hence, there can be no winning play from it.</li><li><strong>Example 2</strong>: (1/1; 1/1). There is no winning play from this
 position because both legal plays give essentially the position from
-Example 1, from which there is a winning play.</li>
-<li><strong>Example 3</strong>: (2/2; 1/1). Taking one stone from Pile 1 is a winning
+Example 1, from which there is a winning play.</li><li><strong>Example 3</strong>: (2/2; 1/1). Taking one stone from Pile 1 is a winning
 play because it leads to (1/1; 1/1), from which there is no winning
-play, as shown in Example 2.</li>
-</ul>
-<p>Given enough stones and piles, finding a winning play or determining
+play, as shown in Example 2.</li></ul><p>Given enough stones and piles, finding a winning play or determining
 that there is none is challenging. In order to develop a search
-algorithm somewhat similar to the one described in <a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/word-games">&ldquo;Tries in Word Games&rdquo;</a>
-, we can define the
-following tree:</p>
-<ul>
-<li>The root is the current board position.</li>
-<li>The children of a node are all the positions that can be reached by
-making legal plays.</li>
-</ul>
-<p>Thus, the tree defined by (2/2; 2/2) is as follows:</p>
-<p>
-<a href="#image-abfa376a73d16b0fa91c065b4a6531dc" class="lightbox-link">
-<img src="nim-tree.jpg" alt="The tree defined by a Nim position." style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-abfa376a73d16b0fa91c065b4a6531dc">
-<img src="nim-tree.jpg" alt="The tree defined by a Nim position." class="lightbox-image" loading="lazy">
-</a></p>
-<p>The winning plays have each been marked with a &lsquo;W&rsquo; in the above tree. As in
-<a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/word-games">&ldquo;Tries in Word Games&rdquo;</a>
-,
+algorithm somewhat similar to the one described in <a href=/cis300/trees/tries/word-games/>&ldquo;Tries in Word Games&rdquo;</a>, we can define the
+following tree:</p><ul><li>The root is the current board position.</li><li>The children of a node are all the positions that can be reached by
+making legal plays.</li></ul><p>Thus, the tree defined by (2/2; 2/2) is as follows:</p><p><a href=#R-image-5e4e68ea935df5cca1b5cbbeb24f4719 class=lightbox-link><img alt="The tree defined by a Nim position." class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/hashing/memoization/nim-tree.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-5e4e68ea935df5cca1b5cbbeb24f4719><img alt="The tree defined by a Nim position." class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/hashing/memoization/nim-tree.jpg></a></p><p>The winning plays have each been marked with a &lsquo;W&rsquo; in the above tree. As in
+<a href=/cis300/trees/tries/word-games/>&ldquo;Tries in Word Games&rdquo;</a>,
 this tree is not a data structure, but simply a mental guide to building
 a search algorithm. Specifically, we can find a winning play (or
 determine whether there is none) by traversing the tree in the following
-way:</p>
-<ul>
-<li>For each legal play <em>p</em> from the given position:
-<ul>
-<li>Form the board position that results from making this play (this
-position is a child).</li>
-<li>Recursively find a winning play from this new position.</li>
-<li>If there was no winning play returned (i.e., it was <strong>null</strong>),
-return <em>p</em>, as it&rsquo;s a winning play.</li>
-</ul>
-</li>
-<li>If we get to this point we&rsquo;ve examined all the plays, and none of
-them is winning; hence we return <strong>null</strong>.</li>
-</ul>
-<p>Note that the above algorithm may not examine all the nodes in the tree
+way:</p><ul><li>For each legal play <em>p</em> from the given position:<ul><li>Form the board position that results from making this play (this
+position is a child).</li><li>Recursively find a winning play from this new position.</li><li>If there was no winning play returned (i.e., it was <strong>null</strong>),
+return <em>p</em>, as it&rsquo;s a winning play.</li></ul></li><li>If we get to this point we&rsquo;ve examined all the plays, and none of
+them is winning; hence we return <strong>null</strong>.</li></ul><p>Note that the above algorithm may not examine all the nodes in the tree
 because once it finds a winning play, it returns it immediately without
 needing to examine any more children. For example, when processing the
 children of the node (1/1; 2/2), it finds that from its second child,
@@ -674,8 +61,7 @@ play that removes one stone from Pile 2 without even looking at the
 third child, (1/1; 0/0). Even so, because the size of the tree grows
 exponentially as the number of stones increases, once the number of
 stones reaches about 25, the time needed for the algorithm becomes
-unacceptable.</p>
-<p>Notice that several of the nodes in the tree occur multiple times. For
+unacceptable.</p><p>Notice that several of the nodes in the tree occur multiple times. For
 example, (1/1; 1/1) occurs twice and (1/1; 0/0) occurs five times. For a
 large tree, the number of duplicate nodes in the tree increases
 dramatically. The only thing that determines the presence of a winning
@@ -686,8 +72,7 @@ of time by saving the winning move for any position we examine. Then
 whenever we need to examine a position, we first check to see if we&rsquo;ve
 already processed it &mdash; if so, we just use the result we obtained earlier
 rather than processing it again. Because processing it again may involve
-searching a large tree, the savings in time might be huge.</p>
-<p>The technique outlined in the above paragraph is known as <em>memoization</em>
+searching a large tree, the savings in time might be huge.</p><p>The technique outlined in the above paragraph is known as <em>memoization</em>
 (not to be confused with <em>memorization</em>) &mdash; we make a <em>memo</em> of the
 results we compute so that we can look them up again later if we need
 them. A dictionary whose keys are board positions and whose values are
@@ -698,8 +83,7 @@ find it, we immediately return the play associated with it. Otherwise,
 we continue the algorithm as before, but prior to returning a play (even
 if it is <strong>null</strong>), we save that play in the dictionary with the given
 board position as its key. This memoization will allow us to analyze
-board positions containing many more stones.</p>
-<p>To implement the above strategy, we need to define two types - one to
+board positions containing many more stones.</p><p>To implement the above strategy, we need to define two types - one to
 represent a board position and one to represent a play. The type
 representing a play needs to be a class so that we can use <strong>null</strong> to
 indicate that there is no winning play. The type representing a board
@@ -708,20 +92,4 @@ needs to be able to compare instances of this type for equality in order
 be able to find keys, its definition will need to re-define the equality
 comparisons. Consequently, we need to redefine the hash code computation
 to be consistent with the equality comparison. The next two sections
-will examine these topics.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-        </div>
-      </main>
-    </div>
-    
-    
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1710771760" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1710771760" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1710771760" defer></script>
-  </body>
-</html>
+will examine these topics.</p><footer class=footline></footer></article></div></main></div><script src=/cis300/js/clipboard.min.js?1719513821 defer></script><script src=/cis300/js/perfect-scrollbar.min.js?1719513821 defer></script><script src=/cis300/js/theme.js?1719513821 defer></script><script src=/cis300/js/embed-iframe.js?1719513821 defer></script></body></html>

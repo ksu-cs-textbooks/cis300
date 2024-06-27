@@ -1,916 +1,142 @@
-
-
-
-
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.18.0">
-    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
-    <meta name="description" content="K-State CIS 300: Data Structures">
-    <meta name="author" content="Rod Howell and Josh Weese">
-    <title>Finding Prime Numbers :: Data Structures in C#</title>
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1710771761" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1710771761" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/format-print.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1710771761" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1710771761"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1710771761"></script>
-    <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
-      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
-      var root_url="https://ksu-cs-textbooks.github.io/cis300/";
-      var baseUri=root_url.replace(/\/$/, '');
-      // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
-      window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
-    </script>
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1710771761" rel="stylesheet">
-
-  </head>
-  <body class="mobile-support print disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/linked-lists/sieve-eratosthenes/index.html">
-    <div id="body" class="default-animation">
-      <div id="sidebar-overlay"></div>
-      <div id="toc-overlay"></div>
-      <nav id="topbar" class="highlightable">
-        <div>
-          <div id="top-tele-link">
-            <a class="print-link" title='Teleprompter View' href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/sieve-eratosthenes/tele.html">
-              <i class="fas fa-tv fa-fw"></i>
-            </a>
-          </div>
-          <div id="top-embed-link">
-            <a class="print-link" title='Embeddable Version' href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/sieve-eratosthenes/embed.html">
-              <i class="fas fa-expand-arrows-alt fa-fw"></i>
-            </a>
-          </div>
-          <div id="breadcrumbs">
-            <span id="sidebar-toggle-span">
-              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
-            </span>
-            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis300/index.html"><span itemprop="name">Data Structures in C#</span></a><meta itemprop="position" content="1"> &gt; </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/index.html"><span itemprop="name">Linked Lists</span></a><meta itemprop="position" content="2"> &gt; </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Finding Prime Numbers</span><meta itemprop="position" content="3"></li>
-            </ol>
-          </div>
-        </div>
-      </nav>
-      <main id="body-inner" class="highlightable default" tabindex="-1">
-        <div class="flex-block-wrapper">
-          <article class="default">
-            <header class="headline">
-            </header>
-<div hidden><h1 id="finding-prime-numbers">Finding Prime Numbers</h1></div>
-
-<h2 id="finding-prime-numbers">Finding Prime Numbers</h2>
-<p>An integer greater than 
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=robots content="noindex, nofollow, noarchive, noimageindex"><meta name=description content="Finding Prime Numbers An integer greater than $ 1 $ is said to be prime if it is not divisible by any positive integers other than itself and $ 1 $. Thus, $ 2 $, $ 3 $, and $ 5 $ are prime, but not $ 1 $ (it is not greater than $ 1 $) or $ 4 $ (it is divisible by $ 2 $). Because every integer is divisible by itself and $ 1 $, we will call any other positive factors nontrivial factors; thus, a prime number is an integer greater than $ 1 $ that has no nontrivial factors."><meta name=author content="Rod Howell and Josh Weese"><meta name=twitter:card content="summary"><meta name=twitter:title content="Finding Prime Numbers :: Data Structures in C#"><meta name=twitter:description content="Finding Prime Numbers An integer greater than $ 1 $ is said to be prime if it is not divisible by any positive integers other than itself and $ 1 $. Thus, $ 2 $, $ 3 $, and $ 5 $ are prime, but not $ 1 $ (it is not greater than $ 1 $) or $ 4 $ (it is divisible by $ 2 $). Because every integer is divisible by itself and $ 1 $, we will call any other positive factors nontrivial factors; thus, a prime number is an integer greater than $ 1 $ that has no nontrivial factors."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis300/linked-lists/sieve-eratosthenes/"><meta property="og:site_name" content="Data Structures in C#"><meta property="og:title" content="Finding Prime Numbers :: Data Structures in C#"><meta property="og:description" content="Finding Prime Numbers An integer greater than $ 1 $ is said to be prime if it is not divisible by any positive integers other than itself and $ 1 $. Thus, $ 2 $, $ 3 $, and $ 5 $ are prime, but not $ 1 $ (it is not greater than $ 1 $) or $ 4 $ (it is divisible by $ 2 $). Because every integer is divisible by itself and $ 1 $, we will call any other positive factors nontrivial factors; thus, a prime number is an integer greater than $ 1 $ that has no nontrivial factors."><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="Linked Lists"><meta property="article:modified_time" content="2023-06-01T16:44:08-05:00"><meta itemprop=name content="Finding Prime Numbers :: Data Structures in C#"><meta itemprop=description content="Finding Prime Numbers An integer greater than $ 1 $ is said to be prime if it is not divisible by any positive integers other than itself and $ 1 $. Thus, $ 2 $, $ 3 $, and $ 5 $ are prime, but not $ 1 $ (it is not greater than $ 1 $) or $ 4 $ (it is divisible by $ 2 $). Because every integer is divisible by itself and $ 1 $, we will call any other positive factors nontrivial factors; thus, a prime number is an integer greater than $ 1 $ that has no nontrivial factors."><meta itemprop=dateModified content="2023-06-01T16:44:08-05:00"><meta itemprop=wordCount content="1298"><title>Finding Prime Numbers :: Data Structures in C#</title>
+<link href=/cis300/css/fontawesome-all.min.css?1719513823 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fontawesome-all.min.css?1719513823 rel=stylesheet></noscript><link href=/cis300/css/nucleus.css?1719513823 rel=stylesheet><link href=/cis300/css/auto-complete.css?1719513823 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/auto-complete.css?1719513823 rel=stylesheet></noscript><link href=/cis300/css/perfect-scrollbar.min.css?1719513823 rel=stylesheet><link href=/cis300/css/fonts.css?1719513823 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fonts.css?1719513823 rel=stylesheet></noscript><link href=/cis300/css/theme.css?1719513823 rel=stylesheet><link href=/cis300/css/theme-auto.css?1719513823 rel=stylesheet id=R-variant-style><link href=/cis300/css/chroma-auto.css?1719513823 rel=stylesheet id=R-variant-chroma-style><link href=/cis300/css/variant.css?1719513823 rel=stylesheet><link href=/cis300/css/print.css?1719513823 rel=stylesheet media=print><link href=/cis300/css/format-print.css?1719513823 rel=stylesheet><script src=/cis300/js/variant.js?1719513823></script><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis300",window.index_js_url="/cis300/index.search.js",window.variants&&variants.init(["auto","light-theme","dark-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis300/css/custom.css?1719513823 rel=stylesheet></head><body class="mobile-support print disableInlineCopyToClipboard" data-url=/cis300/linked-lists/sieve-eratosthenes/><div id=R-body class=default-animation><div id=R-body-overlay></div><nav id=R-topbar><div class=topbar-wrapper><div class=topbar-sidebar-divider></div><div class="topbar-area topbar-area-start" data-area=start><div class="topbar-button topbar-button-sidebar" data-content-empty=disable data-width-s=show data-width-m=hide data-width-l=hide><button class=topbar-control onclick=toggleNav() type=button title="Menu (CTRL+ALT+n)"><i class="fa-fw fas fa-bars"></i></button></div></div><ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype=http://schema.org/BreadcrumbList><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><a itemprop=item href=/cis300/linked-lists/><span itemprop=name>Linked Lists</span></a><meta itemprop=position content="1">&nbsp;>&nbsp;</li><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><span itemprop=name>Finding Prime Numbers</span><meta itemprop=position content="2"></li></ol><div class="topbar-area topbar-area-end" data-area=end><div class="topbar-button topbar-button-prev" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/cis300/linked-lists/stacks-queues/ title="Implementing Stacks and Queues with Linked Lists (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></div><div class="topbar-button topbar-button-next" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/cis300/dictionaries/ title="Dictionaries (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></div></div></div></nav><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><div hidden><h1 id=finding-prime-numbers>Finding Prime Numbers</h1></div><h2 id=finding-prime-numbers>Finding Prime Numbers</h2><p>An integer greater than
 <span class="math align-center">$ 1 $</span> is said to be <em>prime</em> if it is not divisible
-by any positive integers other than itself and <span style="white-space:nowrap">
-<span class="math align-center">$ 1 $</span>.</span> Thus, <span style="white-space:nowrap">
-<span class="math align-center">$ 2 $</span>,</span> <span style="white-space:nowrap">
-<span class="math align-center">$ 3 $</span>,</span> and 
+by any positive integers other than itself and <span style=white-space:nowrap><span class="math align-center">$ 1 $</span>.</span> Thus, <span style=white-space:nowrap><span class="math align-center">$ 2 $</span>,</span> <span style=white-space:nowrap><span class="math align-center">$ 3 $</span>,</span> and
 <span class="math align-center">$ 5 $</span> are
-prime, but not 
-<span class="math align-center">$ 1 $</span> (it is not greater than <span style="white-space:nowrap">
-<span class="math align-center">$ 1 $</span>)</span> or 
-<span class="math align-center">$ 4 $</span> (it is divisible by <span style="white-space:nowrap">
-<span class="math align-center">$ 2 $</span>).</span>
-Because every integer is divisible by itself and <span style="white-space:nowrap">
-<span class="math align-center">$ 1 $</span>,</span> we will call any
+prime, but not
+<span class="math align-center">$ 1 $</span> (it is not greater than <span style=white-space:nowrap><span class="math align-center">$ 1 $</span>)</span> or
+<span class="math align-center">$ 4 $</span> (it is divisible by <span style=white-space:nowrap><span class="math align-center">$ 2 $</span>).</span>
+Because every integer is divisible by itself and <span style=white-space:nowrap><span class="math align-center">$ 1 $</span>,</span> we will call any
 other positive factors <em>nontrivial factors</em>; thus, a prime number is an
-integer greater than 
+integer greater than
 <span class="math align-center">$ 1 $</span> that has no nontrivial factors. The study of
 prime numbers dates back to at least the third century BC. One of the
 earliest known algorithms finds all prime numbers less than a given
-integer <span style="white-space:nowrap">
-<span class="math align-center">$ n $</span>.</span> This algorithm is known as the <em>Sieve of Eratosthenes</em>, and
+integer <span style=white-space:nowrap><span class="math align-center">$ n $</span>.</span> This algorithm is known as the <em>Sieve of Eratosthenes</em>, and
 is attributed to the Greek mathematician Eratosthenes of Cyrene (c. 276
-BC - c. 194 BC).</p>
-<p>The most basic version of this algorithm operates as follows:</p>
-<ol>
-<li>Place all integers greater than 
-<span class="math align-center">$ 1 $</span> and less than 
+BC - c. 194 BC).</p><p>The most basic version of this algorithm operates as follows:</p><ol><li>Place all integers greater than
+<span class="math align-center">$ 1 $</span> and less than
 <span class="math align-center">$ n $</span> in order in a
-list.</li>
-<li>For each element 
+list.</li><li>For each element
 <span class="math align-center">$ k $</span> in the list, remove all subsequent elements
-that are divisible by <span style="white-space:nowrap">
-<span class="math align-center">$ k $</span>.</span></li>
-<li>The remaining values are the prime numbers less than <span style="white-space:nowrap">
-<span class="math align-center">$ n $</span>.</span></li>
-</ol>
-<p>For example, suppose <span style="white-space:nowrap">
-<span class="math align-center">$ n = 20 $</span>.</span> We then place the integers from 
+that are divisible by <span style=white-space:nowrap><span class="math align-center">$ k $</span>.</span></li><li>The remaining values are the prime numbers less than <span style=white-space:nowrap><span class="math align-center">$ n $</span>.</span></li></ol><p>For example, suppose <span style=white-space:nowrap><span class="math align-center">$ n = 20 $</span>.</span> We then place the integers from
 <span class="math align-center">$ 2 $</span>
-to 
+to
 <span class="math align-center">$ 19 $</span> in a list:
-
-<span class="math align-left">
-$$
+<span class="math align-left">$$
 2\ 3\ 4\ 5\ 6\ 7\ 8\ 9\ 10\ 11\ 12\ 13\ 14\ 15\ 16\ 17\ 18\ 19
 $$
-</span>
-We then remove all numbers following 
-<span class="math align-center">$ 2 $</span> that are divisible by <span style="white-space:nowrap">
-<span class="math align-center">$ 2 $</span>:</span>
-
-<span class="math align-left">
-$$
+</span>We then remove all numbers following
+<span class="math align-center">$ 2 $</span> that are divisible by <span style=white-space:nowrap><span class="math align-center">$ 2 $</span>:</span>
+<span class="math align-left">$$
 \require{cancel}
 2\ 3\ \cancel{4}\ 5\ \cancel{6}\ 7\ \cancel{8}\ 9\ \cancel{10}\ 11\
 \cancel{12}\ 13\ \cancel{14}\ 15\ \cancel{16}\ 17\ \cancel{18}\ 19
 $$
-</span>
-We then remove all numbers following 
-<span class="math align-center">$ 3 $</span> that are divisible by <span style="white-space:nowrap">
-<span class="math align-center">$ 3 $</span>:</span>
-
-<span class="math align-left">
-$$
+</span>We then remove all numbers following
+<span class="math align-center">$ 3 $</span> that are divisible by <span style=white-space:nowrap><span class="math align-center">$ 3 $</span>:</span>
+<span class="math align-left">$$
 2\ 3\ \cancel{4}\ 5\ \cancel{6}\ 7\ \cancel{8}\ \cancel{9}\ \cancel{10}\ 11\
 \cancel{12}\ 13\ \cancel{14}\ \cancel{15}\ \cancel{16}\ 17\ \cancel{18}\ 19
 $$
-</span>
-The algorithm continues, but none of the succeeding iterations finds any
-values to remove. Therefore, <span style="white-space:nowrap">
-<span class="math align-center">$ 2, 3, 5, 7, 11, 13, 17 $</span>,</span> and 
+</span>The algorithm continues, but none of the succeeding iterations finds any
+values to remove. Therefore, <span style=white-space:nowrap><span class="math align-center">$ 2, 3, 5, 7, 11, 13, 17 $</span>,</span> and
 <span class="math align-center">$ 19 $</span> are the
-prime numbers less than <span style="white-space:nowrap">
-<span class="math align-center">$ 20 $</span>.</span></p>
-<p>To see why this algorithm gives us exactly the prime numbers less than
-<span style="white-space:nowrap">
-<span class="math align-center">$ n $</span>,</span> first note that because we only remove a number when we find a
+prime numbers less than <span style=white-space:nowrap><span class="math align-center">$ 20 $</span>.</span></p><p>To see why this algorithm gives us exactly the prime numbers less than
+<span style=white-space:nowrap><span class="math align-center">$ n $</span>,</span> first note that because we only remove a number when we find a
 nontrivial factor, we only remove non-primes from the list. What may be
 a little less obvious is that we remove <em>all</em> non-primes from the list.
-To see this, suppose 
-<span class="math align-center">$ m $</span> is a non-prime less than <span style="white-space:nowrap">
-<span class="math align-center">$ n $</span>,</span> and let 
+To see this, suppose
+<span class="math align-center">$ m $</span> is a non-prime less than <span style=white-space:nowrap><span class="math align-center">$ n $</span>,</span> and let
 <span class="math align-center">$ a $</span> be
-its smallest nontrivial factor. Then 
+its smallest nontrivial factor. Then
 <span class="math align-center">$ a $</span> must be prime because any
-nontrivial factor of 
-<span class="math align-center">$ a $</span> would be less than 
+nontrivial factor of
+<span class="math align-center">$ a $</span> would be less than
 <span class="math align-center">$ a $</span> and would also divide
-<span style="white-space:nowrap">
-<span class="math align-center">$ m $</span>.</span> 
+<span style=white-space:nowrap><span class="math align-center">$ m $</span>.</span>
 <span class="math align-center">$ a $</span> therefore will not be removed from the list. When
-
-<span class="math align-center">$ k = a $</span> in Step 2, 
-<span class="math align-center">$ m $</span> will be removed.</p>
-<p>There is actually a good reason why the first two iterations in the
+<span class="math align-center">$ k = a $</span> in Step 2,
+<span class="math align-center">$ m $</span> will be removed.</p><p>There is actually a good reason why the first two iterations in the
 above example removed all of the non-primes &mdash; once the algorithm reaches
-a divisor 
-<span class="math align-center">$ k $</span> such that 
+a divisor
+<span class="math align-center">$ k $</span> such that
 <span class="math align-center">$ k^2 \geq n $</span> (in this
-example, <span style="white-space:nowrap">
-<span class="math align-center">$ 5^2 = 25 \geq 20 $</span>),</span> all of the
-non-primes will have been removed. To see why this is true, let 
+example, <span style=white-space:nowrap><span class="math align-center">$ 5^2 = 25 \geq 20 $</span>),</span> all of the
+non-primes will have been removed. To see why this is true, let
 <span class="math align-center">$ m $</span> and
-
 <span class="math align-center">$ a $</span> be as above. We can then write
-
-<span class="math align-left">
+<span class="math align-left">$$
+m = ab
 $$
-    m = ab
-$$
-</span>
-where <span style="white-space:nowrap">
-<span class="math align-center">$ a \leq b $</span>,</span> and 
+</span>where <span style=white-space:nowrap><span class="math align-center">$ a \leq b $</span>,</span> and
 <span class="math align-center">$ m $</span> is removed from the list when
-<span style="white-space:nowrap">
-<span class="math align-center">$ k = a $</span>.</span> We can then multiply both sides of the above
-equation by <span style="white-space:nowrap">
-<span class="math align-center">$ a/b $</span>,</span> yielding:
-
-<span class="math align-left">
-$$
+<span style=white-space:nowrap><span class="math align-center">$ k = a $</span>.</span> We can then multiply both sides of the above
+equation by <span style=white-space:nowrap><span class="math align-center">$ a/b $</span>,</span> yielding:
+<span class="math align-left">$$
 \frac{am}{b} = a^2.
 $$
-</span>
-Finally, because <span style="white-space:nowrap">
-<span class="math align-center">$ a \leq b $</span>,</span> <span style="white-space:nowrap">
-<span class="math align-center">$ a/b \leq 1 $</span>.</span>
+</span>Finally, because <span style=white-space:nowrap><span class="math align-center">$ a \leq b $</span>,</span> <span style=white-space:nowrap><span class="math align-center">$ a/b \leq 1 $</span>.</span>
 Therefore,
-
-<span class="math align-left">
-$$
+<span class="math align-left">$$
 m \geq a^2.
 $$
-</span>
-We conclude that if 
-<span class="math align-center">$ m $</span> is a non-prime greater than <span style="white-space:nowrap">
-<span class="math align-center">$ 1 $</span>,</span> it is removed
-when the algorithm reaches some value 
+</span>We conclude that if
+<span class="math align-center">$ m $</span> is a non-prime greater than <span style=white-space:nowrap><span class="math align-center">$ 1 $</span>,</span> it is removed
+when the algorithm reaches some value
 <span class="math align-center">$ k $</span> with
-<span style="white-space:nowrap">
-<span class="math align-center">$ k^2 < n $</span>.</span> We can therefore optimize the
-algorithm by stopping when <span style="white-space:nowrap">
-<span class="math align-center">$ k^2 \geq n $</span>.</span></p>
-<p>We can implement this algorithm using a linked list. A linked list is an
+<span style=white-space:nowrap><span class="math align-center">$ k^2 < n $</span>.</span> We can therefore optimize the
+algorithm by stopping when <span style=white-space:nowrap><span class="math align-center">$ k^2 \geq n $</span>.</span></p><p>We can implement this algorithm using a linked list. A linked list is an
 appropriate data structure for this algorithm because once the list is
 built, all of the processing involves iterating through it from
-beginning to end &mdash; the same direction the links go.</p>
-<p>To implement Step 1, it is easier to build the list from back to front,
+beginning to end &mdash; the same direction the links go.</p><p>To implement Step 1, it is easier to build the list from back to front,
 as we don&rsquo;t need to maintain a separate reference to the end of the
 list. This step then consists of a loop that iterates from
-
-<span class="math align-center">$ n - 1 $</span> down to <span style="white-space:nowrap">
-<span class="math align-center">$ 2 $</span>,</span> with each iteration adding
-to the front of the list a cell containing the loop index.</p>
-<p>In order to be able to implement Step 2, we will need to know how to
+<span class="math align-center">$ n - 1 $</span> down to <span style=white-space:nowrap><span class="math align-center">$ 2 $</span>,</span> with each iteration adding
+to the front of the list a cell containing the loop index.</p><p>In order to be able to implement Step 2, we will need to know how to
 remove a cell from a linked list. Suppose, for example, that we want to
-remove the cell referring to &ldquo;the&rdquo; from the following linked list:</p>
-<p>
-<a href="#image-7ffb639cc9d5b06fe69d2c6203a3fb09" class="lightbox-link">
-<img src="https://ksu-cs-textbooks.github.io/cis300/linked-lists/sieve-eratosthenes/linked-list-remove1.jpg" alt="A linked list from which we want to remove x" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-7ffb639cc9d5b06fe69d2c6203a3fb09">
-<img src="https://ksu-cs-textbooks.github.io/cis300/linked-lists/sieve-eratosthenes/linked-list-remove1.jpg" alt="A linked list from which we want to remove x" class="lightbox-image" loading="lazy">
-</a></p>
-<p>To remove it, we need the cell that precedes it to be followed by the
-cell that follows it:</p>
-<p>
-<a href="#image-034f1d6ca4fa0a1d5ebfac327222b842" class="lightbox-link">
-<img src="https://ksu-cs-textbooks.github.io/cis300/linked-lists/sieve-eratosthenes/linked-list-remove2.jpg" alt="What we need to change in order to remove the
-cell" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-034f1d6ca4fa0a1d5ebfac327222b842">
-<img src="https://ksu-cs-textbooks.github.io/cis300/linked-lists/sieve-eratosthenes/linked-list-remove2.jpg" alt="What we need to change in order to remove the
-cell" class="lightbox-image" loading="lazy">
-</a></p>
-<p>In order to change that reference, we need a reference to the cell that
-precedes the cell we want to remove:</p>
-<p>
-<a href="#image-c369b881ff4139ae77eef4025a1ea756" class="lightbox-link">
-<img src="https://ksu-cs-textbooks.github.io/cis300/linked-lists/sieve-eratosthenes/linked-list-remove3.jpg" alt="The additional reference we need" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-c369b881ff4139ae77eef4025a1ea756">
-<img src="https://ksu-cs-textbooks.github.io/cis300/linked-lists/sieve-eratosthenes/linked-list-remove3.jpg" alt="The additional reference we need" class="lightbox-image" loading="lazy">
-</a></p>
-<p>We can then remove the cell following the cell referenced by <code>q</code> as
-follows:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>q.Next = q.Next.Next;</span></span></code></pre></div><p>Now that we know how to remove a cell from a linked list, let&rsquo;s consider
-Step 2 of the algorithm. For one value of <span style="white-space:nowrap">
-<span class="math align-center">$ k $</span>,</span> we need to remove all
-subsequent values that are divisible by <span style="white-space:nowrap">
-<span class="math align-center">$ k $</span>.</span> In terms of the linked
-list, we need to start this process with the cell containing <span style="white-space:nowrap">
-<span class="math align-center">$ k $</span>.</span> For
+remove the cell referring to &ldquo;the&rdquo; from the following linked list:</p><p><a href=#R-image-683569279022a72774319ecdeb819355 class=lightbox-link><img alt="A linked list from which we want to remove x" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/linked-lists/sieve-eratosthenes/linked-list-remove1.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-683569279022a72774319ecdeb819355><img alt="A linked list from which we want to remove x" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/linked-lists/sieve-eratosthenes/linked-list-remove1.jpg></a></p><p>To remove it, we need the cell that precedes it to be followed by the
+cell that follows it:</p><p><a href=#R-image-24c8f5ac56c126af4274f43a3ecac31f class=lightbox-link><img alt="What we need to change in order to remove the\ncell" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/linked-lists/sieve-eratosthenes/linked-list-remove2.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-24c8f5ac56c126af4274f43a3ecac31f><img alt="What we need to change in order to remove the\ncell" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/linked-lists/sieve-eratosthenes/linked-list-remove2.jpg></a></p><p>In order to change that reference, we need a reference to the cell that
+precedes the cell we want to remove:</p><p><a href=#R-image-47b0f1e5d6dfd98157b6b8a7f375d27c class=lightbox-link><img alt="The additional reference we need" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/linked-lists/sieve-eratosthenes/linked-list-remove3.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-47b0f1e5d6dfd98157b6b8a7f375d27c><img alt="The additional reference we need" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/linked-lists/sieve-eratosthenes/linked-list-remove3.jpg></a></p><p>We can then remove the cell following the cell referenced by <code>q</code> as
+follows:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=n>q</span><span class=p>.</span><span class=n>Next</span> <span class=p>=</span> <span class=n>q</span><span class=p>.</span><span class=n>Next</span><span class=p>.</span><span class=n>Next</span><span class=p>;</span></span></span></code></pre></div><p>Now that we know how to remove a cell from a linked list, let&rsquo;s consider
+Step 2 of the algorithm. For one value of <span style=white-space:nowrap><span class="math align-center">$ k $</span>,</span> we need to remove all
+subsequent values that are divisible by <span style=white-space:nowrap><span class="math align-center">$ k $</span>.</span> In terms of the linked
+list, we need to start this process with the cell containing <span style=white-space:nowrap><span class="math align-center">$ k $</span>.</span> For
 example, consider the second iteration from the example above &mdash; i.e.,
-when <span style="white-space:nowrap">
-<span class="math align-center">$ k = 3 $</span>:</span></p>
-<p>
-<a href="#image-229f02fe44ad4835a1a62f2f0c6d122e" class="lightbox-link">
-<img src="https://ksu-cs-textbooks.github.io/cis300/linked-lists/sieve-eratosthenes/sieve-example1.jpg" alt="The beginning of an iteration with k = 3" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-229f02fe44ad4835a1a62f2f0c6d122e">
-<img src="https://ksu-cs-textbooks.github.io/cis300/linked-lists/sieve-eratosthenes/sieve-example1.jpg" alt="The beginning of an iteration with k = 3" class="lightbox-image" loading="lazy">
-</a></p>
-<p>We need to iterate <code>p</code> through the linked list, checking the <em>next</em> cell
-on each iteration to see whether its contents are divisible by <span style="white-space:nowrap">
-<span class="math align-center">$ k $</span>.</span> We
-can check for divisibility by 
-<span class="math align-center">$ k $</span> using the <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/remainder">remainder
-operator</a>
- &mdash; i.e., 
+when <span style=white-space:nowrap><span class="math align-center">$ k = 3 $</span>:</span></p><p><a href=#R-image-d627324f5c7b5adeb573fc3ecded1024 class=lightbox-link><img alt="The beginning of an iteration with k = 3" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/linked-lists/sieve-eratosthenes/sieve-example1.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-d627324f5c7b5adeb573fc3ecded1024><img alt="The beginning of an iteration with k = 3" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/linked-lists/sieve-eratosthenes/sieve-example1.jpg></a></p><p>We need to iterate <code>p</code> through the linked list, checking the <em>next</em> cell
+on each iteration to see whether its contents are divisible by <span style=white-space:nowrap><span class="math align-center">$ k $</span>.</span> We
+can check for divisibility by
+<span class="math align-center">$ k $</span> using the <a href=/cis300/appendix/syntax/remainder/>remainder
+operator</a> &mdash; i.e.,
 <span class="math align-center">$ k $</span> divides
-
-<span class="math align-center">$ m $</span> if 
+<span class="math align-center">$ m $</span> if
 <span class="math align-center">$ m \mathbin{\texttt{%}} k $</span> is 0. Thus, the first iteration
-would see if 
+would see if
 <span class="math align-center">$ 3 $</span>
-divides <span style="white-space:nowrap">
-<span class="math align-center">$ 5 $</span>.</span> It doesn&rsquo;t, so we advance <code>p</code> to the next cell (containing
-<span style="white-space:nowrap">
-<span class="math align-center">$ 5 $</span>).</span> We then see if 
-<span class="math align-center">$ 3 $</span> divides <span style="white-space:nowrap">
-<span class="math align-center">$ 7 $</span>.</span> Again it doesn&rsquo;t, so we advance <code>p</code> to
-the next cell (containing <span style="white-space:nowrap">
-<span class="math align-center">$ 7 $</span>).</span> At this point, 
-<span class="math align-center">$ 3 $</span> divides <span style="white-space:nowrap">
-<span class="math align-center">$ 9 $</span>,</span> so we remove
-the cell containing 
+divides <span style=white-space:nowrap><span class="math align-center">$ 5 $</span>.</span> It doesn&rsquo;t, so we advance <code>p</code> to the next cell (containing
+<span style=white-space:nowrap><span class="math align-center">$ 5 $</span>).</span> We then see if
+<span class="math align-center">$ 3 $</span> divides <span style=white-space:nowrap><span class="math align-center">$ 7 $</span>.</span> Again it doesn&rsquo;t, so we advance <code>p</code> to
+the next cell (containing <span style=white-space:nowrap><span class="math align-center">$ 7 $</span>).</span> At this point,
+<span class="math align-center">$ 3 $</span> divides <span style=white-space:nowrap><span class="math align-center">$ 9 $</span>,</span> so we remove
+the cell containing
 <span class="math align-center">$ 9 $</span> as shown above. This gives us the following linked
-list:</p>
-<p>
-<a href="#image-8ec1d0d1c58db8fcd152371742c10dbb" class="lightbox-link">
-<img src="https://ksu-cs-textbooks.github.io/cis300/linked-lists/sieve-eratosthenes/sieve-example2.jpg" alt="After 9 has been removed" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-8ec1d0d1c58db8fcd152371742c10dbb">
-<img src="https://ksu-cs-textbooks.github.io/cis300/linked-lists/sieve-eratosthenes/sieve-example2.jpg" alt="After 9 has been removed" class="lightbox-image" loading="lazy">
-</a></p>
-<p>Note that we have not yet advanced <code>p</code>, and indeed we don&rsquo;t want to, as
-
-<span class="math align-center">$ 11 $</span> is the next value we want to check. Thus, on each iteration, if 
+list:</p><p><a href=#R-image-f2f7049cc2873a4304455116e91ec93c class=lightbox-link><img alt="After 9 has been removed" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/linked-lists/sieve-eratosthenes/sieve-example2.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-f2f7049cc2873a4304455116e91ec93c><img alt="After 9 has been removed" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/linked-lists/sieve-eratosthenes/sieve-example2.jpg></a></p><p>Note that we have not yet advanced <code>p</code>, and indeed we don&rsquo;t want to, as
+<span class="math align-center">$ 11 $</span> is the next value we want to check. Thus, on each iteration, if
 <span class="math align-center">$ k $</span>
 divides the value in the cell following <code>p</code>, we remove that cell;
 otherwise, we advance <code>p</code> to that cell. We iterate this loop as long as
-there is a cell following <code>p</code>.</p>
-<p>The loop described above represents a single iteration of the loop
+there is a cell following <code>p</code>.</p><p>The loop described above represents a single iteration of the loop
 described for Step 2. Thus, for Step 2, we need to iterate a variable
 through the list, performing the above on each iteration. We stop when
 we either have run off the end of the list or have reached a value of
-
-<span class="math align-center">$ k $</span> such that <span style="white-space:nowrap">
-<span class="math align-center">$ k^2 \geq n $</span>.</span> Note that at the end of
-each iteration, we want to advance to the next cell.</p>
-
-  
-  
-<div class="box notices cstyle warning">
-  <div class="box-label"><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div>
-  <div class="box-content">
-
-<p>Make sure when iterating through a linked list that you keep a
+<span class="math align-center">$ k $</span> such that <span style=white-space:nowrap><span class="math align-center">$ k^2 \geq n $</span>.</span> Note that at the end of
+each iteration, we want to advance to the next cell.</p><div class="box notices cstyle warning"><div class=box-label><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div><div class=box-content><p>Make sure when iterating through a linked list that you keep a
 reference to the beginning of the list. Otherwise, you will lose all
-of your list.</p>
-</div>
-</div>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-
-        </div>
-      </main>
-    
-<div class="git-footer">
-<p class="theme-version-footer">5.18.0</p>
-<p>Last modified by: 
-            <i class='fas fa-user'></i> Rod Howell
-            <i class='fas fa-calendar'></i> <a href="https://gitlab.cs.ksu.edu/cis300/cis300-book/-/commit/d95d6166ad2381f2939919151f96e082efa017a9">Jun 1, 2023</a>
-</p>
-</div>
-
-    
-    </div>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1710771761" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1710771761" defer></script>
-    <script>
-      function useMathJax( config ){
-        if( !Object.assign ){
-          
-          return;
-        }
-        window.MathJax = Object.assign( window.MathJax || {}, {
-          loader: {
-            load: ['[tex]/mhchem']
-          },
-          startup: {
-            elements: [
-              '.math'
-            ]
-          },
-          tex: {
-            inlineMath: [
-              ['$', '$'], 
-              ['\\(', '\\)']
-            ]
-          },
-          options: {
-            enableMenu: false 
-          }
-        }, config );
-      }
-      useMathJax( JSON.parse("{}") );
-    </script>
-    <script id="MathJax-script" async src="https://ksu-cs-textbooks.github.io/cis300/js/mathjax/tex-mml-chtml.js?1710771761"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1710771761" defer></script>
-  </body>
-</html>
+of your list.</p></div></div><footer class=footline></footer></article></div></main><div class=git-footer><p class=theme-version-footer>6.0.0</p><p>Last modified by:
+<i class='fas fa-user'></i> Rod Howell
+<i class='fas fa-calendar'></i> <a href=https://github.com/ksu-cs-textbooks/cis300/commit/d95d6166ad2381f2939919151f96e082efa017a9>Jun 1, 2023</a></p></div></div><script src=/cis300/js/clipboard.min.js?1719513823 defer></script><script src=/cis300/js/perfect-scrollbar.min.js?1719513823 defer></script><script>function useMathJax(e){window.MathJax=Object.assign(window.MathJax||{},{tex:{inlineMath:[["\\(","\\)"],["$","$"]],displayMath:[["\\[","\\]"],["$$","$$"]]},options:{enableMenu:!1}},e)}useMathJax(JSON.parse("{}"))</script><script id=MathJax-script async src=/cis300/js/mathjax/tex-mml-chtml.js?1719513823></script><script src=/cis300/js/theme.js?1719513823 defer></script></body></html>

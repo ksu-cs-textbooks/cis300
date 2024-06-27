@@ -1,671 +1,51 @@
-
-
-
-
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.18.0">
-    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
-    <meta name="description" content="K-State CIS 300: Data Structures">
-    <meta name="author" content="Rod Howell and Josh Weese">
-    <title>Introduction to Trees :: Data Structures in C#</title>
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1710771761" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1710771761" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1710771761" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1710771761"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1710771761"></script>
-    <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
-      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
-      var root_url="https://ksu-cs-textbooks.github.io/cis300/";
-      var baseUri=root_url.replace(/\/$/, '');
-      // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
-      window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
-    </script>
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1710771761" rel="stylesheet">
-
-  </head>
-  <body class="mobile-support tele disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/trees/intro/index.html">
-    
-    <div id="tele" class="tele mirror">
-    
-    <div id="body" class="default-animation">
-      
-      
-      
-      <main id="body-inner" class="highlightable default" tabindex="-1">
-        <div class="flex-block-wrapper">
-          <article class="default">
-            <header class="headline">
-            </header>
-<div hidden><h1 id="introduction-to-trees">Introduction to Trees</h1></div>
-
-<h2 id="introduction-to-trees">Introduction to Trees</h2>
-<p>A <em>tree</em> is a mathematical structure having a hierarchical nature. A
-tree may be <em>empty</em>, or it may consist of:</p>
-<ul>
-<li>a <em>root</em>, and</li>
-<li>zero or more <em>children</em>, each of which is also a tree.</li>
-</ul>
-<p>Consider, for example, a folder (or directory) in a Windows file system.
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=robots content="noindex, nofollow, noarchive, noimageindex"><meta name=description content="Introduction to Trees A tree is a mathematical structure having a hierarchical nature. A tree may be empty, or it may consist of:
+a root, and zero or more children, each of which is also a tree. Consider, for example, a folder (or directory) in a Windows file system. This folder and all its sub-folders form a tree — the root of the tree is the folder itself, and its children are the folders directly contained within it."><meta name=author content="Rod Howell and Josh Weese"><meta name=twitter:card content="summary"><meta name=twitter:title content="Introduction to Trees :: Data Structures in C#"><meta name=twitter:description content="Introduction to Trees A tree is a mathematical structure having a hierarchical nature. A tree may be empty, or it may consist of:
+a root, and zero or more children, each of which is also a tree. Consider, for example, a folder (or directory) in a Windows file system. This folder and all its sub-folders form a tree — the root of the tree is the folder itself, and its children are the folders directly contained within it."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis300/trees/intro/"><meta property="og:site_name" content="Data Structures in C#"><meta property="og:title" content="Introduction to Trees :: Data Structures in C#"><meta property="og:description" content="Introduction to Trees A tree is a mathematical structure having a hierarchical nature. A tree may be empty, or it may consist of:
+a root, and zero or more children, each of which is also a tree. Consider, for example, a folder (or directory) in a Windows file system. This folder and all its sub-folders form a tree — the root of the tree is the folder itself, and its children are the folders directly contained within it."><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="Trees"><meta property="article:modified_time" content="2023-06-07T09:47:27-05:00"><meta itemprop=name content="Introduction to Trees :: Data Structures in C#"><meta itemprop=description content="Introduction to Trees A tree is a mathematical structure having a hierarchical nature. A tree may be empty, or it may consist of:
+a root, and zero or more children, each of which is also a tree. Consider, for example, a folder (or directory) in a Windows file system. This folder and all its sub-folders form a tree — the root of the tree is the folder itself, and its children are the folders directly contained within it."><meta itemprop=dateModified content="2023-06-07T09:47:27-05:00"><meta itemprop=wordCount content="2676"><title>Introduction to Trees :: Data Structures in C#</title>
+<link href=/cis300/css/fontawesome-all.min.css?1719513824 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fontawesome-all.min.css?1719513824 rel=stylesheet></noscript><link href=/cis300/css/nucleus.css?1719513824 rel=stylesheet><link href=/cis300/css/auto-complete.css?1719513824 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/auto-complete.css?1719513824 rel=stylesheet></noscript><link href=/cis300/css/perfect-scrollbar.min.css?1719513824 rel=stylesheet><link href=/cis300/css/fonts.css?1719513824 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fonts.css?1719513824 rel=stylesheet></noscript><link href=/cis300/css/theme.css?1719513824 rel=stylesheet><link href=/cis300/css/theme-auto.css?1719513824 rel=stylesheet id=R-variant-style><link href=/cis300/css/chroma-auto.css?1719513824 rel=stylesheet id=R-variant-chroma-style><link href=/cis300/css/variant.css?1719513824 rel=stylesheet><link href=/cis300/css/print.css?1719513824 rel=stylesheet media=print><script src=/cis300/js/variant.js?1719513824></script><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis300",window.index_js_url="/cis300/index.search.js",window.variants&&variants.init(["auto","light-theme","dark-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis300/css/custom.css?1719513824 rel=stylesheet></head><body class="mobile-support tele disableInlineCopyToClipboard" data-url=/cis300/trees/intro/><div id=tele class="tele mirror"><div id=R-body class=default-animation><div id=R-body-overlay></div><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><div hidden><h1 id=introduction-to-trees>Introduction to Trees</h1></div><h2 id=introduction-to-trees>Introduction to Trees</h2><p>A <em>tree</em> is a mathematical structure having a hierarchical nature. A
+tree may be <em>empty</em>, or it may consist of:</p><ul><li>a <em>root</em>, and</li><li>zero or more <em>children</em>, each of which is also a tree.</li></ul><p>Consider, for example, a folder (or directory) in a Windows file system.
 This folder and all its sub-folders form a tree &mdash; the root of the tree
 is the folder itself, and its children are the folders directly
 contained within it. Because a folder (with its
 sub-folders) forms a tree, each of the sub-folders directly contained
 within the folder are also trees. In this example, there are no empty
 trees &mdash; an empty folder is a nonempty tree containing a root but no
-children.</p>
-
-  
-  
-<div class="box notices cstyle note">
-  <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
-  <div class="box-content">
-
-<p>We are only considering actual folders,
-not shortcuts, symbolic links, etc.</p>
-</div>
-</div>
-<p>We have at least a couple of ways of presenting a tree graphically. One
-way is as done within Windows Explorer:</p>
-<p>
-<a href="#image-2d022bf990958994a70707388ed42f7d" class="lightbox-link">
-<img src="windows-tree.jpg" alt="A Windows file system tree" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-2d022bf990958994a70707388ed42f7d">
-<img src="windows-tree.jpg" alt="A Windows file system tree" class="lightbox-image" loading="lazy">
-</a></p>
-<p>Here, children are shown in a vertically-aligned list, indented under
-the root. An alternative depiction is as follows:</p>
-<p>
-<a href="#image-e9669a393b0b4292a9918304bb65e984" class="lightbox-link">
-<img src="tree-example.jpg" alt="A tree" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-e9669a393b0b4292a9918304bb65e984">
-<img src="tree-example.jpg" alt="A tree" class="lightbox-image" loading="lazy">
-</a></p>
-<p>Here, children are shown by drawing lines to them downward from the
-root.</p>
-<p>Other examples of trees include various kinds of search spaces. For
+children.</p><div class="box notices cstyle note"><div class=box-label><i class="fa-fw fas fa-exclamation-circle"></i> Note</div><div class=box-content><p>We are only considering actual folders,
+not shortcuts, symbolic links, etc.</p></div></div><p>We have at least a couple of ways of presenting a tree graphically. One
+way is as done within Windows Explorer:</p><p><a href=#R-image-abf52ba33845e3108b14bce47540eae2 class=lightbox-link><img alt="A Windows file system tree" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/trees/intro/windows-tree.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-abf52ba33845e3108b14bce47540eae2><img alt="A Windows file system tree" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/trees/intro/windows-tree.jpg></a></p><p>Here, children are shown in a vertically-aligned list, indented under
+the root. An alternative depiction is as follows:</p><p><a href=#R-image-e74d8a0402857692c2954c524d533129 class=lightbox-link><img alt="A tree" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/trees/intro/tree-example.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-e74d8a0402857692c2954c524d533129><img alt="A tree" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/trees/intro/tree-example.jpg></a></p><p>Here, children are shown by drawing lines to them downward from the
+root.</p><p>Other examples of trees include various kinds of search spaces. For
 example, for a chess-playing program, the search for a move can be
 performed on a game tree whose root is a board position and whose
 children are the game trees formed from each board position reachable
 from the root position by a single move. Also, in the sections that
-follow, we will consider various data structures that form trees.</p>
-<p>.NET provides access to the folders in a file system tree
+follow, we will consider various data structures that form trees.</p><p>.NET provides access to the folders in a file system tree
 via the
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.directoryinfo?view=net-6.0" target="_blank"><strong>DirectoryInfo</strong></a>
-
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.directoryinfo?view=net-6.0" rel=external target=_blank><strong>DirectoryInfo</strong></a>
 class, found in the <strong>System.IO</strong> namespace. This class has a
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.directoryinfo.-ctor?view=net-6.0#system-io-directoryinfo-ctor%28system-string%29" target="_blank">constructor</a>
-
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.directoryinfo.-ctor?view=net-6.0#system-io-directoryinfo-ctor(system-string)" rel=external target=_blank>constructor</a>
 that takes as its only parameter a <strong>string</strong> giving the path to a
 folder (i.e., a directory) and constructs a <strong>DirectoryInfo</strong> describing
 that folder. We can obtain such a <strong>string</strong> from the user using a
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.folderbrowserdialog?view=windowsdesktop-6.0" target="_blank"><strong>FolderBrowserDialog</strong></a>
-.
-This class is similar to a <a href="https://ksu-cs-textbooks.github.io/cis300/io/dialogs/file-dialogs">file
-dialog</a>
- and can be added
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.folderbrowserdialog?view=windowsdesktop-6.0" rel=external target=_blank><strong>FolderBrowserDialog</strong></a>.
+This class is similar to a <a href=/cis300/io/dialogs/file-dialogs/>file
+dialog</a> and can be added
 to a form in the Design window in the same way. If <code>uxFolderBrowser</code> is
 a <strong>FolderBrowserDialog</strong>, we can use it to obtain a <strong>DirectoryInfo</strong>
-for a user-selected folder as follows:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (uxFolderBrowser.ShowDialog() == DialogResult.OK)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    DirectoryInfo folder = <span style="color:#66d9ef">new</span>(uxFolderBrowser.SelectedPath);
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Process the folder</span>
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Various properties of a <strong>DirectoryInfo</strong> give information about the
-folder; for example:</p>
-<ul>
-<li><a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.directoryinfo.name?view=net-6.0#system-io-directoryinfo-name" target="_blank"><strong>Name</strong></a>
-
-gets the name of the folder as a <strong>string</strong>.</li>
-<li><a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.filesysteminfo.fullname?view=net-6.0#system-io-filesysteminfo-fullname" target="_blank"><strong>FullName</strong></a>
-
-gets the full path of the folder as a <strong>string</strong>.</li>
-<li><a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.directoryinfo.parent?view=net-6.0#system-io-directoryinfo-parent" target="_blank"><strong>Parent</strong></a>
-
-gets the parent folder as a <strong>DirectoryInfo?</strong>. If the current folder is the root of its file system, this property is <strong>null</strong>.</li>
-</ul>
-<p>In addition, its
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.directoryinfo.getdirectories?view=net-6.0#system-io-directoryinfo-getdirectories" target="_blank"><strong>GetDirectories</strong></a>
-
+for a user-selected folder as follows:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=k>if</span> <span class=p>(</span><span class=n>uxFolderBrowser</span><span class=p>.</span><span class=n>ShowDialog</span><span class=p>()</span> <span class=p>==</span> <span class=n>DialogResult</span><span class=p>.</span><span class=n>OK</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=n>DirectoryInfo</span> <span class=n>folder</span> <span class=p>=</span> <span class=k>new</span><span class=p>(</span><span class=n>uxFolderBrowser</span><span class=p>.</span><span class=n>SelectedPath</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>	<span class=c1>// Process the folder</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>Various properties of a <strong>DirectoryInfo</strong> give information about the
+folder; for example:</p><ul><li><a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.directoryinfo.name?view=net-6.0#system-io-directoryinfo-name" rel=external target=_blank><strong>Name</strong></a>
+gets the name of the folder as a <strong>string</strong>.</li><li><a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.filesysteminfo.fullname?view=net-6.0#system-io-filesysteminfo-fullname" rel=external target=_blank><strong>FullName</strong></a>
+gets the full path of the folder as a <strong>string</strong>.</li><li><a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.directoryinfo.parent?view=net-6.0#system-io-directoryinfo-parent" rel=external target=_blank><strong>Parent</strong></a>
+gets the parent folder as a <strong>DirectoryInfo?</strong>. If the current folder is the root of its file system, this property is <strong>null</strong>.</li></ul><p>In addition, its
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.directoryinfo.getdirectories?view=net-6.0#system-io-directoryinfo-getdirectories" rel=external target=_blank><strong>GetDirectories</strong></a>
 method takes no parameters and returns a <strong>DirectoryInfo[ ]</strong> whose
 elements describe the contained folders (i.e., the elements of the array
 are the children of the folder). For example, if <code>d</code> refers to a
@@ -674,24 +54,21 @@ figures above, then <strong>d.GetDirectories()</strong> would return a 3-element
 array whose elements describe the folders <strong>bin</strong>, <strong>obj</strong>, and
 <strong>Properties</strong>. The following method illustrates how we can write the
 names of the folders contained within a given folder to a
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=net-6.0" target="_blank"><strong>StreamWriter</strong></a>
-:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// Writes the names of the directories contained in the given directory </span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// (excluding their sub-directories) to the given StreamWriter.</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;param name=&#34;dir&#34;&gt;The directory whose contained directories are to</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// be written.&lt;/param&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;param name=&#34;output&#34;&gt;The output stream to write to.&lt;/param&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> WriteSubDirectories(DirectoryInfo dir, StreamWriter output)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">foreach</span> (DirectoryInfo d <span style="color:#66d9ef">in</span> dir.GetDirectories())
-</span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        output.WriteLine(d.Name);
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>For a more interesting problem, suppose we want to write to a
-<strong>StreamWriter</strong> the structure of an entire folder, as follows:</p>
-<pre>
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=net-6.0" rel=external target=_blank><strong>StreamWriter</strong></a>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=cs>/// &lt;summary&gt;</span>
+</span></span><span class=line><span class=cl><span class=cs>/// Writes the names of the directories contained in the given directory </span>
+</span></span><span class=line><span class=cl><span class=cs>/// (excluding their sub-directories) to the given StreamWriter.</span>
+</span></span><span class=line><span class=cl><span class=cs>/// &lt;/summary&gt;</span>
+</span></span><span class=line><span class=cl><span class=cs>/// &lt;param name=&#34;dir&#34;&gt;The directory whose contained directories are to</span>
+</span></span><span class=line><span class=cl><span class=cs>/// be written.&lt;/param&gt;</span>
+</span></span><span class=line><span class=cl><span class=cs>/// &lt;param name=&#34;output&#34;&gt;The output stream to write to.&lt;/param&gt;</span>
+</span></span><span class=line><span class=cl><span class=kd>private</span> <span class=k>void</span> <span class=n>WriteSubDirectories</span><span class=p>(</span><span class=n>DirectoryInfo</span> <span class=n>dir</span><span class=p>,</span> <span class=n>StreamWriter</span> <span class=n>output</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>foreach</span> <span class=p>(</span><span class=n>DirectoryInfo</span> <span class=n>d</span> <span class=k>in</span> <span class=n>dir</span><span class=p>.</span><span class=n>GetDirectories</span><span class=p>())</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>output</span><span class=p>.</span><span class=n>WriteLine</span><span class=p>(</span><span class=n>d</span><span class=p>.</span><span class=n>Name</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>For a more interesting problem, suppose we want to write to a
+<strong>StreamWriter</strong> the structure of an entire folder, as follows:</p><pre>
 Ksu.Cis300.HelloWorld
   bin
     Debug
@@ -700,51 +77,25 @@ Ksu.Cis300.HelloWorld
     Debug
       TempPE
   Properties
-</pre>
-<p>We can break this task into the following steps:</p>
-<ol>
-<li>
-<p>Write the name of the folder:</p>
-<pre>Ksu.Cis300.HelloWorld</pre>
-</li>
-<li>
-<p>Write the structure of each child folder, indented one level (i.e.,
-two spaces):</p>
-<ul>
-<li>
-<p>First child:</p>
-<pre>
+</pre><p>We can break this task into the following steps:</p><ol><li><p>Write the name of the folder:</p><pre>Ksu.Cis300.HelloWorld</pre></li><li><p>Write the structure of each child folder, indented one level (i.e.,
+two spaces):</p><ul><li><p>First child:</p><pre>
   bin
     Debug
     Release
-</pre>
-</li>
-<li>
-<p>Second child:</p>
-<pre>
+</pre></li><li><p>Second child:</p><pre>
   obj
     Debug
       TempPE
-</pre>
-</li>
-<li>
-<p>Third child:</p>
-<pre>
+</pre></li><li><p>Third child:</p><pre>
   Properties
-</pre>
-</li>
-</ul>
-</li>
-</ol>
-<p><span id="recursion"></span> Note that writing the structure of a child
+</pre></li></ul></li></ol><p><span id=recursion></span> Note that writing the structure of a child
 folder is an instance of the original problem that we want to solve -
 i.e., writing the structure of a folder. The only difference is that the
 folders are different and the amount of indentation is different. We can
 solve such a problem using a technique called <em>recursion</em>. Recursion
 involves a method calling itself. Because of the recursive nature of a
 tree (i.e., each child of a tree is also a tree), recursion is commonly
-used in processing trees.</p>
-<p>In order to use recursion, we first must define precisely what we want
+used in processing trees.</p><p>In order to use recursion, we first must define precisely what we want
 our method to accomplish, wherever it might be called. For this problem,
 we want to write to a given <strong>StreamWriter</strong> a list of all the folders
 contained within a given folder, including the given folder itself and
@@ -752,66 +103,57 @@ all sub-folders in the entire tree, where each folder is indented two
 spaces beyond its parent&rsquo;s indentation. Furthermore, the entire tree
 below a given folder (i.e., excluding the folder itself) should be
 listed below that folder, but before any folders that are outside that
-folder. In order to write such a method, we need three parameters:</p>
-<ul>
-<li>a <strong>DirectoryInfo</strong> giving the root folder;</li>
-<li>a <strong>StreamWriter</strong> where the output is to be written; and</li>
-<li>an <strong>int</strong> giving the level of indentation for the root folder,
-where each level of indentation is two spaces.</li>
-</ul>
-<p>Because the root folder must be written first, we begin there. We first
+folder. In order to write such a method, we need three parameters:</p><ul><li>a <strong>DirectoryInfo</strong> giving the root folder;</li><li>a <strong>StreamWriter</strong> where the output is to be written; and</li><li>an <strong>int</strong> giving the level of indentation for the root folder,
+where each level of indentation is two spaces.</li></ul><p>Because the root folder must be written first, we begin there. We first
 must write two blanks for every level of indentation, then write the
-name of the root folder:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// Writes the directory structure for the given root directory to the</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// given StreamWriter, indenting all entries to the given indentation</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// level (incomplete). </span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;param name=&#34;root&#34;&gt;The root directory.&lt;/param&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;param name=&#34;output&#34;&gt;The output stream to which to write&lt;/param&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;param name=&#34;level&#34;&gt;The current indentation level.&lt;/param&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> WriteTree(DirectoryInfo root, StreamWriter output, <span style="color:#66d9ef">int</span> level)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i = <span style="color:#ae81ff">0</span>; i &lt; level; i++)
-</span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        output.Write(<span style="color:#e6db74">&#34;  &#34;</span>);
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    output.WriteLine(root.Name);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// We now need to write the sub-directories . . .</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>We can get the children using <strong>root.GetDirectories()</strong>. Each of the
+name of the root folder:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=cs>/// &lt;summary&gt;</span>
+</span></span><span class=line><span class=cl><span class=cs>/// Writes the directory structure for the given root directory to the</span>
+</span></span><span class=line><span class=cl><span class=cs>/// given StreamWriter, indenting all entries to the given indentation</span>
+</span></span><span class=line><span class=cl><span class=cs>/// level (incomplete). </span>
+</span></span><span class=line><span class=cl><span class=cs>/// &lt;/summary&gt;</span>
+</span></span><span class=line><span class=cl><span class=cs>/// &lt;param name=&#34;root&#34;&gt;The root directory.&lt;/param&gt;</span>
+</span></span><span class=line><span class=cl><span class=cs>/// &lt;param name=&#34;output&#34;&gt;The output stream to which to write&lt;/param&gt;</span>
+</span></span><span class=line><span class=cl><span class=cs>/// &lt;param name=&#34;level&#34;&gt;The current indentation level.&lt;/param&gt;</span>
+</span></span><span class=line><span class=cl><span class=kd>private</span> <span class=k>void</span> <span class=n>WriteTree</span><span class=p>(</span><span class=n>DirectoryInfo</span> <span class=n>root</span><span class=p>,</span> <span class=n>StreamWriter</span> <span class=n>output</span><span class=p>,</span> <span class=kt>int</span> <span class=n>level</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=p>=</span> <span class=m>0</span><span class=p>;</span> <span class=n>i</span> <span class=p>&lt;</span> <span class=n>level</span><span class=p>;</span> <span class=n>i</span><span class=p>++)</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>output</span><span class=p>.</span><span class=n>Write</span><span class=p>(</span><span class=s>&#34;  &#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=n>output</span><span class=p>.</span><span class=n>WriteLine</span><span class=p>(</span><span class=n>root</span><span class=p>.</span><span class=n>Name</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// We now need to write the sub-directories . . .</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>We can get the children using <strong>root.GetDirectories()</strong>. Each of the
 elements of the array this method returns will be a <strong>DirectoryInfo</strong>
 whose structure we want to write. Looking back at how we described what
 we want the <strong>WriteTree</strong> method to accomplish, we see that it is
 exactly what we want to do for each child. We can therefore make a
 recursive call for each child, specifying that the indentation level
-should be one deeper than the level for <code>root</code>:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// Writes the directory structure for the given root directory to the</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// given StreamWriter, indenting all entries to the given indentation</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// level (incomplete). </span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;param name=&#34;root&#34;&gt;The root directory.&lt;/param&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;param name=&#34;output&#34;&gt;The output stream to which to write&lt;/param&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;param name=&#34;level&#34;&gt;The current indentation level.&lt;/param&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> WriteTree(DirectoryInfo root, StreamWriter output, <span style="color:#66d9ef">int</span> level)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i = <span style="color:#ae81ff">0</span>; i &lt; level; i++)
-</span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        output.Write(<span style="color:#e6db74">&#34;  &#34;</span>);
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    output.WriteLine(root.Name);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">foreach</span> (DirectoryInfo d <span style="color:#66d9ef">in</span> root.GetDirectories())
-</span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        WriteTree(d, output, level + <span style="color:#ae81ff">1</span>);
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>This method accomplishes the desired task, provided the directory tree
+should be one deeper than the level for <code>root</code>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=cs>/// &lt;summary&gt;</span>
+</span></span><span class=line><span class=cl><span class=cs>/// Writes the directory structure for the given root directory to the</span>
+</span></span><span class=line><span class=cl><span class=cs>/// given StreamWriter, indenting all entries to the given indentation</span>
+</span></span><span class=line><span class=cl><span class=cs>/// level (incomplete). </span>
+</span></span><span class=line><span class=cl><span class=cs>/// &lt;/summary&gt;</span>
+</span></span><span class=line><span class=cl><span class=cs>/// &lt;param name=&#34;root&#34;&gt;The root directory.&lt;/param&gt;</span>
+</span></span><span class=line><span class=cl><span class=cs>/// &lt;param name=&#34;output&#34;&gt;The output stream to which to write&lt;/param&gt;</span>
+</span></span><span class=line><span class=cl><span class=cs>/// &lt;param name=&#34;level&#34;&gt;The current indentation level.&lt;/param&gt;</span>
+</span></span><span class=line><span class=cl><span class=kd>private</span> <span class=k>void</span> <span class=n>WriteTree</span><span class=p>(</span><span class=n>DirectoryInfo</span> <span class=n>root</span><span class=p>,</span> <span class=n>StreamWriter</span> <span class=n>output</span><span class=p>,</span> <span class=kt>int</span> <span class=n>level</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=p>=</span> <span class=m>0</span><span class=p>;</span> <span class=n>i</span> <span class=p>&lt;</span> <span class=n>level</span><span class=p>;</span> <span class=n>i</span><span class=p>++)</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>output</span><span class=p>.</span><span class=n>Write</span><span class=p>(</span><span class=s>&#34;  &#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=n>output</span><span class=p>.</span><span class=n>WriteLine</span><span class=p>(</span><span class=n>root</span><span class=p>.</span><span class=n>Name</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=k>foreach</span> <span class=p>(</span><span class=n>DirectoryInfo</span> <span class=n>d</span> <span class=k>in</span> <span class=n>root</span><span class=p>.</span><span class=n>GetDirectories</span><span class=p>())</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>WriteTree</span><span class=p>(</span><span class=n>d</span><span class=p>,</span> <span class=n>output</span><span class=p>,</span> <span class=n>level</span> <span class=p>+</span> <span class=m>1</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>This method accomplishes the desired task, provided the directory tree
 does not contain symbolic links or anything similar that might be
 represented using a <strong>DirectoryInfo</strong>, but is not an actual folder.
 While it is possible to detect these and avoid following them, we will
-not consider that here.</p>
-<p>There is something that may seem mysterious about what we have done. In
+not consider that here.</p><p>There is something that may seem mysterious about what we have done. In
 order to convince ourselves that this method is written correctly, we
 need to know that the recursive calls work correctly; however, the
 recursive calls are to the same method. Our reasoning therefore seems
@@ -819,8 +161,7 @@ circular. However, we are actually using a mathematical principle from
 the discipline of formally proving software correctness: in order to
 prove that a recursive method meets its specification we may assume that
 any recursive calls meet that same specification, provided that these
-recursive calls are all on smaller problem instances.</p>
-<p>The restriction that recursive calls are on smaller problem instances is
+recursive calls are all on smaller problem instances.</p><p>The restriction that recursive calls are on smaller problem instances is
 what avoids circular reasoning regarding recursion. We associate with
 each problem instance a nonnegative integer describing its size. For a
 problem involving a tree, this size is typically the number of <em>nodes</em>
@@ -830,25 +171,17 @@ containing tree is not in the child, a child is always smaller, provided
 the tree is finite. (For directory trees, if the underlying file system
 is a Windows system, the tree will be finite; however if it is a
 non-Windows system, the trees may appear to Windows as being infinite -
-the above method actually will not work in such cases.)</p>
-<p>The validity of this strategy is based on the fact that for any method,
-the following three statements cannot be simultaneously true:</p>
-<ol>
-<li>All of the method&rsquo;s recursive calls (if there are any) are on inputs
+the above method actually will not work in such cases.)</p><p>The validity of this strategy is based on the fact that for any method,
+the following three statements cannot be simultaneously true:</p><ol><li>All of the method&rsquo;s recursive calls (if there are any) are on inputs
 of smaller size, where the size is defined to be a nonnegative
-integer.</li>
-<li>When the method is given any input, if all of the method&rsquo;s recursive
+integer.</li><li>When the method is given any input, if all of the method&rsquo;s recursive
 calls produce correct results, then the method itself produces a
-correct result.</li>
-<li>There is at least one input for which the method does not produce a
-correct result.</li>
-</ol>
-<p>Thus, if we can ensure that Statements 1 and 2 are true, then Statement
+correct result.</li><li>There is at least one input for which the method does not produce a
+correct result.</li></ol><p>Thus, if we can ensure that Statements 1 and 2 are true, then Statement
 3 must be false; i.e., the method will be correct. To ensure Statement
 2, we only need to concern ourselves with cases in which all recursive
 calls produce correct results; hence, we simply assume that each
-recursive call produces correct results.</p>
-<p>To see why the three statements above cannot be simultaneously true,
+recursive call produces correct results.</p><p>To see why the three statements above cannot be simultaneously true,
 let&rsquo;s first suppose Statement 3 is true. Let <em>S</em> be the set of all
 inputs for which the method does not produce a correct result. Then
 because Statement 3 is true, this set is nonempty. Because each input in
@@ -859,24 +192,17 @@ than <em>I</em>; hence, because <em>I</em> is a smallest input in <em>S</em>, no
 inputs is in <em>S</em>. Therefore, each of the recursive calls produces a
 correct result. We therefore have an input, <em>I</em> on which all of the
 method&rsquo;s recursive calls produce correct results, but the method itself
-does not produce a correct result. Statement 2 is therefore false.</p>
-<p>Once we understand this strategy, recursion is as easy to use as calling
+does not produce a correct result. Statement 2 is therefore false.</p><p>Once we understand this strategy, recursion is as easy to use as calling
 a method written by someone else. In fact, we should treat recursive
 calls in exactly the same way &mdash; we need to understand what the recursive
 call is supposed to accomplish, but not necessarily how it accomplishes
 it. Furthermore, because processing trees typically involves solving the
 same problem for multiple nodes in the tree, recursion is the natural
-technique to use.</p>
-<p>A recursive method for processing a tree will break down into cases,
-each fitting into one of the following categories:</p>
-<ul>
-<li>A <em>base case</em> is a case that is simple enough that a recursive call
+technique to use.</p><p>A recursive method for processing a tree will break down into cases,
+each fitting into one of the following categories:</p><ul><li>A <em>base case</em> is a case that is simple enough that a recursive call
 is not needed. Empty trees are always base cases, and sometimes
-other trees are as well.</li>
-<li>A <em>recursive case</em> is a case that requires one or more recursive
-calls to handle it.</li>
-</ul>
-<p>A recursive method will always contain cases of <em>both</em> these types. If
+other trees are as well.</li><li>A <em>recursive case</em> is a case that requires one or more recursive
+calls to handle it.</li></ul><p>A recursive method will always contain cases of <em>both</em> these types. If
 there were no base cases, the recursion would never terminate. If there
 were no recursive cases, the method wouldn&rsquo;t be recursive. Most
 recursive methods are, in fact, structured as an <strong>if</strong>-statement, with
@@ -888,15 +214,13 @@ array returned is empty), no recursive calls are made. Furthermore, if
 the directory tree is finite, there must be some sub-directories that
 have no children. When the <strong>GetDirectories</strong> method is called for such
 a directory, it returns an empty array. These directories are therefore
-the base cases.</p>
-<p>The <strong>WriteTree</strong> method above is actually an example of processing an
+the base cases.</p><p>The <strong>WriteTree</strong> method above is actually an example of processing an
 entire tree using a <em>preorder traversal</em>. In a preorder traversal, the
 root of the tree is processed first, then each of the children is
 processed using a recursive call. This results in each node&rsquo;s being
 processed prior to any node contained in any of its children. For the
 <strong>WriteTree</strong> method, this means that the name of any folder is written
-before any folders contained anywhere within it.</p>
-<p>When debugging a recursive method, we should continue to think about it
+before any folders contained anywhere within it.</p><p>When debugging a recursive method, we should continue to think about it
 in the same way &mdash; that is, assume that all recursive calls work
 correctly. In order to isolate an error, we need to find an instance
 that causes an error, but whose recursive calls all work correctly. It
@@ -905,22 +229,20 @@ fact, small cases tend to be the most likely ones to fit this
 description. When debugging, it therefore makes sense to start with the
 smallest cases, and slowly increase their size until one is found that
 causes an error. When using the debugger to step through code, first
-delete all breakpoints from this method, then use <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/vs/debugger/#debugger-buttons">Step
-Over</a>
- to step over
+delete all breakpoints from this method, then use <a href=/cis300/appendix/vs/debugger/#debugger-buttons>Step
+Over</a> to step over
 the recursive calls. If a recursive call doesn&rsquo;t work correctly, you
 have found a smaller instance that causes an error &mdash; work on that
 instance instead. Otherwise, you can focus on the top-level code for the
 instance you are debugging. This is much easier to think about that
-trying to work through different levels of recursion.</p>
-<p>There are times when it is useful to know exactly what happens when a
+trying to work through different levels of recursion.</p><p>There are times when it is useful to know exactly what happens when a
 recursive call (or any method call, for that matter) is made. Prior to
 transferring control to the top of the method being called, all local
 variables and the address of the current code location are pushed onto
 the <em>call stack</em>. This call stack is just like any other stack, except
 that it has a smaller amount of space available to it. You can, in fact,
 examine the call stack when debugging &mdash; from the &ldquo;Debug&rdquo; menu, select
-&ldquo;Windows -&gt; Call Stack&rdquo;. This will open a window
+&ldquo;Windows -> Call Stack&rdquo;. This will open a window
 showing the contents of the call stack. The line on top shows the line
 of code currently ready for execution. Below it is the line that called
 the current method, and below that line is the line that called that
@@ -928,58 +250,23 @@ method, etc. By double-clicking on an entry in the call stack, you can
 use the other debugging tools to examine the values of the local
 variables for the method containing that line of code. If this method is
 recursive, the values displayed for the local variables are their values
-at that level of recursion.</p>
-
-  
-  
-<div class="box notices cstyle note">
-  <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
-  <div class="box-content">
-
-<p>This only applies to the values
+at that level of recursion.</p><div class="box notices cstyle note"><div class=box-label><i class="fa-fw fas fa-exclamation-circle"></i> Note</div><div class=box-content><p>This only applies to the values
 stored in local variables - in particular, if a local variable is a
-<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/reference-value">reference type</a>
-, the
+<a href=/cis300/appendix/syntax/reference-value/>reference type</a>, the
 value of the object to which it refers will not revert to its earlier
 state. For example, if a local variable is an array, the debugger will
 show the value of this variable to refer to the array that it referred
 to at that point, but the values shown in that array will be its current
-values.</p>
-</div>
-</div>
-<p>One consequence of method calls using a call stack with limited space
+values.</p></div></div><p>One consequence of method calls using a call stack with limited space
 available is that moderately deep recursion can fill up the call stack.
 If this happens, a <strong>StackOverflowException</strong> will be thrown. Thus,
 infinite recursion will always throw this exception, as will recursion
 that is nested too deeply. For this reason, it is usually a bad idea to
-use recursion on a <a href="https://ksu-cs-textbooks.github.io/cis300/linked-lists">linked
-list</a>
- - if the list is
+use recursion on a <a href=/cis300/linked-lists/>linked
+list</a> - if the list is
 very long, the recursion will be nested too deeply. We must also take
 care in using recursion with trees, as long paths in a tree can lead to
 a <strong>StackOverflowException</strong>. Due to the branching nature of trees,
 however, we can have very large trees with no long paths. In fact, there
 are many cases in which we can be sure that a tree doesn&rsquo;t contain any
-long paths. In such cases, recursion is often a useful technique.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-        </div>
-      </main>
-    </div>
-    
-    </div>
-    
-    
-    
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1710771761" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1710771761" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1710771761" defer></script>
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/tele-scroll.js?1710771761 defer"></script>
-    
-  </body>
-</html>
+long paths. In such cases, recursion is often a useful technique.</p><footer class=footline></footer></article></div></main></div></div><script src=/cis300/js/clipboard.min.js?1719513824 defer></script><script src=/cis300/js/perfect-scrollbar.min.js?1719513824 defer></script><script src=/cis300/js/theme.js?1719513824 defer></script><script src=/cis300/js/tele-scroll.js?1719513824 defer></script></body></html>

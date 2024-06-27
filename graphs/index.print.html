@@ -1,804 +1,109 @@
-
-
-
-
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.18.0">
-    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
-    <meta name="description" content="K-State CIS 300: Data Structures">
-    <meta name="author" content="Rod Howell and Josh Weese">
-    <title>Graphs :: Data Structures in C#</title>
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1710771761" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1710771761" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/format-print.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1710771761" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1710771761"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1710771761"></script>
-    <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
-      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
-      var root_url="https://ksu-cs-textbooks.github.io/cis300/";
-      var baseUri=root_url.replace(/\/$/, '');
-      // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
-      window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
-    </script>
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1710771761" rel="stylesheet">
-
-  </head>
-  <body class="mobile-support print disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/graphs/index.html">
-    <div id="body" class="default-animation">
-      <div id="sidebar-overlay"></div>
-      <div id="toc-overlay"></div>
-      <nav id="topbar" class="highlightable">
-        <div>
-          <div id="top-tele-link">
-            <a class="print-link" title='Teleprompter View' href="https://ksu-cs-textbooks.github.io/cis300/graphs/tele.html">
-              <i class="fas fa-tv fa-fw"></i>
-            </a>
-          </div>
-          <div id="top-embed-link">
-            <a class="print-link" title='Embeddable Version' href="https://ksu-cs-textbooks.github.io/cis300/graphs/embed.html">
-              <i class="fas fa-expand-arrows-alt fa-fw"></i>
-            </a>
-          </div>
-          <div id="breadcrumbs">
-            <span id="sidebar-toggle-span">
-              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
-            </span>
-            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis300/index.html"><span itemprop="name">Data Structures in C#</span></a><meta itemprop="position" content="1"> &gt; </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Graphs</span><meta itemprop="position" content="2"></li>
-            </ol>
-          </div>
-        </div>
-      </nav>
-      <main id="body-inner" class="highlightable default" tabindex="-1">
-        <div class="flex-block-wrapper">
-          <article class="default">
-            <header class="headline">
-            </header>
-<div hidden><h1 id="graphs">Graphs</h1></div>
-
-<h2 id="graphs">Graphs</h2>
-<p>In this chapter, we examine a data structure known as a <em>graph</em>, which
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=robots content="noindex, nofollow, noarchive, noimageindex"><meta name=description content="Graphs In this chapter, we examine a data structure known as a graph, which can be used to represent a wide variety of data sets in which pairs of data items are related in a certain way. Examples of such data sets include road maps, data flows or control flows in programs, and representations of communication networks. Because graphs are so widely used, numerous algorithms on graphs have been devised. As a result, the same algorithm can often be applied to a variety of applications because the underlying data structure for each application is a graph."><meta name=author content="Rod Howell and Josh Weese"><meta name=twitter:card content="summary"><meta name=twitter:title content="Graphs :: Data Structures in C#"><meta name=twitter:description content="Graphs In this chapter, we examine a data structure known as a graph, which can be used to represent a wide variety of data sets in which pairs of data items are related in a certain way. Examples of such data sets include road maps, data flows or control flows in programs, and representations of communication networks. Because graphs are so widely used, numerous algorithms on graphs have been devised. As a result, the same algorithm can often be applied to a variety of applications because the underlying data structure for each application is a graph."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis300/graphs/"><meta property="og:site_name" content="Data Structures in C#"><meta property="og:title" content="Graphs :: Data Structures in C#"><meta property="og:description" content="Graphs In this chapter, we examine a data structure known as a graph, which can be used to represent a wide variety of data sets in which pairs of data items are related in a certain way. Examples of such data sets include road maps, data flows or control flows in programs, and representations of communication networks. Because graphs are so widely used, numerous algorithms on graphs have been devised. As a result, the same algorithm can often be applied to a variety of applications because the underlying data structure for each application is a graph."><meta property="og:locale" content="en-us"><meta property="og:type" content="website"><meta itemprop=name content="Graphs :: Data Structures in C#"><meta itemprop=description content="Graphs In this chapter, we examine a data structure known as a graph, which can be used to represent a wide variety of data sets in which pairs of data items are related in a certain way. Examples of such data sets include road maps, data flows or control flows in programs, and representations of communication networks. Because graphs are so widely used, numerous algorithms on graphs have been devised. As a result, the same algorithm can often be applied to a variety of applications because the underlying data structure for each application is a graph."><meta itemprop=dateModified content="2023-05-22T14:36:43-05:00"><meta itemprop=wordCount content="159"><title>Graphs :: Data Structures in C#</title>
+<link href=/cis300/css/fontawesome-all.min.css?1719513823 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fontawesome-all.min.css?1719513823 rel=stylesheet></noscript><link href=/cis300/css/nucleus.css?1719513823 rel=stylesheet><link href=/cis300/css/auto-complete.css?1719513823 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/auto-complete.css?1719513823 rel=stylesheet></noscript><link href=/cis300/css/perfect-scrollbar.min.css?1719513823 rel=stylesheet><link href=/cis300/css/fonts.css?1719513823 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fonts.css?1719513823 rel=stylesheet></noscript><link href=/cis300/css/theme.css?1719513823 rel=stylesheet><link href=/cis300/css/theme-auto.css?1719513823 rel=stylesheet id=R-variant-style><link href=/cis300/css/chroma-auto.css?1719513823 rel=stylesheet id=R-variant-chroma-style><link href=/cis300/css/variant.css?1719513823 rel=stylesheet><link href=/cis300/css/print.css?1719513823 rel=stylesheet media=print><link href=/cis300/css/format-print.css?1719513823 rel=stylesheet><script src=/cis300/js/variant.js?1719513823></script><script>window.relearn=window.relearn||{},window.relearn.relBasePath="..",window.relearn.relBaseUri="../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis300",window.index_js_url="/cis300/index.search.js",window.variants&&variants.init(["auto","light-theme","dark-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis300/css/custom.css?1719513823 rel=stylesheet></head><body class="mobile-support print disableInlineCopyToClipboard" data-url=/cis300/graphs/><div id=R-body class=default-animation><div id=R-body-overlay></div><nav id=R-topbar><div class=topbar-wrapper><div class=topbar-sidebar-divider></div><div class="topbar-area topbar-area-start" data-area=start><div class="topbar-button topbar-button-sidebar" data-content-empty=disable data-width-s=show data-width-m=hide data-width-l=hide><button class=topbar-control onclick=toggleNav() type=button title="Menu (CTRL+ALT+n)"><i class="fa-fw fas fa-bars"></i></button></div></div><ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype=http://schema.org/BreadcrumbList><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><span itemprop=name>Graphs</span><meta itemprop=position content="1"></li></ol><div class="topbar-area topbar-area-end" data-area=end><div class="topbar-button topbar-button-prev" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/cis300/hashing/hash-functions/ title="Hash Codes (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></div><div class="topbar-button topbar-button-next" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/cis300/graphs/intro/ title="Introduction to Graphs (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></div></div></div></nav><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><div hidden><h1 id=graphs>Graphs</h1></div><h2 id=graphs>Graphs</h2><p>In this chapter, we examine a data structure known as a <em>graph</em>, which
 can be used to represent a wide variety of data sets in which pairs of
 data items are related in a certain way. Examples of such data sets
 include road maps, data flows or control flows in programs, and
 representations of communication networks. Because graphs are so widely
 used, numerous algorithms on graphs have been devised. As a result, the
 same algorithm can often be applied to a variety of applications because
-the underlying data structure for each application is a graph.</p>
-<p>We will begin by presenting the basic definitions and concepts, and
+the underlying data structure for each application is a graph.</p><p>We will begin by presenting the basic definitions and concepts, and
 describing the use of a data type that implements a graph. We will then
 examine how to use a graph to find shortest paths in a road map. We will
 then examine the related problem of finding shortest paths through a
-maze. We will conclude by discussing how to implement a graph.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-          <section>
-            <h1 class="a11y-only">Subsections of Graphs</h1>
-    
-    
-          <article class="default">
-            <header class="headline">
-            </header>
-<div hidden><h1 id="introduction-to-graphs">Introduction to Graphs</h1></div>
-
-<h2 id="introduction-to-graphs">Introduction to Graphs</h2>
-<p>There are two kinds of graphs: undirected and directed. An <em>undirected
-graph</em> consists of:</p>
-<ul>
-<li>a finite set of <em>nodes</em>; and</li>
-<li>a finite set of <em>edges</em>, which are 2-element subsets of the nodes.</li>
-</ul>
-<p>The fact that edges are 2-element sets means that the nodes that
+maze. We will conclude by discussing how to implement a graph.</p><footer class=footline></footer></article><section><h1 class=a11y-only>Subsections of Graphs</h1><article class=default><header class=headline></header><div hidden><h1 id=introduction-to-graphs>Introduction to Graphs</h1></div><h2 id=introduction-to-graphs>Introduction to Graphs</h2><p>There are two kinds of graphs: undirected and directed. An <em>undirected
+graph</em> consists of:</p><ul><li>a finite set of <em>nodes</em>; and</li><li>a finite set of <em>edges</em>, which are 2-element subsets of the nodes.</li></ul><p>The fact that edges are 2-element sets means that the nodes that
 comprise an edge must be distinct. Furthermore, within a set, there is
 no notion of a &ldquo;first&rdquo; element or a &ldquo;second&rdquo; element &mdash; there are just
 two elements. Thus, an edge expresses some symmetric relationship
-between two nodes; i.e., if 
-<span class="math align-center">$ \{u, v\} $</span> is an edge then node 
+between two nodes; i.e., if
+<span class="math align-center">$ \{u, v\} $</span> is an edge then node
 <span class="math align-center">$ u $</span> is
-<em>adjacent</em> to node <span style="white-space:nowrap">
-<span class="math align-center">$ v $</span>,</span> and node 
-<span class="math align-center">$ v $</span> is adjacent to node <span style="white-space:nowrap">
-<span class="math align-center">$ u $</span>.</span> We also
-might associate some data, such as a label or a length, with an edge.</p>
-<p>We can think of an edge as &ldquo;connecting&rdquo; the two nodes that comprise it.
+<em>adjacent</em> to node <span style=white-space:nowrap><span class="math align-center">$ v $</span>,</span> and node
+<span class="math align-center">$ v $</span> is adjacent to node <span style=white-space:nowrap><span class="math align-center">$ u $</span>.</span> We also
+might associate some data, such as a label or a length, with an edge.</p><p>We can think of an edge as &ldquo;connecting&rdquo; the two nodes that comprise it.
 We can then draw an undirected graph using circles for the nodes and
 lines connecting two distinct nodes for the edges. Following is an
 example of an undirected graph with numeric values associated with the
-edges:</p>
-<p>
-<a href="#image-e2cb4911aa2c2b1f377f486271a56f4b" class="lightbox-link">
-<img src="https://ksu-cs-textbooks.github.io/cis300/graphs/intro/undirected-graph.jpg" alt="An undirected graph" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-e2cb4911aa2c2b1f377f486271a56f4b">
-<img src="https://ksu-cs-textbooks.github.io/cis300/graphs/intro/undirected-graph.jpg" alt="An undirected graph" class="lightbox-image" loading="lazy">
-</a></p>
-<p>A <em>directed graph</em> is similar to an undirected graph, but the edges are
+edges:</p><p><a href=#R-image-a9836ceceac54e0adaae79cd7fa8eeac class=lightbox-link><img alt="An undirected graph" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/graphs/intro/undirected-graph.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-a9836ceceac54e0adaae79cd7fa8eeac><img alt="An undirected graph" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/graphs/intro/undirected-graph.jpg></a></p><p>A <em>directed graph</em> is similar to an undirected graph, but the edges are
 ordered pairs of distinct nodes rather than 2-element sets. Within an
 ordered pair, there is a first element and a second element. We call the
 first node of an edge its <em>source</em> and the second node its
 <em>destination</em>. Thus, an edge in a directed graph expresses an asymmetric
-relationship between two nodes; i.e., if 
+relationship between two nodes; i.e., if
 <span class="math align-center">$ (u, v) $</span> is an edge, then
-
-<span class="math align-center">$ v $</span> is adjacent to <span style="white-space:nowrap">
-<span class="math align-center">$ u $</span>,</span> but 
-<span class="math align-center">$ u $</span> is not adjacent to 
+<span class="math align-center">$ v $</span> is adjacent to <span style=white-space:nowrap><span class="math align-center">$ u $</span>,</span> but
+<span class="math align-center">$ u $</span> is not adjacent to
 <span class="math align-center">$ v $</span> unless
-
 <span class="math align-center">$ (v, u) $</span> is also an edge in the graph. As with undirected
-graphs, we might associate data with an edge in a directed graph.</p>
-<p>We can draw directed graphs like we draw undirected graphs, except that
+graphs, we might associate data with an edge in a directed graph.</p><p>We can draw directed graphs like we draw undirected graphs, except that
 we use an arrow to distinguish between the source and the destination of
 an edge. Specifically, the arrows point from the source to the
-destination. If we have edges 
-<span class="math align-center">$ (u, v) $</span> and <span style="white-space:nowrap">
-<span class="math align-center">$ (v, u) $</span>,</span> and if
+destination. If we have edges
+<span class="math align-center">$ (u, v) $</span> and <span style=white-space:nowrap><span class="math align-center">$ (v, u) $</span>,</span> and if
 these edges have the same data associated with them, we might simplify
 the drawing by using a single line with arrows in both directions.
 Following is an example of a directed graph with numeric values
-associated with the edges:</p>
-<p>
-<a href="#image-a68c0aac60456afad08f8ad66c08b701" class="lightbox-link">
-<img src="https://ksu-cs-textbooks.github.io/cis300/graphs/intro/directed-graph.jpg" alt="A directed graph" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-a68c0aac60456afad08f8ad66c08b701">
-<img src="https://ksu-cs-textbooks.github.io/cis300/graphs/intro/directed-graph.jpg" alt="A directed graph" class="lightbox-image" loading="lazy">
-</a></p>
-<p><a href="https://ksu-cs-textbooks.github.io/cis300/graphs/intro/Ksu.Cis300.Graphs.dll">This DLL</a>
- contains the definition of a namespace
+associated with the edges:</p><p><a href=#R-image-5d52af146c77bb3b8eec8a8048df8b58 class=lightbox-link><img alt="A directed graph" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/graphs/intro/directed-graph.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-5d52af146c77bb3b8eec8a8048df8b58><img alt="A directed graph" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/graphs/intro/directed-graph.jpg></a></p><p><a href=/cis300/graphs/intro/Ksu.Cis300.Graphs.dll>This DLL</a> contains the definition of a namespace
 <strong>Ksu.Cis300.Graphs</strong> containing a class
-<strong>DirectedGraph&lt;TNode, TEdgeData&gt;</strong> and a <strong>readonly</strong> structure
-<strong>Edge&lt;TNode, TEdgeData&gt;</strong>. It requires a <a href="https://ksu-cs-textbooks.github.io/cis300/graphs/intro/Ksu.Cis300.LinkedListLibrary.dll">DLL for <strong>Ksu.Cis300.LinkedListLibrary</strong></a>
- within the same directory. The class
-<strong>DirectedGraph&lt;TNode, TEdgeData&gt;</strong> implements a directed
+<strong>DirectedGraph&lt;TNode, TEdgeData></strong> and a <strong>readonly</strong> structure
+<strong>Edge&lt;TNode, TEdgeData></strong>. It requires a <a href=/cis300/graphs/intro/Ksu.Cis300.LinkedListLibrary.dll>DLL for <strong>Ksu.Cis300.LinkedListLibrary</strong></a> within the same directory. The class
+<strong>DirectedGraph&lt;TNode, TEdgeData></strong> implements a directed
 graph whose nodes are of type <strong>TNode</strong>, which must be non-nullable. The edges each store a data item of type <strong>TEdgeData</strong>,
 which may be any type. These edges can be represented using instances of
-the <strong>Edge&lt;TNode, TEdgeData&gt;</strong> structure. We also can use the
-<strong>DirectedGraph&lt;TNode, TEdgeData&gt;</strong> class to represent undirected
+the <strong>Edge&lt;TNode, TEdgeData></strong> structure. We also can use the
+<strong>DirectedGraph&lt;TNode, TEdgeData></strong> class to represent undirected
 graphs &mdash; we simply make sure that whenever there is an edge
-<span style="white-space:nowrap">
-<span class="math align-center">$ (u, v) $</span>,</span> there is also an edge 
+<span style=white-space:nowrap><span class="math align-center">$ (u, v) $</span>,</span> there is also an edge
 <span class="math align-center">$ (v, u) $</span> containing the
-same data.</p>
-<p>The <strong>Edge&lt;TNode, TEdgeData&gt;</strong> structure contains the following
-<strong>public</strong> members:</p>
-<ul>
-<li><strong>Edge(TNode source, TNode dest, TEdgeData data)</strong>: This constructor
+same data.</p><p>The <strong>Edge&lt;TNode, TEdgeData></strong> structure contains the following
+<strong>public</strong> members:</p><ul><li><strong>Edge(TNode source, TNode dest, TEdgeData data)</strong>: This constructor
 constructs an edge leading from <strong>source</strong> to <strong>dest</strong> and having
-<strong>data</strong> as its data item.</li>
-<li><strong>TNode Source</strong>: This property gets the source node for the edge.</li>
-<li><strong>TNode Destination</strong>: This property gets the destination node for
-the edge.</li>
-<li><strong>TEdgeData Data</strong>: This property gets the data associated with the
-edge.</li>
-</ul>
-<p>The <strong>DirectedGraph&lt;TNode, TEdgeData&gt;</strong> class contains the
-following <strong>public</strong> members:</p>
-<ul>
-<li><strong>DirectedGraph()</strong>: This constructor constructs a directed graph
-with no nodes or edges.</li>
-<li><strong>void AddNode(TNode node)</strong>: This method adds the given node to the
+<strong>data</strong> as its data item.</li><li><strong>TNode Source</strong>: This property gets the source node for the edge.</li><li><strong>TNode Destination</strong>: This property gets the destination node for
+the edge.</li><li><strong>TEdgeData Data</strong>: This property gets the data associated with the
+edge.</li></ul><p>The <strong>DirectedGraph&lt;TNode, TEdgeData></strong> class contains the
+following <strong>public</strong> members:</p><ul><li><strong>DirectedGraph()</strong>: This constructor constructs a directed graph
+with no nodes or edges.</li><li><strong>void AddNode(TNode node)</strong>: This method adds the given node to the
 graph. If this node already is in the graph, it throws an
 <strong>ArgumentException</strong>. If <code>node</code> is <strong>null</strong>, it throws an
-<strong>ArgumentNullException</strong>.</li>
-<li><strong>void AddEdge(TNode source, TNode dest, TEdgeData value)</strong>: This
+<strong>ArgumentNullException</strong>.</li><li><strong>void AddEdge(TNode source, TNode dest, TEdgeData value)</strong>: This
 method adds a new edge from <code>source</code> to <code>dest</code>, with <code>value</code> as its
 associated value. If either <code>source</code> or <code>dest</code> is not already in the
 graph, it is automatically added. If <code>source</code> and <code>dest</code> are the
 same node, or if there is already an edge from <code>source</code> to <code>dest</code>,
 it throws an <strong>ArgumentException</strong>. If either <code>source</code> or <code>dest</code> is
-<strong>null</strong>, it throws an <strong>ArgumentNullException</strong>.</li>
-<li><strong>bool TryGetEdge(TNode source, TNode dest, out TEdgeData? value)</strong>:
+<strong>null</strong>, it throws an <strong>ArgumentNullException</strong>.</li><li><strong>bool TryGetEdge(TNode source, TNode dest, out TEdgeData? value)</strong>:
 This method tries to get the value associated with the edge from
 <code>source</code> to <code>dest</code>. If this edge exists, it sets <code>value</code> to the
 value associated with this edge and returns <strong>true</strong>; otherwise, it
 sets <code>value</code> to the default value for the <strong>TEdge</strong> type and returns
-<strong>false</strong>.</li>
-<li><strong>int NodeCount</strong>: This property gets the number of nodes in the
-graph.</li>
-<li><strong>int EdgeCount</strong>: This property gets the number of edges in the
-graph.</li>
-<li><strong>bool ContainsNode(TNode node)</strong>: This method returns whether the
+<strong>false</strong>.</li><li><strong>int NodeCount</strong>: This property gets the number of nodes in the
+graph.</li><li><strong>int EdgeCount</strong>: This property gets the number of edges in the
+graph.</li><li><strong>bool ContainsNode(TNode node)</strong>: This method returns whether the
 graph contains the given node. If <code>node</code> is <strong>null</strong>, it throws an
-<strong>ArgumentNullException</strong>.</li>
-<li><strong>bool ContainsEdge(TNode source, TNode dest)</strong>: This method returns
-whether the graph contains an edge from <code>source</code> to <code>dest</code>.</li>
-<li><strong>IEnumerable&lt;TNode&gt; Nodes</strong>: This property gets an enumerable
-collection of the nodes in the graph.</li>
-<li><strong>IEnumerable&lt;Edge&lt;TNode, TEdgeData&gt;&gt; OutgoingEdges(TNode
+<strong>ArgumentNullException</strong>.</li><li><strong>bool ContainsEdge(TNode source, TNode dest)</strong>: This method returns
+whether the graph contains an edge from <code>source</code> to <code>dest</code>.</li><li><strong>IEnumerable&lt;TNode> Nodes</strong>: This property gets an enumerable
+collection of the nodes in the graph.</li><li><strong>IEnumerable&lt;Edge&lt;TNode, TEdgeData>> OutgoingEdges(TNode
 source)</strong>: This method gets an enumerable collection of the outgoing
 edges from the given node. If <code>source</code> is not a node in the graph,
 it throws an <strong>ArgumentException</strong>. If <code>source</code> is <strong>null</strong>, it
 throws an <strong>ArgumentNullException</strong>. Otherwise, each edge in the
 collection returned is represented by an
-<strong>Edge&lt;TNode, TEdgeData&gt;</strong></li>
-</ul>
-<p>This implementation is somewhat limited in its utility, as nodes or
+<strong>Edge&lt;TNode, TEdgeData></strong></li></ul><p>This implementation is somewhat limited in its utility, as nodes or
 edges cannot be removed, and values associated with edges cannot be
 changed. However, it will be sufficient for our purposes. We will
-examine its implementation details in <a href="https://ksu-cs-textbooks.github.io/cis300/graphs/impl">a later
-section</a>
-. For now, we will
-examine how it can be used.</p>
-<p>Building a graph is straightforward using the constructor and the
+examine its implementation details in <a href=/cis300/graphs/impl/>a later
+section</a>. For now, we will
+examine how it can be used.</p><p>Building a graph is straightforward using the constructor and the
 <strong>AddNode</strong> and/or <strong>AddEdge</strong> methods. Note that because the
 <strong>AddEdge</strong> method will automatically add given nodes that are not
 already in the graph, the <strong>AddNode</strong> method is only needed when we need
-to add a node that may have no incoming or outgoing edges.</p>
-<p>For many graph algorithms, we need to process all of the edges in some
+to add a node that may have no incoming or outgoing edges.</p><p>For many graph algorithms, we need to process all of the edges in some
 way. Often the order in which we process them is important, but not in
 all cases. If we simply need to process all of the edges in some order
 we can use <strong>foreach</strong> loops with the last two members listed above
-to accomplish this:</p>
-<ul>
-<li>For each node in the graph:
-<ul>
-<li>For each outgoing edge from that node:
-<ul>
-<li>Process this edge.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-    
-    
-          <article class="default">
-            <header class="headline">
-            </header>
-<div hidden><h1 id="shortest-paths">Shortest Paths</h1></div>
-
-<h2 id="shortest-paths">Shortest Paths</h2>
-<p>In this section, we will consider a common graph problem &mdash; that of
+to accomplish this:</p><ul><li>For each node in the graph:<ul><li>For each outgoing edge from that node:<ul><li>Process this edge.</li></ul></li></ul></li></ul><footer class=footline></footer></article><article class=default><header class=headline></header><div hidden><h1 id=shortest-paths>Shortest Paths</h1></div><h2 id=shortest-paths>Shortest Paths</h2><p>In this section, we will consider a common graph problem &mdash; that of
 finding a shortest path from a node <em>u</em> to a node <em>v</em> in a directed
 graph. We will assume that each edge contains as its data a nonnegative
 number. This number may represent a physical distance or some other
@@ -808,23 +113,15 @@ lengths of all the edges along that path. A shortest path from <em>u</em> to
 <em>v</em> is then a path from <em>u</em> to <em>v</em> with minimum length. Thus, for
 example, the shortest path from <em>a</em> to <em>h</em> in the graph below is
 <em>a</em>-<em>c</em>-<em>g</em>-<em>f</em>-<em>h</em>, and its length is
-4.8 + 6.4 + 4.9 + 3.2 = 19.3.</p>
-<p>
-<a href="#image-2376be2deb5e3b504f4e9845ddb561d0" class="lightbox-link">
-<img src="https://ksu-cs-textbooks.github.io/cis300/graphs/dijkstra/directed-graph.jpg" alt="A directed graph" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-2376be2deb5e3b504f4e9845ddb561d0">
-<img src="https://ksu-cs-textbooks.github.io/cis300/graphs/dijkstra/directed-graph.jpg" alt="A directed graph" class="lightbox-image" loading="lazy">
-</a></p>
-<p>The biggest challenge in finding an algorithm for this problem is that
+4.8 + 6.4 + 4.9 + 3.2 = 19.3.</p><p><a href=#R-image-53ee6574999d41a163e98d41aca5d929 class=lightbox-link><img alt="A directed graph" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/graphs/dijkstra/directed-graph.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-53ee6574999d41a163e98d41aca5d929><img alt="A directed graph" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/graphs/dijkstra/directed-graph.jpg></a></p><p>The biggest challenge in finding an algorithm for this problem is that
 the number of paths in a graph can be huge, even for relatively small
 graphs. For example, a directed graph with 15 nodes might contain almost
 17 billion paths from a node <em>u</em> to a node <em>v</em>. Clearly, an algorithm
 that simply checks all paths would be impractical for solving a problem
 such as finding the shortest route between two given locations in North America.
 In what follows, we will present a much more efficient algorithm due to
-Edsger W. Dijkstra.</p>
-<p>First, it helps to realize that when we are looking for a shortest path
+Edsger W. Dijkstra.</p><p>First, it helps to realize that when we are looking for a shortest path
 from <em>u</em> to <em>v</em>, we are likely to find other shortest paths along the
 way. Specifically, if node <em>w</em> is on the shortest path from <em>u</em> to <em>v</em>,
 then taking that same path but stopping at <em>w</em> gives us a shortest path
@@ -837,8 +134,7 @@ paths</em> problem. This problem is a bit easier to think about because we
 can use shortest path information that we have already computed to find
 additional shortest path information. Then once we have an algorithm for
 this problem, we can easily modify it so that as soon as it finds the
-shortest path to our actual goal node <em>v</em>, we terminate it.</p>
-<p>Dijkstra&rsquo;s algorithm progresses by finding a shortest path to one node
+shortest path to our actual goal node <em>v</em>, we terminate it.</p><p>Dijkstra&rsquo;s algorithm progresses by finding a shortest path to one node
 at a time. Let <em>S</em> denote the set of nodes to which it has found a
 shortest path. Initially, <em>S</em> will contain only <em>u</em>, as the shortest
 path from <em>u</em> to <em>u</em> is the empty path. At each step, it finds a
@@ -846,54 +142,47 @@ shortest path that begins at <em>u</em> and ends at a node outside of <em>S</em>
 Let&rsquo;s call the last node in this path <em>x</em>. Certainly, if this path to
 <em>x</em> is the shortest to <em>any</em> node outside of <em>S</em>, it is also the
 shortest to <em>x</em>. The algorithm therefore adds <em>x</em> to <em>S</em>, and continues
-to the next step.</p>
-<p>What makes Dijkstra&rsquo;s algorithm efficient is the way in which it finds
+to the next step.</p><p>What makes Dijkstra&rsquo;s algorithm efficient is the way in which it finds
 each of the paths described above. Recall that each edge has a
 nonnegative length. Hence, once a given path reaches some node outside
 of <em>S</em>, we cannot make the path any shorter by extending it further. We
 therefore only need to consider paths that remain in <em>S</em> until the last
 edge, which goes from a node in <em>S</em> to a node outside of <em>S</em>. We will
 refer to such edges as <em>eligible</em>. We are therefore looking for a
-shortest path whose last edge is eligible.</p>
-<p>Suppose (<em>w</em>, <em>x</em>) is an eligible edge; i.e., <em>w</em> is in <em>S</em>, but <em>x</em> is
+shortest path whose last edge is eligible.</p><p>Suppose (<em>w</em>, <em>x</em>) is an eligible edge; i.e., <em>w</em> is in <em>S</em>, but <em>x</em> is
 not. Because <em>w</em> is in <em>S</em>, we know the length of the shortest path to
 <em>w</em>. The length of a shortest path ending in (<em>w</em>, <em>x</em>) is simply the
-length of the shortest path to <em>w</em>, plus the length of (<em>w</em>, <em>x</em>).</p>
-<p>Let us therefore assign to each eligible edge (<em>w</em>, <em>x</em>) a priority
+length of the shortest path to <em>w</em>, plus the length of (<em>w</em>, <em>x</em>).</p><p>Let us therefore assign to each eligible edge (<em>w</em>, <em>x</em>) a priority
 equal to the length of the shortest path to <em>w</em>, plus the length of
 (<em>w</em>, <em>x</em>). A shortest path ending in an eligible edge therefore has a
 length equal to the minimum priority of any eligible edge. Furthermore,
 if the eligible edge with minimum priority is (<em>w</em>, <em>x</em>), then the
 shortest path to <em>x</em> is the shortest path to <em>w</em>, followed by (<em>w</em>,
-<em>x</em>).</p>
-<p>We can efficiently find an eligible edge with minimum priority if we
+<em>x</em>).</p><p>We can efficiently find an eligible edge with minimum priority if we
 store all eligible edges in a <strong>MinPriorityQueue&lt;TEdgeData,
-Edge&lt;TNode, TEdgeData&gt;&gt;</strong>. Note however, that when we include <em>x</em> in
+Edge&lt;TNode, TEdgeData>></strong>. Note however, that when we include <em>x</em> in
 <em>S</em> as a result of removing (<em>w, x</em>) from the queue, it will cause any
 other eligible edges leading to <em>x</em> to become ineligible, as <em>x</em> will no
 longer be outside of <em>S</em>. Because removing these edges from the
 min-priority queue is difficult, we will simply leave them in the queue,
 and discard them whenever they have minimum priority. This min-priority
 queue will therefore contain all eligible edges, plus some edges whose
-endpoints are both in <em>S</em>.</p>
-<p>We also need a data structure to keep track of the shortest paths we
+endpoints are both in <em>S</em>.</p><p>We also need a data structure to keep track of the shortest paths we
 have found. A convenient way to do this is, for each node to which we
 have found a shortest path, to keep track of this node&rsquo;s predecessor on
 this path. This will allow us to retrieve a shortest path to a node <em>v</em>
 by starting at <em>v</em> and tracing the path backwards using the predecessor
-of each node until we reach <em>u</em>. A <strong>Dictionary&lt;TNode, TNode&gt;</strong> is
+of each node until we reach <em>u</em>. A <strong>Dictionary&lt;TNode, TNode></strong> is
 an ideal choice for this data structure. The keys in the dictionary will
 be the nodes in <em>S</em>, and the value associated with a key will be that
 key&rsquo;s predecessor on a shortest path. For node <em>u</em>, which is in <em>S</em> but
 has no predecessor on its shortest path, we can associate a value of <em>u</em>
-itself.</p>
-<p>The algorithm begins by adding the key <em>u</em> with the value <em>u</em> to a new
+itself.</p><p>The algorithm begins by adding the key <em>u</em> with the value <em>u</em> to a new
 dictionary. Because all of the outgoing edges from <em>u</em> are now eligible,
 it then places each of these edges into the min-priority queue. Because
 <em>u</em> is the source node of each of these edges, and the shortest path
 from <em>u</em> to <em>u</em> has length 0, the priority of each of these edges will
-simply be its length.</p>
-<p>Once the above initialization is done, the algorithm enters a loop that
+simply be its length.</p><p>Once the above initialization is done, the algorithm enters a loop that
 iterates as long as the min-priority queue is nonempty. An iteration
 begins by obtaining the minimum priority <em>p</em> from the min-priority
 queue, then removing an edge (<em>w</em>, <em>x</em>) with minimum priority. If <em>x</em>
@@ -905,16 +194,14 @@ edges will be edges from <em>x</em> that lead to nodes that are not keys in the
 dictionary; however, because the min-priority queue can contain edges to
 nodes that are already keys, we can simply add all outgoing edges from
 <em>x</em>. Because the length of the shortest path to <em>x</em> is <em>p</em>, the priority
-of each of these outgoing edges is <em>p</em> plus the length of the outgoing edge.</p>
-<p>Note that an edge is added to the min-priority queue only when its
+of each of these outgoing edges is <em>p</em> plus the length of the outgoing edge.</p><p>Note that an edge is added to the min-priority queue only when its
 source is added as a key to the dictionary. Because we can only add a
 key once, each edge is added to the min-priority queue at most once.
 Because each iteration removes an edge from the min-priority queue, the
 min-priority queue must eventually become empty, causing the loop to
 terminate. When the min-priority queue becomes empty, there can be no
 eligible edges; hence, when the loop terminates, the algorithm has found
-a shortest path to every reachable node.</p>
-<p>We can now modify the above algorithm so that it finds a shortest path
+a shortest path to every reachable node.</p><p>We can now modify the above algorithm so that it finds a shortest path
 from <em>u</em> to a given node <em>v</em>. Each time we add a new key to the
 dictionary, we check to see if this key is <em>v</em>; if so, we return the
 dictionary immediately. We might also want to return this path&rsquo;s length,
@@ -922,188 +209,87 @@ which is the priority of the edge leading to <em>v</em>. In this case, we could
 return the dictionary as an <strong>out</strong> parameter. Doing this would allow us
 to return a special value (e.g., a negative number) if we get through
 the loop without adding <em>v</em>, as this would indicate that <em>v</em> is
-unreachable. This modified algorithm is therefore as follows:</p>
-<ul>
-<li>Construct a new dictionary and a new min-priority queue.</li>
-<li>Add to the dictionary the key <em>u</em> with value <em>u</em>.</li>
-<li>If <em>u</em> = <em>v</em>, return 0.</li>
-<li>For each outgoing edge (<em>u</em>, <em>w</em>) from <em>u</em>:
-<ul>
-<li>Add (<em>u</em>, <em>w</em>) to the min-priority queue with a priority of
-the length of this edge.</li>
-</ul>
-</li>
-<li>While the min-priority queue is nonempty:
-<ul>
-<li>Get the minimum priority <em>p</em> from the min-priority queue.</li>
-<li>Remove an edge (<em>w</em>, <em>x</em>) with minimum priority from the
-min-priority queue.</li>
-<li>If <em>x</em> is not a key in the dictionary:
-<ul>
-<li>Add to the dictionary the key <em>x</em> with a value of <em>w</em>.</li>
-<li>If <em>x</em> = <em>v</em>, return <em>p</em>.</li>
-<li>For each outgoing edge (<em>x</em>, <em>y</em>) from <em>x</em>:
-<ul>
-<li>Add (<em>x</em>, <em>y</em>) to the min-priority queue with
-priority <em>p</em> plus the length of (<em>x</em>, <em>y</em>).</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Return a negative value.</li>
-</ul>
-<p>The above algorithm computes all of the path information we need, but we
+unreachable. This modified algorithm is therefore as follows:</p><ul><li>Construct a new dictionary and a new min-priority queue.</li><li>Add to the dictionary the key <em>u</em> with value <em>u</em>.</li><li>If <em>u</em> = <em>v</em>, return 0.</li><li>For each outgoing edge (<em>u</em>, <em>w</em>) from <em>u</em>:<ul><li>Add (<em>u</em>, <em>w</em>) to the min-priority queue with a priority of
+the length of this edge.</li></ul></li><li>While the min-priority queue is nonempty:<ul><li>Get the minimum priority <em>p</em> from the min-priority queue.</li><li>Remove an edge (<em>w</em>, <em>x</em>) with minimum priority from the
+min-priority queue.</li><li>If <em>x</em> is not a key in the dictionary:<ul><li>Add to the dictionary the key <em>x</em> with a value of <em>w</em>.</li><li>If <em>x</em> = <em>v</em>, return <em>p</em>.</li><li>For each outgoing edge (<em>x</em>, <em>y</em>) from <em>x</em>:<ul><li>Add (<em>x</em>, <em>y</em>) to the min-priority queue with
+priority <em>p</em> plus the length of (<em>x</em>, <em>y</em>).</li></ul></li></ul></li></ul></li><li>Return a negative value.</li></ul><p>The above algorithm computes all of the path information we need, but we
 still need to extract from the dictionary the shortest path from <em>u</em> to
 <em>v</em>. Because the value for each key is that key&rsquo;s predecessor, we can
 walk backward through this path, starting with <em>v</em>. To get the path in
 the proper order, we can push the nodes onto a stack; then we can remove
 them in the proper order. Thus, we can extract the shortest path as
-follows:</p>
-<ul>
-<li>Construct a new stack.</li>
-<li>Set the current node to <em>v</em>.</li>
-<li>While the current node is not <em>u</em>:
-<ul>
-<li>Push the current node onto the stack.</li>
-<li>Set the current node to its value in the dictionary.</li>
-</ul>
-</li>
-<li>Process <em>u</em>.</li>
-<li>While the stack is not empty:
-<ul>
-<li>Pop the top node from the stack and process it.</li>
-</ul>
-</li>
-</ul>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-    
-    
-          <article class="default">
-            <header class="headline">
-            </header>
-<div hidden><h1 id="unweighted-shortest-paths">Unweighted Shortest Paths</h1></div>
-
-<h2 id="unweighted-shortest-paths">Unweighted Shortest Paths</h2>
-<p>In some shortest path problems, all edges have the same length. For
+follows:</p><ul><li>Construct a new stack.</li><li>Set the current node to <em>v</em>.</li><li>While the current node is not <em>u</em>:<ul><li>Push the current node onto the stack.</li><li>Set the current node to its value in the dictionary.</li></ul></li><li>Process <em>u</em>.</li><li>While the stack is not empty:<ul><li>Pop the top node from the stack and process it.</li></ul></li></ul><footer class=footline></footer></article><article class=default><header class=headline></header><div hidden><h1 id=unweighted-shortest-paths>Unweighted Shortest Paths</h1></div><h2 id=unweighted-shortest-paths>Unweighted Shortest Paths</h2><p>In some shortest path problems, all edges have the same length. For
 example, we may be trying to find the shortest path out of a maze. Each
 cell in the maze is a node, and an edge connects two nodes if we can
 move between them in a single step. In this problem, we simply want to
 minimize the number of edges in a path to an exit. We therefore say that
 the edges are <em>unweighted</em> &mdash; they contain no explicit length
-information, and the length of each edge is considered to be <span style="white-space:nowrap">
-<span class="math align-center">$ 1 $</span>.</span></p>
-<p>We could of course apply <a href="https://ksu-cs-textbooks.github.io/cis300/graphs/dijkstra/">Dijkstra&rsquo;s
-algorithm</a>
- to this
-problem, using 
+information, and the length of each edge is considered to be <span style=white-space:nowrap><span class="math align-center">$ 1 $</span>.</span></p><p>We could of course apply <a href=/cis300/graphs/dijkstra/>Dijkstra&rsquo;s
+algorithm</a> to this
+problem, using
 <span class="math align-center">$ 1 $</span> as the length of each edge. However, if analyze what
 this algorithm does in this case, we find that we can optimize it to
-achieve significantly better performance.</p>
-<p>The optimization revolves around the use of the min-priority queue. Note
+achieve significantly better performance.</p><p>The optimization revolves around the use of the min-priority queue. Note
 that Dijkstra&rsquo;s algorithm first adds all outgoing edges from the start
 node <em>u</em> to the min-priority queue, using their lengths as their
-priorities. For unweighted edges, each of these priorities will be <span style="white-space:nowrap">
-<span class="math align-center">$ 1 $</span>.</span> As
+priorities. For unweighted edges, each of these priorities will be <span style=white-space:nowrap><span class="math align-center">$ 1 $</span>.</span> As
 the algorithm progresses it retrieves the minimum priority and removes
 an edge having this priority. If it adds any new edges before removing
-the next edge, they will all have a priority 
+the next edge, they will all have a priority
 <span class="math align-center">$ 1 $</span> greater than the priority
-of the edge just removed.</p>
-<p>We claim that this behavior causes the priorities in the min-priority
-queue to differ by no more than 
+of the edge just removed.</p><p>We claim that this behavior causes the priorities in the min-priority
+queue to differ by no more than
 <span class="math align-center">$ 1 $</span>. To see this, we will show that we can
 never reach a point where we change the maximum difference in priorities
-from at most 
-<span class="math align-center">$ 1 $</span> to more than <span style="white-space:nowrap">
-<span class="math align-center">$ 1 $</span>.</span> First observe that when the outgoing
+from at most
+<span class="math align-center">$ 1 $</span> to more than <span style=white-space:nowrap><span class="math align-center">$ 1 $</span>.</span> First observe that when the outgoing
 edges from <em>u</em> are added, the priorities all differ by
-<span style="white-space:nowrap">
-<span class="math align-center">$ 0 \leq 1 $</span>.</span> Removing an edge can&rsquo;t increase the
+<span style=white-space:nowrap><span class="math align-center">$ 0 \leq 1 $</span>.</span> Removing an edge can&rsquo;t increase the
 difference in the priorities stored. Suppose the edge we remove has
-priority <span style="white-space:nowrap">
-<span class="math align-center">$ p $</span>.</span> Assuming we have not yet achieved a priority difference
-greater than <span style="white-space:nowrap">
-<span class="math align-center">$ 1 $</span>,</span> any priorities remaining in the min-priority queue must
-be either 
-<span class="math align-center">$ p $</span> or <span style="white-space:nowrap">
-<span class="math align-center">$ p + 1 $</span>.</span> Any edges we add before removing the
-next edge have priority <span style="white-space:nowrap">
-<span class="math align-center">$ p + 1 $</span>.</span> Hence, the priority difference
-remains no more than <span style="white-space:nowrap">
-<span class="math align-center">$ 1 $</span>.</span> Because we have covered all changes to the
-priority queue, we can never cause the priority difference to exceed <span style="white-space:nowrap">
-<span class="math align-center">$ 1 $</span>.</span></p>
-<p>Based on the above claim, we can now claim that whenever an edge is
+priority <span style=white-space:nowrap><span class="math align-center">$ p $</span>.</span> Assuming we have not yet achieved a priority difference
+greater than <span style=white-space:nowrap><span class="math align-center">$ 1 $</span>,</span> any priorities remaining in the min-priority queue must
+be either
+<span class="math align-center">$ p $</span> or <span style=white-space:nowrap><span class="math align-center">$ p + 1 $</span>.</span> Any edges we add before removing the
+next edge have priority <span style=white-space:nowrap><span class="math align-center">$ p + 1 $</span>.</span> Hence, the priority difference
+remains no more than <span style=white-space:nowrap><span class="math align-center">$ 1 $</span>.</span> Because we have covered all changes to the
+priority queue, we can never cause the priority difference to exceed <span style=white-space:nowrap><span class="math align-center">$ 1 $</span>.</span></p><p>Based on the above claim, we can now claim that whenever an edge is
 added, its priority is the largest of any in the min-priority queue.
 This is certainly true when we add the outgoing edges from <em>u</em>, as all
 these edges have the same priority. Furthermore, whenever we remove an
-edge with priority <span style="white-space:nowrap">
-<span class="math align-center">$ p $</span>,</span> any edges we subsequently add have priority
-<span style="white-space:nowrap">
-<span class="math align-center">$ p + 1 $</span>,</span> which must be the maximum priority in the min-priority
-queue.</p>
-<p>As a result of this behavior, we can replace the min-priority queue with
-an ordinary <a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queues/">FIFO queue</a>
-, ignoring any priorities. For a graph with unweighted edges, the behavior of the algorithm will be the same.
+edge with priority <span style=white-space:nowrap><span class="math align-center">$ p $</span>,</span> any edges we subsequently add have priority
+<span style=white-space:nowrap><span class="math align-center">$ p + 1 $</span>,</span> which must be the maximum priority in the min-priority
+queue.</p><p>As a result of this behavior, we can replace the min-priority queue with
+an ordinary <a href=/cis300/stacks-queues/queues/>FIFO queue</a>, ignoring any priorities. For a graph with unweighted edges, the behavior of the algorithm will be the same.
 Because accessing a FIFO queue is more efficient than accessing a
 min-priority queue, the resulting algorithm, known as <em>breadth-first
-search</em>, is also more efficient.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-    
-    
-          <article class="default">
-            <header class="headline">
-            </header>
-<div hidden><h1 id="implementing-a-graph">Implementing a Graph</h1></div>
-
-<h2 id="implementing-a-graph">Implementing a Graph</h2>
-<p>Traditionally, there are two main techniques for implementing a graph.
+search</em>, is also more efficient.</p><footer class=footline></footer></article><article class=default><header class=headline></header><div hidden><h1 id=implementing-a-graph>Implementing a Graph</h1></div><h2 id=implementing-a-graph>Implementing a Graph</h2><p>Traditionally, there are two main techniques for implementing a graph.
 Each of these techniques has advantages and disadvantages, depending on
 the characteristics of the graph. In this section, we describe the
-implementation of the <strong>DirectedGraph&lt;TNode, TEdgeData&gt;</strong> class
-from <a href="https://ksu-cs-textbooks.github.io/cis300/graphs/impl/Ksu.Cis300.Graphs.dll"><strong>Ksu.Cis300.Graphs.dll</strong></a>
-. This
+implementation of the <strong>DirectedGraph&lt;TNode, TEdgeData></strong> class
+from <a href=/cis300/graphs/impl/Ksu.Cis300.Graphs.dll><strong>Ksu.Cis300.Graphs.dll</strong></a>. This
 implementation borrows from both traditional techniques to obtain an
 implementation that provides good performance for any graph. In what
 follows, we will first describe the two traditional techniques and
 discuss the strengths and weaknesses of each. We will then outline the
-implementation of <strong>DirectedGraph&lt;TNode, TEdgeData&gt;</strong>.</p>
-<p>The first traditional technique is to use what we call an <em>adjacency
-matrix</em>. This matrix is an 
-<span class="math align-center">$ n \times n $</span> boolean array, where 
+implementation of <strong>DirectedGraph&lt;TNode, TEdgeData></strong>.</p><p>The first traditional technique is to use what we call an <em>adjacency
+matrix</em>. This matrix is an
+<span class="math align-center">$ n \times n $</span> boolean array, where
 <span class="math align-center">$ n $</span> is the number
 of nodes in the graph. In this implementation, each node is represented
-by an <strong>int</strong> value <span style="white-space:nowrap">
-<span class="math align-center">$ i $</span>,</span> where <span style="white-space:nowrap">
-<span class="math align-center">$ 0 \leq i \lt n $</span>.</span> The
-value at row 
-<span class="math align-center">$ i $</span> and column 
+by an <strong>int</strong> value <span style=white-space:nowrap><span class="math align-center">$ i $</span>,</span> where <span style=white-space:nowrap><span class="math align-center">$ 0 \leq i \lt n $</span>.</span> The
+value at row
+<span class="math align-center">$ i $</span> and column
 <span class="math align-center">$ j $</span> will be <strong>true</strong> if there is an edge
-from node 
-<span class="math align-center">$ i $</span> to node <span style="white-space:nowrap">
-<span class="math align-center">$ j $</span>.</span></p>
-<p>The main advantage to this technique is that we can very quickly
+from node
+<span class="math align-center">$ i $</span> to node <span style=white-space:nowrap><span class="math align-center">$ j $</span>.</span></p><p>The main advantage to this technique is that we can very quickly
 determine whether an edge exists &mdash; we only need to look up one element
 in an array. There are several disadvantages, however. First, we are
 forced to use a specific range of <strong>int</strong> values as the nodes. If we
 wish to have a generic node type, we need an additional data structure
-(such as a <strong>Dictionary&lt;TNode, int&gt;</strong>) to map each node to its
+(such as a <strong>Dictionary&lt;TNode, int></strong>) to map each node to its
 <strong>int</strong> representation. It also fails to provide a way to associate a
 value with an edge; hence, we would need an additional data structure
-(such as a <strong>TEdgeData[int, int]</strong>) to store this information.</p>
-<p>Perhaps the most serious shortcoming for the adjacency matrix, however,
+(such as a <strong>TEdgeData[int, int]</strong>) to store this information.</p><p>Perhaps the most serious shortcoming for the adjacency matrix, however,
 is that if the graph contains a large number of nodes, but relatively
 few edges, it wastes a huge amount of space. Suppose, for example, that
 we have a graph representing street information, and suppose there are
@@ -1112,21 +298,17 @@ contain around three million edges. However, an adjacency matrix would
 require one trillion entries, almost all of which will be <strong>false</strong>.
 Similarly, finding the edges from a given node would require examining
 an entire row of a million elements to find the three or four outgoing
-edges from that node.</p>
-<p>The other traditional technique involves using what we call <em>adjacency
+edges from that node.</p><p>The other traditional technique involves using what we call <em>adjacency
 lists</em>. An adjacency list is simply a linked list containing
 descriptions of the outgoing edges from a single node. These lists are
-traditionally grouped together in an array of size <span style="white-space:nowrap">
-<span class="math align-center">$ n $</span>,</span> where 
+traditionally grouped together in an array of size <span style=white-space:nowrap><span class="math align-center">$ n $</span>,</span> where
 <span class="math align-center">$ n $</span> is
 again the number of nodes in the graph. As with the adjacency matrix
-technique, the nodes must be nonnegative <strong>int</strong>s less than <span style="white-space:nowrap">
-<span class="math align-center">$ n $</span>.</span> The
-linked list at location 
+technique, the nodes must be nonnegative <strong>int</strong>s less than <span style=white-space:nowrap><span class="math align-center">$ n $</span>.</span> The
+linked list at location
 <span class="math align-center">$ i $</span> of the array then contains the descriptions
-of the outgoing edges from node 
-<span class="math align-center">$ i $</span>.</p>
-<p>One advantage to this technique is that the amount of space it uses is
+of the outgoing edges from node
+<span class="math align-center">$ i $</span>.</p><p>One advantage to this technique is that the amount of space it uses is
 proportional to the size of the graph (i.e., the number of nodes plus
 the number of edges). Furthermore, obtaining the outgoing edges from a
 given node simply requires traversing the linked list containing the
@@ -1137,11 +319,10 @@ wish to use a generic node type. A more serious weakness, though, is
 that in order to determine if a given edge exists, we must search
 through potentially all of the outgoing edges from a given node. If the
 number of edges is large in comparison to the number of nodes, this
-search can be expensive.</p>
-<p>As we mentioned above, our implementation of
-<strong>DirectedGraph&lt;TNode, TEdgeData&gt;</strong> borrows from both of these
+search can be expensive.</p><p>As we mentioned above, our implementation of
+<strong>DirectedGraph&lt;TNode, TEdgeData></strong> borrows from both of these
 traditional techniques. We start by modifying the adjacency lists
-technique to use a <strong>Dictionary&lt;TNode, LinkedListCell&lt;TNode&gt;?&gt;</strong>
+technique to use a <strong>Dictionary&lt;TNode, LinkedListCell&lt;TNode>?></strong>
 instead of an array of linked lists. Thus, we can accommodate a generic
 node type while maintaining efficient access to the adjacency lists.
 While a dictionary lookup is not quite as efficient as an array lookup,
@@ -1149,95 +330,69 @@ a dictionary would provide the most efficient way of mapping nodes of a
 generic type to <strong>int</strong> array indices. Using a dictionary instead of an
 array eliminates the need to do a subsequent array lookup. The linked
 list associated with a given node in this dictionary will then contain
-the destination node of each outgoing edge from the given node.</p>
-<p>In addition to this dictionary, we use a
-<strong>Dictionary&lt;(TNode, TNode), TEdgeData&gt;</strong> to facilitate
+the destination node of each outgoing edge from the given node.</p><p>In addition to this dictionary, we use a
+<strong>Dictionary&lt;(TNode, TNode), TEdgeData></strong> to facilitate
 efficient edge lookups. The notation <strong>(T1, T2)</strong> defines a <em>tuple</em>, which is an ordered pair of elements, the first of type <strong>T1</strong>,
 and the second of type <strong>T2</strong>. Elements of this type are described with
 similar notation, <code>(x, y)</code>, where <code>x</code> is of type <strong>T1</strong> and <code>y</code> is of
 type <strong>T2</strong>. These elements can be accessed using the <strong>public</strong>
 properties <strong>Item1</strong> and <strong>Item2</strong>. In general, longer tuples can be
-defined similarly.</p>
-<p>This second dictionary essentially fills the role of an adjacency
+defined similarly.</p><p>This second dictionary essentially fills the role of an adjacency
 matrix, while accommodating a generic node type and using space more
 efficiently. Specifically, a tuple whose <strong>Item1</strong> is <code>u</code> and whose
 <strong>Item2</strong> is <code>v</code> will be a key in this dictionary if there is an edge
 from node <code>u</code> to node <code>v</code>. The value associated with this key will be
 the data associated with this edge. Thus, looking up an edge consists of
-a single dictionary lookup.</p>
-<p>The two dictionaries described above are the only <strong>private</strong> fields our
+a single dictionary lookup.</p><p>The two dictionaries described above are the only <strong>private</strong> fields our
 implementation needs. We will refer to them as <code>_adjacencyLists</code> and
 <code>_edges</code>, respectively. Because we can initialize both fields to new
 dictionaries, there is no need to define a constructor. Furthermore,
 given these two dictionaries, most of the <strong>public</strong> methods and
-properties (see <a href="https://ksu-cs-textbooks.github.io/cis300/graphs/intro">&ldquo;Introduction to
-Graphs&rdquo;</a>
-) can be
+properties (see <a href=/cis300/graphs/intro/>&ldquo;Introduction to
+Graphs&rdquo;</a>) can be
 implemented using a single call to one of the members of one of these
-dictionaries:</p>
-<ul>
-<li><strong>void AddNode(TNode node)</strong>: We can implement this method using the
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.add?view=net-6.0#system-collections-generic-dictionary-2-add%28-0-1%29" target="_blank"><strong>Add</strong></a>
-
+dictionaries:</p><ul><li><strong>void AddNode(TNode node)</strong>: We can implement this method using the
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.add?view=net-6.0#system-collections-generic-dictionary-2-add(-0-1)" rel=external target=_blank><strong>Add</strong></a>
 method of <code>_adjacencyLists</code>. We associate an empty linked list with
-this node.</li>
-<li><strong>void AddEdge(TNode source, TNode dest, TEdgeData value)</strong>: See
-below.</li>
-<li><strong>bool TryGetEdge(TNode source, TNode dest, out TEdgeData? value)</strong>:
+this node.</li><li><strong>void AddEdge(TNode source, TNode dest, TEdgeData value)</strong>: See
+below.</li><li><strong>bool TryGetEdge(TNode source, TNode dest, out TEdgeData? value)</strong>:
 We can implement this method using the
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.trygetvalue?view=net-6.0#system-collections-generic-dictionary-2-trygetvalue%28-0-1@%29" target="_blank"><strong>TryGetValue</strong></a>
-
-method of <code>_edges</code>.</li>
-<li><strong>int NodeCount</strong>: Because <code>_adjacencyLists</code> contains all of the
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.trygetvalue?view=net-6.0#system-collections-generic-dictionary-2-trygetvalue(-0-1@)" rel=external target=_blank><strong>TryGetValue</strong></a>
+method of <code>_edges</code>.</li><li><strong>int NodeCount</strong>: Because <code>_adjacencyLists</code> contains all of the
 nodes as keys, we can implement this property using this
 dictionary&rsquo;s
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.count?view=net-6.0#system-collections-generic-dictionary-2-count" target="_blank"><strong>Count</strong></a>
-
-property.</li>
-<li><strong>int EdgeCount</strong>: We can implement this property using the
-<strong>Count</strong> property of <code>_edges</code>.</li>
-<li><strong>bool ContainsNode(TNode node)</strong>: We can implement this method
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.count?view=net-6.0#system-collections-generic-dictionary-2-count" rel=external target=_blank><strong>Count</strong></a>
+property.</li><li><strong>int EdgeCount</strong>: We can implement this property using the
+<strong>Count</strong> property of <code>_edges</code>.</li><li><strong>bool ContainsNode(TNode node)</strong>: We can implement this method
 using the
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.containskey?view=net-6.0#system-collections-generic-dictionary-2-containskey%28-0%29" target="_blank"><strong>ContainsKey</strong></a>
-
-method of <code>_adjacencyLists</code>.</li>
-<li><strong>bool ContainsEdge(TNode source, TNode dest)</strong>: We can implement
-this method using the <strong>ContainsKey</strong> method of <code>_edges</code>.</li>
-<li><strong>IEnumerable&lt;TNode&gt; Nodes</strong>: We can implement this property using
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.containskey?view=net-6.0#system-collections-generic-dictionary-2-containskey(-0)" rel=external target=_blank><strong>ContainsKey</strong></a>
+method of <code>_adjacencyLists</code>.</li><li><strong>bool ContainsEdge(TNode source, TNode dest)</strong>: We can implement
+this method using the <strong>ContainsKey</strong> method of <code>_edges</code>.</li><li><strong>IEnumerable&lt;TNode> Nodes</strong>: We can implement this property using
 the
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.keys?view=net-6.0#system-collections-generic-dictionary-2-keys" target="_blank"><strong>Keys</strong></a>
-
-property of <code>_adjacencyLists</code>.</li>
-<li><strong>IEnumerable&lt;Edge&lt;TNode, TEdgeData&gt;&gt; OutgoingEdges(TNode
-source)</strong>: See below.</li>
-</ul>
-<p>Let&rsquo;s now consider the implementation of the <strong>AddEdge</strong> method. Recall
-from <a href="https://ksu-cs-textbooks.github.io/cis300/graphs/intro">&ldquo;Introduction to
-Graphs&rdquo;</a>
- that this method
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.keys?view=net-6.0#system-collections-generic-dictionary-2-keys" rel=external target=_blank><strong>Keys</strong></a>
+property of <code>_adjacencyLists</code>.</li><li><strong>IEnumerable&lt;Edge&lt;TNode, TEdgeData>> OutgoingEdges(TNode
+source)</strong>: See below.</li></ul><p>Let&rsquo;s now consider the implementation of the <strong>AddEdge</strong> method. Recall
+from <a href=/cis300/graphs/intro/>&ldquo;Introduction to
+Graphs&rdquo;</a> that this method
 adds an edge from <code>source</code> to <code>dest</code> with data item <code>value</code>. If either
 <code>source</code> or <code>dest</code> is not already in the graph, it will be added. If
 either <code>source</code> or <code>dest</code> is <strong>null</strong>, it will throw an
 <strong>ArgumentNullException</strong>. If <code>source</code> and <code>dest</code> are the same, or if
 the edge already exists in the graph, it will throw an
-<strong>ArgumentException</strong>.</p>
-<p>In order to avoid changing the graph if the parameters are bad, we
+<strong>ArgumentException</strong>.</p><p>In order to avoid changing the graph if the parameters are bad, we
 should do the error checking first. However, there is no need to check
 whether the edge already exists, provided we update <code>_edges</code> using its
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.add?view=net-6.0#system-collections-generic-dictionary-2-add%28-0-1%29" target="_blank"><strong>Add</strong></a>
-
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.add?view=net-6.0#system-collections-generic-dictionary-2-add(-0-1)" rel=external target=_blank><strong>Add</strong></a>
 method, and that we do this before making any other changes to the
 graph. Because a dictionary&rsquo;s <strong>Add</strong> method will throw an
 <strong>ArgumentException</strong> if the given key is already in the dictionary, it
 takes care of this error checking for us. The key that we need to add
 will be a <strong>(TNode, TNode)</strong> containing the two nodes, and the value
-will be the <code>value</code>.</p>
-<p>After we have updated <code>_edges</code>, we need to update <code>_adjacencyLists</code>. To
+will be the <code>value</code>.</p><p>After we have updated <code>_edges</code>, we need to update <code>_adjacencyLists</code>. To
 do this, we first need to obtain the linked list associated with the key
 <code>source</code> in <code>_adjacencyLists</code>; however, because <code>source</code> may not exist
 as a key in this dictionary, we should use the
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.trygetvalue?view=net-6.0#system-collections-generic-dictionary-2-trygetvalue%28-0-1@%29" target="_blank"><strong>TryGetValue</strong></a>
-
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.trygetvalue?view=net-6.0#system-collections-generic-dictionary-2-trygetvalue(-0-1@)" rel=external target=_blank><strong>TryGetValue</strong></a>
 method to do this lookup (note that if <code>source</code> is not a key in this
 dictionary, the <strong>out</strong> parameter will be set to <strong>null</strong>, which we can
 interpret as an empty list). We then construct a new linked list cell
@@ -1245,70 +400,15 @@ containing <code>dest</code> as its data and insert it at the beginning of
 the linked list we retrieved. We then set this linked list as the new value
 associated with <code>source</code> in <code>_adjacencyLists</code>. Finally, if
 <code>_adjacencyLists</code> doesn&rsquo;t already contain <code>dest</code> as a key, we need to
-add it with <strong>null</strong> as its associated value.</p>
-<p>Finally, we need to implement the <strong>OutgoingEdges</strong> method. Because this
-method returns an <strong>IEnumerable&lt;Edge&lt;TNode, TEdgeData&gt;&gt;</strong>, it
+add it with <strong>null</strong> as its associated value.</p><p>Finally, we need to implement the <strong>OutgoingEdges</strong> method. Because this
+method returns an <strong>IEnumerable&lt;Edge&lt;TNode, TEdgeData>></strong>, it
 needs to iterate through the cells of the linked list associated with
 the given node in <code>_adjacencyLists</code>. For each of these cells, it will
 need to <strong>yield return</strong> (see
-&ldquo;<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/enumerators">Enumerators</a>
-&rdquo;)
-an <strong>Edge&lt;TNode, TEdgeData&gt;</strong> describing the edge represented by
+&ldquo;<a href=/cis300/appendix/syntax/enumerators/>Enumerators</a>&rdquo;)
+an <strong>Edge&lt;TNode, TEdgeData></strong> describing the edge represented by
 that cell. The source node for this edge will be the node given to this
 method. The destination node will be the node stored in the cell. The
-edge data can be obtained from the dictionary <code>_edges</code>.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-          </section>
-
-        </div>
-      </main>
-    
-<div class="git-footer">
-<p class="theme-version-footer">5.18.0</p>
-<p>Last modified by: 
-            <i class='fas fa-user'></i> Russell Feldhausen
-            <i class='fas fa-calendar'></i> <a href="https://gitlab.cs.ksu.edu/cis300/cis300-book/-/commit/922f538e5bb242ebedcf7260f2a5ef759abe56f5">May 22, 2023</a>
-</p>
-</div>
-
-    
-    </div>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1710771761" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1710771761" defer></script>
-    <script>
-      function useMathJax( config ){
-        if( !Object.assign ){
-          
-          return;
-        }
-        window.MathJax = Object.assign( window.MathJax || {}, {
-          loader: {
-            load: ['[tex]/mhchem']
-          },
-          startup: {
-            elements: [
-              '.math'
-            ]
-          },
-          tex: {
-            inlineMath: [
-              ['$', '$'], 
-              ['\\(', '\\)']
-            ]
-          },
-          options: {
-            enableMenu: false 
-          }
-        }, config );
-      }
-      useMathJax( JSON.parse("{}") );
-    </script>
-    <script id="MathJax-script" async src="https://ksu-cs-textbooks.github.io/cis300/js/mathjax/tex-mml-chtml.js?1710771761"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1710771761" defer></script>
-  </body>
-</html>
+edge data can be obtained from the dictionary <code>_edges</code>.</p><footer class=footline></footer></article></section></div></main><div class=git-footer><p class=theme-version-footer>6.0.0</p><p>Last modified by:
+<i class='fas fa-user'></i> Russell Feldhausen
+<i class='fas fa-calendar'></i> <a href=https://github.com/ksu-cs-textbooks/cis300/commit/922f538e5bb242ebedcf7260f2a5ef759abe56f5>May 22, 2023</a></p></div></div><script src=/cis300/js/clipboard.min.js?1719513823 defer></script><script src=/cis300/js/perfect-scrollbar.min.js?1719513823 defer></script><script>function useMathJax(e){window.MathJax=Object.assign(window.MathJax||{},{tex:{inlineMath:[["\\(","\\)"],["$","$"]],displayMath:[["\\[","\\]"],["$$","$$"]]},options:{enableMenu:!1}},e)}useMathJax(JSON.parse("{}"))</script><script id=MathJax-script async src=/cis300/js/mathjax/tex-mml-chtml.js?1719513823></script><script src=/cis300/js/theme.js?1719513823 defer></script></body></html>

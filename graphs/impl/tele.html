@@ -1,616 +1,32 @@
-
-
-
-
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.18.0">
-    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
-    <meta name="description" content="K-State CIS 300: Data Structures">
-    <meta name="author" content="Rod Howell and Josh Weese">
-    <title>Implementing a Graph :: Data Structures in C#</title>
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1710771761" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1710771761" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1710771761" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1710771761"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1710771761"></script>
-    <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
-      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
-      var root_url="https://ksu-cs-textbooks.github.io/cis300/";
-      var baseUri=root_url.replace(/\/$/, '');
-      // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
-      window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
-    </script>
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1710771761" rel="stylesheet">
-
-  </head>
-  <body class="mobile-support tele disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/graphs/impl/index.html">
-    
-    <div id="tele" class="tele mirror">
-    
-    <div id="body" class="default-animation">
-      
-      
-      
-      <main id="body-inner" class="highlightable default" tabindex="-1">
-        <div class="flex-block-wrapper">
-          <article class="default">
-            <header class="headline">
-            </header>
-<div hidden><h1 id="implementing-a-graph">Implementing a Graph</h1></div>
-
-<h2 id="implementing-a-graph">Implementing a Graph</h2>
-<p>Traditionally, there are two main techniques for implementing a graph.
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=robots content="noindex, nofollow, noarchive, noimageindex"><meta name=description content="Implementing a Graph Traditionally, there are two main techniques for implementing a graph. Each of these techniques has advantages and disadvantages, depending on the characteristics of the graph. In this section, we describe the implementation of the DirectedGraph<TNode, TEdgeData> class from Ksu.Cis300.Graphs.dll. This implementation borrows from both traditional techniques to obtain an implementation that provides good performance for any graph. In what follows, we will first describe the two traditional techniques and discuss the strengths and weaknesses of each."><meta name=author content="Rod Howell and Josh Weese"><meta name=twitter:card content="summary"><meta name=twitter:title content="Implementing a Graph :: Data Structures in C#"><meta name=twitter:description content="Implementing a Graph Traditionally, there are two main techniques for implementing a graph. Each of these techniques has advantages and disadvantages, depending on the characteristics of the graph. In this section, we describe the implementation of the DirectedGraph<TNode, TEdgeData> class from Ksu.Cis300.Graphs.dll. This implementation borrows from both traditional techniques to obtain an implementation that provides good performance for any graph. In what follows, we will first describe the two traditional techniques and discuss the strengths and weaknesses of each."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis300/graphs/impl/"><meta property="og:site_name" content="Data Structures in C#"><meta property="og:title" content="Implementing a Graph :: Data Structures in C#"><meta property="og:description" content="Implementing a Graph Traditionally, there are two main techniques for implementing a graph. Each of these techniques has advantages and disadvantages, depending on the characteristics of the graph. In this section, we describe the implementation of the DirectedGraph<TNode, TEdgeData> class from Ksu.Cis300.Graphs.dll. This implementation borrows from both traditional techniques to obtain an implementation that provides good performance for any graph. In what follows, we will first describe the two traditional techniques and discuss the strengths and weaknesses of each."><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="Graphs"><meta property="article:modified_time" content="2023-06-08T11:09:26-05:00"><meta itemprop=name content="Implementing a Graph :: Data Structures in C#"><meta itemprop=description content="Implementing a Graph Traditionally, there are two main techniques for implementing a graph. Each of these techniques has advantages and disadvantages, depending on the characteristics of the graph. In this section, we describe the implementation of the DirectedGraph<TNode, TEdgeData> class from Ksu.Cis300.Graphs.dll. This implementation borrows from both traditional techniques to obtain an implementation that provides good performance for any graph. In what follows, we will first describe the two traditional techniques and discuss the strengths and weaknesses of each."><meta itemprop=dateModified content="2023-06-08T11:09:26-05:00"><meta itemprop=wordCount content="1528"><title>Implementing a Graph :: Data Structures in C#</title>
+<link href=/cis300/css/fontawesome-all.min.css?1719513824 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fontawesome-all.min.css?1719513824 rel=stylesheet></noscript><link href=/cis300/css/nucleus.css?1719513824 rel=stylesheet><link href=/cis300/css/auto-complete.css?1719513824 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/auto-complete.css?1719513824 rel=stylesheet></noscript><link href=/cis300/css/perfect-scrollbar.min.css?1719513824 rel=stylesheet><link href=/cis300/css/fonts.css?1719513824 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fonts.css?1719513824 rel=stylesheet></noscript><link href=/cis300/css/theme.css?1719513824 rel=stylesheet><link href=/cis300/css/theme-auto.css?1719513824 rel=stylesheet id=R-variant-style><link href=/cis300/css/chroma-auto.css?1719513824 rel=stylesheet id=R-variant-chroma-style><link href=/cis300/css/variant.css?1719513824 rel=stylesheet><link href=/cis300/css/print.css?1719513824 rel=stylesheet media=print><script src=/cis300/js/variant.js?1719513824></script><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis300",window.index_js_url="/cis300/index.search.js",window.variants&&variants.init(["auto","light-theme","dark-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis300/css/custom.css?1719513824 rel=stylesheet></head><body class="mobile-support tele disableInlineCopyToClipboard" data-url=/cis300/graphs/impl/><div id=tele class="tele mirror"><div id=R-body class=default-animation><div id=R-body-overlay></div><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><div hidden><h1 id=implementing-a-graph>Implementing a Graph</h1></div><h2 id=implementing-a-graph>Implementing a Graph</h2><p>Traditionally, there are two main techniques for implementing a graph.
 Each of these techniques has advantages and disadvantages, depending on
 the characteristics of the graph. In this section, we describe the
-implementation of the <strong>DirectedGraph&lt;TNode, TEdgeData&gt;</strong> class
-from <a href="Ksu.Cis300.Graphs.dll"><strong>Ksu.Cis300.Graphs.dll</strong></a>
-. This
+implementation of the <strong>DirectedGraph&lt;TNode, TEdgeData></strong> class
+from <a href=/cis300/graphs/impl/Ksu.Cis300.Graphs.dll><strong>Ksu.Cis300.Graphs.dll</strong></a>. This
 implementation borrows from both traditional techniques to obtain an
 implementation that provides good performance for any graph. In what
 follows, we will first describe the two traditional techniques and
 discuss the strengths and weaknesses of each. We will then outline the
-implementation of <strong>DirectedGraph&lt;TNode, TEdgeData&gt;</strong>.</p>
-<p>The first traditional technique is to use what we call an <em>adjacency
-matrix</em>. This matrix is an 
-<span class="math align-center">$ n \times n $</span> boolean array, where 
+implementation of <strong>DirectedGraph&lt;TNode, TEdgeData></strong>.</p><p>The first traditional technique is to use what we call an <em>adjacency
+matrix</em>. This matrix is an
+<span class="math align-center">$ n \times n $</span> boolean array, where
 <span class="math align-center">$ n $</span> is the number
 of nodes in the graph. In this implementation, each node is represented
-by an <strong>int</strong> value <span style="white-space:nowrap">
-<span class="math align-center">$ i $</span>,</span> where <span style="white-space:nowrap">
-<span class="math align-center">$ 0 \leq i \lt n $</span>.</span> The
-value at row 
-<span class="math align-center">$ i $</span> and column 
+by an <strong>int</strong> value <span style=white-space:nowrap><span class="math align-center">$ i $</span>,</span> where <span style=white-space:nowrap><span class="math align-center">$ 0 \leq i \lt n $</span>.</span> The
+value at row
+<span class="math align-center">$ i $</span> and column
 <span class="math align-center">$ j $</span> will be <strong>true</strong> if there is an edge
-from node 
-<span class="math align-center">$ i $</span> to node <span style="white-space:nowrap">
-<span class="math align-center">$ j $</span>.</span></p>
-<p>The main advantage to this technique is that we can very quickly
+from node
+<span class="math align-center">$ i $</span> to node <span style=white-space:nowrap><span class="math align-center">$ j $</span>.</span></p><p>The main advantage to this technique is that we can very quickly
 determine whether an edge exists &mdash; we only need to look up one element
 in an array. There are several disadvantages, however. First, we are
 forced to use a specific range of <strong>int</strong> values as the nodes. If we
 wish to have a generic node type, we need an additional data structure
-(such as a <strong>Dictionary&lt;TNode, int&gt;</strong>) to map each node to its
+(such as a <strong>Dictionary&lt;TNode, int></strong>) to map each node to its
 <strong>int</strong> representation. It also fails to provide a way to associate a
 value with an edge; hence, we would need an additional data structure
-(such as a <strong>TEdgeData[int, int]</strong>) to store this information.</p>
-<p>Perhaps the most serious shortcoming for the adjacency matrix, however,
+(such as a <strong>TEdgeData[int, int]</strong>) to store this information.</p><p>Perhaps the most serious shortcoming for the adjacency matrix, however,
 is that if the graph contains a large number of nodes, but relatively
 few edges, it wastes a huge amount of space. Suppose, for example, that
 we have a graph representing street information, and suppose there are
@@ -619,21 +35,17 @@ contain around three million edges. However, an adjacency matrix would
 require one trillion entries, almost all of which will be <strong>false</strong>.
 Similarly, finding the edges from a given node would require examining
 an entire row of a million elements to find the three or four outgoing
-edges from that node.</p>
-<p>The other traditional technique involves using what we call <em>adjacency
+edges from that node.</p><p>The other traditional technique involves using what we call <em>adjacency
 lists</em>. An adjacency list is simply a linked list containing
 descriptions of the outgoing edges from a single node. These lists are
-traditionally grouped together in an array of size <span style="white-space:nowrap">
-<span class="math align-center">$ n $</span>,</span> where 
+traditionally grouped together in an array of size <span style=white-space:nowrap><span class="math align-center">$ n $</span>,</span> where
 <span class="math align-center">$ n $</span> is
 again the number of nodes in the graph. As with the adjacency matrix
-technique, the nodes must be nonnegative <strong>int</strong>s less than <span style="white-space:nowrap">
-<span class="math align-center">$ n $</span>.</span> The
-linked list at location 
+technique, the nodes must be nonnegative <strong>int</strong>s less than <span style=white-space:nowrap><span class="math align-center">$ n $</span>.</span> The
+linked list at location
 <span class="math align-center">$ i $</span> of the array then contains the descriptions
-of the outgoing edges from node 
-<span class="math align-center">$ i $</span>.</p>
-<p>One advantage to this technique is that the amount of space it uses is
+of the outgoing edges from node
+<span class="math align-center">$ i $</span>.</p><p>One advantage to this technique is that the amount of space it uses is
 proportional to the size of the graph (i.e., the number of nodes plus
 the number of edges). Furthermore, obtaining the outgoing edges from a
 given node simply requires traversing the linked list containing the
@@ -644,11 +56,10 @@ wish to use a generic node type. A more serious weakness, though, is
 that in order to determine if a given edge exists, we must search
 through potentially all of the outgoing edges from a given node. If the
 number of edges is large in comparison to the number of nodes, this
-search can be expensive.</p>
-<p>As we mentioned above, our implementation of
-<strong>DirectedGraph&lt;TNode, TEdgeData&gt;</strong> borrows from both of these
+search can be expensive.</p><p>As we mentioned above, our implementation of
+<strong>DirectedGraph&lt;TNode, TEdgeData></strong> borrows from both of these
 traditional techniques. We start by modifying the adjacency lists
-technique to use a <strong>Dictionary&lt;TNode, LinkedListCell&lt;TNode&gt;?&gt;</strong>
+technique to use a <strong>Dictionary&lt;TNode, LinkedListCell&lt;TNode>?></strong>
 instead of an array of linked lists. Thus, we can accommodate a generic
 node type while maintaining efficient access to the adjacency lists.
 While a dictionary lookup is not quite as efficient as an array lookup,
@@ -656,95 +67,69 @@ a dictionary would provide the most efficient way of mapping nodes of a
 generic type to <strong>int</strong> array indices. Using a dictionary instead of an
 array eliminates the need to do a subsequent array lookup. The linked
 list associated with a given node in this dictionary will then contain
-the destination node of each outgoing edge from the given node.</p>
-<p>In addition to this dictionary, we use a
-<strong>Dictionary&lt;(TNode, TNode), TEdgeData&gt;</strong> to facilitate
+the destination node of each outgoing edge from the given node.</p><p>In addition to this dictionary, we use a
+<strong>Dictionary&lt;(TNode, TNode), TEdgeData></strong> to facilitate
 efficient edge lookups. The notation <strong>(T1, T2)</strong> defines a <em>tuple</em>, which is an ordered pair of elements, the first of type <strong>T1</strong>,
 and the second of type <strong>T2</strong>. Elements of this type are described with
 similar notation, <code>(x, y)</code>, where <code>x</code> is of type <strong>T1</strong> and <code>y</code> is of
 type <strong>T2</strong>. These elements can be accessed using the <strong>public</strong>
 properties <strong>Item1</strong> and <strong>Item2</strong>. In general, longer tuples can be
-defined similarly.</p>
-<p>This second dictionary essentially fills the role of an adjacency
+defined similarly.</p><p>This second dictionary essentially fills the role of an adjacency
 matrix, while accommodating a generic node type and using space more
 efficiently. Specifically, a tuple whose <strong>Item1</strong> is <code>u</code> and whose
 <strong>Item2</strong> is <code>v</code> will be a key in this dictionary if there is an edge
 from node <code>u</code> to node <code>v</code>. The value associated with this key will be
 the data associated with this edge. Thus, looking up an edge consists of
-a single dictionary lookup.</p>
-<p>The two dictionaries described above are the only <strong>private</strong> fields our
+a single dictionary lookup.</p><p>The two dictionaries described above are the only <strong>private</strong> fields our
 implementation needs. We will refer to them as <code>_adjacencyLists</code> and
 <code>_edges</code>, respectively. Because we can initialize both fields to new
 dictionaries, there is no need to define a constructor. Furthermore,
 given these two dictionaries, most of the <strong>public</strong> methods and
-properties (see <a href="https://ksu-cs-textbooks.github.io/cis300/graphs/intro">&ldquo;Introduction to
-Graphs&rdquo;</a>
-) can be
+properties (see <a href=/cis300/graphs/intro/>&ldquo;Introduction to
+Graphs&rdquo;</a>) can be
 implemented using a single call to one of the members of one of these
-dictionaries:</p>
-<ul>
-<li><strong>void AddNode(TNode node)</strong>: We can implement this method using the
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.add?view=net-6.0#system-collections-generic-dictionary-2-add%28-0-1%29" target="_blank"><strong>Add</strong></a>
-
+dictionaries:</p><ul><li><strong>void AddNode(TNode node)</strong>: We can implement this method using the
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.add?view=net-6.0#system-collections-generic-dictionary-2-add(-0-1)" rel=external target=_blank><strong>Add</strong></a>
 method of <code>_adjacencyLists</code>. We associate an empty linked list with
-this node.</li>
-<li><strong>void AddEdge(TNode source, TNode dest, TEdgeData value)</strong>: See
-below.</li>
-<li><strong>bool TryGetEdge(TNode source, TNode dest, out TEdgeData? value)</strong>:
+this node.</li><li><strong>void AddEdge(TNode source, TNode dest, TEdgeData value)</strong>: See
+below.</li><li><strong>bool TryGetEdge(TNode source, TNode dest, out TEdgeData? value)</strong>:
 We can implement this method using the
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.trygetvalue?view=net-6.0#system-collections-generic-dictionary-2-trygetvalue%28-0-1@%29" target="_blank"><strong>TryGetValue</strong></a>
-
-method of <code>_edges</code>.</li>
-<li><strong>int NodeCount</strong>: Because <code>_adjacencyLists</code> contains all of the
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.trygetvalue?view=net-6.0#system-collections-generic-dictionary-2-trygetvalue(-0-1@)" rel=external target=_blank><strong>TryGetValue</strong></a>
+method of <code>_edges</code>.</li><li><strong>int NodeCount</strong>: Because <code>_adjacencyLists</code> contains all of the
 nodes as keys, we can implement this property using this
 dictionary&rsquo;s
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.count?view=net-6.0#system-collections-generic-dictionary-2-count" target="_blank"><strong>Count</strong></a>
-
-property.</li>
-<li><strong>int EdgeCount</strong>: We can implement this property using the
-<strong>Count</strong> property of <code>_edges</code>.</li>
-<li><strong>bool ContainsNode(TNode node)</strong>: We can implement this method
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.count?view=net-6.0#system-collections-generic-dictionary-2-count" rel=external target=_blank><strong>Count</strong></a>
+property.</li><li><strong>int EdgeCount</strong>: We can implement this property using the
+<strong>Count</strong> property of <code>_edges</code>.</li><li><strong>bool ContainsNode(TNode node)</strong>: We can implement this method
 using the
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.containskey?view=net-6.0#system-collections-generic-dictionary-2-containskey%28-0%29" target="_blank"><strong>ContainsKey</strong></a>
-
-method of <code>_adjacencyLists</code>.</li>
-<li><strong>bool ContainsEdge(TNode source, TNode dest)</strong>: We can implement
-this method using the <strong>ContainsKey</strong> method of <code>_edges</code>.</li>
-<li><strong>IEnumerable&lt;TNode&gt; Nodes</strong>: We can implement this property using
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.containskey?view=net-6.0#system-collections-generic-dictionary-2-containskey(-0)" rel=external target=_blank><strong>ContainsKey</strong></a>
+method of <code>_adjacencyLists</code>.</li><li><strong>bool ContainsEdge(TNode source, TNode dest)</strong>: We can implement
+this method using the <strong>ContainsKey</strong> method of <code>_edges</code>.</li><li><strong>IEnumerable&lt;TNode> Nodes</strong>: We can implement this property using
 the
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.keys?view=net-6.0#system-collections-generic-dictionary-2-keys" target="_blank"><strong>Keys</strong></a>
-
-property of <code>_adjacencyLists</code>.</li>
-<li><strong>IEnumerable&lt;Edge&lt;TNode, TEdgeData&gt;&gt; OutgoingEdges(TNode
-source)</strong>: See below.</li>
-</ul>
-<p>Let&rsquo;s now consider the implementation of the <strong>AddEdge</strong> method. Recall
-from <a href="https://ksu-cs-textbooks.github.io/cis300/graphs/intro">&ldquo;Introduction to
-Graphs&rdquo;</a>
- that this method
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.keys?view=net-6.0#system-collections-generic-dictionary-2-keys" rel=external target=_blank><strong>Keys</strong></a>
+property of <code>_adjacencyLists</code>.</li><li><strong>IEnumerable&lt;Edge&lt;TNode, TEdgeData>> OutgoingEdges(TNode
+source)</strong>: See below.</li></ul><p>Let&rsquo;s now consider the implementation of the <strong>AddEdge</strong> method. Recall
+from <a href=/cis300/graphs/intro/>&ldquo;Introduction to
+Graphs&rdquo;</a> that this method
 adds an edge from <code>source</code> to <code>dest</code> with data item <code>value</code>. If either
 <code>source</code> or <code>dest</code> is not already in the graph, it will be added. If
 either <code>source</code> or <code>dest</code> is <strong>null</strong>, it will throw an
 <strong>ArgumentNullException</strong>. If <code>source</code> and <code>dest</code> are the same, or if
 the edge already exists in the graph, it will throw an
-<strong>ArgumentException</strong>.</p>
-<p>In order to avoid changing the graph if the parameters are bad, we
+<strong>ArgumentException</strong>.</p><p>In order to avoid changing the graph if the parameters are bad, we
 should do the error checking first. However, there is no need to check
 whether the edge already exists, provided we update <code>_edges</code> using its
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.add?view=net-6.0#system-collections-generic-dictionary-2-add%28-0-1%29" target="_blank"><strong>Add</strong></a>
-
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.add?view=net-6.0#system-collections-generic-dictionary-2-add(-0-1)" rel=external target=_blank><strong>Add</strong></a>
 method, and that we do this before making any other changes to the
 graph. Because a dictionary&rsquo;s <strong>Add</strong> method will throw an
 <strong>ArgumentException</strong> if the given key is already in the dictionary, it
 takes care of this error checking for us. The key that we need to add
 will be a <strong>(TNode, TNode)</strong> containing the two nodes, and the value
-will be the <code>value</code>.</p>
-<p>After we have updated <code>_edges</code>, we need to update <code>_adjacencyLists</code>. To
+will be the <code>value</code>.</p><p>After we have updated <code>_edges</code>, we need to update <code>_adjacencyLists</code>. To
 do this, we first need to obtain the linked list associated with the key
 <code>source</code> in <code>_adjacencyLists</code>; however, because <code>source</code> may not exist
 as a key in this dictionary, we should use the
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.trygetvalue?view=net-6.0#system-collections-generic-dictionary-2-trygetvalue%28-0-1@%29" target="_blank"><strong>TryGetValue</strong></a>
-
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.trygetvalue?view=net-6.0#system-collections-generic-dictionary-2-trygetvalue(-0-1@)" rel=external target=_blank><strong>TryGetValue</strong></a>
 method to do this lookup (note that if <code>source</code> is not a key in this
 dictionary, the <strong>out</strong> parameter will be set to <strong>null</strong>, which we can
 interpret as an empty list). We then construct a new linked list cell
@@ -752,66 +137,13 @@ containing <code>dest</code> as its data and insert it at the beginning of
 the linked list we retrieved. We then set this linked list as the new value
 associated with <code>source</code> in <code>_adjacencyLists</code>. Finally, if
 <code>_adjacencyLists</code> doesn&rsquo;t already contain <code>dest</code> as a key, we need to
-add it with <strong>null</strong> as its associated value.</p>
-<p>Finally, we need to implement the <strong>OutgoingEdges</strong> method. Because this
-method returns an <strong>IEnumerable&lt;Edge&lt;TNode, TEdgeData&gt;&gt;</strong>, it
+add it with <strong>null</strong> as its associated value.</p><p>Finally, we need to implement the <strong>OutgoingEdges</strong> method. Because this
+method returns an <strong>IEnumerable&lt;Edge&lt;TNode, TEdgeData>></strong>, it
 needs to iterate through the cells of the linked list associated with
 the given node in <code>_adjacencyLists</code>. For each of these cells, it will
 need to <strong>yield return</strong> (see
-&ldquo;<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/enumerators">Enumerators</a>
-&rdquo;)
-an <strong>Edge&lt;TNode, TEdgeData&gt;</strong> describing the edge represented by
+&ldquo;<a href=/cis300/appendix/syntax/enumerators/>Enumerators</a>&rdquo;)
+an <strong>Edge&lt;TNode, TEdgeData></strong> describing the edge represented by
 that cell. The source node for this edge will be the node given to this
 method. The destination node will be the node stored in the cell. The
-edge data can be obtained from the dictionary <code>_edges</code>.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-        </div>
-      </main>
-    </div>
-    
-    </div>
-    
-    
-    
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1710771761" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1710771761" defer></script>
-    <script>
-      function useMathJax( config ){
-        if( !Object.assign ){
-          
-          return;
-        }
-        window.MathJax = Object.assign( window.MathJax || {}, {
-          loader: {
-            load: ['[tex]/mhchem']
-          },
-          startup: {
-            elements: [
-              '.math'
-            ]
-          },
-          tex: {
-            inlineMath: [
-              ['$', '$'], 
-              ['\\(', '\\)']
-            ]
-          },
-          options: {
-            enableMenu: false 
-          }
-        }, config );
-      }
-      useMathJax( JSON.parse("{}") );
-    </script>
-    <script id="MathJax-script" async src="https://ksu-cs-textbooks.github.io/cis300/js/mathjax/tex-mml-chtml.js?1710771761"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1710771761" defer></script>
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/tele-scroll.js?1710771761 defer"></script>
-    
-  </body>
-</html>
+edge data can be obtained from the dictionary <code>_edges</code>.</p><footer class=footline></footer></article></div></main></div></div><script src=/cis300/js/clipboard.min.js?1719513824 defer></script><script src=/cis300/js/perfect-scrollbar.min.js?1719513824 defer></script><script>function useMathJax(e){window.MathJax=Object.assign(window.MathJax||{},{tex:{inlineMath:[["\\(","\\)"],["$","$"]],displayMath:[["\\[","\\]"],["$$","$$"]]},options:{enableMenu:!1}},e)}useMathJax(JSON.parse("{}"))</script><script id=MathJax-script async src=/cis300/js/mathjax/tex-mml-chtml.js?1719513824></script><script src=/cis300/js/theme.js?1719513824 defer></script><script src=/cis300/js/tele-scroll.js?1719513824 defer></script></body></html>

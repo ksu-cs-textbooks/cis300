@@ -1,611 +1,20 @@
-
-
-
-
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.18.0">
-    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
-    <meta name="description" content="K-State CIS 300: Data Structures">
-    <meta name="author" content="Rod Howell and Josh Weese">
-    <title>Implementing a Queue :: Data Structures in C#</title>
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771760" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771760" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1710771760" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771760" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771760" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1710771760" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771760" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771760" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1710771760" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1710771760" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1710771760" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1710771760" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1710771760" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1710771760"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1710771760"></script>
-    <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
-      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
-      var root_url="https://ksu-cs-textbooks.github.io/cis300/";
-      var baseUri=root_url.replace(/\/$/, '');
-      // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
-      window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
-    </script>
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1710771760" rel="stylesheet">
-
-  </head>
-  <body class="mobile-support embed disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/queue-impl/embed.html">
-    <div id="body" class="default-animation">
-      
-      
-      
-      <main id="body-inner" class="highlightable default" tabindex="-1">
-        <div class="flex-block-wrapper">
-          <article class="default">
-    
-    
-    
-<h2 id="implementing-a-queue">Implementing a Queue</h2>
-<p>We will approach the implementation of a queue much like we did the
-<a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/stack-impl">implementation of a
-stack</a>
- - we will use part
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=robots content="noindex, nofollow, noarchive, noimageindex"><meta name=description content="Implementing a Queue We will approach the implementation of a queue much like we did the implementation of a stack - we will use part of an array to store the elements, and create a larger array as needed. However, efficiently implementing a stack is easier because we only need to access one end of a stack, but we need to access both ends of a queue. Suppose, for example, that we were to use the initial part of the array, as we did for a stack; i."><meta name=author content="Rod Howell and Josh Weese"><meta name=twitter:card content="summary"><meta name=twitter:title content="Implementing a Queue :: Data Structures in C#"><meta name=twitter:description content="Implementing a Queue We will approach the implementation of a queue much like we did the implementation of a stack - we will use part of an array to store the elements, and create a larger array as needed. However, efficiently implementing a stack is easier because we only need to access one end of a stack, but we need to access both ends of a queue. Suppose, for example, that we were to use the initial part of the array, as we did for a stack; i."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis300/stacks-queues/queue-impl/embed.html"><meta property="og:site_name" content="Data Structures in C#"><meta property="og:title" content="Implementing a Queue :: Data Structures in C#"><meta property="og:description" content="Implementing a Queue We will approach the implementation of a queue much like we did the implementation of a stack - we will use part of an array to store the elements, and create a larger array as needed. However, efficiently implementing a stack is easier because we only need to access one end of a stack, but we need to access both ends of a queue. Suppose, for example, that we were to use the initial part of the array, as we did for a stack; i."><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="Stacks and Queues"><meta property="article:modified_time" content="2023-06-01T15:44:17-05:00"><meta itemprop=name content="Implementing a Queue :: Data Structures in C#"><meta itemprop=description content="Implementing a Queue We will approach the implementation of a queue much like we did the implementation of a stack - we will use part of an array to store the elements, and create a larger array as needed. However, efficiently implementing a stack is easier because we only need to access one end of a stack, but we need to access both ends of a queue. Suppose, for example, that we were to use the initial part of the array, as we did for a stack; i."><meta itemprop=dateModified content="2023-06-01T15:44:17-05:00"><meta itemprop=wordCount content="1178"><title>Implementing a Queue :: Data Structures in C#</title>
+<link href=/cis300/css/fontawesome-all.min.css?1719513822 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fontawesome-all.min.css?1719513822 rel=stylesheet></noscript><link href=/cis300/css/nucleus.css?1719513822 rel=stylesheet><link href=/cis300/css/auto-complete.css?1719513822 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/auto-complete.css?1719513822 rel=stylesheet></noscript><link href=/cis300/css/perfect-scrollbar.min.css?1719513822 rel=stylesheet><link href=/cis300/css/fonts.css?1719513822 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fonts.css?1719513822 rel=stylesheet></noscript><link href=/cis300/css/theme.css?1719513822 rel=stylesheet><link href=/cis300/css/theme-light-theme.css?1719513822 rel=stylesheet id=R-variant-style><link href=/cis300/css/chroma-relearn-light.css?1719513822 rel=stylesheet id=R-variant-chroma-style><link href=/cis300/css/variant.css?1719513822 rel=stylesheet><link href=/cis300/css/print.css?1719513822 rel=stylesheet media=print><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis300",window.index_js_url="/cis300/index.search.js",window.variants&&variants.init(["light-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis300/css/custom.css?1719513822 rel=stylesheet></head><body class="mobile-support embed disableInlineCopyToClipboard" data-url=/cis300/stacks-queues/queue-impl/embed.html><div id=R-body class=default-animation><div id=R-body-overlay></div><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><h2 id=implementing-a-queue>Implementing a Queue</h2><p>We will approach the implementation of a queue much like we did the
+<a href=/cis300/stacks-queues/stack-impl/>implementation of a
+stack</a> - we will use part
 of an array to store the elements, and create a larger array as needed.
 However, efficiently implementing a stack is easier because we only need
 to access one end of a stack, but we need to access both ends of a
 queue. Suppose, for example, that we were to use the initial part of the
-array, as we did for a stack; i.e.:</p>
-<p>
-<a href="#image-085349cf25cd9e48d9c836a834ca2386" class="lightbox-link">
-<img src="bad-queue-impl.jpg" alt="A queue implementation using the initial part of an
-array" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-085349cf25cd9e48d9c836a834ca2386">
-<img src="bad-queue-impl.jpg" alt="A queue implementation using the initial part of an
-array" class="lightbox-image" loading="lazy">
-</a></p>
-<p>This implementation works well as long as we are only enqueuing elements
+array, as we did for a stack; i.e.:</p><p><a href=#R-image-d6641164e81db4cc56f6e2c2a6854ce3 class=lightbox-link><img alt="A queue implementation using the initial part of an\narray" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/stacks-queues/queue-impl/bad-queue-impl.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-d6641164e81db4cc56f6e2c2a6854ce3><img alt="A queue implementation using the initial part of an\narray" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/stacks-queues/queue-impl/bad-queue-impl.jpg></a></p><p>This implementation works well as long as we are only enqueuing elements
 &mdash; each element is placed at the back, much like pushing an element onto
 a stack. However, consider what happens when we dequeue an element. The
 element is easy to locate, as it must be at index 0, but in order to
 maintain the above picture, we would need to move all of the remaining
 elements one location to the left. This becomes less efficient as the
-number of elements in the queue increases.</p>
-<p>One alternative is to modify the picture somewhat:</p>
-<p>
-<a href="#image-b74c5fa5f4fa69d647396d9ce9e78ff8" class="lightbox-link">
-<img src="nowrap-queue.jpg" alt="A more general queue implementation" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-b74c5fa5f4fa69d647396d9ce9e78ff8">
-<img src="nowrap-queue.jpg" alt="A more general queue implementation" class="lightbox-image" loading="lazy">
-</a></p>
-<p>We can maintain this picture more efficiently, as there is now no need
+number of elements in the queue increases.</p><p>One alternative is to modify the picture somewhat:</p><p><a href=#R-image-209cea85e77be845494f462cdeb941cf class=lightbox-link><img alt="A more general queue implementation" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/stacks-queues/queue-impl/nowrap-queue.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-209cea85e77be845494f462cdeb941cf><img alt="A more general queue implementation" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/stacks-queues/queue-impl/nowrap-queue.jpg></a></p><p>We can maintain this picture more efficiently, as there is now no need
 to move the elements when we dequeue an element. It does mean that we
 need to keep track of a bit more information, namely, the location of
 either the front or the back, in addition to the <strong>Count</strong> (note that we
@@ -614,73 +23,32 @@ problem remains. Notice that as we enqueue and dequeue elements, the
 portion of the array that we are using works its way to the right.
 Eventually, the back element will be the last element in the array.
 However, this doesn&rsquo;t mean that we are using the entire array, as the
-front can be anywhere in the array.</p>
-<p>To solve this problem, when we need to enqueue an element but the back
+front can be anywhere in the array.</p><p>To solve this problem, when we need to enqueue an element but the back
 element is in the last array location, we place the next element at
 index 0. It is as if we are imagining the array as being circular, as
 the next location after the last is back at the beginning. The following
-picture gives two views of such a &ldquo;circular array&rdquo; implementation:</p>
-<p>
-<a href="#image-c8d95634b2750cc676895be5a1bfe24d" class="lightbox-link">
-<img src="wrapped-queue.jpg" alt="A circular array implementation of a queue" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-c8d95634b2750cc676895be5a1bfe24d">
-<img src="wrapped-queue.jpg" alt="A circular array implementation of a queue" class="lightbox-image" loading="lazy">
-</a></p>
-<p>With this implementation, we only need to construct a larger array if we
+picture gives two views of such a &ldquo;circular array&rdquo; implementation:</p><p><a href=#R-image-25cd9068dac79adb41c74fe5f44ef26d class=lightbox-link><img alt="A circular array implementation of a queue" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/stacks-queues/queue-impl/wrapped-queue.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-25cd9068dac79adb41c74fe5f44ef26d><img alt="A circular array implementation of a queue" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/stacks-queues/queue-impl/wrapped-queue.jpg></a></p><p>With this implementation, we only need to construct a larger array if we
 completely fill the current array, and unless we need to do this, we
 don&rsquo;t need to move elements around. We need the following class members
-in order to keep track of everything:</p>
-<ul>
-<li>a <strong>private T?[ ]</strong> field in which to store the elements;</li>
-<li>a <strong>public int Count</strong> property; and</li>
-<li>a <strong>private int</strong> field giving the index of the element at the front
-of the queue (if the queue is empty, this can be any valid index).</li>
-</ul>
-<p>Let us now consider how we would implement <strong>Enqueue</strong>. We first need to
+in order to keep track of everything:</p><ul><li>a <strong>private T?[ ]</strong> field in which to store the elements;</li><li>a <strong>public int Count</strong> property; and</li><li>a <strong>private int</strong> field giving the index of the element at the front
+of the queue (if the queue is empty, this can be any valid index).</li></ul><p>Let us now consider how we would implement <strong>Enqueue</strong>. We first need to
 determine whether the array is full by comparing the <strong>Count</strong> with the
 size of the array. If it is full, we need to construct a new array of
-twice the size, as we did for both the <a href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilder-impl"><strong>StringBuilder</strong>
+twice the size, as we did for both the <a href=/cis300/strings/stringbuilder-impl/><strong>StringBuilder</strong>
 implementation</a>
-
-and the <a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/stack-impl">stack
-implementation</a>
-. However,
+and the <a href=/cis300/stacks-queues/stack-impl/>stack
+implementation</a>. However,
 we can&rsquo;t simply copy the entire array to the beginning of the new array,
 as we did for these other two implementations. To do so would leave a
-gap in the middle of the queue, as shown in the following illustration:</p>
-<p>
-<a href="#image-5ec892dd9dbc98f8a403101cb409a247" class="lightbox-link">
-<img src="bad-circular-array-copy.jpg" alt="Why a simple copy will not work for a circular
-array" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-5ec892dd9dbc98f8a403101cb409a247">
-<img src="bad-circular-array-copy.jpg" alt="Why a simple copy will not work for a circular
-array" class="lightbox-image" loading="lazy">
-</a></p>
-<p>While there are several ways of copying the elements correctly, it may
+gap in the middle of the queue, as shown in the following illustration:</p><p><a href=#R-image-f20e79baff0b0ba62473ae2c35bbbbb6 class=lightbox-link><img alt="Why a simple copy will not work for a circular\narray" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/stacks-queues/queue-impl/bad-circular-array-copy.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-f20e79baff0b0ba62473ae2c35bbbbb6><img alt="Why a simple copy will not work for a circular\narray" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/stacks-queues/queue-impl/bad-circular-array-copy.jpg></a></p><p>While there are several ways of copying the elements correctly, it may
 be helpful to copy in such a way that the index of the front of the
-queue remains unchanged; i.e., we copy as follows:</p>
-<p>
-<a href="#image-d18141e887a510e82e82cd3b9ad433d1" class="lightbox-link">
-<img src="circular-array-copy.jpg" alt="A correct copy for a circular array" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-d18141e887a510e82e82cd3b9ad433d1">
-<img src="circular-array-copy.jpg" alt="A correct copy for a circular array" class="lightbox-image" loading="lazy">
-</a></p>
-<p>In order to copy the elements like this, we can use the <strong>static</strong>
+queue remains unchanged; i.e., we copy as follows:</p><p><a href=#R-image-d4b0b1c84bad9b31487f3a778914172f class=lightbox-link><img alt="A correct copy for a circular array" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/stacks-queues/queue-impl/circular-array-copy.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-d4b0b1c84bad9b31487f3a778914172f><img alt="A correct copy for a circular array" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/stacks-queues/queue-impl/circular-array-copy.jpg></a></p><p>In order to copy the elements like this, we can use the <strong>static</strong>
 method,
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.array.copy?view=net-6.0#system-array-copy%28system-array-system-int32-system-array-system-int32-system-int32%29" target="_blank"><strong>Array.Copy</strong></a>
-.
-This method takes the following parameters:</p>
-<ul>
-<li>The array to copy from.</li>
-<li>An <strong>int</strong> giving the index of the first element to copy.</li>
-<li>The array to copy to.</li>
-<li>An <strong>int</strong> giving the index in which to place the first element.</li>
-<li>An <strong>int</strong> giving the number of elements to copy.</li>
-</ul>
-<p>Just figuring out how to fill in these parameters takes some work. Let&rsquo;s
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.array.copy?view=net-6.0#system-array-copy(system-array-system-int32-system-array-system-int32-system-int32)" rel=external target=_blank><strong>Array.Copy</strong></a>.
+This method takes the following parameters:</p><ul><li>The array to copy from.</li><li>An <strong>int</strong> giving the index of the first element to copy.</li><li>The array to copy to.</li><li>An <strong>int</strong> giving the index in which to place the first element.</li><li>An <strong>int</strong> giving the number of elements to copy.</li></ul><p>Just figuring out how to fill in these parameters takes some work. Let&rsquo;s
 first consider the part that begins with the front of the queue. The
 index of the first element to copy is the index of the front of the
 queue, which we have in a <strong>private</strong> field. We want to place this
@@ -693,25 +61,21 @@ subtract from this value the number of elements we are <em>not</em> copying &mda
 i.e., the number of elements preceding the index of the front of the
 queue. The number of elements preceding any index <em>i</em> is always <em>i</em>;
 hence, by subtracting the index of the front of the queue from the
-<strong>Count</strong>, we get the number of elements we are copying by this call.</p>
-<p>Now let&rsquo;s see if we can figure out the parameters for the other call.
+<strong>Count</strong>, we get the number of elements we are copying by this call.</p><p>Now let&rsquo;s see if we can figure out the parameters for the other call.
 The first element we want to copy is at index 0. We want to place it
 immediately following the elements we have already copied. Because the
 last of these elements occupies the last index of the original array,
 whose size is currently the same as the <strong>Count</strong>, the next index is
 just the <strong>Count</strong>. The number of elements we want to copy, as we have
-already argued, is the index of the front of the queue.</p>
-<p>Once we have the elements copied to the new array, the hardest part is
+already argued, is the index of the front of the queue.</p><p>Once we have the elements copied to the new array, the hardest part is
 done. After we do this, we just need to copy the reference to the new
-array into the array field.</p>
-<p>Once we have ensured that there is room in the array to add a new
+array into the array field.</p><p>Once we have ensured that there is room in the array to add a new
 element, we can complete the <strong>Enqueue</strong> method. We need to place the
 element at the back of the queue. We can obtain the proper location by
 adding the <strong>Count</strong> to the index of the front of the queue, provided
 this value is not beyond the end of the array. If it is, then we need to
 wrap it around by subtracting the length of the array. We can then
-increment the number of elements, and we are (finally) done.</p>
-<p>The <strong>Peek</strong> method is straightforward &mdash; after verifying that the queue
+increment the number of elements, and we are (finally) done.</p><p>The <strong>Peek</strong> method is straightforward &mdash; after verifying that the queue
 is nonempty, we simply return the element at the front. The <strong>Dequeue</strong>
 method isn&rsquo;t much more difficult. We can obtain the element we want to
 return using the <strong>Peek</strong> method. We then need to place the default
@@ -719,20 +83,4 @@ element of type <strong>T</strong> at the front, and update both the index of th
 front of the queue and the <strong>Count</strong> before returning the element we
 obtained ealier from <strong>Peek</strong>. The only slightly tricky part is making
 sure that when we update the index of the front of the queue, we don&rsquo;t
-go outside of the array. If we do, we need to wrap it back around to 0.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-        </div>
-      </main>
-    </div>
-    
-    
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1710771761" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1710771761" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1710771761" defer></script>
-  </body>
-</html>
+go outside of the array. If we do, we need to wrap it back around to 0.</p><footer class=footline></footer></article></div></main></div><script src=/cis300/js/clipboard.min.js?1719513822 defer></script><script src=/cis300/js/perfect-scrollbar.min.js?1719513822 defer></script><script src=/cis300/js/theme.js?1719513822 defer></script><script src=/cis300/js/embed-iframe.js?1719513822 defer></script></body></html>

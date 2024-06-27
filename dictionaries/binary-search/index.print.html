@@ -1,636 +1,32 @@
-
-
-
-
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.18.0">
-    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
-    <meta name="description" content="K-State CIS 300: Data Structures">
-    <meta name="author" content="Rod Howell and Josh Weese">
-    <title>Implementing a Dictionary with an Array-Like Structure :: Data Structures in C#</title>
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1710771761" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1710771761" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/format-print.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1710771761" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1710771761"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1710771761"></script>
-    <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
-      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
-      var root_url="https://ksu-cs-textbooks.github.io/cis300/";
-      var baseUri=root_url.replace(/\/$/, '');
-      // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
-      window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
-    </script>
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1710771761" rel="stylesheet">
-
-  </head>
-  <body class="mobile-support print disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/dictionaries/binary-search/index.html">
-    <div id="body" class="default-animation">
-      <div id="sidebar-overlay"></div>
-      <div id="toc-overlay"></div>
-      <nav id="topbar" class="highlightable">
-        <div>
-          <div id="top-tele-link">
-            <a class="print-link" title='Teleprompter View' href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/binary-search/tele.html">
-              <i class="fas fa-tv fa-fw"></i>
-            </a>
-          </div>
-          <div id="top-embed-link">
-            <a class="print-link" title='Embeddable Version' href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/binary-search/embed.html">
-              <i class="fas fa-expand-arrows-alt fa-fw"></i>
-            </a>
-          </div>
-          <div id="breadcrumbs">
-            <span id="sidebar-toggle-span">
-              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
-            </span>
-            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis300/index.html"><span itemprop="name">Data Structures in C#</span></a><meta itemprop="position" content="1"> &gt; </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/index.html"><span itemprop="name">Dictionaries</span></a><meta itemprop="position" content="2"> &gt; </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Implementing a Dictionary with an Array-Like Structure</span><meta itemprop="position" content="3"></li>
-            </ol>
-          </div>
-        </div>
-      </nav>
-      <main id="body-inner" class="highlightable default" tabindex="-1">
-        <div class="flex-block-wrapper">
-          <article class="default">
-            <header class="headline">
-            </header>
-<div hidden><h1 id="implementing-a-dictionary-with-an-array-like-structure">Implementing a Dictionary with an Array-Like Structure</h1></div>
-
-<h2 id="implementing-a-dictionary-with-an-array-like-structure">Implementing a Dictionary with an Array-Like Structure</h2>
-<p>In <a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/linked-list-impl/">the previous
-section</a>
-,
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=robots content="noindex, nofollow, noarchive, noimageindex"><meta name=description content="Implementing a Dictionary with an Array-Like Structure In the previous section, we discussed how linked lists could be used to implement a dictionary. An alternative to a linked list would be an array. A couple of other alternatives are the non-generic System.Collections.ArrayList or the generic System.Collections.Generic.List<T>. These classes are similar to singly-dimensioned arrays, but they can grow as needed. In this respect, they are like a StringBuilder, but instead of storing chars, an ArrayList stores object?"><meta name=author content="Rod Howell and Josh Weese"><meta name=twitter:card content="summary"><meta name=twitter:title content="Implementing a Dictionary with an Array-Like Structure :: Data Structures in C#"><meta name=twitter:description content="Implementing a Dictionary with an Array-Like Structure In the previous section, we discussed how linked lists could be used to implement a dictionary. An alternative to a linked list would be an array. A couple of other alternatives are the non-generic System.Collections.ArrayList or the generic System.Collections.Generic.List<T>. These classes are similar to singly-dimensioned arrays, but they can grow as needed. In this respect, they are like a StringBuilder, but instead of storing chars, an ArrayList stores object?"><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis300/dictionaries/binary-search/"><meta property="og:site_name" content="Data Structures in C#"><meta property="og:title" content="Implementing a Dictionary with an Array-Like Structure :: Data Structures in C#"><meta property="og:description" content="Implementing a Dictionary with an Array-Like Structure In the previous section, we discussed how linked lists could be used to implement a dictionary. An alternative to a linked list would be an array. A couple of other alternatives are the non-generic System.Collections.ArrayList or the generic System.Collections.Generic.List<T>. These classes are similar to singly-dimensioned arrays, but they can grow as needed. In this respect, they are like a StringBuilder, but instead of storing chars, an ArrayList stores object?"><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="Dictionaries"><meta property="article:modified_time" content="2023-06-02T14:36:07-05:00"><meta itemprop=name content="Implementing a Dictionary with an Array-Like Structure :: Data Structures in C#"><meta itemprop=description content="Implementing a Dictionary with an Array-Like Structure In the previous section, we discussed how linked lists could be used to implement a dictionary. An alternative to a linked list would be an array. A couple of other alternatives are the non-generic System.Collections.ArrayList or the generic System.Collections.Generic.List<T>. These classes are similar to singly-dimensioned arrays, but they can grow as needed. In this respect, they are like a StringBuilder, but instead of storing chars, an ArrayList stores object?"><meta itemprop=dateModified content="2023-06-02T14:36:07-05:00"><meta itemprop=wordCount content="1119"><title>Implementing a Dictionary with an Array-Like Structure :: Data Structures in C#</title>
+<link href=/cis300/css/fontawesome-all.min.css?1719513823 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fontawesome-all.min.css?1719513823 rel=stylesheet></noscript><link href=/cis300/css/nucleus.css?1719513823 rel=stylesheet><link href=/cis300/css/auto-complete.css?1719513823 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/auto-complete.css?1719513823 rel=stylesheet></noscript><link href=/cis300/css/perfect-scrollbar.min.css?1719513823 rel=stylesheet><link href=/cis300/css/fonts.css?1719513823 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fonts.css?1719513823 rel=stylesheet></noscript><link href=/cis300/css/theme.css?1719513823 rel=stylesheet><link href=/cis300/css/theme-auto.css?1719513823 rel=stylesheet id=R-variant-style><link href=/cis300/css/chroma-auto.css?1719513823 rel=stylesheet id=R-variant-chroma-style><link href=/cis300/css/variant.css?1719513823 rel=stylesheet><link href=/cis300/css/print.css?1719513823 rel=stylesheet media=print><link href=/cis300/css/format-print.css?1719513823 rel=stylesheet><script src=/cis300/js/variant.js?1719513823></script><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis300",window.index_js_url="/cis300/index.search.js",window.variants&&variants.init(["auto","light-theme","dark-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis300/css/custom.css?1719513823 rel=stylesheet></head><body class="mobile-support print disableInlineCopyToClipboard" data-url=/cis300/dictionaries/binary-search/><div id=R-body class=default-animation><div id=R-body-overlay></div><nav id=R-topbar><div class=topbar-wrapper><div class=topbar-sidebar-divider></div><div class="topbar-area topbar-area-start" data-area=start><div class="topbar-button topbar-button-sidebar" data-content-empty=disable data-width-s=show data-width-m=hide data-width-l=hide><button class=topbar-control onclick=toggleNav() type=button title="Menu (CTRL+ALT+n)"><i class="fa-fw fas fa-bars"></i></button></div></div><ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype=http://schema.org/BreadcrumbList><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><a itemprop=item href=/cis300/dictionaries/><span itemprop=name>Dictionaries</span></a><meta itemprop=position content="1">&nbsp;>&nbsp;</li><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><span itemprop=name>Implementing a Dictionary with an Array-Like Structure</span><meta itemprop=position content="2"></li></ol><div class="topbar-area topbar-area-end" data-area=end><div class="topbar-button topbar-button-prev" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/cis300/dictionaries/linked-list-impl/ title="Implementing a Dictionary with a Linked List (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></div><div class="topbar-button topbar-button-next" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/cis300/trees/ title="Trees (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></div></div></div></nav><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><div hidden><h1 id=implementing-a-dictionary-with-an-array-like-structure>Implementing a Dictionary with an Array-Like Structure</h1></div><h2 id=implementing-a-dictionary-with-an-array-like-structure>Implementing a Dictionary with an Array-Like Structure</h2><p>In <a href=/cis300/dictionaries/linked-list-impl/>the previous
+section</a>,
 we discussed how linked lists could be used to implement a dictionary.
 An alternative to a linked list would be an array. A couple of other
 alternatives are the non-generic
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.arraylist?view=net-6.0" target="_blank"><strong>System.Collections.ArrayList</strong></a>
-
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.arraylist?view=net-6.0" rel=external target=_blank><strong>System.Collections.ArrayList</strong></a>
 or the generic
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=net-6.0" target="_blank"><strong>System.Collections.Generic.List&lt;T&gt;</strong></a>
-.
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=net-6.0" rel=external target=_blank><strong>System.Collections.Generic.List&lt;T></strong></a>.
 These classes are similar to singly-dimensioned arrays, but they can
 grow as needed. In this respect, they are like a
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=net-6.0" target="_blank"><strong>StringBuilder</strong></a>
-,
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=net-6.0" rel=external target=_blank><strong>StringBuilder</strong></a>,
 but instead of storing <strong>char</strong>s, an <strong>ArrayList</strong> stores <strong>object?</strong>s
-and a <strong>List&lt;T&gt;</strong> stores instances of the type parameter <strong>T</strong>.
+and a <strong>List&lt;T></strong> stores instances of the type parameter <strong>T</strong>.
 Elements can be retrieved from instances of these classes using
-indexing, just like retrieving an element from an array.</p>
-<p>Assuming we restrict the keys to be non-nullable sub-types of
-<strong>IComparable&lt;TKey&gt;</strong>, where <strong>TKey</strong> is the key type, we can store
+indexing, just like retrieving an element from an array.</p><p>Assuming we restrict the keys to be non-nullable sub-types of
+<strong>IComparable&lt;TKey></strong>, where <strong>TKey</strong> is the key type, we can store
 the keys in order in any of these data structures. We can then search
 for a key in the same way as we described for a linked list. However,
 such a search can be expensive - to search for a key that is larger than
 any key in the dictionary, we need to examine all of the keys. We say
-that the performance of this sequential search is in 
-<span class="math align-center">$ O(n) $</span>, where 
+that the performance of this sequential search is in
+<span class="math align-center">$ O(n) $</span>, where
 <span class="math align-center">$ n $</span>
-is the number of keys in the dictionary. This means that as 
+is the number of keys in the dictionary. This means that as
 <span class="math align-center">$ n $</span> grows,
-the time required for the search is at worst proportional to 
-<span class="math align-center">$ n $</span>.</p>
-<p>We can improve this performance dramatically for an array or array-like
-structure such as an <strong>ArrayList</strong> or a <strong>List&lt;T&gt;</strong> using a technique
+the time required for the search is at worst proportional to
+<span class="math align-center">$ n $</span>.</p><p>We can improve this performance dramatically for an array or array-like
+structure such as an <strong>ArrayList</strong> or a <strong>List&lt;T></strong> using a technique
 called <em>binary search</em> (there isn&rsquo;t much we can do to improve the
 performance of searching a linked list, as its structure restricts us to
 traversing it sequentially). The idea is similar to what humans do when
@@ -647,8 +43,7 @@ search space, we might find the title, &ldquo;Great Expectations&rdquo;. Because
 narrow the search space to those titles greater than &ldquo;Great
 Expectations&rdquo; and less than &ldquo;Othello&rdquo;. We continue narrowing in this way
 until either we find &ldquo;Les Miserables&rdquo; or the search space becomes empty,
-implying that the data set does not contain this title.</p>
-<p>In a binary search, each lookup is as nearly as possible in the center
+implying that the data set does not contain this title.</p><p>In a binary search, each lookup is as nearly as possible in the center
 of the search space. This means that each time we look at an entry, we
 either find what we are looking for, or we decrease the size of the
 search space to at most half its previous size. For large data sets the
@@ -656,25 +51,16 @@ search space therefore shrinks rapidly. For example, if we start with
 1,000,000 elements and repeatedly reduce the search space to at most
 half its previous size, after 20 such reductions, we are left with
 nothing. Likewise, if we start with 1,000,000,000 elements, 30 such
-reductions in size lead to an empty search space.</p>
-<p>To implement this algorithm, we need to keep track of the search space.
+reductions in size lead to an empty search space.</p><p>To implement this algorithm, we need to keep track of the search space.
 We will use two <strong>int</strong> variables, <code>start</code> and <code>end</code>. <code>start</code> will keep
 track of the first index in the search space, while <code>end</code> will keep
-track of the first index <em>past</em> the search space, as follows:</p>
-<p>
-<a href="#image-24c6837906c240c43d6f874332093526" class="lightbox-link">
-<img src="https://ksu-cs-textbooks.github.io/cis300/dictionaries/binary-search/binary-search-space.jpg" alt="The search space for binary search" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-24c6837906c240c43d6f874332093526">
-<img src="https://ksu-cs-textbooks.github.io/cis300/dictionaries/binary-search/binary-search-space.jpg" alt="The search space for binary search" class="lightbox-image" loading="lazy">
-</a></p>
-<p>The way we have defined <code>end</code> may seem unnatural at first, but because
+track of the first index <em>past</em> the search space, as follows:</p><p><a href=#R-image-4ba0a331de9a5b1a6fe47f9d6dc391fd class=lightbox-link><img alt="The search space for binary search" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/dictionaries/binary-search/binary-search-space.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-4ba0a331de9a5b1a6fe47f9d6dc391fd><img alt="The search space for binary search" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/dictionaries/binary-search/binary-search-space.jpg></a></p><p>The way we have defined <code>end</code> may seem unnatural at first, but because
 it simplifies various calculations, it is a common way of describing a
 search space. For example, the number of elements in such a search space
 is simply the difference between <code>end</code> and <code>start</code>, and to describe an
 entire array, we can initialize <code>start</code> to 0 and <code>end</code> to the array&rsquo;s
-length.</p>
-<p>We then need a loop to iterate as long as this search space is nonempty
+length.</p><p>We then need a loop to iterate as long as this search space is nonempty
 (we can return from inside this loop if we find what we are looking
 for). On each iteration, we need to find the midpoint of the search
 space. This midpoint is simply the average of <code>start</code> and <code>end</code> - i.e.,
@@ -687,83 +73,26 @@ search space is nonempty, <code>start</code> &lt; <code>end</code>; hence, the
 average is strictly between <code>start</code> and <code>end</code>. If this average is not an
 integer, the result will be rounded down to the next smaller integer.
 Because <code>start</code> is an integer, this result will be no less than <code>start</code>,
-but less than <code>end</code>; hence it will be in the search space.</p>
-<p>Once we have computed this midpoint, we need to compare the key of the
+but less than <code>end</code>; hence it will be in the search space.</p><p>Once we have computed this midpoint, we need to compare the key of the
 element at that location with the key we are looking for. Recall that we
 use the <strong>CompareTo</strong> method to do this comparison. Note that for large
 key types, the <strong>CompareTo</strong> method can be expensive. For this reason,
 it is best to call the <strong>CompareTo</strong> method only once for a given pair
 of keys, and if necessary, save the result it returns in order to make
-more than one comparison between this result and 0.</p>
-<p>Thus, once we have obtained the result of the <strong>CompareTo</strong> method, we
+more than one comparison between this result and 0.</p><p>Thus, once we have obtained the result of the <strong>CompareTo</strong> method, we
 need to determine which of the three cases we have. If the keys are
 equal, we should be able to return. If the key we are looking for is
 less than the key at the midpoint, we need to adjust <code>end</code>. Otherwise,
 we need to adjust <code>start</code>. We are then ready for the next iteration of
-the loop.</p>
-<p>If the loop finishes without returning, then the search space is empty;
+the loop.</p><p>If the loop finishes without returning, then the search space is empty;
 hence, the key we are looking for is not in the data set. However,
 <code>start</code> will end up at the point at which this key could be inserted;
-hence, the binary search can be used for both lookups and insertions.</p>
-<p>Binary search is a very efficient way to search an ordered array-like
-structure. In particular, it always makes no more than 
+hence, the binary search can be used for both lookups and insertions.</p><p>Binary search is a very efficient way to search an ordered array-like
+structure. In particular, it always makes no more than
 <span class="math align-center">$ O(\log n) $</span>
-comparisons, where 
+comparisons, where
 <span class="math align-center">$ n $</span> is the number of elements in the data set. The
-
-<span class="math align-center">$ \log $</span> function grows very slowly - much more slowly than 
-<span class="math align-center">$ n $</span>.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-
-        </div>
-      </main>
-    
-<div class="git-footer">
-<p class="theme-version-footer">5.18.0</p>
-<p>Last modified by: 
-            <i class='fas fa-user'></i> Rod Howell
-            <i class='fas fa-calendar'></i> <a href="https://gitlab.cs.ksu.edu/cis300/cis300-book/-/commit/82b49dc44407dc20da5b3346d3cc9ddb1a0b642d">Jun 2, 2023</a>
-</p>
-</div>
-
-    
-    </div>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1710771761" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1710771761" defer></script>
-    <script>
-      function useMathJax( config ){
-        if( !Object.assign ){
-          
-          return;
-        }
-        window.MathJax = Object.assign( window.MathJax || {}, {
-          loader: {
-            load: ['[tex]/mhchem']
-          },
-          startup: {
-            elements: [
-              '.math'
-            ]
-          },
-          tex: {
-            inlineMath: [
-              ['$', '$'], 
-              ['\\(', '\\)']
-            ]
-          },
-          options: {
-            enableMenu: false 
-          }
-        }, config );
-      }
-      useMathJax( JSON.parse("{}") );
-    </script>
-    <script id="MathJax-script" async src="https://ksu-cs-textbooks.github.io/cis300/js/mathjax/tex-mml-chtml.js?1710771761"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1710771761" defer></script>
-  </body>
-</html>
+<span class="math align-center">$ \log $</span> function grows very slowly - much more slowly than
+<span class="math align-center">$ n $</span>.</p><footer class=footline></footer></article></div></main><div class=git-footer><p class=theme-version-footer>6.0.0</p><p>Last modified by:
+<i class='fas fa-user'></i> Rod Howell
+<i class='fas fa-calendar'></i> <a href=https://github.com/ksu-cs-textbooks/cis300/commit/82b49dc44407dc20da5b3346d3cc9ddb1a0b642d>Jun 2, 2023</a></p></div></div><script src=/cis300/js/clipboard.min.js?1719513823 defer></script><script src=/cis300/js/perfect-scrollbar.min.js?1719513823 defer></script><script>function useMathJax(e){window.MathJax=Object.assign(window.MathJax||{},{tex:{inlineMath:[["\\(","\\)"],["$","$"]],displayMath:[["\\[","\\]"],["$$","$$"]]},options:{enableMenu:!1}},e)}useMathJax(JSON.parse("{}"))</script><script id=MathJax-script async src=/cis300/js/mathjax/tex-mml-chtml.js?1719513823></script><script src=/cis300/js/theme.js?1719513823 defer></script></body></html>

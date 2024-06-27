@@ -1,702 +1,75 @@
-
-
-
-
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.18.0">
-    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
-    <meta name="description" content="K-State CIS 300: Data Structures">
-    <meta name="author" content="Rod Howell and Josh Weese">
-    <title>Introduction to Stacks :: Data Structures in C#</title>
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1710771761" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1710771761" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1710771761" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1710771761"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1710771761"></script>
-    <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
-      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
-      var root_url="https://ksu-cs-textbooks.github.io/cis300/";
-      var baseUri=root_url.replace(/\/$/, '');
-      // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
-      window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
-    </script>
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1710771761" rel="stylesheet">
-
-  </head>
-  <body class="mobile-support tele disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/stacks/index.html">
-    
-    <div id="tele" class="tele mirror">
-    
-    <div id="body" class="default-animation">
-      
-      
-      
-      <main id="body-inner" class="highlightable default" tabindex="-1">
-        <div class="flex-block-wrapper">
-          <article class="default">
-            <header class="headline">
-            </header>
-<div hidden><h1 id="introduction-to-stacks">Introduction to Stacks</h1></div>
-
-<h2 id="introduction-to-stacks">Introduction to Stacks</h2>
-<p>A <em>stack</em> provides last-in-first-out (LIFO) access to data items. We
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=robots content="noindex, nofollow, noarchive, noimageindex"><meta name=description content="Introduction to Stacks A stack provides last-in-first-out (LIFO) access to data items. We usually think of a stack as arranging data items vertically, like a stack of trays in a cafeteria. Access is normally provided only at the top of the stack; hence, if we want to add an item, we push it onto the top, and if we want to remove an item, we pop it from the top. Because we only access the top of the stack, the item that we pop is always the remaining item that we had pushed the most recently."><meta name=author content="Rod Howell and Josh Weese"><meta name=twitter:card content="summary"><meta name=twitter:title content="Introduction to Stacks :: Data Structures in C#"><meta name=twitter:description content="Introduction to Stacks A stack provides last-in-first-out (LIFO) access to data items. We usually think of a stack as arranging data items vertically, like a stack of trays in a cafeteria. Access is normally provided only at the top of the stack; hence, if we want to add an item, we push it onto the top, and if we want to remove an item, we pop it from the top. Because we only access the top of the stack, the item that we pop is always the remaining item that we had pushed the most recently."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis300/stacks-queues/stacks/"><meta property="og:site_name" content="Data Structures in C#"><meta property="og:title" content="Introduction to Stacks :: Data Structures in C#"><meta property="og:description" content="Introduction to Stacks A stack provides last-in-first-out (LIFO) access to data items. We usually think of a stack as arranging data items vertically, like a stack of trays in a cafeteria. Access is normally provided only at the top of the stack; hence, if we want to add an item, we push it onto the top, and if we want to remove an item, we pop it from the top. Because we only access the top of the stack, the item that we pop is always the remaining item that we had pushed the most recently."><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="Stacks and Queues"><meta property="article:modified_time" content="2023-06-01T15:44:17-05:00"><meta itemprop=name content="Introduction to Stacks :: Data Structures in C#"><meta itemprop=description content="Introduction to Stacks A stack provides last-in-first-out (LIFO) access to data items. We usually think of a stack as arranging data items vertically, like a stack of trays in a cafeteria. Access is normally provided only at the top of the stack; hence, if we want to add an item, we push it onto the top, and if we want to remove an item, we pop it from the top. Because we only access the top of the stack, the item that we pop is always the remaining item that we had pushed the most recently."><meta itemprop=dateModified content="2023-06-01T15:44:17-05:00"><meta itemprop=wordCount content="874"><title>Introduction to Stacks :: Data Structures in C#</title>
+<link href=/cis300/css/fontawesome-all.min.css?1719513824 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fontawesome-all.min.css?1719513824 rel=stylesheet></noscript><link href=/cis300/css/nucleus.css?1719513824 rel=stylesheet><link href=/cis300/css/auto-complete.css?1719513824 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/auto-complete.css?1719513824 rel=stylesheet></noscript><link href=/cis300/css/perfect-scrollbar.min.css?1719513824 rel=stylesheet><link href=/cis300/css/fonts.css?1719513824 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fonts.css?1719513824 rel=stylesheet></noscript><link href=/cis300/css/theme.css?1719513824 rel=stylesheet><link href=/cis300/css/theme-auto.css?1719513824 rel=stylesheet id=R-variant-style><link href=/cis300/css/chroma-auto.css?1719513824 rel=stylesheet id=R-variant-chroma-style><link href=/cis300/css/variant.css?1719513824 rel=stylesheet><link href=/cis300/css/print.css?1719513824 rel=stylesheet media=print><script src=/cis300/js/variant.js?1719513824></script><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis300",window.index_js_url="/cis300/index.search.js",window.variants&&variants.init(["auto","light-theme","dark-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis300/css/custom.css?1719513824 rel=stylesheet></head><body class="mobile-support tele disableInlineCopyToClipboard" data-url=/cis300/stacks-queues/stacks/><div id=tele class="tele mirror"><div id=R-body class=default-animation><div id=R-body-overlay></div><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><div hidden><h1 id=introduction-to-stacks>Introduction to Stacks</h1></div><h2 id=introduction-to-stacks>Introduction to Stacks</h2><p>A <em>stack</em> provides last-in-first-out (LIFO) access to data items. We
 usually think of a stack as arranging data items vertically, like a
 stack of trays in a cafeteria. Access is normally provided only at the
 top of the stack; hence, if we want to add an item, we <em>push</em> it onto
 the top, and if we want to remove an item, we <em>pop</em> it from the top.
 Because we only access the top of the stack, the item that we pop is
-always the remaining item that we had pushed the most recently.</p>
-<p>.NET provides two kinds of stacks. One is the
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.stack?view=net-6.0" target="_blank"><strong>Stack</strong></a>
-
+always the remaining item that we had pushed the most recently.</p><p>.NET provides two kinds of stacks. One is the
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.stack?view=net-6.0" rel=external target=_blank><strong>Stack</strong></a>
 class found in the
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections?view=net-6.0" target="_blank"><strong>System.Collections</strong></a>
-
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections?view=net-6.0" rel=external target=_blank><strong>System.Collections</strong></a>
 namespace. Because this namespace isn&rsquo;t typically included in the list of namespaces searched by the compiler, but the namespace containing the other <strong>Stack</strong> definition (discussed a bit later below) is included, we need to refer to it in code as <strong>System.Collections.Stack</strong>. This class provides a stack of <strong>object?</strong>s. Because every
 type in C# is a subtype of <strong>object</strong>, we can push any data items we
-want onto a <strong>Stack</strong>. Because <strong>object?</strong> is a <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/reference-value#nullable-types">nullable</a>
- type, we can even push <strong>null</strong>. The most commonly-used <strong>public</strong> members of this
-class are:</p>
-<ul>
-<li>A
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.stack.-ctor?view=net-6.0#system-collections-stack-ctor" target="_blank">constructor</a>
-
-that takes no parameters and constructs an empty stack.</li>
-<li>A
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.stack.count?view=net-6.0#system-collections-stack-count" target="_blank"><strong>Count</strong></a>
-
+want onto a <strong>Stack</strong>. Because <strong>object?</strong> is a <a href=/cis300/appendix/syntax/reference-value/#nullable-types>nullable</a> type, we can even push <strong>null</strong>. The most commonly-used <strong>public</strong> members of this
+class are:</p><ul><li>A
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.stack.-ctor?view=net-6.0#system-collections-stack-ctor" rel=external target=_blank>constructor</a>
+that takes no parameters and constructs an empty stack.</li><li>A
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.stack.count?view=net-6.0#system-collections-stack-count" rel=external target=_blank><strong>Count</strong></a>
 property, which gets the number of elements on the <strong>Stack</strong> as an
-<strong>int</strong>.</li>
-<li>A
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.stack.push?view=net-6.0#system-collections-stack-push%28system-object%29" target="_blank"><strong>Push</strong></a>
-
+<strong>int</strong>.</li><li>A
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.stack.push?view=net-6.0#system-collections-stack-push(system-object)" rel=external target=_blank><strong>Push</strong></a>
 method, which takes a single parameter of type <strong>object?</strong>, and
-pushes it onto the top of the <strong>Stack</strong>.</li>
-<li>A
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.stack.peek?view=net-6.0#system-collections-stack-peek" target="_blank"><strong>Peek</strong></a>
-
+pushes it onto the top of the <strong>Stack</strong>.</li><li>A
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.stack.peek?view=net-6.0#system-collections-stack-peek" rel=external target=_blank><strong>Peek</strong></a>
 method, which takes no parameters and returns the element at the top
 of the <strong>Stack</strong> (as an <strong>object?</strong>) without changing the <strong>Stack</strong>&rsquo;s
 contents. If the <strong>Stack</strong> is empty, this method throws an
-<strong>InvalidOperationException</strong>.</li>
-<li>A
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.stack.pop?view=net-6.0#system-collections-stack-pop" target="_blank"><strong>Pop</strong></a>
-
+<strong>InvalidOperationException</strong>.</li><li>A
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.stack.pop?view=net-6.0#system-collections-stack-pop" rel=external target=_blank><strong>Pop</strong></a>
 method, which takes no parameters, and removes and returns the
 element at the top of the <strong>Stack</strong> (as an <strong>object?</strong>). If the
 <strong>Stack</strong> is empty, this method throws an
-<strong>InvalidOperationException</strong>.</li>
-</ul>
-<p>As we mentioned above, because the <strong>Push</strong> method takes an <strong>object?</strong>
+<strong>InvalidOperationException</strong>.</li></ul><p>As we mentioned above, because the <strong>Push</strong> method takes an <strong>object?</strong>
 as its parameter, we can push any data elements we want, including <strong>null</strong>, onto a
 <strong>Stack</strong>. What this means, however, is that the compiler can&rsquo;t
 determine the type of these elements when we retrieve them; i.e., both
 the <strong>Peek</strong> and <strong>Pop</strong> methods return <strong>object?</strong>s. Thus, for example,
-the following code will not compile:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>System.Collections.Stack s = <span style="color:#66d9ef">new</span>();
-</span></span><span style="display:flex;"><span>s.Push(<span style="color:#ae81ff">7</span>);
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> n = s.Pop() + <span style="color:#ae81ff">1</span>;</span></span></code></pre></div><p>The problem is that the <strong>Pop</strong> method returns an <strong>object?</strong>, and we
+the following code will not compile:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=n>System</span><span class=p>.</span><span class=n>Collections</span><span class=p>.</span><span class=n>Stack</span> <span class=n>s</span> <span class=p>=</span> <span class=k>new</span><span class=p>();</span>
+</span></span><span class=line><span class=cl><span class=n>s</span><span class=p>.</span><span class=n>Push</span><span class=p>(</span><span class=m>7</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=n>n</span> <span class=p>=</span> <span class=n>s</span><span class=p>.</span><span class=n>Pop</span><span class=p>()</span> <span class=p>+</span> <span class=m>1</span><span class=p>;</span></span></span></code></pre></div><p>The problem is that the <strong>Pop</strong> method returns an <strong>object?</strong>, and we
 can&rsquo;t add an <strong>int</strong> to an <strong>object?</strong>. Although it&rsquo;s pretty easy to see
 from this code that <strong>Pop</strong> will return 7, in many cases it&rsquo;s impossible
 to know at compile time the exact type of the element returned (for
 example, the <strong>Stack</strong> may be a parameter to a <strong>public</strong> method, and that method
 may be called by code that has not yet been written). Consequently, the
 compiler simply uses the return type of <strong>Pop</strong> - it doesn&rsquo;t even try to
-figure out the type any more precisely.</p>
-<p><span id="cast"></span> If you want to use the value returned by <strong>Pop</strong>
+figure out the type any more precisely.</p><p><span id=cast></span> If you want to use the value returned by <strong>Pop</strong>
 or <strong>Peek</strong> as something other than an <strong>object?</strong>, you need to tell the
-compiler what its type actually is. You do this with a <em>cast</em>:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> n = (<span style="color:#66d9ef">int</span>)s.Pop() + <span style="color:#ae81ff">1</span>;</span></span></code></pre></div><p>This tells the compiler to assume that the value returned by <strong>Pop</strong> is
+compiler what its type actually is. You do this with a <em>cast</em>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=kt>int</span> <span class=n>n</span> <span class=p>=</span> <span class=p>(</span><span class=kt>int</span><span class=p>)</span><span class=n>s</span><span class=p>.</span><span class=n>Pop</span><span class=p>()</span> <span class=p>+</span> <span class=m>1</span><span class=p>;</span></span></span></code></pre></div><p>This tells the compiler to assume that the value returned by <strong>Pop</strong> is
 an <strong>int</strong>. The type is still checked, but now it is checked at run
 time, rather than at compile time. If the runtime environment detects
 that the value is not, in fact, an <strong>int</strong>, it will throw an
-<strong>InvalidCastException</strong>.</p>
-<p>While the above line of code will now compile, it generates a warning because <strong>Pop</strong> might return <strong>null</strong>, which cannot be cast to <strong>int</strong>. In order to avoid this warning, once we have determined that the call won&rsquo;t return a <strong>null</strong> value, we need to use the <code>!</code> operator:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">// The element on the top of the stack is the int 7</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> n = (<span style="color:#66d9ef">int</span>)s.Pop()! + <span style="color:#ae81ff">1</span>;</span></span></code></pre></div><p>Note that we include a comment explaining why <strong>Pop</strong> won&rsquo;t return <strong>null</strong> here.</p>
-<p><span id="generic"></span> Often when we need a stack, the data items
+<strong>InvalidCastException</strong>.</p><p>While the above line of code will now compile, it generates a warning because <strong>Pop</strong> might return <strong>null</strong>, which cannot be cast to <strong>int</strong>. In order to avoid this warning, once we have determined that the call won&rsquo;t return a <strong>null</strong> value, we need to use the <code>!</code> operator:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=c1>// The element on the top of the stack is the int 7</span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=n>n</span> <span class=p>=</span> <span class=p>(</span><span class=kt>int</span><span class=p>)</span><span class=n>s</span><span class=p>.</span><span class=n>Pop</span><span class=p>()!</span> <span class=p>+</span> <span class=m>1</span><span class=p>;</span></span></span></code></pre></div><p>Note that we include a comment explaining why <strong>Pop</strong> won&rsquo;t return <strong>null</strong> here.</p><p><span id=generic></span> Often when we need a stack, the data items
 that we wish to store are all of the same type. In such a case, it is
 rather awkward to include a cast whenever we retrieve an item from the
 stack. In order to avoid this casting, .NET provides a
 <em>generic</em> stack,
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.stack-1?view=net-6.0" target="_blank"><strong>Stack&lt;T&gt;</strong></a>
-,
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.stack-1?view=net-6.0" rel=external target=_blank><strong>Stack&lt;T></strong></a>,
 found in the
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic?view=net-6.0" target="_blank"><strong>System.Collections.Generic</strong></a>
-
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic?view=net-6.0" rel=external target=_blank><strong>System.Collections.Generic</strong></a>
 namespace. The <strong>T</strong> within angle brackets is a <em>type parameter</em> - we
 may replace it with any type we want. This type tells what type of
 elements may be placed in this stack. For example, if we want a stack
-that will only contain <strong>int</strong>s, we can write:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>Stack&lt;<span style="color:#66d9ef">int</span>&gt; s = <span style="color:#66d9ef">new</span>();</span></span></code></pre></div><p>This class has members similar to those listed above for the non-generic
+that will only contain <strong>int</strong>s, we can write:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=n>Stack</span><span class=p>&lt;</span><span class=kt>int</span><span class=p>&gt;</span> <span class=n>s</span> <span class=p>=</span> <span class=k>new</span><span class=p>();</span></span></span></code></pre></div><p>This class has members similar to those listed above for the non-generic
 <strong>Stack</strong> class, except that the <strong>Push</strong> method takes a parameter of
 type <strong>T</strong> (i.e., whatever type we placed within the angle brackets in
 the type declaration and constructor call), and the <strong>Peek</strong> and <strong>Pop</strong>
 methods each return a value of type <strong>T</strong>. As a result, the following is
-now legal code:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>Stack&lt;<span style="color:#66d9ef">int</span>&gt; s = <span style="color:#66d9ef">new</span>();
-</span></span><span style="display:flex;"><span>s.Push(<span style="color:#ae81ff">7</span>);
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> n = s.Pop() + <span style="color:#ae81ff">1</span>;</span></span></code></pre></div><p>We will show how you can define your own generic types in &ldquo;<a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/stack-impl">Implementing
-a Stack</a>
-&rdquo;. First, however,
+now legal code:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=n>Stack</span><span class=p>&lt;</span><span class=kt>int</span><span class=p>&gt;</span> <span class=n>s</span> <span class=p>=</span> <span class=k>new</span><span class=p>();</span>
+</span></span><span class=line><span class=cl><span class=n>s</span><span class=p>.</span><span class=n>Push</span><span class=p>(</span><span class=m>7</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=n>n</span> <span class=p>=</span> <span class=n>s</span><span class=p>.</span><span class=n>Pop</span><span class=p>()</span> <span class=p>+</span> <span class=m>1</span><span class=p>;</span></span></span></code></pre></div><p>We will show how you can define your own generic types in &ldquo;<a href=/cis300/stacks-queues/stack-impl/>Implementing
+a Stack</a>&rdquo;. First, however,
 we want to work through two example applications of stacks. We will do
-that in the next two sections.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-        </div>
-      </main>
-    </div>
-    
-    </div>
-    
-    
-    
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1710771761" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1710771761" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1710771761" defer></script>
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/tele-scroll.js?1710771761 defer"></script>
-    
-  </body>
-</html>
+that in the next two sections.</p><footer class=footline></footer></article></div></main></div></div><script src=/cis300/js/clipboard.min.js?1719513824 defer></script><script src=/cis300/js/perfect-scrollbar.min.js?1719513824 defer></script><script src=/cis300/js/theme.js?1719513824 defer></script><script src=/cis300/js/tele-scroll.js?1719513824 defer></script></body></html>

@@ -1,646 +1,31 @@
-
-
-
-
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.18.0">
-    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
-    <meta name="description" content="K-State CIS 300: Data Structures">
-    <meta name="author" content="Rod Howell and Josh Weese">
-    <title>Introduction to Tries :: Data Structures in C#</title>
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1710771761" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1710771761" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1710771761" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1710771761"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1710771761"></script>
-    <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
-      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
-      var root_url="https://ksu-cs-textbooks.github.io/cis300/";
-      var baseUri=root_url.replace(/\/$/, '');
-      // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
-      window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
-    </script>
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1710771761" rel="stylesheet">
-
-  </head>
-  <body class="mobile-support tele disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro/index.html">
-    
-    <div id="tele" class="tele mirror">
-    
-    <div id="body" class="default-animation">
-      
-      
-      
-      <main id="body-inner" class="highlightable default" tabindex="-1">
-        <div class="flex-block-wrapper">
-          <article class="default">
-            <header class="headline">
-            </header>
-<div hidden><h1 id="introduction-to-tries">Introduction to Tries</h1></div>
-
-<h2 id="introduction-to-tries">Introduction to Tries</h2>
-<p>A <em>trie</em> is a nonempty tree storing a set of words in the following way:</p>
-<ul>
-<li>Each child of a node is labeled with a character.</li>
-<li>Each node contains a boolean indicating whether the labels in the
-path from the root to that node form a word in the set.</li>
-</ul>
-<p>The word, &ldquo;trie&rdquo;, is taken from the middle of the word, &ldquo;retrieval&rdquo;, but
-to avoid confusion, it is pronounced like &ldquo;try&rdquo; instead of like &ldquo;tree&rdquo;.</p>
-<p>Suppose, for example, that we want to store the following words:</p>
-<ul>
-<li>ape</li>
-<li>apple</li>
-<li>cable</li>
-<li>car</li>
-<li>cart</li>
-<li>cat</li>
-<li>cattle</li>
-<li>curl</li>
-<li>far</li>
-<li>farm</li>
-</ul>
-<p>A trie storing these words (where we denote a value of <strong>true</strong> for the
-boolean with a <code>*</code>) is as follows:</p>
-<p>
-<a href="#image-67189f40972756ff7f66564d777f0b78" class="lightbox-link">
-<img src="trie-example.jpg" alt="A trie" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-67189f40972756ff7f66564d777f0b78">
-<img src="trie-example.jpg" alt="A trie" class="lightbox-image" loading="lazy">
-</a></p>
-<p>Thus, for example, if we follow the path from the root through the
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=robots content="noindex, nofollow, noarchive, noimageindex"><meta name=description content="Introduction to Tries A trie is a nonempty tree storing a set of words in the following way:
+Each child of a node is labeled with a character. Each node contains a boolean indicating whether the labels in the path from the root to that node form a word in the set. The word, “trie”, is taken from the middle of the word, “retrieval”, but to avoid confusion, it is pronounced like “try” instead of like “tree”."><meta name=author content="Rod Howell and Josh Weese"><meta name=twitter:card content="summary"><meta name=twitter:title content="Introduction to Tries :: Data Structures in C#"><meta name=twitter:description content="Introduction to Tries A trie is a nonempty tree storing a set of words in the following way:
+Each child of a node is labeled with a character. Each node contains a boolean indicating whether the labels in the path from the root to that node form a word in the set. The word, “trie”, is taken from the middle of the word, “retrieval”, but to avoid confusion, it is pronounced like “try” instead of like “tree”."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis300/trees/tries/intro/"><meta property="og:site_name" content="Data Structures in C#"><meta property="og:title" content="Introduction to Tries :: Data Structures in C#"><meta property="og:description" content="Introduction to Tries A trie is a nonempty tree storing a set of words in the following way:
+Each child of a node is labeled with a character. Each node contains a boolean indicating whether the labels in the path from the root to that node form a word in the set. The word, “trie”, is taken from the middle of the word, “retrieval”, but to avoid confusion, it is pronounced like “try” instead of like “tree”."><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="Trees"><meta property="article:modified_time" content="2023-06-07T09:47:27-05:00"><meta itemprop=name content="Introduction to Tries :: Data Structures in C#"><meta itemprop=description content="Introduction to Tries A trie is a nonempty tree storing a set of words in the following way:
+Each child of a node is labeled with a character. Each node contains a boolean indicating whether the labels in the path from the root to that node form a word in the set. The word, “trie”, is taken from the middle of the word, “retrieval”, but to avoid confusion, it is pronounced like “try” instead of like “tree”."><meta itemprop=dateModified content="2023-06-07T09:47:27-05:00"><meta itemprop=wordCount content="1425"><title>Introduction to Tries :: Data Structures in C#</title>
+<link href=/cis300/css/fontawesome-all.min.css?1719513824 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fontawesome-all.min.css?1719513824 rel=stylesheet></noscript><link href=/cis300/css/nucleus.css?1719513824 rel=stylesheet><link href=/cis300/css/auto-complete.css?1719513824 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/auto-complete.css?1719513824 rel=stylesheet></noscript><link href=/cis300/css/perfect-scrollbar.min.css?1719513824 rel=stylesheet><link href=/cis300/css/fonts.css?1719513824 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fonts.css?1719513824 rel=stylesheet></noscript><link href=/cis300/css/theme.css?1719513824 rel=stylesheet><link href=/cis300/css/theme-auto.css?1719513824 rel=stylesheet id=R-variant-style><link href=/cis300/css/chroma-auto.css?1719513824 rel=stylesheet id=R-variant-chroma-style><link href=/cis300/css/variant.css?1719513824 rel=stylesheet><link href=/cis300/css/print.css?1719513824 rel=stylesheet media=print><script src=/cis300/js/variant.js?1719513824></script><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../../..",window.relearn.relBaseUri="../../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis300",window.index_js_url="/cis300/index.search.js",window.variants&&variants.init(["auto","light-theme","dark-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis300/css/custom.css?1719513824 rel=stylesheet></head><body class="mobile-support tele disableInlineCopyToClipboard" data-url=/cis300/trees/tries/intro/><div id=tele class="tele mirror"><div id=R-body class=default-animation><div id=R-body-overlay></div><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><div hidden><h1 id=introduction-to-tries>Introduction to Tries</h1></div><h2 id=introduction-to-tries>Introduction to Tries</h2><p>A <em>trie</em> is a nonempty tree storing a set of words in the following way:</p><ul><li>Each child of a node is labeled with a character.</li><li>Each node contains a boolean indicating whether the labels in the
+path from the root to that node form a word in the set.</li></ul><p>The word, &ldquo;trie&rdquo;, is taken from the middle of the word, &ldquo;retrieval&rdquo;, but
+to avoid confusion, it is pronounced like &ldquo;try&rdquo; instead of like &ldquo;tree&rdquo;.</p><p>Suppose, for example, that we want to store the following words:</p><ul><li>ape</li><li>apple</li><li>cable</li><li>car</li><li>cart</li><li>cat</li><li>cattle</li><li>curl</li><li>far</li><li>farm</li></ul><p>A trie storing these words (where we denote a value of <strong>true</strong> for the
+boolean with a <code>*</code>) is as follows:</p><p><a href=#R-image-6922f6339a26722c29d003f983c1d190 class=lightbox-link><img alt="A trie" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/trees/tries/intro/trie-example.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-6922f6339a26722c29d003f983c1d190><img alt="A trie" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/trees/tries/intro/trie-example.jpg></a></p><p>Thus, for example, if we follow the path from the root through the
 labels &lsquo;c&rsquo;, &lsquo;a&rsquo;, and &lsquo;r&rsquo;, we reach a node with a <strong>true</strong> boolean value
 (shown by the <code>*</code> in the above picture); hence, &ldquo;car&rdquo; is in this set of
 words. However, if we follow the path through the labels &lsquo;c&rsquo;, &lsquo;u&rsquo;, and
 &lsquo;r&rsquo;, the node we reach has a <strong>false</strong> boolean; hence, &ldquo;cur&rdquo; is not in
 this set. Likewise, if we follow the path through &lsquo;a&rsquo;, we reach a node
 from which there is no child labeled &lsquo;c&rsquo;; hence, &ldquo;ace&rdquo; is not in this
-set.</p>
-<p>Note that each subtree of a trie is also a trie, although the &ldquo;words&rdquo; it
+set.</p><p>Note that each subtree of a trie is also a trie, although the &ldquo;words&rdquo; it
 stores may begin to look a little strange. For example if we follow the
 path through &lsquo;c&rsquo; and &lsquo;a&rsquo; in the above figure, we reach a trie that
-contains the following &ldquo;words&rdquo;:</p>
-<ul>
-<li>&ldquo;ble&rdquo;</li>
-<li>&ldquo;r&rdquo;</li>
-<li>&ldquo;rt&rdquo;</li>
-<li>&ldquo;t&rdquo;</li>
-<li>&ldquo;ttle&rdquo;</li>
-</ul>
-<p>These are actually the <em>completions</em> of the original words that begin
+contains the following &ldquo;words&rdquo;:</p><ul><li>&ldquo;ble&rdquo;</li><li>&ldquo;r&rdquo;</li><li>&ldquo;rt&rdquo;</li><li>&ldquo;t&rdquo;</li><li>&ldquo;ttle&rdquo;</li></ul><p>These are actually the <em>completions</em> of the original words that begin
 with the prefix &ldquo;ca&rdquo;. Note that if, in this subtree, we take the path
-through &rsquo;t&rsquo;, we reach a trie containing the following completions:</p>
-<ul>
-<li>&quot;&quot; [i.e., the empty string]</li>
-<li>&ldquo;tle&rdquo;</li>
-</ul>
-<p>In particular, the empty string is a word in this trie. This motivates
+through &rsquo;t&rsquo;, we reach a trie containing the following completions:</p><ul><li>"" [i.e., the empty string]</li><li>&ldquo;tle&rdquo;</li></ul><p>In particular, the empty string is a word in this trie. This motivates
 an alternative definition of the boolean stored in each node: it
 indicates whether the empty string is stored in the trie rooted at this
 node. This definition may be somewhat preferable to the one given above,
 as it does not depend on any context, but instead focuses entirely on
-the trie rooted at that particular node.</p>
-<p>One of the main advantages of a trie over an <a href="https://ksu-cs-textbooks.github.io/cis300/trees/avl">AVL
-tree</a>
- is the speed with
+the trie rooted at that particular node.</p><p>One of the main advantages of a trie over an <a href=/cis300/trees/avl/>AVL
+tree</a> is the speed with
 which we can look up words. Assuming we can quickly find the child with
 a given label, the time we need to look up a word is proportional to the
 length of the word, no matter how many words are in the trie. Note that
@@ -651,25 +36,18 @@ takes to do this one comparison is proportional to the length of the
 word, as we need to verify each character (we actually ignored the cost
 of such comparisons when we analyzed the performance of AVL trees).
 Consequently, we can expect a significant performance improvement by
-using a trie if our set of words is large.</p>
-<p>Let&rsquo;s now consider how we can implement a trie. There are various ways
+using a trie if our set of words is large.</p><p>Let&rsquo;s now consider how we can implement a trie. There are various ways
 that this can be done, but we&rsquo;ll consider a fairly straightforward
-approach in this section (we&rsquo;ll improve the implementation in <a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/multiple-impl">the next
-section</a>
-). We
+approach in this section (we&rsquo;ll improve the implementation in <a href=/cis300/trees/tries/multiple-impl/>the next
+section</a>). We
 will assume that the words we are storing are comprised of only the 26
 lower-case English letters. In this implementation, a single node will
-contain the following <strong>private</strong> fields:</p>
-<ul>
-<li>A <strong>bool</strong> storing whether the empty string is contained in the trie
+contain the following <strong>private</strong> fields:</p><ul><li>A <strong>bool</strong> storing whether the empty string is contained in the trie
 rooted at this node (or equivalently, whether this node ends a word
-in the entire trie).</li>
-<li>A 26-element array of nullable tries storing the children, where element 0
+in the entire trie).</li><li>A 26-element array of nullable tries storing the children, where element 0
 stores the child labeled &lsquo;a&rsquo;, element 1 stores the child labeled
 &lsquo;b&rsquo;, etc. If there is no child with some label, the corresponding
-array element is <strong>null</strong>.</li>
-</ul>
-<p>For maintainability, we should use <strong>private</strong> constants to store the above array&rsquo;s size (i.e., 26) and the first letter of the alphabet (i.e., &lsquo;a&rsquo;). Note that in this implementation, other than this last constant, no <strong>char</strong>s or <strong>string</strong>s are
+array element is <strong>null</strong>.</li></ul><p>For maintainability, we should use <strong>private</strong> constants to store the above array&rsquo;s size (i.e., 26) and the first letter of the alphabet (i.e., &lsquo;a&rsquo;). Note that in this implementation, other than this last constant, no <strong>char</strong>s or <strong>string</strong>s are
 actually stored. We can see if a node has a child labeled by a given
 <strong>char</strong> by finding the difference between that <strong>char</strong> and and the first letter of the alphabet, and
 using that difference as the array index. For example, suppose the array
@@ -681,101 +59,46 @@ obtain the child labeled by <code>label</code> by retrieving
 contains &rsquo;d&rsquo;, then the difference, <code>label - _alphabetStart</code>, will be 3; hence,
 the child with label &rsquo;d&rsquo; will be stored at index 3. We have therefore
 achieved our goal of providing quick access to a child with a given
-label.</p>
-<p>Let&rsquo;s now consider how to implement a lookup. We can define a <strong>public</strong>
-method for this purpose within the class implementing a trie node:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">bool</span> Contains(<span style="color:#66d9ef">string</span> s)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    . . .
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
-  
-  
-<div class="box notices cstyle note">
-  <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
-  <div class="box-content">
-
-<p>This method does not need a trie node as a parameter because
+label.</p><p>Let&rsquo;s now consider how to implement a lookup. We can define a <strong>public</strong>
+method for this purpose within the class implementing a trie node:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=kd>public</span> <span class=kt>bool</span> <span class=n>Contains</span><span class=p>(</span><span class=kt>string</span> <span class=n>s</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    <span class=p>.</span> <span class=p>.</span> <span class=p>.</span>
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><div class="box notices cstyle note"><div class=box-label><i class="fa-fw fas fa-exclamation-circle"></i> Note</div><div class=box-content><p>This method does not need a trie node as a parameter because
 the method will belong to a trie node. Thus, the method will be able to
 access the node as
-<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/static-this"><strong>this</strong></a>
-, and may
-access its <strong>private</strong> fields directly by their names.</p>
-</div>
-</div>
-<p>The method
-consists of five cases:</p>
-<ul>
-<li><code>s</code> is <strong>null</strong>. Note that even though <code>s</code> is not defined to be nullable, because the method is <strong>public</strong>, user code could still pass a <strong>null</strong> value. In this case, we should throw an <strong>ArgumentNullException</strong>, provides more information than does a <strong>NullReferenceException</strong>.</li>
-<li><code>s</code> is the empty <strong>string</strong>. In this case the <strong>bool</strong> stored in
+<a href=/cis300/appendix/syntax/static-this/><strong>this</strong></a>, and may
+access its <strong>private</strong> fields directly by their names.</p></div></div><p>The method
+consists of five cases:</p><ul><li><code>s</code> is <strong>null</strong>. Note that even though <code>s</code> is not defined to be nullable, because the method is <strong>public</strong>, user code could still pass a <strong>null</strong> value. In this case, we should throw an <strong>ArgumentNullException</strong>, provides more information than does a <strong>NullReferenceException</strong>.</li><li><code>s</code> is the empty <strong>string</strong>. In this case the <strong>bool</strong> stored in
 this node indicates whether it is a word in this trie; hence, we can
-simply return this <strong>bool</strong>.</li>
-<li>The first character of <code>s</code> is not a lower-case English letter (i.e.,
+simply return this <strong>bool</strong>.</li><li>The first character of <code>s</code> is not a lower-case English letter (i.e.,
 it is less than &lsquo;a&rsquo; or greater than &lsquo;z&rsquo;). The constants defined for this class should be used in making this determination. In this case, <code>s</code> can&rsquo;t be stored
-in this trie; hence, we can return <strong>false</strong>.</li>
-<li>The child labeled with the first character of <code>s</code> (obtained as
+in this trie; hence, we can return <strong>false</strong>.</li><li>The child labeled with the first character of <code>s</code> (obtained as
 described above) is missing (i.e., is <strong>null</strong>). Then <code>s</code> isn&rsquo;t
-stored in this trie. Again, we return <strong>false</strong>.</li>
-<li>The child labeled with the first character of <code>s</code> is present (i.e.,
+stored in this trie. Again, we return <strong>false</strong>.</li><li>The child labeled with the first character of <code>s</code> is present (i.e.,
 non-<strong>null</strong>). In this case, we need to determine whether the
 substring following the first character of <code>s</code> is in the trie rooted
 at the child we retrieved. This can be found using a recursive call
 to this method within the child trie node. We return the result of
-this recursive call.</li>
-</ul>
-<p>In order to be able to look up words, we need to be able to build a trie
+this recursive call.</li></ul><p>In order to be able to look up words, we need to be able to build a trie
 to look in. We therefore need to be able to add words to a trie. It&rsquo;s
 not practical to make a trie node immutable, as there is too much
 information that would need to be copied if we need to replace a node
 with a new one (we would need to construct a new node for each letter of
 each word we added). We therefore should provide a <strong>public</strong> method
 within the trie node class for the purpose of adding a word to the trie
-rooted at this node:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Add(<span style="color:#66d9ef">string</span> s)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    . . .
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>This time there are four cases:</p>
-<ul>
-<li><code>s</code> is <strong>null</strong>. This case should be handled as in the <strong>Contains</strong> method above.</li>
-<li><code>s</code> is the empty <strong>string</strong>. Then we can record this word by setting
-the <strong>bool</strong> in this node to <strong>true</strong>.</li>
-<li>The first character of <code>s</code> is not a lower-case English letter. Then
+rooted at this node:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=kd>public</span> <span class=k>void</span> <span class=n>Add</span><span class=p>(</span><span class=kt>string</span> <span class=n>s</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    <span class=p>.</span> <span class=p>.</span> <span class=p>.</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>This time there are four cases:</p><ul><li><code>s</code> is <strong>null</strong>. This case should be handled as in the <strong>Contains</strong> method above.</li><li><code>s</code> is the empty <strong>string</strong>. Then we can record this word by setting
+the <strong>bool</strong> in this node to <strong>true</strong>.</li><li>The first character of <code>s</code> is not a lower-case English letter. Then
 we can&rsquo;t add the word. In this case, we&rsquo;ll need to throw an
-exception.</li>
-<li>The first character is a lower-case English letter. In this case, we
+exception.</li><li>The first character is a lower-case English letter. In this case, we
 need to add the substring following the first character of <code>s</code> to
-the child labeled with the first letter. We do this as follows:
-<ul>
-<li>We first need to make sure that the child labeled with the first letter of <code>s</code> is non-<strong>null</strong>. Thus, if this child is <strong>null</strong>, we construct a new trie node and place
-it in the array location for this child.</li>
-<li>We can now
+the child labeled with the first letter. We do this as follows:<ul><li>We first need to make sure that the child labeled with the first letter of <code>s</code> is non-<strong>null</strong>. Thus, if this child is <strong>null</strong>, we construct a new trie node and place
+it in the array location for this child.</li><li>We can now
 add the substring following the first letter of <code>s</code> to this child by
-making a recursive call.</li>
-</ul>
-</li>
-</ul>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-        </div>
-      </main>
-    </div>
-    
-    </div>
-    
-    
-    
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1710771761" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1710771761" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1710771761" defer></script>
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/tele-scroll.js?1710771761 defer"></script>
-    
-  </body>
-</html>
+making a recursive call.</li></ul></li></ul><footer class=footline></footer></article></div></main></div></div><script src=/cis300/js/clipboard.min.js?1719513824 defer></script><script src=/cis300/js/perfect-scrollbar.min.js?1719513824 defer></script><script src=/cis300/js/theme.js?1719513824 defer></script><script src=/cis300/js/tele-scroll.js?1719513824 defer></script></body></html>

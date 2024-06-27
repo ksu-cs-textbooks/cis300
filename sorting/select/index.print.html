@@ -1,630 +1,23 @@
-
-
-
-
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.18.0">
-    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
-    <meta name="description" content="K-State CIS 300: Data Structures">
-    <meta name="author" content="Rod Howell and Josh Weese">
-    <title>Select Sorts :: Data Structures in C#</title>
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1710771761" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1710771761" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/format-print.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1710771761" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1710771761"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1710771761"></script>
-    <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
-      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
-      var root_url="https://ksu-cs-textbooks.github.io/cis300/";
-      var baseUri=root_url.replace(/\/$/, '');
-      // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
-      window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
-    </script>
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1710771761" rel="stylesheet">
-
-  </head>
-  <body class="mobile-support print disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/sorting/select/index.html">
-    <div id="body" class="default-animation">
-      <div id="sidebar-overlay"></div>
-      <div id="toc-overlay"></div>
-      <nav id="topbar" class="highlightable">
-        <div>
-          <div id="top-tele-link">
-            <a class="print-link" title='Teleprompter View' href="https://ksu-cs-textbooks.github.io/cis300/sorting/select/tele.html">
-              <i class="fas fa-tv fa-fw"></i>
-            </a>
-          </div>
-          <div id="top-embed-link">
-            <a class="print-link" title='Embeddable Version' href="https://ksu-cs-textbooks.github.io/cis300/sorting/select/embed.html">
-              <i class="fas fa-expand-arrows-alt fa-fw"></i>
-            </a>
-          </div>
-          <div id="breadcrumbs">
-            <span id="sidebar-toggle-span">
-              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
-            </span>
-            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis300/index.html"><span itemprop="name">Data Structures in C#</span></a><meta itemprop="position" content="1"> &gt; </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis300/sorting/index.html"><span itemprop="name">Sorting</span></a><meta itemprop="position" content="2"> &gt; </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Select Sorts</span><meta itemprop="position" content="3"></li>
-            </ol>
-          </div>
-        </div>
-      </nav>
-      <main id="body-inner" class="highlightable default" tabindex="-1">
-        <div class="flex-block-wrapper">
-          <article class="default">
-            <header class="headline">
-            </header>
-<div hidden><h1 id="select-sorts">Select Sorts</h1></div>
-
-<h2 id="select-sorts">Select Sorts</h2>
-<p>A select sort operates by repeatedly selecting the smallest data element
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=robots content="noindex, nofollow, noarchive, noimageindex"><meta name=description content="Select Sorts A select sort operates by repeatedly selecting the smallest data element of an unsorted portion of the array and moving it to the end of a sorted portion. Thus, at each step, the data items will be arranged into two parts:
+A sorted part; and An unsorted part in which each element is at least as large as all elements in the sorted part. The following figure illustrates this arrangement."><meta name=author content="Rod Howell and Josh Weese"><meta name=twitter:card content="summary"><meta name=twitter:title content="Select Sorts :: Data Structures in C#"><meta name=twitter:description content="Select Sorts A select sort operates by repeatedly selecting the smallest data element of an unsorted portion of the array and moving it to the end of a sorted portion. Thus, at each step, the data items will be arranged into two parts:
+A sorted part; and An unsorted part in which each element is at least as large as all elements in the sorted part. The following figure illustrates this arrangement."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis300/sorting/select/"><meta property="og:site_name" content="Data Structures in C#"><meta property="og:title" content="Select Sorts :: Data Structures in C#"><meta property="og:description" content="Select Sorts A select sort operates by repeatedly selecting the smallest data element of an unsorted portion of the array and moving it to the end of a sorted portion. Thus, at each step, the data items will be arranged into two parts:
+A sorted part; and An unsorted part in which each element is at least as large as all elements in the sorted part. The following figure illustrates this arrangement."><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="Sorting"><meta property="article:modified_time" content="2023-06-12T11:28:08-05:00"><meta itemprop=name content="Select Sorts :: Data Structures in C#"><meta itemprop=description content="Select Sorts A select sort operates by repeatedly selecting the smallest data element of an unsorted portion of the array and moving it to the end of a sorted portion. Thus, at each step, the data items will be arranged into two parts:
+A sorted part; and An unsorted part in which each element is at least as large as all elements in the sorted part. The following figure illustrates this arrangement."><meta itemprop=dateModified content="2023-06-12T11:28:08-05:00"><meta itemprop=wordCount content="1470"><title>Select Sorts :: Data Structures in C#</title>
+<link href=/cis300/css/fontawesome-all.min.css?1719513823 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fontawesome-all.min.css?1719513823 rel=stylesheet></noscript><link href=/cis300/css/nucleus.css?1719513823 rel=stylesheet><link href=/cis300/css/auto-complete.css?1719513823 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/auto-complete.css?1719513823 rel=stylesheet></noscript><link href=/cis300/css/perfect-scrollbar.min.css?1719513823 rel=stylesheet><link href=/cis300/css/fonts.css?1719513823 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fonts.css?1719513823 rel=stylesheet></noscript><link href=/cis300/css/theme.css?1719513823 rel=stylesheet><link href=/cis300/css/theme-auto.css?1719513823 rel=stylesheet id=R-variant-style><link href=/cis300/css/chroma-auto.css?1719513823 rel=stylesheet id=R-variant-chroma-style><link href=/cis300/css/variant.css?1719513823 rel=stylesheet><link href=/cis300/css/print.css?1719513823 rel=stylesheet media=print><link href=/cis300/css/format-print.css?1719513823 rel=stylesheet><script src=/cis300/js/variant.js?1719513823></script><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis300",window.index_js_url="/cis300/index.search.js",window.variants&&variants.init(["auto","light-theme","dark-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis300/css/custom.css?1719513823 rel=stylesheet></head><body class="mobile-support print disableInlineCopyToClipboard" data-url=/cis300/sorting/select/><div id=R-body class=default-animation><div id=R-body-overlay></div><nav id=R-topbar><div class=topbar-wrapper><div class=topbar-sidebar-divider></div><div class="topbar-area topbar-area-start" data-area=start><div class="topbar-button topbar-button-sidebar" data-content-empty=disable data-width-s=show data-width-m=hide data-width-l=hide><button class=topbar-control onclick=toggleNav() type=button title="Menu (CTRL+ALT+n)"><i class="fa-fw fas fa-bars"></i></button></div></div><ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype=http://schema.org/BreadcrumbList><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><a itemprop=item href=/cis300/sorting/><span itemprop=name>Sorting</span></a><meta itemprop=position content="1">&nbsp;>&nbsp;</li><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><span itemprop=name>Select Sorts</span><meta itemprop=position content="2"></li></ol><div class="topbar-area topbar-area-end" data-area=end><div class="topbar-button topbar-button-prev" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/cis300/sorting/ title="Sorting (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></div><div class="topbar-button topbar-button-next" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/cis300/sorting/insert/ title="Insert Sorts (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></div></div></div></nav><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><div hidden><h1 id=select-sorts>Select Sorts</h1></div><h2 id=select-sorts>Select Sorts</h2><p>A select sort operates by repeatedly selecting the smallest data element
 of an unsorted portion of the array and moving it to the end of a sorted
 portion. Thus, at each step, the data items will be arranged into two
-parts:</p>
-<ol>
-<li>A sorted part; and</li>
-<li>An unsorted part in which each element is at least as large as all
-elements in the sorted part.</li>
-</ol>
-<p>The following figure illustrates this arrangement.</p>
-<p>
-<a href="#image-69927aaba401d1c33f4839e702ffdd38" class="lightbox-link">
-<img src="https://ksu-cs-textbooks.github.io/cis300/sorting/select/select-sorts.jpg" alt="The arrangement at each step of a select sort." style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-69927aaba401d1c33f4839e702ffdd38">
-<img src="https://ksu-cs-textbooks.github.io/cis300/sorting/select/select-sorts.jpg" alt="The arrangement at each step of a select sort." class="lightbox-image" loading="lazy">
-</a></p>
-<p>Initially, the sorted part will be empty. At each step, the unsorted
+parts:</p><ol><li>A sorted part; and</li><li>An unsorted part in which each element is at least as large as all
+elements in the sorted part.</li></ol><p>The following figure illustrates this arrangement.</p><p><a href=#R-image-06f9e7b9a91cc53e9c3aea4e7630e017 class=lightbox-link><img alt="The arrangement at each step of a select sort." class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/sorting/select/select-sorts.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-06f9e7b9a91cc53e9c3aea4e7630e017><img alt="The arrangement at each step of a select sort." class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/sorting/select/select-sorts.jpg></a></p><p>Initially, the sorted part will be empty. At each step, the unsorted
 part is rearranged so that its smallest element comes first. As a
 result, the sorted part can now contain one more element, and the
-unsorted part one fewer element. After 
-<span class="math align-center">$ n - 1 $</span> steps, where 
+unsorted part one fewer element. After
+<span class="math align-center">$ n - 1 $</span> steps, where
 <span class="math align-center">$ n $</span> is
 the number of elements in the array, the sorted part will have all but
 one of the elements. Because the one element in the unsorted part must
 be at least as large as all elements in the sorted part, the entire
-array will be sorted at this point.</p>
-<p>The approach outlined above can be implemented in various ways. The main
+array will be sorted at this point.</p><p>The approach outlined above can be implemented in various ways. The main
 difference in these implementations is in how we rearrange the unsorted
 part to bring its smallest element to the beginning of that part. The
 most straightforward way to do this is to find the smallest element in
@@ -634,39 +27,35 @@ loops. The outer loop index keeps track of how many elements are in the
 sorted part. The unsorted part then begins at this index. The inner loop
 is responsible for finding the smallest element in the unsorted part.
 Once the inner loop has finished, the smallest element is swapped with
-the first element in the unsorted part.</p>
-<p>Note that the inner loop in selection sort iterates once for every
+the first element in the unsorted part.</p><p>Note that the inner loop in selection sort iterates once for every
 element in the unsorted part. On the first iteration of the outer loop,
-the unsorted part contains all 
+the unsorted part contains all
 <span class="math align-center">$ n $</span> elements. On each successive
 iteration, the unsorted part is one element smaller, until on the last
-iteration, it has only 
+iteration, it has only
 <span class="math align-center">$ 2 $</span> elements. If we add up all these values, we
 find that the inner loop iterates a total of exactly
-
 <span class="math align-center">$ (n - 1)(n + 2)/2 $</span> times. This value is
-proportional to 
-<span class="math align-center">$ n^2 $</span> as 
+proportional to
+<span class="math align-center">$ n^2 $</span> as
 <span class="math align-center">$ n $</span> increases; hence, the running
-time of the algorithm is in 
+time of the algorithm is in
 <span class="math align-center">$ O(n^2) $</span>. Furthermore, this
-performance occurs no matter how the data items are initially arranged.</p>
-<p>As we will see in what follows, 
+performance occurs no matter how the data items are initially arranged.</p><p>As we will see in what follows,
 <span class="math align-center">$ O(n^2) $</span> performance is not
 very good if we want to sort a moderately large data set. For example,
-sorting 
-<span class="math align-center">$ 100,000 $</span> elements will require about 
+sorting
+<span class="math align-center">$ 100,000 $</span> elements will require about
 <span class="math align-center">$ 5 $</span> billion iterations of the
 inner loop. On the positive side, the only time data items are moved is
 when a swap is made at the end of the outer loop; hence, this number is
-proportional to 
+proportional to
 <span class="math align-center">$ n $</span>. This could be advantageous if we are sorting large
 value types, as we would not need to write these large data elements
 very many times. However, for general performance reasons, large data
 types shouldn&rsquo;t be value types &mdash; they should be reference types to avoid
 unnecessary copying of the values. For this reason, selection sort isn&rsquo;t
-a particularly good sorting algorithm.</p>
-<p><span id="stable"></span> Performance issues aside, however, there is
+a particularly good sorting algorithm.</p><p><span id=stable></span> Performance issues aside, however, there is
 one positive aspect to selection sort. This aspect has to do with
 sorting by keys. Consider, for example, the rows of a spreadsheet. We
 often want to sort these rows by the values in a specific column. These
@@ -681,40 +70,33 @@ equal to remain sorted by their secondary key. Therefore, a sorting
 algorithm that always maintains the original order of equal keys is said
 to be <em>stable</em>. If we are careful how we implement the inner loop of
 selection sort so that we always select the first instance of the
-smallest key, then this algorithm is stable.</p>
-<p><span id="bubble-sort"></span> Another implementation of a select sort
+smallest key, then this algorithm is stable.</p><p><span id=bubble-sort></span> Another implementation of a select sort
 is <em>bubble sort</em>. It rearranges the unsorted part by swapping adjacent
 elements that are out of order. It starts with the last two elements
-(i.e., the elements at locations 
-<span class="math align-center">$ n - 1 $</span> and <span style="white-space:nowrap">
-<span class="math align-center">$ n - 2 $</span>)</span>, then
-the elements at locations 
-<span class="math align-center">$ n - 2 $</span> and <span style="white-space:nowrap">
-<span class="math align-center">$ n - 3 $</span>,</span> etc.
+(i.e., the elements at locations
+<span class="math align-center">$ n - 1 $</span> and <span style=white-space:nowrap><span class="math align-center">$ n - 2 $</span>)</span>, then
+the elements at locations
+<span class="math align-center">$ n - 2 $</span> and <span style=white-space:nowrap><span class="math align-center">$ n - 3 $</span>,</span> etc.
 Proceeding in this way, the smallest element in the unsorted part will
 end up at the beginning of the unsorted part. While the inner loop is
 doing this, it keeps track of whether it has made any swaps. If the loop
 completes without having made any swaps, then the array is sorted, and
-the algorithm therefore stops.</p>
-<p>Like selection sort, bubble sort is stable. In the worst case, however,
+the algorithm therefore stops.</p><p>Like selection sort, bubble sort is stable. In the worst case, however,
 the performance of bubble sort is even worse than that of selection
-sort. It is still in <span style="white-space:nowrap">
-<span class="math align-center">$ O(n^2) $</span>,</span> but in the worst case, its
+sort. It is still in <span style=white-space:nowrap><span class="math align-center">$ O(n^2) $</span>,</span> but in the worst case, its
 inner loop performs the same number of iterations, but does a lot more
 swaps. Bubble sort does outperform selection sort on some inputs, but
 describing when this will occur isn&rsquo;t easy. For example, in an array in
 which the largest element occurs in the first location, and the
 remaining locations are sorted, the performance ends up being about the
 same as selection sort &mdash; even though this array is nearly sorted. Like
-selection sort, it is best to avoid bubble sort.</p>
-<p><span id="heap-sort"></span> A select sort that significantly
+selection sort, it is best to avoid bubble sort.</p><p><span id=heap-sort></span> A select sort that significantly
 outperforms selection sort is known as <em>heap sort</em>. This algorithm is
 based on the idea that a priority queue can be used to sort data &mdash; we
 first place all items in a priority queue, using the values themselves
 as priorities (if we are sorting by keys, then we use the keys as
 priorities). We then repeatedly remove the element with largest
-priority, filling the array from back to front with these elements.</p>
-<p>We can optimize the above algorithm by using a priority queue
+priority, filling the array from back to front with these elements.</p><p>We can optimize the above algorithm by using a priority queue
 implementation called a <em>binary heap</em>, whose implementation details we
 will only sketch. The basic idea is that we can form a binary tree from
 the elements of an array by using their locations in the array. The
@@ -723,96 +105,31 @@ children are the next four elements, etc. Given an array location, we
 can then compute the locations of its parent and both of its children.
 The priorities are arranged so that the root of each subtree contains
 the maximum priority in that subtree. It is possible to arrange the
-elements of an array into a binary heap in 
+elements of an array into a binary heap in
 <span class="math align-center">$ O(n) $</span> time, and to remove
-an element with maximum priority in 
-<span class="math align-center">$ O(\lg n) $</span> time.</p>
-<p>Heap sort then works by pre-processing the array to arrange it into a
+an element with maximum priority in
+<span class="math align-center">$ O(\lg n) $</span> time.</p><p>Heap sort then works by pre-processing the array to arrange it into a
 binary heap. The binary heap then forms the unsorted part, and it is
 followed by the sorted part, whose elements are all no smaller than any
 element in the unsorted part. While this arrangement is slightly
 different from the arrangement for the first two select sorts, the idea
-is the same. To rearrange the unsorted part, it:</p>
-<ol>
-<li>Copies the first (i.e., highest-priority) element to a temporary
-variable.</li>
-<li>Removes the element with maximum priority (i.e., the first element).</li>
-<li>Places the copy of the first element into the space vacated by its
-removal at the beginning of the sorted part.</li>
-</ol>
-<p>Heap sort runs in 
+is the same. To rearrange the unsorted part, it:</p><ol><li>Copies the first (i.e., highest-priority) element to a temporary
+variable.</li><li>Removes the element with maximum priority (i.e., the first element).</li><li>Places the copy of the first element into the space vacated by its
+removal at the beginning of the sorted part.</li></ol><p>Heap sort runs in
 <span class="math align-center">$ O(n \lg n) $</span> time in the worst case.
 Information theory can be used to prove that any sorting algorithm that
-sorts by comparing elements must make at least 
+sorts by comparing elements must make at least
 <span class="math align-center">$ \lg(n!) $</span> comparisons on
-some arrays of size <span style="white-space:nowrap">
-<span class="math align-center">$ n $</span>.</span> Because 
+some arrays of size <span style=white-space:nowrap><span class="math align-center">$ n $</span>.</span> Because
 <span class="math align-center">$ \lg(n!) $</span> is proportional to
-<span style="white-space:nowrap">
-<span class="math align-center">$ n \lg n $</span>,</span> we cannot hope to do any better than
-
+<span style=white-space:nowrap><span class="math align-center">$ n \lg n $</span>,</span> we cannot hope to do any better than
 <span class="math align-center">$ O(n \lg n) $</span> in the worst case. While this performance is a
 significant improvement over selection sort and bubble sort, we will see
 in later that
 there is are algorithms that do even better in practice.
-Furthermore, heap sort is not stable.</p>
-<p>On the other hand, we will also see that heap sort is an important component of an efficient hybrid
-algorithm. This algorithm is one of the best general-purpose sorting algorithms; in fact, it is used by .NET&rsquo;s <a href="https://learn.microsoft.com/en-us/dotnet/api/system.array.sort?view=net-6.0#system-array-sort%28system-array%29" target="_blank"><strong>Array.Sort</strong></a>
- method. We
-will examine this approach in &ldquo;<a href="https://ksu-cs-textbooks.github.io/cis300/sorting/hybrid">Hybrid
-Sorts</a>
-&rdquo;.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-
-        </div>
-      </main>
-    
-<div class="git-footer">
-<p class="theme-version-footer">5.18.0</p>
-<p>Last modified by: 
-            <i class='fas fa-user'></i> Rod Howell
-            <i class='fas fa-calendar'></i> <a href="https://gitlab.cs.ksu.edu/cis300/cis300-book/-/commit/1d8f98291eb0449a47e7d7b22398e581ccc1e2c5">Jun 12, 2023</a>
-</p>
-</div>
-
-    
-    </div>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1710771761" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1710771761" defer></script>
-    <script>
-      function useMathJax( config ){
-        if( !Object.assign ){
-          
-          return;
-        }
-        window.MathJax = Object.assign( window.MathJax || {}, {
-          loader: {
-            load: ['[tex]/mhchem']
-          },
-          startup: {
-            elements: [
-              '.math'
-            ]
-          },
-          tex: {
-            inlineMath: [
-              ['$', '$'], 
-              ['\\(', '\\)']
-            ]
-          },
-          options: {
-            enableMenu: false 
-          }
-        }, config );
-      }
-      useMathJax( JSON.parse("{}") );
-    </script>
-    <script id="MathJax-script" async src="https://ksu-cs-textbooks.github.io/cis300/js/mathjax/tex-mml-chtml.js?1710771761"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1710771761" defer></script>
-  </body>
-</html>
+Furthermore, heap sort is not stable.</p><p>On the other hand, we will also see that heap sort is an important component of an efficient hybrid
+algorithm. This algorithm is one of the best general-purpose sorting algorithms; in fact, it is used by .NET&rsquo;s <a href="https://learn.microsoft.com/en-us/dotnet/api/system.array.sort?view=net-6.0#system-array-sort(system-array)" rel=external target=_blank><strong>Array.Sort</strong></a> method. We
+will examine this approach in &ldquo;<a href=/cis300/sorting/hybrid/>Hybrid
+Sorts</a>&rdquo;.</p><footer class=footline></footer></article></div></main><div class=git-footer><p class=theme-version-footer>6.0.0</p><p>Last modified by:
+<i class='fas fa-user'></i> Rod Howell
+<i class='fas fa-calendar'></i> <a href=https://github.com/ksu-cs-textbooks/cis300/commit/1d8f98291eb0449a47e7d7b22398e581ccc1e2c5>Jun 12, 2023</a></p></div></div><script src=/cis300/js/clipboard.min.js?1719513823 defer></script><script src=/cis300/js/perfect-scrollbar.min.js?1719513823 defer></script><script>function useMathJax(e){window.MathJax=Object.assign(window.MathJax||{},{tex:{inlineMath:[["\\(","\\)"],["$","$"]],displayMath:[["\\[","\\]"],["$$","$$"]]},options:{enableMenu:!1}},e)}useMathJax(JSON.parse("{}"))</script><script id=MathJax-script async src=/cis300/js/mathjax/tex-mml-chtml.js?1719513823></script><script src=/cis300/js/theme.js?1719513823 defer></script></body></html>

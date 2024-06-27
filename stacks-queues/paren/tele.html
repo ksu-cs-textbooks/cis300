@@ -1,582 +1,5 @@
-
-
-
-
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.18.0">
-    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
-    <meta name="description" content="K-State CIS 300: Data Structures">
-    <meta name="author" content="Rod Howell and Josh Weese">
-    <title>Parenthesis Matching :: Data Structures in C#</title>
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1710771761" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1710771761" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1710771761" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1710771761"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1710771761"></script>
-    <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
-      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
-      var root_url="https://ksu-cs-textbooks.github.io/cis300/";
-      var baseUri=root_url.replace(/\/$/, '');
-      // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
-      window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
-    </script>
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1710771761" rel="stylesheet">
-
-  </head>
-  <body class="mobile-support tele disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/paren/index.html">
-    
-    <div id="tele" class="tele mirror">
-    
-    <div id="body" class="default-animation">
-      
-      
-      
-      <main id="body-inner" class="highlightable default" tabindex="-1">
-        <div class="flex-block-wrapper">
-          <article class="default">
-            <header class="headline">
-            </header>
-<div hidden><h1 id="parenthesis-matching">Parenthesis Matching</h1></div>
-
-<h2 id="parenthesis-matching">Parenthesis Matching</h2>
-<p>The problem of finding matching parentheses must be solved in many
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=robots content="noindex, nofollow, noarchive, noimageindex"><meta name=description content="Parenthesis Matching The problem of finding matching parentheses must be solved in many computing applications. For example, consider a C# compiler. Matching parentheses (( and )), brackets ([ and ]), and braces ({ and }) delimit various parts of the source code. In order for these parts to be interpreted correctly, the compiler must be able to determine how these different kinds of parentheses match up with each other. Another example is processing structured data stored in XML format."><meta name=author content="Rod Howell and Josh Weese"><meta name=twitter:card content="summary"><meta name=twitter:title content="Parenthesis Matching :: Data Structures in C#"><meta name=twitter:description content="Parenthesis Matching The problem of finding matching parentheses must be solved in many computing applications. For example, consider a C# compiler. Matching parentheses (( and )), brackets ([ and ]), and braces ({ and }) delimit various parts of the source code. In order for these parts to be interpreted correctly, the compiler must be able to determine how these different kinds of parentheses match up with each other. Another example is processing structured data stored in XML format."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis300/stacks-queues/paren/"><meta property="og:site_name" content="Data Structures in C#"><meta property="og:title" content="Parenthesis Matching :: Data Structures in C#"><meta property="og:description" content="Parenthesis Matching The problem of finding matching parentheses must be solved in many computing applications. For example, consider a C# compiler. Matching parentheses (( and )), brackets ([ and ]), and braces ({ and }) delimit various parts of the source code. In order for these parts to be interpreted correctly, the compiler must be able to determine how these different kinds of parentheses match up with each other. Another example is processing structured data stored in XML format."><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="Stacks and Queues"><meta property="article:modified_time" content="2023-06-01T15:44:17-05:00"><meta itemprop=name content="Parenthesis Matching :: Data Structures in C#"><meta itemprop=description content="Parenthesis Matching The problem of finding matching parentheses must be solved in many computing applications. For example, consider a C# compiler. Matching parentheses (( and )), brackets ([ and ]), and braces ({ and }) delimit various parts of the source code. In order for these parts to be interpreted correctly, the compiler must be able to determine how these different kinds of parentheses match up with each other. Another example is processing structured data stored in XML format."><meta itemprop=dateModified content="2023-06-01T15:44:17-05:00"><meta itemprop=wordCount content="945"><title>Parenthesis Matching :: Data Structures in C#</title>
+<link href=/cis300/css/fontawesome-all.min.css?1719513824 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fontawesome-all.min.css?1719513824 rel=stylesheet></noscript><link href=/cis300/css/nucleus.css?1719513824 rel=stylesheet><link href=/cis300/css/auto-complete.css?1719513824 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/auto-complete.css?1719513824 rel=stylesheet></noscript><link href=/cis300/css/perfect-scrollbar.min.css?1719513824 rel=stylesheet><link href=/cis300/css/fonts.css?1719513824 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fonts.css?1719513824 rel=stylesheet></noscript><link href=/cis300/css/theme.css?1719513824 rel=stylesheet><link href=/cis300/css/theme-auto.css?1719513824 rel=stylesheet id=R-variant-style><link href=/cis300/css/chroma-auto.css?1719513824 rel=stylesheet id=R-variant-chroma-style><link href=/cis300/css/variant.css?1719513824 rel=stylesheet><link href=/cis300/css/print.css?1719513824 rel=stylesheet media=print><script src=/cis300/js/variant.js?1719513824></script><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis300",window.index_js_url="/cis300/index.search.js",window.variants&&variants.init(["auto","light-theme","dark-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis300/css/custom.css?1719513824 rel=stylesheet></head><body class="mobile-support tele disableInlineCopyToClipboard" data-url=/cis300/stacks-queues/paren/><div id=tele class="tele mirror"><div id=R-body class=default-animation><div id=R-body-overlay></div><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><div hidden><h1 id=parenthesis-matching>Parenthesis Matching</h1></div><h2 id=parenthesis-matching>Parenthesis Matching</h2><p>The problem of finding matching parentheses must be solved in many
 computing applications. For example, consider a C# compiler. Matching
 parentheses (<code>(</code> and <code>)</code>), brackets (<code>[</code> and <code>]</code>), and braces (<code>{</code> and
 <code>}</code>) delimit various parts of the source code. In order for these parts
@@ -584,21 +7,18 @@ to be interpreted correctly, the compiler must be able to determine how
 these different kinds of parentheses match up with each other. Another
 example is processing structured data stored in XML format. Different
 parts of such a data set are delimited by nested begin tags like
-<code>&lt;summary&gt;</code> and end tags like <code>&lt;/summary&gt;</code> (documentation comments
+<code>&lt;summary></code> and end tags like <code>&lt;/summary></code> (documentation comments
 in C# code are in XML format). These tags are essentially different
-kinds of parentheses that need to be matched.</p>
-<p>We will restrict our attention to parentheses, brackets, and braces. We
+kinds of parentheses that need to be matched.</p><p>We will restrict our attention to parentheses, brackets, and braces. We
 will call all six of these characters &ldquo;parentheses&rdquo;, but will divide
 them into three types. Each type then has an opening parenthesis and a
 closing parenthesis. We will define a <strong>string</strong> restricted to these six
 characters to be <em>matched</em> (or <em>balanced</em>) if we can repeatedly remove
 an opening parenthesis and a closing parenthesis of the same type to its
-immediate right until there are no more parentheses.</p>
-<p>For example, suppose we have the <strong>string</strong>, &ldquo;<code>([]{()[]})[{}]</code>&rdquo;. We can
+immediate right until there are no more parentheses.</p><p>For example, suppose we have the <strong>string</strong>, &ldquo;<code>([]{()[]})[{}]</code>&rdquo;. We can
 apply the matching-pair removal process described above as follows
 (blank space is inserted to make it easier to see which parentheses are
-removed):</p>
-<pre>
+removed):</p><pre>
     ([]{()[]})[{}]
     (  {()[]})[{}]
     (  {  []})[{}]
@@ -606,24 +26,19 @@ removed):</p>
     (        )[{}]
               [{}]
               [  ]
-</pre>
-<p>Hence, this <strong>string</strong> is matched. On the other hand, consider the
+</pre><p>Hence, this <strong>string</strong> is matched. On the other hand, consider the
 <strong>string</strong>, &ldquo;<code>([]{()[])}[{}]</code>&rdquo;. When we apply the above process to this
-<strong>string</strong>, we obtain:</p>
-<pre>
+<strong>string</strong>, we obtain:</p><pre>
     ([]{()[])}[{}]
     (  {()[])}[{}]
     (  {  [])}[{}]
     (  {    )}[{}]
     (  {    )}[  ]
     (  {    )}
-</pre>
-<p>and we can go no further. Hence, this <strong>string</strong> is not matched.</p>
-<p>We can extend the definition of a matched <strong>string</strong> to include other
+</pre><p>and we can go no further. Hence, this <strong>string</strong> is not matched.</p><p>We can extend the definition of a matched <strong>string</strong> to include other
 characters if we first remove all other characters before we begin the
 matching-pair removal process. In what follows, we will focus on the
-problem of determining whether a given <strong>string</strong> is matched.</p>
-<p>The matching-pair removal process shown above gives us an algorithm for
+problem of determining whether a given <strong>string</strong> is matched.</p><p>The matching-pair removal process shown above gives us an algorithm for
 determining whether a <strong>string</strong> is matched. However, if implemented
 directly, it isn&rsquo;t very efficient. Changes to a <strong>string</strong> are
 inefficient because the entire <strong>string</strong> must be reconstructed. We
@@ -631,62 +46,47 @@ could use a <strong>StringBuilder</strong>, but even then, removing characters i
 inefficient, as all characters to the right of the removed character
 must be moved to take its place. Even if we simply change parentheses to
 blanks, as we did in the above example, searching for matching pairs is
-still rather expensive.</p>
-<p>What we would like to do instead is to find a way to apply the
+still rather expensive.</p><p>What we would like to do instead is to find a way to apply the
 matching-pair removal process while scanning the <strong>string</strong> once. As we
 are scanning the <strong>string</strong>, we don&rsquo;t want to spend time searching for a
 matching pair. We can do this if, while scanning the <strong>string</strong>, we keep
 all unmatched opening parentheses in a stack. Then the parenthesis at
 the top of the stack will always be the rightmost unmatched opening
 parenthesis. Thus, starting with an empty stack, we do the following for
-each character in the <strong>string</strong>:</p>
-<ul>
-<li>If the character is a opening parenthesis, push it onto the stack.</li>
-<li>If the character is a closing parenthesis:
-<ul>
-<li>If the stack is nonempty, and the current character matches the
+each character in the <strong>string</strong>:</p><ul><li>If the character is a opening parenthesis, push it onto the stack.</li><li>If the character is a closing parenthesis:<ul><li>If the stack is nonempty, and the current character matches the
 character on top of the stack, remove the character from the top
-of the stack.</li>
-<li>Otherwise, the <strong>string</strong> is not matched.</li>
-</ul>
-</li>
-<li>Ignore all other characters.</li>
-</ul>
-<p>If the stack is empty when the entire <strong>string</strong> has been processed,
-then the <strong>string</strong> is matched; otherwise, it is not.</p>
-<p>For example, consider the <strong>string</strong>, &ldquo;<code>{a[b]([c]){de}}f[(g)]</code>&rdquo;. In what
+of the stack.</li><li>Otherwise, the <strong>string</strong> is not matched.</li></ul></li><li>Ignore all other characters.</li></ul><p>If the stack is empty when the entire <strong>string</strong> has been processed,
+then the <strong>string</strong> is matched; otherwise, it is not.</p><p>For example, consider the <strong>string</strong>, &ldquo;<code>{a[b]([c]){de}}f[(g)]</code>&rdquo;. In what
 follows, we will simulate the above algorithm, showing the result of
 processing each character on a separate line. The portion of the line
 with an orange background will be the stack contents, with the top element
 shown at the right. We will insert blank space in the orange area for
 clarity, but the stack will only contain opening parentheses. The first
 character with a gray background is the character currently being
-processed.</p>
-<pre>
+processed.</p><pre>
 {a[b]([c]){de}}f[(g)]    --- an opening parenthesis - push it onto the stack
-<span style="background-color:#ff7f00">{</span>a[b]([c]){de}}f[(g)]    --- ignore
-<span style="background-color:#ff7f00">{ </span>[b]([c]){de}}f[(g)]    --- push onto stack
-<span style="background-color:#ff7f00">{ [</span>b]([c]){de}}f[(g)]    --- ignore
-<span style="background-color:#ff7f00">{ [ </span>]([c]){de}}f[(g)]    --- closing parenthesis that matches the top - remove top
-<span style="background-color:#ff7f00">{    </span>([c]){de}}f[(g)]    --- push onto stack
-<span style="background-color:#ff7f00">{    (</span>[c]){de}}f[(g)]    --- push onto stack
-<span style="background-color:#ff7f00">{    ([</span>c]){de}}f[(g)]    --- ignore
-<span style="background-color:#ff7f00">{    ([ </span>]){de}}f[(g)]    --- a match - remove top
-<span style="background-color:#ff7f00">{    (   </span>){de}}f[(g)]    --- a match - remove top
-<span style="background-color:#ff7f00">{         </span>{de}}f[(g)]    --- push onto stack
-<span style="background-color:#ff7f00">{         {</span>de}}f[(g)]    --- ignore
-<span style="background-color:#ff7f00">{         { </span>e}}f[(g)]    --- ignore
-<span style="background-color:#ff7f00">{         {  </span>}}f[(g)]    --- a match - remove top
-<span style="background-color:#ff7f00">{             </span>}f[(g)]    --- a match - remove top
-<span style="background-color:#ff7f00">               </span>f[(g)]    --- ignore
-<span style="background-color:#ff7f00">                </span>[(g)]    --- push onto stack
-<span style="background-color:#ff7f00">                [</span>(g)]    --- push onto stack
-<span style="background-color:#ff7f00">                [(</span>g)]    --- ignore
-<span style="background-color:#ff7f00">                [( </span>)]    --- a match - remove top
-<span style="background-color:#ff7f00">                [   </span>]    --- a match - remove top
-<span style="background-color:#ff7f00">                     </span>    --- end of string and stack empty - matched string
-</pre>
-<p>If at any time during the above process we had encountered a closing
+<span style=background-color:#ff7f00>{</span>a[b]([c]){de}}f[(g)]    --- ignore
+<span style=background-color:#ff7f00>{ </span>[b]([c]){de}}f[(g)]    --- push onto stack
+<span style=background-color:#ff7f00>{ [</span>b]([c]){de}}f[(g)]    --- ignore
+<span style=background-color:#ff7f00>{ [ </span>]([c]){de}}f[(g)]    --- closing parenthesis that matches the top - remove top
+<span style=background-color:#ff7f00>{    </span>([c]){de}}f[(g)]    --- push onto stack
+<span style=background-color:#ff7f00>{    (</span>[c]){de}}f[(g)]    --- push onto stack
+<span style=background-color:#ff7f00>{    ([</span>c]){de}}f[(g)]    --- ignore
+<span style=background-color:#ff7f00>{    ([ </span>]){de}}f[(g)]    --- a match - remove top
+<span style=background-color:#ff7f00>{    (   </span>){de}}f[(g)]    --- a match - remove top
+<span style=background-color:#ff7f00>{         </span>{de}}f[(g)]    --- push onto stack
+<span style=background-color:#ff7f00>{         {</span>de}}f[(g)]    --- ignore
+<span style=background-color:#ff7f00>{         { </span>e}}f[(g)]    --- ignore
+<span style=background-color:#ff7f00>{         {  </span>}}f[(g)]    --- a match - remove top
+<span style=background-color:#ff7f00>{             </span>}f[(g)]    --- a match - remove top
+<span style=background-color:#ff7f00>               </span>f[(g)]    --- ignore
+<span style=background-color:#ff7f00>                </span>[(g)]    --- push onto stack
+<span style=background-color:#ff7f00>                [</span>(g)]    --- push onto stack
+<span style=background-color:#ff7f00>                [(</span>g)]    --- ignore
+<span style=background-color:#ff7f00>                [( </span>)]    --- a match - remove top
+<span style=background-color:#ff7f00>                [   </span>]    --- a match - remove top
+<span style=background-color:#ff7f00>                     </span>    --- end of string and stack empty - matched string
+</pre><p>If at any time during the above process we had encountered a closing
 parenthesis while the stack was empty, this would have indicated that
 this closing parenthesis has no matching opening parenthesis. In this
 case, we would have stopped immediately, determining that the <strong>string</strong>
@@ -696,26 +96,4 @@ have indicated a mismatched pair. Again, we would have stopped
 immediately. Finally, if we had reached the end of the <strong>string</strong> with a
 nonempty stack, this would have indicated that we had at least one
 opening parenthesis that was never matched. We would have again
-determined that the <strong>string</strong> is not matched.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-        </div>
-      </main>
-    </div>
-    
-    </div>
-    
-    
-    
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1710771761" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1710771761" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1710771761" defer></script>
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/tele-scroll.js?1710771761 defer"></script>
-    
-  </body>
-</html>
+determined that the <strong>string</strong> is not matched.</p><footer class=footline></footer></article></div></main></div></div><script src=/cis300/js/clipboard.min.js?1719513824 defer></script><script src=/cis300/js/perfect-scrollbar.min.js?1719513824 defer></script><script src=/cis300/js/theme.js?1719513824 defer></script><script src=/cis300/js/tele-scroll.js?1719513824 defer></script></body></html>

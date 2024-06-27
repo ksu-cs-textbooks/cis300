@@ -1,0 +1,1 @@
+var relearn_search_index=[{breadcrumb:"",content:"",description:"",tags:[],title:"Categories",uri:"/cis300/categories/"},{breadcrumb:"",content:"",description:"",tags:[],title:"Tags",uri:"/cis300/tags/"}]

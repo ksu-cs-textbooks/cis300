@@ -1,604 +1,22 @@
-
-
-
-
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.18.0">
-    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
-    <meta name="description" content="K-State CIS 300: Data Structures">
-    <meta name="author" content="Rod Howell and Josh Weese">
-    <title>Leftist Heaps :: Data Structures in C#</title>
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1710771761" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1710771761" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1710771761" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1710771761"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1710771761"></script>
-    <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
-      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
-      var root_url="https://ksu-cs-textbooks.github.io/cis300/";
-      var baseUri=root_url.replace(/\/$/, '');
-      // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
-      window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
-    </script>
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1710771761" rel="stylesheet">
-
-  </head>
-  <body class="mobile-support tele disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/leftist-heaps/index.html">
-    
-    <div id="tele" class="tele mirror">
-    
-    <div id="body" class="default-animation">
-      
-      
-      
-      <main id="body-inner" class="highlightable default" tabindex="-1">
-        <div class="flex-block-wrapper">
-          <article class="default">
-            <header class="headline">
-            </header>
-<div hidden><h1 id="leftist-heaps">Leftist Heaps</h1></div>
-
-<h2 id="leftist-heaps">Leftist Heaps</h2>
-<p>One efficient way to complete the merge algorithm outlined in <a href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/heaps">the
-previous section</a>
- revolves
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=robots content="noindex, nofollow, noarchive, noimageindex"><meta name=description content="Leftist Heaps One efficient way to complete the merge algorithm outlined in the previous section revolves around the concept of the null path length of a tree. For any tree t, null path length of t is defined to be $ 0 $ if t is empty, or one more than the minimum of the null path lengths of its children if t is nonempty. Another way to understand this concept is that it gives the minimum number of steps needed to get from the root to an empty subtree."><meta name=author content="Rod Howell and Josh Weese"><meta name=twitter:card content="summary"><meta name=twitter:title content="Leftist Heaps :: Data Structures in C#"><meta name=twitter:description content="Leftist Heaps One efficient way to complete the merge algorithm outlined in the previous section revolves around the concept of the null path length of a tree. For any tree t, null path length of t is defined to be $ 0 $ if t is empty, or one more than the minimum of the null path lengths of its children if t is nonempty. Another way to understand this concept is that it gives the minimum number of steps needed to get from the root to an empty subtree."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis300/trees/priority-queues/leftist-heaps/"><meta property="og:site_name" content="Data Structures in C#"><meta property="og:title" content="Leftist Heaps :: Data Structures in C#"><meta property="og:description" content="Leftist Heaps One efficient way to complete the merge algorithm outlined in the previous section revolves around the concept of the null path length of a tree. For any tree t, null path length of t is defined to be $ 0 $ if t is empty, or one more than the minimum of the null path lengths of its children if t is nonempty. Another way to understand this concept is that it gives the minimum number of steps needed to get from the root to an empty subtree."><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="Trees"><meta property="article:modified_time" content="2023-06-07T09:47:27-05:00"><meta itemprop=name content="Leftist Heaps :: Data Structures in C#"><meta itemprop=description content="Leftist Heaps One efficient way to complete the merge algorithm outlined in the previous section revolves around the concept of the null path length of a tree. For any tree t, null path length of t is defined to be $ 0 $ if t is empty, or one more than the minimum of the null path lengths of its children if t is nonempty. Another way to understand this concept is that it gives the minimum number of steps needed to get from the root to an empty subtree."><meta itemprop=dateModified content="2023-06-07T09:47:27-05:00"><meta itemprop=wordCount content="1045"><title>Leftist Heaps :: Data Structures in C#</title>
+<link href=/cis300/css/fontawesome-all.min.css?1719513824 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fontawesome-all.min.css?1719513824 rel=stylesheet></noscript><link href=/cis300/css/nucleus.css?1719513824 rel=stylesheet><link href=/cis300/css/auto-complete.css?1719513824 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/auto-complete.css?1719513824 rel=stylesheet></noscript><link href=/cis300/css/perfect-scrollbar.min.css?1719513824 rel=stylesheet><link href=/cis300/css/fonts.css?1719513824 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fonts.css?1719513824 rel=stylesheet></noscript><link href=/cis300/css/theme.css?1719513824 rel=stylesheet><link href=/cis300/css/theme-auto.css?1719513824 rel=stylesheet id=R-variant-style><link href=/cis300/css/chroma-auto.css?1719513824 rel=stylesheet id=R-variant-chroma-style><link href=/cis300/css/variant.css?1719513824 rel=stylesheet><link href=/cis300/css/print.css?1719513824 rel=stylesheet media=print><script src=/cis300/js/variant.js?1719513824></script><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../../..",window.relearn.relBaseUri="../../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis300",window.index_js_url="/cis300/index.search.js",window.variants&&variants.init(["auto","light-theme","dark-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis300/css/custom.css?1719513824 rel=stylesheet></head><body class="mobile-support tele disableInlineCopyToClipboard" data-url=/cis300/trees/priority-queues/leftist-heaps/><div id=tele class="tele mirror"><div id=R-body class=default-animation><div id=R-body-overlay></div><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><div hidden><h1 id=leftist-heaps>Leftist Heaps</h1></div><h2 id=leftist-heaps>Leftist Heaps</h2><p>One efficient way to complete the merge algorithm outlined in <a href=/cis300/trees/priority-queues/heaps/>the
+previous section</a> revolves
 around the concept of the <em>null path length</em> of a tree. For any tree <i>t</i>, null path length of <i>t</i> is defined
-to be 
+to be
 <span class="math align-center">$ 0 $</span> if <i>t</i> is empty, or one more than the minimum of the null path
 lengths of its children if <i>t</i> is nonempty. Another way to understand
 this concept is that it gives the minimum number of steps needed to get
 from the root to an empty subtree. For an empty tree, there is no root,
-so we somewhat arbitrarily define the null path length to be <span style="white-space:nowrap">
-<span class="math align-center">$ 0 $</span>.</span> For
+so we somewhat arbitrarily define the null path length to be <span style=white-space:nowrap><span class="math align-center">$ 0 $</span>.</span> For
 single-node trees or binary trees with at least one empty child, the
-null path length is 
+null path length is
 <span class="math align-center">$ 1 $</span> because only one step is needed to reach an empty
-subtree.</p>
-<p>One reason that the null path length is important is that it can be
-shown that any binary tree with 
+subtree.</p><p>One reason that the null path length is important is that it can be
+shown that any binary tree with
 <span class="math align-center">$ n $</span> nodes has a null path length that is
-no more than <span style="white-space:nowrap">
-<span class="math align-center">$ \lg(n + 1) $</span>.</span> Furthermore, recall that in the merging
-strategy outlined in <a href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/heaps">the previous
-section</a>
-, there is some
+no more than <span style=white-space:nowrap><span class="math align-center">$ \lg(n + 1) $</span>.</span> Furthermore, recall that in the merging
+strategy outlined in <a href=/cis300/trees/priority-queues/heaps/>the previous
+section</a>, there is some
 flexibility in choosing which child of a node will be used in the
 recursive call. Because the strategy reaches a base case when one of the
 min-heaps is empty, the algorithm will terminate the most quickly if we
@@ -606,144 +24,76 @@ do the recursive call on the child leading us more quickly to an empty
 subtree &mdash; i.e., if we use the child with smaller null path length.
 Because this length is logarithmic in the number of nodes in the
 min-heap, this choice will quickly lead us to the base case and
-termination.</p>
-<p>A common way of implementing this idea is to use what is known as a
+termination.</p><p>A common way of implementing this idea is to use what is known as a
 <em>leftist heap</em>. A leftist heap is a binary tree that forms a heap such
 that for every node, the null path length of the right child is no more
 than the null path length of the left child. For such a structure,
-completing the merge algorithm is simple:</p>
-<ul>
-<li>For the recursive call, we merge the right child of <em>s</em> with <em>b</em>,
-where <em>s</em> and <em>b</em> are as defined in <a href="https://ksu-cs-textbooks.github.io/cis300/trees/priority-queues/heaps">the previous
-section</a>
-.</li>
-<li>When combining the root and left child of <em>s</em> with the result of the
+completing the merge algorithm is simple:</p><ul><li>For the recursive call, we merge the right child of <em>s</em> with <em>b</em>,
+where <em>s</em> and <em>b</em> are as defined in <a href=/cis300/trees/priority-queues/heaps/>the previous
+section</a>.</li><li>When combining the root and left child of <em>s</em> with the result of the
 recursive call, we arrange the children so that the result is a
-leftist heap.</li>
-</ul>
-<p>We can implement this idea by defining two classes, <strong>LeftistTree&lt;T&gt;</strong>
-and <strong>MinPriorityQueue&lt;TPriority, TValue&gt;</strong>. For the
-<strong>LeftistTree&lt;T&gt;</strong> class, we will only be concerned with the shape of
+leftist heap.</li></ul><p>We can implement this idea by defining two classes, <strong>LeftistTree&lt;T></strong>
+and <strong>MinPriorityQueue&lt;TPriority, TValue></strong>. For the
+<strong>LeftistTree&lt;T></strong> class, we will only be concerned with the shape of
 the tree &mdash; namely, that the null path length of the right child is never
 more than the null path length of the left child. We will adopt a
-strategy similar to what we did with <a href="https://ksu-cs-textbooks.github.io/cis300/trees/avl">AVL
-trees</a>
-. Specifically a
-<strong>LeftistTree&lt;T&gt;</strong> will be immutable so that we can always be sure
+strategy similar to what we did with <a href=/cis300/trees/avl/>AVL
+trees</a>. Specifically a
+<strong>LeftistTree&lt;T></strong> will be immutable so that we can always be sure
 that it is shaped properly. It will then be a straightforward matter to
-implement a <strong>MinPriorityQueue&lt;TPriority, TValue&gt;</strong>, where
+implement a <strong>MinPriorityQueue&lt;TPriority, TValue></strong>, where
 <strong>TPriority</strong> is the type of the priorities, and <strong>TValue</strong> is the type
-of the values.</p>
-<p>The implementation of <strong>LeftistTree&lt;T&gt;</strong> ends up being very similar to
-the implementation we described for <a href="https://ksu-cs-textbooks.github.io/cis300/trees/avl">AVL tree
-nodes</a>
-, but without the
+of the values.</p><p>The implementation of <strong>LeftistTree&lt;T></strong> ends up being very similar to
+the implementation we described for <a href=/cis300/trees/avl/>AVL tree
+nodes</a>, but without the
 rotations. We need three <strong>public</strong> properties using the default
 implementation with <strong>get</strong> accessors: the data (of type <strong>T</strong>) and the
-two children (of type <strong>LeftistTree&lt;T&gt;?</strong>). We also need a <strong>private</strong>
+two children (of type <strong>LeftistTree&lt;T>?</strong>). We also need a <strong>private</strong>
 field to store the null path length (of type <strong>int</strong>). We can define a
 <strong>static</strong> method to obtain the null path length of a given
-<strong>LeftistTree&lt;T&gt;?</strong>. This method is essentially the same as the
+<strong>LeftistTree&lt;T>?</strong>. This method is essentially the same as the
 <strong>Height</strong> method for an AVL tree, except that if the given tree is
 <strong>null</strong>, we return 0. A constructor takes as its parameters a data
-element of type <strong>T</strong> and two children of type <strong>LeftistTree&lt;T&gt;?</strong>. It
+element of type <strong>T</strong> and two children of type <strong>LeftistTree&lt;T>?</strong>. It
 can initialize its data with the first parameter. To initialize its
 children, it first needs to determine their null path lengths using the
-<strong>static</strong> method above. It then assigns the two <strong>LeftistTree&lt;T&gt;?</strong>
+<strong>static</strong> method above. It then assigns the two <strong>LeftistTree&lt;T>?</strong>
 parameters to its child fields so that the right child&rsquo;s null path
 length is no more than the left child&rsquo;s. Finally, it can initialize its
-own null path length by adding 1 to its right child&rsquo;s null path length.</p>
-<p><span id="where"></span> Let&rsquo;s now consider how we can implement
-<strong>MinPriorityQueue&lt;TPriority, TValue&gt;</strong>. The first thing we need to
+own null path length by adding 1 to its right child&rsquo;s null path length.</p><p><span id=where></span> Let&rsquo;s now consider how we can implement
+<strong>MinPriorityQueue&lt;TPriority, TValue></strong>. The first thing we need to
 consider is the type, <strong>TPriority</strong>. This needs to be a non-nullable type that can be
 ordered (usually it will be a numeric type like <strong>int</strong>). We can
-restrict <strong>TPriority</strong> to be a non-nullable subtype of <strong>IComparable&lt;TPriority&gt;</strong>
+restrict <strong>TPriority</strong> to be a non-nullable subtype of <strong>IComparable&lt;TPriority></strong>
 by using a <strong>where</strong> clause, as we did for dictionaries (see
-&ldquo;<a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/linked-list-impl">Implementing a Dictionary with a Linked
-List</a>
-&rdquo;).</p>
-<p>We then need a <strong>private</strong> field in which to store a leftist tree. We
+&ldquo;<a href=/cis300/dictionaries/linked-list-impl/>Implementing a Dictionary with a Linked
+List</a>&rdquo;).</p><p>We then need a <strong>private</strong> field in which to store a leftist tree. We
 can store both the priority and the data element in a node if we use a
-<strong>LeftistTree&lt;KeyValuePair&lt;TPriority, TValue&gt;&gt;?</strong>; thus, the keys are
+<strong>LeftistTree&lt;KeyValuePair&lt;TPriority, TValue>>?</strong>; thus, the keys are
 the priorities and the values are the data elements. We also need a
 <strong>public int</strong> property to get of the number of elements in the
 min-priority queue. This property can use the default implementation
-with <strong>get</strong> and <strong>private set</strong> accessors.</p>
-<p>In order to implement <strong>public</strong> methods to add an element with a
+with <strong>get</strong> and <strong>private set</strong> accessors.</p><p>In order to implement <strong>public</strong> methods to add an element with a
 priority and to remove an element with minimum priority, we need the
-following method:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> LeftistTree&lt;KeyValuePair&lt;TPriority, TValue&gt;&gt;?
-</span></span><span style="display:flex;"><span>    Merge(LeftistTree&lt;KeyValuePair&lt;TPriority, TValue&gt;&gt;? h1, 
-</span></span><span style="display:flex;"><span>        LeftistTree&lt;KeyValuePair&lt;TPriority, TValue&gt;&gt;? h2)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    . . .
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>This method consist of three cases. The first two cases occur when
+following method:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kd>private</span> <span class=kd>static</span> <span class=n>LeftistTree</span><span class=p>&lt;</span><span class=n>KeyValuePair</span><span class=p>&lt;</span><span class=n>TPriority</span><span class=p>,</span> <span class=n>TValue</span><span class=p>&gt;&gt;?</span>
+</span></span><span class=line><span class=cl>    <span class=n>Merge</span><span class=p>(</span><span class=n>LeftistTree</span><span class=p>&lt;</span><span class=n>KeyValuePair</span><span class=p>&lt;</span><span class=n>TPriority</span><span class=p>,</span> <span class=n>TValue</span><span class=p>&gt;&gt;?</span> <span class=n>h1</span><span class=p>,</span> 
+</span></span><span class=line><span class=cl>        <span class=n>LeftistTree</span><span class=p>&lt;</span><span class=n>KeyValuePair</span><span class=p>&lt;</span><span class=n>TPriority</span><span class=p>,</span> <span class=n>TValue</span><span class=p>&gt;&gt;?</span> <span class=n>h2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=p>.</span> <span class=p>.</span> <span class=p>.</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>This method consist of three cases. The first two cases occur when
 either of the parameters is <strong>null</strong>. In each such case, we return the
 other parameter. In the third case, when neither parameter is <strong>null</strong>,
 we first need to compare the priorities in the data stored in the root
 nodes of the parameters. A priority is stored in the
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.keyvaluepair-2.key?view=net-6.0#system-collections-generic-keyvaluepair-2-key" target="_blank"><strong>Key</strong></a>
-
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.keyvaluepair-2.key?view=net-6.0#system-collections-generic-keyvaluepair-2-key" rel=external target=_blank><strong>Key</strong></a>
 property of the <strong>KeyValuePair</strong>, and we have constrained this type so
 that it has a <strong>CompareTo</strong> method that will compare one instance with
 another. Once we have determined which root has a smaller priority, we
 can construct and return a new
-<strong>LeftistTree&lt;KeyValuePair&lt;TPriority, TValue&gt;&gt;</strong> whose data
+<strong>LeftistTree&lt;KeyValuePair&lt;TPriority, TValue>></strong> whose data
 is the data element with smaller priority, and whose children are the
 left child of this data element and the result of recursively merging
 the right child of this element with the parameter whose root has larger
-priority.</p>
-<p>The remaining methods and properties of
-<strong>MinPriorityQueue&lt;TPriority, TValue&gt;</strong> are now fairly
-straightforward.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-        </div>
-      </main>
-    </div>
-    
-    </div>
-    
-    
-    
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1710771761" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1710771761" defer></script>
-    <script>
-      function useMathJax( config ){
-        if( !Object.assign ){
-          
-          return;
-        }
-        window.MathJax = Object.assign( window.MathJax || {}, {
-          loader: {
-            load: ['[tex]/mhchem']
-          },
-          startup: {
-            elements: [
-              '.math'
-            ]
-          },
-          tex: {
-            inlineMath: [
-              ['$', '$'], 
-              ['\\(', '\\)']
-            ]
-          },
-          options: {
-            enableMenu: false 
-          }
-        }, config );
-      }
-      useMathJax( JSON.parse("{}") );
-    </script>
-    <script id="MathJax-script" async src="https://ksu-cs-textbooks.github.io/cis300/js/mathjax/tex-mml-chtml.js?1710771761"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1710771761" defer></script>
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/tele-scroll.js?1710771761 defer"></script>
-    
-  </body>
-</html>
+priority.</p><p>The remaining methods and properties of
+<strong>MinPriorityQueue&lt;TPriority, TValue></strong> are now fairly
+straightforward.</p><footer class=footline></footer></article></div></main></div></div><script src=/cis300/js/clipboard.min.js?1719513824 defer></script><script src=/cis300/js/perfect-scrollbar.min.js?1719513824 defer></script><script>function useMathJax(e){window.MathJax=Object.assign(window.MathJax||{},{tex:{inlineMath:[["\\(","\\)"],["$","$"]],displayMath:[["\\[","\\]"],["$$","$$"]]},options:{enableMenu:!1}},e)}useMathJax(JSON.parse("{}"))</script><script id=MathJax-script async src=/cis300/js/mathjax/tex-mml-chtml.js?1719513824></script><script src=/cis300/js/theme.js?1719513824 defer></script><script src=/cis300/js/tele-scroll.js?1719513824 defer></script></body></html>

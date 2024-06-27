@@ -1,609 +1,26 @@
-
-
-
-
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.18.0">
-    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
-    <meta name="description" content="K-State CIS 300: Data Structures">
-    <meta name="author" content="Rod Howell and Josh Weese">
-    <title>Implementing a Dictionary with a Linked List :: Data Structures in C#</title>
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771760" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771760" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1710771760" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771760" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771760" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1710771760" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771760" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771760" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1710771760" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1710771760" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1710771760" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1710771760" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1710771760" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1710771760"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1710771760"></script>
-    <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
-      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
-      var root_url="https://ksu-cs-textbooks.github.io/cis300/";
-      var baseUri=root_url.replace(/\/$/, '');
-      // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
-      window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
-    </script>
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1710771760" rel="stylesheet">
-
-  </head>
-  <body class="mobile-support embed disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/dictionaries/linked-list-impl/embed.html">
-    <div id="body" class="default-animation">
-      
-      
-      
-      <main id="body-inner" class="highlightable default" tabindex="-1">
-        <div class="flex-block-wrapper">
-          <article class="default">
-    
-    
-    
-<h2 id="implementing-a-dictionary-with-a-linked-list">Implementing a Dictionary with a Linked List</h2>
-<p>One way of implementing a dictionary is to store all the keys and values
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=robots content="noindex, nofollow, noarchive, noimageindex"><meta name=description content="Implementing a Dictionary with a Linked List One way of implementing a dictionary is to store all the keys and values in a linked list. We want to do this in such a way that a key is stored together with its associated value. To facilitate this, .NET provides a structure KeyValuePair<TKey, TValue> in the System.Collections.Generic namespace. This structure is used simply for storing a key and a value. The type parameter TKey is used to define the type of the keys, and the other type parameter TValue is used to define the type of the values."><meta name=author content="Rod Howell and Josh Weese"><meta name=twitter:card content="summary"><meta name=twitter:title content="Implementing a Dictionary with a Linked List :: Data Structures in C#"><meta name=twitter:description content="Implementing a Dictionary with a Linked List One way of implementing a dictionary is to store all the keys and values in a linked list. We want to do this in such a way that a key is stored together with its associated value. To facilitate this, .NET provides a structure KeyValuePair<TKey, TValue> in the System.Collections.Generic namespace. This structure is used simply for storing a key and a value. The type parameter TKey is used to define the type of the keys, and the other type parameter TValue is used to define the type of the values."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis300/dictionaries/linked-list-impl/embed.html"><meta property="og:site_name" content="Data Structures in C#"><meta property="og:title" content="Implementing a Dictionary with a Linked List :: Data Structures in C#"><meta property="og:description" content="Implementing a Dictionary with a Linked List One way of implementing a dictionary is to store all the keys and values in a linked list. We want to do this in such a way that a key is stored together with its associated value. To facilitate this, .NET provides a structure KeyValuePair<TKey, TValue> in the System.Collections.Generic namespace. This structure is used simply for storing a key and a value. The type parameter TKey is used to define the type of the keys, and the other type parameter TValue is used to define the type of the values."><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="Dictionaries"><meta property="article:modified_time" content="2023-06-07T09:47:27-05:00"><meta itemprop=name content="Implementing a Dictionary with a Linked List :: Data Structures in C#"><meta itemprop=description content="Implementing a Dictionary with a Linked List One way of implementing a dictionary is to store all the keys and values in a linked list. We want to do this in such a way that a key is stored together with its associated value. To facilitate this, .NET provides a structure KeyValuePair<TKey, TValue> in the System.Collections.Generic namespace. This structure is used simply for storing a key and a value. The type parameter TKey is used to define the type of the keys, and the other type parameter TValue is used to define the type of the values."><meta itemprop=dateModified content="2023-06-07T09:47:27-05:00"><meta itemprop=wordCount content="1449"><title>Implementing a Dictionary with a Linked List :: Data Structures in C#</title>
+<link href=/cis300/css/fontawesome-all.min.css?1719513821 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fontawesome-all.min.css?1719513821 rel=stylesheet></noscript><link href=/cis300/css/nucleus.css?1719513821 rel=stylesheet><link href=/cis300/css/auto-complete.css?1719513821 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/auto-complete.css?1719513821 rel=stylesheet></noscript><link href=/cis300/css/perfect-scrollbar.min.css?1719513821 rel=stylesheet><link href=/cis300/css/fonts.css?1719513821 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fonts.css?1719513821 rel=stylesheet></noscript><link href=/cis300/css/theme.css?1719513821 rel=stylesheet><link href=/cis300/css/theme-light-theme.css?1719513821 rel=stylesheet id=R-variant-style><link href=/cis300/css/chroma-relearn-light.css?1719513821 rel=stylesheet id=R-variant-chroma-style><link href=/cis300/css/variant.css?1719513821 rel=stylesheet><link href=/cis300/css/print.css?1719513821 rel=stylesheet media=print><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis300",window.index_js_url="/cis300/index.search.js",window.variants&&variants.init(["light-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis300/css/custom.css?1719513821 rel=stylesheet></head><body class="mobile-support embed disableInlineCopyToClipboard" data-url=/cis300/dictionaries/linked-list-impl/embed.html><div id=R-body class=default-animation><div id=R-body-overlay></div><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><h2 id=implementing-a-dictionary-with-a-linked-list>Implementing a Dictionary with a Linked List</h2><p>One way of implementing a dictionary is to store all the keys and values
 in a linked list. We want to do this in such a way that a key is stored
 together with its associated value. To facilitate this, .NET
 provides a structure
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.keyvaluepair-2?view=net-6.0" target="_blank"><strong>KeyValuePair&lt;TKey, TValue&gt;</strong></a>
-
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.keyvaluepair-2?view=net-6.0" rel=external target=_blank><strong>KeyValuePair&lt;TKey, TValue></strong></a>
 in the <strong>System.Collections.Generic</strong> namespace. This structure is used
 simply for storing a key and a value. The type parameter <strong>TKey</strong> is
 used to define the type of the keys, and the other type parameter
 <strong>TValue</strong> is used to define the type of the values. It has two
-<strong>public</strong> properties:</p>
-<ul>
-<li><a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.keyvaluepair-2.key?view=net-6.0#system-collections-generic-keyvaluepair-2-key" target="_blank"><strong>Key</strong></a>
-,
-which gets the key stored; and</li>
-<li><a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.keyvaluepair-2.value?view=net-6.0#system-collections-generic-keyvaluepair-2-value" target="_blank"><strong>Value</strong></a>
-,
-which gets the value stored.</li>
-</ul>
-<p>Note that neither of these properties can be set; i.e., the structure is
+<strong>public</strong> properties:</p><ul><li><a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.keyvaluepair-2.key?view=net-6.0#system-collections-generic-keyvaluepair-2-key" rel=external target=_blank><strong>Key</strong></a>,
+which gets the key stored; and</li><li><a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.keyvaluepair-2.value?view=net-6.0#system-collections-generic-keyvaluepair-2-value" rel=external target=_blank><strong>Value</strong></a>,
+which gets the value stored.</li></ul><p>Note that neither of these properties can be set; i.e., the structure is
 immutable. In order to set the key and value, we need to construct a new
-instance using its <a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.keyvaluepair-2.-ctor?view=net-6.0#system-collections-generic-keyvaluepair-2-ctor%28-0-1%29" target="_blank">2-parameter
-constructor</a>
-.
+instance using its <a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.keyvaluepair-2.-ctor?view=net-6.0#system-collections-generic-keyvaluepair-2-ctor(-0-1)" rel=external target=_blank>2-parameter
+constructor</a>.
 The first parameter to this constructor is the key, and the second is
-the value.</p>
-<p>Now that we have a way of storing keys and values together, we can
-implement a <strong>Dictionary&lt;TKey, TValue&gt;</strong> with a linked list
+the value.</p><p>Now that we have a way of storing keys and values together, we can
+implement a <strong>Dictionary&lt;TKey, TValue></strong> with a linked list
 comprised of instances of
-<strong>LinkedListCell&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;</strong>. Thus, each
+<strong>LinkedListCell&lt;KeyValuePair&lt;TKey, TValue>></strong>. Thus, each
 cell of the list stores as its <strong>Data</strong> a
-<strong>KeyValuePair&lt;TKey, TValue&gt;</strong> containing a key and its
+<strong>KeyValuePair&lt;TKey, TValue></strong> containing a key and its
 associated value. To add a key and a value, we first need to search the
 list for a cell containing that key. If we find such a cell, we either
 replace the <strong>KeyValuePair</strong> in that cell with a new <strong>KeyValuePair</strong>
@@ -612,49 +29,26 @@ on the specific behavior required. If we don&rsquo;t find such a cell, we
 insert a new cell containing the given key and value. Because it doesn&rsquo;t
 matter where we insert it, we might as well insert it at the beginning
 of the list, as that is the easiest way. We can remove a key using
-techniques described in &ldquo;<a href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/sieve-eratosthenes">Finding Prime
-Numbers&rdquo;</a>
-.</p>
-<p>The main disadvantage to this approach is that searching for a key is
+techniques described in &ldquo;<a href=/cis300/linked-lists/sieve-eratosthenes/>Finding Prime
+Numbers&rdquo;</a>.</p><p>The main disadvantage to this approach is that searching for a key is
 expensive. For example, to search for a key that is not in the
 dictionary, we need to examine every key in the dictionary. We would
-like to improve on this performance.</p>
-<p>One way of improving the performance of searching is to store the keys
+like to improve on this performance.</p><p>One way of improving the performance of searching is to store the keys
 in increasing order. Then as we search, if we see a key that is larger
 than the key we are looking for, we can stop. However, recall that keys
 can be of any type. For some types of keys, &ldquo;increasing order&rdquo; and
-&ldquo;larger than&rdquo; make no sense.</p>
-<p><span id="where"></span> C# does provide a way to restrict the types
+&ldquo;larger than&rdquo; make no sense.</p><p><span id=where></span> C# does provide a way to restrict the types
 that can be passed as type parameters to generic types. Specifically, we
 can restrict the type <strong>TKey</strong> by writing the <strong>class</strong> statement as
-follows:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Dictionary</span>&lt;TKey, TValue&gt; <span style="color:#66d9ef">where</span> TKey : notnull, IComparable&lt;TKey&gt;   </span></span></code></pre></div><p>The <strong>where</strong> clause in this statement constrains <strong>TKey</strong> in two ways:</p>
-<ul>
-<li>
-<p><code>notnull</code> constrains it to be a <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/reference-value#nullable-types">non-nullable</a>
- type. The compiler doesn&rsquo;t actually enforce this constraint, but will give a warning if a nullable type is used for <strong>TKey</strong>.</p>
-</li>
-<li>
-<p><code>IComparable&lt;TKey&gt;</code> constrains it to be a
+follows:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=kd>public</span> <span class=k>class</span> <span class=nc>Dictionary</span><span class=p>&lt;</span><span class=n>TKey</span><span class=p>,</span> <span class=n>TValue</span><span class=p>&gt;</span> <span class=k>where</span> <span class=n>TKey</span> <span class=p>:</span> <span class=n>notnull</span><span class=p>,</span> <span class=n>IComparable</span><span class=p>&lt;</span><span class=n>TKey</span><span class=p>&gt;</span>   </span></span></code></pre></div><p>The <strong>where</strong> clause in this statement constrains <strong>TKey</strong> in two ways:</p><ul><li><p><code>notnull</code> constrains it to be a <a href=/cis300/appendix/syntax/reference-value/#nullable-types>non-nullable</a> type. The compiler doesn&rsquo;t actually enforce this constraint, but will give a warning if a nullable type is used for <strong>TKey</strong>.</p></li><li><p><code>IComparable&lt;TKey></code> constrains it to be a
 subtype of
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.icomparable-1?view=net-6.0" target="_blank"><strong>IComparable&lt;TKey&gt;</strong></a>
-.
-Each subtype of <strong>IComparable&lt;TKey&gt;</strong> contains a method <a href="https://learn.microsoft.com/en-us/dotnet/api/system.icomparable-1.compareto?view=net-6.0#system-icomparable-1-compareto%28-0%29" target="_blank"><strong>public int
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.icomparable-1?view=net-6.0" rel=external target=_blank><strong>IComparable&lt;TKey></strong></a>.
+Each subtype of <strong>IComparable&lt;TKey></strong> contains a method <a href="https://learn.microsoft.com/en-us/dotnet/api/system.icomparable-1.compareto?view=net-6.0#system-icomparable-1-compareto(-0)" rel=external target=_blank><strong>public int
 CompareTo(TKey?
-x)</strong></a>
-. If <code>a</code>
-and <code>b</code> are of type <strong>TKey</strong>, then <code>a.CompareTo(b)</code> returns:</p>
-<ul>
-<li>A negative number if <code>a</code> is considered to be less than <code>b</code>;</li>
-<li>0 if <code>a</code> is considered to be equal to <code>b</code>; or</li>
-<li>A positive number if <code>a</code> is considered to be greater than <code>b</code> or if <code>b</code> is <strong>null</strong>.</li>
-</ul>
-</li>
-</ul>
-<p>We can therefore use this <strong>CompareTo</strong> method to keep the list in
-increasing order.</p>
-<p>Note that by constraining the key type in this way, we are making the
-<strong>Dictionary&lt;TKey, TValue&gt;</strong> less general, as we may sometimes want
+x)</strong></a>. If <code>a</code>
+and <code>b</code> are of type <strong>TKey</strong>, then <code>a.CompareTo(b)</code> returns:</p><ul><li>A negative number if <code>a</code> is considered to be less than <code>b</code>;</li><li>0 if <code>a</code> is considered to be equal to <code>b</code>; or</li><li>A positive number if <code>a</code> is considered to be greater than <code>b</code> or if <code>b</code> is <strong>null</strong>.</li></ul></li></ul><p>We can therefore use this <strong>CompareTo</strong> method to keep the list in
+increasing order.</p><p>Note that by constraining the key type in this way, we are making the
+<strong>Dictionary&lt;TKey, TValue></strong> less general, as we may sometimes want
 to use a key type that can&rsquo;t be ordered. On the other hand, there are
 times when not only do we have a key type that can be ordered, but also
 we need to access the keys in increasing order (for example, to print an
@@ -663,8 +57,7 @@ need is an <em>ordered dictionary</em>, which both restricts the keys in this
 way and provides a means of accessing them in increasing order. While we
 won&rsquo;t consider the full implementation of an ordered dictionary here, it
 is worth considering how we can improve performance by keeping the keys
-in increasing order.</p>
-<p>Let&rsquo;s now consider how to add a key and value to a linked list storing
+in increasing order.</p><p>Let&rsquo;s now consider how to add a key and value to a linked list storing
 keys in increasing order. We first need to find where the key belongs in
 the ordering. Specifically, the cell whose <strong>Next</strong> property needs to be
 changed (assuming the key is not already in the list) is the one that
@@ -675,37 +68,22 @@ the last cell whose key is less than the key we are removing.
 Furthermore, if we are looking up a key, we need to look in the cell
 that follows the last cell whose key is less than the key we are looking
 for. This suggests that we should provide a <strong>private</strong> method to find
-the last cell whose key is less than a given key, provided such a cell exists.</p>
-<p>Before we can write such a method, however, we first need to address a
+the last cell whose key is less than a given key, provided such a cell exists.</p><p>Before we can write such a method, however, we first need to address a
 problem that occurs if we are trying to add, remove, or look up a key
 that is smaller than all other keys in the list. In this case, there are
-no cells containing keys smaller than the given key.</p>
-<p>We can avoid needing a special case to deal with this problem if we
+no cells containing keys smaller than the given key.</p><p>We can avoid needing a special case to deal with this problem if we
 include a special <em>header cell</em> at the beginning of our linked list.
 This cell will not contain any meaningful data, but it will always be
 present. If we consider that its key is less than any other key (though
 we will never actually examine its key), then there will always be at
 least one key less than any given key. We can obtain this
-header cell by initializing the linked list to contain a new cell containing the <a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/stack-impl#default-value">default</a>
- key-value pair,
-rather than to <strong>null</strong>. Note that because the linked list will always contain at least the header cell, the reference to it should <em>not</em> be nullable.</p>
-
-  
-  
-<div class="box notices cstyle warning">
-  <div class="box-label"><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div>
-  <div class="box-content">
-
-<p>Setting the data in the header cell to the default key-value pair means that if the key type and/or the value type is a reference type, then it will be <strong>null</strong> in this pair, even if the type isn&rsquo;t nullable. There is no way to avoid this, as the only key and value objects that we know of are the default values, which may be <strong>null</strong>. However, it doesn&rsquo;t make sense to use <strong>KeyValuePair&lt;TKey?, TValue?&gt;</strong> as the type of the data items within the linked list just because of the header cell, whose data we don&rsquo;t intend to use. Furthermore, the compiler won&rsquo;t generate a warning when <strong>KeyValuePair&lt;TKey, TValue&gt;</strong> is used. We should therefore use this latter type, and be sure not to use the data stored in the header cell. We should also include a warning of possible null values in a comment when we initialize the header cell.</p>
-</div>
-</div>
-<p>A method to find the last cell containing a key less than a given key is
+header cell by initializing the linked list to contain a new cell containing the <a href=/cis300/stacks-queues/stack-impl/#default-value>default</a> key-value pair,
+rather than to <strong>null</strong>. Note that because the linked list will always contain at least the header cell, the reference to it should <em>not</em> be nullable.</p><div class="box notices cstyle warning"><div class=box-label><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div><div class=box-content><p>Setting the data in the header cell to the default key-value pair means that if the key type and/or the value type is a reference type, then it will be <strong>null</strong> in this pair, even if the type isn&rsquo;t nullable. There is no way to avoid this, as the only key and value objects that we know of are the default values, which may be <strong>null</strong>. However, it doesn&rsquo;t make sense to use <strong>KeyValuePair&lt;TKey?, TValue?></strong> as the type of the data items within the linked list just because of the header cell, whose data we don&rsquo;t intend to use. Furthermore, the compiler won&rsquo;t generate a warning when <strong>KeyValuePair&lt;TKey, TValue></strong> is used. We should therefore use this latter type, and be sure not to use the data stored in the header cell. We should also include a warning of possible null values in a comment when we initialize the header cell.</p></div></div><p>A method to find the last cell containing a key less than a given key is
 now straightforward. We initialize a variable to the first cell (i.e.,
 the header cell), and set up a loop that iterates as long as the <em>next</em>
 cell is non-<strong>null</strong> and contains a key less than the given key. Each
 iteration advances to the next cell. When the loop terminates, we return
-the cell we have reached.</p>
-<p>To look up a key, we use the above method to find the last cell
+the cell we have reached.</p><p>To look up a key, we use the above method to find the last cell
 containing a key less than the key we are looking for. If the next cell
 is non-<strong>null</strong> and contains the key we are looking for, then we have
 found it; otherwise, it cannot be in the list. To add a key and value,
@@ -713,24 +91,7 @@ we first need to look up the key in the same way. If we don&rsquo;t find it,
 we insert a new cell containing this key and value following the last
 cell containing a key less than this key. To remove a key, we proceed in
 a similar way, but if we find the key, we remove this cell from the
-list.</p>
-<p>While keeping the keys in increasing order improves the performance of
+list.</p><p>While keeping the keys in increasing order improves the performance of
 many searches, the overall performance is still unsatisfactory for even
 data sets of moderate size. In subsequent sections, we will explore ways
-of improving this performance using various data structures.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-        </div>
-      </main>
-    </div>
-    
-    
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1710771760" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1710771760" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1710771760" defer></script>
-  </body>
-</html>
+of improving this performance using various data structures.</p><footer class=footline></footer></article></div></main></div><script src=/cis300/js/clipboard.min.js?1719513821 defer></script><script src=/cis300/js/perfect-scrollbar.min.js?1719513821 defer></script><script src=/cis300/js/theme.js?1719513821 defer></script><script src=/cis300/js/embed-iframe.js?1719513821 defer></script></body></html>

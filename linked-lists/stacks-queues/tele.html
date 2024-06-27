@@ -1,717 +1,79 @@
-
-
-
-
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.18.0">
-    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
-    <meta name="description" content="K-State CIS 300: Data Structures">
-    <meta name="author" content="Rod Howell and Josh Weese">
-    <title>Implementing Stacks and Queues with Linked Lists :: Data Structures in C#</title>
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1710771761" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1710771761" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1710771761" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1710771761"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1710771761"></script>
-    <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
-      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
-      var root_url="https://ksu-cs-textbooks.github.io/cis300/";
-      var baseUri=root_url.replace(/\/$/, '');
-      // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
-      window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
-    </script>
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1710771761" rel="stylesheet">
-
-  </head>
-  <body class="mobile-support tele disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/linked-lists/stacks-queues/index.html">
-    
-    <div id="tele" class="tele mirror">
-    
-    <div id="body" class="default-animation">
-      
-      
-      
-      <main id="body-inner" class="highlightable default" tabindex="-1">
-        <div class="flex-block-wrapper">
-          <article class="default">
-            <header class="headline">
-            </header>
-<div hidden><h1 id="implementing-stacks-and-queues-with-linked-lists">Implementing Stacks and Queues with Linked Lists</h1></div>
-
-<h2 id="implementing-stacks-and-queues-with-linked-lists">Implementing Stacks and Queues with Linked Lists</h2>
-<p>Because linked lists store data elements in linear sequences, they can
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=robots content="noindex, nofollow, noarchive, noimageindex"><meta name=description content="Implementing Stacks and Queues with Linked Lists Because linked lists store data elements in linear sequences, they can be used to give alternative implementations of stacks and queues. One advantage to using linked lists is that we don’t have to worry about filling up something like an array - we can just keep allocating cells as long as we need to (unless we run out of memory).
+Implementing a stack using a linked list is particularly easy because all accesses to a stack are at the top."><meta name=author content="Rod Howell and Josh Weese"><meta name=twitter:card content="summary"><meta name=twitter:title content="Implementing Stacks and Queues with Linked Lists :: Data Structures in C#"><meta name=twitter:description content="Implementing Stacks and Queues with Linked Lists Because linked lists store data elements in linear sequences, they can be used to give alternative implementations of stacks and queues. One advantage to using linked lists is that we don’t have to worry about filling up something like an array - we can just keep allocating cells as long as we need to (unless we run out of memory).
+Implementing a stack using a linked list is particularly easy because all accesses to a stack are at the top."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis300/linked-lists/stacks-queues/"><meta property="og:site_name" content="Data Structures in C#"><meta property="og:title" content="Implementing Stacks and Queues with Linked Lists :: Data Structures in C#"><meta property="og:description" content="Implementing Stacks and Queues with Linked Lists Because linked lists store data elements in linear sequences, they can be used to give alternative implementations of stacks and queues. One advantage to using linked lists is that we don’t have to worry about filling up something like an array - we can just keep allocating cells as long as we need to (unless we run out of memory).
+Implementing a stack using a linked list is particularly easy because all accesses to a stack are at the top."><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="Linked Lists"><meta property="article:modified_time" content="2023-06-01T16:44:08-05:00"><meta itemprop=name content="Implementing Stacks and Queues with Linked Lists :: Data Structures in C#"><meta itemprop=description content="Implementing Stacks and Queues with Linked Lists Because linked lists store data elements in linear sequences, they can be used to give alternative implementations of stacks and queues. One advantage to using linked lists is that we don’t have to worry about filling up something like an array - we can just keep allocating cells as long as we need to (unless we run out of memory).
+Implementing a stack using a linked list is particularly easy because all accesses to a stack are at the top."><meta itemprop=dateModified content="2023-06-01T16:44:08-05:00"><meta itemprop=wordCount content="1155"><title>Implementing Stacks and Queues with Linked Lists :: Data Structures in C#</title>
+<link href=/cis300/css/fontawesome-all.min.css?1719513824 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fontawesome-all.min.css?1719513824 rel=stylesheet></noscript><link href=/cis300/css/nucleus.css?1719513824 rel=stylesheet><link href=/cis300/css/auto-complete.css?1719513824 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/auto-complete.css?1719513824 rel=stylesheet></noscript><link href=/cis300/css/perfect-scrollbar.min.css?1719513824 rel=stylesheet><link href=/cis300/css/fonts.css?1719513824 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fonts.css?1719513824 rel=stylesheet></noscript><link href=/cis300/css/theme.css?1719513824 rel=stylesheet><link href=/cis300/css/theme-auto.css?1719513824 rel=stylesheet id=R-variant-style><link href=/cis300/css/chroma-auto.css?1719513824 rel=stylesheet id=R-variant-chroma-style><link href=/cis300/css/variant.css?1719513824 rel=stylesheet><link href=/cis300/css/print.css?1719513824 rel=stylesheet media=print><script src=/cis300/js/variant.js?1719513824></script><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis300",window.index_js_url="/cis300/index.search.js",window.variants&&variants.init(["auto","light-theme","dark-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis300/css/custom.css?1719513824 rel=stylesheet></head><body class="mobile-support tele disableInlineCopyToClipboard" data-url=/cis300/linked-lists/stacks-queues/><div id=tele class="tele mirror"><div id=R-body class=default-animation><div id=R-body-overlay></div><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><div hidden><h1 id=implementing-stacks-and-queues-with-linked-lists>Implementing Stacks and Queues with Linked Lists</h1></div><h2 id=implementing-stacks-and-queues-with-linked-lists>Implementing Stacks and Queues with Linked Lists</h2><p>Because linked lists store data elements in linear sequences, they can
 be used to give alternative implementations of stacks and queues. One
 advantage to using linked lists is that we don&rsquo;t have to worry about
 filling up something like an array - we can just keep allocating cells
-as long as we need to (unless we run out of memory).</p>
-<p>Implementing a stack using a linked list is particularly easy because
+as long as we need to (unless we run out of memory).</p><p>Implementing a stack using a linked list is particularly easy because
 all accesses to a stack are at the top. One end of a linked list, the
 beginning, is always directly accessible. We should therefore arrange
 the elements so that the top element of the stack is at the beginning of
 the linked list, and the bottom element of the stack is at the end of
-the linked list. We can represent an empty stack with <strong>null</strong>.</p>
-<p>We therefore need a <strong>private LinkedListCell&lt;T&gt;?</strong> field to implement a
-generic stack <strong>Stack&lt;T&gt;</strong> using a linked list. This field will refer
+the linked list. We can represent an empty stack with <strong>null</strong>.</p><p>We therefore need a <strong>private LinkedListCell&lt;T>?</strong> field to implement a
+generic stack <strong>Stack&lt;T></strong> using a linked list. This field will refer
 to the cell containing the data item at the top of the stack. If the stack is empty, this field will be <strong>null</strong>; hence, this field should be <strong>null</strong> initially. A <strong>public
 Count</strong> property will be used to keep track of the number of elements in
-the stack.</p>
-<p>The <strong>public</strong> methods <strong>Push</strong>, <strong>Peek</strong>, and <strong>Pop</strong> are then fairly
+the stack.</p><p>The <strong>public</strong> methods <strong>Push</strong>, <strong>Peek</strong>, and <strong>Pop</strong> are then fairly
 straightforward to implement. For <strong>Push</strong> we need to add the given
 element to a new cell at the beginning of the linked list, as shown in
-<a href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/intro">the previous
-section</a>
-, and
+<a href=/cis300/linked-lists/intro/>the previous
+section</a>, and
 update the <strong>Count</strong>. To implement <strong>Peek</strong>, if the stack is nonempty,
 we simply return the <strong>Data</strong> property of the cell at the beginning of
-the linked list; otherwise, we throw an <strong>InvalidOperationException</strong>. Note that we can determine whether the stack is empty by examining either the <strong>LinkedListCell&lt;T&gt;?</strong> field or the <strong>Count</strong> property; however, examining the <strong>LinkedListCell&lt;T&gt;?</strong> field allows the compiler to determine that the <strong>Data</strong> property of the first cell can be accessed without throwing a <strong>NullReferenceException</strong>.</p>
-<p>To implement <strong>Pop</strong>:</p>
-<ol>
-<li>Using <strong>Peek</strong>, obtain the element to be returned.</li>
-<li>Remove the first element from the linked list as shown in <a href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/intro">the
+the linked list; otherwise, we throw an <strong>InvalidOperationException</strong>. Note that we can determine whether the stack is empty by examining either the <strong>LinkedListCell&lt;T>?</strong> field or the <strong>Count</strong> property; however, examining the <strong>LinkedListCell&lt;T>?</strong> field allows the compiler to determine that the <strong>Data</strong> property of the first cell can be accessed without throwing a <strong>NullReferenceException</strong>.</p><p>To implement <strong>Pop</strong>:</p><ol><li>Using <strong>Peek</strong>, obtain the element to be returned.</li><li>Remove the first element from the linked list as shown in <a href=/cis300/linked-lists/intro/>the
 previous
-section</a>
-.</li>
-<li>Update the <strong>Count</strong>.</li>
-<li>Return the retrieved value.</li>
-</ol>
-<p>Note that the call to <strong>Peek</strong> in step 1 ensures that the stack is nonempty before we remove the first element; however, the compiler won&rsquo;t be able to determine this.</p>
-<p>Implementing a queue is a little more involved because we need to
+section</a>.</li><li>Update the <strong>Count</strong>.</li><li>Return the retrieved value.</li></ol><p>Note that the call to <strong>Peek</strong> in step 1 ensures that the stack is nonempty before we remove the first element; however, the compiler won&rsquo;t be able to determine this.</p><p>Implementing a queue is a little more involved because we need to
 operate at both ends of the linked list. For efficiency, we should keep
 a reference to the last cell in the linked list, as this will allow us
 to access both ends of the linked list directly. We will therefore have
-the following:</p>
-<p>
-<a href="#image-c7d6b68a1cea95834bebb4ae6520f633" class="lightbox-link">
-<img src="linked-list-queue.jpg" alt="Implementing a queue with a linked list" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-c7d6b68a1cea95834bebb4ae6520f633">
-<img src="linked-list-queue.jpg" alt="Implementing a queue with a linked list" class="lightbox-image" loading="lazy">
-</a></p>
-<p>We now need to decide which end to make the front of the queue. As we
-saw in <a href="https://ksu-cs-textbooks.github.io/cis300/linked-lists/intro">the previous
-section</a>
-, both
+the following:</p><p><a href=#R-image-59adc2acb9f0f8ad17bbc80fda72e26e class=lightbox-link><img alt="Implementing a queue with a linked list" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/linked-lists/stacks-queues/linked-list-queue.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-59adc2acb9f0f8ad17bbc80fda72e26e><img alt="Implementing a queue with a linked list" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/linked-lists/stacks-queues/linked-list-queue.jpg></a></p><p>We now need to decide which end to make the front of the queue. As we
+saw in <a href=/cis300/linked-lists/intro/>the previous
+section</a>, both
 inserting and removing can be done efficiently at the beginning of a
 linked list. Likewise, it is easy to insert an element at the end if we
 have a reference to the last cell. Suppose, for example, that <code>last</code>
 refers to the last cell in a linked list, and that <code>cell</code> refers to a
-<strong>LinkedListCell&lt;T&gt;</strong> that we want to insert at the end. Suppose
+<strong>LinkedListCell&lt;T></strong> that we want to insert at the end. Suppose
 further that the linked list is not empty (that will be a special case
-that we&rsquo;ll need to handle). Thus, we have the following:</p>
-<p>
-<a href="#image-072ef43bab37cec5bd0c31a240a50c55" class="lightbox-link">
-<img src="linked-list-insert-end-1.jpg" alt="A cell to insert at the end of a linked
-list" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-072ef43bab37cec5bd0c31a240a50c55">
-<img src="linked-list-insert-end-1.jpg" alt="A cell to insert at the end of a linked
-list" class="lightbox-image" loading="lazy">
-</a></p>
-<p>To insert this cell at the end of the linked list, we just need to copy
+that we&rsquo;ll need to handle). Thus, we have the following:</p><p><a href=#R-image-9bca222f0225f48bb26e178459771323 class=lightbox-link><img alt="A cell to insert at the end of a linked\nlist" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/linked-lists/stacks-queues/linked-list-insert-end-1.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-9bca222f0225f48bb26e178459771323><img alt="A cell to insert at the end of a linked\nlist" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/linked-lists/stacks-queues/linked-list-insert-end-1.jpg></a></p><p>To insert this cell at the end of the linked list, we just need to copy
 the reference in <code>cell</code> to the <strong>Next</strong> property of the cell to which
-<code>last</code> refers:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>last.Next = cell;</span></span></code></pre></div><p>On the other hand, removing the last cell is problematic, even if we
+<code>last</code> refers:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=n>last</span><span class=p>.</span><span class=n>Next</span> <span class=p>=</span> <span class=n>cell</span><span class=p>;</span></span></span></code></pre></div><p>On the other hand, removing the last cell is problematic, even if we
 have a reference to it. The problem is that in order to remove it from
 the linked list, we need to change the <strong>Next</strong> property of the
 preceding cell. Unfortunately, the only way to obtain that cell is to
 start at the beginning of the list and work our way through it. If the
-linked list is long, this could be quite inefficient.</p>
-
-  
-  
-<div class="box notices cstyle note">
-  <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
-  <div class="box-content">
-
-<p>It doesn&rsquo;t help any to keep a reference to the next-to-last cell, as
+linked list is long, this could be quite inefficient.</p><div class="box notices cstyle note"><div class=box-label><i class="fa-fw fas fa-exclamation-circle"></i> Note</div><div class=box-content><p>It doesn&rsquo;t help any to keep a reference to the next-to-last cell, as
 we encounter the same problem when we need to update this reference
 after removing the last cell &mdash; we don&rsquo;t have a reference to its
-preceding cell.</p>
-</div>
-</div>
-<p>Because we need to
+preceding cell.</p></div></div><p>Because we need to
 remove elements from the front of a queue, but not from the back, we
 conclude that it will work best to make the beginning of the linked list
 the front of the queue. We therefore need the following <strong>private</strong>
-fields to implement a generic queue <strong>Queue&lt;T&gt;</strong>:</p>
-<ul>
-<li>A <strong>LinkedListCell&lt;T&gt;?</strong> giving the element at the front of the
+fields to implement a generic queue <strong>Queue&lt;T></strong>:</p><ul><li>A <strong>LinkedListCell&lt;T>?</strong> giving the element at the front of the
 queue. This will be the beginning of the linked list of queue
-elements.</li>
-<li>A <strong>LinkedListCell&lt;T&gt;?</strong> giving the element at the back of the
+elements.</li><li>A <strong>LinkedListCell&lt;T>?</strong> giving the element at the back of the
 queue. This will be the last cell in the linked list of queue
-elements.</li>
-</ul>
-<p>As we mentioned earlier, adding an element to an empty queue is a
+elements.</li></ul><p>As we mentioned earlier, adding an element to an empty queue is a
 special case that we will need to handle separately. For this reason, it
-doesn&rsquo;t matter what values the two <strong>LinkedListCell&lt;T&gt;?</strong> fields
+doesn&rsquo;t matter what values the two <strong>LinkedListCell&lt;T>?</strong> fields
 contain when the queue is empty - we can always detect when the queue is
 empty by checking the <strong>Count</strong>. The initialization of the two
-<strong>LinkedListCell&lt;T&gt;?</strong> fields is therefore unimportant. It is easiest
-to just leave them <strong>null</strong>.</p>
-<p>Let us now consider the implementation of the <strong>Enqueue</strong> method. We
+<strong>LinkedListCell&lt;T>?</strong> fields is therefore unimportant. It is easiest
+to just leave them <strong>null</strong>.</p><p>Let us now consider the implementation of the <strong>Enqueue</strong> method. We
 need to consider two cases. We&rsquo;ll first consider the case in which the
 queue is empty. In this case, we need to build the following linked
-list:</p>
-<p>
-<a href="#image-315d3f04979abd5e6a51d6d73c5d96bc" class="lightbox-link">
-<img src="one-cell-queue.jpg" alt="A queue containing a single linked list cell" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-315d3f04979abd5e6a51d6d73c5d96bc">
-<img src="one-cell-queue.jpg" alt="A queue containing a single linked list cell" class="lightbox-image" loading="lazy">
-</a></p>
-<p>We therefore need to:</p>
-<ol>
-<li>Construct a new <strong>LinkedListCell&lt;T&gt;</strong> containing the element we want to enqueue and no next cell.</li>
-<li>Assign it to the field denoting the front of the queue.</li>
-<li>Assign it to the field denoting the back of the queue.</li>
-<li>Update the <strong>Count</strong>.</li>
-</ol>
-<p>If the queue is nonempty, the only step that changes is Step 2. Because
+list:</p><p><a href=#R-image-00747d9cb3f5fa8f2415c5c38dbc3ffa class=lightbox-link><img alt="A queue containing a single linked list cell" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/linked-lists/stacks-queues/one-cell-queue.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-00747d9cb3f5fa8f2415c5c38dbc3ffa><img alt="A queue containing a single linked list cell" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/linked-lists/stacks-queues/one-cell-queue.jpg></a></p><p>We therefore need to:</p><ol><li>Construct a new <strong>LinkedListCell&lt;T></strong> containing the element we want to enqueue and no next cell.</li><li>Assign it to the field denoting the front of the queue.</li><li>Assign it to the field denoting the back of the queue.</li><li>Update the <strong>Count</strong>.</li></ol><p>If the queue is nonempty, the only step that changes is Step 2. Because
 the queue is nonempty, we don&rsquo;t want to make the new cell the front of
 the queue; instead, we need to insert it at the end of the linked list,
-as outlined above.</p>
-<p>The implementations of the <strong>Peek</strong> and <strong>Dequeue</strong> methods are
+as outlined above.</p><p>The implementations of the <strong>Peek</strong> and <strong>Dequeue</strong> methods are
 essentially the same as the implementations of the <strong>Peek</strong> and <strong>Pop</strong>
-methods, respectively, for a stack.</p>
-<p>The implementations described in this section are simpler than the
+methods, respectively, for a stack.</p><p>The implementations described in this section are simpler than the
 implementations using arrays, mainly due to the fact that we don&rsquo;t need
 to rebuild the structure when we fill up the space available. While
 these implementations are also pretty efficient, it turns out that the
@@ -722,26 +84,4 @@ However, due to the fact that we double the size of the array each time
 we need a new one, this rebuilding is done so rarely in practice that it
 ends up having minimal impact on performance. Due to hardware and
 low-level software issues, the overhead involved in using arrays usually
-ends up being less.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-        </div>
-      </main>
-    </div>
-    
-    </div>
-    
-    
-    
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1710771761" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1710771761" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1710771761" defer></script>
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/tele-scroll.js?1710771761 defer"></script>
-    
-  </body>
-</html>
+ends up being less.</p><footer class=footline></footer></article></div></main></div></div><script src=/cis300/js/clipboard.min.js?1719513824 defer></script><script src=/cis300/js/perfect-scrollbar.min.js?1719513824 defer></script><script src=/cis300/js/theme.js?1719513824 defer></script><script src=/cis300/js/tele-scroll.js?1719513824 defer></script></body></html>

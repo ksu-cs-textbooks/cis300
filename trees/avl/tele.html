@@ -1,684 +1,70 @@
-
-
-
-
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.18.0">
-    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
-    <meta name="description" content="K-State CIS 300: Data Structures">
-    <meta name="author" content="Rod Howell and Josh Weese">
-    <title>AVL Trees :: Data Structures in C#</title>
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1710771761" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1710771761" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1710771761" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1710771761"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1710771761"></script>
-    <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
-      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
-      var root_url="https://ksu-cs-textbooks.github.io/cis300/";
-      var baseUri=root_url.replace(/\/$/, '');
-      // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
-      window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
-    </script>
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1710771761" rel="stylesheet">
-
-  </head>
-  <body class="mobile-support tele disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/trees/avl/index.html">
-    
-    <div id="tele" class="tele mirror">
-    
-    <div id="body" class="default-animation">
-      
-      
-      
-      <main id="body-inner" class="highlightable default" tabindex="-1">
-        <div class="flex-block-wrapper">
-          <article class="default">
-            <header class="headline">
-            </header>
-<div hidden><h1 id="avl-trees">AVL Trees</h1></div>
-
-<h2 id="avl-trees">AVL Trees</h2>
-<p>Up to this point, we haven&rsquo;t addressed the performance of binary search
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=robots content="noindex, nofollow, noarchive, noimageindex"><meta name=description content="AVL Trees Up to this point, we haven’t addressed the performance of binary search trees. In considering this performance, let’s assume that the time needed to compare two keys is bounded by some fixed constant. The main reason we do this is that this cost doesn’t depend on the number of keys in the tree; however, it may depend on the sizes of the keys, as, for example, if keys are strings."><meta name=author content="Rod Howell and Josh Weese"><meta name=twitter:card content="summary"><meta name=twitter:title content="AVL Trees :: Data Structures in C#"><meta name=twitter:description content="AVL Trees Up to this point, we haven’t addressed the performance of binary search trees. In considering this performance, let’s assume that the time needed to compare two keys is bounded by some fixed constant. The main reason we do this is that this cost doesn’t depend on the number of keys in the tree; however, it may depend on the sizes of the keys, as, for example, if keys are strings."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis300/trees/avl/"><meta property="og:site_name" content="Data Structures in C#"><meta property="og:title" content="AVL Trees :: Data Structures in C#"><meta property="og:description" content="AVL Trees Up to this point, we haven’t addressed the performance of binary search trees. In considering this performance, let’s assume that the time needed to compare two keys is bounded by some fixed constant. The main reason we do this is that this cost doesn’t depend on the number of keys in the tree; however, it may depend on the sizes of the keys, as, for example, if keys are strings."><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="Trees"><meta property="article:modified_time" content="2023-06-07T09:47:27-05:00"><meta itemprop=name content="AVL Trees :: Data Structures in C#"><meta itemprop=description content="AVL Trees Up to this point, we haven’t addressed the performance of binary search trees. In considering this performance, let’s assume that the time needed to compare two keys is bounded by some fixed constant. The main reason we do this is that this cost doesn’t depend on the number of keys in the tree; however, it may depend on the sizes of the keys, as, for example, if keys are strings."><meta itemprop=dateModified content="2023-06-07T09:47:27-05:00"><meta itemprop=wordCount content="3134"><title>AVL Trees :: Data Structures in C#</title>
+<link href=/cis300/css/fontawesome-all.min.css?1719513824 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fontawesome-all.min.css?1719513824 rel=stylesheet></noscript><link href=/cis300/css/nucleus.css?1719513824 rel=stylesheet><link href=/cis300/css/auto-complete.css?1719513824 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/auto-complete.css?1719513824 rel=stylesheet></noscript><link href=/cis300/css/perfect-scrollbar.min.css?1719513824 rel=stylesheet><link href=/cis300/css/fonts.css?1719513824 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fonts.css?1719513824 rel=stylesheet></noscript><link href=/cis300/css/theme.css?1719513824 rel=stylesheet><link href=/cis300/css/theme-auto.css?1719513824 rel=stylesheet id=R-variant-style><link href=/cis300/css/chroma-auto.css?1719513824 rel=stylesheet id=R-variant-chroma-style><link href=/cis300/css/variant.css?1719513824 rel=stylesheet><link href=/cis300/css/print.css?1719513824 rel=stylesheet media=print><script src=/cis300/js/variant.js?1719513824></script><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis300",window.index_js_url="/cis300/index.search.js",window.variants&&variants.init(["auto","light-theme","dark-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis300/css/custom.css?1719513824 rel=stylesheet></head><body class="mobile-support tele disableInlineCopyToClipboard" data-url=/cis300/trees/avl/><div id=tele class="tele mirror"><div id=R-body class=default-animation><div id=R-body-overlay></div><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><div hidden><h1 id=avl-trees>AVL Trees</h1></div><h2 id=avl-trees>AVL Trees</h2><p>Up to this point, we haven&rsquo;t addressed the performance of binary search
 trees. In considering this performance, let&rsquo;s assume that the time
 needed to compare two keys is bounded by some fixed constant. The main
 reason we do this is that this cost doesn&rsquo;t depend on the number of keys
 in the tree; however, it may depend on the sizes of the keys, as, for
 example, if keys are <strong>string</strong>s. However, we will ignore this
-complication for the purpose of this discussion.</p>
-<p>Each of the methods we have described for finding a key, adding a key
+complication for the purpose of this discussion.</p><p>Each of the methods we have described for finding a key, adding a key
 and a value, or removing a key and its associated value, follows a
 single path in the given tree. As a result, the time needed for each of
 these methods is at worst proportional to the <em>height</em> of the tree,
 where the height is defined to be the length of the longest path from
-the root to any node. (Thus, the height of a one-node tree is <span style="white-space:nowrap">
-<span class="math align-center">$ 0 $</span>,</span> because
+the root to any node. (Thus, the height of a one-node tree is <span style=white-space:nowrap><span class="math align-center">$ 0 $</span>,</span> because
 no steps are needed to get from the root to the only node - the root
-itself &mdash; and the height of a two-node tree is always <span style="white-space:nowrap">
-<span class="math align-center">$ 1 $</span>.</span>) In other words,
+itself &mdash; and the height of a two-node tree is always <span style=white-space:nowrap><span class="math align-center">$ 1 $</span>.</span>) In other words,
 we say that the worst-case running time of each of these methods is in
-<span style="white-space:nowrap">
-<span class="math align-center">$ O(h) $</span>,</span> where 
-<span class="math align-center">$ h $</span> is the height of the tree.</p>
-<p>Depending on the shape of the tree, 
+<span style=white-space:nowrap><span class="math align-center">$ O(h) $</span>,</span> where
+<span class="math align-center">$ h $</span> is the height of the tree.</p><p>Depending on the shape of the tree,
 <span class="math align-center">$ O(h) $</span> running time might be very
 good. For example, it is possible to show that if keys are randomly
 taken from a uniform distribution and successively added to an initially
-empty binary search tree, the expected height is in <span style="white-space:nowrap">
-<span class="math align-center">$ O(\log n) $</span>,</span>
-where 
+empty binary search tree, the expected height is in <span style=white-space:nowrap><span class="math align-center">$ O(\log n) $</span>,</span>
+where
 <span class="math align-center">$ n $</span> is the number of nodes. In this case, we would expect
 logarithmic performance for lookups, insertions, and deletions. In fact,
 there are many applications in which the height of a binary search tree
-remains fairly small in comparison to the number of nodes.</p>
-<p>On the other hand, such a shape is by no means guaranteed. For example,
+remains fairly small in comparison to the number of nodes.</p><p>On the other hand, such a shape is by no means guaranteed. For example,
 suppose a binary search tree were built by adding the <strong>int</strong> keys 1
-through 
+through
 <span class="math align-center">$ n $</span> in increasing order. Then 1 would go at the root, and 2
 would be its right child. Each successive key would then be larger than
 any key currently in the tree, and hence would be added as the right
 child of the last node on the path going to the right. As a result, the
-tree would have the following shape:</p>
-<p>
-<a href="#image-8d3264226ef6a602336d5ce74f685866" class="lightbox-link">
-<img src="bst-chain.jpg" alt="A badly-shaped binary search tree" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-8d3264226ef6a602336d5ce74f685866">
-<img src="bst-chain.jpg" alt="A badly-shaped binary search tree" class="lightbox-image" loading="lazy">
-</a></p>
-<p>The height of this tree is <span style="white-space:nowrap">
-<span class="math align-center">$ n - 1 $</span>;</span> consequently, lookups will
-take time linear in <span style="white-space:nowrap">
-<span class="math align-center">$ n $</span>,</span> the number of elements, in the worst case. This
+tree would have the following shape:</p><p><a href=#R-image-e4b544e36a7678f8b580e73de15797d1 class=lightbox-link><img alt="A badly-shaped binary search tree" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/trees/avl/bst-chain.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-e4b544e36a7678f8b580e73de15797d1><img alt="A badly-shaped binary search tree" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/trees/avl/bst-chain.jpg></a></p><p>The height of this tree is <span style=white-space:nowrap><span class="math align-center">$ n - 1 $</span>;</span> consequently, lookups will
+take time linear in <span style=white-space:nowrap><span class="math align-center">$ n $</span>,</span> the number of elements, in the worst case. This
 performance is comparable with that of a linked list. In order to
 guaranteed good performance, we need a way to ensure that the height of
-a binary search tree does not grow too quickly.</p>
-<p>One way to accomplish this is to require that each node always has
-children that differ in height by at most <span style="white-space:nowrap">
-<span class="math align-center">$ 1 $</span>.</span> In order for this
+a binary search tree does not grow too quickly.</p><p>One way to accomplish this is to require that each node always has
+children that differ in height by at most <span style=white-space:nowrap><span class="math align-center">$ 1 $</span>.</span> In order for this
 restriction to make sense, we need to extend the definition of the
 height of a tree to apply to an empty tree. Because the height of a
-one-node tree is <span style="white-space:nowrap">
-<span class="math align-center">$ 0 $</span>,</span> we will define the height of an empty tree to be <span style="white-space:nowrap">
-<span class="math align-center">$ -1 $</span>.</span>
+one-node tree is <span style=white-space:nowrap><span class="math align-center">$ 0 $</span>,</span> we will define the height of an empty tree to be <span style=white-space:nowrap><span class="math align-center">$ -1 $</span>.</span>
 We call this restricted form of a binary search tree an <em>AVL tree</em>
 (&ldquo;AVL&rdquo; stands for the names of the inventors, Adelson-Velskii and
-Landis).</p>
-<p><a href="https://github.com/RodHowell-Algorithms/Min-AVL-Trees" target="_blank">This repository</a>
-
+Landis).</p><p><a href=https://github.com/RodHowell-Algorithms/Min-AVL-Trees rel=external target=_blank>This repository</a>
 contains a Java application that displays an AVL tree of a given
 height using as few nodes as possible. For example, the following screen
-capture shows an AVL tree of height 
-<span class="math align-center">$ 7 $</span> having a minimum number of nodes:</p>
-<p>
-<a href="#image-774b18cbd20cb8e35829dd9222899207" class="lightbox-link">
-<img src="min-avl.jpg" alt="An AVL tree with height 7 and minimum number of nodes" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-774b18cbd20cb8e35829dd9222899207">
-<img src="min-avl.jpg" alt="An AVL tree with height 7 and minimum number of nodes" class="lightbox-image" loading="lazy">
-</a></p>
-<p>As the above picture illustrates, a minimum of 
+capture shows an AVL tree of height
+<span class="math align-center">$ 7 $</span> having a minimum number of nodes:</p><p><a href=#R-image-476f8fc3203cdbe52829b3c358194525 class=lightbox-link><img alt="An AVL tree with height 7 and minimum number of nodes" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/trees/avl/min-avl.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-476f8fc3203cdbe52829b3c358194525><img alt="An AVL tree with height 7 and minimum number of nodes" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/trees/avl/min-avl.jpg></a></p><p>As the above picture illustrates, a minimum of
 <span class="math align-center">$ 54 $</span> nodes are required for
-an AVL tree to reach a height of <span style="white-space:nowrap">
-<span class="math align-center">$ 7 $</span>.</span> In general, it can be shown that the
-height of an AVL tree is at worst proportional to <span style="white-space:nowrap">
-<span class="math align-center">$ \log n $</span>,</span> where 
+an AVL tree to reach a height of <span style=white-space:nowrap><span class="math align-center">$ 7 $</span>.</span> In general, it can be shown that the
+height of an AVL tree is at worst proportional to <span style=white-space:nowrap><span class="math align-center">$ \log n $</span>,</span> where
 <span class="math align-center">$ n $</span>
 is the number of nodes in the tree. Thus, if we can maintain the shape
 of an AVL tree efficiently, we should have efficient lookups and
-updates.</p>
-<p>Regarding the AVL tree shown above, notice that the tree is not as
-well-balanced as it could be. For example, 
-<span class="math align-center">$ 0 $</span> is at depth <span style="white-space:nowrap">
-<span class="math align-center">$ 7 $</span>,</span> whereas <span style="white-space:nowrap">
-<span class="math align-center">$ 52 $</span>,</span>
-which also has two empty children, is only at depth <span style="white-space:nowrap">
-<span class="math align-center">$ 4 $</span>.</span> Furthermore, it
-is possible to arrange 
+updates.</p><p>Regarding the AVL tree shown above, notice that the tree is not as
+well-balanced as it could be. For example,
+<span class="math align-center">$ 0 $</span> is at depth <span style=white-space:nowrap><span class="math align-center">$ 7 $</span>,</span> whereas <span style=white-space:nowrap><span class="math align-center">$ 52 $</span>,</span>
+which also has two empty children, is only at depth <span style=white-space:nowrap><span class="math align-center">$ 4 $</span>.</span> Furthermore, it
+is possible to arrange
 <span class="math align-center">$ 54 $</span> nodes into a binary tree with height as small
-as <span style="white-space:nowrap">
-<span class="math align-center">$ 5 $</span>.</span> However, maintaining a more-balanced structure would likely
+as <span style=white-space:nowrap><span class="math align-center">$ 5 $</span>.</span> However, maintaining a more-balanced structure would likely
 require more work, and as a result, the overall performance might not be
 as good. As we will show in what follows, the balance criterion for an
-AVL tree can be maintained without a great deal of overhead.</p>
-<p>The first thing we should consider is how we can efficiently determine
+AVL tree can be maintained without a great deal of overhead.</p><p>The first thing we should consider is how we can efficiently determine
 the height of a binary tree. We don&rsquo;t want to have to explore the entire
 tree to find the longest path from the root &mdash; this would be way too
 expensive. Instead, we store the height of a tree
@@ -691,40 +77,29 @@ how to modify the definition of an immutable binary tree node so that
 whenever a binary tree is created from such nodes, the resulting tree is
 guaranteed to satisfy the AVL tree balance criterion. As a result, user
 code will be able to form AVL trees as if they were ordinary binary
-search trees.</p>
-<p>In order to allow convenient and efficient access to the height, even
+search trees.</p><p>In order to allow convenient and efficient access to the height, even
 for empty trees, we can store the height of a tree in a <strong>private</strong> field in its root, and provide a <strong>static</strong> method to take a nullable binary
 tree node as its only parameter and return its height. Making this
 method <strong>static</strong> will allow us to handle empty (i.e., <strong>null</strong>) trees.
-If the tree is empty, this method will return <span style="white-space:nowrap">
-<span class="math align-center">$ -1 $</span>;</span> otherwise, it will
-return the height stored in the tree. This method can be <strong>public</strong>.</p>
-<p>We then can modify the constructor so that it initializes the height
+If the tree is empty, this method will return <span style=white-space:nowrap><span class="math align-center">$ -1 $</span>;</span> otherwise, it will
+return the height stored in the tree. This method can be <strong>public</strong>.</p><p>We then can modify the constructor so that it initializes the height
 field. Using the above method, it can find the heights of each child,
-and add 
+and add
 <span class="math align-center">$ 1 $</span> to the maximum of these values. This is the height of the node
 being constructed. It can initialize the height field to this value, and
 because the nodes are immutable, this field will store the correct
-height from that point on.</p>
-<p>Now that we have a way to find the height of a tree efficiently, we can
+height from that point on.</p><p>Now that we have a way to find the height of a tree efficiently, we can
 focus on how we maintain the balance property. Whenever an insertion or
 deletion would cause the balance property to be violated for a
 particular node, we perform a <em>rotation</em> at that node. Suppose, for
 example, that we have inserted an element into a node&rsquo;s left child, and
-that this operation causes the height of the new left child to be 
+that this operation causes the height of the new left child to be
 <span class="math align-center">$ 2 $</span>
 greater than the height of the right child (note that this same scenario
 could have occurred if we had removed an element from the right child).
-We can then rotate the tree using a <em>single rotate right</em>:</p>
-<p>
-<a href="#image-9e155e49647714f1ccb340e4c6fa92b7" class="lightbox-link">
-<img src="single-rotate.jpg" alt="A single rotate right" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-9e155e49647714f1ccb340e4c6fa92b7">
-<img src="single-rotate.jpg" alt="A single rotate right" class="lightbox-image" loading="lazy">
-</a></p>
-<p>The tree on the left above represents the tree whose left child has a
-height 
+We can then rotate the tree using a <em>single rotate right</em>:</p><p><a href=#R-image-6084dafaf54f6c6cdd42faf1a70c9997 class=lightbox-link><img alt="A single rotate right" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/trees/avl/single-rotate.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-6084dafaf54f6c6cdd42faf1a70c9997><img alt="A single rotate right" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/trees/avl/single-rotate.jpg></a></p><p>The tree on the left above represents the tree whose left child has a
+height
 <span class="math align-center">$ 2 $</span> greater than its right child. The root and the lines to its
 children are drawn using dashes to indicate that the root node has not
 yet been constructed &mdash; we have at this point simply built a new left
@@ -732,175 +107,105 @@ child, and the tree on the left shows the tree that would be formed if
 we were building an ordinary binary search tree. The circles in the
 picture indicate individual nodes, and the triangles indicate arbitrary
 trees (which may be empty). Note that the because the left child has a
-height 
+height
 <span class="math align-center">$ 2 $</span> greater than the right child, we know that the left child
 cannot be empty; hence, we can safely depict it as a node with two
 children. The labels are chosen to indicate the order of the elements &mdash;
-e.g., as &ldquo;a&rdquo; 
+e.g., as &ldquo;a&rdquo;
 <span class="math align-center">$ \lt $</span> &ldquo;b&rdquo;, every key in tree <em>a</em> is less than the key in
 node <em>b</em>. The tree on the right shows the tree that would be built by
 performing this rotation. Note that the rotation preserves the order of
-the keys.</p>
-<p>Suppose the name of our class implementing a binary tree node is
-<strong>BinaryTreeNode&lt;T&gt;</strong>, and suppose it has the following properties:</p>
-<ul>
-<li><strong>Data:</strong> gets the data stored in the node.</li>
-<li><strong>LeftChild:</strong> gets the left child of the node.</li>
-<li><strong>RightChild:</strong> gets the right child of the node.</li>
-</ul>
-<p>Then the following code can be used to perform a single rotate right:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// Builds the result of performing a single rotate right on the binary tree</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// described by the given root, left child, and right child.</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;param name=&#34;root&#34;&gt;The data stored in the root of the original tree.&lt;/param&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;param name=&#34;left&#34;&gt;The left child of the root of the original tree.&lt;/param&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;param name=&#34;right&#34;&gt;The right child of the root of the original tree.&lt;/param&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;returns&gt;The result of performing a single rotate right on the tree described</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// by the parameters.&lt;/returns&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> BinaryTreeNode&lt;T&gt; SingleRotateRight(T root,
-</span></span><span style="display:flex;"><span>    BinaryTreeNode&lt;T&gt; left, BinaryTreeNode&lt;T&gt;? right)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    BinaryTreeNode&lt;T&gt; newRight = <span style="color:#66d9ef">new</span>(root, left.RightChild, right);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> BinaryTreeNode&lt;T&gt;(left.Data, left.LeftChild, newRight);
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Relating this code to the tree on the left in the picture above, the
+the keys.</p><p>Suppose the name of our class implementing a binary tree node is
+<strong>BinaryTreeNode&lt;T></strong>, and suppose it has the following properties:</p><ul><li><strong>Data:</strong> gets the data stored in the node.</li><li><strong>LeftChild:</strong> gets the left child of the node.</li><li><strong>RightChild:</strong> gets the right child of the node.</li></ul><p>Then the following code can be used to perform a single rotate right:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=cs>/// &lt;summary&gt;</span>
+</span></span><span class=line><span class=cl><span class=cs>/// Builds the result of performing a single rotate right on the binary tree</span>
+</span></span><span class=line><span class=cl><span class=cs>/// described by the given root, left child, and right child.</span>
+</span></span><span class=line><span class=cl><span class=cs>/// &lt;/summary&gt;</span>
+</span></span><span class=line><span class=cl><span class=cs>/// &lt;param name=&#34;root&#34;&gt;The data stored in the root of the original tree.&lt;/param&gt;</span>
+</span></span><span class=line><span class=cl><span class=cs>/// &lt;param name=&#34;left&#34;&gt;The left child of the root of the original tree.&lt;/param&gt;</span>
+</span></span><span class=line><span class=cl><span class=cs>/// &lt;param name=&#34;right&#34;&gt;The right child of the root of the original tree.&lt;/param&gt;</span>
+</span></span><span class=line><span class=cl><span class=cs>/// &lt;returns&gt;The result of performing a single rotate right on the tree described</span>
+</span></span><span class=line><span class=cl><span class=cs>/// by the parameters.&lt;/returns&gt;</span>
+</span></span><span class=line><span class=cl><span class=kd>private</span> <span class=kd>static</span> <span class=n>BinaryTreeNode</span><span class=p>&lt;</span><span class=n>T</span><span class=p>&gt;</span> <span class=n>SingleRotateRight</span><span class=p>(</span><span class=n>T</span> <span class=n>root</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=n>BinaryTreeNode</span><span class=p>&lt;</span><span class=n>T</span><span class=p>&gt;</span> <span class=n>left</span><span class=p>,</span> <span class=n>BinaryTreeNode</span><span class=p>&lt;</span><span class=n>T</span><span class=p>&gt;?</span> <span class=n>right</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=n>BinaryTreeNode</span><span class=p>&lt;</span><span class=n>T</span><span class=p>&gt;</span> <span class=n>newRight</span> <span class=p>=</span> <span class=k>new</span><span class=p>(</span><span class=n>root</span><span class=p>,</span> <span class=n>left</span><span class=p>.</span><span class=n>RightChild</span><span class=p>,</span> <span class=n>right</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=k>new</span> <span class=n>BinaryTreeNode</span><span class=p>&lt;</span><span class=n>T</span><span class=p>&gt;(</span><span class=n>left</span><span class=p>.</span><span class=n>Data</span><span class=p>,</span> <span class=n>left</span><span class=p>.</span><span class=n>LeftChild</span><span class=p>,</span> <span class=n>newRight</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>Relating this code to the tree on the left in the picture above, the
 parameter <code>root</code> refers to <em>d</em>, the parameter <code>left</code> refers to the tree
 rooted at node <em>b</em>, and the parameter <code>right</code> refers to the (possibly empty) tree <em>e</em>. The
 code first constructs the right child of the tree on the right and
 places it in the variable <code>newRight</code>. It then constructs the entire tree
-on the right and returns it.</p>
-
-  
-  
-<div class="box notices cstyle warning">
-  <div class="box-label"><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div>
-  <div class="box-content">
-
-<p>Don&rsquo;t try to write the code for doing rotations without looking at pictures of the rotations.</p>
-</div>
-</div>
-<p>Now that we have seen what a single rotate right does and how to code
+on the right and returns it.</p><div class="box notices cstyle warning"><div class=box-label><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div><div class=box-content><p>Don&rsquo;t try to write the code for doing rotations without looking at pictures of the rotations.</p></div></div><p>Now that we have seen what a single rotate right does and how to code
 it, we need to consider whether it fixes the problem. Recall that we
 were assuming that the given left child (i.e., the tree rooted at <em>b</em> in
-the tree on the left above) has a height 
+the tree on the left above) has a height
 <span class="math align-center">$ 2 $</span> greater than the given right
 child (i.e., the tree <em>e</em> in the tree on the left above). Let&rsquo;s suppose
-the tree <em>e</em> has height <span style="white-space:nowrap">
-<span class="math align-center">$ h $</span>.</span> Then the tree rooted at <em>b</em> has height
-<span style="white-space:nowrap">
-<span class="math align-center">$ h + 2 $</span>.</span> By the definition of the height of a tree, either <em>a</em>
-or <em>c</em> (or both) must have height <span style="white-space:nowrap">
-<span class="math align-center">$ h + 1 $</span>.</span> Assuming that every
+the tree <em>e</em> has height <span style=white-space:nowrap><span class="math align-center">$ h $</span>.</span> Then the tree rooted at <em>b</em> has height
+<span style=white-space:nowrap><span class="math align-center">$ h + 2 $</span>.</span> By the definition of the height of a tree, either <em>a</em>
+or <em>c</em> (or both) must have height <span style=white-space:nowrap><span class="math align-center">$ h + 1 $</span>.</span> Assuming that every
 tree we&rsquo;ve built so far is an AVL tree, the children of <em>b</em> must differ
-in height by at most <span style="white-space:nowrap">
-<span class="math align-center">$ 1 $</span>;</span> hence, <em>a</em> and <em>c</em> must both have a height of at
-least 
-<span class="math align-center">$ h $</span> and at most <span style="white-space:nowrap">
-<span class="math align-center">$ h + 1 $</span>.</span></p>
-<p>Given these heights, let&rsquo;s examine the tree on the right. We have
+in height by at most <span style=white-space:nowrap><span class="math align-center">$ 1 $</span>;</span> hence, <em>a</em> and <em>c</em> must both have a height of at
+least
+<span class="math align-center">$ h $</span> and at most <span style=white-space:nowrap><span class="math align-center">$ h + 1 $</span>.</span></p><p>Given these heights, let&rsquo;s examine the tree on the right. We have
 assumed that every tree we&rsquo;ve built up to this point is an AVL tree, so
 we don&rsquo;t need to worry about any balances within <em>a</em>, <em>c</em>, or <em>e</em>.
-Because <em>c</em> has either height 
-<span class="math align-center">$ h $</span> or height 
+Because <em>c</em> has either height
+<span class="math align-center">$ h $</span> or height
 <span class="math align-center">$ h + 1 $</span> and <em>e</em> has
-height <span style="white-space:nowrap">
-<span class="math align-center">$ h $</span>,</span> the tree rooted at <em>d</em> satisfies the balance criterion.
-However, if <em>c</em> has height 
-<span class="math align-center">$ h + 1 $</span> and <em>a</em> has height <span style="white-space:nowrap">
-<span class="math align-center">$ h $</span>,</span> then
-the tree rooted at <em>d</em> has height <span style="white-space:nowrap">
-<span class="math align-center">$ h + 2 $</span>,</span> and the balance
+height <span style=white-space:nowrap><span class="math align-center">$ h $</span>,</span> the tree rooted at <em>d</em> satisfies the balance criterion.
+However, if <em>c</em> has height
+<span class="math align-center">$ h + 1 $</span> and <em>a</em> has height <span style=white-space:nowrap><span class="math align-center">$ h $</span>,</span> then
+the tree rooted at <em>d</em> has height <span style=white-space:nowrap><span class="math align-center">$ h + 2 $</span>,</span> and the balance
 criterion is <em>not</em> satisfied. On the other hand, if <em>a</em> has height
-<span style="white-space:nowrap">
-<span class="math align-center">$ h + 1 $</span>,</span> the tree rooted at <em>d</em> will have a height of either
-
-<span class="math align-center">$ h + 1 $</span> or <span style="white-space:nowrap">
-<span class="math align-center">$ h + 2 $</span>,</span> depending on the height of <em>c</em>. In these
-cases, the balance criterion is satisfied.</p>
-<p>We therefore conclude that a single rotate right will restore the
-balance if:</p>
-<ul>
-<li>The height of the original left child (i.e., the tree rooted at <em>b</em>
-in the above figure) is 
+<span style=white-space:nowrap><span class="math align-center">$ h + 1 $</span>,</span> the tree rooted at <em>d</em> will have a height of either
+<span class="math align-center">$ h + 1 $</span> or <span style=white-space:nowrap><span class="math align-center">$ h + 2 $</span>,</span> depending on the height of <em>c</em>. In these
+cases, the balance criterion is satisfied.</p><p>We therefore conclude that a single rotate right will restore the
+balance if:</p><ul><li>The height of the original left child (i.e., the tree rooted at <em>b</em>
+in the above figure) is
 <span class="math align-center">$ 2 $</span> greater than the height of the original
-right child (tree <em>e</em> in the above figure); and</li>
-<li>The height of the left child of the original left child (tree <em>a</em> in
+right child (tree <em>e</em> in the above figure); and</li><li>The height of the left child of the original left child (tree <em>a</em> in
 the above figure) is greater than the height of the original right
-child (tree <em>e</em>).</li>
-</ul>
-<p>For the case in which the height of the left child of the original left
+child (tree <em>e</em>).</li></ul><p>For the case in which the height of the left child of the original left
 child (tree <em>a</em>) is <em>not</em> greater than the height of the original right
-child (tree <em>e</em>), we will need to use a different kind of rotation.</p>
-<p>Before we consider the other kind of rotation, we can observe that if an
-insertion or deletion leaves the right child with a height 
+child (tree <em>e</em>), we will need to use a different kind of rotation.</p><p>Before we consider the other kind of rotation, we can observe that if an
+insertion or deletion leaves the right child with a height
 <span class="math align-center">$ 2 $</span> greater
 than the left child and the right child of the right child with a height
 greater than the left child, the mirror image of a single rotate right
 will restore the balance. This rotation is called a <em>single rotate
-left</em>:</p>
-<p>
-<a href="#image-01a67ea311fed38d34a3e31ca4c61101" class="lightbox-link">
-<img src="single-rotate-left.jpg" alt="A single rotate left" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-01a67ea311fed38d34a3e31ca4c61101">
-<img src="single-rotate-left.jpg" alt="A single rotate left" class="lightbox-image" loading="lazy">
-</a></p>
-<p>Returning to the case in which the left child has a height 
+left</em>:</p><p><a href=#R-image-694125d119908a25d2b1802e3aa2db8e class=lightbox-link><img alt="A single rotate left" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/trees/avl/single-rotate-left.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-694125d119908a25d2b1802e3aa2db8e><img alt="A single rotate left" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/trees/avl/single-rotate-left.jpg></a></p><p>Returning to the case in which the left child has a height
 <span class="math align-center">$ 2 $</span> greater
 than the right child, but the left child of the left child has a height
 no greater than the right child, we can in this case do a <em>double rotate
-right</em>:</p>
-<p>
-<a href="#image-566bdcc02662190b9b3d88662c2d101b" class="lightbox-link">
-<img src="double-rotate.jpg" alt="A double rotate right" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-566bdcc02662190b9b3d88662c2d101b">
-<img src="double-rotate.jpg" alt="A double rotate right" class="lightbox-image" loading="lazy">
-</a></p>
-<p>Note that we have drawn the trees a bit differently by showing more
+right</em>:</p><p><a href=#R-image-06733d961a9f11b686a6b6e1ff6aeeab class=lightbox-link><img alt="A double rotate right" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/trees/avl/double-rotate.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-06733d961a9f11b686a6b6e1ff6aeeab><img alt="A double rotate right" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/trees/avl/double-rotate.jpg></a></p><p>Note that we have drawn the trees a bit differently by showing more
 detail. Let&rsquo;s now show that this rotation restores the balance in this
-case. Suppose that in the tree on the left, <em>g</em> has height <span style="white-space:nowrap">
-<span class="math align-center">$ h $</span>.</span> Then the
-tree rooted at <em>b</em> has height <span style="white-space:nowrap">
-<span class="math align-center">$ h + 2 $</span>.</span> Because the height of <em>a</em>
+case. Suppose that in the tree on the left, <em>g</em> has height <span style=white-space:nowrap><span class="math align-center">$ h $</span>.</span> Then the
+tree rooted at <em>b</em> has height <span style=white-space:nowrap><span class="math align-center">$ h + 2 $</span>.</span> Because the height of <em>a</em>
 is no greater than the height of <em>g</em>, assuming all trees we have built
-so far are AVL trees, <em>a</em> must have height <span style="white-space:nowrap">
-<span class="math align-center">$ h $</span>,</span> and the tree rooted at
-<em>d</em> must have height 
+so far are AVL trees, <em>a</em> must have height <span style=white-space:nowrap><span class="math align-center">$ h $</span>,</span> and the tree rooted at
+<em>d</em> must have height
 <span class="math align-center">$ h + 1 $</span> (thus, it makes sense to draw it as
 having a root node). This means that <em>c</em> and <em>e</em> both must have heights
-of either 
-<span class="math align-center">$ h $</span> or <span style="white-space:nowrap">
-<span class="math align-center">$ h - 1 $</span>.</span> It is now not hard to verify that the
+of either
+<span class="math align-center">$ h $</span> or <span style=white-space:nowrap><span class="math align-center">$ h - 1 $</span>.</span> It is now not hard to verify that the
 balance criterion is satisfied at <em>b</em>, <em>f</em>, and <em>d</em> in the tree on the
-right.</p>
-<p>The only remaining case is the mirror image of the above &mdash; i.e., that
-the right child has height 
+right.</p><p>The only remaining case is the mirror image of the above &mdash; i.e., that
+the right child has height
 <span class="math align-center">$ 2 $</span> greater than the left child, but the height
 of the right child of the right child is no greater than the height of
-the left child. In this case, a <em>double rotate left</em> can be applied:</p>
-<p>
-<a href="#image-cfeec2a1170d1ee5927e12a576aead2b" class="lightbox-link">
-<img src="double-rotate-left.jpg" alt="A double rotate left" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-cfeec2a1170d1ee5927e12a576aead2b">
-<img src="double-rotate-left.jpg" alt="A double rotate left" class="lightbox-image" loading="lazy">
-</a></p>
-<p>We have shown how to restore the balance whenever the balance criterion
+the left child. In this case, a <em>double rotate left</em> can be applied:</p><p><a href=#R-image-cab2214177d5ee08f82433bf2a114722 class=lightbox-link><img alt="A double rotate left" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/trees/avl/double-rotate-left.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-cab2214177d5ee08f82433bf2a114722><img alt="A double rotate left" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/trees/avl/double-rotate-left.jpg></a></p><p>We have shown how to restore the balance whenever the balance criterion
 is violated. Now we just need to put it all together in a <strong>public
 static</strong> method that will replace the constructor as far as user code is
 concerned. In order to prevent the user from calling the constructor
 directly, we also need to make the constructor <strong>private</strong>. We want this
-<strong>static</strong> method to take the same parameters as the constructor:</p>
-<ul>
-<li>The data item that can be stored at the root, provided no rotation
-is required.</li>
-<li>The tree that can be used as the left child if no rotation is
-required.</li>
-<li>The tree that can be used as the right child if no rotation is
-required.</li>
-</ul>
-<p>The purpose of this method is to build a tree including all the given
+<strong>static</strong> method to take the same parameters as the constructor:</p><ul><li>The data item that can be stored at the root, provided no rotation
+is required.</li><li>The tree that can be used as the left child if no rotation is
+required.</li><li>The tree that can be used as the right child if no rotation is
+required.</li></ul><p>The purpose of this method is to build a tree including all the given
 nodes, with the given data item following all nodes in the left child
 and preceding all nodes in the right child, but satisfying the AVL tree
 balance criterion. Because this method will be the only way for user
@@ -911,120 +216,66 @@ the methods to do the remaining rotations are <strong>SingleRotateLeft</strong>,
 <strong>DoubleRotateRight</strong>, and <strong>DoubleRotateLeft</strong>, respectively. Further
 suppose that the parameter lists for each of these last three methods
 are the same as for <strong>SingleRotateRight</strong> above, except that for the left rotations, <code>left</code> is nullable, not <code>right</code>. The following method
-can then be used to build AVL trees:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// Constructs an AVL Tree from the given data element and trees. The heights of </span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// the trees must differ by at most two. The tree built will have the same </span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// inorder traversal order as if the data were at the root, left were the left </span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// child, and right were the right child.</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;param name=&#34;data&#34;&gt;A data item to be stored in the tree.&lt;/param&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;param name=&#34;left&#34;&gt;An AVL Tree containing elements less than data.&lt;/param&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;param name=&#34;right&#34;&gt;An AVL Tree containing elements greater than data.</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/param&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;returns&gt;The AVL Tree constructed.&lt;/returns&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> BinaryTreeNode&lt;T&gt; GetAvlTree(T data, BinaryTreeNode&lt;T&gt;? left,
-</span></span><span style="display:flex;"><span>    BinaryTreeNode&lt;T&gt;? right)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> diff = Height(left) - Height(right);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (Math.Abs(diff) &gt; <span style="color:#ae81ff">2</span>)
-</span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> ArgumentException();
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (diff == <span style="color:#ae81ff">2</span>)
-</span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// If the heights differ by 2, left&#39;s height is at least 1; hence, it isn&#39;t null.</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (Height(left!.LeftChild) &gt; Height(right))
-</span></span><span style="display:flex;"><span>        {
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> SingleRotateRight(data, left, right);
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>        {
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// If the heights differ by 2, but left.LeftChild&#39;s height is no more than</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// right&#39;s height, then left.RightChild&#39;s height must be greater than right&#39;s</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// height; hence, left.RightChild isn&#39;t null.</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> DoubleRotateRight(data, left, right);
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (diff == -<span style="color:#ae81ff">2</span>)
-</span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// If the heights differ by -2, right&#39;s height is at least 1; hence, it isn&#39;t null.</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (Height(right!.RightChild) &gt; Height(left))
-</span></span><span style="display:flex;"><span>        {
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> SingleRotateLeft(data, left, right);
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>        {
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// If the heights differ by -1, but right.RightChild&#39;s height is no more than </span>
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// left&#39;s height, then right.LeftChild&#39;s height must be greater than right&#39;s </span>
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// height; hence right.LeftChild isn&#39;t null.</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> DoubleRotateLeft(data, left, right);
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> BinaryTreeNode&lt;T&gt;(data, left, right);
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>In order to build and maintain an AVL tree, user code simply needs to
+can then be used to build AVL trees:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=cs>/// &lt;summary&gt;</span>
+</span></span><span class=line><span class=cl><span class=cs>/// Constructs an AVL Tree from the given data element and trees. The heights of </span>
+</span></span><span class=line><span class=cl><span class=cs>/// the trees must differ by at most two. The tree built will have the same </span>
+</span></span><span class=line><span class=cl><span class=cs>/// inorder traversal order as if the data were at the root, left were the left </span>
+</span></span><span class=line><span class=cl><span class=cs>/// child, and right were the right child.</span>
+</span></span><span class=line><span class=cl><span class=cs>/// &lt;/summary&gt;</span>
+</span></span><span class=line><span class=cl><span class=cs>/// &lt;param name=&#34;data&#34;&gt;A data item to be stored in the tree.&lt;/param&gt;</span>
+</span></span><span class=line><span class=cl><span class=cs>/// &lt;param name=&#34;left&#34;&gt;An AVL Tree containing elements less than data.&lt;/param&gt;</span>
+</span></span><span class=line><span class=cl><span class=cs>/// &lt;param name=&#34;right&#34;&gt;An AVL Tree containing elements greater than data.</span>
+</span></span><span class=line><span class=cl><span class=cs>/// &lt;/param&gt;</span>
+</span></span><span class=line><span class=cl><span class=cs>/// &lt;returns&gt;The AVL Tree constructed.&lt;/returns&gt;</span>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>static</span> <span class=n>BinaryTreeNode</span><span class=p>&lt;</span><span class=n>T</span><span class=p>&gt;</span> <span class=n>GetAvlTree</span><span class=p>(</span><span class=n>T</span> <span class=n>data</span><span class=p>,</span> <span class=n>BinaryTreeNode</span><span class=p>&lt;</span><span class=n>T</span><span class=p>&gt;?</span> <span class=n>left</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=n>BinaryTreeNode</span><span class=p>&lt;</span><span class=n>T</span><span class=p>&gt;?</span> <span class=n>right</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>diff</span> <span class=p>=</span> <span class=n>Height</span><span class=p>(</span><span class=n>left</span><span class=p>)</span> <span class=p>-</span> <span class=n>Height</span><span class=p>(</span><span class=n>right</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=n>Math</span><span class=p>.</span><span class=n>Abs</span><span class=p>(</span><span class=n>diff</span><span class=p>)</span> <span class=p>&gt;</span> <span class=m>2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>throw</span> <span class=k>new</span> <span class=n>ArgumentException</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=k>else</span> <span class=k>if</span> <span class=p>(</span><span class=n>diff</span> <span class=p>==</span> <span class=m>2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=c1>// If the heights differ by 2, left&#39;s height is at least 1; hence, it isn&#39;t null.</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=p>(</span><span class=n>Height</span><span class=p>(</span><span class=n>left</span><span class=p>!.</span><span class=n>LeftChild</span><span class=p>)</span> <span class=p>&gt;</span> <span class=n>Height</span><span class=p>(</span><span class=n>right</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>        <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>return</span> <span class=n>SingleRotateRight</span><span class=p>(</span><span class=n>data</span><span class=p>,</span> <span class=n>left</span><span class=p>,</span> <span class=n>right</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=k>else</span>
+</span></span><span class=line><span class=cl>        <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=c1>// If the heights differ by 2, but left.LeftChild&#39;s height is no more than</span>
+</span></span><span class=line><span class=cl>            <span class=c1>// right&#39;s height, then left.RightChild&#39;s height must be greater than right&#39;s</span>
+</span></span><span class=line><span class=cl>            <span class=c1>// height; hence, left.RightChild isn&#39;t null.</span>
+</span></span><span class=line><span class=cl>            <span class=k>return</span> <span class=n>DoubleRotateRight</span><span class=p>(</span><span class=n>data</span><span class=p>,</span> <span class=n>left</span><span class=p>,</span> <span class=n>right</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=k>else</span> <span class=k>if</span> <span class=p>(</span><span class=n>diff</span> <span class=p>==</span> <span class=p>-</span><span class=m>2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=c1>// If the heights differ by -2, right&#39;s height is at least 1; hence, it isn&#39;t null.</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=p>(</span><span class=n>Height</span><span class=p>(</span><span class=n>right</span><span class=p>!.</span><span class=n>RightChild</span><span class=p>)</span> <span class=p>&gt;</span> <span class=n>Height</span><span class=p>(</span><span class=n>left</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>        <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>return</span> <span class=n>SingleRotateLeft</span><span class=p>(</span><span class=n>data</span><span class=p>,</span> <span class=n>left</span><span class=p>,</span> <span class=n>right</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=k>else</span>
+</span></span><span class=line><span class=cl>        <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=c1>// If the heights differ by -1, but right.RightChild&#39;s height is no more than </span>
+</span></span><span class=line><span class=cl>            <span class=c1>// left&#39;s height, then right.LeftChild&#39;s height must be greater than right&#39;s </span>
+</span></span><span class=line><span class=cl>            <span class=c1>// height; hence right.LeftChild isn&#39;t null.</span>
+</span></span><span class=line><span class=cl>            <span class=k>return</span> <span class=n>DoubleRotateLeft</span><span class=p>(</span><span class=n>data</span><span class=p>,</span> <span class=n>left</span><span class=p>,</span> <span class=n>right</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=k>else</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=k>new</span> <span class=n>BinaryTreeNode</span><span class=p>&lt;</span><span class=n>T</span><span class=p>&gt;(</span><span class=n>data</span><span class=p>,</span> <span class=n>left</span><span class=p>,</span> <span class=n>right</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>In order to build and maintain an AVL tree, user code simply needs to
 call the above wherever it would have invoked the
-<strong>BinaryTreeNode&lt;T&gt;</strong> constructor in building and maintaining an
+<strong>BinaryTreeNode&lt;T></strong> constructor in building and maintaining an
 ordinary binary search tree. The extra overhead is fairly minimal &mdash; each
 time a new node is constructed, we need to check a few heights (which
 are stored in fields), and if a rotation is needed, construct one or two
 extra nodes. As a result, because the height of an AVL tree is
 guaranteed to be logarithmic in the number of nodes, the worst-case
-running times of both lookups and updates are in <span style="white-space:nowrap">
-<span class="math align-center">$ O(\log n) $</span>,</span> where
-
-<span class="math align-center">$ n $</span> is the number of nodes in the tree.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-        </div>
-      </main>
-    </div>
-    
-    </div>
-    
-    
-    
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1710771761" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1710771761" defer></script>
-    <script>
-      function useMathJax( config ){
-        if( !Object.assign ){
-          
-          return;
-        }
-        window.MathJax = Object.assign( window.MathJax || {}, {
-          loader: {
-            load: ['[tex]/mhchem']
-          },
-          startup: {
-            elements: [
-              '.math'
-            ]
-          },
-          tex: {
-            inlineMath: [
-              ['$', '$'], 
-              ['\\(', '\\)']
-            ]
-          },
-          options: {
-            enableMenu: false 
-          }
-        }, config );
-      }
-      useMathJax( JSON.parse("{}") );
-    </script>
-    <script id="MathJax-script" async src="https://ksu-cs-textbooks.github.io/cis300/js/mathjax/tex-mml-chtml.js?1710771761"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1710771761" defer></script>
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/tele-scroll.js?1710771761 defer"></script>
-    
-  </body>
-</html>
+running times of both lookups and updates are in <span style=white-space:nowrap><span class="math align-center">$ O(\log n) $</span>,</span> where
+<span class="math align-center">$ n $</span> is the number of nodes in the tree.</p><footer class=footline></footer></article></div></main></div></div><script src=/cis300/js/clipboard.min.js?1719513824 defer></script><script src=/cis300/js/perfect-scrollbar.min.js?1719513824 defer></script><script>function useMathJax(e){window.MathJax=Object.assign(window.MathJax||{},{tex:{inlineMath:[["\\(","\\)"],["$","$"]],displayMath:[["\\[","\\]"],["$$","$$"]]},options:{enableMenu:!1}},e)}useMathJax(JSON.parse("{}"))</script><script id=MathJax-script async src=/cis300/js/mathjax/tex-mml-chtml.js?1719513824></script><script src=/cis300/js/theme.js?1719513824 defer></script><script src=/cis300/js/tele-scroll.js?1719513824 defer></script></body></html>

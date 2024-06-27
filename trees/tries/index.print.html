@@ -1,686 +1,27 @@
-
-
-
-
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.18.0">
-    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
-    <meta name="description" content="K-State CIS 300: Data Structures">
-    <meta name="author" content="Rod Howell and Josh Weese">
-    <title>Tries :: Data Structures in C#</title>
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1710771761" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1710771761" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/format-print.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1710771761" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1710771761"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1710771761"></script>
-    <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
-      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
-      var root_url="https://ksu-cs-textbooks.github.io/cis300/";
-      var baseUri=root_url.replace(/\/$/, '');
-      // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
-      window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
-    </script>
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1710771761" rel="stylesheet">
-
-  </head>
-  <body class="mobile-support print disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/trees/tries/index.html">
-    <div id="body" class="default-animation">
-      <div id="sidebar-overlay"></div>
-      <div id="toc-overlay"></div>
-      <nav id="topbar" class="highlightable">
-        <div>
-          <div id="top-tele-link">
-            <a class="print-link" title='Teleprompter View' href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/tele.html">
-              <i class="fas fa-tv fa-fw"></i>
-            </a>
-          </div>
-          <div id="top-embed-link">
-            <a class="print-link" title='Embeddable Version' href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/embed.html">
-              <i class="fas fa-expand-arrows-alt fa-fw"></i>
-            </a>
-          </div>
-          <div id="breadcrumbs">
-            <span id="sidebar-toggle-span">
-              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
-            </span>
-            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis300/index.html"><span itemprop="name">Data Structures in C#</span></a><meta itemprop="position" content="1"> &gt; </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis300/trees/index.html"><span itemprop="name">Trees</span></a><meta itemprop="position" content="2"> &gt; </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Tries</span><meta itemprop="position" content="3"></li>
-            </ol>
-          </div>
-        </div>
-      </nav>
-      <main id="body-inner" class="highlightable default" tabindex="-1">
-        <div class="flex-block-wrapper">
-          <article class="default">
-            <header class="headline">
-            </header>
-<div hidden><h1 id="tries">Tries</h1></div>
-
-<h2 id="tries">Tries</h2>
-<p><a href="https://ksu-cs-textbooks.github.io/cis300/trees/avl">AVL trees</a>
- give us an efficient mechanism for storage and  retrieval, particularly if we need to be able to process the elements in order of their keys.  However, there are special cases where we can achieve better performance.  One of these special cases occurs when we need to store a list of words, as we might need in a word game, for example.  For such applications, a <em>trie</em> provides for even more efficient storage and retrieval.</p>
-<p>In this section, we first define a trie and give a rather straightforward implementation.  We then show how to improve performance by implementing different nodes in different ways. We then examine the use of a preorder traversal to traverse a trie.  We conclude by discussing an example of using a trie in a word game.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-          <section>
-            <h1 class="a11y-only">Subsections of Tries</h1>
-    
-    
-          <article class="default">
-            <header class="headline">
-            </header>
-<div hidden><h1 id="introduction-to-tries">Introduction to Tries</h1></div>
-
-<h2 id="introduction-to-tries">Introduction to Tries</h2>
-<p>A <em>trie</em> is a nonempty tree storing a set of words in the following way:</p>
-<ul>
-<li>Each child of a node is labeled with a character.</li>
-<li>Each node contains a boolean indicating whether the labels in the
-path from the root to that node form a word in the set.</li>
-</ul>
-<p>The word, &ldquo;trie&rdquo;, is taken from the middle of the word, &ldquo;retrieval&rdquo;, but
-to avoid confusion, it is pronounced like &ldquo;try&rdquo; instead of like &ldquo;tree&rdquo;.</p>
-<p>Suppose, for example, that we want to store the following words:</p>
-<ul>
-<li>ape</li>
-<li>apple</li>
-<li>cable</li>
-<li>car</li>
-<li>cart</li>
-<li>cat</li>
-<li>cattle</li>
-<li>curl</li>
-<li>far</li>
-<li>farm</li>
-</ul>
-<p>A trie storing these words (where we denote a value of <strong>true</strong> for the
-boolean with a <code>*</code>) is as follows:</p>
-<p>
-<a href="#image-67189f40972756ff7f66564d777f0b78" class="lightbox-link">
-<img src="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro/trie-example.jpg" alt="A trie" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-67189f40972756ff7f66564d777f0b78">
-<img src="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro/trie-example.jpg" alt="A trie" class="lightbox-image" loading="lazy">
-</a></p>
-<p>Thus, for example, if we follow the path from the root through the
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=robots content="noindex, nofollow, noarchive, noimageindex"><meta name=description content="Tries AVL trees give us an efficient mechanism for storage and retrieval, particularly if we need to be able to process the elements in order of their keys. However, there are special cases where we can achieve better performance. One of these special cases occurs when we need to store a list of words, as we might need in a word game, for example. For such applications, a trie provides for even more efficient storage and retrieval."><meta name=author content="Rod Howell and Josh Weese"><meta name=twitter:card content="summary"><meta name=twitter:title content="Tries :: Data Structures in C#"><meta name=twitter:description content="Tries AVL trees give us an efficient mechanism for storage and retrieval, particularly if we need to be able to process the elements in order of their keys. However, there are special cases where we can achieve better performance. One of these special cases occurs when we need to store a list of words, as we might need in a word game, for example. For such applications, a trie provides for even more efficient storage and retrieval."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis300/trees/tries/"><meta property="og:site_name" content="Data Structures in C#"><meta property="og:title" content="Tries :: Data Structures in C#"><meta property="og:description" content="Tries AVL trees give us an efficient mechanism for storage and retrieval, particularly if we need to be able to process the elements in order of their keys. However, there are special cases where we can achieve better performance. One of these special cases occurs when we need to store a list of words, as we might need in a word game, for example. For such applications, a trie provides for even more efficient storage and retrieval."><meta property="og:locale" content="en-us"><meta property="og:type" content="website"><meta itemprop=name content="Tries :: Data Structures in C#"><meta itemprop=description content="Tries AVL trees give us an efficient mechanism for storage and retrieval, particularly if we need to be able to process the elements in order of their keys. However, there are special cases where we can achieve better performance. One of these special cases occurs when we need to store a list of words, as we might need in a word game, for example. For such applications, a trie provides for even more efficient storage and retrieval."><meta itemprop=dateModified content="2023-05-22T14:36:43-05:00"><meta itemprop=wordCount content="132"><title>Tries :: Data Structures in C#</title>
+<link href=/cis300/css/fontawesome-all.min.css?1719513824 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fontawesome-all.min.css?1719513824 rel=stylesheet></noscript><link href=/cis300/css/nucleus.css?1719513824 rel=stylesheet><link href=/cis300/css/auto-complete.css?1719513824 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/auto-complete.css?1719513824 rel=stylesheet></noscript><link href=/cis300/css/perfect-scrollbar.min.css?1719513824 rel=stylesheet><link href=/cis300/css/fonts.css?1719513824 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fonts.css?1719513824 rel=stylesheet></noscript><link href=/cis300/css/theme.css?1719513824 rel=stylesheet><link href=/cis300/css/theme-auto.css?1719513824 rel=stylesheet id=R-variant-style><link href=/cis300/css/chroma-auto.css?1719513824 rel=stylesheet id=R-variant-chroma-style><link href=/cis300/css/variant.css?1719513824 rel=stylesheet><link href=/cis300/css/print.css?1719513824 rel=stylesheet media=print><link href=/cis300/css/format-print.css?1719513824 rel=stylesheet><script src=/cis300/js/variant.js?1719513824></script><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis300",window.index_js_url="/cis300/index.search.js",window.variants&&variants.init(["auto","light-theme","dark-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis300/css/custom.css?1719513824 rel=stylesheet></head><body class="mobile-support print disableInlineCopyToClipboard" data-url=/cis300/trees/tries/><div id=R-body class=default-animation><div id=R-body-overlay></div><nav id=R-topbar><div class=topbar-wrapper><div class=topbar-sidebar-divider></div><div class="topbar-area topbar-area-start" data-area=start><div class="topbar-button topbar-button-sidebar" data-content-empty=disable data-width-s=show data-width-m=hide data-width-l=hide><button class=topbar-control onclick=toggleNav() type=button title="Menu (CTRL+ALT+n)"><i class="fa-fw fas fa-bars"></i></button></div></div><ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype=http://schema.org/BreadcrumbList><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><a itemprop=item href=/cis300/trees/><span itemprop=name>Trees</span></a><meta itemprop=position content="1">&nbsp;>&nbsp;</li><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><span itemprop=name>Tries</span><meta itemprop=position content="2"></li></ol><div class="topbar-area topbar-area-end" data-area=end><div class="topbar-button topbar-button-prev" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/cis300/trees/avl/ title="AVL Trees (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></div><div class="topbar-button topbar-button-next" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/cis300/trees/tries/intro/ title="Introduction to Tries (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></div></div></div></nav><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><div hidden><h1 id=tries>Tries</h1></div><h2 id=tries>Tries</h2><p><a href=/cis300/trees/avl/>AVL trees</a> give us an efficient mechanism for storage and retrieval, particularly if we need to be able to process the elements in order of their keys. However, there are special cases where we can achieve better performance. One of these special cases occurs when we need to store a list of words, as we might need in a word game, for example. For such applications, a <em>trie</em> provides for even more efficient storage and retrieval.</p><p>In this section, we first define a trie and give a rather straightforward implementation. We then show how to improve performance by implementing different nodes in different ways. We then examine the use of a preorder traversal to traverse a trie. We conclude by discussing an example of using a trie in a word game.</p><footer class=footline></footer></article><section><h1 class=a11y-only>Subsections of Tries</h1><article class=default><header class=headline></header><div hidden><h1 id=introduction-to-tries>Introduction to Tries</h1></div><h2 id=introduction-to-tries>Introduction to Tries</h2><p>A <em>trie</em> is a nonempty tree storing a set of words in the following way:</p><ul><li>Each child of a node is labeled with a character.</li><li>Each node contains a boolean indicating whether the labels in the
+path from the root to that node form a word in the set.</li></ul><p>The word, &ldquo;trie&rdquo;, is taken from the middle of the word, &ldquo;retrieval&rdquo;, but
+to avoid confusion, it is pronounced like &ldquo;try&rdquo; instead of like &ldquo;tree&rdquo;.</p><p>Suppose, for example, that we want to store the following words:</p><ul><li>ape</li><li>apple</li><li>cable</li><li>car</li><li>cart</li><li>cat</li><li>cattle</li><li>curl</li><li>far</li><li>farm</li></ul><p>A trie storing these words (where we denote a value of <strong>true</strong> for the
+boolean with a <code>*</code>) is as follows:</p><p><a href=#R-image-6922f6339a26722c29d003f983c1d190 class=lightbox-link><img alt="A trie" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/trees/tries/intro/trie-example.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-6922f6339a26722c29d003f983c1d190><img alt="A trie" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/trees/tries/intro/trie-example.jpg></a></p><p>Thus, for example, if we follow the path from the root through the
 labels &lsquo;c&rsquo;, &lsquo;a&rsquo;, and &lsquo;r&rsquo;, we reach a node with a <strong>true</strong> boolean value
 (shown by the <code>*</code> in the above picture); hence, &ldquo;car&rdquo; is in this set of
 words. However, if we follow the path through the labels &lsquo;c&rsquo;, &lsquo;u&rsquo;, and
 &lsquo;r&rsquo;, the node we reach has a <strong>false</strong> boolean; hence, &ldquo;cur&rdquo; is not in
 this set. Likewise, if we follow the path through &lsquo;a&rsquo;, we reach a node
 from which there is no child labeled &lsquo;c&rsquo;; hence, &ldquo;ace&rdquo; is not in this
-set.</p>
-<p>Note that each subtree of a trie is also a trie, although the &ldquo;words&rdquo; it
+set.</p><p>Note that each subtree of a trie is also a trie, although the &ldquo;words&rdquo; it
 stores may begin to look a little strange. For example if we follow the
 path through &lsquo;c&rsquo; and &lsquo;a&rsquo; in the above figure, we reach a trie that
-contains the following &ldquo;words&rdquo;:</p>
-<ul>
-<li>&ldquo;ble&rdquo;</li>
-<li>&ldquo;r&rdquo;</li>
-<li>&ldquo;rt&rdquo;</li>
-<li>&ldquo;t&rdquo;</li>
-<li>&ldquo;ttle&rdquo;</li>
-</ul>
-<p>These are actually the <em>completions</em> of the original words that begin
+contains the following &ldquo;words&rdquo;:</p><ul><li>&ldquo;ble&rdquo;</li><li>&ldquo;r&rdquo;</li><li>&ldquo;rt&rdquo;</li><li>&ldquo;t&rdquo;</li><li>&ldquo;ttle&rdquo;</li></ul><p>These are actually the <em>completions</em> of the original words that begin
 with the prefix &ldquo;ca&rdquo;. Note that if, in this subtree, we take the path
-through &rsquo;t&rsquo;, we reach a trie containing the following completions:</p>
-<ul>
-<li>&quot;&quot; [i.e., the empty string]</li>
-<li>&ldquo;tle&rdquo;</li>
-</ul>
-<p>In particular, the empty string is a word in this trie. This motivates
+through &rsquo;t&rsquo;, we reach a trie containing the following completions:</p><ul><li>"" [i.e., the empty string]</li><li>&ldquo;tle&rdquo;</li></ul><p>In particular, the empty string is a word in this trie. This motivates
 an alternative definition of the boolean stored in each node: it
 indicates whether the empty string is stored in the trie rooted at this
 node. This definition may be somewhat preferable to the one given above,
 as it does not depend on any context, but instead focuses entirely on
-the trie rooted at that particular node.</p>
-<p>One of the main advantages of a trie over an <a href="https://ksu-cs-textbooks.github.io/cis300/trees/avl">AVL
-tree</a>
- is the speed with
+the trie rooted at that particular node.</p><p>One of the main advantages of a trie over an <a href=/cis300/trees/avl/>AVL
+tree</a> is the speed with
 which we can look up words. Assuming we can quickly find the child with
 a given label, the time we need to look up a word is proportional to the
 length of the word, no matter how many words are in the trie. Note that
@@ -691,25 +32,18 @@ takes to do this one comparison is proportional to the length of the
 word, as we need to verify each character (we actually ignored the cost
 of such comparisons when we analyzed the performance of AVL trees).
 Consequently, we can expect a significant performance improvement by
-using a trie if our set of words is large.</p>
-<p>Let&rsquo;s now consider how we can implement a trie. There are various ways
+using a trie if our set of words is large.</p><p>Let&rsquo;s now consider how we can implement a trie. There are various ways
 that this can be done, but we&rsquo;ll consider a fairly straightforward
-approach in this section (we&rsquo;ll improve the implementation in <a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/multiple-impl">the next
-section</a>
-). We
+approach in this section (we&rsquo;ll improve the implementation in <a href=/cis300/trees/tries/multiple-impl/>the next
+section</a>). We
 will assume that the words we are storing are comprised of only the 26
 lower-case English letters. In this implementation, a single node will
-contain the following <strong>private</strong> fields:</p>
-<ul>
-<li>A <strong>bool</strong> storing whether the empty string is contained in the trie
+contain the following <strong>private</strong> fields:</p><ul><li>A <strong>bool</strong> storing whether the empty string is contained in the trie
 rooted at this node (or equivalently, whether this node ends a word
-in the entire trie).</li>
-<li>A 26-element array of nullable tries storing the children, where element 0
+in the entire trie).</li><li>A 26-element array of nullable tries storing the children, where element 0
 stores the child labeled &lsquo;a&rsquo;, element 1 stores the child labeled
 &lsquo;b&rsquo;, etc. If there is no child with some label, the corresponding
-array element is <strong>null</strong>.</li>
-</ul>
-<p>For maintainability, we should use <strong>private</strong> constants to store the above array&rsquo;s size (i.e., 26) and the first letter of the alphabet (i.e., &lsquo;a&rsquo;). Note that in this implementation, other than this last constant, no <strong>char</strong>s or <strong>string</strong>s are
+array element is <strong>null</strong>.</li></ul><p>For maintainability, we should use <strong>private</strong> constants to store the above array&rsquo;s size (i.e., 26) and the first letter of the alphabet (i.e., &lsquo;a&rsquo;). Note that in this implementation, other than this last constant, no <strong>char</strong>s or <strong>string</strong>s are
 actually stored. We can see if a node has a child labeled by a given
 <strong>char</strong> by finding the difference between that <strong>char</strong> and and the first letter of the alphabet, and
 using that difference as the array index. For example, suppose the array
@@ -721,101 +55,52 @@ obtain the child labeled by <code>label</code> by retrieving
 contains &rsquo;d&rsquo;, then the difference, <code>label - _alphabetStart</code>, will be 3; hence,
 the child with label &rsquo;d&rsquo; will be stored at index 3. We have therefore
 achieved our goal of providing quick access to a child with a given
-label.</p>
-<p>Let&rsquo;s now consider how to implement a lookup. We can define a <strong>public</strong>
-method for this purpose within the class implementing a trie node:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">bool</span> Contains(<span style="color:#66d9ef">string</span> s)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    . . .
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
-  
-  
-<div class="box notices cstyle note">
-  <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
-  <div class="box-content">
-
-<p>This method does not need a trie node as a parameter because
+label.</p><p>Let&rsquo;s now consider how to implement a lookup. We can define a <strong>public</strong>
+method for this purpose within the class implementing a trie node:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=kd>public</span> <span class=kt>bool</span> <span class=n>Contains</span><span class=p>(</span><span class=kt>string</span> <span class=n>s</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    <span class=p>.</span> <span class=p>.</span> <span class=p>.</span>
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><div class="box notices cstyle note"><div class=box-label><i class="fa-fw fas fa-exclamation-circle"></i> Note</div><div class=box-content><p>This method does not need a trie node as a parameter because
 the method will belong to a trie node. Thus, the method will be able to
 access the node as
-<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/static-this"><strong>this</strong></a>
-, and may
-access its <strong>private</strong> fields directly by their names.</p>
-</div>
-</div>
-<p>The method
-consists of five cases:</p>
-<ul>
-<li><code>s</code> is <strong>null</strong>. Note that even though <code>s</code> is not defined to be nullable, because the method is <strong>public</strong>, user code could still pass a <strong>null</strong> value. In this case, we should throw an <strong>ArgumentNullException</strong>, provides more information than does a <strong>NullReferenceException</strong>.</li>
-<li><code>s</code> is the empty <strong>string</strong>. In this case the <strong>bool</strong> stored in
+<a href=/cis300/appendix/syntax/static-this/><strong>this</strong></a>, and may
+access its <strong>private</strong> fields directly by their names.</p></div></div><p>The method
+consists of five cases:</p><ul><li><code>s</code> is <strong>null</strong>. Note that even though <code>s</code> is not defined to be nullable, because the method is <strong>public</strong>, user code could still pass a <strong>null</strong> value. In this case, we should throw an <strong>ArgumentNullException</strong>, provides more information than does a <strong>NullReferenceException</strong>.</li><li><code>s</code> is the empty <strong>string</strong>. In this case the <strong>bool</strong> stored in
 this node indicates whether it is a word in this trie; hence, we can
-simply return this <strong>bool</strong>.</li>
-<li>The first character of <code>s</code> is not a lower-case English letter (i.e.,
+simply return this <strong>bool</strong>.</li><li>The first character of <code>s</code> is not a lower-case English letter (i.e.,
 it is less than &lsquo;a&rsquo; or greater than &lsquo;z&rsquo;). The constants defined for this class should be used in making this determination. In this case, <code>s</code> can&rsquo;t be stored
-in this trie; hence, we can return <strong>false</strong>.</li>
-<li>The child labeled with the first character of <code>s</code> (obtained as
+in this trie; hence, we can return <strong>false</strong>.</li><li>The child labeled with the first character of <code>s</code> (obtained as
 described above) is missing (i.e., is <strong>null</strong>). Then <code>s</code> isn&rsquo;t
-stored in this trie. Again, we return <strong>false</strong>.</li>
-<li>The child labeled with the first character of <code>s</code> is present (i.e.,
+stored in this trie. Again, we return <strong>false</strong>.</li><li>The child labeled with the first character of <code>s</code> is present (i.e.,
 non-<strong>null</strong>). In this case, we need to determine whether the
 substring following the first character of <code>s</code> is in the trie rooted
 at the child we retrieved. This can be found using a recursive call
 to this method within the child trie node. We return the result of
-this recursive call.</li>
-</ul>
-<p>In order to be able to look up words, we need to be able to build a trie
+this recursive call.</li></ul><p>In order to be able to look up words, we need to be able to build a trie
 to look in. We therefore need to be able to add words to a trie. It&rsquo;s
 not practical to make a trie node immutable, as there is too much
 information that would need to be copied if we need to replace a node
 with a new one (we would need to construct a new node for each letter of
 each word we added). We therefore should provide a <strong>public</strong> method
 within the trie node class for the purpose of adding a word to the trie
-rooted at this node:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Add(<span style="color:#66d9ef">string</span> s)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    . . .
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>This time there are four cases:</p>
-<ul>
-<li><code>s</code> is <strong>null</strong>. This case should be handled as in the <strong>Contains</strong> method above.</li>
-<li><code>s</code> is the empty <strong>string</strong>. Then we can record this word by setting
-the <strong>bool</strong> in this node to <strong>true</strong>.</li>
-<li>The first character of <code>s</code> is not a lower-case English letter. Then
+rooted at this node:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=kd>public</span> <span class=k>void</span> <span class=n>Add</span><span class=p>(</span><span class=kt>string</span> <span class=n>s</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    <span class=p>.</span> <span class=p>.</span> <span class=p>.</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>This time there are four cases:</p><ul><li><code>s</code> is <strong>null</strong>. This case should be handled as in the <strong>Contains</strong> method above.</li><li><code>s</code> is the empty <strong>string</strong>. Then we can record this word by setting
+the <strong>bool</strong> in this node to <strong>true</strong>.</li><li>The first character of <code>s</code> is not a lower-case English letter. Then
 we can&rsquo;t add the word. In this case, we&rsquo;ll need to throw an
-exception.</li>
-<li>The first character is a lower-case English letter. In this case, we
+exception.</li><li>The first character is a lower-case English letter. In this case, we
 need to add the substring following the first character of <code>s</code> to
-the child labeled with the first letter. We do this as follows:
-<ul>
-<li>We first need to make sure that the child labeled with the first letter of <code>s</code> is non-<strong>null</strong>. Thus, if this child is <strong>null</strong>, we construct a new trie node and place
-it in the array location for this child.</li>
-<li>We can now
+the child labeled with the first letter. We do this as follows:<ul><li>We first need to make sure that the child labeled with the first letter of <code>s</code> is non-<strong>null</strong>. Thus, if this child is <strong>null</strong>, we construct a new trie node and place
+it in the array location for this child.</li><li>We can now
 add the substring following the first letter of <code>s</code> to this child by
-making a recursive call.</li>
-</ul>
-</li>
-</ul>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-    
-    
-          <article class="default">
-            <header class="headline">
-            </header>
-<div hidden><h1 id="multiple-implementations-of-children">Multiple Implementations of Children</h1></div>
-
-<h2 id="multiple-implementations-of-children">Multiple Implementations of Children</h2>
-<p>The trie implementation given in <a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro">the previous
-section</a>
- offers very
-efficient lookups - a word of length 
-<span class="math align-center">$ m $</span> can be looked up in 
+making a recursive call.</li></ul></li></ul><footer class=footline></footer></article><article class=default><header class=headline></header><div hidden><h1 id=multiple-implementations-of-children>Multiple Implementations of Children</h1></div><h2 id=multiple-implementations-of-children>Multiple Implementations of Children</h2><p>The trie implementation given in <a href=/cis300/trees/tries/intro/>the previous
+section</a> offers very
+efficient lookups - a word of length
+<span class="math align-center">$ m $</span> can be looked up in
 <span class="math align-center">$ O(m) $</span>
 time, no matter how many words are in the trie. However, it wastes a
 large amount of space. In a typical trie, a majority of the nodes will
@@ -823,39 +108,30 @@ have no more than one child; however, each node contains a 26-element
 array to store its children. Furthermore, each of these arrays is
 automatically initialized so that all its elements are <strong>null</strong>. This
 initialization takes time. Hence, building a trie may be rather
-inefficient as well.</p>
-<p>We can implement a trie more efficiently if we can customize the
+inefficient as well.</p><p>We can implement a trie more efficiently if we can customize the
 implementation of a node based on the number of children it has. Because
 most of the nodes in a trie can be expected to have either no children
 or only one child, we can define alternate implementations for these
-special cases:</p>
-<ul>
-<li>For a node with no children, there is no need to represent any
+special cases:</p><ul><li>For a node with no children, there is no need to represent any
 children - we only need the <strong>bool</strong> indicating whether the trie
-rooted at this node contains the empty <strong>string</strong>.</li>
-<li>For a node with exactly one child, we maintain a single reference to
+rooted at this node contains the empty <strong>string</strong>.</li><li>For a node with exactly one child, we maintain a single reference to
 that one child. If we do this, however, we won&rsquo;t be able to infer
 the child&rsquo;s label from where we store the child; hence, we also need
 to have a <strong>char</strong> giving the child&rsquo;s label. We also need the
 <strong>bool</strong> indicating whether the trie rooted at this node contains
-the empty <strong>string</strong>.</li>
-</ul>
-<p>For all other nodes, we can use an implementation similar to the one
-outlined in <a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro">the previous
-section</a>
-. We will still
+the empty <strong>string</strong>.</li></ul><p>For all other nodes, we can use an implementation similar to the one
+outlined in <a href=/cis300/trees/tries/intro/>the previous
+section</a>. We will still
 waste some space with the nodes having more than one child but fewer
 than 26; however, the amount of space wasted will now be much less.
 Furthermore, in each of these three implementations, we can quickly
 access the child with a given label (or determine that there is no such
-child).</p>
-<p>Conceptually, this sounds great, but we run into some obstacles as soon
+child).</p><p>Conceptually, this sounds great, but we run into some obstacles as soon
 as we try to implement this approach. Because we are implementing nodes
 in three different ways, we need to define three different classes. Each
 of these classes defines a different type. So how do we build a trie
 from three different types of nodes? In particular, how do we define the
-type of a child when that child may be any of three different types?</p>
-<p>The answer is to use a C# construct called an <em>interface</em>. An interface
+type of a child when that child may be any of three different types?</p><p>The answer is to use a C# construct called an <em>interface</em>. An interface
 facilitates <em>abstraction</em> - hiding lower-level details in order to focus
 on higher-level details. At a high level (i.e., ignoring the specific
 implementations), these three different classes appear to be the same:
@@ -864,26 +140,20 @@ English letters. More specifically, we want to be able to add a
 <strong>string</strong> to any of these classes, as well as to determine whether they
 contain a given <strong>string</strong>. An interface allows us to define a type that
 has this functionality, and to define various sub-types that have
-different implementations, but still have this functionality.</p>
-<p>A simple example of an interface is
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.icomparable-1?view=net-6.0" target="_blank"><strong>IComparable&lt;T&gt;</strong></a>
-.
-Recall from the section, <a href="https://ksu-cs-textbooks.github.io/cis300/dictionaries/linked-list-impl">&ldquo;Implementing a Dictionary with a Linked
-List&rdquo;</a>
-,
+different implementations, but still have this functionality.</p><p>A simple example of an interface is
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.icomparable-1?view=net-6.0" rel=external target=_blank><strong>IComparable&lt;T></strong></a>.
+Recall from the section, <a href=/cis300/dictionaries/linked-list-impl/>&ldquo;Implementing a Dictionary with a Linked
+List&rdquo;</a>,
 that we can constrain the keys in a dictionary implementation to be of a
 type that can be ordered by using a <strong>where</strong> clause on the <strong>class</strong>
-statement, as follows:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Dictionary</span>&lt;TKey, TValue&gt; <span style="color:#66d9ef">where</span> TKey : notnull, IComparable&lt;TKey&gt;</span></span></code></pre></div><p>The <a href="https://source.dot.net/#System.Private.CoreLib/src/libraries/System.Private.CoreLib/src/System/IComparable.cs,3911354c40e0c30e" target="_blank">source code for the <strong>IComparable&lt;T&gt;</strong>
+statement, as follows:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=kd>public</span> <span class=k>class</span> <span class=nc>Dictionary</span><span class=p>&lt;</span><span class=n>TKey</span><span class=p>,</span> <span class=n>TValue</span><span class=p>&gt;</span> <span class=k>where</span> <span class=n>TKey</span> <span class=p>:</span> <span class=n>notnull</span><span class=p>,</span> <span class=n>IComparable</span><span class=p>&lt;</span><span class=n>TKey</span><span class=p>&gt;</span></span></span></code></pre></div><p>The <a href=https://source.dot.net/#System.Private.CoreLib/src/libraries/System.Private.CoreLib/src/System/IComparable.cs,3911354c40e0c30e rel=external target=_blank>source code for the <strong>IComparable&lt;T></strong>
 interface</a>
-
 has been posted by Microsoft®. The essential part of this definition
-is:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">IComparable</span>&lt;<span style="color:#66d9ef">in</span> T&gt;
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> CompareTo(T? other);
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>(Don&rsquo;t worry about the <strong>in</strong> keyword with the type parameter in the
-first line.) This definition defines the type <strong>IComparable&lt;T&gt;</strong> as
+is:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=kd>public</span> <span class=k>interface</span> <span class=nc>IComparable</span><span class=p>&lt;</span><span class=k>in</span> <span class=n>T</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>CompareTo</span><span class=p>(</span><span class=n>T</span><span class=p>?</span> <span class=n>other</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>(Don&rsquo;t worry about the <strong>in</strong> keyword with the type parameter in the
+first line.) This definition defines the type <strong>IComparable&lt;T></strong> as
 having a method <strong>CompareTo</strong> that takes a parameter of the generic type
 <strong>T?</strong> and returns an <strong>int</strong>. Note that there is no <strong>public</strong> or
 <strong>private</strong> access modifier on the method definition. This is because
@@ -897,171 +167,131 @@ reason, it is impossible to construct an instance of an interface
 directly. Instead, one or more sub-types of the interface must be
 defined, and these sub-types must provide definitions for the behavior
 of <strong>CompareTo</strong>. As a result, because the <strong>Dictionary&lt;TKey,
-TValue&gt;</strong> class restricts type <strong>TKey</strong> to be a sub-type of
-<strong>IComparable&lt;T&gt;</strong>, its can use the <strong>CompareTo</strong> method of any
-instance of type <strong>TKey</strong>.</p>
-<p>Now suppose that we want to define a class <strong>Fraction</strong> and use it as a
+TValue></strong> class restricts type <strong>TKey</strong> to be a sub-type of
+<strong>IComparable&lt;T></strong>, its can use the <strong>CompareTo</strong> method of any
+instance of type <strong>TKey</strong>.</p><p>Now suppose that we want to define a class <strong>Fraction</strong> and use it as a
 key in our dictionary implementation. We would begin the class
-definition within Visual Studio® as follows:</p>
-<img src="https://ksu-cs-textbooks.github.io/cis300/trees/tries/multiple-impl/interface-example1.jpg" alt="Beginning an implementation of an interface." style="zoom:67%;" />
-<p>At the end of the first line of the <strong>class</strong> definition, <code>: IComparable&lt;Fraction&gt;</code> indicates that the class being defined is a
-subtype of <strong>IComparable&lt;Fraction&gt;</strong>. In general, we can list one or
+definition within Visual Studio® as follows:</p><img src=/cis300/trees/tries/multiple-impl/interface-example1.jpg alt="Beginning an implementation of an interface." style=zoom:67%><p>At the end of the first line of the <strong>class</strong> definition, <code>: IComparable&lt;Fraction></code> indicates that the class being defined is a
+subtype of <strong>IComparable&lt;Fraction></strong>. In general, we can list one or
 more interface names after the colon, separating these names with
 commas. Each name that we list requires that all of the methods,
-properties, and <a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/indexers">indexers</a>
-
+properties, and <a href=/cis300/appendix/syntax/indexers/>indexers</a>
 from that interface must be fully defined within this class. If we hover
-the mouse over the word, <code>IComparable&lt;Fraction&gt;</code>, a drop-down menu
+the mouse over the word, <code>IComparable&lt;Fraction></code>, a drop-down menu
 appears. By selecting &ldquo;Implement interface&rdquo; from this menu, all of the
-required members of the interface are provided for us:</p>
-<img src="https://ksu-cs-textbooks.github.io/cis300/trees/tries/multiple-impl/interface-example2.jpg" alt="Interface members are auto-filled." style="zoom:67%;" />
-
-  
-  
-<div class="box notices cstyle note">
-  <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
-  <div class="box-content">
-
-<p>In order to implement a method specified in an interface, we
-must define it as <strong>public</strong>.</p>
-</div>
-</div>
-<p>We now just need to replace the <strong>throw</strong>
+required members of the interface are provided for us:</p><img src=/cis300/trees/tries/multiple-impl/interface-example2.jpg alt="Interface members are auto-filled." style=zoom:67%><div class="box notices cstyle note"><div class=box-label><i class="fa-fw fas fa-exclamation-circle"></i> Note</div><div class=box-content><p>In order to implement a method specified in an interface, we
+must define it as <strong>public</strong>.</p></div></div><p>We now just need to replace the <strong>throw</strong>
 with the proper code for the <strong>CompareTo</strong> method and fill in any other
-class members that we need; for example:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">namespace</span> Ksu.Cis300.Fractions
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;summary&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// An immutable fraction whose instances can be ordered.</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;/summary&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Fraction</span> : IComparable&lt;Fraction&gt;
-</span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/// &lt;summary&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/// Gets the numerator.</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/// &lt;/summary&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Numerator { <span style="color:#66d9ef">get</span>; }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/// &lt;summary&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/// Gets the denominator.</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/// &lt;/summary&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Denominator { <span style="color:#66d9ef">get</span>; }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/// &lt;summary&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/// Constructs a new fraction with the given numerator and denominator.</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/// &lt;/summary&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/// &lt;param name=&#34;numerator&#34;&gt;The numerator.&lt;/param&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/// &lt;param name=&#34;denominator&#34;&gt;The denominator.&lt;/param&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> Fraction(<span style="color:#66d9ef">int</span> numerator, <span style="color:#66d9ef">int</span> denominator)
-</span></span><span style="display:flex;"><span>        {
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (denominator &lt;= <span style="color:#ae81ff">0</span>)
-</span></span><span style="display:flex;"><span>            {
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> ArgumentException();
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>            Numerator = numerator;
-</span></span><span style="display:flex;"><span>            Denominator = denominator;
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/// &lt;summary&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/// Compares this fraction with the given fraction.</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/// &lt;/summary&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/// &lt;param name=&#34;other&#34;&gt;The fraction to compare to.&lt;/param&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/// &lt;returns&gt;A negative value if this fraction is less</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/// than other, 0 if they are equal, or a positive value if this</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/// fraction is greater than other or if other is null.&lt;/returns&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> CompareTo(Fraction? other)
-</span></span><span style="display:flex;"><span>        {
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (other == <span style="color:#66d9ef">null</span>)
-</span></span><span style="display:flex;"><span>            {
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">long</span> prod1 = (<span style="color:#66d9ef">long</span>)Numerator * other.Denominator;
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">long</span> prod2 = (<span style="color:#66d9ef">long</span>)other.Numerator * Denominator;
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> prod1.CompareTo(prod2);
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Other class members</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
-  
-  
-<div class="box notices cstyle note">
-  <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
-  <div class="box-content">
-
-<p>The <strong>CompareTo</strong> method above is <em>not</em> recursive. The
+class members that we need; for example:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=k>namespace</span> <span class=nn>Ksu.Cis300.Fractions</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=cs>/// &lt;summary&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=cs>/// An immutable fraction whose instances can be ordered.</span>
+</span></span><span class=line><span class=cl>    <span class=cs>/// &lt;/summary&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=k>class</span> <span class=nc>Fraction</span> <span class=p>:</span> <span class=n>IComparable</span><span class=p>&lt;</span><span class=n>Fraction</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=cs>/// &lt;summary&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=cs>/// Gets the numerator.</span>
+</span></span><span class=line><span class=cl>        <span class=cs>/// &lt;/summary&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=kd>public</span> <span class=kt>int</span> <span class=n>Numerator</span> <span class=p>{</span> <span class=k>get</span><span class=p>;</span> <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=cs>/// &lt;summary&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=cs>/// Gets the denominator.</span>
+</span></span><span class=line><span class=cl>        <span class=cs>/// &lt;/summary&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=kd>public</span> <span class=kt>int</span> <span class=n>Denominator</span> <span class=p>{</span> <span class=k>get</span><span class=p>;</span> <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=cs>/// &lt;summary&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=cs>/// Constructs a new fraction with the given numerator and denominator.</span>
+</span></span><span class=line><span class=cl>        <span class=cs>/// &lt;/summary&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=cs>/// &lt;param name=&#34;numerator&#34;&gt;The numerator.&lt;/param&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=cs>/// &lt;param name=&#34;denominator&#34;&gt;The denominator.&lt;/param&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=kd>public</span> <span class=n>Fraction</span><span class=p>(</span><span class=kt>int</span> <span class=n>numerator</span><span class=p>,</span> <span class=kt>int</span> <span class=n>denominator</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=p>(</span><span class=n>denominator</span> <span class=p>&lt;=</span> <span class=m>0</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=k>throw</span> <span class=k>new</span> <span class=n>ArgumentException</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>            <span class=p>}</span>
+</span></span><span class=line><span class=cl>            <span class=n>Numerator</span> <span class=p>=</span> <span class=n>numerator</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=n>Denominator</span> <span class=p>=</span> <span class=n>denominator</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=cs>/// &lt;summary&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=cs>/// Compares this fraction with the given fraction.</span>
+</span></span><span class=line><span class=cl>        <span class=cs>/// &lt;/summary&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=cs>/// &lt;param name=&#34;other&#34;&gt;The fraction to compare to.&lt;/param&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=cs>/// &lt;returns&gt;A negative value if this fraction is less</span>
+</span></span><span class=line><span class=cl>        <span class=cs>/// than other, 0 if they are equal, or a positive value if this</span>
+</span></span><span class=line><span class=cl>        <span class=cs>/// fraction is greater than other or if other is null.&lt;/returns&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=kd>public</span> <span class=kt>int</span> <span class=n>CompareTo</span><span class=p>(</span><span class=n>Fraction</span><span class=p>?</span> <span class=n>other</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=p>(</span><span class=n>other</span> <span class=p>==</span> <span class=kc>null</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=k>return</span> <span class=m>1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=p>}</span>
+</span></span><span class=line><span class=cl>            <span class=kt>long</span> <span class=n>prod1</span> <span class=p>=</span> <span class=p>(</span><span class=kt>long</span><span class=p>)</span><span class=n>Numerator</span> <span class=p>*</span> <span class=n>other</span><span class=p>.</span><span class=n>Denominator</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=kt>long</span> <span class=n>prod2</span> <span class=p>=</span> <span class=p>(</span><span class=kt>long</span><span class=p>)</span><span class=n>other</span><span class=p>.</span><span class=n>Numerator</span> <span class=p>*</span> <span class=n>Denominator</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>return</span> <span class=n>prod1</span><span class=p>.</span><span class=n>CompareTo</span><span class=p>(</span><span class=n>prod2</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=c1>// Other class members</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><div class="box notices cstyle note"><div class=box-label><i class="fa-fw fas fa-exclamation-circle"></i> Note</div><div class=box-content><p>The <strong>CompareTo</strong> method above is <em>not</em> recursive. The
 <strong>CompareTo</strong> method that it calls is a member of the <strong>long</strong>
-structure, not the <strong>Fraction</strong> class.</p>
-</div>
-</div>
-<p>As we suggested above, interfaces can also include properties. For
+structure, not the <strong>Fraction</strong> class.</p></div></div><p>As we suggested above, interfaces can also include properties. For
 example,
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.icollection-1?view=net-6.0" target="_blank"><strong>ICollection&lt;T&gt;</strong></a>
-
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.icollection-1?view=net-6.0" rel=external target=_blank><strong>ICollection&lt;T></strong></a>
 is a generic interface implemented by both arrays and the class
-<span style="white-space:nowrap"><a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=net-6.0" target="_blank"><strong>List&lt;T&gt;</strong></a>
-.</span>
-This interface contains the following member (among others):</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> Count { <span style="color:#66d9ef">get</span>; }</span></span></code></pre></div><p>This member specifies that every subclass must contain a property called
+<span style=white-space:nowrap><a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=net-6.0" rel=external target=_blank><strong>List&lt;T></strong></a>.</span>
+This interface contains the following member (among others):</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kt>int</span> <span class=n>Count</span> <span class=p>{</span> <span class=k>get</span><span class=p>;</span> <span class=p>}</span></span></span></code></pre></div><p>This member specifies that every subclass must contain a property called
 <strong>Count</strong> with a getter. At first, it would appear that an array does
-not have such a property, as we cannot write something like:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">int</span>[] a = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span>[<span style="color:#ae81ff">10</span>];
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> k = a.Count;  <span style="color:#75715e">// This gives a syntax error.</span></span></span></code></pre></div><p><span id="explicit-impl"></span> In fact, an array does contain a
+not have such a property, as we cannot write something like:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kt>int</span><span class=p>[]</span> <span class=n>a</span> <span class=p>=</span> <span class=k>new</span> <span class=kt>int</span><span class=p>[</span><span class=m>10</span><span class=p>];</span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=n>k</span> <span class=p>=</span> <span class=n>a</span><span class=p>.</span><span class=n>Count</span><span class=p>;</span>  <span class=c1>// This gives a syntax error.</span></span></span></code></pre></div><p><span id=explicit-impl></span> In fact, an array does contain a
 <strong>Count</strong> property, but this property is available only when the array
-is treated as an <strong>ICollection&lt;T&gt;</strong> (or an
-<span style="white-space:nowrap"><a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.ilist-1?view=net-6.0" target="_blank"><strong>IList&lt;T&gt;</strong></a>
-,</span>
-which is an interface that is a subtype of <strong>ICollection&lt;T&gt;</strong>, and is
-also implemented by arrays). For example, we can write:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">int</span>[] a = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span>[<span style="color:#ae81ff">10</span>];
-</span></span><span style="display:flex;"><span>ICollection&lt;<span style="color:#66d9ef">int</span>&gt; col = a;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> k = col.Count;</span></span></code></pre></div><p>or</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">int</span>[] a = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span>[<span style="color:#ae81ff">10</span>];
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> k = ((ICollection&lt;<span style="color:#66d9ef">int</span>&gt;)a).Count;</span></span></code></pre></div><p>This behavior occurs because an array <em>explicitly implements</em> the
-<strong>Count</strong> property. We can do this as follows:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExplicitImplementationExample</span>&lt;T&gt; : ICollection&lt;T&gt;
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> ICollection&lt;T&gt;.Count
-</span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">get</span>
-</span></span><span style="display:flex;"><span>        {
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Code to return the proper value</span>
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Other class members</span>
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Thus, if we create an instance of
-<strong>ExplicitImplementationExample&lt;T&gt;</strong>, we cannot access its <strong>Count</strong>
+is treated as an <strong>ICollection&lt;T></strong> (or an
+<span style=white-space:nowrap><a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.ilist-1?view=net-6.0" rel=external target=_blank><strong>IList&lt;T></strong></a>,</span>
+which is an interface that is a subtype of <strong>ICollection&lt;T></strong>, and is
+also implemented by arrays). For example, we can write:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kt>int</span><span class=p>[]</span> <span class=n>a</span> <span class=p>=</span> <span class=k>new</span> <span class=kt>int</span><span class=p>[</span><span class=m>10</span><span class=p>];</span>
+</span></span><span class=line><span class=cl><span class=n>ICollection</span><span class=p>&lt;</span><span class=kt>int</span><span class=p>&gt;</span> <span class=n>col</span> <span class=p>=</span> <span class=n>a</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=n>k</span> <span class=p>=</span> <span class=n>col</span><span class=p>.</span><span class=n>Count</span><span class=p>;</span></span></span></code></pre></div><p>or</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kt>int</span><span class=p>[]</span> <span class=n>a</span> <span class=p>=</span> <span class=k>new</span> <span class=kt>int</span><span class=p>[</span><span class=m>10</span><span class=p>];</span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=n>k</span> <span class=p>=</span> <span class=p>((</span><span class=n>ICollection</span><span class=p>&lt;</span><span class=kt>int</span><span class=p>&gt;)</span><span class=n>a</span><span class=p>).</span><span class=n>Count</span><span class=p>;</span></span></span></code></pre></div><p>This behavior occurs because an array <em>explicitly implements</em> the
+<strong>Count</strong> property. We can do this as follows:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kd>public</span> <span class=k>class</span> <span class=nc>ExplicitImplementationExample</span><span class=p>&lt;</span><span class=n>T</span><span class=p>&gt;</span> <span class=p>:</span> <span class=n>ICollection</span><span class=p>&lt;</span><span class=n>T</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>ICollection</span><span class=p>&lt;</span><span class=n>T</span><span class=p>&gt;.</span><span class=n>Count</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>get</span>
+</span></span><span class=line><span class=cl>        <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=c1>// Code to return the proper value</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// Other class members</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>Thus, if we create an instance of
+<strong>ExplicitImplementationExample&lt;T></strong>, we cannot access its <strong>Count</strong>
 property unless we either store it in a variable of type
-<strong>ICollection&lt;T&gt;</strong> or cast it to this type. Note that whereas the
+<strong>ICollection&lt;T></strong> or cast it to this type. Note that whereas the
 <strong>public</strong> access modifier is required when implementing an interface
 member, neither the <strong>public</strong> nor the <strong>private</strong> access modifier is
-allowed when <em>explicitly</em> implementing an interface member.</p>
-<p>We can also include
-<a href="https://ksu-cs-textbooks.github.io/cis300/appendix/syntax/indexers">indexers</a>
- within
-interfaces. For example, the <strong>IList&lt;T&gt;</strong> interface is defined as
-follows:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">IList</span>&lt;T&gt; : ICollection&lt;T&gt;
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    T <span style="color:#66d9ef">this</span>[<span style="color:#66d9ef">int</span> index] { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> IndexOf(T item);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> Insert(<span style="color:#66d9ef">int</span> index, T item);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> RemoveAt(<span style="color:#66d9ef">int</span> index);
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>The <code>: ICollection&lt;T&gt;</code> at the end of the first line specifies that
-<strong>IList&lt;T&gt;</strong> is a subtype of <strong>ICollection&lt;T&gt;</strong>; thus, the interface
-includes all members of <strong>ICollection&lt;T&gt;</strong>, plus the ones listed. The
+allowed when <em>explicitly</em> implementing an interface member.</p><p>We can also include
+<a href=/cis300/appendix/syntax/indexers/>indexers</a> within
+interfaces. For example, the <strong>IList&lt;T></strong> interface is defined as
+follows:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kd>public</span> <span class=k>interface</span> <span class=nc>IList</span><span class=p>&lt;</span><span class=n>T</span><span class=p>&gt;</span> <span class=p>:</span> <span class=n>ICollection</span><span class=p>&lt;</span><span class=n>T</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=n>T</span> <span class=k>this</span><span class=p>[</span><span class=kt>int</span> <span class=n>index</span><span class=p>]</span> <span class=p>{</span> <span class=k>get</span><span class=p>;</span> <span class=k>set</span><span class=p>;</span> <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>IndexOf</span><span class=p>(</span><span class=n>T</span> <span class=n>item</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>void</span> <span class=n>Insert</span><span class=p>(</span><span class=kt>int</span> <span class=n>index</span><span class=p>,</span> <span class=n>T</span> <span class=n>item</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>void</span> <span class=n>RemoveAt</span><span class=p>(</span><span class=kt>int</span> <span class=n>index</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>The <code>: ICollection&lt;T></code> at the end of the first line specifies that
+<strong>IList&lt;T></strong> is a subtype of <strong>ICollection&lt;T></strong>; thus, the interface
+includes all members of <strong>ICollection&lt;T></strong>, plus the ones listed. The
 first member listed above specifies an indexer with a get accessor and a
-set accessor.</p>
-<p>Now that we have seen a little of what interfaces are all about, let&rsquo;s
+set accessor.</p><p>Now that we have seen a little of what interfaces are all about, let&rsquo;s
 see how we can use them to provide three different implementations of
 trie nodes. We first need to define an interface, which we will call
-<strong>ITrie</strong>, specifying the two <strong>public</strong> members of <a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro">our previous
+<strong>ITrie</strong>, specifying the two <strong>public</strong> members of <a href=/cis300/trees/tries/intro/>our previous
 implementation of a trie
-node</a>
-. We do, however,
+node</a>. We do, however,
 need to make one change to the way the <strong>Add</strong> method is called. This
 change is needed because when we add a <strong>string</strong> to a trie, we may need
 to change the implementation of the root node. We can&rsquo;t simply change
@@ -1069,87 +299,54 @@ the type of an object - instead, we&rsquo;ll need to construct a new instance
 of the appropriate implementation. Hence, the <strong>Add</strong> method will need
 to return the root of the resulting trie. Because this node may have any
 of the three implementations, the return type of this method should be
-<strong>ITrie</strong>. Also, because we will need the constants from our previous implementation in each of the implementations of <strong>ITrie</strong>, the code will be more maintainable if we include them once within this interface definition. Note that this will have the effect of making them <strong>public</strong>. The <strong>ITrie</strong> interface is therefore as follows:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// An interface for a trie.</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">ITrie</span>
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;summary&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// The first character of the alphabet we use.</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;/summary&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> AlphabetStart = <span style="color:#e6db74">&#39;a&#39;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;summary&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// The number of characters in the alphabet.</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;/summary&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> AlphabetSize = <span style="color:#ae81ff">26</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;summary&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// Determines whether this trie contains the given string.</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;/summary&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;param name=&#34;s&#34;&gt;The string to look for.&lt;/param&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;returns&gt;Whether this trie contains s.&lt;/returns&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">bool</span> Contains(<span style="color:#66d9ef">string</span> s);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;summary&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// Adds the given string to this trie.</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;/summary&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;param name=&#34;s&#34;&gt;The string to add.&lt;/param&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;returns&gt;The resulting trie.&lt;/returns&gt;</span>
-</span></span><span style="display:flex;"><span>    ITrie Add(<span style="color:#66d9ef">string</span> s);
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>We will then need to define three classes, each of which implements the
-above interface. We will use the following names for these classes:</p>
-<ul>
-<li><strong>TrieWithNoChildren</strong> will be used for nodes with no children.</li>
-<li><strong>TrieWithOneChild</strong> will be used for nodes with exactly one child.</li>
-<li><strong>TrieWithManyChildren</strong> will be used for all other nodes; this will
-be the class described in <a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro">the previous
-section</a>
- with a few
-modifications.</li>
-</ul>
-<p>These three classes will be similar because they each will implement the
+<strong>ITrie</strong>. Also, because we will need the constants from our previous implementation in each of the implementations of <strong>ITrie</strong>, the code will be more maintainable if we include them once within this interface definition. Note that this will have the effect of making them <strong>public</strong>. The <strong>ITrie</strong> interface is therefore as follows:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=cs>/// &lt;summary&gt;</span>
+</span></span><span class=line><span class=cl><span class=cs>/// An interface for a trie.</span>
+</span></span><span class=line><span class=cl><span class=cs>/// &lt;/summary&gt;</span>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=k>interface</span> <span class=nc>ITrie</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=cs>/// &lt;summary&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=cs>/// The first character of the alphabet we use.</span>
+</span></span><span class=line><span class=cl>    <span class=cs>/// &lt;/summary&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=kd>const</span> <span class=kt>char</span> <span class=n>AlphabetStart</span> <span class=p>=</span> <span class=sc>&#39;a&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=cs>/// &lt;summary&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=cs>/// The number of characters in the alphabet.</span>
+</span></span><span class=line><span class=cl>    <span class=cs>/// &lt;/summary&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=kd>const</span> <span class=kt>int</span> <span class=n>AlphabetSize</span> <span class=p>=</span> <span class=m>26</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=cs>/// &lt;summary&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=cs>/// Determines whether this trie contains the given string.</span>
+</span></span><span class=line><span class=cl>    <span class=cs>/// &lt;/summary&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=cs>/// &lt;param name=&#34;s&#34;&gt;The string to look for.&lt;/param&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=cs>/// &lt;returns&gt;Whether this trie contains s.&lt;/returns&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=kt>bool</span> <span class=n>Contains</span><span class=p>(</span><span class=kt>string</span> <span class=n>s</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=cs>/// &lt;summary&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=cs>/// Adds the given string to this trie.</span>
+</span></span><span class=line><span class=cl>    <span class=cs>/// &lt;/summary&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=cs>/// &lt;param name=&#34;s&#34;&gt;The string to add.&lt;/param&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=cs>/// &lt;returns&gt;The resulting trie.&lt;/returns&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=n>ITrie</span> <span class=n>Add</span><span class=p>(</span><span class=kt>string</span> <span class=n>s</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>We will then need to define three classes, each of which implements the
+above interface. We will use the following names for these classes:</p><ul><li><strong>TrieWithNoChildren</strong> will be used for nodes with no children.</li><li><strong>TrieWithOneChild</strong> will be used for nodes with exactly one child.</li><li><strong>TrieWithManyChildren</strong> will be used for all other nodes; this will
+be the class described in <a href=/cis300/trees/tries/intro/>the previous
+section</a> with a few
+modifications.</li></ul><p>These three classes will be similar because they each will implement the
 <strong>ITrie</strong> interface. This implies that they will each need a
 <strong>Contains</strong> method and an <strong>Add</strong> method as specified by the interface
 definition. However, the code for each of these methods will be
-different, as will other aspects of the implementations.</p>
-<p>Let&rsquo;s first discuss how the <strong>TrieWithManyChildren</strong> class will differ from the class described in <a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro">the previous
-section</a>
-. First, its class statement will need to be modified to make the class implement the <strong>ITrie</strong> interface. This change will introduce a syntax error because the <strong>Add</strong> method in the <strong>ITrie</strong> interface has a return type of <strong>ITrie</strong>, rather than <strong>void</strong>. The return type of this method in the <strong>TrieWithManyChildren</strong> class will therefore need to be changed, and at the end <strong>this</strong> will need to be returned. Because the constants have been moved to the <strong>ITrie</strong> interface, their definitions will need to be removed from this class definition, and each occurrence will need to be prefixed by &ldquo;<strong>ITrie.</strong>&rdquo;. Throughout the class definition, the type of any trie should be made <strong>ITrie</strong>, except where a new trie is constructed in the <strong>Add</strong> method. Here, a new <strong>TrieWithNoChildren</strong> should be constructed.</p>
-<p>Finally, a constructor needs to be defined for the <strong>TrieWithManyChildren</strong> class. This constructor will be used by the <strong>TrieWithOneChild</strong> class when it needs to add a new child. Because a <strong>TrieWithOneChild</strong> cannot have two children, a <strong>TrieWithManyChildren</strong> will need to be constructed instead. This constructor will need the following parameters:</p>
-<ul>
-<li>A <strong>string</strong> giving the string that the <strong>TrieWithOneChild</strong> class needs to add.</li>
-<li>A <strong>bool</strong> indicating whether the constructed node should contain the empty string.</li>
-<li>A <strong>char</strong> giving the label of the child stored by the <strong>TrieWithOneChild</strong>.</li>
-<li>An <strong>ITrie</strong> giving the one child of the <strong>TrieWithOneChild</strong>.</li>
-</ul>
-<p>After doing some error checking to make sure the given <strong>string</strong> and <strong>ITrie</strong> are not <strong>null</strong> and that the given <strong>char</strong> is in the proper range, it will need to store the given <strong>bool</strong> in its <strong>bool</strong> field and store the given <strong>ITrie</strong> at the proper location of its array of children. Then, using its own <strong>Add</strong> method, it can add the given <strong>string</strong>.</p>
-<p>Let&rsquo;s now consider the <strong>TrieWithOneChild</strong> class. It will need three <strong>private</strong> fields:</p>
-<ul>
-<li>A <strong>bool</strong> indicating whether this node contains the empty string.</li>
-<li>A <strong>char</strong> giving the label of the only child.</li>
-<li>An <strong>ITrie</strong> giving the only child.</li>
-</ul>
-<p>As with the <strong>TrieWithManyChildren</strong> class the <strong>TrieWithOneChild</strong> class needs a constructor to allow the <strong>TrieWithNoChildren</strong> class to be able to add a nonempty string. This constructor&rsquo;s parameters will be a
+different, as will other aspects of the implementations.</p><p>Let&rsquo;s first discuss how the <strong>TrieWithManyChildren</strong> class will differ from the class described in <a href=/cis300/trees/tries/intro/>the previous
+section</a>. First, its class statement will need to be modified to make the class implement the <strong>ITrie</strong> interface. This change will introduce a syntax error because the <strong>Add</strong> method in the <strong>ITrie</strong> interface has a return type of <strong>ITrie</strong>, rather than <strong>void</strong>. The return type of this method in the <strong>TrieWithManyChildren</strong> class will therefore need to be changed, and at the end <strong>this</strong> will need to be returned. Because the constants have been moved to the <strong>ITrie</strong> interface, their definitions will need to be removed from this class definition, and each occurrence will need to be prefixed by &ldquo;<strong>ITrie.</strong>&rdquo;. Throughout the class definition, the type of any trie should be made <strong>ITrie</strong>, except where a new trie is constructed in the <strong>Add</strong> method. Here, a new <strong>TrieWithNoChildren</strong> should be constructed.</p><p>Finally, a constructor needs to be defined for the <strong>TrieWithManyChildren</strong> class. This constructor will be used by the <strong>TrieWithOneChild</strong> class when it needs to add a new child. Because a <strong>TrieWithOneChild</strong> cannot have two children, a <strong>TrieWithManyChildren</strong> will need to be constructed instead. This constructor will need the following parameters:</p><ul><li>A <strong>string</strong> giving the string that the <strong>TrieWithOneChild</strong> class needs to add.</li><li>A <strong>bool</strong> indicating whether the constructed node should contain the empty string.</li><li>A <strong>char</strong> giving the label of the child stored by the <strong>TrieWithOneChild</strong>.</li><li>An <strong>ITrie</strong> giving the one child of the <strong>TrieWithOneChild</strong>.</li></ul><p>After doing some error checking to make sure the given <strong>string</strong> and <strong>ITrie</strong> are not <strong>null</strong> and that the given <strong>char</strong> is in the proper range, it will need to store the given <strong>bool</strong> in its <strong>bool</strong> field and store the given <strong>ITrie</strong> at the proper location of its array of children. Then, using its own <strong>Add</strong> method, it can add the given <strong>string</strong>.</p><p>Let&rsquo;s now consider the <strong>TrieWithOneChild</strong> class. It will need three <strong>private</strong> fields:</p><ul><li>A <strong>bool</strong> indicating whether this node contains the empty string.</li><li>A <strong>char</strong> giving the label of the only child.</li><li>An <strong>ITrie</strong> giving the only child.</li></ul><p>As with the <strong>TrieWithManyChildren</strong> class the <strong>TrieWithOneChild</strong> class needs a constructor to allow the <strong>TrieWithNoChildren</strong> class to be able to add a nonempty string. This constructor&rsquo;s parameters will be a
 <strong>string</strong> to be stored (i.e., the one being added) and a <strong>bool</strong>
 indicating whether the empty <strong>string</strong> is also to be stored.
 Furthermore, because the empty <strong>string</strong> can always be added to a
 <strong>TrieWithNoChildren</strong> without constructing a new node, this constructor
 should never be passed the empty <strong>string</strong>. The constructor can then
-operate as follows:</p>
-<ul>
-<li>If the given <strong>string</strong> is <strong>null</strong>, throw an <strong>ArgumentNullException</strong>.</li>
-<li>If the given <strong>string</strong> is empty or begins with a character that is
-not a lower-case English letter, throw an exception.</li>
-<li>Initialize the <strong>bool</strong> field with the given <strong>bool</strong>.</li>
-<li>Initialize the <strong>char</strong> field with the first character of the given
-<strong>string</strong>.</li>
-<li>Initialize the <strong>ITrie</strong> field with the result of constructing a new
+operate as follows:</p><ul><li>If the given <strong>string</strong> is <strong>null</strong>, throw an <strong>ArgumentNullException</strong>.</li><li>If the given <strong>string</strong> is empty or begins with a character that is
+not a lower-case English letter, throw an exception.</li><li>Initialize the <strong>bool</strong> field with the given <strong>bool</strong>.</li><li>Initialize the <strong>char</strong> field with the first character of the given
+<strong>string</strong>.</li><li>Initialize the <strong>ITrie</strong> field with the result of constructing a new
 <strong>TrieWithNoChildren</strong> and adding to it the substring of the given
-<strong>string</strong> following the first character.</li>
-</ul>
-<p>The structure of the <strong>Contains</strong> method for the <strong>TrieWithOneChild</strong> class is similar to the <strong>TrieWithManyChildren</strong> class. Specifically, the
+<strong>string</strong> following the first character.</li></ul><p>The structure of the <strong>Contains</strong> method for the <strong>TrieWithOneChild</strong> class is similar to the <strong>TrieWithManyChildren</strong> class. Specifically, the
 empty <strong>string</strong> needs to be handled first (after checking that the <strong>string</strong> isn&rsquo;t <strong>null</strong>) and in exactly the same way,
 as the empty <strong>string</strong> is represented in the same way in all three
 implementations. Nonempty <strong>string</strong>s, however, are represented
@@ -1157,56 +354,29 @@ differently, and hence need to be handled differently. For <strong>TrieWithOneCh
 see if the first character of the given <strong>string</strong> matches the child&rsquo;s
 label. If so, we can recursively look for the remainder of the
 <strong>string</strong> in that child. Otherwise, we should simply return <strong>false</strong>,
-as this <strong>string</strong> is not in this trie.</p>
-<p>The <strong>Add</strong> method for <strong>TrieWithOneChild</strong> will need five cases:</p>
-<ul>
-<li>A <strong>null string</strong>: This case can be handled in the same way as for <strong>TrieWithManyChildren</strong>.</li>
-<li>The empty <strong>string</strong>: This case can be handled in the same way as
-for <strong>TrieWithManyChildren</strong>.</li>
-<li>A nonempty <strong>string</strong> whose first character is not a lower-case letter: An exception should be thrown.</li>
-<li>A nonempty <strong>string</strong> whose first character matches the child&rsquo;s
+as this <strong>string</strong> is not in this trie.</p><p>The <strong>Add</strong> method for <strong>TrieWithOneChild</strong> will need five cases:</p><ul><li>A <strong>null string</strong>: This case can be handled in the same way as for <strong>TrieWithManyChildren</strong>.</li><li>The empty <strong>string</strong>: This case can be handled in the same way as
+for <strong>TrieWithManyChildren</strong>.</li><li>A nonempty <strong>string</strong> whose first character is not a lower-case letter: An exception should be thrown.</li><li>A nonempty <strong>string</strong> whose first character matches the child&rsquo;s
 label: The remainder of the <strong>string</strong> can be added to the child
 using the child&rsquo;s <strong>Add</strong> method. Because this method may return a
 different node, we need to replace the child with the value this
 method returns. We can then return <strong>this</strong>, as we didn&rsquo;t need more
-room for the given <strong>string</strong>.</li>
-<li>A nonempty <strong>string</strong> whose first character is a lower-case letter but does not match the
+room for the given <strong>string</strong>.</li><li>A nonempty <strong>string</strong> whose first character is a lower-case letter but does not match the
 child&rsquo;s label. In this case, we need to return a new
 <strong>TrieWithManyChildren</strong> containing the given <strong>string</strong> and all of
-the information already being stored.</li>
-</ul>
-<p>The <strong>TrieWithNoChildren</strong> class is the simplest of the three, as we don&rsquo;t need to worry about any children. The only <strong>private</strong> field it needs is a <strong>bool</strong> to indicate whether it stores the empty string. Its <strong>Contains</strong> method needs to handle <strong>null</strong> or empty strings in the same way as for the other two classes, but because a <strong>TrieWithNoChildren</strong> cannot contain a nonempty string, this method can simply return <strong>false</strong> when it is given a nonempty string.</p>
-<p>The <strong>Add</strong> method for <strong>TrieWithNoChildren</strong> will need to handle a <strong>null</strong> or
+the information already being stored.</li></ul><p>The <strong>TrieWithNoChildren</strong> class is the simplest of the three, as we don&rsquo;t need to worry about any children. The only <strong>private</strong> field it needs is a <strong>bool</strong> to indicate whether it stores the empty string. Its <strong>Contains</strong> method needs to handle <strong>null</strong> or empty strings in the same way as for the other two classes, but because a <strong>TrieWithNoChildren</strong> cannot contain a nonempty string, this method can simply return <strong>false</strong> when it is given a nonempty string.</p><p>The <strong>Add</strong> method for <strong>TrieWithNoChildren</strong> will need to handle a <strong>null</strong> or
 empty <strong>string</strong> in the same way as the the other two classes. However,
 this implementation cannot store a nonempty <strong>string</strong>. In this case, it
 will need to construct and return a new <strong>TrieWithOneChild</strong> containing
-the <strong>string</strong> to be added and the <strong>bool</strong> stored in this node.</p>
-<p>Code that uses such a trie will need to refer to it as an <strong>ITrie</strong>
+the <strong>string</strong> to be added and the <strong>bool</strong> stored in this node.</p><p>Code that uses such a trie will need to refer to it as an <strong>ITrie</strong>
 whenever possible. The only exception to this rule occurs when we are
 constructing a new trie, as we cannot construct an instance of an
 interface. Here, we want to construct the simplest implementation &mdash; a
 <strong>TrieWithNoChildren</strong>. Otherwise, the only difference in usage as
-compared to the implementation of <a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro">the previous
-section</a>
- is that the
+compared to the implementation of <a href=/cis300/trees/tries/intro/>the previous
+section</a> is that the
 <strong>Add</strong> method now returns the resulting trie, whose root may be a
 different object; hence, we will need to be sure to replace the current
-trie with whatever the <strong>Add</strong> method returns.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-    
-    
-          <article class="default">
-            <header class="headline">
-            </header>
-<div hidden><h1 id="traversing-a-trie">Traversing a Trie</h1></div>
-
-<h2 id="traversing-a-trie">Traversing a Trie</h2>
-<p>As with other kinds of trees, there are occasions where we need to
+trie with whatever the <strong>Add</strong> method returns.</p><footer class=footline></footer></article><article class=default><header class=headline></header><div hidden><h1 id=traversing-a-trie>Traversing a Trie</h1></div><h2 id=traversing-a-trie>Traversing a Trie</h2><p>As with other kinds of trees, there are occasions where we need to
 process all the elements stored in a trie in order. Here, the elements
 are strings, which are not stored explicitly in the trie, but implicitly
 based on the labels of various nodes. Thus, an individual node does not
@@ -1216,123 +386,78 @@ therefore associate this string with this node. Note that this string is
 a prefix of any string associated with any node in any of this node&rsquo;s
 children; hence, it is alphabetically less than any string found in any
 of the children. Thus, in order to process each of the strings in
-alphabetic order, we need to do a <a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/intro">preorder
-traversal</a>
-, which
-processes the root before recursively processing the children.</p>
-<p>In order to process the string associated with a node, we need to be
+alphabetic order, we need to do a <a href=/cis300/trees/tries/intro/>preorder
+traversal</a>, which
+processes the root before recursively processing the children.</p><p>In order to process the string associated with a node, we need to be
 able to retrieve this string. Because we will have followed the path
 describing this string in order to get to the node associated with it,
 we can build this string on the way to the node and pass it as a
 parameter to the preorder traversal of the trie rooted at this node.
 Because we will be building this string a character at a time, to do
 this efficiently we should use a
-<a href="https://ksu-cs-textbooks.github.io/cis300/strings/stringbuilders"><strong>StringBuilder</strong></a>
-
+<a href=/cis300/strings/stringbuilders/><strong>StringBuilder</strong></a>
 instead of a <strong>string</strong>. Thus, the preorder traversal method for a trie
 will take a <strong>StringBuilder</strong> parameter describing the path to that
 trie, in addition to any other parameters needed to process the strings
-associated with its nodes.</p>
-<p>Before we present the algorithm itself, we need to address one more
+associated with its nodes.</p><p>Before we present the algorithm itself, we need to address one more
 important issue. We want the <strong>StringBuilder</strong> parameter to describe the
 path to the node we are currently working on. Because we will need to do
 a recursive call on each child, we will need to modify the
 <strong>StringBuilder</strong> to reflect the path to that child. In order to be able
 to do this, we will need to ensure that the recursive calls don&rsquo;t change
 the contents of the <strong>StringBuilder</strong> (or more precisely, that they undo
-any changes that they make).</p>
-<p>Because we are implementing a preorder traversal, the first thing we
+any changes that they make).</p><p>Because we are implementing a preorder traversal, the first thing we
 will need to do is to process the root. This involves determining
 whether the root is associated with a string contained in the trie, and
 if so, processing that string. Determining whether the root is
 associated with a contained string is done by checking the <strong>bool</strong> at
 the root. If it is <strong>true</strong>, we can convert the <strong>StringBuilder</strong>
 parameter to a <strong>string</strong> and process it by doing whatever processing
-needs to be done for each string in our specific application.</p>
-<p>Once we have processed the root, we need to recursively process each of
+needs to be done for each string in our specific application.</p><p>Once we have processed the root, we need to recursively process each of
 the children in alphabetic order of their labels. How we accomplish this
 depends on how we are implementing the trie - we will assume the
-implementation of <a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/multiple-impl">the previous
-section</a>
-. Because
+implementation of <a href=/cis300/trees/tries/multiple-impl/>the previous
+section</a>. Because
 this implementation uses three different classes depending on how many
 children a node has, we will need to write three different versions of
-the preorder traversal, one for each class. Specifically, after processing the root:</p>
-<ul>
-<li>For a <strong>TrieWithNoChildren</strong>, there is nothing more to do.</li>
-<li>Because a <strong>TrieWithOneChild</strong> has exactly one child, we need a
+the preorder traversal, one for each class. Specifically, after processing the root:</p><ul><li>For a <strong>TrieWithNoChildren</strong>, there is nothing more to do.</li><li>Because a <strong>TrieWithOneChild</strong> has exactly one child, we need a
 single recursive call on this child. Before we make this call, we
 will need to append the child&rsquo;s label to the <strong>StringBuilder</strong>.
 Following the recursive call, we will need to remove the character
 that we added by reducing its
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.length?view=net-6.0#system-text-stringbuilder-length" target="_blank"><strong>Length</strong></a>
-
-property by 1.</li>
-<li>We handle a <strong>TrieWithManyChildren</strong> in a similar way as a
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.length?view=net-6.0#system-text-stringbuilder-length" rel=external target=_blank><strong>Length</strong></a>
+property by 1.</li><li>We handle a <strong>TrieWithManyChildren</strong> in a similar way as a
 <strong>TrieWithOneChild</strong>, only we will need to iterate through the
 array of children and process each non-<strong>null</strong> child with a
 recursive call. Note that for each of these children, its label will
 need to be appended to the <strong>StringBuilder</strong> prior to the recursive
 call and removed immediately after. We can obtain the label of a
 child by adding the first letter of the alphabet to its array index and
-<a href="https://ksu-cs-textbooks.github.io/cis300/stacks-queues/stacks/#cast">casting</a>
- the result to a
-<strong>char</strong>.</li>
-</ul>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-    
-    
-          <article class="default">
-            <header class="headline">
-            </header>
-<div hidden><h1 id="tries-in-word-games">Tries in Word Games</h1></div>
-
-<h2 id="tries-in-word-games">Tries in Word Games</h2>
-<p>One application of tries is for implementing word games such as
+<a href=/cis300/stacks-queues/stacks/#cast>casting</a> the result to a
+<strong>char</strong>.</li></ul><footer class=footline></footer></article><article class=default><header class=headline></header><div hidden><h1 id=tries-in-word-games>Tries in Word Games</h1></div><h2 id=tries-in-word-games>Tries in Word Games</h2><p>One application of tries is for implementing word games such as
 Boggle® or Scrabble®. This section discusses how a trie can be
 used to reduce dramatically the amount of time spent searching for words
 in such games. We will focus specifically on Boggle, but the same
-principles apply to other word games as well.</p>
-<p>A Boggle game consists of either 16 or 25 dice with letters on their
+principles apply to other word games as well.</p><p>A Boggle game consists of either 16 or 25 dice with letters on their
 faces, along with a tray containing a 4 x 4 or 5 x 5 grid
 for holding these dice. The face of each die contains a single letter,
 except that one face of one die contains &ldquo;Qu&rdquo;. The tray has a large
 cover such that the dice can be placed in the cover and the tray placed
 upside-down on top of the cover. The whole thing can then be shaken,
 then inverted so that each die ends up in a different grid cell, forming
-a random game board such as:</p>
-<p>
-<a href="#image-e0283ccd7c4f2ddb54b0168082fb8b3d" class="lightbox-link">
-<img src="https://ksu-cs-textbooks.github.io/cis300/trees/tries/word-games/boggle.jpg" alt="A Boggle game board" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-e0283ccd7c4f2ddb54b0168082fb8b3d">
-<img src="https://ksu-cs-textbooks.github.io/cis300/trees/tries/word-games/boggle.jpg" alt="A Boggle game board" class="lightbox-image" loading="lazy">
-</a></p>
-<p>Players are then given a certain amount of time during which they
+a random game board such as:</p><p><a href=#R-image-ed0ee62a6fc7bee92ca8125977cea65a class=lightbox-link><img alt="A Boggle game board" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/trees/tries/word-games/boggle.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-ed0ee62a6fc7bee92ca8125977cea65a><img alt="A Boggle game board" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/trees/tries/word-games/boggle.jpg></a></p><p>Players are then given a certain amount of time during which they
 compete to try to form as many unique words as they can from these
 letters. The letters of a word must be adjacent either horizontally,
 vertically, or diagonally, and no die may be used more than once in a
 single word. There is a minimum word length, and longer words are worth
 more points. For example, the above game board contains the words,
-&ldquo;WITCH&rdquo;, &ldquo;ITCH&rdquo;, &ldquo;PELLET&rdquo;, &ldquo;TELL&rdquo;, and &ldquo;DATA&rdquo;, among many others.</p>
-<p>
-<a href="#image-2442572b3cd82f864334e650a87290e9" class="lightbox-link">
-<img src="https://ksu-cs-textbooks.github.io/cis300/trees/tries/word-games/boggle2.jpg" alt="Words on a Boggle game board" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-2442572b3cd82f864334e650a87290e9">
-<img src="https://ksu-cs-textbooks.github.io/cis300/trees/tries/word-games/boggle2.jpg" alt="Words on a Boggle game board" class="lightbox-image" loading="lazy">
-</a></p>
-<p>Suppose we want to build a program that plays Boggle against a human
+&ldquo;WITCH&rdquo;, &ldquo;ITCH&rdquo;, &ldquo;PELLET&rdquo;, &ldquo;TELL&rdquo;, and &ldquo;DATA&rdquo;, among many others.</p><p><a href=#R-image-9a3a590b1cb997a80e9e71a91c2f176b class=lightbox-link><img alt="Words on a Boggle game board" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/trees/tries/word-games/boggle2.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-9a3a590b1cb997a80e9e71a91c2f176b><img alt="Words on a Boggle game board" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/trees/tries/word-games/boggle2.jpg></a></p><p>Suppose we want to build a program that plays Boggle against a human
 opponent. The program would need to look for words on a given board. The
 dictionary of valid words can of course be stored in a trie. In what follows,
 we will show how the structure of a trie can be particularly helpful in
-guiding this search so that words are found more quickly.</p>
-<p>We can think of a search from a given starting point as a traversal of a
+guiding this search so that words are found more quickly.</p><p>We can think of a search from a given starting point as a traversal of a
 tree. The root of the tree is the starting point, and its children are
 searches starting from adjacent dice. We must be careful, however, to
 include in such a tree only those adjacent dice that do not already
@@ -1340,43 +465,26 @@ occur on the path to the given die. For example, if we start a search at
 the upper-left corner of the above board, its children would be the
 three adjacent dice containing &ldquo;I&rdquo;, &ldquo;C&rdquo;, and &ldquo;A&rdquo;. The children of &ldquo;I&rdquo;,
 then, would not include &ldquo;H&rdquo; because it is already on the path to &ldquo;I&rdquo;.
-Part of this tree would look like this:</p>
-<p>
-<a href="#image-b5204930df8bc09bdb66983af446592c" class="lightbox-link">
-<img src="https://ksu-cs-textbooks.github.io/cis300/trees/tries/word-games/boggle-tree.jpg" alt="A part of a tree representing a Boggle search space" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-b5204930df8bc09bdb66983af446592c">
-<img src="https://ksu-cs-textbooks.github.io/cis300/trees/tries/word-games/boggle-tree.jpg" alt="A part of a tree representing a Boggle search space" class="lightbox-image" loading="lazy">
-</a></p>
-<p>Note that this tree is not a data structure - it need not be explicitly
+Part of this tree would look like this:</p><p><a href=#R-image-328c697fad74efc35bf4c81dc3210f48 class=lightbox-link><img alt="A part of a tree representing a Boggle search space" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/trees/tries/word-games/boggle-tree.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-328c697fad74efc35bf4c81dc3210f48><img alt="A part of a tree representing a Boggle search space" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/trees/tries/word-games/boggle-tree.jpg></a></p><p>Note that this tree is not a data structure - it need not be explicitly
 stored anywhere. Rather, it is a mathematical object that helps us to
 design an algorithm for finding all of the words. Each word on the board
 is simply a path in this tree starting from the root. We can therefore
-traverse this tree in much the same way as we outlined in <a href="https://ksu-cs-textbooks.github.io/cis300/trees/tries/traversing">the previous
-section</a>
- for tries.
+traverse this tree in much the same way as we outlined in <a href=/cis300/trees/tries/traversing/>the previous
+section</a> for tries.
 For each node in the tree, we can look up the path leading to that node,
-and output it if it is a word in the dictionary.</p>
-<p>In order to be able to implement such a traversal, we need to be able to
+and output it if it is a word in the dictionary.</p><p>In order to be able to implement such a traversal, we need to be able to
 find the children of a node. These children are the adjacent cells that
 are not used in the path to the node. An efficient way to keep track of
 the cells used in this path is with a <strong>bool[ , ]</strong> of the same
 size as the Boggle board - a value of <strong>true</strong> in this array will
 indicate that the corresponding cell on the board has been used in the
 current path. The children of a node are then the adjacent cells whose
-entries in this array are <strong>false</strong>.</p>
-<p>A preorder traversal of this tree will therefore need the following
+entries in this array are <strong>false</strong>.</p><p>A preorder traversal of this tree will therefore need the following
 parameters (and possibly others, depending on how we want to output the
-words found):</p>
-<ul>
-<li>The row index of the current cell.</li>
-<li>The column index of the current cell.</li>
-<li>The <strong>bool[ , ]</strong> described above. The current cell will
-have a <strong>false</strong> entry in this array.</li>
-<li>A <strong>StringBuilder</strong> giving the letters on the path up to, but not
-including, the current cell.</li>
-</ul>
-<p>The preorder traversal will first need to update the cells used by
+words found):</p><ul><li>The row index of the current cell.</li><li>The column index of the current cell.</li><li>The <strong>bool[ , ]</strong> described above. The current cell will
+have a <strong>false</strong> entry in this array.</li><li>A <strong>StringBuilder</strong> giving the letters on the path up to, but not
+including, the current cell.</li></ul><p>The preorder traversal will first need to update the cells used by
 setting the location corresponding to the current cell to <strong>true</strong>.
 Likewise, it will need to update the <strong>StringBuilder</strong> by appending the
 contents of the current cell. Then it will need to process the root by
@@ -1387,40 +495,28 @@ each adjacent cell whose entry in the <strong>bool[ , ]</strong> is
 children have been processed, it will need to return the
 <strong>bool[ , ]</strong> and the <strong>StringBuilder</strong> to their
 earlier states by setting the array entry back to <strong>false</strong> and removing
-the character(s) appended earlier.</p>
-<p>Once such a method is written, we can call it once for each cell on the
+the character(s) appended earlier.</p><p>Once such a method is written, we can call it once for each cell on the
 board. For each of these calls, all entries in the <strong>bool[ , ]</strong>
-should be false, and the <strong>StringBuilder</strong> should be empty.</p>
-<p>While the algorithm described above will find all the words on a Boggle
+should be false, and the <strong>StringBuilder</strong> should be empty.</p><p>While the algorithm described above will find all the words on a Boggle
 board, a 5 x 5 board will require quite a while for the algorithm
 to process. While this might be acceptable if we are implementing a game
 that humans can compete with, from an algorithmic standpoint, we would
 like to improve the performance. (In fact, there are probably better
 ways to make a program with which humans can compete, as this search
-will only find words that begin near the top of the board.)</p>
-<p>We can begin to see how to improve the performance if we observe the
+will only find words that begin near the top of the board.)</p><p>We can begin to see how to improve the performance if we observe the
 similarity between the trees we have been discussing and a trie
 containing the word list. Consider, for example, a portion of the child
-labeled &lsquo;h&rsquo; in a trie representing a large set of words:</p>
-<p>
-<a href="#image-f973f5e87c121e430170b438b6874f91" class="lightbox-link">
-<img src="https://ksu-cs-textbooks.github.io/cis300/trees/tries/word-games/trie-portion.jpg" alt="A portion of a trie." style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-f973f5e87c121e430170b438b6874f91">
-<img src="https://ksu-cs-textbooks.github.io/cis300/trees/tries/word-games/trie-portion.jpg" alt="A portion of a trie." class="lightbox-image" loading="lazy">
-</a></p>
-<p>We have omitted some of the children because they are irrelevant to the
+labeled &lsquo;h&rsquo; in a trie representing a large set of words:</p><p><a href=#R-image-f04506a42761a2c1178a4fd3932de85e class=lightbox-link><img alt="A portion of a trie." class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/trees/tries/word-games/trie-portion.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-f04506a42761a2c1178a4fd3932de85e><img alt="A portion of a trie." class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/trees/tries/word-games/trie-portion.jpg></a></p><p>We have omitted some of the children because they are irrelevant to the
 search we are performing (e.g., there is no die containing &ldquo;E&rdquo; adjacent
 to &ldquo;H&rdquo; on the above game board). Also, we are assuming a minimum word
 length of 4; hence, &ldquo;ha&rdquo;, &ldquo;hi&rdquo;, and &ldquo;hit&rdquo; are not shown as words in this
-trie.</p>
-<p>Notice the similarity between the trie portion shown above and the tree
+trie.</p><p>Notice the similarity between the trie portion shown above and the tree
 shown earlier. The root of the tree has children representing dice
 containing &ldquo;I&rdquo; and &ldquo;A&rdquo;, and the former node has children representing
 dice containing &ldquo;T&rdquo;, &ldquo;C&rdquo;, and &ldquo;A&rdquo;; likewise, though they are listed in a
 different order, the trie has children labeled &lsquo;i&rsquo; and &lsquo;a&rsquo;, and the
-former node has children labeled &rsquo;t&rsquo;, &lsquo;c&rsquo;, and &lsquo;a&rsquo;.</p>
-<p>What is more important to our discussion, however, is that the trie does
+former node has children labeled &rsquo;t&rsquo;, &lsquo;c&rsquo;, and &lsquo;a&rsquo;.</p><p>What is more important to our discussion, however, is that the trie does
 not have a child labeled &lsquo;c&rsquo;, as there is no English word beginning with
 &ldquo;hc&rdquo;. Similarly, the child labeled &lsquo;i&rsquo; does not have a child labeled
 &lsquo;i&rsquo;, as there is no English word beginning with &ldquo;hii&rdquo;. If there are no
@@ -1428,99 +524,30 @@ words in the word list beginning with these prefixes, there is no need
 to search the subtrees rooted at the corresponding nodes when doing the
 preorder traversal. Using the trie to prune the search in this way ends
 up avoiding many subtrees that don&rsquo;t lead to any words. As a result,
-only a small fraction of the original tree is searched.</p>
-<p>In order to take advantage of the trie in this way, we need a method in
+only a small fraction of the original tree is searched.</p><p>In order to take advantage of the trie in this way, we need a method in
 the trie implementation to return the child having a given label, or
 <strong>null</strong> if there is no such child. Alternatively, we might provide a
 method that takes a <strong>string</strong> and returns the trie that this <strong>string</strong>
 leads to, or <strong>null</strong> if there is no such trie (this method would make
 it easier to handle the die containing &ldquo;Qu&rdquo;). Either way, we can then
 traverse the trie as we are doing the preorder traversal described
-above, and avoid searching a subtree whenever the trie becomes null.</p>
-<p>This revised preorder traversal needs an extra parameter - a trie giving
+above, and avoid searching a subtree whenever the trie becomes null.</p><p>This revised preorder traversal needs an extra parameter - a trie giving
 all completions of words beginning with the prefix given by the
 <strong>StringBuilder</strong> parameter. We will need to ensure that this parameter
-is never <strong>null</strong>. The algorithm then proceeds as follows:</p>
-<ul>
-<li>From the given trie, get the subtrie containing the completions of
-words beginning with the contents of the current cell.</li>
-<li>If this subtrie is not <strong>null</strong>:
-<ul>
-<li>Set the location in the <strong>bool[ , ]</strong> corresponding to
-the current cell to <strong>true</strong>.</li>
-<li>Append the contents of the current cell to the
-<strong>StringBuilder</strong>.</li>
-<li>If the subtrie obtained above contains the empty <strong>string</strong>,
-output the contents of the <strong>StringBuilder</strong> as a word found.</li>
-<li>Recursively traverse each adjacent cell whose corresponding
+is never <strong>null</strong>. The algorithm then proceeds as follows:</p><ul><li>From the given trie, get the subtrie containing the completions of
+words beginning with the contents of the current cell.</li><li>If this subtrie is not <strong>null</strong>:<ul><li>Set the location in the <strong>bool[ , ]</strong> corresponding to
+the current cell to <strong>true</strong>.</li><li>Append the contents of the current cell to the
+<strong>StringBuilder</strong>.</li><li>If the subtrie obtained above contains the empty <strong>string</strong>,
+output the contents of the <strong>StringBuilder</strong> as a word found.</li><li>Recursively traverse each adjacent cell whose corresponding
 entry in the <strong>bool[ , ]</strong> is <strong>false</strong>. The recursive
-calls should use the subtrie obtained above.</li>
-<li>Set the location in the <strong>bool[ , ]</strong> corresponding to
-the current cell to <strong>false</strong>.</li>
-<li>Remove the contents of the current cell from the end of the
+calls should use the subtrie obtained above.</li><li>Set the location in the <strong>bool[ , ]</strong> corresponding to
+the current cell to <strong>false</strong>.</li><li>Remove the contents of the current cell from the end of the
 <strong>StringBuilder</strong> (i.e., decrease its <strong>Length</strong> by the
-appropriate amount).</li>
-</ul>
-</li>
-</ul>
-<p>We would then apply the above algorithm to each cell on the board. For
+appropriate amount).</li></ul></li></ul><p>We would then apply the above algorithm to each cell on the board. For
 each cell, we would use a <strong>bool[ , ]</strong> whose entries are all
 <strong>false</strong>, an empty <strong>StringBuilder</strong>, and the entire trie of valid words. Note that we
 have designed the preorder traversal so that it leaves each of these
 parameters unchanged; hence, we only need to initialize them once. The
-resulting search will find all of the words on the board quickly.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-          </section>
-
-        </div>
-      </main>
-    
-<div class="git-footer">
-<p class="theme-version-footer">5.18.0</p>
-<p>Last modified by: 
-            <i class='fas fa-user'></i> Russell Feldhausen
-            <i class='fas fa-calendar'></i> <a href="https://gitlab.cs.ksu.edu/cis300/cis300-book/-/commit/922f538e5bb242ebedcf7260f2a5ef759abe56f5">May 22, 2023</a>
-</p>
-</div>
-
-    
-    </div>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1710771761" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1710771761" defer></script>
-    <script>
-      function useMathJax( config ){
-        if( !Object.assign ){
-          
-          return;
-        }
-        window.MathJax = Object.assign( window.MathJax || {}, {
-          loader: {
-            load: ['[tex]/mhchem']
-          },
-          startup: {
-            elements: [
-              '.math'
-            ]
-          },
-          tex: {
-            inlineMath: [
-              ['$', '$'], 
-              ['\\(', '\\)']
-            ]
-          },
-          options: {
-            enableMenu: false 
-          }
-        }, config );
-      }
-      useMathJax( JSON.parse("{}") );
-    </script>
-    <script id="MathJax-script" async src="https://ksu-cs-textbooks.github.io/cis300/js/mathjax/tex-mml-chtml.js?1710771761"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1710771761" defer></script>
-  </body>
-</html>
+resulting search will find all of the words on the board quickly.</p><footer class=footline></footer></article></section></div></main><div class=git-footer><p class=theme-version-footer>6.0.0</p><p>Last modified by:
+<i class='fas fa-user'></i> Russell Feldhausen
+<i class='fas fa-calendar'></i> <a href=https://github.com/ksu-cs-textbooks/cis300/commit/922f538e5bb242ebedcf7260f2a5ef759abe56f5>May 22, 2023</a></p></div></div><script src=/cis300/js/clipboard.min.js?1719513824 defer></script><script src=/cis300/js/perfect-scrollbar.min.js?1719513824 defer></script><script>function useMathJax(e){window.MathJax=Object.assign(window.MathJax||{},{tex:{inlineMath:[["\\(","\\)"],["$","$"]],displayMath:[["\\[","\\]"],["$$","$$"]]},options:{enableMenu:!1}},e)}useMathJax(JSON.parse("{}"))</script><script id=MathJax-script async src=/cis300/js/mathjax/tex-mml-chtml.js?1719513824></script><script src=/cis300/js/theme.js?1719513824 defer></script></body></html>

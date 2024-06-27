@@ -1,603 +1,5 @@
-
-
-
-
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.101.0">
-    <meta name="generator" content="Relearn 5.18.0">
-    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
-    <meta name="description" content="K-State CIS 300: Data Structures">
-    <meta name="author" content="Rod Howell and Josh Weese">
-    <title>Shortest Paths :: Data Structures in C#</title>
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fontawesome-all.min.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/nucleus.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/auto-complete.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/perfect-scrollbar.min.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis300/css/fonts.css?1710771761" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/theme-light-theme.css?1710771761" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/variant.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/print.css?1710771761" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/format-print.css?1710771761" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/ie.css?1710771761" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/url.js?1710771761"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/variant.js?1710771761"></script>
-    <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72""
-      window.index_json_url="https://ksu-cs-textbooks.github.io/cis300/index.json";
-      var root_url="https://ksu-cs-textbooks.github.io/cis300/";
-      var baseUri=root_url.replace(/\/$/, '');
-      // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis300/';
-      window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
-    </script>
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis300/css/custom.css?1710771761" rel="stylesheet">
-
-  </head>
-  <body class="mobile-support print disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis300/graphs/dijkstra/index.html">
-    <div id="body" class="default-animation">
-      <div id="sidebar-overlay"></div>
-      <div id="toc-overlay"></div>
-      <nav id="topbar" class="highlightable">
-        <div>
-          <div id="top-tele-link">
-            <a class="print-link" title='Teleprompter View' href="https://ksu-cs-textbooks.github.io/cis300/graphs/dijkstra/tele.html">
-              <i class="fas fa-tv fa-fw"></i>
-            </a>
-          </div>
-          <div id="top-embed-link">
-            <a class="print-link" title='Embeddable Version' href="https://ksu-cs-textbooks.github.io/cis300/graphs/dijkstra/embed.html">
-              <i class="fas fa-expand-arrows-alt fa-fw"></i>
-            </a>
-          </div>
-          <div id="breadcrumbs">
-            <span id="sidebar-toggle-span">
-              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
-            </span>
-            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis300/index.html"><span itemprop="name">Data Structures in C#</span></a><meta itemprop="position" content="1"> &gt; </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis300/graphs/index.html"><span itemprop="name">Graphs</span></a><meta itemprop="position" content="2"> &gt; </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Shortest Paths</span><meta itemprop="position" content="3"></li>
-            </ol>
-          </div>
-        </div>
-      </nav>
-      <main id="body-inner" class="highlightable default" tabindex="-1">
-        <div class="flex-block-wrapper">
-          <article class="default">
-            <header class="headline">
-            </header>
-<div hidden><h1 id="shortest-paths">Shortest Paths</h1></div>
-
-<h2 id="shortest-paths">Shortest Paths</h2>
-<p>In this section, we will consider a common graph problem &mdash; that of
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=robots content="noindex, nofollow, noarchive, noimageindex"><meta name=description content="Shortest Paths In this section, we will consider a common graph problem — that of finding a shortest path from a node u to a node v in a directed graph. We will assume that each edge contains as its data a nonnegative number. This number may represent a physical distance or some other cost, but for simplicity, we will refer to this value as the length of the edge. We can then define the length of a path to be the sum of the lengths of all the edges along that path."><meta name=author content="Rod Howell and Josh Weese"><meta name=twitter:card content="summary"><meta name=twitter:title content="Shortest Paths :: Data Structures in C#"><meta name=twitter:description content="Shortest Paths In this section, we will consider a common graph problem — that of finding a shortest path from a node u to a node v in a directed graph. We will assume that each edge contains as its data a nonnegative number. This number may represent a physical distance or some other cost, but for simplicity, we will refer to this value as the length of the edge. We can then define the length of a path to be the sum of the lengths of all the edges along that path."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis300/graphs/dijkstra/"><meta property="og:site_name" content="Data Structures in C#"><meta property="og:title" content="Shortest Paths :: Data Structures in C#"><meta property="og:description" content="Shortest Paths In this section, we will consider a common graph problem — that of finding a shortest path from a node u to a node v in a directed graph. We will assume that each edge contains as its data a nonnegative number. This number may represent a physical distance or some other cost, but for simplicity, we will refer to this value as the length of the edge. We can then define the length of a path to be the sum of the lengths of all the edges along that path."><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="Graphs"><meta property="article:modified_time" content="2023-06-08T11:09:26-05:00"><meta itemprop=name content="Shortest Paths :: Data Structures in C#"><meta itemprop=description content="Shortest Paths In this section, we will consider a common graph problem — that of finding a shortest path from a node u to a node v in a directed graph. We will assume that each edge contains as its data a nonnegative number. This number may represent a physical distance or some other cost, but for simplicity, we will refer to this value as the length of the edge. We can then define the length of a path to be the sum of the lengths of all the edges along that path."><meta itemprop=dateModified content="2023-06-08T11:09:26-05:00"><meta itemprop=wordCount content="1716"><title>Shortest Paths :: Data Structures in C#</title>
+<link href=/cis300/css/fontawesome-all.min.css?1719513823 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fontawesome-all.min.css?1719513823 rel=stylesheet></noscript><link href=/cis300/css/nucleus.css?1719513823 rel=stylesheet><link href=/cis300/css/auto-complete.css?1719513823 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/auto-complete.css?1719513823 rel=stylesheet></noscript><link href=/cis300/css/perfect-scrollbar.min.css?1719513823 rel=stylesheet><link href=/cis300/css/fonts.css?1719513823 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fonts.css?1719513823 rel=stylesheet></noscript><link href=/cis300/css/theme.css?1719513823 rel=stylesheet><link href=/cis300/css/theme-auto.css?1719513823 rel=stylesheet id=R-variant-style><link href=/cis300/css/chroma-auto.css?1719513823 rel=stylesheet id=R-variant-chroma-style><link href=/cis300/css/variant.css?1719513823 rel=stylesheet><link href=/cis300/css/print.css?1719513823 rel=stylesheet media=print><link href=/cis300/css/format-print.css?1719513823 rel=stylesheet><script src=/cis300/js/variant.js?1719513823></script><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis300",window.index_js_url="/cis300/index.search.js",window.variants&&variants.init(["auto","light-theme","dark-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis300/css/custom.css?1719513823 rel=stylesheet></head><body class="mobile-support print disableInlineCopyToClipboard" data-url=/cis300/graphs/dijkstra/><div id=R-body class=default-animation><div id=R-body-overlay></div><nav id=R-topbar><div class=topbar-wrapper><div class=topbar-sidebar-divider></div><div class="topbar-area topbar-area-start" data-area=start><div class="topbar-button topbar-button-sidebar" data-content-empty=disable data-width-s=show data-width-m=hide data-width-l=hide><button class=topbar-control onclick=toggleNav() type=button title="Menu (CTRL+ALT+n)"><i class="fa-fw fas fa-bars"></i></button></div></div><ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype=http://schema.org/BreadcrumbList><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><a itemprop=item href=/cis300/graphs/><span itemprop=name>Graphs</span></a><meta itemprop=position content="1">&nbsp;>&nbsp;</li><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><span itemprop=name>Shortest Paths</span><meta itemprop=position content="2"></li></ol><div class="topbar-area topbar-area-end" data-area=end><div class="topbar-button topbar-button-prev" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/cis300/graphs/intro/ title="Introduction to Graphs (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></div><div class="topbar-button topbar-button-next" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/cis300/graphs/breadth-first/ title="Unweighted Shortest Paths (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></div></div></div></nav><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><div hidden><h1 id=shortest-paths>Shortest Paths</h1></div><h2 id=shortest-paths>Shortest Paths</h2><p>In this section, we will consider a common graph problem &mdash; that of
 finding a shortest path from a node <em>u</em> to a node <em>v</em> in a directed
 graph. We will assume that each edge contains as its data a nonnegative
 number. This number may represent a physical distance or some other
@@ -607,23 +9,15 @@ lengths of all the edges along that path. A shortest path from <em>u</em> to
 <em>v</em> is then a path from <em>u</em> to <em>v</em> with minimum length. Thus, for
 example, the shortest path from <em>a</em> to <em>h</em> in the graph below is
 <em>a</em>-<em>c</em>-<em>g</em>-<em>f</em>-<em>h</em>, and its length is
-4.8 + 6.4 + 4.9 + 3.2 = 19.3.</p>
-<p>
-<a href="#image-2376be2deb5e3b504f4e9845ddb561d0" class="lightbox-link">
-<img src="https://ksu-cs-textbooks.github.io/cis300/graphs/dijkstra/directed-graph.jpg" alt="A directed graph" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-2376be2deb5e3b504f4e9845ddb561d0">
-<img src="https://ksu-cs-textbooks.github.io/cis300/graphs/dijkstra/directed-graph.jpg" alt="A directed graph" class="lightbox-image" loading="lazy">
-</a></p>
-<p>The biggest challenge in finding an algorithm for this problem is that
+4.8 + 6.4 + 4.9 + 3.2 = 19.3.</p><p><a href=#R-image-53ee6574999d41a163e98d41aca5d929 class=lightbox-link><img alt="A directed graph" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/graphs/dijkstra/directed-graph.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-53ee6574999d41a163e98d41aca5d929><img alt="A directed graph" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/graphs/dijkstra/directed-graph.jpg></a></p><p>The biggest challenge in finding an algorithm for this problem is that
 the number of paths in a graph can be huge, even for relatively small
 graphs. For example, a directed graph with 15 nodes might contain almost
 17 billion paths from a node <em>u</em> to a node <em>v</em>. Clearly, an algorithm
 that simply checks all paths would be impractical for solving a problem
 such as finding the shortest route between two given locations in North America.
 In what follows, we will present a much more efficient algorithm due to
-Edsger W. Dijkstra.</p>
-<p>First, it helps to realize that when we are looking for a shortest path
+Edsger W. Dijkstra.</p><p>First, it helps to realize that when we are looking for a shortest path
 from <em>u</em> to <em>v</em>, we are likely to find other shortest paths along the
 way. Specifically, if node <em>w</em> is on the shortest path from <em>u</em> to <em>v</em>,
 then taking that same path but stopping at <em>w</em> gives us a shortest path
@@ -636,8 +30,7 @@ paths</em> problem. This problem is a bit easier to think about because we
 can use shortest path information that we have already computed to find
 additional shortest path information. Then once we have an algorithm for
 this problem, we can easily modify it so that as soon as it finds the
-shortest path to our actual goal node <em>v</em>, we terminate it.</p>
-<p>Dijkstra&rsquo;s algorithm progresses by finding a shortest path to one node
+shortest path to our actual goal node <em>v</em>, we terminate it.</p><p>Dijkstra&rsquo;s algorithm progresses by finding a shortest path to one node
 at a time. Let <em>S</em> denote the set of nodes to which it has found a
 shortest path. Initially, <em>S</em> will contain only <em>u</em>, as the shortest
 path from <em>u</em> to <em>u</em> is the empty path. At each step, it finds a
@@ -645,54 +38,47 @@ shortest path that begins at <em>u</em> and ends at a node outside of <em>S</em>
 Let&rsquo;s call the last node in this path <em>x</em>. Certainly, if this path to
 <em>x</em> is the shortest to <em>any</em> node outside of <em>S</em>, it is also the
 shortest to <em>x</em>. The algorithm therefore adds <em>x</em> to <em>S</em>, and continues
-to the next step.</p>
-<p>What makes Dijkstra&rsquo;s algorithm efficient is the way in which it finds
+to the next step.</p><p>What makes Dijkstra&rsquo;s algorithm efficient is the way in which it finds
 each of the paths described above. Recall that each edge has a
 nonnegative length. Hence, once a given path reaches some node outside
 of <em>S</em>, we cannot make the path any shorter by extending it further. We
 therefore only need to consider paths that remain in <em>S</em> until the last
 edge, which goes from a node in <em>S</em> to a node outside of <em>S</em>. We will
 refer to such edges as <em>eligible</em>. We are therefore looking for a
-shortest path whose last edge is eligible.</p>
-<p>Suppose (<em>w</em>, <em>x</em>) is an eligible edge; i.e., <em>w</em> is in <em>S</em>, but <em>x</em> is
+shortest path whose last edge is eligible.</p><p>Suppose (<em>w</em>, <em>x</em>) is an eligible edge; i.e., <em>w</em> is in <em>S</em>, but <em>x</em> is
 not. Because <em>w</em> is in <em>S</em>, we know the length of the shortest path to
 <em>w</em>. The length of a shortest path ending in (<em>w</em>, <em>x</em>) is simply the
-length of the shortest path to <em>w</em>, plus the length of (<em>w</em>, <em>x</em>).</p>
-<p>Let us therefore assign to each eligible edge (<em>w</em>, <em>x</em>) a priority
+length of the shortest path to <em>w</em>, plus the length of (<em>w</em>, <em>x</em>).</p><p>Let us therefore assign to each eligible edge (<em>w</em>, <em>x</em>) a priority
 equal to the length of the shortest path to <em>w</em>, plus the length of
 (<em>w</em>, <em>x</em>). A shortest path ending in an eligible edge therefore has a
 length equal to the minimum priority of any eligible edge. Furthermore,
 if the eligible edge with minimum priority is (<em>w</em>, <em>x</em>), then the
 shortest path to <em>x</em> is the shortest path to <em>w</em>, followed by (<em>w</em>,
-<em>x</em>).</p>
-<p>We can efficiently find an eligible edge with minimum priority if we
+<em>x</em>).</p><p>We can efficiently find an eligible edge with minimum priority if we
 store all eligible edges in a <strong>MinPriorityQueue&lt;TEdgeData,
-Edge&lt;TNode, TEdgeData&gt;&gt;</strong>. Note however, that when we include <em>x</em> in
+Edge&lt;TNode, TEdgeData>></strong>. Note however, that when we include <em>x</em> in
 <em>S</em> as a result of removing (<em>w, x</em>) from the queue, it will cause any
 other eligible edges leading to <em>x</em> to become ineligible, as <em>x</em> will no
 longer be outside of <em>S</em>. Because removing these edges from the
 min-priority queue is difficult, we will simply leave them in the queue,
 and discard them whenever they have minimum priority. This min-priority
 queue will therefore contain all eligible edges, plus some edges whose
-endpoints are both in <em>S</em>.</p>
-<p>We also need a data structure to keep track of the shortest paths we
+endpoints are both in <em>S</em>.</p><p>We also need a data structure to keep track of the shortest paths we
 have found. A convenient way to do this is, for each node to which we
 have found a shortest path, to keep track of this node&rsquo;s predecessor on
 this path. This will allow us to retrieve a shortest path to a node <em>v</em>
 by starting at <em>v</em> and tracing the path backwards using the predecessor
-of each node until we reach <em>u</em>. A <strong>Dictionary&lt;TNode, TNode&gt;</strong> is
+of each node until we reach <em>u</em>. A <strong>Dictionary&lt;TNode, TNode></strong> is
 an ideal choice for this data structure. The keys in the dictionary will
 be the nodes in <em>S</em>, and the value associated with a key will be that
 key&rsquo;s predecessor on a shortest path. For node <em>u</em>, which is in <em>S</em> but
 has no predecessor on its shortest path, we can associate a value of <em>u</em>
-itself.</p>
-<p>The algorithm begins by adding the key <em>u</em> with the value <em>u</em> to a new
+itself.</p><p>The algorithm begins by adding the key <em>u</em> with the value <em>u</em> to a new
 dictionary. Because all of the outgoing edges from <em>u</em> are now eligible,
 it then places each of these edges into the min-priority queue. Because
 <em>u</em> is the source node of each of these edges, and the shortest path
 from <em>u</em> to <em>u</em> has length 0, the priority of each of these edges will
-simply be its length.</p>
-<p>Once the above initialization is done, the algorithm enters a loop that
+simply be its length.</p><p>Once the above initialization is done, the algorithm enters a loop that
 iterates as long as the min-priority queue is nonempty. An iteration
 begins by obtaining the minimum priority <em>p</em> from the min-priority
 queue, then removing an edge (<em>w</em>, <em>x</em>) with minimum priority. If <em>x</em>
@@ -704,16 +90,14 @@ edges will be edges from <em>x</em> that lead to nodes that are not keys in the
 dictionary; however, because the min-priority queue can contain edges to
 nodes that are already keys, we can simply add all outgoing edges from
 <em>x</em>. Because the length of the shortest path to <em>x</em> is <em>p</em>, the priority
-of each of these outgoing edges is <em>p</em> plus the length of the outgoing edge.</p>
-<p>Note that an edge is added to the min-priority queue only when its
+of each of these outgoing edges is <em>p</em> plus the length of the outgoing edge.</p><p>Note that an edge is added to the min-priority queue only when its
 source is added as a key to the dictionary. Because we can only add a
 key once, each edge is added to the min-priority queue at most once.
 Because each iteration removes an edge from the min-priority queue, the
 min-priority queue must eventually become empty, causing the loop to
 terminate. When the min-priority queue becomes empty, there can be no
 eligible edges; hence, when the loop terminates, the algorithm has found
-a shortest path to every reachable node.</p>
-<p>We can now modify the above algorithm so that it finds a shortest path
+a shortest path to every reachable node.</p><p>We can now modify the above algorithm so that it finds a shortest path
 from <em>u</em> to a given node <em>v</em>. Each time we add a new key to the
 dictionary, we check to see if this key is <em>v</em>; if so, we return the
 dictionary immediately. We might also want to return this path&rsquo;s length,
@@ -721,83 +105,15 @@ which is the priority of the edge leading to <em>v</em>. In this case, we could
 return the dictionary as an <strong>out</strong> parameter. Doing this would allow us
 to return a special value (e.g., a negative number) if we get through
 the loop without adding <em>v</em>, as this would indicate that <em>v</em> is
-unreachable. This modified algorithm is therefore as follows:</p>
-<ul>
-<li>Construct a new dictionary and a new min-priority queue.</li>
-<li>Add to the dictionary the key <em>u</em> with value <em>u</em>.</li>
-<li>If <em>u</em> = <em>v</em>, return 0.</li>
-<li>For each outgoing edge (<em>u</em>, <em>w</em>) from <em>u</em>:
-<ul>
-<li>Add (<em>u</em>, <em>w</em>) to the min-priority queue with a priority of
-the length of this edge.</li>
-</ul>
-</li>
-<li>While the min-priority queue is nonempty:
-<ul>
-<li>Get the minimum priority <em>p</em> from the min-priority queue.</li>
-<li>Remove an edge (<em>w</em>, <em>x</em>) with minimum priority from the
-min-priority queue.</li>
-<li>If <em>x</em> is not a key in the dictionary:
-<ul>
-<li>Add to the dictionary the key <em>x</em> with a value of <em>w</em>.</li>
-<li>If <em>x</em> = <em>v</em>, return <em>p</em>.</li>
-<li>For each outgoing edge (<em>x</em>, <em>y</em>) from <em>x</em>:
-<ul>
-<li>Add (<em>x</em>, <em>y</em>) to the min-priority queue with
-priority <em>p</em> plus the length of (<em>x</em>, <em>y</em>).</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Return a negative value.</li>
-</ul>
-<p>The above algorithm computes all of the path information we need, but we
+unreachable. This modified algorithm is therefore as follows:</p><ul><li>Construct a new dictionary and a new min-priority queue.</li><li>Add to the dictionary the key <em>u</em> with value <em>u</em>.</li><li>If <em>u</em> = <em>v</em>, return 0.</li><li>For each outgoing edge (<em>u</em>, <em>w</em>) from <em>u</em>:<ul><li>Add (<em>u</em>, <em>w</em>) to the min-priority queue with a priority of
+the length of this edge.</li></ul></li><li>While the min-priority queue is nonempty:<ul><li>Get the minimum priority <em>p</em> from the min-priority queue.</li><li>Remove an edge (<em>w</em>, <em>x</em>) with minimum priority from the
+min-priority queue.</li><li>If <em>x</em> is not a key in the dictionary:<ul><li>Add to the dictionary the key <em>x</em> with a value of <em>w</em>.</li><li>If <em>x</em> = <em>v</em>, return <em>p</em>.</li><li>For each outgoing edge (<em>x</em>, <em>y</em>) from <em>x</em>:<ul><li>Add (<em>x</em>, <em>y</em>) to the min-priority queue with
+priority <em>p</em> plus the length of (<em>x</em>, <em>y</em>).</li></ul></li></ul></li></ul></li><li>Return a negative value.</li></ul><p>The above algorithm computes all of the path information we need, but we
 still need to extract from the dictionary the shortest path from <em>u</em> to
 <em>v</em>. Because the value for each key is that key&rsquo;s predecessor, we can
 walk backward through this path, starting with <em>v</em>. To get the path in
 the proper order, we can push the nodes onto a stack; then we can remove
 them in the proper order. Thus, we can extract the shortest path as
-follows:</p>
-<ul>
-<li>Construct a new stack.</li>
-<li>Set the current node to <em>v</em>.</li>
-<li>While the current node is not <em>u</em>:
-<ul>
-<li>Push the current node onto the stack.</li>
-<li>Set the current node to its value in the dictionary.</li>
-</ul>
-</li>
-<li>Process <em>u</em>.</li>
-<li>While the stack is not empty:
-<ul>
-<li>Pop the top node from the stack and process it.</li>
-</ul>
-</li>
-</ul>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-
-        </div>
-      </main>
-    
-<div class="git-footer">
-<p class="theme-version-footer">5.18.0</p>
-<p>Last modified by: 
-            <i class='fas fa-user'></i> Rod Howell
-            <i class='fas fa-calendar'></i> <a href="https://gitlab.cs.ksu.edu/cis300/cis300-book/-/commit/e03f84f5af25e9ecbeb351ca00f76eb9d0cb57da">Jun 8, 2023</a>
-</p>
-</div>
-
-    
-    </div>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/clipboard.min.js?1710771761" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/perfect-scrollbar.min.js?1710771761" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis300/js/theme.js?1710771761" defer></script>
-  </body>
-</html>
+follows:</p><ul><li>Construct a new stack.</li><li>Set the current node to <em>v</em>.</li><li>While the current node is not <em>u</em>:<ul><li>Push the current node onto the stack.</li><li>Set the current node to its value in the dictionary.</li></ul></li><li>Process <em>u</em>.</li><li>While the stack is not empty:<ul><li>Pop the top node from the stack and process it.</li></ul></li></ul><footer class=footline></footer></article></div></main><div class=git-footer><p class=theme-version-footer>6.0.0</p><p>Last modified by:
+<i class='fas fa-user'></i> Rod Howell
+<i class='fas fa-calendar'></i> <a href=https://github.com/ksu-cs-textbooks/cis300/commit/e03f84f5af25e9ecbeb351ca00f76eb9d0cb57da>Jun 8, 2023</a></p></div></div><script src=/cis300/js/clipboard.min.js?1719513823 defer></script><script src=/cis300/js/perfect-scrollbar.min.js?1719513823 defer></script><script src=/cis300/js/theme.js?1719513823 defer></script></body></html>
