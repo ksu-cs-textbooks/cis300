@@ -1,6 +1,6 @@
 # Data Structures in C#
 
-[Rod Howell](/~rhowell/)  
+[Rod Howell](https://people.cs.ksu.edu/~rhowell/)  
 Dept. of Computer Science  
 Kansas State University  
 Manhattan, KS 66506  

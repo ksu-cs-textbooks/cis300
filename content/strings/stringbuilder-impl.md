@@ -152,6 +152,8 @@ in `chars` to `_characters`; i.e., it makes `_characters` refer to the
 same array as does `chars`. The last statement in the method returns the
 **StringBuilder** whose **Append** method was called.
 
+
+
 <span id="overriding"></span> To complete this simple implementation, we
 need to provide a **ToString** method. This method is already defined
 for every **object**; hence, **StringBuilder** *inherits* this

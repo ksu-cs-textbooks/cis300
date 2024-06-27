@@ -9,7 +9,7 @@ pre = "<b>A1.1. </b>"
 
 Data types in C# come in two distinct flavors: *value types* and *reference types*. In order to understand the distinction, it helps to consider how space is allocated in C#. Whenever a method is called, the space needed to execute that method is allocated from a data structure known as the *call stack*. The space for a method includes its local variables, including its parameters (except for [**out** or **ref** parameters](/appendix/syntax/out-ref)). The organization of the call stack is shown in the following figure:
 
-![A picture of the call stack should appear here](../img/call-stack.jpg)
+![A picture of the call stack should appear here](images/call-stack.jpg)
 
 When the currently-running method makes a method call, space for that method is taken from the beginning of the unused stack space. When the currently-running method returns, its space is returned to the unused space. Thus, the call stack works like [the array-based implementation of a stack](/stacks-queues/stack-impl), and this storage allocation is quite efficient.
 
