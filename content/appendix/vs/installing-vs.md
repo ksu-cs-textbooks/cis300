@@ -8,14 +8,19 @@ pre = "<b>A2.1 </b>"
 ## Installing Visual Studio
 
 Visual Studio Community 2022 is available on the machines we use
-for CIS 300 labs, as well as on machines in other lab classrooms. Students can also access Visual Studio via a remote desktop server --- see [the CS Department Support
-Wiki](https://support.cs.ksu.edu/CISDocs/wiki/Remote_Access#Remote_Windows_Access)
-for details. This edition of Visual Studio is also freely available for installation on your own PC for your personal and classroom use. This section provides instructions for obtaining this software
+for CIS 300 labs, as well as on machines in other lab classrooms. This edition of Visual Studio is also freely available for installation on your own PC for your personal and classroom use. This section provides instructions for obtaining this software
 from Microsoft and installing
 it on your PC.
 
+{{% notice tip %}}
+
+Visual Studio can also be accessed via a remote desktop server. However, this server can only be accessed either from on-campus or through the campus VPN.  See [https://www.k-state.edu/it/cybersecurity/vpn//](https://www.k-state.edu/it/cybersecurity/vpn//) for details on the campus VPN. For more details on the remote desktop server, see [the CS Department Support
+Wiki](https://support.cs.ksu.edu/CISDocs/wiki/Remote_Access#Remote_Windows_Access) (this page can be accessed only from on-campus or through the campus VPN).
+
+{{% /notice %}}
+
 While Microsoft also produces a version of Visual Studio for Mac, we recommend the Windows version. If you don't have a Microsoft operating system, you can
-obtain one for free from the Azure Portal --- see [the CS Department Support Wiki](https://support.cs.ksu.edu/CISDocs/wiki/FAQ#I_need_some_software_by_Microsoft_for_a_project.2C_can_you_give_it_to_me.3F) for details. You will need to install
+obtain one for free from the Azure Portal --- see [the CS Department Support Wiki](https://support.cs.ksu.edu/CISDocs/wiki/FAQ#I_need_some_software_by_Microsoft_for_a_project.2C_can_you_give_it_to_me.3F) (accessible only from on-campus or through the campus VPN - see the above tip) for details. You will need to install
 the operating system either on a separate bootable partition or using
 an emulator such as VMware Fusion. VMware Fusion is also available for
 free through the VMware Academic Program --- see [the CS Department
