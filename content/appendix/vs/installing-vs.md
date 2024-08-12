@@ -27,7 +27,7 @@ free through the VMware Academic Program --- see [the CS Department
 Support Wiki](https://support.cs.ksu.edu/CISDocs/wiki/FAQ#VMWare) for
 details.
 
-To download Visual Studio Community 2022, go to [Microsoft's Visual Studio Site](https://visualstudio.microsoft.com/), and from the "Download Visual Studio" dropdown, select "Community 2022". This should normally begin downloading an installation file; if not, click the "click here to retry" link near the top of the page. When the download has completed, run the
+To download Visual Studio Community 2022, go to [Microsoft's Visual Studio Site](https://visualstudio.microsoft.com/), and click the "Download Visual Studio" button. This should normally begin downloading an installation file; if not, click the "click here to retry" link near the top of the page. When the download has completed, run the
 file you downloaded. This will start the installation process.
 
 As the installation is beginning, you will be shown a window
