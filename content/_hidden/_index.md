@@ -5,4 +5,6 @@ weight = 10
 hidden = true
 +++
 
-### Assorted things
+There are some links below where you can find some course specific pages.
+
+{{% children %}}
