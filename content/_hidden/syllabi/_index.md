@@ -145,7 +145,7 @@ Final grades will be assigned according to the following scale:
 
 ## Course Delivery
 
-Details regarding the delivery of this course are given in the [Course Introduction](https://k-state.instructure.com/courses/162567/modules/681997) module. In order to make sure you understand the delivery mechanisms,  you must obtain a perfect score on the quiz in that module before you  can begin the course material. You can take this quiz as many times as  you need to get a perfect score. The score will **not** count toward your final grade. 
+Details regarding the delivery of this course are given in the [Course Introduction](https://k-state.instructure.com/courses/162567/modules/681997) module. In order to make sure you understand the delivery mechanisms, you must obtain a perfect score on the quiz in that module before you can begin the course material. You can take this quiz as many times as  you need to get a perfect score. The score will **not** count toward your final grade. 
 
 ## Canvas
 
@@ -166,7 +166,7 @@ All assignments and other course materials will be distributed via [Canvas ](htt
 
 I am part of the SafeZone community network of trained K-State faculty/staff/students who are available to listen and support you. As a SafeZone Ally, I can help you connect with resources on campus to address problems you face that interfere with your academic success, particularly issues of sexual violence, hateful acts, or concerns faced by individuals due to sexual orientation/gender identity. My goal is to help you be successful and to maintain a safe and equitable campus.
 
-{{< syllabus exclude="copyright facecoverings" >}}
+{{< syllabus exclude="copyright" >}}
 
 ## Subject to Change
 
