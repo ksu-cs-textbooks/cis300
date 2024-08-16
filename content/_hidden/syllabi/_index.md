@@ -27,8 +27,7 @@ pre: ""
 
 ### Graduate Teaching Assistants
 
-- Akhil Dudhipala (akhildudhipala at ksu.edu)
-- Timothy Tucker (timoth54 at ksu.edu)
+- Friday James [fejames@ksu.edu](mailto:fejames@ksu.edu)
 
 The GTAs will be responsible for grading homework assignments. **Please only email them directly if you have questions about how they graded a homework assignment.** They are also available for online help at the times shown on the calendar below. 
 
