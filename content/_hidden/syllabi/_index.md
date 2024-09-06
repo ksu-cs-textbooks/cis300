@@ -102,7 +102,7 @@ I plan to cover the following topics (not necessarily in this order):
 - Review Quizzes: 5%
 - Lab assignments: 15%
 - Homework assignments: 30%
-- Weekly online quizzes: 50%
+- Exams: 50%
 
 ### Review Quizzes
 
