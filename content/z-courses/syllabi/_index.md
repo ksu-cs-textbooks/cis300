@@ -1,5 +1,5 @@
 ---
-title: "CIS 300 Section B Syllabus - Fall 2024"
+title: "CIS 300 Section B Syllabus - Spring 2025"
 weight: 62
 pre: ""
 ---
@@ -8,7 +8,7 @@ pre: ""
 - [Link to this Syllabus]({{% ref "./" %}})
 - [Previous Versions]({{% relref "./old-syllabi" %}})
 
-## *CIS 300 Fall 2024*
+## *CIS 300 Spring 2025*
 **Meets** *MWF 11:30am-1:20pm*
 
 ## Contact
@@ -16,7 +16,8 @@ pre: ""
 **ALL** course help/assistance emails (especially for labs, homework, and quizzes) should be sent [**cis300help@KSUemailProd.onmicrosoft.com**](mailto:cis300help@KSUemailProd.onmicrosoft.com). This email will contact the instructor and all TA(s) for the course. Please allow one full business day for email responses. Questions regarding your grade on an assignment should be emailed directly to the person who assigned that grade.
 {{% /notice %}}
 
-### Professor: Dr. Josh Weese 
+### Faculty: 
+#### Dr. Josh Weese 
 *Section A*
 - **Email:** [weeser@ksu.edu ](mailto:weeser@ksu.edu )
 - **Want to meet with me?**
@@ -25,11 +26,11 @@ pre: ""
 - **Phone:** 785-532-7929
 - **Calendar:** [weeser.net/calendar](https://weeser.net/calendar)
 
-### Professor: Dr. Nathan Bean
+#### Professor: Dr. Nathan Bean
 *Only when Josh is on parental leave!*
 - **Email:** [nhbean@ksu.edu ](mailto:nhbean@ksu.edu )
   
-### Instructor: Friday James
+#### Instructor: Friday James
 *Section B*
 - **Email:** [fejames@ksu.edu ](mailto:fejames@ksu.edu )
 
