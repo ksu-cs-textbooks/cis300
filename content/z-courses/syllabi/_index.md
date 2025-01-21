@@ -9,8 +9,14 @@ pre: ""
 - [Previous Versions]({{% relref "./old-syllabi" %}})
 
 ## *CIS 300 Spring 2025*
-**Meets** *MWF 11:30am-1:20pm*
 
+### Section A - Dr. Weese and Dr. Bean
+- **Meets** *MWF 9:30am-11:20am*
+- **Location** *DUE 1114*
+### Section B - Mr. James
+- **Meets** *MWF 12:30pm-2:20pm*
+- **Location** *DUE 1114*
+  
 ## Contact
 {{% notice info %}}
 For questions, please use the Ed Discussion board linked in the course navigation menu. Any questions or feedback can be posted there. More detail on using this platform can be found below and in Canvas.
