@@ -13,7 +13,9 @@ pre: ""
 
 ## Contact
 {{% notice info %}}
-**ALL** course help/assistance emails (especially for labs, homework, and quizzes) should be sent [**cis300help@KSUemailProd.onmicrosoft.com**](mailto:cis300help@KSUemailProd.onmicrosoft.com). This email will contact the instructor and all TA(s) for the course. Please allow one full business day for email responses. Questions regarding your grade on an assignment should be emailed directly to the person who assigned that grade.
+For questions, please use the Ed Discussion board linked in the course navigation menu. Any questions or feedback can be posted there. More detail on using this platform can be found below and in Canvas.
+
+**ALL** course help/assistance emails (especially for labs, homework, and quizzes) should be sent [**cis300-help@KSUemailProd.onmicrosoft.com**](mailto:cis300-help@KSUemailProd.onmicrosoft.com). This email will contact the instructor and all TA(s) for the course. Please allow one full business day for email responses. Questions regarding your grade on an assignment should be emailed directly to the person who assigned that grade.
 {{% /notice %}}
 
 ### Faculty: 
@@ -102,13 +104,13 @@ I plan to cover the following topics (not necessarily in this order):
 ## Grading
 
 - Review Quizzes: 5%
-- Lab assignments: 15%
-- Homework assignments: 30%
+- Lab assignments: 20%
+- Homework assignments: 25%
 - Exams: 50%
 
 ### Review Quizzes
 
-Prior to each lab (typically at 4:30 pm on the day of the previous lab), a video, readings, and a review quiz over these materials will be made available. This review quiz will be due at the beginning of the lab time. For example, the materials and review quiz for Lab 2 will be made available at 4:30 pm on Mon., Aug. 19, and the review quiz will be due at 11:30 am on Wed., Aug. 21. The main purpose of these quizzes is to help prepare you for the in-class discussion and the lab assignment for the day on which the quiz is due. You will be allowed to take each quiz up to twice, and the higher grade will be recorded.
+Prior to each lab (typically at 4:30 pm on the day of the previous lab), a video, readings, and a review quiz over these materials will be made available. This review quiz will be due at the beginning of the lab time. The main purpose of these quizzes is to help prepare you for the in-class discussion and the lab assignment for the day on which the quiz is due. You will be allowed to take each quiz twice, and the higher grade will be recorded.
 
 ### Lab Assignments
 
@@ -133,7 +135,7 @@ Exams will be given on the following dates:
 - Wed., Oct. 23
 - Fri., Nov. 22
 
-Each exam will be a 55-minute exam beginning at 11:30am in place of a lab assignment for that day. They will each be worth one sixth (approx. 16.7%) of the final grade. Each exam will consist entirely of writing code. **Except under extreme circumstances (as judged by me), no make-up exams will be given.**
+Each exam will be in place of a lab assignment for that day. They will each be worth one sixth (approx. 16.7%) of the final grade. Each exam will consist mostly of writing code. **Except under extreme circumstances (as judged by me), no make-up exams will be given.**
 
 #### Grading Scale
 
@@ -147,7 +149,7 @@ Final grades will be assigned according to the following scale:
 
 ## Course Delivery
 
-Details regarding the delivery of this course are given in the [Course Introduction](https://k-state.instructure.com/courses/162567/modules/681997) module. In order to make sure you understand the delivery mechanisms, you must obtain a perfect score on the quiz in that module before you can begin the course material. You can take this quiz as many times as  you need to get a perfect score. The score will **not** count toward your final grade. 
+Details regarding the delivery of this course are given in the pinned information module in canvas. In order to make sure you understand the delivery mechanisms, you must obtain a perfect score on the quiz in that module before you can begin the course material. You can take this quiz as many times as  you need to get a perfect score. The score will **not** count toward your final grade. 
 
 ## Canvas
 
@@ -164,6 +166,22 @@ All assignments and other course materials will be distributed via [Canvas ](htt
 - **Start homework assignments early**. Programming usually takes longer than you expect. Homework assignments will require much more time than lab assignments. Starting early will help you to complete the assignments on time.
 - **Review model solutions**. Even if you completed the assignment, seeing how we did it can help you to learn more.
 
+### More on the Edstem Discussion board
+
+This semester, we will be using edstem.org, specifically, there Ed Discussion platform. Ed Discussion is a reddit/forum style web app that allows students to post and ask questions. This will be our preferred way of communication when it comes to questions/etc. in the course. Please adhere to the following guidelines:
+- Before creating a new thread, please make sure there isn't a similar one already made.
+- If you are asking a question in Ed Discussion, please correctly mark it as such along with the correct tags.
+- Please make your thread public when possible in case others have the same questions.
+  - Threads can be made *anonymous* when needed. Course staff may anonymize private threads and make them public if they find it to be beneficial for the class.
+- When posting code, please do not post solutions or part of solutions to homework.
+  - Other students will not have the ability to view your git repositories, so you can share code on a public thread as long as you link your git repository.
+- If you would like a new category or tag made, please let us know!
+
+If you need help getting started with the platform, please go through the following links:
+- [Student guide to Ed Discussion](https://edstem.org/us/help/student-discussion)
+- [Content Editor Guide](https://edstem.org/us/help/content-editor)
+- [Push Notifications](https://edstem.org/us/help/push-notifications)
+
 ## Safe Zone Statement
 
 I am part of the SafeZone community network of trained K-State faculty/staff/students who are available to listen and support you. As a SafeZone Ally, I can help you connect with resources on campus to address problems you face that interfere with your academic success, particularly issues of sexual violence, hateful acts, or concerns faced by individuals due to sexual orientation/gender identity. My goal is to help you be successful and to maintain a safe and equitable campus.
@@ -176,4 +194,4 @@ The details in this syllabus are not set in stone. Due to the flexible nature of
 
 ## Copyright Notification
 
-Copyright 2024 (Joshua L. Weese) as to this syllabus, all lectures, and course content. During this course students are prohibited from selling notes to or being paid for taking notes by any person or commercial firm without the express written permission of the professor teaching this course. In addition, students in this class are not authorized to provide class notes or other class-related materials to any other person or entity, other than sharing them directly with another student taking the class for purposes of studying, without prior written permission from the professor teaching this course.
+Copyright 2025 (Joshua L. Weese) as to this syllabus, all lectures, and course content. During this course students are prohibited from selling notes to or being paid for taking notes by any person or commercial firm without the express written permission of the professor teaching this course. In addition, students in this class are not authorized to provide class notes or other class-related materials to any other person or entity, other than sharing them directly with another student taking the class for purposes of studying, without prior written permission from the professor teaching this course.
