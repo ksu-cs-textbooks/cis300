@@ -58,9 +58,9 @@ The GTA(s) will be responsible for grading homework assignments. **Please only e
 
 ## Office Hours Calendar
 
-Below is a calendar showing the office hours for the semester. You can access it from any calendar application that supports the iCal format with the following link https://www.google.com/calendar/ical/gubep1p76upkafhip0skfj0n7s%40group.calendar.google.com/public/basic.ics.
+Below is a calendar showing the office hours for the semester. 
 
-<iframe style="border-width: 0;" src="https://calendar.google.com/calendar/embed?mode=WEEK&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=gubep1p76upkafhip0skfj0n7s%40group.calendar.google.com&amp;color=%231B887A&amp;ctz=America%2FChicago" width="800" height="600" sandbox="allow-scripts allow-forms allow-same-origin"></iframe>
+<iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FChicago&showPrint=0&title=KSU%20CIS%20300%20Office%20Hours&mode=WEEK&src=azJ2azdlZGNmbWVhYmViZ3BwMWdiY2EzdDhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=MWZmcTd1N2RkM2Z0dDFycms2N2YzcHY4cGdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23AD1457&color=%23795548&color=%23009688" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 
 In order to manage office hours during busy times, we will use an online queueing system. If everyone holding office hours is busy when you're needing their help, add yourself to the queue using the following link:
 
