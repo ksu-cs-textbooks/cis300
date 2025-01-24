@@ -135,13 +135,7 @@ Each of the first four homework assignments will be worth 5% of the final grade.
 
 ### Exams
 
-Exams will be given on the following dates:
-
-- Fri., Sept. 20
-- Wed., Oct. 23
-- Fri., Nov. 22
-
-Each exam will be in place of a lab assignment for that day. They will each be worth one sixth (approx. 16.7%) of the final grade. Each exam will consist mostly of writing code. **Except under extreme circumstances (as judged by me), no make-up exams will be given.**
+Exams dates can be found in Canvas. No final exam will be given. Each exam will be in place of a lab assignment for that day. They will each be worth one sixth (approx. 16.7%) of the final grade. Each exam will consist mostly of writing code. **Except under extreme circumstances (as judged by me), no make-up exams will be given.**
 
 #### Grading Scale
 
