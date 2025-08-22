@@ -104,6 +104,12 @@ I plan to cover the following topics (not necessarily in this order):
 - Homework assignments: 25%
 - Exams: 45%
 
+{{% /notice  warning%}}
+
+It is crucial that all work you submit for this course is your own. Posting (even if you don't get a response) course content on Stack Overflow, Chegg, or other similar websites is expressly forbidden and will result in an XF. This also includes viewing solutions to course content that has not been provided to you through canvas by your instructor or TA. The use of AI assisted tools to write your assignments is also explicitly forbidden (ChatGPT, GitHub Code Pilot, etc.). You may use these tools as help in the **learning** process, but work that you submit for a grade must be 100% done by you and only you. You are welcome to *discuss* assignments with your peers, but the work you submit must be your own. In no situation should you share your source code with another student.
+
+{{% /notice %}}
+
 ### Review Quizzes
 
 Prior to each lab (typically at 4:30 pm on the day of the previous lab), a video, readings, and a review quiz over these materials will be made available. This review quiz will be due at the beginning of the lab time. The main purpose of these quizzes is to help prepare you for the in-class discussion and the lab assignment for the day on which the quiz is due. You will be allowed to take each quiz twice, and the higher grade will be recorded.
