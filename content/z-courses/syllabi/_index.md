@@ -18,15 +18,18 @@ pre: ""
 - **Location** *DUE 1114*
   
 ## Contact
-{{% notice info %}}
-For questions, please use the Ed Discussion board linked in the course navigation menu. Any questions or feedback can be posted there. More detail on using this platform can be found below and in Canvas.
 
-**ALL** course help/assistance requests (especially for labs, homework, and quizzes) should be posted on Ed Discussion (link) [**cis300-help@KSUemailProd.onmicrosoft.com**](mailto:cis300-help@KSUemailProd.onmicrosoft.com). This email will contact the instructor and all TA(s) for the course. Please allow one full business day for email responses. Questions regarding your grade on an assignment should be emailed directly to the person who assigned that grade.
+{{% notice info %}}
+
+Our **preferred** method of contact will be through the Edstem Discussion board, linked in the course navigation menu. Any questions or feedback can be posted there. More detail on using this platform can be found below and in Canvas. 
+
+If you do need to email us, please use [**cis300-help@KSUemailProd.onmicrosoft.com**](mailto:cis300-help@KSUemailProd.onmicrosoft.com). This email will contact the instructor and all TA(s) for the course. Please allow one full business day for email responses. Questions regarding your grade on an assignment should be emailed directly to the person who assigned that grade.
+
 {{% /notice %}}
 
 ### Faculty: 
-#### Dr. Josh Weese 
-*Section A*
+##### Dr. Josh Weese 
+
 - **Email:** [weeser@ksu.edu ](mailto:weeser@ksu.edu )
 - **Want to meet with me?**
     - Check the syllabus calendar for general office hours or look at my calendar directly (link below).
