@@ -1,5 +1,5 @@
 ---
-title: "CIS 300 Syllabus - Fall 2025"
+title: "CIS 300 Section B Syllabus - Spring 2025"
 weight: 62
 pre: ""
 ---
@@ -8,20 +8,20 @@ pre: ""
 - [Link to this Syllabus]({{% ref "./" %}})
 - [Previous Versions]({{% relref "./old-syllabi" %}})
 
-## *CIS 300 Fall 2025*
+## *CIS 300 Spring 2025*
 
-### Section A 
-- **Meets** *MWF 8:30am-10:20am*
+### Section A - Dr. Weese and Dr. Bean
+- **Meets** *MWF 9:30am-11:20am*
 - **Location** *DUE 1114*
-### Section B
-- **Meets** *MWF 1:30pm-1:20pm*
+### Section B - Mr. James
+- **Meets** *MWF 12:30pm-2:20pm*
 - **Location** *DUE 1114*
   
 ## Contact
 {{% notice info %}}
 For questions, please use the Ed Discussion board linked in the course navigation menu. Any questions or feedback can be posted there. More detail on using this platform can be found below and in Canvas.
 
-**ALL** course help/assistance requests (especially for labs, homework, and quizzes) should be posted on Ed Discussion (link) [**cis300-help@KSUemailProd.onmicrosoft.com**](mailto:cis300-help@KSUemailProd.onmicrosoft.com). This email will contact the instructor and all TA(s) for the course. Please allow one full business day for email responses. Questions regarding your grade on an assignment should be emailed directly to the person who assigned that grade.
+**ALL** course help/assistance emails (especially for labs, homework, and quizzes) should be sent [**cis300-help@KSUemailProd.onmicrosoft.com**](mailto:cis300-help@KSUemailProd.onmicrosoft.com). This email will contact the instructor and all TA(s) for the course. Please allow one full business day for email responses. Questions regarding your grade on an assignment should be emailed directly to the person who assigned that grade.
 {{% /notice %}}
 
 ### Faculty: 
@@ -34,16 +34,26 @@ For questions, please use the Ed Discussion board linked in the course navigatio
 - **Phone:** 785-532-7929
 - **Calendar:** [weeser.net/calendar](https://weeser.net/calendar)
 
+#### Professor: Dr. Nathan Bean
+*Only when Josh is on parental leave!*
+- **Email:** [nhbean@ksu.edu ](mailto:nhbean@ksu.edu )
+  
+#### Instructor: Friday James
+*Section B*
+- **Email:** [fejames@ksu.edu ](mailto:fejames@ksu.edu )
+
 ### Graduate Teaching Assistants
 
-- Bharani Balasubramaniyam 
+- Bharani Balasubramaniyam [bharanibala@ksu.edu](mailto:bharanibala@ksu.edu)
 
 The GTA(s) will be responsible for grading homework assignments. **Please only email them directly if you have questions about how they graded a homework assignment.** They are also available for online help at the times shown on the calendar below. 
 
 ### Undergraduate Teaching Assistants
 
 - Matthew Gwaltney
-- Ali Jebril
+- Jack Shaeffer
+- Barak Snir
+- Grosbin Orellana
 
 
 ## Office Hours Calendar
@@ -60,7 +70,7 @@ You will then be notified via Microsoft Teams when someone is ready to help you.
 
 ## Required Textbook
 
-[*Data Structures in C#* ](https://cis300.cs.ksu.edu/)
+[*Data Structures in C#* ](https://cis300.cs.ksu.edu/), Rod Howell.
 
 ## Prerequisite
 
@@ -100,9 +110,9 @@ I plan to cover the following topics (not necessarily in this order):
 ## Grading
 
 - Review Quizzes: 5%
-- Lab assignments: 25%
+- Lab assignments: 20%
 - Homework assignments: 25%
-- Exams: 45%
+- Exams: 50%
 
 ### Review Quizzes
 
