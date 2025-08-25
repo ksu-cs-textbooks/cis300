@@ -14,7 +14,7 @@ pre: ""
 - **Meets** *MWF 8:30am-10:20am*
 - **Location** *DUE 1114*
 ### Section B
-- **Meets** *MWF 1:30pm-1:20pm*
+- **Meets** *MWF 11:30am-1:20pm*
 - **Location** *DUE 1114*
   
 ## Contact
