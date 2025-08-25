@@ -107,7 +107,7 @@ I plan to cover the following topics (not necessarily in this order):
 - Homework assignments: 25%
 - Exams: 45%
 
-{{% /notice  warning%}}
+{{% notice  warning%}}
 
 It is crucial that all work you submit for this course is your own. Posting (even if you don't get a response) course content on Stack Overflow, Chegg, or other similar websites is expressly forbidden and will result in an XF. This also includes viewing solutions to course content that has not been provided to you through canvas by your instructor or TA. The use of AI assisted tools to write your assignments is also explicitly forbidden (ChatGPT, GitHub Code Pilot, etc.). You may use these tools as help in the **learning** process, but work that you submit for a grade must be 100% done by you and only you. You are welcome to *discuss* assignments with your peers, but the work you submit must be your own. In no situation should you share your source code with another student.
 
