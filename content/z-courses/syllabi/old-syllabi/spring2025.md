@@ -6,7 +6,6 @@ pre: ""
 
 *Content in this syllabus is subject to change*
 - [Link to this Syllabus]({{% ref "./" %}})
-- [Previous Versions]({{% relref "./old-syllabi" %}})
 
 ## *CIS 300 Spring 2025*
 
