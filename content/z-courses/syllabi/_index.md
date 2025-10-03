@@ -39,7 +39,7 @@ If you do need to email us, please use [**cis300-help@KSUemailProd.onmicrosoft.c
 
 ### Graduate Teaching Assistants
 
-- Bharani Balasubramaniyam 
+- Robert Stewart
 
 The GTA(s) will be responsible for grading homework assignments. **Please only email them directly if you have questions about how they graded a homework assignment.** They are also available for online help at the times shown on the calendar below. 
 
@@ -47,6 +47,8 @@ The GTA(s) will be responsible for grading homework assignments. **Please only e
 
 - Matthew Gwaltney
 - Ali Jebril
+- Daniel Chang
+- Christian Bartel
 
 
 ## Office Hours Calendar
@@ -73,12 +75,13 @@ The prerequisites for this course are CIS 200 and either MATH 205 or  MATH 220. 
 
 Students should attain competence in:
 
-- Using interfaces to (partially) define a data structure
-- Implementing and using standard versions of classic data structures: lists, stacks, queues, trees, and hash tables
-- Implementing and using elementary algorithms for searching and manipulating a data structure
-- Using recursion, including recursive definitions of data structures like lists and trees
+- Implementing and using abstract and reference-type data structures, including strings (and related structures like string builders), stacks, queues, priority queues, trees (including, but not limited to binary search trees, AVL trees, and tries), lists and arrays, linked lists, dictionaries, hash tables, heaps, priority queues, and graphs.
+- Implementing and using algorithms for searching and manipulating a data structures
+- Using recursion and iterative algorithms for data structures like lists and trees
 - Using and implementing algorithms for sorting
-- Understanding performance differences between various algorithms and data structures
+- Understanding performance differences and complexity between various algorithms and data structures
+- Using advanced object-oriented concepts, including interfaces, indexers, and eneumerators, to implement or partially implement data structures.
+- Using appropriate data structures to solve real-world problems.
 
 ## Programming Environment
 
