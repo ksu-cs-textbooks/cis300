@@ -1,5 +1,4 @@
-<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=robots content="noindex, nofollow, noarchive, noimageindex"><meta name=description content="Trees Binary search provides an efficient way to find elements in a sorted array-like structure. However, inserting or removing from an array-like structure can be expensive because all subsequent data elements must be moved to accommodate the change. On the other hand, linked lists can be modified efficiently, provided we have a reference to the cell preceding the insertion or deletion point. However, finding a cell can be expensive because the only way to search a linked list is to start at the front and work through it a cell at a time."><meta name=author content="Rod Howell and Josh Weese"><meta name=twitter:card content="summary"><meta name=twitter:title content="Trees :: Data Structures in C#"><meta name=twitter:description content="Trees Binary search provides an efficient way to find elements in a sorted array-like structure. However, inserting or removing from an array-like structure can be expensive because all subsequent data elements must be moved to accommodate the change. On the other hand, linked lists can be modified efficiently, provided we have a reference to the cell preceding the insertion or deletion point. However, finding a cell can be expensive because the only way to search a linked list is to start at the front and work through it a cell at a time."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis300/trees/"><meta property="og:site_name" content="Data Structures in C#"><meta property="og:title" content="Trees :: Data Structures in C#"><meta property="og:description" content="Trees Binary search provides an efficient way to find elements in a sorted array-like structure. However, inserting or removing from an array-like structure can be expensive because all subsequent data elements must be moved to accommodate the change. On the other hand, linked lists can be modified efficiently, provided we have a reference to the cell preceding the insertion or deletion point. However, finding a cell can be expensive because the only way to search a linked list is to start at the front and work through it a cell at a time."><meta property="og:locale" content="en-us"><meta property="og:type" content="website"><meta itemprop=name content="Trees :: Data Structures in C#"><meta itemprop=description content="Trees Binary search provides an efficient way to find elements in a sorted array-like structure. However, inserting or removing from an array-like structure can be expensive because all subsequent data elements must be moved to accommodate the change. On the other hand, linked lists can be modified efficiently, provided we have a reference to the cell preceding the insertion or deletion point. However, finding a cell can be expensive because the only way to search a linked list is to start at the front and work through it a cell at a time."><meta itemprop=dateModified content="2023-05-22T14:36:43-05:00"><meta itemprop=wordCount content="266"><title>Trees :: Data Structures in C#</title>
-<link href=/cis300/css/fontawesome-all.min.css?1756138921 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fontawesome-all.min.css?1756138921 rel=stylesheet></noscript><link href=/cis300/css/nucleus.css?1756138921 rel=stylesheet><link href=/cis300/css/auto-complete.css?1756138921 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/auto-complete.css?1756138921 rel=stylesheet></noscript><link href=/cis300/css/perfect-scrollbar.min.css?1756138921 rel=stylesheet><link href=/cis300/css/fonts.css?1756138921 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fonts.css?1756138921 rel=stylesheet></noscript><link href=/cis300/css/theme.css?1756138921 rel=stylesheet><link href=/cis300/css/theme-auto.css?1756138921 rel=stylesheet id=R-variant-style><link href=/cis300/css/chroma-auto.css?1756138921 rel=stylesheet id=R-variant-chroma-style><link href=/cis300/css/variant.css?1756138921 rel=stylesheet><link href=/cis300/css/print.css?1756138921 rel=stylesheet media=print><link href=/cis300/css/format-print.css?1756138921 rel=stylesheet><script src=/cis300/js/variant.js?1756138921></script><script>window.relearn=window.relearn||{},window.relearn.relBasePath="..",window.relearn.relBaseUri="../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis300",window.index_js_url="/cis300/index.search.js",window.variants&&variants.init(["auto","light-theme","dark-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis300/css/custom.css?1756138921 rel=stylesheet></head><body class="mobile-support print disableInlineCopyToClipboard" data-url=/cis300/trees/><div id=R-body class=default-animation><div id=R-body-overlay></div><nav id=R-topbar><div class=topbar-wrapper><div class=topbar-sidebar-divider></div><div class="topbar-area topbar-area-start" data-area=start><div class="topbar-button topbar-button-sidebar" data-content-empty=disable data-width-s=show data-width-m=hide data-width-l=hide><button class=topbar-control onclick=toggleNav() type=button title="Menu (CTRL+ALT+n)"><i class="fa-fw fas fa-bars"></i></button></div></div><ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype=http://schema.org/BreadcrumbList><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><span itemprop=name>Trees</span><meta itemprop=position content="1"></li></ol><div class="topbar-area topbar-area-end" data-area=end><div class="topbar-button topbar-button-prev" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/cis300/dictionaries/binary-search/ title="Implementing a Dictionary with an Array-Like Structure (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></div><div class="topbar-button topbar-button-next" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/cis300/trees/intro/ title="Introduction to Trees (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></div></div></div></nav><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><div hidden><h1 id=trees>Trees</h1></div><h2 id=trees>Trees</h2><p><a href=/cis300/dictionaries/binary-search/>Binary search</a> provides an efficient way to find elements in a sorted array-like structure. However, inserting or removing from an array-like structure can be expensive because all subsequent data elements must be moved to accommodate the change. On the other hand, linked lists can be modified efficiently, provided we have a reference to the cell preceding the insertion or deletion point. However, finding a cell can be expensive because the only way to search a linked list is to start at the front and work through it a cell at a time. We would like a data structure that provides both efficient lookups and efficient insertions and deletions.</p><p>To meet this challenge, we want a linked structure so that changes can be made cheaply by changing a few references. However, we want the individual cells in the structure to be arranged in a way that supports something like a binary search. The specific structure that we want is called a binary search tree, which is a particular kind of tree.
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article data-r-output-format=print><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.148.1"><meta name=generator content="Relearn 8.0.0"><meta name=description content="Trees Binary search provides an efficient way to find elements in a sorted array-like structure. However, inserting or removing from an array-like structure can be expensive because all subsequent data elements must be moved to accommodate the change. On the other hand, linked lists can be modified efficiently, provided we have a reference to the cell preceding the insertion or deletion point. However, finding a cell can be expensive because the only way to search a linked list is to start at the front and work through it a cell at a time. We would like a data structure that provides both efficient lookups and efficient insertions and deletions."><meta name=author content="Rod Howell and Josh Weese"><meta name=twitter:card content="summary"><meta name=twitter:title content="Trees :: Data Structures in C#"><meta name=twitter:description content="Trees Binary search provides an efficient way to find elements in a sorted array-like structure. However, inserting or removing from an array-like structure can be expensive because all subsequent data elements must be moved to accommodate the change. On the other hand, linked lists can be modified efficiently, provided we have a reference to the cell preceding the insertion or deletion point. However, finding a cell can be expensive because the only way to search a linked list is to start at the front and work through it a cell at a time. We would like a data structure that provides both efficient lookups and efficient insertions and deletions."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis300/trees/"><meta property="og:site_name" content="Data Structures in C#"><meta property="og:title" content="Trees :: Data Structures in C#"><meta property="og:description" content="Trees Binary search provides an efficient way to find elements in a sorted array-like structure. However, inserting or removing from an array-like structure can be expensive because all subsequent data elements must be moved to accommodate the change. On the other hand, linked lists can be modified efficiently, provided we have a reference to the cell preceding the insertion or deletion point. However, finding a cell can be expensive because the only way to search a linked list is to start at the front and work through it a cell at a time. We would like a data structure that provides both efficient lookups and efficient insertions and deletions."><meta property="og:locale" content="en_us"><meta property="og:type" content="website"><meta itemprop=name content="Trees :: Data Structures in C#"><meta itemprop=description content="Trees Binary search provides an efficient way to find elements in a sorted array-like structure. However, inserting or removing from an array-like structure can be expensive because all subsequent data elements must be moved to accommodate the change. On the other hand, linked lists can be modified efficiently, provided we have a reference to the cell preceding the insertion or deletion point. However, finding a cell can be expensive because the only way to search a linked list is to start at the front and work through it a cell at a time. We would like a data structure that provides both efficient lookups and efficient insertions and deletions."><meta itemprop=dateModified content="2023-05-22T14:36:43-05:00"><meta itemprop=wordCount content="266"><title>Trees :: Data Structures in C#</title><link href=https://textbooks.cs.ksu.edu/cis300/trees/ rel=canonical type=text/html title="Trees :: Data Structures in C#"><link href=/cis300/trees/index.xml rel=alternate type=application/rss+xml title="Trees :: Data Structures in C#"><link href=/cis300/trees/tele.html rel=alternate type=text/html title="Trees :: Data Structures in C#"><link href=/cis300/trees/embed.html rel=alternate type=text/html title="Trees :: Data Structures in C#"><link href=/cis300/css/auto-complete/auto-complete.min.css?1759520014 rel=stylesheet><script src=/cis300/js/auto-complete/auto-complete.min.js?1759520014 defer></script><script src=/cis300/js/search-lunr.min.js?1759520014 defer></script><script src=/cis300/js/search.min.js?1759520014 defer></script><script>window.relearn=window.relearn||{},window.relearn.index_js_url="/cis300/searchindex.en.js?1759520014"</script><script src=/cis300/js/lunr/lunr.min.js?1759520014 defer></script><script src=/cis300/js/lunr/lunr.stemmer.support.min.js?1759520014 defer></script><script src=/cis300/js/lunr/lunr.multi.min.js?1759520014 defer></script><script src=/cis300/js/lunr/lunr.en.min.js?1759520014 defer></script><script>window.relearn=window.relearn||{},window.relearn.contentLangs=["en"]</script><link href=/cis300/fonts/fontawesome/css/fontawesome-all.min.css?1759520014 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/fonts/fontawesome/css/fontawesome-all.min.css?1759520014 rel=stylesheet></noscript><link href=/cis300/css/perfect-scrollbar/perfect-scrollbar.min.css?1759520014 rel=stylesheet><link href=/cis300/css/theme.min.css?1759520014 rel=stylesheet><link href=/cis300/css/format-print.min.css?1759520014 rel=stylesheet id=R-format-style><script>window.relearn=window.relearn||{},window.relearn.min=`.min`,window.relearn.path="/trees/",window.relearn.relBasePath="..",window.relearn.relBaseUri="../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis300",window.relearn.disableAnchorCopy=!1,window.relearn.disableAnchorScrolling=!1,window.relearn.disableInlineCopyToClipboard=!0,window.relearn.enableBlockCodeWrap=!1,window.relearn.getItem=(e,t)=>e.getItem(t),window.relearn.setItem=(e,t,n)=>e.setItem(t,n),window.relearn.removeItem=(e,t)=>e.removeItem(t),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`,window.relearn.themevariants=["light-theme"],window.relearn.customvariantname="my-custom-variant",window.relearn.writeVariant=!1,window.relearn.changeVariant=function(e){var t=document.documentElement.dataset.rThemeVariant;window.relearn.setItem(window.localStorage,window.relearn.absBaseUri+"/variant",e),document.documentElement.dataset.rThemeVariant=e,t!=e&&(document.dispatchEvent(new CustomEvent("themeVariantLoaded",{detail:{variant:e,oldVariant:t}})),window.relearn.markVariant())},window.relearn.markVariant=function(){var e=window.relearn.getItem(window.localStorage,window.relearn.absBaseUri+"/variant");document.querySelectorAll(".R-variantswitcher select").forEach(t=>{t.value=e})},window.relearn.initVariant=function(){var e=window.relearn.getItem(window.localStorage,window.relearn.absBaseUri+"/variant")??"";e==window.relearn.customvariantname||(!e||!window.relearn.themevariants.includes(e))&&(e=window.relearn.themevariants[0],window.relearn.writeVariant&&window.relearn.setItem(window.localStorage,window.relearn.absBaseUri+"/variant",e)),document.documentElement.dataset.rThemeVariant=e},window.relearn.initVariant(),window.relearn.markVariant()</script><link href=/cis300/css/custom.css?1759520014 rel=stylesheet></head><body class="mobile-support print" data-url=/cis300/trees/><div id=tele class="tele mirror"><div id=R-body class=default-animation><div id=R-body-overlay></div><div id=R-main-overlay></div><main id=R-body-inner class="highlightable trees" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><div hidden><h1 id=trees>Trees</h1></div><h2 id=trees>Trees</h2><p><a href=/cis300/dictionaries/binary-search/>Binary search</a> provides an efficient way to find elements in a sorted array-like structure. However, inserting or removing from an array-like structure can be expensive because all subsequent data elements must be moved to accommodate the change. On the other hand, linked lists can be modified efficiently, provided we have a reference to the cell preceding the insertion or deletion point. However, finding a cell can be expensive because the only way to search a linked list is to start at the front and work through it a cell at a time. We would like a data structure that provides both efficient lookups and efficient insertions and deletions.</p><p>To meet this challenge, we want a linked structure so that changes can be made cheaply by changing a few references. However, we want the individual cells in the structure to be arranged in a way that supports something like a binary search. The specific structure that we want is called a binary search tree, which is a particular kind of tree.
 In this chapter, we will examine various kinds of trees. We will start by defining trees and developing a strategy for processing them. We will then present binary search trees, which will provide a partial solution to our challenge of finding a data structure to support efficient lookups, insertions, and deletions. However, there will be cases in which binary search trees have poor performance. We will therefore give a refinement known as AVL trees, which give good performance in all cases. We will then examine two other uses of trees - tries and priority queues.</p><footer class=footline></footer></article><section><h1 class=a11y-only>Subsections of Trees</h1><article class=default><header class=headline></header><div hidden><h1 id=introduction-to-trees>Introduction to Trees</h1></div><h2 id=introduction-to-trees>Introduction to Trees</h2><p>A <em>tree</em> is a mathematical structure having a hierarchical nature. A
 tree may be <em>empty</em>, or it may consist of:</p><ul><li>a <em>root</em>, and</li><li>zero or more <em>children</em>, each of which is also a tree.</li></ul><p>Consider, for example, a folder (or directory) in a Windows file system.
 This folder and all its sub-folders form a tree &mdash; the root of the tree
@@ -8,12 +7,13 @@ contained within it. Because a folder (with its
 sub-folders) forms a tree, each of the sub-folders directly contained
 within the folder are also trees. In this example, there are no empty
 trees &mdash; an empty folder is a nonempty tree containing a root but no
-children.</p><div class="box notices cstyle note"><div class=box-label><i class="fa-fw fas fa-exclamation-circle"></i> Note</div><div class=box-content><p>We are only considering actual folders,
-not shortcuts, symbolic links, etc.</p></div></div><p>We have at least a couple of ways of presenting a tree graphically. One
-way is as done within Windows Explorer:</p><p><a href=#R-image-97d3ffc1b8ed036a28f808f416007e5c class=lightbox-link><img alt="A Windows file system tree" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/trees/intro/windows-tree.jpg style=height:auto;width:auto></a>
-<a href=javascript:history.back(); class=lightbox-back id=R-image-97d3ffc1b8ed036a28f808f416007e5c><img alt="A Windows file system tree" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/trees/intro/windows-tree.jpg></a></p><p>Here, children are shown in a vertically-aligned list, indented under
-the root. An alternative depiction is as follows:</p><p><a href=#R-image-622bfa481646d93b83d7f1146db7eefe class=lightbox-link><img alt="A tree" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/trees/intro/tree-example.jpg style=height:auto;width:auto></a>
-<a href=javascript:history.back(); class=lightbox-back id=R-image-622bfa481646d93b83d7f1146db7eefe><img alt="A tree" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/trees/intro/tree-example.jpg></a></p><p>Here, children are shown by drawing lines to them downward from the
+children.</p><details open class="box cstyle notices note"><summary class=box-label tabindex=-1><i class="fa-fw fas fa-exclamation-circle"></i>
+Note</summary><div class=box-content><p>We are only considering actual folders,
+not shortcuts, symbolic links, etc.</p></div></details><p>We have at least a couple of ways of presenting a tree graphically. One
+way is as done within Windows Explorer:</p><p><a href=#R-image-581dfae04fbe18da6228be3c15c44599 class=lightbox-link><img alt="A Windows file system tree" class="border lazy lightbox figure-image" loading=lazy src=/cis300/trees/intro/windows-tree.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-581dfae04fbe18da6228be3c15c44599><img alt="A Windows file system tree" class="border lazy lightbox lightbox-image" loading=lazy src=/cis300/trees/intro/windows-tree.jpg></a></p><p>Here, children are shown in a vertically-aligned list, indented under
+the root. An alternative depiction is as follows:</p><p><a href=#R-image-1b3261a5b6e00e9c7ecdebbad74cc14c class=lightbox-link><img alt="A tree" class="border lazy lightbox figure-image" loading=lazy src=/cis300/trees/intro/tree-example.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-1b3261a5b6e00e9c7ecdebbad74cc14c><img alt="A tree" class="border lazy lightbox lightbox-image" loading=lazy src=/cis300/trees/intro/tree-example.jpg></a></p><p>Here, children are shown by drawing lines to them downward from the
 root.</p><p>Other examples of trees include various kinds of search spaces. For
 example, for a chess-playing program, the search for a move can be
 performed on a game tree whose root is a board position and whose
@@ -32,7 +32,7 @@ This class is similar to a <a href=/cis300/io/dialogs/file-dialogs/>file
 dialog</a> and can be added
 to a form in the Design window in the same way. If <code>uxFolderBrowser</code> is
 a <strong>FolderBrowserDialog</strong>, we can use it to obtain a <strong>DirectoryInfo</strong>
-for a user-selected folder as follows:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=k>if</span> <span class=p>(</span><span class=n>uxFolderBrowser</span><span class=p>.</span><span class=n>ShowDialog</span><span class=p>()</span> <span class=p>==</span> <span class=n>DialogResult</span><span class=p>.</span><span class=n>OK</span><span class=p>)</span>
+for a user-selected folder as follows:</p><div class=highlight dir=auto><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=k>if</span> <span class=p>(</span><span class=n>uxFolderBrowser</span><span class=p>.</span><span class=n>ShowDialog</span><span class=p>()</span> <span class=p>==</span> <span class=n>DialogResult</span><span class=p>.</span><span class=n>OK</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=p>{</span>
 </span></span><span class=line><span class=cl>    <span class=n>DirectoryInfo</span> <span class=n>folder</span> <span class=p>=</span> <span class=k>new</span><span class=p>(</span><span class=n>uxFolderBrowser</span><span class=p>.</span><span class=n>SelectedPath</span><span class=p>);</span>
 </span></span><span class=line><span class=cl>    
@@ -51,7 +51,7 @@ figures above, then <strong>d.GetDirectories()</strong> would return a 3-element
 array whose elements describe the folders <strong>bin</strong>, <strong>obj</strong>, and
 <strong>Properties</strong>. The following method illustrates how we can write the
 names of the folders contained within a given folder to a
-<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=net-6.0" rel=external target=_blank><strong>StreamWriter</strong></a>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=cs>/// &lt;summary&gt;</span>
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=net-6.0" rel=external target=_blank><strong>StreamWriter</strong></a>:</p><div class=highlight dir=auto><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=cs>/// &lt;summary&gt;</span>
 </span></span><span class=line><span class=cl><span class=cs>/// Writes the names of the directories contained in the given directory </span>
 </span></span><span class=line><span class=cl><span class=cs>/// (excluding their sub-directories) to the given StreamWriter.</span>
 </span></span><span class=line><span class=cl><span class=cs>/// &lt;/summary&gt;</span>
@@ -103,7 +103,7 @@ listed below that folder, but before any folders that are outside that
 folder. In order to write such a method, we need three parameters:</p><ul><li>a <strong>DirectoryInfo</strong> giving the root folder;</li><li>a <strong>StreamWriter</strong> where the output is to be written; and</li><li>an <strong>int</strong> giving the level of indentation for the root folder,
 where each level of indentation is two spaces.</li></ul><p>Because the root folder must be written first, we begin there. We first
 must write two blanks for every level of indentation, then write the
-name of the root folder:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=cs>/// &lt;summary&gt;</span>
+name of the root folder:</p><div class=highlight dir=auto><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=cs>/// &lt;summary&gt;</span>
 </span></span><span class=line><span class=cl><span class=cs>/// Writes the directory structure for the given root directory to the</span>
 </span></span><span class=line><span class=cl><span class=cs>/// given StreamWriter, indenting all entries to the given indentation</span>
 </span></span><span class=line><span class=cl><span class=cs>/// level (incomplete). </span>
@@ -127,7 +127,7 @@ whose structure we want to write. Looking back at how we described what
 we want the <strong>WriteTree</strong> method to accomplish, we see that it is
 exactly what we want to do for each child. We can therefore make a
 recursive call for each child, specifying that the indentation level
-should be one deeper than the level for <code>root</code>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=cs>/// &lt;summary&gt;</span>
+should be one deeper than the level for <code>root</code>:</p><div class=highlight dir=auto><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=cs>/// &lt;summary&gt;</span>
 </span></span><span class=line><span class=cl><span class=cs>/// Writes the directory structure for the given root directory to the</span>
 </span></span><span class=line><span class=cl><span class=cs>/// given StreamWriter, indenting all entries to the given indentation</span>
 </span></span><span class=line><span class=cl><span class=cs>/// level (incomplete). </span>
@@ -247,14 +247,15 @@ method, etc. By double-clicking on an entry in the call stack, you can
 use the other debugging tools to examine the values of the local
 variables for the method containing that line of code. If this method is
 recursive, the values displayed for the local variables are their values
-at that level of recursion.</p><div class="box notices cstyle note"><div class=box-label><i class="fa-fw fas fa-exclamation-circle"></i> Note</div><div class=box-content><p>This only applies to the values
+at that level of recursion.</p><details open class="box cstyle notices note"><summary class=box-label tabindex=-1><i class="fa-fw fas fa-exclamation-circle"></i>
+Note</summary><div class=box-content><p>This only applies to the values
 stored in local variables - in particular, if a local variable is a
 <a href=/cis300/appendix/syntax/reference-value/>reference type</a>, the
 value of the object to which it refers will not revert to its earlier
 state. For example, if a local variable is an array, the debugger will
 show the value of this variable to refer to the array that it referred
 to at that point, but the values shown in that array will be its current
-values.</p></div></div><p>One consequence of method calls using a call stack with limited space
+values.</p></div></details><p>One consequence of method calls using a call stack with limited space
 available is that moderately deep recursion can fill up the call stack.
 If this happens, a <strong>StackOverflowException</strong> will be thrown. Thus,
 infinite recursion will always throw this exception, as will recursion
@@ -280,8 +281,8 @@ We will then show how to remove elements from them. We conclude this
 section by presenting the <em>inorder traversal</em> algorithm, which processes
 all the elements in a binary search tree in order.</p><footer class=footline></footer></article><section><h1 class=a11y-only>Subsections of Binary Search Trees</h1><article class=default><header class=headline></header><div hidden><h1 id=binary-trees>Binary Trees</h1></div><h2 id=binary-trees>Binary Trees</h2><p>A <em>binary tree</em> is a tree in which each node has exactly two children,
 either of which may be empty. For example, the following is a binary
-tree:</p><p><a href=#R-image-10cdaf2c70a5c11eb212fe6e759ff59d class=lightbox-link><img alt="A binary tree" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/trees/bst/binary-trees/binary-tree.jpg style=height:auto;width:auto></a>
-<a href=javascript:history.back(); class=lightbox-back id=R-image-10cdaf2c70a5c11eb212fe6e759ff59d><img alt="A binary tree" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/trees/bst/binary-trees/binary-tree.jpg></a></p><p>Note that some of the nodes above are drawn with only one child or no
+tree:</p><p><a href=#R-image-eca782074d9a5935e8c18c21f7adaeca class=lightbox-link><img alt="A binary tree" class="border lazy lightbox figure-image" loading=lazy src=/cis300/trees/bst/binary-trees/binary-tree.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-eca782074d9a5935e8c18c21f7adaeca><img alt="A binary tree" class="border lazy lightbox lightbox-image" loading=lazy src=/cis300/trees/bst/binary-trees/binary-tree.jpg></a></p><p>Note that some of the nodes above are drawn with only one child or no
 children at all. In these cases, one or both children are empty. Note
 that we always draw one child to the left and one child to the right. As
 a result, if one child is empty, we can always tell which child is empty
@@ -313,8 +314,8 @@ tree</a> containing
 key-value pairs whose keys can be ordered. Furthermore, the data items
 are arranged such that the key in each node is:</p><ul><li>greater than all the keys in its left child; and</li><li>less than all the keys in its right child.</li></ul><p>Note that this implies that all keys must be unique. For example, the
 following is a binary search tree storing integer keys (only the keys
-are shown):</p><p><a href=#R-image-e9478d5b3b5c40f92a7ff4c553b8d3d1 class=lightbox-link><img alt="A binary search tree" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/trees/bst/intro/binary-search-tree-ex.jpg style=height:auto;width:auto></a>
-<a href=javascript:history.back(); class=lightbox-back id=R-image-e9478d5b3b5c40f92a7ff4c553b8d3d1><img alt="A binary search tree" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/trees/bst/intro/binary-search-tree-ex.jpg></a></p><p>The hierarchical nature of this structure allows us to do something like
+are shown):</p><p><a href=#R-image-cdd719f447e5acfae540b56cc66c833d class=lightbox-link><img alt="A binary search tree" class="border lazy lightbox figure-image" loading=lazy src=/cis300/trees/bst/intro/binary-search-tree-ex.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-cdd719f447e5acfae540b56cc66c833d><img alt="A binary search tree" class="border lazy lightbox lightbox-image" loading=lazy src=/cis300/trees/bst/intro/binary-search-tree-ex.jpg></a></p><p>The hierarchical nature of this structure allows us to do something like
 a binary search to find a key. Suppose, for example, that we are looking
 for 41 in the above tree. We first compare 41 with the key in the root.
 Because 41 &lt; 54, we can safely ignore the right child, as all
@@ -338,11 +339,12 @@ are looking for.</li><li>The key we are looking for is less than the key at the 
 need to look for the given key in the left child. Because this is a
 smaller instance of our original problem, we can solve it using a
 recursive call.</li><li>The key we are looking for is greater than the key at the root. We
-then look in the right child using a recursive call.</li></ul><div class="box notices cstyle warning"><div class=box-label><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div><div class=box-content><p>It is important to handle the case of an empty tree first, as the other
+then look in the right child using a recursive call.</li></ul><details open class="box cstyle notices warning"><summary class=box-label tabindex=-1><i class="fa-fw fas fa-exclamation-triangle"></i>
+Warning</summary><div class=box-content><p>It is important to handle the case of an empty tree first, as the other
 cases don&rsquo;t make sense if the tree is empty. In fact, if we are using
 <strong>null</strong> to represent an empty binary search tree (as is fairly common),
 we will get a compiler warning if we don&rsquo;t do this, and ultimately a <strong>NullReferenceException</strong> if we try to access the key
-at an empty root.</p></div></div><p>If we need to compare
+at an empty root.</p></div></details><p>If we need to compare
 elements using a
 <a href="https://learn.microsoft.com/en-us/dotnet/api/system.icomparable-1.compareto?view=net-6.0#system-icomparable-1-compareto(-0)" rel=external target=_blank><strong>CompareTo</strong></a>
 method, it would be more efficient to structure the code so that this
@@ -383,12 +385,13 @@ add items, but it also tends to keep paths in the tree short, as each
 insertion is only lengthening one path. <a href=https://github.com/RodHowell-Algorithms/Tree-Viewer rel=external target=_blank>This
 page</a> contains an
 application that will
-show the result of adding a key at a time to a binary search tree.</p><div class="box notices cstyle warning"><div class=box-label><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div><div class=box-content><p>The
+show the result of adding a key at a time to a binary search tree.</p><details open class="box cstyle notices warning"><summary class=box-label tabindex=-1><i class="fa-fw fas fa-exclamation-triangle"></i>
+Warning</summary><div class=box-content><p>The
 keys in this application are treated as strings; hence, you can use
 numbers if you want, but they will be compared as strings (e.g.,
 &ldquo;10&rdquo; &lt; &ldquo;5&rdquo; because &lsquo;1&rsquo; &lt; &lsquo;5&rsquo;). For this reason, it is
 usually better to use either letters, words, or integers that all have
-the same number of digits.</p></div></div><p>The above algorithm can be implemented in the same way if mutable binary
+the same number of digits.</p></div></details><p>The above algorithm can be implemented in the same way if mutable binary
 tree nodes are used; however, we can improve its performance a bit by
 avoiding the construction of new nodes when recursive calls are made.
 Instead, we can change the child to refer to the tree returned. If we
@@ -411,8 +414,8 @@ order to accommodate this second piece of information, we make the
 <strong>bool</strong> an <a href=/cis300/appendix/syntax/out-ref/><strong>out</strong> parameter</a>.</p><p>We can again break the problem into cases and use recursion, as we did
 for <a href=/cis300/trees/bst/intro/>adding an element</a>. However, removing an element is complicated by the fact that its node
 might have two nonempty children. For example, suppose we want to remove
-the element whose key is 54 in the following binary search tree:</p><p><a href=#R-image-1ddc6b853b04d5015af8053b73bc803f class=lightbox-link><img alt="A binary search tree" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/trees/bst/remove/binary-search-tree-ex.jpg style=height:auto;width:auto></a>
-<a href=javascript:history.back(); class=lightbox-back id=R-image-1ddc6b853b04d5015af8053b73bc803f><img alt="A binary search tree" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/trees/bst/remove/binary-search-tree-ex.jpg></a></p><p>In order to preserve the correct ordering of the keys, we should replace
+the element whose key is 54 in the following binary search tree:</p><p><a href=#R-image-c9f8e835b9959b518a3524c40d271731 class=lightbox-link><img alt="A binary search tree" class="border lazy lightbox figure-image" loading=lazy src=/cis300/trees/bst/remove/binary-search-tree-ex.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-c9f8e835b9959b518a3524c40d271731><img alt="A binary search tree" class="border lazy lightbox lightbox-image" loading=lazy src=/cis300/trees/bst/remove/binary-search-tree-ex.jpg></a></p><p>In order to preserve the correct ordering of the keys, we should replace
 54 with either the next-smaller key (i.e., 41) or the next-larger key
 (i.e., 64). By convention, we will replace it with the next-larger key,
 which is the smallest key in its right child. We therefore have a
@@ -467,8 +470,8 @@ writing the keys and values to a file or adding them to the end of a
 list. Whatever processing we want to do, we want to do it increasing
 order of keys.</p><p>If we are implementing the dictionary using a binary search tree, this
 may at first seem to be a rather daunting task. Consider traversing the
-keys in the following binary search tree in increasing order:</p><p><a href=#R-image-db2f0345549b6431f557bd510f3418e6 class=lightbox-link><img alt="A binary search tree" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/trees/bst/inorder/binary-search-tree-ex.jpg style=height:auto;width:auto></a>
-<a href=javascript:history.back(); class=lightbox-back id=R-image-db2f0345549b6431f557bd510f3418e6><img alt="A binary search tree" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/trees/bst/inorder/binary-search-tree-ex.jpg></a></p><p>Processing these keys in order involves frequent jumps in the tree, such
+keys in the following binary search tree in increasing order:</p><p><a href=#R-image-9dff6880905952f2cc21cb5d60c4aa43 class=lightbox-link><img alt="A binary search tree" class="border lazy lightbox figure-image" loading=lazy src=/cis300/trees/bst/inorder/binary-search-tree-ex.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-9dff6880905952f2cc21cb5d60c4aa43><img alt="A binary search tree" class="border lazy lightbox lightbox-image" loading=lazy src=/cis300/trees/bst/inorder/binary-search-tree-ex.jpg></a></p><p>Processing these keys in order involves frequent jumps in the tree, such
 as from 17 to 23 and from 41 to 54. It may not be immediately obvious
 how to proceed. However, if we just think about it with the purpose of
 writing a recursive method, it actually becomes rather straightforward.</p><p>As with most tree-processing algorithms, if the given tree is nonempty,
@@ -503,25 +506,21 @@ the root to any node. (Thus, the height of a one-node tree is <span style=white-
 no steps are needed to get from the root to the only node - the root
 itself &mdash; and the height of a two-node tree is always <span style=white-space:nowrap><span class="math align-center">$ 1 $</span>.</span>) In other words,
 we say that the worst-case running time of each of these methods is in
-<span style=white-space:nowrap><span class="math align-center">$ O(h) $</span>,</span> where
-<span class="math align-center">$ h $</span> is the height of the tree.</p><p>Depending on the shape of the tree,
-<span class="math align-center">$ O(h) $</span> running time might be very
+<span style=white-space:nowrap><span class="math align-center">$ O(h) $</span>,</span> where <span class="math align-center">$ h $</span> is the height of the tree.</p><p>Depending on the shape of the tree, <span class="math align-center">$ O(h) $</span> running time might be very
 good. For example, it is possible to show that if keys are randomly
 taken from a uniform distribution and successively added to an initially
 empty binary search tree, the expected height is in <span style=white-space:nowrap><span class="math align-center">$ O(\log n) $</span>,</span>
-where
-<span class="math align-center">$ n $</span> is the number of nodes. In this case, we would expect
+where <span class="math align-center">$ n $</span> is the number of nodes. In this case, we would expect
 logarithmic performance for lookups, insertions, and deletions. In fact,
 there are many applications in which the height of a binary search tree
 remains fairly small in comparison to the number of nodes.</p><p>On the other hand, such a shape is by no means guaranteed. For example,
 suppose a binary search tree were built by adding the <strong>int</strong> keys 1
-through
-<span class="math align-center">$ n $</span> in increasing order. Then 1 would go at the root, and 2
+through <span class="math align-center">$ n $</span> in increasing order. Then 1 would go at the root, and 2
 would be its right child. Each successive key would then be larger than
 any key currently in the tree, and hence would be added as the right
 child of the last node on the path going to the right. As a result, the
-tree would have the following shape:</p><p><a href=#R-image-6ad4e05ed73fb6cc79155f6fc1cc2a1f class=lightbox-link><img alt="A badly-shaped binary search tree" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/trees/avl/bst-chain.jpg style=height:auto;width:auto></a>
-<a href=javascript:history.back(); class=lightbox-back id=R-image-6ad4e05ed73fb6cc79155f6fc1cc2a1f><img alt="A badly-shaped binary search tree" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/trees/avl/bst-chain.jpg></a></p><p>The height of this tree is <span style=white-space:nowrap><span class="math align-center">$ n - 1 $</span>;</span> consequently, lookups will
+tree would have the following shape:</p><p><a href=#R-image-7fc682fa0753f823c87715c29ead69ee class=lightbox-link><img alt="A badly-shaped binary search tree" class="border lazy lightbox figure-image" loading=lazy src=/cis300/trees/avl/bst-chain.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-7fc682fa0753f823c87715c29ead69ee><img alt="A badly-shaped binary search tree" class="border lazy lightbox lightbox-image" loading=lazy src=/cis300/trees/avl/bst-chain.jpg></a></p><p>The height of this tree is <span style=white-space:nowrap><span class="math align-center">$ n - 1 $</span>;</span> consequently, lookups will
 take time linear in <span style=white-space:nowrap><span class="math align-center">$ n $</span>,</span> the number of elements, in the worst case. This
 performance is comparable with that of a linked list. In order to
 guaranteed good performance, we need a way to ensure that the height of
@@ -535,21 +534,16 @@ We call this restricted form of a binary search tree an <em>AVL tree</em>
 Landis).</p><p><a href=https://github.com/RodHowell-Algorithms/Min-AVL-Trees rel=external target=_blank>This repository</a>
 contains a Java application that displays an AVL tree of a given
 height using as few nodes as possible. For example, the following screen
-capture shows an AVL tree of height
-<span class="math align-center">$ 7 $</span> having a minimum number of nodes:</p><p><a href=#R-image-e8a75e54836a4d36287c9454492489f8 class=lightbox-link><img alt="An AVL tree with height 7 and minimum number of nodes" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/trees/avl/min-avl.jpg style=height:auto;width:auto></a>
-<a href=javascript:history.back(); class=lightbox-back id=R-image-e8a75e54836a4d36287c9454492489f8><img alt="An AVL tree with height 7 and minimum number of nodes" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/trees/avl/min-avl.jpg></a></p><p>As the above picture illustrates, a minimum of
-<span class="math align-center">$ 54 $</span> nodes are required for
+capture shows an AVL tree of height <span class="math align-center">$ 7 $</span> having a minimum number of nodes:</p><p><a href=#R-image-55cad283f8b5f04b795bdced048e7813 class=lightbox-link><img alt="An AVL tree with height 7 and minimum number of nodes" class="border lazy lightbox figure-image" loading=lazy src=/cis300/trees/avl/min-avl.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-55cad283f8b5f04b795bdced048e7813><img alt="An AVL tree with height 7 and minimum number of nodes" class="border lazy lightbox lightbox-image" loading=lazy src=/cis300/trees/avl/min-avl.jpg></a></p><p>As the above picture illustrates, a minimum of <span class="math align-center">$ 54 $</span> nodes are required for
 an AVL tree to reach a height of <span style=white-space:nowrap><span class="math align-center">$ 7 $</span>.</span> In general, it can be shown that the
-height of an AVL tree is at worst proportional to <span style=white-space:nowrap><span class="math align-center">$ \log n $</span>,</span> where
-<span class="math align-center">$ n $</span>
+height of an AVL tree is at worst proportional to <span style=white-space:nowrap><span class="math align-center">$ \log n $</span>,</span> where <span class="math align-center">$ n $</span>
 is the number of nodes in the tree. Thus, if we can maintain the shape
 of an AVL tree efficiently, we should have efficient lookups and
 updates.</p><p>Regarding the AVL tree shown above, notice that the tree is not as
-well-balanced as it could be. For example,
-<span class="math align-center">$ 0 $</span> is at depth <span style=white-space:nowrap><span class="math align-center">$ 7 $</span>,</span> whereas <span style=white-space:nowrap><span class="math align-center">$ 52 $</span>,</span>
+well-balanced as it could be. For example, <span class="math align-center">$ 0 $</span> is at depth <span style=white-space:nowrap><span class="math align-center">$ 7 $</span>,</span> whereas <span style=white-space:nowrap><span class="math align-center">$ 52 $</span>,</span>
 which also has two empty children, is only at depth <span style=white-space:nowrap><span class="math align-center">$ 4 $</span>.</span> Furthermore, it
-is possible to arrange
-<span class="math align-center">$ 54 $</span> nodes into a binary tree with height as small
+is possible to arrange <span class="math align-center">$ 54 $</span> nodes into a binary tree with height as small
 as <span style=white-space:nowrap><span class="math align-center">$ 5 $</span>.</span> However, maintaining a more-balanced structure would likely
 require more work, and as a result, the overall performance might not be
 as good. As we will show in what follows, the balance criterion for an
@@ -573,8 +567,7 @@ method <strong>static</strong> will allow us to handle empty (i.e., <strong>null
 If the tree is empty, this method will return <span style=white-space:nowrap><span class="math align-center">$ -1 $</span>;</span> otherwise, it will
 return the height stored in the tree. This method can be <strong>public</strong>.</p><p>We then can modify the constructor so that it initializes the height
 field. Using the above method, it can find the heights of each child,
-and add
-<span class="math align-center">$ 1 $</span> to the maximum of these values. This is the height of the node
+and add <span class="math align-center">$ 1 $</span> to the maximum of these values. This is the height of the node
 being constructed. It can initialize the height field to this value, and
 because the nodes are immutable, this field will store the correct
 height from that point on.</p><p>Now that we have a way to find the height of a tree efficiently, we can
@@ -582,30 +575,26 @@ focus on how we maintain the balance property. Whenever an insertion or
 deletion would cause the balance property to be violated for a
 particular node, we perform a <em>rotation</em> at that node. Suppose, for
 example, that we have inserted an element into a node&rsquo;s left child, and
-that this operation causes the height of the new left child to be
-<span class="math align-center">$ 2 $</span>
+that this operation causes the height of the new left child to be <span class="math align-center">$ 2 $</span>
 greater than the height of the right child (note that this same scenario
 could have occurred if we had removed an element from the right child).
-We can then rotate the tree using a <em>single rotate right</em>:</p><p><a href=#R-image-abd1d1114289456ee84a1db84c0bceb7 class=lightbox-link><img alt="A single rotate right" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/trees/avl/single-rotate.jpg style=height:auto;width:auto></a>
-<a href=javascript:history.back(); class=lightbox-back id=R-image-abd1d1114289456ee84a1db84c0bceb7><img alt="A single rotate right" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/trees/avl/single-rotate.jpg></a></p><p>The tree on the left above represents the tree whose left child has a
-height
-<span class="math align-center">$ 2 $</span> greater than its right child. The root and the lines to its
+We can then rotate the tree using a <em>single rotate right</em>:</p><p><a href=#R-image-d8fb204723477e686b8f6d0d14cd7801 class=lightbox-link><img alt="A single rotate right" class="border lazy lightbox figure-image" loading=lazy src=/cis300/trees/avl/single-rotate.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-d8fb204723477e686b8f6d0d14cd7801><img alt="A single rotate right" class="border lazy lightbox lightbox-image" loading=lazy src=/cis300/trees/avl/single-rotate.jpg></a></p><p>The tree on the left above represents the tree whose left child has a
+height <span class="math align-center">$ 2 $</span> greater than its right child. The root and the lines to its
 children are drawn using dashes to indicate that the root node has not
 yet been constructed &mdash; we have at this point simply built a new left
 child, and the tree on the left shows the tree that would be formed if
 we were building an ordinary binary search tree. The circles in the
 picture indicate individual nodes, and the triangles indicate arbitrary
 trees (which may be empty). Note that the because the left child has a
-height
-<span class="math align-center">$ 2 $</span> greater than the right child, we know that the left child
+height <span class="math align-center">$ 2 $</span> greater than the right child, we know that the left child
 cannot be empty; hence, we can safely depict it as a node with two
 children. The labels are chosen to indicate the order of the elements &mdash;
-e.g., as &ldquo;a&rdquo;
-<span class="math align-center">$ \lt $</span> &ldquo;b&rdquo;, every key in tree <em>a</em> is less than the key in
+e.g., as &ldquo;a&rdquo; <span class="math align-center">$ \lt $</span> &ldquo;b&rdquo;, every key in tree <em>a</em> is less than the key in
 node <em>b</em>. The tree on the right shows the tree that would be built by
 performing this rotation. Note that the rotation preserves the order of
 the keys.</p><p>Suppose the name of our class implementing a binary tree node is
-<strong>BinaryTreeNode&lt;T></strong>, and suppose it has the following properties:</p><ul><li><strong>Data:</strong> gets the data stored in the node.</li><li><strong>LeftChild:</strong> gets the left child of the node.</li><li><strong>RightChild:</strong> gets the right child of the node.</li></ul><p>Then the following code can be used to perform a single rotate right:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=cs>/// &lt;summary&gt;</span>
+<strong>BinaryTreeNode&lt;T></strong>, and suppose it has the following properties:</p><ul><li><strong>Data:</strong> gets the data stored in the node.</li><li><strong>LeftChild:</strong> gets the left child of the node.</li><li><strong>RightChild:</strong> gets the right child of the node.</li></ul><p>Then the following code can be used to perform a single rotate right:</p><div class=highlight dir=auto><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=cs>/// &lt;summary&gt;</span>
 </span></span><span class=line><span class=cl><span class=cs>/// Builds the result of performing a single rotate right on the binary tree</span>
 </span></span><span class=line><span class=cl><span class=cs>/// described by the given root, left child, and right child.</span>
 </span></span><span class=line><span class=cl><span class=cs>/// &lt;/summary&gt;</span>
@@ -624,69 +613,59 @@ parameter <code>root</code> refers to <em>d</em>, the parameter <code>left</code
 rooted at node <em>b</em>, and the parameter <code>right</code> refers to the (possibly empty) tree <em>e</em>. The
 code first constructs the right child of the tree on the right and
 places it in the variable <code>newRight</code>. It then constructs the entire tree
-on the right and returns it.</p><div class="box notices cstyle warning"><div class=box-label><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div><div class=box-content><p>Don&rsquo;t try to write the code for doing rotations without looking at pictures of the rotations.</p></div></div><p>Now that we have seen what a single rotate right does and how to code
+on the right and returns it.</p><details open class="box cstyle notices warning"><summary class=box-label tabindex=-1><i class="fa-fw fas fa-exclamation-triangle"></i>
+Warning</summary><div class=box-content><p>Don&rsquo;t try to write the code for doing rotations without looking at pictures of the rotations.</p></div></details><p>Now that we have seen what a single rotate right does and how to code
 it, we need to consider whether it fixes the problem. Recall that we
 were assuming that the given left child (i.e., the tree rooted at <em>b</em> in
-the tree on the left above) has a height
-<span class="math align-center">$ 2 $</span> greater than the given right
+the tree on the left above) has a height <span class="math align-center">$ 2 $</span> greater than the given right
 child (i.e., the tree <em>e</em> in the tree on the left above). Let&rsquo;s suppose
 the tree <em>e</em> has height <span style=white-space:nowrap><span class="math align-center">$ h $</span>.</span> Then the tree rooted at <em>b</em> has height
 <span style=white-space:nowrap><span class="math align-center">$ h + 2 $</span>.</span> By the definition of the height of a tree, either <em>a</em>
 or <em>c</em> (or both) must have height <span style=white-space:nowrap><span class="math align-center">$ h + 1 $</span>.</span> Assuming that every
 tree we&rsquo;ve built so far is an AVL tree, the children of <em>b</em> must differ
 in height by at most <span style=white-space:nowrap><span class="math align-center">$ 1 $</span>;</span> hence, <em>a</em> and <em>c</em> must both have a height of at
-least
-<span class="math align-center">$ h $</span> and at most <span style=white-space:nowrap><span class="math align-center">$ h + 1 $</span>.</span></p><p>Given these heights, let&rsquo;s examine the tree on the right. We have
+least <span class="math align-center">$ h $</span> and at most <span style=white-space:nowrap><span class="math align-center">$ h + 1 $</span>.</span></p><p>Given these heights, let&rsquo;s examine the tree on the right. We have
 assumed that every tree we&rsquo;ve built up to this point is an AVL tree, so
 we don&rsquo;t need to worry about any balances within <em>a</em>, <em>c</em>, or <em>e</em>.
-Because <em>c</em> has either height
-<span class="math align-center">$ h $</span> or height
-<span class="math align-center">$ h + 1 $</span> and <em>e</em> has
+Because <em>c</em> has either height <span class="math align-center">$ h $</span> or height <span class="math align-center">$ h + 1 $</span> and <em>e</em> has
 height <span style=white-space:nowrap><span class="math align-center">$ h $</span>,</span> the tree rooted at <em>d</em> satisfies the balance criterion.
-However, if <em>c</em> has height
-<span class="math align-center">$ h + 1 $</span> and <em>a</em> has height <span style=white-space:nowrap><span class="math align-center">$ h $</span>,</span> then
+However, if <em>c</em> has height <span class="math align-center">$ h + 1 $</span> and <em>a</em> has height <span style=white-space:nowrap><span class="math align-center">$ h $</span>,</span> then
 the tree rooted at <em>d</em> has height <span style=white-space:nowrap><span class="math align-center">$ h + 2 $</span>,</span> and the balance
 criterion is <em>not</em> satisfied. On the other hand, if <em>a</em> has height
 <span style=white-space:nowrap><span class="math align-center">$ h + 1 $</span>,</span> the tree rooted at <em>d</em> will have a height of either
 <span class="math align-center">$ h + 1 $</span> or <span style=white-space:nowrap><span class="math align-center">$ h + 2 $</span>,</span> depending on the height of <em>c</em>. In these
 cases, the balance criterion is satisfied.</p><p>We therefore conclude that a single rotate right will restore the
 balance if:</p><ul><li>The height of the original left child (i.e., the tree rooted at <em>b</em>
-in the above figure) is
-<span class="math align-center">$ 2 $</span> greater than the height of the original
+in the above figure) is <span class="math align-center">$ 2 $</span> greater than the height of the original
 right child (tree <em>e</em> in the above figure); and</li><li>The height of the left child of the original left child (tree <em>a</em> in
 the above figure) is greater than the height of the original right
 child (tree <em>e</em>).</li></ul><p>For the case in which the height of the left child of the original left
 child (tree <em>a</em>) is <em>not</em> greater than the height of the original right
 child (tree <em>e</em>), we will need to use a different kind of rotation.</p><p>Before we consider the other kind of rotation, we can observe that if an
-insertion or deletion leaves the right child with a height
-<span class="math align-center">$ 2 $</span> greater
+insertion or deletion leaves the right child with a height <span class="math align-center">$ 2 $</span> greater
 than the left child and the right child of the right child with a height
 greater than the left child, the mirror image of a single rotate right
 will restore the balance. This rotation is called a <em>single rotate
-left</em>:</p><p><a href=#R-image-b43c73e4d08dc4a38164e4f61aa8bfb9 class=lightbox-link><img alt="A single rotate left" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/trees/avl/single-rotate-left.jpg style=height:auto;width:auto></a>
-<a href=javascript:history.back(); class=lightbox-back id=R-image-b43c73e4d08dc4a38164e4f61aa8bfb9><img alt="A single rotate left" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/trees/avl/single-rotate-left.jpg></a></p><p>Returning to the case in which the left child has a height
-<span class="math align-center">$ 2 $</span> greater
+left</em>:</p><p><a href=#R-image-e0809b3edc48380c328ddbcac47eef51 class=lightbox-link><img alt="A single rotate left" class="border lazy lightbox figure-image" loading=lazy src=/cis300/trees/avl/single-rotate-left.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-e0809b3edc48380c328ddbcac47eef51><img alt="A single rotate left" class="border lazy lightbox lightbox-image" loading=lazy src=/cis300/trees/avl/single-rotate-left.jpg></a></p><p>Returning to the case in which the left child has a height <span class="math align-center">$ 2 $</span> greater
 than the right child, but the left child of the left child has a height
 no greater than the right child, we can in this case do a <em>double rotate
-right</em>:</p><p><a href=#R-image-d96e4a1f29c019aba99d2c32677af122 class=lightbox-link><img alt="A double rotate right" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/trees/avl/double-rotate.jpg style=height:auto;width:auto></a>
-<a href=javascript:history.back(); class=lightbox-back id=R-image-d96e4a1f29c019aba99d2c32677af122><img alt="A double rotate right" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/trees/avl/double-rotate.jpg></a></p><p>Note that we have drawn the trees a bit differently by showing more
+right</em>:</p><p><a href=#R-image-9cda519b003e4d6d971b5fa273461b20 class=lightbox-link><img alt="A double rotate right" class="border lazy lightbox figure-image" loading=lazy src=/cis300/trees/avl/double-rotate.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-9cda519b003e4d6d971b5fa273461b20><img alt="A double rotate right" class="border lazy lightbox lightbox-image" loading=lazy src=/cis300/trees/avl/double-rotate.jpg></a></p><p>Note that we have drawn the trees a bit differently by showing more
 detail. Let&rsquo;s now show that this rotation restores the balance in this
 case. Suppose that in the tree on the left, <em>g</em> has height <span style=white-space:nowrap><span class="math align-center">$ h $</span>.</span> Then the
 tree rooted at <em>b</em> has height <span style=white-space:nowrap><span class="math align-center">$ h + 2 $</span>.</span> Because the height of <em>a</em>
 is no greater than the height of <em>g</em>, assuming all trees we have built
 so far are AVL trees, <em>a</em> must have height <span style=white-space:nowrap><span class="math align-center">$ h $</span>,</span> and the tree rooted at
-<em>d</em> must have height
-<span class="math align-center">$ h + 1 $</span> (thus, it makes sense to draw it as
+<em>d</em> must have height <span class="math align-center">$ h + 1 $</span> (thus, it makes sense to draw it as
 having a root node). This means that <em>c</em> and <em>e</em> both must have heights
-of either
-<span class="math align-center">$ h $</span> or <span style=white-space:nowrap><span class="math align-center">$ h - 1 $</span>.</span> It is now not hard to verify that the
+of either <span class="math align-center">$ h $</span> or <span style=white-space:nowrap><span class="math align-center">$ h - 1 $</span>.</span> It is now not hard to verify that the
 balance criterion is satisfied at <em>b</em>, <em>f</em>, and <em>d</em> in the tree on the
 right.</p><p>The only remaining case is the mirror image of the above &mdash; i.e., that
-the right child has height
-<span class="math align-center">$ 2 $</span> greater than the left child, but the height
+the right child has height <span class="math align-center">$ 2 $</span> greater than the left child, but the height
 of the right child of the right child is no greater than the height of
-the left child. In this case, a <em>double rotate left</em> can be applied:</p><p><a href=#R-image-b5c07d551b665d2c0f1937eb573c70ab class=lightbox-link><img alt="A double rotate left" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/trees/avl/double-rotate-left.jpg style=height:auto;width:auto></a>
-<a href=javascript:history.back(); class=lightbox-back id=R-image-b5c07d551b665d2c0f1937eb573c70ab><img alt="A double rotate left" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/trees/avl/double-rotate-left.jpg></a></p><p>We have shown how to restore the balance whenever the balance criterion
+the left child. In this case, a <em>double rotate left</em> can be applied:</p><p><a href=#R-image-3d48b3ca28612a4c7e87366cee1ab2ea class=lightbox-link><img alt="A double rotate left" class="border lazy lightbox figure-image" loading=lazy src=/cis300/trees/avl/double-rotate-left.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-3d48b3ca28612a4c7e87366cee1ab2ea><img alt="A double rotate left" class="border lazy lightbox lightbox-image" loading=lazy src=/cis300/trees/avl/double-rotate-left.jpg></a></p><p>We have shown how to restore the balance whenever the balance criterion
 is violated. Now we just need to put it all together in a <strong>public
 static</strong> method that will replace the constructor as far as user code is
 concerned. In order to prevent the user from calling the constructor
@@ -705,7 +684,7 @@ the methods to do the remaining rotations are <strong>SingleRotateLeft</strong>,
 <strong>DoubleRotateRight</strong>, and <strong>DoubleRotateLeft</strong>, respectively. Further
 suppose that the parameter lists for each of these last three methods
 are the same as for <strong>SingleRotateRight</strong> above, except that for the left rotations, <code>left</code> is nullable, not <code>right</code>. The following method
-can then be used to build AVL trees:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=cs>/// &lt;summary&gt;</span>
+can then be used to build AVL trees:</p><div class=highlight dir=auto><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=cs>/// &lt;summary&gt;</span>
 </span></span><span class=line><span class=cl><span class=cs>/// Constructs an AVL Tree from the given data element and trees. The heights of </span>
 </span></span><span class=line><span class=cl><span class=cs>/// the trees must differ by at most two. The tree built will have the same </span>
 </span></span><span class=line><span class=cl><span class=cs>/// inorder traversal order as if the data were at the root, left were the left </span>
@@ -770,8 +749,8 @@ running times of both lookups and updates are in <span style=white-space:nowrap>
 <span class="math align-center">$ n $</span> is the number of nodes in the tree.</p><footer class=footline></footer></article><article class=default><header class=headline></header><div hidden><h1 id=tries>Tries</h1></div><h2 id=tries>Tries</h2><p><a href=/cis300/trees/avl/>AVL trees</a> give us an efficient mechanism for storage and retrieval, particularly if we need to be able to process the elements in order of their keys. However, there are special cases where we can achieve better performance. One of these special cases occurs when we need to store a list of words, as we might need in a word game, for example. For such applications, a <em>trie</em> provides for even more efficient storage and retrieval.</p><p>In this section, we first define a trie and give a rather straightforward implementation. We then show how to improve performance by implementing different nodes in different ways. We then examine the use of a preorder traversal to traverse a trie. We conclude by discussing an example of using a trie in a word game.</p><footer class=footline></footer></article><section><h1 class=a11y-only>Subsections of Tries</h1><article class=default><header class=headline></header><div hidden><h1 id=introduction-to-tries>Introduction to Tries</h1></div><h2 id=introduction-to-tries>Introduction to Tries</h2><p>A <em>trie</em> is a nonempty tree storing a set of words in the following way:</p><ul><li>Each child of a node is labeled with a character.</li><li>Each node contains a boolean indicating whether the labels in the
 path from the root to that node form a word in the set.</li></ul><p>The word, &ldquo;trie&rdquo;, is taken from the middle of the word, &ldquo;retrieval&rdquo;, but
 to avoid confusion, it is pronounced like &ldquo;try&rdquo; instead of like &ldquo;tree&rdquo;.</p><p>Suppose, for example, that we want to store the following words:</p><ul><li>ape</li><li>apple</li><li>cable</li><li>car</li><li>cart</li><li>cat</li><li>cattle</li><li>curl</li><li>far</li><li>farm</li></ul><p>A trie storing these words (where we denote a value of <strong>true</strong> for the
-boolean with a <code>*</code>) is as follows:</p><p><a href=#R-image-8802513f92d52f2b90c471a13a8e7137 class=lightbox-link><img alt="A trie" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/trees/tries/intro/trie-example.jpg style=height:auto;width:auto></a>
-<a href=javascript:history.back(); class=lightbox-back id=R-image-8802513f92d52f2b90c471a13a8e7137><img alt="A trie" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/trees/tries/intro/trie-example.jpg></a></p><p>Thus, for example, if we follow the path from the root through the
+boolean with a <code>*</code>) is as follows:</p><p><a href=#R-image-2654d73148cad7da829bf10f3ea8e531 class=lightbox-link><img alt="A trie" class="border lazy lightbox figure-image" loading=lazy src=/cis300/trees/tries/intro/trie-example.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-2654d73148cad7da829bf10f3ea8e531><img alt="A trie" class="border lazy lightbox lightbox-image" loading=lazy src=/cis300/trees/tries/intro/trie-example.jpg></a></p><p>Thus, for example, if we follow the path from the root through the
 labels &lsquo;c&rsquo;, &lsquo;a&rsquo;, and &lsquo;r&rsquo;, we reach a node with a <strong>true</strong> boolean value
 (shown by the <code>*</code> in the above picture); hence, &ldquo;car&rdquo; is in this set of
 words. However, if we follow the path through the labels &lsquo;c&rsquo;, &lsquo;u&rsquo;, and
@@ -824,16 +803,17 @@ contains &rsquo;d&rsquo;, then the difference, <code>label - _alphabetStart</c
 the child with label &rsquo;d&rsquo; will be stored at index 3. We have therefore
 achieved our goal of providing quick access to a child with a given
 label.</p><p>Let&rsquo;s now consider how to implement a lookup. We can define a <strong>public</strong>
-method for this purpose within the class implementing a trie node:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=kd>public</span> <span class=kt>bool</span> <span class=n>Contains</span><span class=p>(</span><span class=kt>string</span> <span class=n>s</span><span class=p>)</span>
+method for this purpose within the class implementing a trie node:</p><div class=highlight dir=auto><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=kd>public</span> <span class=kt>bool</span> <span class=n>Contains</span><span class=p>(</span><span class=kt>string</span> <span class=n>s</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=p>{</span>
 </span></span><span class=line><span class=cl>    
 </span></span><span class=line><span class=cl>    <span class=p>.</span> <span class=p>.</span> <span class=p>.</span>
 </span></span><span class=line><span class=cl>    
-</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><div class="box notices cstyle note"><div class=box-label><i class="fa-fw fas fa-exclamation-circle"></i> Note</div><div class=box-content><p>This method does not need a trie node as a parameter because
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><details open class="box cstyle notices note"><summary class=box-label tabindex=-1><i class="fa-fw fas fa-exclamation-circle"></i>
+Note</summary><div class=box-content><p>This method does not need a trie node as a parameter because
 the method will belong to a trie node. Thus, the method will be able to
 access the node as
 <a href=/cis300/appendix/syntax/static-this/><strong>this</strong></a>, and may
-access its <strong>private</strong> fields directly by their names.</p></div></div><p>The method
+access its <strong>private</strong> fields directly by their names.</p></div></details><p>The method
 consists of five cases:</p><ul><li><code>s</code> is <strong>null</strong>. Note that even though <code>s</code> is not defined to be nullable, because the method is <strong>public</strong>, user code could still pass a <strong>null</strong> value. In this case, we should throw an <strong>ArgumentNullException</strong>, provides more information than does a <strong>NullReferenceException</strong>.</li><li><code>s</code> is the empty <strong>string</strong>. In this case the <strong>bool</strong> stored in
 this node indicates whether it is a word in this trie; hence, we can
 simply return this <strong>bool</strong>.</li><li>The first character of <code>s</code> is not a lower-case English letter (i.e.,
@@ -852,7 +832,7 @@ information that would need to be copied if we need to replace a node
 with a new one (we would need to construct a new node for each letter of
 each word we added). We therefore should provide a <strong>public</strong> method
 within the trie node class for the purpose of adding a word to the trie
-rooted at this node:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=kd>public</span> <span class=k>void</span> <span class=n>Add</span><span class=p>(</span><span class=kt>string</span> <span class=n>s</span><span class=p>)</span>
+rooted at this node:</p><div class=highlight dir=auto><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=kd>public</span> <span class=k>void</span> <span class=n>Add</span><span class=p>(</span><span class=kt>string</span> <span class=n>s</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=p>{</span>
 </span></span><span class=line><span class=cl>    
 </span></span><span class=line><span class=cl>    <span class=p>.</span> <span class=p>.</span> <span class=p>.</span>
@@ -867,9 +847,7 @@ it in the array location for this child.</li><li>We can now
 add the substring following the first letter of <code>s</code> to this child by
 making a recursive call.</li></ul></li></ul><footer class=footline></footer></article><article class=default><header class=headline></header><div hidden><h1 id=multiple-implementations-of-children>Multiple Implementations of Children</h1></div><h2 id=multiple-implementations-of-children>Multiple Implementations of Children</h2><p>The trie implementation given in <a href=/cis300/trees/tries/intro/>the previous
 section</a> offers very
-efficient lookups - a word of length
-<span class="math align-center">$ m $</span> can be looked up in
-<span class="math align-center">$ O(m) $</span>
+efficient lookups - a word of length <span class="math align-center">$ m $</span> can be looked up in <span class="math align-center">$ O(m) $</span>
 time, no matter how many words are in the trie. However, it wastes a
 large amount of space. In a typical trie, a majority of the nodes will
 have no more than one child; however, each node contains a 26-element
@@ -914,10 +892,10 @@ Recall from the section, <a href=/cis300/dictionaries/linked-list-impl/>&ldquo;I
 List&rdquo;</a>,
 that we can constrain the keys in a dictionary implementation to be of a
 type that can be ordered by using a <strong>where</strong> clause on the <strong>class</strong>
-statement, as follows:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=kd>public</span> <span class=k>class</span> <span class=nc>Dictionary</span><span class=p>&lt;</span><span class=n>TKey</span><span class=p>,</span> <span class=n>TValue</span><span class=p>&gt;</span> <span class=k>where</span> <span class=n>TKey</span> <span class=p>:</span> <span class=n>notnull</span><span class=p>,</span> <span class=n>IComparable</span><span class=p>&lt;</span><span class=n>TKey</span><span class=p>&gt;</span></span></span></code></pre></div><p>The <a href=https://source.dot.net/#System.Private.CoreLib/src/libraries/System.Private.CoreLib/src/System/IComparable.cs,3911354c40e0c30e rel=external target=_blank>source code for the <strong>IComparable&lt;T></strong>
+statement, as follows:</p><div class=highlight dir=auto><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=kd>public</span> <span class=k>class</span> <span class=nc>Dictionary</span><span class=p>&lt;</span><span class=n>TKey</span><span class=p>,</span> <span class=n>TValue</span><span class=p>&gt;</span> <span class=k>where</span> <span class=n>TKey</span> <span class=p>:</span> <span class=n>notnull</span><span class=p>,</span> <span class=n>IComparable</span><span class=p>&lt;</span><span class=n>TKey</span><span class=p>&gt;</span></span></span></code></pre></div><p>The <a href=https://source.dot.net/#System.Private.CoreLib/src/libraries/System.Private.CoreLib/src/System/IComparable.cs,3911354c40e0c30e rel=external target=_blank>source code for the <strong>IComparable&lt;T></strong>
 interface</a>
 has been posted by Microsoft®. The essential part of this definition
-is:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=kd>public</span> <span class=k>interface</span> <span class=nc>IComparable</span><span class=p>&lt;</span><span class=k>in</span> <span class=n>T</span><span class=p>&gt;</span>
+is:</p><div class=highlight dir=auto><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=kd>public</span> <span class=k>interface</span> <span class=nc>IComparable</span><span class=p>&lt;</span><span class=k>in</span> <span class=n>T</span><span class=p>&gt;</span>
 </span></span><span class=line><span class=cl><span class=p>{</span>
 </span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>CompareTo</span><span class=p>(</span><span class=n>T</span><span class=p>?</span> <span class=n>other</span><span class=p>);</span>
 </span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>(Don&rsquo;t worry about the <strong>in</strong> keyword with the type parameter in the
@@ -939,7 +917,7 @@ TValue></strong> class restricts type <strong>TKey</strong> to be a sub-type of
 <strong>IComparable&lt;T></strong>, its can use the <strong>CompareTo</strong> method of any
 instance of type <strong>TKey</strong>.</p><p>Now suppose that we want to define a class <strong>Fraction</strong> and use it as a
 key in our dictionary implementation. We would begin the class
-definition within Visual Studio® as follows:</p><img src=/cis300/trees/tries/multiple-impl/interface-example1.jpg alt="Beginning an implementation of an interface." style=zoom:67%><p>At the end of the first line of the <strong>class</strong> definition, <code>: IComparable&lt;Fraction></code> indicates that the class being defined is a
+definition within Visual Studio® as follows:</p><img src=interface-example1.jpg alt="Beginning an implementation of an interface." style=zoom:67%><p>At the end of the first line of the <strong>class</strong> definition, <code>: IComparable&lt;Fraction></code> indicates that the class being defined is a
 subtype of <strong>IComparable&lt;Fraction></strong>. In general, we can list one or
 more interface names after the colon, separating these names with
 commas. Each name that we list requires that all of the methods,
@@ -947,10 +925,11 @@ properties, and <a href=/cis300/appendix/syntax/indexers/>indexers</a>
 from that interface must be fully defined within this class. If we hover
 the mouse over the word, <code>IComparable&lt;Fraction></code>, a drop-down menu
 appears. By selecting &ldquo;Implement interface&rdquo; from this menu, all of the
-required members of the interface are provided for us:</p><img src=/cis300/trees/tries/multiple-impl/interface-example2.jpg alt="Interface members are auto-filled." style=zoom:67%><div class="box notices cstyle note"><div class=box-label><i class="fa-fw fas fa-exclamation-circle"></i> Note</div><div class=box-content><p>In order to implement a method specified in an interface, we
-must define it as <strong>public</strong>.</p></div></div><p>We now just need to replace the <strong>throw</strong>
+required members of the interface are provided for us:</p><img src=interface-example2.jpg alt="Interface members are auto-filled." style=zoom:67%><details open class="box cstyle notices note"><summary class=box-label tabindex=-1><i class="fa-fw fas fa-exclamation-circle"></i>
+Note</summary><div class=box-content><p>In order to implement a method specified in an interface, we
+must define it as <strong>public</strong>.</p></div></details><p>We now just need to replace the <strong>throw</strong>
 with the proper code for the <strong>CompareTo</strong> method and fill in any other
-class members that we need; for example:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=k>namespace</span> <span class=nn>Ksu.Cis300.Fractions</span>
+class members that we need; for example:</p><div class=highlight dir=auto><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=k>namespace</span> <span class=nn>Ksu.Cis300.Fractions</span>
 </span></span><span class=line><span class=cl><span class=p>{</span>
 </span></span><span class=line><span class=cl>    <span class=cs>/// &lt;summary&gt;</span>
 </span></span><span class=line><span class=cl>    <span class=cs>/// An immutable fraction whose instances can be ordered.</span>
@@ -1002,26 +981,27 @@ class members that we need; for example:</p><div class=highlight><pre tabindex=0
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>        <span class=c1>// Other class members</span>
 </span></span><span class=line><span class=cl>    <span class=p>}</span>
-</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><div class="box notices cstyle note"><div class=box-label><i class="fa-fw fas fa-exclamation-circle"></i> Note</div><div class=box-content><p>The <strong>CompareTo</strong> method above is <em>not</em> recursive. The
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><details open class="box cstyle notices note"><summary class=box-label tabindex=-1><i class="fa-fw fas fa-exclamation-circle"></i>
+Note</summary><div class=box-content><p>The <strong>CompareTo</strong> method above is <em>not</em> recursive. The
 <strong>CompareTo</strong> method that it calls is a member of the <strong>long</strong>
-structure, not the <strong>Fraction</strong> class.</p></div></div><p>As we suggested above, interfaces can also include properties. For
+structure, not the <strong>Fraction</strong> class.</p></div></details><p>As we suggested above, interfaces can also include properties. For
 example,
 <a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.icollection-1?view=net-6.0" rel=external target=_blank><strong>ICollection&lt;T></strong></a>
 is a generic interface implemented by both arrays and the class
 <span style=white-space:nowrap><a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=net-6.0" rel=external target=_blank><strong>List&lt;T></strong></a>.</span>
-This interface contains the following member (among others):</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kt>int</span> <span class=n>Count</span> <span class=p>{</span> <span class=k>get</span><span class=p>;</span> <span class=p>}</span></span></span></code></pre></div><p>This member specifies that every subclass must contain a property called
+This interface contains the following member (among others):</p><div class=highlight dir=auto><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kt>int</span> <span class=n>Count</span> <span class=p>{</span> <span class=k>get</span><span class=p>;</span> <span class=p>}</span></span></span></code></pre></div><p>This member specifies that every subclass must contain a property called
 <strong>Count</strong> with a getter. At first, it would appear that an array does
-not have such a property, as we cannot write something like:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kt>int</span><span class=p>[]</span> <span class=n>a</span> <span class=p>=</span> <span class=k>new</span> <span class=kt>int</span><span class=p>[</span><span class=m>10</span><span class=p>];</span>
+not have such a property, as we cannot write something like:</p><div class=highlight dir=auto><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kt>int</span><span class=p>[]</span> <span class=n>a</span> <span class=p>=</span> <span class=k>new</span> <span class=kt>int</span><span class=p>[</span><span class=m>10</span><span class=p>];</span>
 </span></span><span class=line><span class=cl><span class=kt>int</span> <span class=n>k</span> <span class=p>=</span> <span class=n>a</span><span class=p>.</span><span class=n>Count</span><span class=p>;</span>  <span class=c1>// This gives a syntax error.</span></span></span></code></pre></div><p><span id=explicit-impl></span> In fact, an array does contain a
 <strong>Count</strong> property, but this property is available only when the array
 is treated as an <strong>ICollection&lt;T></strong> (or an
 <span style=white-space:nowrap><a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.ilist-1?view=net-6.0" rel=external target=_blank><strong>IList&lt;T></strong></a>,</span>
 which is an interface that is a subtype of <strong>ICollection&lt;T></strong>, and is
-also implemented by arrays). For example, we can write:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kt>int</span><span class=p>[]</span> <span class=n>a</span> <span class=p>=</span> <span class=k>new</span> <span class=kt>int</span><span class=p>[</span><span class=m>10</span><span class=p>];</span>
+also implemented by arrays). For example, we can write:</p><div class=highlight dir=auto><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kt>int</span><span class=p>[]</span> <span class=n>a</span> <span class=p>=</span> <span class=k>new</span> <span class=kt>int</span><span class=p>[</span><span class=m>10</span><span class=p>];</span>
 </span></span><span class=line><span class=cl><span class=n>ICollection</span><span class=p>&lt;</span><span class=kt>int</span><span class=p>&gt;</span> <span class=n>col</span> <span class=p>=</span> <span class=n>a</span><span class=p>;</span>
-</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=n>k</span> <span class=p>=</span> <span class=n>col</span><span class=p>.</span><span class=n>Count</span><span class=p>;</span></span></span></code></pre></div><p>or</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kt>int</span><span class=p>[]</span> <span class=n>a</span> <span class=p>=</span> <span class=k>new</span> <span class=kt>int</span><span class=p>[</span><span class=m>10</span><span class=p>];</span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=n>k</span> <span class=p>=</span> <span class=n>col</span><span class=p>.</span><span class=n>Count</span><span class=p>;</span></span></span></code></pre></div><p>or</p><div class=highlight dir=auto><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kt>int</span><span class=p>[]</span> <span class=n>a</span> <span class=p>=</span> <span class=k>new</span> <span class=kt>int</span><span class=p>[</span><span class=m>10</span><span class=p>];</span>
 </span></span><span class=line><span class=cl><span class=kt>int</span> <span class=n>k</span> <span class=p>=</span> <span class=p>((</span><span class=n>ICollection</span><span class=p>&lt;</span><span class=kt>int</span><span class=p>&gt;)</span><span class=n>a</span><span class=p>).</span><span class=n>Count</span><span class=p>;</span></span></span></code></pre></div><p>This behavior occurs because an array <em>explicitly implements</em> the
-<strong>Count</strong> property. We can do this as follows:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kd>public</span> <span class=k>class</span> <span class=nc>ExplicitImplementationExample</span><span class=p>&lt;</span><span class=n>T</span><span class=p>&gt;</span> <span class=p>:</span> <span class=n>ICollection</span><span class=p>&lt;</span><span class=n>T</span><span class=p>&gt;</span>
+<strong>Count</strong> property. We can do this as follows:</p><div class=highlight dir=auto><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kd>public</span> <span class=k>class</span> <span class=nc>ExplicitImplementationExample</span><span class=p>&lt;</span><span class=n>T</span><span class=p>&gt;</span> <span class=p>:</span> <span class=n>ICollection</span><span class=p>&lt;</span><span class=n>T</span><span class=p>&gt;</span>
 </span></span><span class=line><span class=cl><span class=p>{</span>
 </span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>ICollection</span><span class=p>&lt;</span><span class=n>T</span><span class=p>&gt;.</span><span class=n>Count</span>
 </span></span><span class=line><span class=cl>    <span class=p>{</span>
@@ -1041,7 +1021,7 @@ member, neither the <strong>public</strong> nor the <strong>private</strong> acc
 allowed when <em>explicitly</em> implementing an interface member.</p><p>We can also include
 <a href=/cis300/appendix/syntax/indexers/>indexers</a> within
 interfaces. For example, the <strong>IList&lt;T></strong> interface is defined as
-follows:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kd>public</span> <span class=k>interface</span> <span class=nc>IList</span><span class=p>&lt;</span><span class=n>T</span><span class=p>&gt;</span> <span class=p>:</span> <span class=n>ICollection</span><span class=p>&lt;</span><span class=n>T</span><span class=p>&gt;</span>
+follows:</p><div class=highlight dir=auto><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kd>public</span> <span class=k>interface</span> <span class=nc>IList</span><span class=p>&lt;</span><span class=n>T</span><span class=p>&gt;</span> <span class=p>:</span> <span class=n>ICollection</span><span class=p>&lt;</span><span class=n>T</span><span class=p>&gt;</span>
 </span></span><span class=line><span class=cl><span class=p>{</span>
 </span></span><span class=line><span class=cl>    <span class=n>T</span> <span class=k>this</span><span class=p>[</span><span class=kt>int</span> <span class=n>index</span><span class=p>]</span> <span class=p>{</span> <span class=k>get</span><span class=p>;</span> <span class=k>set</span><span class=p>;</span> <span class=p>}</span>
 </span></span><span class=line><span class=cl>
@@ -1067,7 +1047,7 @@ the type of an object - instead, we&rsquo;ll need to construct a new instance
 of the appropriate implementation. Hence, the <strong>Add</strong> method will need
 to return the root of the resulting trie. Because this node may have any
 of the three implementations, the return type of this method should be
-<strong>ITrie</strong>. Also, because we will need the constants from our previous implementation in each of the implementations of <strong>ITrie</strong>, the code will be more maintainable if we include them once within this interface definition. Note that this will have the effect of making them <strong>public</strong>. The <strong>ITrie</strong> interface is therefore as follows:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=cs>/// &lt;summary&gt;</span>
+<strong>ITrie</strong>. Also, because we will need the constants from our previous implementation in each of the implementations of <strong>ITrie</strong>, the code will be more maintainable if we include them once within this interface definition. Note that this will have the effect of making them <strong>public</strong>. The <strong>ITrie</strong> interface is therefore as follows:</p><div class=highlight dir=auto><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=cs>/// &lt;summary&gt;</span>
 </span></span><span class=line><span class=cl><span class=cs>/// An interface for a trie.</span>
 </span></span><span class=line><span class=cl><span class=cs>/// &lt;/summary&gt;</span>
 </span></span><span class=line><span class=cl><span class=kd>public</span> <span class=k>interface</span> <span class=nc>ITrie</span>
@@ -1213,15 +1193,15 @@ except that one face of one die contains &ldquo;Qu&rdquo;. The tray has a large
 cover such that the dice can be placed in the cover and the tray placed
 upside-down on top of the cover. The whole thing can then be shaken,
 then inverted so that each die ends up in a different grid cell, forming
-a random game board such as:</p><p><a href=#R-image-acdba44eacc2833fd41115805dcd04b3 class=lightbox-link><img alt="A Boggle game board" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/trees/tries/word-games/boggle.jpg style=height:auto;width:auto></a>
-<a href=javascript:history.back(); class=lightbox-back id=R-image-acdba44eacc2833fd41115805dcd04b3><img alt="A Boggle game board" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/trees/tries/word-games/boggle.jpg></a></p><p>Players are then given a certain amount of time during which they
+a random game board such as:</p><p><a href=#R-image-5c192d27d7212100672189ab26501508 class=lightbox-link><img alt="A Boggle game board" class="border lazy lightbox figure-image" loading=lazy src=/cis300/trees/tries/word-games/boggle.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-5c192d27d7212100672189ab26501508><img alt="A Boggle game board" class="border lazy lightbox lightbox-image" loading=lazy src=/cis300/trees/tries/word-games/boggle.jpg></a></p><p>Players are then given a certain amount of time during which they
 compete to try to form as many unique words as they can from these
 letters. The letters of a word must be adjacent either horizontally,
 vertically, or diagonally, and no die may be used more than once in a
 single word. There is a minimum word length, and longer words are worth
 more points. For example, the above game board contains the words,
-&ldquo;WITCH&rdquo;, &ldquo;ITCH&rdquo;, &ldquo;PELLET&rdquo;, &ldquo;TELL&rdquo;, and &ldquo;DATA&rdquo;, among many others.</p><p><a href=#R-image-af7d3c5b08bf4ae90a0212887240b08a class=lightbox-link><img alt="Words on a Boggle game board" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/trees/tries/word-games/boggle2.jpg style=height:auto;width:auto></a>
-<a href=javascript:history.back(); class=lightbox-back id=R-image-af7d3c5b08bf4ae90a0212887240b08a><img alt="Words on a Boggle game board" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/trees/tries/word-games/boggle2.jpg></a></p><p>Suppose we want to build a program that plays Boggle against a human
+&ldquo;WITCH&rdquo;, &ldquo;ITCH&rdquo;, &ldquo;PELLET&rdquo;, &ldquo;TELL&rdquo;, and &ldquo;DATA&rdquo;, among many others.</p><p><a href=#R-image-6bfa23c498c03419f5e025b6fff75230 class=lightbox-link><img alt="Words on a Boggle game board" class="border lazy lightbox figure-image" loading=lazy src=/cis300/trees/tries/word-games/boggle2.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-6bfa23c498c03419f5e025b6fff75230><img alt="Words on a Boggle game board" class="border lazy lightbox lightbox-image" loading=lazy src=/cis300/trees/tries/word-games/boggle2.jpg></a></p><p>Suppose we want to build a program that plays Boggle against a human
 opponent. The program would need to look for words on a given board. The
 dictionary of valid words can of course be stored in a trie. In what follows,
 we will show how the structure of a trie can be particularly helpful in
@@ -1233,8 +1213,8 @@ occur on the path to the given die. For example, if we start a search at
 the upper-left corner of the above board, its children would be the
 three adjacent dice containing &ldquo;I&rdquo;, &ldquo;C&rdquo;, and &ldquo;A&rdquo;. The children of &ldquo;I&rdquo;,
 then, would not include &ldquo;H&rdquo; because it is already on the path to &ldquo;I&rdquo;.
-Part of this tree would look like this:</p><p><a href=#R-image-72115e74d78f0ea9f3d85dd2d7f32b03 class=lightbox-link><img alt="A part of a tree representing a Boggle search space" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/trees/tries/word-games/boggle-tree.jpg style=height:auto;width:auto></a>
-<a href=javascript:history.back(); class=lightbox-back id=R-image-72115e74d78f0ea9f3d85dd2d7f32b03><img alt="A part of a tree representing a Boggle search space" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/trees/tries/word-games/boggle-tree.jpg></a></p><p>Note that this tree is not a data structure - it need not be explicitly
+Part of this tree would look like this:</p><p><a href=#R-image-0877354b1a69b1897fcd3a8a767d6b80 class=lightbox-link><img alt="A part of a tree representing a Boggle search space" class="border lazy lightbox figure-image" loading=lazy src=/cis300/trees/tries/word-games/boggle-tree.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-0877354b1a69b1897fcd3a8a767d6b80><img alt="A part of a tree representing a Boggle search space" class="border lazy lightbox lightbox-image" loading=lazy src=/cis300/trees/tries/word-games/boggle-tree.jpg></a></p><p>Note that this tree is not a data structure - it need not be explicitly
 stored anywhere. Rather, it is a mathematical object that helps us to
 design an algorithm for finding all of the words. Each word on the board
 is simply a path in this tree starting from the root. We can therefore
@@ -1274,8 +1254,8 @@ ways to make a program with which humans can compete, as this search
 will only find words that begin near the top of the board.)</p><p>We can begin to see how to improve the performance if we observe the
 similarity between the trees we have been discussing and a trie
 containing the word list. Consider, for example, a portion of the child
-labeled &lsquo;h&rsquo; in a trie representing a large set of words:</p><p><a href=#R-image-fa42459ace6a231eca03f9dd89c23ad0 class=lightbox-link><img alt="A portion of a trie." class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/trees/tries/word-games/trie-portion.jpg style=height:auto;width:auto></a>
-<a href=javascript:history.back(); class=lightbox-back id=R-image-fa42459ace6a231eca03f9dd89c23ad0><img alt="A portion of a trie." class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/trees/tries/word-games/trie-portion.jpg></a></p><p>We have omitted some of the children because they are irrelevant to the
+labeled &lsquo;h&rsquo; in a trie representing a large set of words:</p><p><a href=#R-image-f4446b95595ebe091bd7e28941c0ef50 class=lightbox-link><img alt="A portion of a trie." class="border lazy lightbox figure-image" loading=lazy src=/cis300/trees/tries/word-games/trie-portion.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-f4446b95595ebe091bd7e28941c0ef50><img alt="A portion of a trie." class="border lazy lightbox lightbox-image" loading=lazy src=/cis300/trees/tries/word-games/trie-portion.jpg></a></p><p>We have omitted some of the children because they are irrelevant to the
 search we are performing (e.g., there is no die containing &ldquo;E&rdquo; adjacent
 to &ldquo;H&rdquo; on the above game board). Also, we are assuming a minimum word
 length of 4; hence, &ldquo;ha&rdquo;, &ldquo;hi&rdquo;, and &ldquo;hit&rdquo; are not shown as words in this
@@ -1325,8 +1305,8 @@ children is also a heap. Note that this implies that, in any subtree,
 the maximum priority is at the root. We define a <em>min-heap</em> similarly,
 except that the minimum priority is at the root. Below is an example of
 a min-heap with integer priorities (the data elements are not shown &mdash;
-only their priorities):</p><p><a href=#R-image-69cfd8e5395cdebf047b2b7260c2b31e class=lightbox-link><img alt="A min-heap." class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/trees/priority-queues/heaps/heap.jpg style=height:auto;width:auto></a>
-<a href=javascript:history.back(); class=lightbox-back id=R-image-69cfd8e5395cdebf047b2b7260c2b31e><img alt="A min-heap." class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/trees/priority-queues/heaps/heap.jpg></a></p><p>Note that this structure is different from a binary search tree, as
+only their priorities):</p><p><a href=#R-image-608dab6454187f1068c243b6b86fde48 class=lightbox-link><img alt="A min-heap." class="border lazy lightbox figure-image" loading=lazy src=/cis300/trees/priority-queues/heaps/heap.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-608dab6454187f1068c243b6b86fde48><img alt="A min-heap." class="border lazy lightbox lightbox-image" loading=lazy src=/cis300/trees/priority-queues/heaps/heap.jpg></a></p><p>Note that this structure is different from a binary search tree, as
 there are elements in the left child that have larger priorities than
 the root. Although some ordering is imposed on the nodes (i.e.,
 priorities do not decrease as we go down a path from the root), the
@@ -1336,9 +1316,10 @@ min-heap tends to give better performance than an AVL tree, which could
 also be used to implement a min-priority queue. Although the definition
 of a heap does not require it, the implementations we will consider will
 be binary trees, as opposed to trees with an arbitrary number of
-children.</p><div class="box notices cstyle note"><div class=box-label><i class="fa-fw fas fa-exclamation-circle"></i> Note</div><div class=box-content><p>The heap data structure is
+children.</p><details open class="box cstyle notices note"><summary class=box-label tabindex=-1><i class="fa-fw fas fa-exclamation-circle"></i>
+Note</summary><div class=box-content><p>The heap data structure is
 unrelated to the pool of memory from which instances of reference types
-are constructed &mdash; this also, unfortunately, is called a heap.</p></div></div><p>One advantage to using a min-heap to implement a min-priority queue is
+are constructed &mdash; this also, unfortunately, is called a heap.</p></div></details><p>One advantage to using a min-heap to implement a min-priority queue is
 fairly obvious &mdash; an element with minimum priority is always at the root
 if the min-heap is nonempty. This makes it easy to find the minimum
 priority and an element with this priority. Let&rsquo;s consider how we might
@@ -1373,18 +1354,15 @@ consider a specific implementation that results in a worst-case running
 time proportional to the logarithm of the total number of nodes.</p><footer class=footline></footer></article><article class=default><header class=headline></header><div hidden><h1 id=leftist-heaps>Leftist Heaps</h1></div><h2 id=leftist-heaps>Leftist Heaps</h2><p>One efficient way to complete the merge algorithm outlined in <a href=/cis300/trees/priority-queues/heaps/>the
 previous section</a> revolves
 around the concept of the <em>null path length</em> of a tree. For any tree <i>t</i>, null path length of <i>t</i> is defined
-to be
-<span class="math align-center">$ 0 $</span> if <i>t</i> is empty, or one more than the minimum of the null path
+to be <span class="math align-center">$ 0 $</span> if <i>t</i> is empty, or one more than the minimum of the null path
 lengths of its children if <i>t</i> is nonempty. Another way to understand
 this concept is that it gives the minimum number of steps needed to get
 from the root to an empty subtree. For an empty tree, there is no root,
 so we somewhat arbitrarily define the null path length to be <span style=white-space:nowrap><span class="math align-center">$ 0 $</span>.</span> For
 single-node trees or binary trees with at least one empty child, the
-null path length is
-<span class="math align-center">$ 1 $</span> because only one step is needed to reach an empty
+null path length is <span class="math align-center">$ 1 $</span> because only one step is needed to reach an empty
 subtree.</p><p>One reason that the null path length is important is that it can be
-shown that any binary tree with
-<span class="math align-center">$ n $</span> nodes has a null path length that is
+shown that any binary tree with <span class="math align-center">$ n $</span> nodes has a null path length that is
 no more than <span style=white-space:nowrap><span class="math align-center">$ \lg(n + 1) $</span>.</span> Furthermore, recall that in the merging
 strategy outlined in <a href=/cis300/trees/priority-queues/heaps/>the previous
 section</a>, there is some
@@ -1446,7 +1424,7 @@ the priorities and the values are the data elements. We also need a
 min-priority queue. This property can use the default implementation
 with <strong>get</strong> and <strong>private set</strong> accessors.</p><p>In order to implement <strong>public</strong> methods to add an element with a
 priority and to remove an element with minimum priority, we need the
-following method:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kd>private</span> <span class=kd>static</span> <span class=n>LeftistTree</span><span class=p>&lt;</span><span class=n>KeyValuePair</span><span class=p>&lt;</span><span class=n>TPriority</span><span class=p>,</span> <span class=n>TValue</span><span class=p>&gt;&gt;?</span>
+following method:</p><div class=highlight dir=auto><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kd>private</span> <span class=kd>static</span> <span class=n>LeftistTree</span><span class=p>&lt;</span><span class=n>KeyValuePair</span><span class=p>&lt;</span><span class=n>TPriority</span><span class=p>,</span> <span class=n>TValue</span><span class=p>&gt;&gt;?</span>
 </span></span><span class=line><span class=cl>    <span class=n>Merge</span><span class=p>(</span><span class=n>LeftistTree</span><span class=p>&lt;</span><span class=n>KeyValuePair</span><span class=p>&lt;</span><span class=n>TPriority</span><span class=p>,</span> <span class=n>TValue</span><span class=p>&gt;&gt;?</span> <span class=n>h1</span><span class=p>,</span> 
 </span></span><span class=line><span class=cl>        <span class=n>LeftistTree</span><span class=p>&lt;</span><span class=n>KeyValuePair</span><span class=p>&lt;</span><span class=n>TPriority</span><span class=p>,</span> <span class=n>TValue</span><span class=p>&gt;&gt;?</span> <span class=n>h2</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=p>{</span>
@@ -1499,8 +1477,8 @@ decode it, we immediately run into problems. Is the first 0 an &lsquo;i&rsquo; o
 the first bit of an &lsquo;M&rsquo;? We could decode this string as &ldquo;isMsMsMisii&rdquo;,
 or a number of other possible strings.</p><p>The first encoding above, however, has only one decoding, &ldquo;Mississippi&rdquo;.
 The reason for this is that this encoding is based on the following
-binary tree:</p><p><a href=#R-image-c0ee75bc3903740839f35b80922181b9 class=lightbox-link><img alt="A Huffman tree" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/trees/priority-queues/huffman-trees/huffman.jpg style=height:auto;width:auto></a>
-<a href=javascript:history.back(); class=lightbox-back id=R-image-c0ee75bc3903740839f35b80922181b9><img alt="A Huffman tree" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/trees/priority-queues/huffman-trees/huffman.jpg></a></p><p>To get the encoding for a character, we trace the path to that character
+binary tree:</p><p><a href=#R-image-06b801984962c7cf14a85c924f0cc286 class=lightbox-link><img alt="A Huffman tree" class="border lazy lightbox figure-image" loading=lazy src=/cis300/trees/priority-queues/huffman-trees/huffman.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-06b801984962c7cf14a85c924f0cc286><img alt="A Huffman tree" class="border lazy lightbox lightbox-image" loading=lazy src=/cis300/trees/priority-queues/huffman-trees/huffman.jpg></a></p><p>To get the encoding for a character, we trace the path to that character
 from the root, and record a 0 each time we go left and a 1 each time we
 go right. Thus, because the path to &lsquo;M&rsquo; is right, left, left, we have an
 encoding of 100. To decode, we simply use the encoding to trace out a
@@ -1549,6 +1527,4 @@ few extra bits may be needed to reach a byte boundary. Because of this,
 the length of the decompressed file is also needed for decompression so
 that the extra bits are not interpreted as part of the encoded data. Due
 to this additional output, compressing a short file will likely result
-in a longer file than the original.</p><footer class=footline></footer></article></section></section></div></main><div class=git-footer><p class=theme-version-footer>6.0.0</p><p>Last modified by:
-<i class='fas fa-user'></i> Russell Feldhausen
-<i class='fas fa-calendar'></i> <a href=https://github.com/ksu-cs-textbooks/cis300/commit/922f538e5bb242ebedcf7260f2a5ef759abe56f5>May 22, 2023</a></p></div></div><script src=/cis300/js/clipboard.min.js?1756138921 defer></script><script src=/cis300/js/perfect-scrollbar.min.js?1756138921 defer></script><script>function useMathJax(e){window.MathJax=Object.assign(window.MathJax||{},{tex:{inlineMath:[["\\(","\\)"],["$","$"]],displayMath:[["\\[","\\]"],["$$","$$"]]},options:{enableMenu:!1}},e)}useMathJax(JSON.parse("{}"))</script><script id=MathJax-script async src=/cis300/js/mathjax/tex-mml-chtml.js?1756138921></script><script src=/cis300/js/theme.js?1756138921 defer></script></body></html>
+in a longer file than the original.</p><footer class=footline></footer></article></section></section></div></main></div><script>window.MathJax=Object.assign(window.MathJax||{},{tex:{inlineMath:[["\\(","\\)"],["$","$"]],displayMath:[["\\[","\\]"],["$$","$$"]]},options:{enableMenu:!1}},JSON.parse("{}"))</script><script id=MathJax-script async src=/cis300/js/mathjax/tex-mml-chtml.js?1759520014></script><script src=/cis300/js/clipboard/clipboard.min.js?1759520014 defer></script><script src=/cis300/js/perfect-scrollbar/perfect-scrollbar.min.js?1759520014 defer></script><script src=/cis300/js/theme.min.js?1759520014 defer></script></div><script src=/cis300/js/tele-scroll.min.js?1759520014 defer></script></body></html>

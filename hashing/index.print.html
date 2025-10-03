@@ -1,5 +1,4 @@
-<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=robots content="noindex, nofollow, noarchive, noimageindex"><meta name=description content="Hash Tables Throughout our discussion of dictionary implementations over the last two chapters, we have taken advantage of the fact that the keys were sorted when looking up specific keys. In this chapter, we examine a rather surprising result — that we can achieve better performance if we don’t have to keep the keys in any particular order (i.e., so that we can process them in that order). The technique uses a data structure known as a hash table, which is the underlying data structure in ."><meta name=author content="Rod Howell and Josh Weese"><meta name=twitter:card content="summary"><meta name=twitter:title content="Hash Tables :: Data Structures in C#"><meta name=twitter:description content="Hash Tables Throughout our discussion of dictionary implementations over the last two chapters, we have taken advantage of the fact that the keys were sorted when looking up specific keys. In this chapter, we examine a rather surprising result — that we can achieve better performance if we don’t have to keep the keys in any particular order (i.e., so that we can process them in that order). The technique uses a data structure known as a hash table, which is the underlying data structure in ."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis300/hashing/"><meta property="og:site_name" content="Data Structures in C#"><meta property="og:title" content="Hash Tables :: Data Structures in C#"><meta property="og:description" content="Hash Tables Throughout our discussion of dictionary implementations over the last two chapters, we have taken advantage of the fact that the keys were sorted when looking up specific keys. In this chapter, we examine a rather surprising result — that we can achieve better performance if we don’t have to keep the keys in any particular order (i.e., so that we can process them in that order). The technique uses a data structure known as a hash table, which is the underlying data structure in ."><meta property="og:locale" content="en-us"><meta property="og:type" content="website"><meta itemprop=name content="Hash Tables :: Data Structures in C#"><meta itemprop=description content="Hash Tables Throughout our discussion of dictionary implementations over the last two chapters, we have taken advantage of the fact that the keys were sorted when looking up specific keys. In this chapter, we examine a rather surprising result — that we can achieve better performance if we don’t have to keep the keys in any particular order (i.e., so that we can process them in that order). The technique uses a data structure known as a hash table, which is the underlying data structure in ."><meta itemprop=dateModified content="2023-06-07T11:36:57-05:00"><meta itemprop=wordCount content="586"><title>Hash Tables :: Data Structures in C#</title>
-<link href=/cis300/css/fontawesome-all.min.css?1756138920 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fontawesome-all.min.css?1756138920 rel=stylesheet></noscript><link href=/cis300/css/nucleus.css?1756138920 rel=stylesheet><link href=/cis300/css/auto-complete.css?1756138920 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/auto-complete.css?1756138920 rel=stylesheet></noscript><link href=/cis300/css/perfect-scrollbar.min.css?1756138920 rel=stylesheet><link href=/cis300/css/fonts.css?1756138920 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/css/fonts.css?1756138920 rel=stylesheet></noscript><link href=/cis300/css/theme.css?1756138920 rel=stylesheet><link href=/cis300/css/theme-auto.css?1756138920 rel=stylesheet id=R-variant-style><link href=/cis300/css/chroma-auto.css?1756138920 rel=stylesheet id=R-variant-chroma-style><link href=/cis300/css/variant.css?1756138920 rel=stylesheet><link href=/cis300/css/print.css?1756138920 rel=stylesheet media=print><link href=/cis300/css/format-print.css?1756138920 rel=stylesheet><script src=/cis300/js/variant.js?1756138920></script><script>window.relearn=window.relearn||{},window.relearn.relBasePath="..",window.relearn.relBaseUri="../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis300",window.index_js_url="/cis300/index.search.js",window.variants&&variants.init(["auto","light-theme","dark-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis300/css/custom.css?1756138920 rel=stylesheet></head><body class="mobile-support print disableInlineCopyToClipboard" data-url=/cis300/hashing/><div id=R-body class=default-animation><div id=R-body-overlay></div><nav id=R-topbar><div class=topbar-wrapper><div class=topbar-sidebar-divider></div><div class="topbar-area topbar-area-start" data-area=start><div class="topbar-button topbar-button-sidebar" data-content-empty=disable data-width-s=show data-width-m=hide data-width-l=hide><button class=topbar-control onclick=toggleNav() type=button title="Menu (CTRL+ALT+n)"><i class="fa-fw fas fa-bars"></i></button></div></div><ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype=http://schema.org/BreadcrumbList><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><span itemprop=name>Hash Tables</span><meta itemprop=position content="1"></li></ol><div class="topbar-area topbar-area-end" data-area=end><div class="topbar-button topbar-button-prev" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/cis300/trees/priority-queues/huffman-trees/ title="Huffman Trees (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></div><div class="topbar-button topbar-button-next" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/cis300/hashing/simple/ title="A Simple Hash Table Implementation (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></div></div></div></nav><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><div hidden><h1 id=hash-tables>Hash Tables</h1></div><h2 id=hash-tables>Hash Tables</h2><p>Throughout our discussion of dictionary implementations over the last two chapters,
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article data-r-output-format=print><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.148.1"><meta name=generator content="Relearn 8.0.0"><meta name=description content="Hash Tables Throughout our discussion of dictionary implementations over the last two chapters, we have taken advantage of the fact that the keys were sorted when looking up specific keys. In this chapter, we examine a rather surprising result — that we can achieve better performance if we don’t have to keep the keys in any particular order (i.e., so that we can process them in that order). The technique uses a data structure known as a hash table, which is the underlying data structure in .NET’s Dictionary<TKey, TValue> class."><meta name=author content="Rod Howell and Josh Weese"><meta name=twitter:card content="summary"><meta name=twitter:title content="Hash Tables :: Data Structures in C#"><meta name=twitter:description content="Hash Tables Throughout our discussion of dictionary implementations over the last two chapters, we have taken advantage of the fact that the keys were sorted when looking up specific keys. In this chapter, we examine a rather surprising result — that we can achieve better performance if we don’t have to keep the keys in any particular order (i.e., so that we can process them in that order). The technique uses a data structure known as a hash table, which is the underlying data structure in .NET’s Dictionary<TKey, TValue> class."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis300/hashing/"><meta property="og:site_name" content="Data Structures in C#"><meta property="og:title" content="Hash Tables :: Data Structures in C#"><meta property="og:description" content="Hash Tables Throughout our discussion of dictionary implementations over the last two chapters, we have taken advantage of the fact that the keys were sorted when looking up specific keys. In this chapter, we examine a rather surprising result — that we can achieve better performance if we don’t have to keep the keys in any particular order (i.e., so that we can process them in that order). The technique uses a data structure known as a hash table, which is the underlying data structure in .NET’s Dictionary<TKey, TValue> class."><meta property="og:locale" content="en_us"><meta property="og:type" content="website"><meta itemprop=name content="Hash Tables :: Data Structures in C#"><meta itemprop=description content="Hash Tables Throughout our discussion of dictionary implementations over the last two chapters, we have taken advantage of the fact that the keys were sorted when looking up specific keys. In this chapter, we examine a rather surprising result — that we can achieve better performance if we don’t have to keep the keys in any particular order (i.e., so that we can process them in that order). The technique uses a data structure known as a hash table, which is the underlying data structure in .NET’s Dictionary<TKey, TValue> class."><meta itemprop=dateModified content="2023-06-07T11:36:57-05:00"><meta itemprop=wordCount content="586"><title>Hash Tables :: Data Structures in C#</title><link href=https://textbooks.cs.ksu.edu/cis300/hashing/ rel=canonical type=text/html title="Hash Tables :: Data Structures in C#"><link href=/cis300/hashing/index.xml rel=alternate type=application/rss+xml title="Hash Tables :: Data Structures in C#"><link href=/cis300/hashing/tele.html rel=alternate type=text/html title="Hash Tables :: Data Structures in C#"><link href=/cis300/hashing/embed.html rel=alternate type=text/html title="Hash Tables :: Data Structures in C#"><link href=/cis300/css/auto-complete/auto-complete.min.css?1759520014 rel=stylesheet><script src=/cis300/js/auto-complete/auto-complete.min.js?1759520014 defer></script><script src=/cis300/js/search-lunr.min.js?1759520014 defer></script><script src=/cis300/js/search.min.js?1759520014 defer></script><script>window.relearn=window.relearn||{},window.relearn.index_js_url="/cis300/searchindex.en.js?1759520014"</script><script src=/cis300/js/lunr/lunr.min.js?1759520014 defer></script><script src=/cis300/js/lunr/lunr.stemmer.support.min.js?1759520014 defer></script><script src=/cis300/js/lunr/lunr.multi.min.js?1759520014 defer></script><script src=/cis300/js/lunr/lunr.en.min.js?1759520014 defer></script><script>window.relearn=window.relearn||{},window.relearn.contentLangs=["en"]</script><link href=/cis300/fonts/fontawesome/css/fontawesome-all.min.css?1759520014 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis300/fonts/fontawesome/css/fontawesome-all.min.css?1759520014 rel=stylesheet></noscript><link href=/cis300/css/perfect-scrollbar/perfect-scrollbar.min.css?1759520014 rel=stylesheet><link href=/cis300/css/theme.min.css?1759520014 rel=stylesheet><link href=/cis300/css/format-print.min.css?1759520014 rel=stylesheet id=R-format-style><script>window.relearn=window.relearn||{},window.relearn.min=`.min`,window.relearn.path="/hashing/",window.relearn.relBasePath="..",window.relearn.relBaseUri="../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis300",window.relearn.disableAnchorCopy=!1,window.relearn.disableAnchorScrolling=!1,window.relearn.disableInlineCopyToClipboard=!0,window.relearn.enableBlockCodeWrap=!1,window.relearn.getItem=(e,t)=>e.getItem(t),window.relearn.setItem=(e,t,n)=>e.setItem(t,n),window.relearn.removeItem=(e,t)=>e.removeItem(t),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`,window.relearn.themevariants=["light-theme"],window.relearn.customvariantname="my-custom-variant",window.relearn.writeVariant=!1,window.relearn.changeVariant=function(e){var t=document.documentElement.dataset.rThemeVariant;window.relearn.setItem(window.localStorage,window.relearn.absBaseUri+"/variant",e),document.documentElement.dataset.rThemeVariant=e,t!=e&&(document.dispatchEvent(new CustomEvent("themeVariantLoaded",{detail:{variant:e,oldVariant:t}})),window.relearn.markVariant())},window.relearn.markVariant=function(){var e=window.relearn.getItem(window.localStorage,window.relearn.absBaseUri+"/variant");document.querySelectorAll(".R-variantswitcher select").forEach(t=>{t.value=e})},window.relearn.initVariant=function(){var e=window.relearn.getItem(window.localStorage,window.relearn.absBaseUri+"/variant")??"";e==window.relearn.customvariantname||(!e||!window.relearn.themevariants.includes(e))&&(e=window.relearn.themevariants[0],window.relearn.writeVariant&&window.relearn.setItem(window.localStorage,window.relearn.absBaseUri+"/variant",e)),document.documentElement.dataset.rThemeVariant=e},window.relearn.initVariant(),window.relearn.markVariant()</script><link href=/cis300/css/custom.css?1759520014 rel=stylesheet></head><body class="mobile-support print" data-url=/cis300/hashing/><div id=tele class="tele mirror"><div id=R-body class=default-animation><div id=R-body-overlay></div><div id=R-main-overlay></div><main id=R-body-inner class="highlightable hashing" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><div hidden><h1 id=hash-tables>Hash Tables</h1></div><h2 id=hash-tables>Hash Tables</h2><p>Throughout our discussion of dictionary implementations over the last two chapters,
 we have taken advantage of the fact that the keys were sorted when
 looking up specific keys. In this chapter, we examine a rather
 surprising result &mdash; that we can achieve better performance if we don&rsquo;t
@@ -16,10 +15,11 @@ a key in a hash table, we first apply the hash function to the key, then
 search the linked list at the location computed by the hash function.
 The following picture illustrates the layout of a hash table in which
 the keys are <strong>string</strong>s and the values are <strong>int</strong>s, and the hash
-function is denoted by <em>h</em>:</p><p><a href=#R-image-2057298b336fb8c866839b98c8e9712c class=lightbox-link><img alt="A hash table." class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/hashing/hash-table.jpg style=height:auto;width:auto></a>
-<a href=javascript:history.back(); class=lightbox-back id=R-image-2057298b336fb8c866839b98c8e9712c><img alt="A hash table." class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/hashing/hash-table.jpg></a></p><div class="box notices cstyle note"><div class=box-label><i class="fa-fw fas fa-exclamation-circle"></i> Note</div><div class=box-content><p>In order to avoid cluttering the above picture, the <strong>string</strong>s are
+function is denoted by <em>h</em>:</p><p><a href=#R-image-980bcfac55963f844f82e400a67afa87 class=lightbox-link><img alt="A hash table." class="border lazy lightbox figure-image" loading=lazy src=/cis300/hashing/hash-table.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-980bcfac55963f844f82e400a67afa87><img alt="A hash table." class="border lazy lightbox lightbox-image" loading=lazy src=/cis300/hashing/hash-table.jpg></a></p><details open class="box cstyle notices note"><summary class=box-label tabindex=-1><i class="fa-fw fas fa-exclamation-circle"></i>
+Note</summary><div class=box-content><p>In order to avoid cluttering the above picture, the <strong>string</strong>s are
 shown inside the linked list cells, even though <strong>string</strong> is a
-reference type.</p></div></div><p>In order to achieve good performance, we want all of the linked lists to
+reference type.</p></div></details><p>In order to achieve good performance, we want all of the linked lists to
 be short. This requires, among other things, that we make the array
 sufficiently large. We therefore increase the size of the array as the
 number of elements increases.</p><p>The above overview of hash tables reveals one of the challenges in using
@@ -67,26 +67,20 @@ table.</li></ol><p>If <code>p</code> is a nonnegative <strong>int</strong> and <
 is the table length, <code>p % q</code> is a location within the table.
 Furthermore, this calculation often does a good job of distributing hash
 code values among the different table locations, but this depends on how
-the hash codes were computed and what the length of the table is.</p><p>For example, suppose we use a size
-<span class="math align-center">$ 2^k $</span> for some positive
+the hash codes were computed and what the length of the table is.</p><p>For example, suppose we use a size <span class="math align-center">$ 2^k $</span> for some positive
 integer <span style=white-space:nowrap><span class="math align-center">$ k $</span>.</span> In this case, the above computation can be simplified, as
-the values formed by
-<span class="math align-center">$ k $</span> bits are
-<span class="math align-center">$ 0 $</span> through <span style=white-space:nowrap><span class="math align-center">$ 2^k - 1 $</span>,</span>
+the values formed by <span class="math align-center">$ k $</span> bits are <span class="math align-center">$ 0 $</span> through <span style=white-space:nowrap><span class="math align-center">$ 2^k - 1 $</span>,</span>
 or all of the locations in the table. We can therefore simply use the
-low-order
-<span class="math align-center">$ k $</span> bits of the hash code as the table location. However, it
+low-order <span class="math align-center">$ k $</span> bits of the hash code as the table location. However, it
 turns out that using the division method when the table size is a power
-of
-<span class="math align-center">$ 2 $</span> can lead to poor key distribution for some common hash code
+of <span class="math align-center">$ 2 $</span> can lead to poor key distribution for some common hash code
 schemes. To avoid these problems, a prime number should be used as the
 table length. When a prime number is used, the division method tends to
 result in a good distribution of the keys.</p><p>The reason we need to reset the sign bit of the hash code to <code>0</code> is to
 ensure that the first operand to the <code>%</code> operator is nonnegative, and
 hence that the result is nonnegative. Furthermore, simply taking the
 absolute value of the hash code won&rsquo;t always work because
-<span class="math align-center">$ -2^{31} $</span> can be stored in an <strong>int</strong>, but
-<span class="math align-center">$ 2^{31} $</span> is too
+<span class="math align-center">$ -2^{31} $</span> can be stored in an <strong>int</strong>, but <span class="math align-center">$ 2^{31} $</span> is too
 large. Resetting the sign bit to <code>0</code> is a quick way to ensure we have a
 nonnegative value without losing any additional information.</p><p>We can do this using a bitwise AND operator, denoted by a single
 ampersand (<code>&</code>). This operator operates on the individual bits of an
@@ -98,13 +92,11 @@ bit is the high-order bit; hence, we want to AND the hash code with an
 way to write this value is using hexadecimal notation, as each hex digit
 corresponds to exactly four bits. We begin writing a hexadecimal value
 with <code>0x</code>. The first four bits need to be one <code>0</code>, followed by three <code>1</code>s.
-These three <code>1</code> are in the <span style=white-space:nowrap><span class="math align-center">$ 1 $</span>,</span> <span style=white-space:nowrap><span class="math align-center">$ 2 $</span>,</span> and
-<span class="math align-center">$ 4 $</span> bit positions of the first hex digit; hence, the value of
+These three <code>1</code> are in the <span style=white-space:nowrap><span class="math align-center">$ 1 $</span>,</span> <span style=white-space:nowrap><span class="math align-center">$ 2 $</span>,</span> and <span class="math align-center">$ 4 $</span> bit positions of the first hex digit; hence, the value of
 this hex digit should be <code>7</code>. We then want seven more hex digits, each
-containing four <code>1</code>s. An additional <code>1</code> in the
-<span class="math align-center">$ 8 $</span> position gives us a sum of
+containing four <code>1</code>s. An additional <code>1</code> in the <span class="math align-center">$ 8 $</span> position gives us a sum of
 <span style=white-space:nowrap><span class="math align-center">$ 15 $</span>,</span> which is denoted as either <code>f</code> or <code>F</code> in hex. We can therefore reset
-the sign bit of an <strong>int</strong> <code>i</code> as follows:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=n>i</span> <span class=p>=</span> <span class=n>i</span> <span class=p>&amp;</span> <span class=m>0x7fffffff</span><span class=p>;</span></span></span></code></pre></div><p>or:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=n>i</span> <span class=p>&amp;=</span> <span class=m>0x7fffffff</span><span class=p>;</span></span></span></code></pre></div><p>Now let&rsquo;s consider how we would look up a key. First, we need to obtain
+the sign bit of an <strong>int</strong> <code>i</code> as follows:</p><div class=highlight dir=auto><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=n>i</span> <span class=p>=</span> <span class=n>i</span> <span class=p>&amp;</span> <span class=m>0x7fffffff</span><span class=p>;</span></span></span></code></pre></div><p>or:</p><div class=highlight dir=auto><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=n>i</span> <span class=p>&amp;=</span> <span class=m>0x7fffffff</span><span class=p>;</span></span></span></code></pre></div><p>Now let&rsquo;s consider how we would look up a key. First, we need to obtain
 the key&rsquo;s hash code by calling its <strong>GetHashCode</strong> method. From the hash
 code, we use the division method to compute the table location where it
 belongs. We then search the linked list for that key.</p><p>Adding a key and a value is done similarly. We first look for the key as
@@ -119,8 +111,7 @@ uses both). See the section,
 how to implement an indexer.</p><footer class=footline></footer></article><article class=default><header class=headline></header><div hidden><h1 id=rehashing>Rehashing</h1></div><h2 id=rehashing>Rehashing</h2><p>In this section, we will show how to improve the performance of a hash
 table by adjusting the size of the array. In order to see how the array
 size impacts the performance, let&rsquo;s suppose we are using an array with
-<span class="math align-center">$ m $</span> locations, and that we are storing
-<span class="math align-center">$ n $</span> keys in the hash table. In
+<span class="math align-center">$ m $</span> locations, and that we are storing <span class="math align-center">$ n $</span> keys in the hash table. In
 what follows, we will analyze the number of keys we will need to examine
 while searching for a particular key, <code>k</code>.</p><p>In the worst case, no matter how large the array is, it is possible that
 all of the keys map to the same array location, and therefore all end up
@@ -132,32 +123,23 @@ uniform random distribution will occur. We will therefore consider the
 number of keys we would expect to examine, assuming a uniform random
 distribution of keys throughout the table.</p><p>We&rsquo;ll first consider the case in which <code>k</code> is not in the hash table. In
 this case, we will need to examine all of the keys in the linked list at
-the array location where <code>k</code> belongs. Because each of the
-<span class="math align-center">$ n $</span> keys is
-equally likely to map to each of the
-<span class="math align-center">$ m $</span> array locations, we would
-expect, on average,
-<span class="math align-center">$ n / m $</span> keys to be mapped to the location
+the array location where <code>k</code> belongs. Because each of the <span class="math align-center">$ n $</span> keys is
+equally likely to map to each of the <span class="math align-center">$ m $</span> array locations, we would
+expect, on average, <span class="math align-center">$ n / m $</span> keys to be mapped to the location
 where <code>k</code> belongs. Hence, in this case, we would expect to examine
 <span class="math align-center">$ n / m $</span> keys, on average.</p><p>Now let&rsquo;s consider the case in which <code>k</code> is in the hash table. In this
 case, we will examine the key <code>k</code>, plus all the keys that precede <code>k</code> in
 its linked list. The number of keys preceding <code>k</code> cannot be more than
 the total number of keys other than <code>k</code> in that linked list. Again,
-because each of the
-<span class="math align-center">$ n - 1 $</span> keys other than <code>k</code> is equally likely
-to map to each of the
-<span class="math align-center">$ m $</span> array locations, we would expect, on average,
+because each of the <span class="math align-center">$ n - 1 $</span> keys other than <code>k</code> is equally likely
+to map to each of the <span class="math align-center">$ m $</span> array locations, we would expect, on average,
 <span class="math align-center">$ (n - 1) / m $</span> keys other than <code>k</code> to be in the same linked
 list as <code>k</code>. Thus, we can expect, on average, to examine no more than
 <span class="math align-center">$ 1 +  (n - 1) / m $</span> keys when looking for a key
-that is present.</p><p>Notice that both of the values derived above decrease as
-<span class="math align-center">$ m $</span> increases.
-Specifically, if
-<span class="math align-center">$ m \geq n $</span>, the expected number of examined
-keys on a failed lookup is no more than
-<span class="math align-center">$ 1 $</span>, and the expected number of
-examined keys on a successful lookup is less than
-<span class="math align-center">$ 2 $</span>. We can therefore
+that is present.</p><p>Notice that both of the values derived above decrease as <span class="math align-center">$ m $</span> increases.
+Specifically, if <span class="math align-center">$ m \geq n $</span>, the expected number of examined
+keys on a failed lookup is no more than <span class="math align-center">$ 1 $</span>, and the expected number of
+examined keys on a successful lookup is less than <span class="math align-center">$ 2 $</span>. We can therefore
 expect to achieve very good performance if we keep the number of array
 locations at least as large as the number of keys.</p><p>We have already seen (e.g., in &ldquo;<a href=/cis300/strings/stringbuilder-impl/>Implementation of
 <strong>StringBuilder</strong>s</a>&rdquo;)
@@ -177,21 +159,16 @@ algorithm for finding all prime numbers less than a given <code>n</code> in
 Numbers</a>&rdquo;;
 however, this is a rather expensive way to find a prime number of an
 appropriate size. While there are more efficient algorithms, we really
-don&rsquo;t need one. Suppose we start with an array size of
-<span class="math align-center">$ 5 $</span> (there may be
+don&rsquo;t need one. Suppose we start with an array size of <span class="math align-center">$ 5 $</span> (there may be
 applications using many small hash tables &mdash; the .NET implementation
-starts with an array size of <span style=white-space:nowrap><span class="math align-center">$ 3 $</span>).</span>
-<span class="math align-center">$ 5 $</span> is larger than
-<span style=white-space:nowrap><span class="math align-center">$ 2^2 = 4 $</span>.</span> If we double this value
-<span class="math align-center">$ 28 $</span> times, we
-reach a value larger than <span style=white-space:nowrap><span class="math align-center">$ 2^{30} $</span>,</span> which is larger than
-<span class="math align-center">$ 1 $</span>
+starts with an array size of <span style=white-space:nowrap><span class="math align-center">$ 3 $</span>).</span> <span class="math align-center">$ 5 $</span> is larger than
+<span style=white-space:nowrap><span class="math align-center">$ 2^2 = 4 $</span>.</span> If we double this value <span class="math align-center">$ 28 $</span> times, we
+reach a value larger than <span style=white-space:nowrap><span class="math align-center">$ 2^{30} $</span>,</span> which is larger than <span class="math align-center">$ 1 $</span>
 billion. More importantly, this value is large enough that we can&rsquo;t
 double it again, as an array in C# must contain fewer than
-<span class="math align-center">$ 2^{31} $</span> locations. Hence, we need no more than
-<span class="math align-center">$ 29 $</span> different array
+<span class="math align-center">$ 2^{31} $</span> locations. Hence, we need no more than <span class="math align-center">$ 29 $</span> different array
 sizes. We can pre-compute these and hard-code them into our
-implementation; for example,</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kd>private</span> <span class=kt>int</span><span class=p>[]</span> <span class=n>_tableSizes</span> <span class=p>=</span> 
+implementation; for example,</p><div class=highlight dir=auto><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kd>private</span> <span class=kt>int</span><span class=p>[]</span> <span class=n>_tableSizes</span> <span class=p>=</span> 
 </span></span><span class=line><span class=cl><span class=p>{</span>
 </span></span><span class=line><span class=cl>    <span class=m>5</span><span class=p>,</span> <span class=m>11</span><span class=p>,</span> <span class=m>23</span><span class=p>,</span> <span class=m>47</span><span class=p>,</span> <span class=m>97</span><span class=p>,</span> <span class=m>197</span><span class=p>,</span> <span class=m>397</span><span class=p>,</span> <span class=m>797</span><span class=p>,</span> <span class=m>1597</span><span class=p>,</span> <span class=m>3203</span><span class=p>,</span> <span class=m>6421</span><span class=p>,</span> <span class=m>12853</span><span class=p>,</span> <span class=m>25717</span><span class=p>,</span>
 </span></span><span class=line><span class=cl>    <span class=m>51437</span><span class=p>,</span> <span class=m>102877</span><span class=p>,</span> <span class=m>205759</span><span class=p>,</span> <span class=m>411527</span><span class=p>,</span> <span class=m>823117</span><span class=p>,</span> <span class=m>1646237</span><span class=p>,</span> <span class=m>3292489</span><span class=p>,</span> <span class=m>6584983</span><span class=p>,</span>
@@ -234,7 +211,8 @@ loops. The outer loop iterates through the locations in the old table,
 and the inner loop iterates through the linked list at that location. On each iteration of the inner loop:</p><ol><li>Use a local variable to save another reference to the current cell in the
 linked list at the current table location.</li><li>Advance to the next cell in the list.</li><li>Using the hash function, compute the new array location of the key
 in the cell that was saved in step 1.</li><li>Insert this cell into the beginning of the linked list at the new
-array location in the new table.</li></ol><div class="box notices cstyle warning"><div class=box-label><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div><div class=box-content><p>It is important to do step 2 above prior to step 4, as inserting a cell into a new list will lose the reference to the next cell in the old list.</p></div></div><footer class=footline></footer></article><article class=default><header class=headline></header><div hidden><h1 id=memoization>Memoization</h1></div><h2 id=memoization>Memoization</h2><p>We we will now present an example of a common technique involving
+array location in the new table.</li></ol><details open class="box cstyle notices warning"><summary class=box-label tabindex=-1><i class="fa-fw fas fa-exclamation-triangle"></i>
+Warning</summary><div class=box-content><p>It is important to do step 2 above prior to step 4, as inserting a cell into a new list will lose the reference to the next cell in the old list.</p></div></details><footer class=footline></footer></article><article class=default><header class=headline></header><div hidden><h1 id=memoization>Memoization</h1></div><h2 id=memoization>Memoization</h2><p>We we will now present an example of a common technique involving
 dictionaries. Consider the following variation of the 2-player game,
 Nim. The board consists of a number of stones arranged into several
 piles. Associated with each nonempty pile is a <em>limit</em>, which is a
@@ -278,8 +256,8 @@ play, as shown in Example 2.</li></ul><p>Given enough stones and piles, finding 
 that there is none is challenging. In order to develop a search
 algorithm somewhat similar to the one described in <a href=/cis300/trees/tries/word-games/>&ldquo;Tries in Word Games&rdquo;</a>, we can define the
 following tree:</p><ul><li>The root is the current board position.</li><li>The children of a node are all the positions that can be reached by
-making legal plays.</li></ul><p>Thus, the tree defined by (2/2; 2/2) is as follows:</p><p><a href=#R-image-39d57194a108c707e3e09df42d678e8a class=lightbox-link><img alt="The tree defined by a Nim position." class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis300/hashing/memoization/nim-tree.jpg style=height:auto;width:auto></a>
-<a href=javascript:history.back(); class=lightbox-back id=R-image-39d57194a108c707e3e09df42d678e8a><img alt="The tree defined by a Nim position." class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis300/hashing/memoization/nim-tree.jpg></a></p><p>The winning plays have each been marked with a &lsquo;W&rsquo; in the above tree. As in
+making legal plays.</li></ul><p>Thus, the tree defined by (2/2; 2/2) is as follows:</p><p><a href=#R-image-bc8b2135b4092ce4097a7e3b7815eaa5 class=lightbox-link><img alt="The tree defined by a Nim position." class="border lazy lightbox figure-image" loading=lazy src=/cis300/hashing/memoization/nim-tree.jpg style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-bc8b2135b4092ce4097a7e3b7815eaa5><img alt="The tree defined by a Nim position." class="border lazy lightbox lightbox-image" loading=lazy src=/cis300/hashing/memoization/nim-tree.jpg></a></p><p>The winning plays have each been marked with a &lsquo;W&rsquo; in the above tree. As in
 <a href=/cis300/trees/tries/word-games/>&ldquo;Tries in Word Games&rdquo;</a>,
 this tree is not a data structure, but simply a mental guide to building
 a search algorithm. Specifically, we can find a winning play (or
@@ -340,7 +318,7 @@ consistent way.</p><p>We first consider the <code>==</code> operator. The behavi
 determined by the <em>compile-time</em> types of its operands. This is
 determined by the declared types of variables, the declared return types
 of methods or properties, and the rules for evaluating expressions.
-Thus, for example, if we have a statement</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=kt>object</span> <span class=n>x</span> <span class=p>=</span> <span class=s>&#34;abc&#34;</span><span class=p>;</span></span></span></code></pre></div><p>the compile-time type of <code>x</code> is <strong>object</strong>, even though it actually
+Thus, for example, if we have a statement</p><div class=highlight dir=auto><pre tabindex=0 class=chroma><code class=language-C# data-lang=C#><span class=line><span class=cl><span class=kt>object</span> <span class=n>x</span> <span class=p>=</span> <span class=s>&#34;abc&#34;</span><span class=p>;</span></span></span></code></pre></div><p>the compile-time type of <code>x</code> is <strong>object</strong>, even though it actually
 refers to a <strong>string</strong>.</p><p>For pre-defined <a href=/cis300/appendix/syntax/reference-value/>value
 types</a>, <code>==</code> evaluates
 to <strong>true</strong> if its operands contain the same values. Because
@@ -355,7 +333,7 @@ by explicitly defining the <code>==</code> and <code>!=</code> operators. For ex
 <strong>string</strong> class defines the <code>==</code> operator to evaluate to <strong>true</strong> if the
 given <strong>string</strong>s are the same length and contain the same sequence of
 characters.</p><p>Let&rsquo;s consider an example that illustrates the rules for reference
-types:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kt>string</span> <span class=n>a</span> <span class=p>=</span> <span class=s>&#34;abc&#34;</span><span class=p>;</span>
+types:</p><div class=highlight dir=auto><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kt>string</span> <span class=n>a</span> <span class=p>=</span> <span class=s>&#34;abc&#34;</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=kt>string</span> <span class=n>b</span> <span class=p>=</span> <span class=s>&#34;0abc&#34;</span><span class=p>.</span><span class=n>Substring</span><span class=p>(</span><span class=m>1</span><span class=p>);</span>
 </span></span><span class=line><span class=cl><span class=kt>object</span> <span class=n>x</span> <span class=p>=</span> <span class=n>a</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=kt>object</span> <span class=n>y</span> <span class=p>=</span> <span class=n>b</span><span class=p>;</span>
@@ -393,14 +371,15 @@ same as for <code>==</code> once the types are determined (except that if <code>
 whereas <code>x == y</code> will not). However, classes may override this
 method to change this behavior. For example, the <strong>string</strong> class
 overrides this method to return <strong>true</strong> if <code>y</code> is a <strong>string</strong> of the
-same length and contains the same sequence of characters as <code>x</code>.</p><p>Let&rsquo;s now continue the above example by adding the following lines:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kt>bool</span> <span class=n>comp3</span> <span class=p>=</span> <span class=n>a</span><span class=p>.</span><span class=n>Equals</span><span class=p>(</span><span class=n>b</span><span class=p>);</span>
+same length and contains the same sequence of characters as <code>x</code>.</p><p>Let&rsquo;s now continue the above example by adding the following lines:</p><div class=highlight dir=auto><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kt>bool</span> <span class=n>comp3</span> <span class=p>=</span> <span class=n>a</span><span class=p>.</span><span class=n>Equals</span><span class=p>(</span><span class=n>b</span><span class=p>);</span>
 </span></span><span class=line><span class=cl><span class=kt>bool</span> <span class=n>comp4</span> <span class=p>=</span> <span class=n>a</span><span class=p>.</span><span class=n>Equals</span><span class=p>(</span><span class=n>x</span><span class=p>);</span>
 </span></span><span class=line><span class=cl><span class=kt>bool</span> <span class=n>comp5</span> <span class=p>=</span> <span class=n>x</span><span class=p>.</span><span class=n>Equals</span><span class=p>(</span><span class=n>a</span><span class=p>);</span>
 </span></span><span class=line><span class=cl><span class=kt>bool</span> <span class=n>comp6</span> <span class=p>=</span> <span class=n>x</span><span class=p>.</span><span class=n>Equals</span><span class=p>(</span><span class=n>y</span><span class=p>);</span></span></span></code></pre></div><p>These all evaluate to <strong>true</strong> for one simple reason &mdash; the behavior is
 determined by the run-time type of <code>a</code> in the case of the first two
 lines, or of <code>x</code> in the case of the last two lines. Because these types
-are both <strong>string</strong>, the objects are compared as <strong>string</strong>s.</p><div class="box notices cstyle note"><div class=box-label><i class="fa-fw fas fa-exclamation-circle"></i> Note</div><div class=box-content><p>It&rsquo;s actually a bit more complicated in the case of <code>comp3</code>, but we&rsquo;ll explain
-this later.</p></div></div><p>The <strong>object</strong> class defines, in addition to the <strong>Equals</strong> method
+are both <strong>string</strong>, the objects are compared as <strong>string</strong>s.</p><details open class="box cstyle notices note"><summary class=box-label tabindex=-1><i class="fa-fw fas fa-exclamation-circle"></i>
+Note</summary><div class=box-content><p>It&rsquo;s actually a bit more complicated in the case of <code>comp3</code>, but we&rsquo;ll explain
+this later.</p></div></details><p>The <strong>object</strong> class defines, in addition to the <strong>Equals</strong> method
 described above, two <strong>public static</strong> methods, which are in turn
 inherited by every type in C#:</p><ul><li><strong>bool Equals(object x, object y)</strong>: The main purpose of this method
 is to avoid the <strong>NullReferenceException</strong> that is thrown by
@@ -429,12 +408,12 @@ user-defined type.</p><p><span id=operator-overloading></span> Let&rsquo;s start
 operator. This is one of several operators that may be defined within
 class and structure definitions. If we are defining a class
 called <strong>SomeType</strong>, we can include a definition of the <code>==</code> operator as
-follows:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kd>public</span> <span class=kd>static</span> <span class=kt>bool</span> <span class=kd>operator</span> <span class=p>==(</span><span class=n>SomeType</span><span class=p>?</span> <span class=n>x</span><span class=p>,</span> <span class=n>SomeType</span><span class=p>?</span> <span class=n>y</span><span class=p>)</span>
+follows:</p><div class=highlight dir=auto><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kd>public</span> <span class=kd>static</span> <span class=kt>bool</span> <span class=kd>operator</span> <span class=p>==(</span><span class=n>SomeType</span><span class=p>?</span> <span class=n>x</span><span class=p>,</span> <span class=n>SomeType</span><span class=p>?</span> <span class=n>y</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=p>{</span>
 </span></span><span class=line><span class=cl>    <span class=c1>// Definition of the behavior of ==</span>
 </span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>If <strong>SomeType</strong> is a structure, the definition is similar, but we wouldn&rsquo;t define the parameters to be nullable. Note the resemblance to the definition of a <strong>static</strong> method. Even
 though we define it using the syntax for a method definition, we still
-use it as we typically use the <code>==</code> operator; e.g.,</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=k>if</span> <span class=p>(</span><span class=n>a</span> <span class=p>==</span> <span class=n>b</span><span class=p>)</span>
+use it as we typically use the <code>==</code> operator; e.g.,</p><div class=highlight dir=auto><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=k>if</span> <span class=p>(</span><span class=n>a</span> <span class=p>==</span> <span class=n>b</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=p>{</span>
 </span></span><span class=line><span class=cl>    <span class=p>.</span> <span class=p>.</span> <span class=p>.</span>
 </span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>If <strong>SomeType</strong> is a class and <code>a</code> and <code>b</code> are both of either type <strong>SomeType</strong> or type <strong>SomeType?</strong>, the above definition will
@@ -450,7 +429,7 @@ recursive call &mdash; infinite recursion, in fact. Furthermore, using
 <code>x.Equals(null)</code> is always a bad idea, as if <code>x</code> does, in fact, equal
 <strong>null</strong>, this will throw a <strong>NullReferenceException</strong>. We therefore
 need to use one of the <strong>static</strong> methods, <strong>Equals</strong> or
-<strong>ReferenceEquals</strong>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kd>public</span> <span class=kd>static</span> <span class=kt>bool</span> <span class=kd>operator</span> <span class=p>==(</span><span class=n>SomeType</span><span class=p>?</span> <span class=n>x</span><span class=p>,</span> <span class=n>SomeType</span><span class=p>?</span> <span class=n>y</span><span class=p>)</span>
+<strong>ReferenceEquals</strong>:</p><div class=highlight dir=auto><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kd>public</span> <span class=kd>static</span> <span class=kt>bool</span> <span class=kd>operator</span> <span class=p>==(</span><span class=n>SomeType</span><span class=p>?</span> <span class=n>x</span><span class=p>,</span> <span class=n>SomeType</span><span class=p>?</span> <span class=n>y</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=p>{</span>
 </span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=n>Equals</span><span class=p>(</span><span class=n>x</span><span class=p>,</span> <span class=kc>null</span><span class=p>))</span>
 </span></span><span class=line><span class=cl>    <span class=p>{</span>
@@ -468,7 +447,7 @@ need to use one of the <strong>static</strong> methods, <strong>Equals</strong> 
 parameter, these calls won&rsquo;t result in calling the <strong>Equals</strong> method
 that we will override below.</p><p>Whenever we define the <code>==</code> operator, C# requires that we also define the
 <code>!=</code> operator. In virtually all cases, what we want this operator to do
-is to return the negation of what the <code>==</code> operator does; thus, if <strong>SomeType</strong> is a class, we define:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kd>public</span> <span class=kd>static</span> <span class=kt>bool</span> <span class=kd>operator</span> <span class=p>!=(</span><span class=n>SomeType</span><span class=p>?</span> <span class=n>x</span><span class=p>,</span> <span class=n>SomeType</span><span class=p>?</span> <span class=n>y</span><span class=p>)</span>
+is to return the negation of what the <code>==</code> operator does; thus, if <strong>SomeType</strong> is a class, we define:</p><div class=highlight dir=auto><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kd>public</span> <span class=kd>static</span> <span class=kt>bool</span> <span class=kd>operator</span> <span class=p>!=(</span><span class=n>SomeType</span><span class=p>?</span> <span class=n>x</span><span class=p>,</span> <span class=n>SomeType</span><span class=p>?</span> <span class=n>y</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=p>{</span>
 </span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=p>!(</span><span class=n>x</span> <span class=p>==</span> <span class=n>y</span><span class=p>);</span>
 </span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>If <strong>SomeType</strong> is a structure, we use the same definition, without making the parameters nullable.</p><p>We now turn to the (non-<strong>static</strong>) <strong>Equals</strong> method. This is defined
@@ -477,17 +456,17 @@ sub-types are allowed to
 <a href=/cis300/strings/stringbuilder-impl/#overriding>override</a> its
 behavior. Because every type in C# is a subtype of <strong>object</strong>, this
 method is present in every type, and it can be overridden by any class
-or structure.</p><p>We override this method as follows:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kd>public</span> <span class=kd>override</span> <span class=kt>bool</span> <span class=n>Equals</span><span class=p>(</span><span class=kt>object?</span> <span class=n>obj</span><span class=p>)</span>
+or structure.</p><p>We override this method as follows:</p><div class=highlight dir=auto><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kd>public</span> <span class=kd>override</span> <span class=kt>bool</span> <span class=n>Equals</span><span class=p>(</span><span class=kt>object?</span> <span class=n>obj</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=p>{</span>
 </span></span><span class=line><span class=cl>    <span class=c1>// Definition of the behavior of Equals</span>
 </span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>For the body of the method, we first need to take care of the fact that
 the parameter is of type <strong>object</strong>; hence, it may not even have the
 same type as what we want to compare it to. If this is the case, we need to return <strong>false</strong>. Otherwise, in order to ensure consistency
 between this method and the <code>==</code> operator, we can do the actual comparison
-using the <code>==</code> operator. If we are defining a class <strong>SomeType</strong>, we can accomplish all of this as follows:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kd>public</span> <span class=kd>override</span> <span class=kt>bool</span> <span class=n>Equals</span><span class=p>(</span><span class=kt>object?</span> <span class=n>obj</span><span class=p>)</span>
+using the <code>==</code> operator. If we are defining a class <strong>SomeType</strong>, we can accomplish all of this as follows:</p><div class=highlight dir=auto><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kd>public</span> <span class=kd>override</span> <span class=kt>bool</span> <span class=n>Equals</span><span class=p>(</span><span class=kt>object?</span> <span class=n>obj</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=p>{</span>
 </span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>obj</span> <span class=k>as</span> <span class=n>SomeType</span> <span class=p>==</span> <span class=k>this</span><span class=p>;</span>
-</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>The <code>as</code> keyword casts <code>obj</code> to <strong>SomeType</strong> if possible; however, if <code>obj</code> cannot be cast to <strong>SomeType</strong>, the <code>as</code> expression evaluates to <strong>null</strong> (or in general, the <a href=/cis300/stacks-queues/stack-impl/#default-value>default value</a> for <strong>SomeType</strong>). Because <strong>this</strong> cannot be <strong>null</strong>, <strong>false</strong> will always be returned if <code>obj</code> cannot be cast to <strong>SomeType</strong>.</p><p>If <strong>SomeType</strong> is a structure, the above won&rsquo;t work because <code>this</code> may be the default value for <strong>SomeType</strong>. In this case, we need somewhat more complicated code:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kd>public</span> <span class=kd>override</span> <span class=kt>bool</span> <span class=n>Equals</span><span class=p>(</span><span class=kt>object?</span> <span class=n>obj</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>The <code>as</code> keyword casts <code>obj</code> to <strong>SomeType</strong> if possible; however, if <code>obj</code> cannot be cast to <strong>SomeType</strong>, the <code>as</code> expression evaluates to <strong>null</strong> (or in general, the <a href=/cis300/stacks-queues/stack-impl/#default-value>default value</a> for <strong>SomeType</strong>). Because <strong>this</strong> cannot be <strong>null</strong>, <strong>false</strong> will always be returned if <code>obj</code> cannot be cast to <strong>SomeType</strong>.</p><p>If <strong>SomeType</strong> is a structure, the above won&rsquo;t work because <code>this</code> may be the default value for <strong>SomeType</strong>. In this case, we need somewhat more complicated code:</p><div class=highlight dir=auto><pre tabindex=0 class=chroma><code class=language-c# data-lang=c#><span class=line><span class=cl><span class=kd>public</span> <span class=kd>override</span> <span class=kt>bool</span> <span class=n>Equals</span><span class=p>(</span><span class=kt>object?</span> <span class=n>obj</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=p>{</span>
 </span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=n>obj</span> <span class=k>is</span> <span class=n>SomeType</span> <span class=n>x</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>    <span class=p>{</span>
@@ -536,8 +515,7 @@ our desire for a quick computation. In fact, it is impossible to
 guarantee in general &mdash; provided there are more than
 <span class="math align-center">$ 2^{32}(k - 1) $</span> possible keys from which to choose, no
 matter how the hash code computation is implemented, we can always find
-at least
-<span class="math align-center">$ k $</span> keys with the same hash code. However, this is a problem
+at least <span class="math align-center">$ k $</span> keys with the same hash code. However, this is a problem
 that has been studied a great deal, and several techniques have been
 developed that are effective in practice. We will caution, however, that
 not every technique that looks like it should be effective actually is
@@ -562,55 +540,41 @@ component, it does the following:</p><ul><li>Multiply the hash code by some fixe
 multiplications, the above computation will often overflow an <strong>int</strong>.
 This is not a problem &mdash; the remaining bits are sufficient for the hash code.</p><p>In order to understand this computation a little better, let&rsquo;s first
 ignore the effect of this overflow. We&rsquo;ll denote the fixed odd integer
-by
-<span class="math align-center">$ x $</span>, and the components of the key as
+by <span class="math align-center">$ x $</span>, and the components of the key as
 <span style=white-space:nowrap><span class="math align-center">$ k_1, \dots, k_n $</span>.</span> Then
 this is the result of the computation:</p><span class="math align-left">$$(\dots ((0x + k_1)x + k_2) \dots)x + k_n = k_1 x^{n-1} + k_2 x^{n-2} + \dots + k_n.$$</span><p>Because the above is a polynomial, this hashing scheme is called
 <em>polynomial hashing</em>. While the computation itself is efficient,
 performing just a couple of arithmetic operations on each component, the
-result is to multiply each component by a unique value (
-<span class="math align-center">$ x^i $</span>
+result is to multiply each component by a unique value (<span class="math align-center">$ x^i $</span>
 for some <span style=white-space:nowrap><span class="math align-center">$ i $</span>)</span> depending on its position within the key.</p><p>Now let&rsquo;s consider the effect of overflow on the above polynomial. What
 this does is to keep only the low-order 32 bits of the value of the
 polynomial. Looking at it another way, we end up multiplying
 <span class="math align-center">$ k_i $</span> by only the low-order 32 bits of <span style=white-space:nowrap><span class="math align-center">$ x^{n-i} $</span>.</span>
-This helps to explain why
-<span class="math align-center">$ x $</span> is an odd number &mdash; raising an even number
-to the <span style=white-space:nowrap><span class="math align-center">$ i $</span>th</span> power forms a number ending in
-<span class="math align-center">$ i $</span> 0s in binary. Thus, if
+This helps to explain why <span class="math align-center">$ x $</span> is an odd number &mdash; raising an even number
+to the <span style=white-space:nowrap><span class="math align-center">$ i $</span>th</span> power forms a number ending in <span class="math align-center">$ i $</span> 0s in binary. Thus, if
 there are more than 32 components in the key, all but the last 32 will
 be multiplied by <span style=white-space:nowrap><span class="math align-center">$ 0 $</span>,</span> and hence, ignored.</p><p>There are other potential problems with using certain odd numbers for
 <span class="math align-center">$ x $</span>. For example, we wouldn&rsquo;t want to use <span style=white-space:nowrap><span class="math align-center">$ 1 $</span>,</span> because that would result
 in simply adding all the components together, and we would lose any
-information regarding their positions within the key. Using
-<span class="math align-center">$ -1 $</span> would be
+information regarding their positions within the key. Using <span class="math align-center">$ -1 $</span> would be
 almost as bad, as we would multiply all components in odd positions by
 <span class="math align-center">$ -1 $</span> and all components in even positions by <span style=white-space:nowrap><span class="math align-center">$ 1 $</span>.</span> The effect of overflow can
 cause similar behavior; for example, if we place
 <span class="math align-center">$ 2^{31} - 1 $</span> in an <strong>int</strong> variable and square it,
 the overflow causes the result to be <span style=white-space:nowrap>1.</span> Successive powers will then
-alternate between
-<span class="math align-center">$ 2^{31} - 1 $</span> and <span style=white-space:nowrap><span class="math align-center">$ 1 $</span>.</span></p><p>It turns out that this cyclic behavior occurs no matter what odd number
+alternate between <span class="math align-center">$ 2^{31} - 1 $</span> and <span style=white-space:nowrap><span class="math align-center">$ 1 $</span>.</span></p><p>It turns out that this cyclic behavior occurs no matter what odd number
 we use for <span style=white-space:nowrap><span class="math align-center">$ x $</span>.</span> However, in most cases the cycle is long enough that
 keys of a reasonable size will have each component multiplied by a
 unique value. The only odd numbers that result in short cycles are those
-that are adjacent to a multiple of a large power of
-<span class="math align-center">$ 2 $</span> (note that
-<span class="math align-center">$ 0 $</span> is a
+that are adjacent to a multiple of a large power of <span class="math align-center">$ 2 $</span> (note that <span class="math align-center">$ 0 $</span> is a
 multiple of any integer).</p><p>The other potential problem occurs when we are hashing fairly short
-keys. In such cases, if
-<span class="math align-center">$ x $</span> is also small enough, the values computed
+keys. In such cases, if <span class="math align-center">$ x $</span> is also small enough, the values computed
 will all be much smaller than the maximum possible integer value
 <span style=white-space:nowrap><span class="math align-center">$ (2^{31} - 1) $</span>.</span> As a result, we will not have a uniform
-distribution of values. We therefore want to avoid making
-<span class="math align-center">$ x $</span> too small.</p><p>Putting all this together, choosing
-<span class="math align-center">$ x $</span> to be an odd number between
-<span class="math align-center">$ 30 $</span>
-and
-<span class="math align-center">$ 40 $</span> works pretty well. These values are large enough so that seven key
+distribution of values. We therefore want to avoid making <span class="math align-center">$ x $</span> too small.</p><p>Putting all this together, choosing <span class="math align-center">$ x $</span> to be an odd number between <span class="math align-center">$ 30 $</span>
+and <span class="math align-center">$ 40 $</span> works pretty well. These values are large enough so that seven key
 components will usually overflow an <strong>int</strong>. Furthermore, they all have
-a cycle length greater than
-<span class="math align-center">$ 100 $</span> million.</p><p>We should always save the hash code in a <strong>private</strong> field after we
+a cycle length greater than <span class="math align-center">$ 100 $</span> million.</p><p>We should always save the hash code in a <strong>private</strong> field after we
 compute it so that subsequent requests for the same hash code don&rsquo;t
 result in repeating the computation. This can be done in either of two
 ways. One way is to compute it in an <em>eager</em> fashion by doing it in the
@@ -623,6 +587,4 @@ used to indicate whether the hash code has been computed yet or not.
 With this approach, the <strong>GetHashCode</strong> method first checks this field
 to see if the hash code has been computed. If not, it computes the hash
 code and saves it in its field. In either case, it then returns the
-value of the hash code field.</p><footer class=footline></footer></article></section></div></main><div class=git-footer><p class=theme-version-footer>6.0.0</p><p>Last modified by:
-<i class='fas fa-user'></i> Rod Howell
-<i class='fas fa-calendar'></i> <a href=https://github.com/ksu-cs-textbooks/cis300/commit/c19b3d00cdc683e9f16310b307b79262f7cb7b39>Jun 7, 2023</a></p></div></div><script src=/cis300/js/clipboard.min.js?1756138920 defer></script><script src=/cis300/js/perfect-scrollbar.min.js?1756138920 defer></script><script>function useMathJax(e){window.MathJax=Object.assign(window.MathJax||{},{tex:{inlineMath:[["\\(","\\)"],["$","$"]],displayMath:[["\\[","\\]"],["$$","$$"]]},options:{enableMenu:!1}},e)}useMathJax(JSON.parse("{}"))</script><script id=MathJax-script async src=/cis300/js/mathjax/tex-mml-chtml.js?1756138920></script><script src=/cis300/js/theme.js?1756138920 defer></script></body></html>
+value of the hash code field.</p><footer class=footline></footer></article></section></div></main></div><script>window.MathJax=Object.assign(window.MathJax||{},{tex:{inlineMath:[["\\(","\\)"],["$","$"]],displayMath:[["\\[","\\]"],["$$","$$"]]},options:{enableMenu:!1}},JSON.parse("{}"))</script><script id=MathJax-script async src=/cis300/js/mathjax/tex-mml-chtml.js?1759520014></script><script src=/cis300/js/clipboard/clipboard.min.js?1759520014 defer></script><script src=/cis300/js/perfect-scrollbar/perfect-scrollbar.min.js?1759520014 defer></script><script src=/cis300/js/theme.min.js?1759520014 defer></script></div><script src=/cis300/js/tele-scroll.min.js?1759520014 defer></script></body></html>
