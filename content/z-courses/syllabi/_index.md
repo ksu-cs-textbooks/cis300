@@ -111,7 +111,7 @@ The development environment to be used in this class is Microsoft Visual Studio 
 
 If you wish to install the software on your own PC, you can download it for free from the Microsoft Azure Portal. Please refer to "[Installing Visual Studio](https://textbooks.cs.ksu.edu/cis300/appendix/vs/installing-vs/)" for more details.
 
-{{% notice info %}
+{{% notice info %}}
 
 **Important Note for Mac Users:** Visual Studio for Mac does not support C# Windows Forms applications, which will be used in this course. If you are using a Mac, you will need to dual boot Windows, a virtual machine, or use a remote desktop connection to a Windows machine to complete the assignments for this course. You can find instructions for setting up a remote desktop connection to a K-State lab machine [here](https://support.cs.ksu.edu/CISDocs/wiki/Remote_Access).
 
