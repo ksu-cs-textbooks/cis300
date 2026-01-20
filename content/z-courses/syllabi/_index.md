@@ -77,28 +77,28 @@ The prerequisites for this course are CIS 200 and either MATH 205 or MATH 220. A
 Upon successful completion of this course, students will be able to:
 
 1. Write programs which implement and use abstract and reference-type data structures, including, but not limited to:
-  1. Strings and string parsing (and related structures like string builders)
-  2. Lists and arrays
-  3. Linked lists
-  4. Stacks
-  5. Queues and priority queues
-  6. Trees (including, but not limited to binary search trees, AVL trees, and tries)
-  7. Sets
-  8. Hash tables
-  9. Dictionaries
-  10. Heaps
-  11. Graphs
+    - Strings and string parsing (and related structures like string builders)
+    - Lists and arrays
+    - Linked lists
+    - Stacks
+    - Queues and priority queues
+    - Trees (including, but not limited to binary search trees, AVL trees, and tries)
+    - Sets
+    - Hash tables
+    - Dictionaries
+    - Heaps
+    - Graphs
 
 2. Select and use appropriate data structures to solve real-world problems.
-  1. Understand and explain how the performance of a program may change based on the data structure chosen.
+    - Understand and explain how the performance of a program may change based on the data structure chosen.
 
 3. Implement and apply algorithms for searching, sorting, and manipulating a data structure.
-  1. Understand and use fundamental algorithms for data structures listed in SLO #1, including, but not limited to:
-    1. Standard sorting/search algorithms (i.e., insertion, merge, quick sort, etc.)
-    2. Advanced sorting/searching algorithms (e.g., Dijkstra's, greedy, bucket/radix, etc.)
-    3. Tree algorithms
-    4. Graph algorithms
-    5. Recursive and iterative algorithms
+    - Understand and use fundamental algorithms for data structures listed in SLO #1, including, but not limited to:
+        - Standard sorting/search algorithms (i.e., insertion, merge, quick sort, etc.)
+        - Advanced sorting/searching algorithms (e.g., Dijkstra's, greedy, bucket/radix, etc.)
+        - Tree algorithms
+        - Graph algorithms
+        - Recursive and iterative algorithms
 
 4. Analyze performance differences and complexity between various algorithms and data structures as outlined in SLO #1.
 
