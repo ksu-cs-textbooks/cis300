@@ -1,6 +1,6 @@
 ---
 title: "CIS 300 Section B Syllabus - Spring 2025"
-weight: 62
+weight: 2025
 pre: ""
 ---
 

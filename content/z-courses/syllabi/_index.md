@@ -1,5 +1,5 @@
 ---
-title: "CIS 300 Syllabus - Fall 2025"
+title: "CIS 300 Syllabus - Spring 2026"
 weight: 62
 pre: ""
 ---
@@ -8,15 +8,18 @@ pre: ""
 - [Link to this Syllabus]({{% ref "./" %}})
 - [Previous Versions]({{% relref "./old-syllabi" %}})
 
-## *CIS 300 Fall 2025*
+## *CIS 300 Spring 2026*
 
 ### Section A 
-- **Meets** *MWF 8:30am-10:20am*
+- **Meets** *MWF 9:30am-11:20am*
 - **Location** *DUE 1114*
+- **Professor:** Dr. Friday James
 ### Section B
-- **Meets** *MWF 11:30am-1:20pm*
+- **Meets** *MWF 12:30pm-2:20pm*
 - **Location** *DUE 1114*
-  
+- **Professor:** Dr. Josh Weese
+
+ 
 ## Contact
 
 {{% notice info %}}
@@ -28,40 +31,38 @@ If you do need to email us, please use [**cis300-help@KSUemailProd.onmicrosoft.c
 {{% /notice %}}
 
 ### Faculty: 
-##### Dr. Josh Weese 
+#### Dr. Friday James
+- **Email:** [fejames@ksu.edu ](mailto:fejames@ksu.edu )
 
+#### Dr. Josh Weese 
 - **Email:** [weeser@ksu.edu ](mailto:weeser@ksu.edu )
 - **Want to meet with me?**
-    - Check the syllabus calendar for general office hours or look at my calendar directly (link below).
-    - Need to meet outside of class time? See **https://calendly.com/weeser**
-- **Phone:** 785-532-7929
+  - Check the syllabus calendar for general office hours or look at my calendar directly (link below).
+  - Need to meet outside of class time? See **https://calendly.com/weeser**
 - **Calendar:** [weeser.net/calendar](https://weeser.net/calendar)
 
-### Graduate Teaching Assistants
+### Graduate Teaching Assistant
 
-- Robert Stewart
-
-The GTA(s) will be responsible for grading homework assignments. **Please only email them directly if you have questions about how they graded a homework assignment.** They are also available for online help at the times shown on the calendar below. 
+- Timothy Tucker
 
 ### Undergraduate Teaching Assistants
 
 - Matthew Gwaltney
 - Ali Jebril
-- Daniel Chang
 - Christian Bartel
+- Cole James
 
 
 ## Office Hours Calendar
 
-Below is a calendar showing the office hours for the semester. 
+Below is a calendar showing the office hours for the semester. All office hours will be held in person unless otherwise noted. You can see the location for office hours on the calendar (*note that some may be virtual). If you need to meet outside of these times, please see [contact](##contact) above or use the link above to schedule a time.
 
 <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FChicago&showPrint=0&title=KSU%20CIS%20300%20Office%20Hours&mode=WEEK&src=azJ2azdlZGNmbWVhYmViZ3BwMWdiY2EzdDhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=MWZmcTd1N2RkM2Z0dDFycms2N2YzcHY4cGdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23AD1457&color=%23795548&color=%23009688" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 
-In order to manage office hours during busy times, we will use an online queueing system. If everyone holding office hours is busy when you're needing their help, add yourself to the queue using the following link:
+In order to manage office hours during busy times, we **may** use an online queueing system. If everyone holding office hours is busy when you're needing their help (and the queue is active), add yourself to the queue using the following link:
 
 [CIS 300 Help Queue](https://officehours.cs.ksu.edu/groupsession/2) 
 
-You will then be notified via Microsoft Teams when someone is ready to help you. At that point, you may go to their posted office location. Important: When you enter the help queue, be sure to open Microsoft Teams, either the [web app](https://teams.microsoft.com/) or the [desktop/mobile app](https://www.microsoft.com/en-us/microsoft-teams/download-app).
 
 ## Required Textbook
 
@@ -69,65 +70,82 @@ You will then be notified via Microsoft Teams when someone is ready to help you.
 
 ## Prerequisite
 
-The prerequisites for this course are CIS 200 and either MATH 205 or  MATH 220. A grade of a C or better is required for each prerequisite. If you do not meet the prerequisite requirement for this course, you  should see me immediately, or you will be dropped from the course.
+The prerequisites for this course are CIS 200 and either MATH 205 or MATH 220. A grade of a C or better is required for each prerequisite. If you do not meet the prerequisite requirement for this course, you should see me immediately, or you will be dropped from the course.
 
-## Learning Outcomes
+## Student Learning Outcomes
 
-Students should attain competence in:
+Upon successful completion of this course, students will be able to:
 
-- Implementing and using abstract and reference-type data structures, including strings (and related structures like string builders), stacks, queues, priority queues, trees (including, but not limited to binary search trees, AVL trees, and tries), lists and arrays, linked lists, dictionaries, hash tables, heaps, priority queues, and graphs.
-- Implementing and using algorithms for searching and manipulating a data structures
-- Using recursion and iterative algorithms for data structures like lists and trees
-- Using and implementing algorithms for sorting
-- Understanding performance differences and complexity between various algorithms and data structures
-- Using advanced object-oriented concepts, including interfaces, indexers, and eneumerators, to implement or partially implement data structures.
-- Using appropriate data structures to solve real-world problems.
+1. Write programs which implement and use abstract and reference-type data structures, including, but not limited to:
+  1. Strings and string parsing (and related structures like string builders)
+  2. Lists and arrays
+  3. Linked lists
+  4. Stacks
+  5. Queues and priority queues
+  6. Trees (including, but not limited to binary search trees, AVL trees, and tries)
+  7. Sets
+  8. Hash tables
+  9. Dictionaries
+  10. Heaps
+  11. Graphs
+
+2. Select and use appropriate data structures to solve real-world problems.
+  1. Understand and explain how the performance of a program may change based on the data structure chosen.
+
+3. Implement and apply algorithms for searching, sorting, and manipulating a data structure.
+  1. Understand and use fundamental algorithms for data structures listed in SLO #1, including, but not limited to:
+    1. Standard sorting/search algorithms (i.e., insertion, merge, quick sort, etc.)
+    2. Advanced sorting/searching algorithms (e.g., Dijkstra's, greedy, bucket/radix, etc.)
+    3. Tree algorithms
+    4. Graph algorithms
+    5. Recursive and iterative algorithms
+
+4. Analyze performance differences and complexity between various algorithms and data structures as outlined in SLO #1.
+
+5. Utilize advanced object-oriented concepts, such as generics, interfaces, indexers, and enumerators, to implement or partially implement data structures.
+
 
 ## Programming Environment
 
-The development environment to be used in this class is Microsoft  Visual Studio 2022. This software is available on the Windows machines  in the public labs in Engineering Hall 1114, 1116, and 1118, as well as  certain other public labs on campus. Please note that some of these labs are reserved for classroom use at certain times of the day - be sure to check the schedules posted by the doors.
+The development environment to be used in this class is Microsoft Visual Studio 2026 (the 2022 version will also be acceptable). This software is available on the Windows machines in the public labs in Engineering Hall 1114, 1116, and 1118, as well as certain other public labs on campus. Please note that some of these labs are reserved for classroom use at certain times of the day - be sure to check the schedules posted by the doors.
 
-If you wish to install the software on your own PC, you can download  it for free from the Microsoft Azure Portal. Please refer to "[Installing Visual Studio](https://textbooks.cs.ksu.edu/cis300/appendix/vs/installing-vs/)" for more details.
+If you wish to install the software on your own PC, you can download it for free from the Microsoft Azure Portal. Please refer to "[Installing Visual Studio](https://textbooks.cs.ksu.edu/cis300/appendix/vs/installing-vs/)" for more details.
 
-## Topics
+{{% notice info %}
 
-I plan to cover the following topics (not necessarily in this order):
+**Important Note for Mac Users:** Visual Studio for Mac does not support C# Windows Forms applications, which will be used in this course. If you are using a Mac, you will need to dual boot Windows, a virtual machine, or use a remote desktop connection to a Windows machine to complete the assignments for this course. You can find instructions for setting up a remote desktop connection to a K-State lab machine [here](https://support.cs.ksu.edu/CISDocs/wiki/Remote_Access).
 
-|                                   |                                |
-| --------------------------------- | ------------------------------ |
-| Using Visual C# to construct GUIs | Strings and related structures |
-| File I/O                          | Stacks                         |
-| Queues                            | Lists                          |
-| Trees                             | Binary search trees            |
-| Priority queues                   | Tries                          |
-| Hashing                           | Graphs                         |
-| Sorting                           |                                |
+**Note on VS Code:** While Visual Studio Code is a great lightweight code editor, it does not have the full functionality for editing Windows Forms applications. Therefore, it is not recommended for use in this course.
+
+{{% /notice %}}
+
 
 ## Grading
 
-- Review Quizzes: 5%
-- Lab assignments: 25%
-- Homework assignments: 25%
+- Lab assignments and review quizzes: 25%
+- Homework assignments: 30%
 - Exams: 45%
 
-{{% notice  warning%}}
+{{% notice warning%}}
 
-It is crucial that all work you submit for this course is your own. Posting (even if you don't get a response) course content on Stack Overflow, Chegg, or other similar websites is expressly forbidden and will result in an XF. This also includes viewing solutions to course content that has not been provided to you through canvas by your instructor or TA. The use of AI assisted tools to write your assignments is also explicitly forbidden (ChatGPT, GitHub Code Pilot, etc.). You may use these tools as help in the **learning** process, but work that you submit for a grade must be 100% done by you and only you. You are welcome to *discuss* assignments with your peers, but the work you submit must be your own. In no situation should you share your source code with another student.
+It is crucial that all work you submit for this course is your own. Posting (even if you don't get a response) course content on Stack Overflow, study sites, or other similar websites is expressly forbidden and will result in an XF. This also includes viewing solutions to course content that has not been provided to you through canvas by your instructor or TA. 
+
+The use of AI assisted tools to write your assignments is also explicitly forbidden (ChatGPT, GitHub Code Pilot, etc.). You may use these tools as help in the **learning** process, but work that you submit for a grade must be done by you and only you. Use of AI/Intellisense for auto completion for SMALL pieces of code is OK; HOWEVER, you will find that it is not perfect and can introduce errors, suggest poor code, or other issues. It can also shortcut the learning process. You are welcome to *discuss* assignments with your peers, but the work you submit must be your own. In no situation should you share (or show) your source code with another student.
 
 {{% /notice %}}
 
 ### Review Quizzes
 
-Prior to each lab (typically at 4:30 pm on the day of the previous lab), a video, readings, and a review quiz over these materials will be made available. This review quiz will be due at the beginning of the lab time. The main purpose of these quizzes is to help prepare you for the in-class discussion and the lab assignment for the day on which the quiz is due. You will be allowed to take each quiz twice, and the higher grade will be recorded.
+Prior to each lab (typically at 4:30 pm on the day of the previous lab), a video, readings, and a review quiz over these materials will be made available. This review quiz will be due at the beginning of the lab time unless otherwise noted. The main purpose of these quizzes is to help prepare you for the in-class discussion and the lab assignment for the day on which the quiz is due. You will be allowed to take each quiz twice, and the higher grade will be recorded.
 
 ### Lab Assignments
 
-One lab assignment will be assigned during each lab session. These  assignments will each be due at the end of the lab time. Each lab  assignment will be worth 2 points:
+One lab assignment will be assigned during each lab session. These assignments will each be due at the end of the lab time. Each lab assignment will be worth 2 points:
 
 - 1 point for making a legitimate attempt at completing the assignment.
 - 1 point for fully implementing correct functionality.
 
-**You must do the lab assignment in the lab classroom during  the lab period in which it is published in order to receive credit for  it.** The lowest five lab scores will not be counted toward your final grade - no other lab absences will be excused.
+**You must do the lab assignment in the lab classroom during the lab period in which it is published in order to receive credit for it.** The lowest five lab scores will not be counted toward your final grade - no other lab absences will be excused. The purpose of this policy is to maintain fairness to all students, as well as to encourage attendance and participation in the lab sessions.
 
 ### Homework Assignments
 
@@ -151,11 +169,11 @@ Final grades will be assigned according to the following scale:
 
 ## Course Delivery
 
-Details regarding the delivery of this course are given in the pinned information module in canvas. In order to make sure you understand the delivery mechanisms, you must obtain a perfect score on the quiz in that module before you can begin the course material. You can take this quiz as many times as  you need to get a perfect score. The score will **not** count toward your final grade. 
+Details regarding the delivery of this course are given in the pinned information module in canvas. In order to make sure you understand the delivery mechanisms, you must obtain a perfect score on the quiz in that module before you can begin the course material. You can take this quiz as many times as you need to get a perfect score. The score will **not** count toward your final grade. 
 
 ## Canvas
 
-All assignments and other course materials will be distributed via [Canvas ](http://canvas.ksu.edu). Grade information may be accessed there, and announcements will be  posted from time to time. Important class messages will be emailed to  your KSU email addresses and posted as announcements. **You must be enrolled in the course to access Canvas.**
+All assignments and other course materials will be distributed via [Canvas ](http://canvas.ksu.edu). Grade information may be accessed there, and announcements will be posted from time to time. Important class messages will be emailed to your KSU email addresses and posted as announcements. **You must be enrolled in the course to access Canvas.**
 
 ## How to Succeed in This Course
 
@@ -174,9 +192,9 @@ This semester, we will be using edstem.org, specifically, there Ed Discussion pl
 - Before creating a new thread, please make sure there isn't a similar one already made.
 - If you are asking a question in Ed Discussion, please correctly mark it as such along with the correct tags.
 - Please make your thread public when possible in case others have the same questions.
-  - Threads can be made *anonymous* when needed. Course staff may anonymize private threads and make them public if they find it to be beneficial for the class.
+ - Threads can be made *anonymous* when needed. Course staff may anonymize private threads and make them public if they find it to be beneficial for the class.
 - When posting code, please do not post solutions or part of solutions to homework.
-  - Other students will not have the ability to view your git repositories, so you can share code on a public thread as long as you link your git repository.
+ - Other students will not have the ability to view your git repositories, so you can share code on a public thread as long as you link your git repository.
 - If you would like a new category or tag made, please let us know!
 
 If you need help getting started with the platform, please go through the following links:
@@ -184,9 +202,6 @@ If you need help getting started with the platform, please go through the follow
 - [Content Editor Guide](https://edstem.org/us/help/content-editor)
 - [Push Notifications](https://edstem.org/us/help/push-notifications)
 
-## Safe Zone Statement
-
-I am part of the SafeZone community network of trained K-State faculty/staff/students who are available to listen and support you. As a SafeZone Ally, I can help you connect with resources on campus to address problems you face that interfere with your academic success, particularly issues of sexual violence, hateful acts, or concerns faced by individuals due to sexual orientation/gender identity. My goal is to help you be successful and to maintain a safe and equitable campus.
 
 {{< syllabus exclude="copyright" >}}
 
@@ -196,4 +211,4 @@ The details in this syllabus are not set in stone. Due to the flexible nature of
 
 ## Copyright Notification
 
-Copyright 2025 (Joshua L. Weese) as to this syllabus, all lectures, and course content. During this course students are prohibited from selling notes to or being paid for taking notes by any person or commercial firm without the express written permission of the professor teaching this course. In addition, students in this class are not authorized to provide class notes or other class-related materials to any other person or entity, other than sharing them directly with another student taking the class for purposes of studying, without prior written permission from the professor teaching this course.
+Copyright 2026 (Joshua L. Weese) as to this syllabus, all lectures, and course content. During this course students are prohibited from selling notes to or being paid for taking notes by any person or commercial firm without the express written permission of the professor teaching this course. In addition, students in this class are not authorized to provide class notes or other class-related materials to any other person or entity, other than sharing them directly with another student taking the class for purposes of studying, without prior written permission from the professor teaching this course.

@@ -1,3 +1,5 @@
 {
-    "explorer.sortOrder": "mixed"
+    "explorer.sortOrder": "mixed",
+    "python-envs.defaultEnvManager": "ms-python.python:system",
+    "python-envs.pythonProjects": []
 }
