@@ -4,8 +4,7 @@ weight: 2025
 pre: ""
 ---
 
-*Content in this syllabus is subject to change*
-- [Link to this Syllabus]({{% ref "./" %}})
+- [Previous Versions]({{% relref "./" %}})
 
 ## *CIS 300 Spring 2025*
 
