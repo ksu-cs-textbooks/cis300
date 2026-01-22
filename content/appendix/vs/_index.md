@@ -8,7 +8,7 @@ pre = "<b>A2. </b>"
 
 ## Visual Studio
 
-This chapter will guide you through the use of Visual Studio 2022 and
+This chapter will guide you through the use of Visual Studio  and
 GitHub to obtain start code for your assignments, build, test, and debug
 graphical applications and class libraries, and submit assignment
 solutions. No attempt is meant to be exhaustive, as many of the features
@@ -16,6 +16,6 @@ of Visual Studio are beyond the scope of CIS 300.
 
 {{% notice note %}}
 
-This guide is based on Visual Studio Community 2022, version 17.10.5, released July 25, 2024. The user interface may have some differences in other versions.
+The user interface may have some differences depending on the version of Visual Studio that you are using.
 
 {{% /notice %}}
