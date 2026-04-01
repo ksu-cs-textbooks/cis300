@@ -149,9 +149,9 @@ One lab assignment will be assigned during each lab session. These assignments w
 
 ### Homework Assignments
 
-Five programming assignments will be given as homework during the course of the semester. All solutions must be submitted electronically by the given due date. Late submissions will be accepted with a penalty of 1% per hour, or any portion of an hour, late; thus, if a submission is 1 minute late, the penalty is 1%. If multiple solutions are submitted for the same assignment, only the last one will be graded. No submissions will be accepted after three days (i.e., 72 hours) past the due date.
+Five programming assignments will be given as homework during the course of the semester. All solutions must be submitted electronically by the given due date. Late submissions will be accepted with a penalty of 10% per day, prorated by hour (~.42% per hour). For example, if a submission is 12 hours late, the penalty is 5%. If multiple solutions are submitted for the same assignment, only the last one will be graded. No submissions will be accepted after three days (i.e., 72 hours) past the due date. Some assignments are not accepted three days late, so be sure to check availability dates in Canvas.
 
-Each of the first four homework assignments will be worth 5% of the final grade. The fifth homework assignment will be a final project worth 10% of the final grade. The final project will take the place of a Final Exam.
+Each of the first four homework assignments will be worth ~5% of the final grade. The fifth homework assignment will be a final project worth ~10% of the final grade. The final project will take the place of a Final Exam.
 
 ### Exams
 
